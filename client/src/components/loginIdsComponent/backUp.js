@@ -22,8 +22,7 @@ const LoginIdsList = (
   const loadState = useSelector((state) => state.loading);
   const { place, isLoading, loginsFetching } = loadState;
 
-
-  const [showContentCard, setShowContentCard] = useState(false);
+  const [displayFullContent, setDisplayFullContent] = useState(false);
   const [fullContentCardData, setFullContentCardData] = useState(
     {
       app: "",
@@ -115,14 +114,8 @@ const LoginIdsList = (
 
   ]
 
-
-
-  const handleFullContentBackBtnClicked = () => {
-    setShowContentCard(false);
-  }
-
-  const handleLoginIdClicked = (loginIData) => {
-    setShowContentCard(true);
+  const handleContentClick = (loginIData) => {
+    setDisplayFullContent(!displayFullContent);
     if (loginIData != undefined) {
       setFullContentCardData({
         app: loginIData.app,
@@ -136,23 +129,26 @@ const LoginIdsList = (
 
   return (
     <div className={styles.loginsList}>
-
-      <div className={showContentCard ? styles.contentContainerClose : styles.contentContainer}>
-        {loginIds.map((loginId, index) => (
-          <LoginId
-            key={index}
-            index={index}
-            loginId={loginId}
-            handleLoginIdClicked={handleLoginIdClicked}
+      {
+        !displayFullContent ? (
+          <div className={styles.contentContainer}>
+            {loginIds.map((loginId, index) => (
+              <LoginId
+                key={index}
+                index={index}
+                loginId={loginId}
+                handleContentClick={handleContentClick}
+              />
+            ))}
+          </div>
+        ) :
+          <FullContentCard
+            fullContentCardData={fullContentCardData}
+            handleContentClick={handleContentClick}
           />
-        ))}
-      </div>
 
-      <FullContentCard
-        fullContentCardData={fullContentCardData}
-        showContentCard={showContentCard}
-        handleFullContentBackBtnClicked={handleFullContentBackBtnClicked}
-      />
+      }
+
     </div >
   );
 };

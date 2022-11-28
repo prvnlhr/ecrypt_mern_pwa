@@ -24,23 +24,24 @@
     justify-content: flex-end;
     align-items: center;
     box-sizing: border-box;
-    padding-right: 8%;
+    padding-right: 5%;
 }
 
 .falseSearchContainer {
     width: 70%;
-    height: 90%;
+    height: 50%;
     /* border: 1px solid black; */
     border-radius: 10px;
     background-color: white;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .searchIcon {
     font-size: 20px;
+    margin-right: 10px;
 }
 
 .searchIconText {
@@ -50,21 +51,24 @@
     font-weight: 500;
     color: #002A9A;
     margin: 0px;
+    margin-left: 10px;
+
 }
 
 .trueSearchContainer {
     width: 70%;
-    height: 90%;
+    height: 50%;
     /* border: 1px solid black; */
     border-radius: 10px;
     background-color: white;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+
 }
 
 .searchInputDiv {
-    width: 80%;
+    width: 90%;
     height: 100%;
     /* border: 1px solid black; */
     display: flex;
@@ -86,7 +90,7 @@
 }
 
 .searchCancelIconDiv {
-    width: 20%;
+    width: 10%;
     height: 100%;
     /* border: 1px solid black; */
     display: flex;
@@ -96,10 +100,9 @@
 
 .searchCancelIcon {
     font-size: 15px;
-
 }
 
-.titleTextDiv {
+.listTitleTextDiv {
     width: 50%;
     height: 100%;
     /* border: 1px solid black; */
@@ -109,7 +112,7 @@
     box-sizing: border-box;
 }
 
-.titleTextDiv p {
+.listTitleTextDiv p {
     position: relative;
     font-family: "Poppins", sans-serif;
     font-size: 23px;
@@ -118,13 +121,150 @@
     margin-left: 25%;
 }
 
-.titleTextDiv p::after {
+.listTitleTextDiv p::after {
     position: absolute;
     content: " ";
     background-color: #002A9A;
-    width: 55%;
+    width: 45px;
     height: 2.5px;
     bottom: -8px;
     left: 0px;
     border-radius: 10px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .searchTitleSection {
+        grid-area: searchTitleSection;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        /* border: 1px solid orange; */
+    }
+
+
+    .listTitleWrapper {
+        width: 50%;
+        height: 100%;
+        /* border: 1px solid black; */
+    }
+
+    .searchInputWrapper {
+        width: 50%;
+        height: 100%;
+        /* border: 1px solid red; */
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        box-sizing: border-box;
+        padding-right: 8%;
+    }
+
+    .falseSearchContainer {
+        width: 70%;
+        height: 90%;
+        /* border: 1px solid black; */
+        border-radius: 10px;
+        background-color: white;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+
+    .searchIcon {
+        font-size: 20px;
+        margin: 0px;
+    }
+
+    .searchIconText {
+        position: relative;
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: #002A9A;
+        margin: 0px;
+    }
+
+    .trueSearchContainer {
+        width: 70%;
+        height: 90%;
+        /* border: 1px solid black; */
+        border-radius: 10px;
+        background-color: white;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+    }
+
+    .searchInputDiv {
+        width: 80%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .searchInput {
+        border: none;
+        outline: none;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        display: flex;
+        text-align: start;
+        padding-left: 20%;
+        padding-right: 5%;
+        box-sizing: border-box;
+    }
+
+    .searchCancelIconDiv {
+        width: 20%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .searchCancelIcon {
+        font-size: 15px;
+    }
+
+    .listTitleTextDiv {
+        width: 50%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    .listTitleTextDiv p {
+        position: relative;
+        font-family: "Poppins", sans-serif;
+        font-size: 23px;
+        font-weight: 500;
+        color: black;
+        margin-left: 25%;
+    }
+
+    .listTitleTextDiv p::after {
+        position: absolute;
+        content: " ";
+        background-color: #002A9A;
+        width: 45px;
+        height: 2.5px;
+        bottom: -8px;
+        left: 0px;
+        border-radius: 10px;
+    }
+
+
+
 }

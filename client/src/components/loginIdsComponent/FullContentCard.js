@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import styles from "./styles/fullContentCard.module.css"
 import BackBtnIcon from "../icons/BackBtnIcon"
 import { Icon } from '@iconify/react';
-const FullContentCard = ({ handleContentClick, fullContentCardData }) => {
+const FullContentCard = ({ fullContentCardData, showContentCard, handleFullContentBackBtnClicked }) => {
 
 
     const [currData, setCurrData] = useState({
@@ -36,14 +36,14 @@ const FullContentCard = ({ handleContentClick, fullContentCardData }) => {
         setPopUpOpen(!popUpOpen)
     }
     return (
-        <div className={styles.cardWrapper}>
+        <div className={showContentCard ? styles.cardWrapper : styles.cardWrapperClose}>
             <div className={styles.cardContainer}>
 
                 <div className={styles.cardHeader}>
 
                     <div className={styles.backBtnContainer} >
                         <div className={styles.backBtnDiv}
-                            onClick={() => handleContentClick()}
+                            onClick={() => handleFullContentBackBtnClicked()}
                         >
                             <BackBtnIcon />
                         </div>

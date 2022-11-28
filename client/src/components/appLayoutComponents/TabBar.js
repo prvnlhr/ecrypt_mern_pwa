@@ -1,17 +1,12 @@
 import React from "react";
 
-import { useState, useRef } from "react";
-import { useLocation } from "react-router-dom";
+import { useState, useRef, useEffect } from "react";
+import { useLocation, Link } from "react-router-dom";
 import { Icon } from '@iconify/react';
 import styles from "./styles/tabBar.module.css"
 const TabBar = () => {
 
   const [] = useState("");
-
-  const location = useLocation();
-
-  console.log(location.pathname);
-
 
   const refDash = useRef();
   const refLogins = useRef();
@@ -19,6 +14,45 @@ const TabBar = () => {
   const refNotes = useRef();
   const refFavs = useRef();
   const indicatorRef = useRef();
+
+  const location = useLocation();
+
+  useEffect(() => {
+
+    if (indicatorRef.current !== null) {
+      switch (location.pathname) {
+        case "/dashboard":
+          var pos = refDash.current.offsetLeft;
+          var newPos = pos + "px";
+          indicatorRef.current.style.left = newPos;
+          break;
+        case "/user/display_loginIds":
+          var pos = refLogins.current.offsetLeft;
+          var newPos = pos + "px";
+          indicatorRef.current.style.left = newPos;
+          break;
+        case "/user/display_cards":
+          var pos = refCards.current.offsetLeft;
+          var newPos = pos + "px";
+          indicatorRef.current.style.left = newPos;
+          break;
+        case "/user/diplay_documents":
+          var pos = refNotes.current.offsetLeft;
+          var newPos = pos + "px";
+          indicatorRef.current.style.left = newPos;
+          break;
+        case "/user/favorites/*":
+          var pos = refFavs.current.offsetLeft;
+          var newPos = pos + "px";
+          indicatorRef.current.style.left = newPos;
+          break;
+        default:
+          break;
+      }
+    }
+
+  }, [indicatorRef.current])
+
 
 
   const linkedClicked = (val) => {
@@ -60,33 +94,33 @@ const TabBar = () => {
       <div className={styles.tabBarIndicator} ref={indicatorRef} ></div>
 
       <div className={styles.tabIconContainer} ref={refDash}  >
-        <div className={styles.tabbarIconsDiv}   >
+        <Link className={styles.tabbarIconsDiv} to="/dashboard"   >
           <Icon className={styles.tabbarIcons} onClick={() => linkedClicked(1)} icon="iconoir:home-simple" color="#7e8da4" />
-        </div>
+        </Link>
       </div>
 
       <div className={styles.tabIconContainer} ref={refLogins}   >
-        <div className={styles.tabbarIconsDiv} >
+        <Link className={styles.tabbarIconsDiv} to="/user/display_loginIds">
           <Icon className={styles.tabbarIcons} onClick={() => linkedClicked(2)} icon="ant-design:key-outlined" color="#7e8da4" />
-        </div>
+        </Link>
       </div>
 
       <div className={styles.tabIconContainer} ref={refCards} >
-        <div className={styles.tabbarIconsDiv}   >
+        <Link className={styles.tabbarIconsDiv} to="/user/display_cards"  >
           <Icon className={styles.tabbarIcons} onClick={() => linkedClicked(3)} icon="bi:credit-card-2-back" color="#7e8da4" />
-        </div>
+        </Link>
       </div>
 
       <div className={styles.tabIconContainer} ref={refNotes} >
-        <div className={styles.tabbarIconsDiv}>
+        <Link className={styles.tabbarIconsDiv} to="/user/diplay_documents">
           <Icon className={styles.tabbarIcons} onClick={() => linkedClicked(4)} icon="system-uicons:document-words" color="#7e8da4" />
-        </div>
+        </Link>
       </div>
 
       <div className={styles.tabIconContainer} ref={refFavs}  >
-        <div className={styles.tabbarIconsDiv}  >
+        <Link className={styles.tabbarIconsDiv} to="/user/favorites/*" >
           <Icon className={styles.tabbarIcons} onClick={() => linkedClicked(5)} icon="ion:bookmark-outline" color="#7e8da4" />
-        </div>
+        </Link>
       </div>
 
 

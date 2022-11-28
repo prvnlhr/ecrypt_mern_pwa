@@ -29,7 +29,7 @@ const LoginId = ({
   currEditId,
   index,
   displayFullContent,
-  handleContentClick,
+  handleLoginIdClicked,
 
 }) => {
   const [modalShow, setModalShow] = useState(false);
@@ -107,7 +107,7 @@ const LoginId = ({
     <>
       <div className={styles.loginInWrapper}
         onClick={() => {
-          handleContentClick(loginId);
+          handleLoginIdClicked(loginId);
         }}>
         <div className={styles.logoWrapper} >
           <div className={styles.logoDiv}>

@@ -1,7 +1,6 @@
 .cardWrapper {
-    /* display: flex; */
-    display: none;
-    width: 60%;
+    display: flex;
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: flex-start;
@@ -15,28 +14,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-}
 
-.cardWrapperClose {
-    /* display: flex; */
-    display: none;
-    width: 0%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: white;
-    padding-left: 0%;
-    webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    scroll-behavior: smooth;
 
 }
 
@@ -555,30 +533,8 @@
         align-items: flex-end;
         background-color: white;
         margin-top: 14%;
-
-    }
-
-    .cardWrapperClose {
-        display: flex;
-        width: 100%;
-        height: 0%;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        background-color: white;
-        padding-left: 0%;
-        webkit-tap-highlight-color: transparent;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        overflow: hidden;
-        padding: 0px;
-        margin: 0px;
-        transition: none;
-
+        -webkit-animation: slide-in-bottom 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: slide-in-bottom 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     }
 
     .cardContainer {
