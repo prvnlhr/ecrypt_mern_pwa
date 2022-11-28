@@ -24,7 +24,6 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
             username: fullContentCardData.username,
             password: fullContentCardData.password,
         })
-        // console.log(fullContentCardData);
     }, [fullContentCardData]);
 
 

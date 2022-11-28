@@ -46,7 +46,7 @@
   overflow-y: scroll;
   padding-top: 10px;
   padding-left: 20px;
-  padding-bottom: 200px;
+  padding-bottom: 20px;
   box-sizing: border-box;
 
 
@@ -256,7 +256,6 @@
     /* firefox hide scrollbar  */
     /* border: 1px solid black; */
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-
 
   }
 }

@@ -11,131 +11,76 @@ import styles from "./styles/cardsList.module.css";
 import noContentStyles from "../docsComponent/styles/noContentMessage.module.css";
 import btnStyles from "../add_button/buttons.module.css";
 import { CircleSpinner } from "react-spinners-kit";
+import FullCardComponent from "./FullCardComponent";
 const CardForm = lazy(() => import("./CardForm"));
 
 const CardsList = ({ cards, currentId, setCurrentId, setHeading }) => {
-  const [formMode, setFormMode] = useState(false);
-  const [showEditButton, setEditButton] = useState(true);
+  const cardsData = [
 
+    {
+      category: "Bank",
+      title: "State Bank Card",
+      cardHolder: "Praveen Lohar",
+      cardNumber: 52455626554,
+      expiry: "andrew@122",
+      cvv: 123
+    },
+    {
+      title: "Aadhar card",
+      category: "Identity",
+      cardHolder: "Praveen Lohar",
+      cardNumber: "504186331908",
+      expiry: "",
+      dob: "23/01/1996",
+    }
+    , {
+      title: "Driving License",
+      category: "License",
+      cardHolder: "Praveen Lohar",
+      cardNumber: "52DL-855C",
+      expiry: "18/05/2024",
+      dov: "23/01/1996",
+    }
+
+  ]
   const loadState = useSelector((state) => state.loading);
+  const [showContentCard, setShowContentCard] = useState(false);
 
-  const { place, isLoading, cardFetching } = loadState;
+  const handleFullContentBackBtnClicked = () => {
+    setShowContentCard(false);
+  }
 
-  // useEffect(() => {
-  //   setHeading("Cards");
-  // }, []);
-
-  // useEffect(() => { }, [cards.length]);
-
-  // const formToggle = () => {
-  //   setFormMode(!formMode);
-  // };
-
-  // SCROLLING BUTTON HIDE__
-  // const node = useRef();
-  // var timeOut = null;
-  // const [isScrolling, setIsScrolling] = useState(false);
-  // useEffect(() => {
-  //   if (node.current != null) {
-  //     node.current.addEventListener("scroll", handleScroll);
-  //   }
-  //   return () => {
-  //     if (node.current != null) {
-  //       node.current.removeEventListener("scroll", handleScroll);
-  //     }
-  //   };
-  // }, []);
-
-  // const handleScroll = (e) => {
-  //   setIsScrolling(true);
-  //   clearTimeout(timeOut);
-  //   timeOut = setTimeout(() => {
-  //     setIsScrolling(false);
-  //   }, 200);
-  // };
+  const handleCardClicked = (cardData) => {
+    setShowContentCard(true);
+    // if (cardData != undefined) {
+    //   setFullContentCardData({
+    //     app: cardData.app,
+    //     category: cardData.category,
+    //     title: cardData.title,
+    //     username: cardData.username,
+    //     password: cardData.password,
+    //   })
+    // }
+  }
 
   return (
     <div className={`${styles.cardList} `}>
-      CARDS
+      <div className={showContentCard ? styles.contentContainerClose : styles.contentContainer}>
+        {cardsData.map((card, index) => (
+          <Card
+            key={index}
+            index={index}
+            cardData={card}
+            handleCardClicked={handleCardClicked}
+          />
+        ))}
 
-      {/* <div className={styles.contentContainer} ref={node}>
-    
-
-        {cardFetching === true && cards.length < 1 ? (
-          <>
-            <CardSkeleton />
-
-            <CardSkeleton />
-            <CardSkeleton />
-            <CardSkeleton />
-            <CardSkeleton />
-            <CardSkeleton />
-          </>
-        ) : cardFetching === false && cards.length < 1 ? (
-          <div className={noContentStyles.messageContainer}>
-            <p>No Logins Added</p>
-
-            <div className={noContentStyles.footerDIv}>
-              Click
-              <FiPlusCircle className={noContentStyles.icon} fontSize="19px" />
-              to add
-            </div>
-          </div>
-        ) : (
-          cardFetching === false &&
-          cards.length >= 1 && (
-            <>
-              {cards.map((card, index) => (
-                <>
-                  <Card
-                    index={index}
-                    card={card}
-                    setCurrentId={setCurrentId}
-                    formMode={formMode}
-                    setFormMode={setFormMode}
-                    setEditButton={setEditButton}
-                    showEditButton={showEditButton}
-                  />
-                </>
-              ))}
-            </>
-          )
-        )}
       </div>
-      <Suspense
-        fallback={
-          <div>
-            <CircleSpinner size={12} color="gray" loading={true} />
-          </div>
-        }
-      >
-        <CardForm
-          currentId={currentId}
-          setCurrentId={setCurrentId}
-          formMode={formMode}
-          setFormMode={setFormMode}
-        />
-      </Suspense>
+      <FullCardComponent
+        showContentCard={showContentCard}
+        handleFullContentBackBtnClicked={handleFullContentBackBtnClicked}
+      />
 
-      {formMode === false ? (
-        // <div className={btnStyles.addBtnWrapper}>
-        <div
-          className={
-            isScrolling === false
-              ? btnStyles.addBtnWrapper
-              : btnStyles.addBtnWrapperHidden
-          }
-          onClick={formToggle}
-        >
-          <div className={btnStyles.addBtnIconDIv}>
-            <HiPlus />
-          </div>
-          <div className={btnStyles.addBtnTextDiv}>
-            <p>Add</p>
-          </div>
-        </div>
-      ) :
-        null} */}
     </div>
   );
 };

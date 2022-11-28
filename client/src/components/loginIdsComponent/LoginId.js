@@ -108,7 +108,8 @@ const LoginId = ({
       <div className={styles.loginInWrapper}
         onClick={() => {
           handleLoginIdClicked(loginId);
-        }}>
+        }}
+        >
         <div className={styles.logoWrapper} >
           <div className={styles.logoDiv}>
 

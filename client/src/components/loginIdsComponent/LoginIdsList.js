@@ -24,6 +24,7 @@ const LoginIdsList = (
 
 
   const [showContentCard, setShowContentCard] = useState(false);
+
   const [fullContentCardData, setFullContentCardData] = useState(
     {
       app: "",
