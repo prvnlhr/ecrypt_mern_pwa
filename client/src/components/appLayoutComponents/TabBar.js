@@ -18,6 +18,7 @@ const TabBar = () => {
   const refCards = useRef();
   const refNotes = useRef();
   const refFavs = useRef();
+  const tempRef = useRef();
   const indicatorRef = useRef();
 
 
