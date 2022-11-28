@@ -1,0 +1,11 @@
+const express = require("express");
+const router = express.Router();
+const loginsController = require("../controllers/loginIds");
+const auth = require("../middleware/auth");
+router.get("/getLoginIds", loginsController.getLoginIds);
+router.get("/getFavorites", loginsController.getFavorites);
+router.post("/addLoginId", loginsController.addLoginId);
+router.delete("/deleteLoginId/:id", loginsController.deleteLoginId);
+router.patch("/editLoginId/:id", loginsController.editLoginId);
+router.patch("/toggleFavourite/:id", loginsController.toggleFav);
+module.exports = router;

@@ -1,0 +1,398 @@
+@import "../../variable.modules.css";
+
+/* 
+.headerbar {
+  position: relative;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  width: 100% !important;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 30% 65% 5%;
+  grid-template-rows: 100%;
+  grid-template-areas: "dateWrapper avatarNameWrapper popUpWrapper";
+  align-items: center;
+  overflow: hidden;
+} */
+.headerBar {
+  position: relative;
+  grid-area: headerBar;
+  /* border: 1px solid orange; */
+  height: 100%;
+  width: 100% !important;
+  height: 100%;
+  display: grid;
+  /* grid-template-columns: minmax(0, 0.25fr) minmax(0, 0.50fr) minmax(0, 0.2fr); */
+  grid-template-columns: 30% 65% 5%;
+  grid-template-rows: 100%;
+  grid-template-areas: "dateWrapper avatarNameWrapper popUpWrapper";
+  align-items: center;
+  overflow: hidden;
+}
+
+.dateWrapper {
+  position: relative;
+  grid-area: dateWrapper;
+  /* border: 1px solid black; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.dateWrapper::after {
+  position: absolute;
+  content: " ";
+  background-color: #002A9A;
+  width: 3px;
+  height: 60%;
+  bottom: auto;
+  top: 20%;
+  left: 0px;
+  border-radius: 10px;
+}
+
+.dayDiv {
+  /* border: 1px solid black; */
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding-left: 8%;
+}
+
+.dateDiv {
+  /* border: 1px solid black; */
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 8%;
+}
+
+.dayText {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #0473FF;
+}
+
+.dateText {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: black;
+}
+
+
+.avatarNameWrapper {
+  grid-area: avatarNameWrapper;
+  /* border: 1px solid black; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nameContainer {
+  width: 20%;
+  height: 100%;
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.nameText {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #0473FF;
+}
+
+.grettingText {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #7E8DA4;
+}
+
+.avatarContainer {
+  height: 100%;
+  /* width: 10%; */
+  aspect-ratio: 1/1;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatarDiv {
+  background-color: white;
+  width: 60%;
+  height: 60%;
+  /* border: 1px solid #7e8da423; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 22px;
+  box-shadow: 0px 4.02118px 20.1059px rgba(0, 0, 0, 0.08);
+}
+
+.avatarImgDiv {
+  width: 80%;
+  height: 80%;
+  border: 1px solid #7e8da453;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 18px;
+  /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.13); */
+  /* box-shadow: 0px 2.00614px 8.02457px rgba(0, 0, 0, 0.09); */
+}
+
+.popUpWrapper {
+  grid-area: popUpWrapper;
+  /* border: 1px solid black; */
+  width: 100%;
+  height: 100%;
+  /* aspect-ratio: 1/1; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.popUpIcon {
+  position: relative;
+  width: 40%;
+  height: 40%;
+  /* border: 1px solid black; */
+}
+
+.logoWrapper {
+  display: none;
+  grid-area: logoWrapper;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+
+}
+
+.logoDiv {
+  width: 80%;
+  height: 80%;
+  /* border: 1px solid black; */
+}
+
+
+
+/* _______________________________ */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
+  .headerBar {
+    position: relative;
+    grid-area: headerBar;
+    /* border: 1px solid orange; */
+    height: 100%;
+    width: 100% !important;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 22% 25% 45% 15%;
+    grid-template-rows: 100%;
+    grid-template-areas: "logoWrapper dateWrapper avatarNameWrapper popUpWrapper";
+    align-items: center;
+    /* overflow: hidden; */
+    box-sizing: border-box;
+  }
+
+  .logoWrapper {
+    grid-area: logoWrapper;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid orange; */
+    box-sizing: border-box;
+  }
+
+  .logoDiv {
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .appLogo {
+    width: 85%;
+  }
+
+  .dateWrapper {
+    grid-area: dateWrapper;
+    /* border: 1px solid blue; */
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .dateWrapper::after {
+    position: absolute;
+    content: " ";
+    background-color: #002A9A;
+    width: 2px;
+    height: 40%;
+    bottom: auto;
+    top: 30%;
+    left: 5%;
+    border-radius: 10px;
+  }
+
+  .dayDiv {
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-left: 20%;
+    box-sizing: border-box;
+
+  }
+
+  .dateDiv {
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 20%;
+    box-sizing: border-box;
+
+  }
+
+  .dayText {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: #002A9A;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .dateText {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: black;
+    margin: 0px;
+    padding: 0px;
+  }
+
+
+  .avatarNameWrapper {
+    grid-area: avatarNameWrapper;
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    box-sizing: border-box;
+
+  }
+
+  .nameContainer {
+    width: 50%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .nameText {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #002A9A;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .grettingText {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #7E8DA4;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .avatarContainer {
+    height: 100%;
+    width: 50%;
+    aspect-ratio: unset;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .avatarDiv {
+    background-color: white;
+    aspect-ratio: 1/1;
+    width: 65%;
+    height: unset;
+    /* border: 1px solid #7e8da423; */
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0px 4.02118px 20.1059px rgba(0, 0, 0, 0.08);
+  }
+
+  .avatarImgDiv {
+    width: 80%;
+    height: 80%;
+    border: 1px solid #7e8da453;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.13); */
+    /* box-shadow: 0px 2.00614px 8.02457px rgba(0, 0, 0, 0.09); */
+  }
+
+  .popUpWrapper {
+    grid-area: popUpWrapper;
+    /* border: 1px solid green; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .popUpIcon {
+    position: relative;
+    width: 30%;
+    height: 30%;
+    /* border: 1px solid black; */
+  }
+
+
+
+
+
+}
+
+
+
+/* _______________________________ */

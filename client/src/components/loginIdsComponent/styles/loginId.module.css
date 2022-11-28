@@ -1,0 +1,575 @@
+/* ___NEW CSS RULES ________________________________________________*/
+
+.loginIdContainer {
+  position: relative;
+  display: grid;
+  /* display: none; */
+  grid-template-columns: 70px minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas:
+    "logoWrapper websiteWrapper buttonWrapper"
+    "logoWrapper userNameWrapper userNameWrapper"
+    "logoWrapper passwordWrapper passwordWrapper";
+  /* justify-content: center; */
+  align-items: center;
+  width: 280px;
+  height: 75px;
+  padding-right: 5px;
+  aspect-ratio: 3.73/1 !important;
+  border-radius: 8px;
+  margin: 15px 15px 15px 15px;
+
+  /* background-color: #ffffff; */
+  background-color: var(--card-bg);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.075), 0 5px 5px rgba(0, 0, 0, 0.048);
+  /* border: 1px solid black; */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* border: 2px solid #1072f1; */
+  box-sizing: border-box;
+}
+
+.loginIdContainerInEditMode {
+  -webkit-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
+    0 15px 12px rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
+    0 15px 12px rgba(0, 0, 0, 0.22);
+  -ms-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
+    0 15px 12px rgba(0, 0, 0, 0.22);
+  -o-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.logoWrapper {
+  grid-area: logoWrapper;
+  position: relative;
+  /* border: 1px solid gray; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.logoDiv {
+  position: relative;
+
+  width: 90%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 1px solid var(--loginId-logo-div-border);
+  border-radius: 8px;
+  /* border: 1px solid royalblue; */
+}
+
+.websiteWrapper {
+  grid-area: websiteWrapper;
+  position: relative;
+  /* border: 1px solid rgba(112, 128, 144, 0.336); */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  /* justify-content: flex-start; */
+  align-items: center;
+  box-sizing: border-box;
+  padding-top: 2px;
+}
+
+.websiteDiv {
+  position: relative;
+  border-bottom: 1px solid rgba(112, 128, 144, 0.336);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  overflow-x: scroll;
+  white-space: nowrap;
+  /* padding-left: 0px; */
+  scrollbar-width: none;
+  /* firefox hide scrollbar  */
+  -ms-overflow-style: none;
+  /* firefox hide scrollbar  */
+}
+
+.websiteDiv::-webkit-scrollbar {
+  display: none;
+}
+
+.websiteDiv p {
+  margin: 0px 0px 0px 5px;
+  font-family: "Quicksand", sans-serif;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  color: var(--loginId-website-text-color);
+  font-size: 0.85rem;
+  /* font-size: 13px; */
+}
+
+.buttonWrapper {
+  grid-area: buttonWrapper;
+  position: relative;
+  /* border: 1px solid blue; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.favBtn {
+  position: relative;
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  background: none;
+  outline: none;
+  border: none;
+  /* border: 1px solid blue; */
+  color: #b3bac3;
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
+  border-radius: 0px;
+
+}
+
+.editBtnContainer {
+  position: relative;
+  /* border: 1px solid blue; */
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.editIconDiv {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border-radius: 50%; */
+  /* border: 1px solid rgb(214, 214, 214); */
+
+  /* border: 1px solid black; */
+  /* background: white; */
+  box-sizing: border-box;
+  /* padding-top:2%; */
+  /* padding-bottom:2%; */
+
+}
+
+.deleteIconDiv {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* font-size: 15px; */
+  color: gray;
+  /* border-radius: 50%; */
+  /* border: 1px solid rgb(214, 214, 214); */
+
+  /* border: 1px solid black; */
+  /* background: white; */
+  box-sizing: border-box;
+  padding: 2%;
+
+}
+
+.checkIconDiv {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* font-size: 15px; */
+  color: gray;
+  /* border-radius: 50%; */
+  /* border: 1px solid rgb(214, 214, 214); */
+
+  /* border: 1px solid black; */
+  /* background: white; */
+}
+
+.cancelIconDiv {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* font-size: 15px; */
+  color: gray;
+  /* border-radius: 50%; */
+  /* border: 1px solid rgb(214, 214, 214); */
+
+  /* border: 1px solid black; */
+  /* background: white; */
+}
+
+.favIcon {
+  cursor: pointer;
+  height: 1.2rem;
+
+}
+
+.trashIcon {
+  cursor: pointer;
+  height: 1.2rem;
+}
+
+.pencilIcon {
+  cursor: pointer;
+  height: 1.2rem;
+}
+
+.cancelIcon {
+  height: 1.2rem;
+  cursor: pointer;
+}
+
+.checkIcon {
+  height: 1.2rem;
+  cursor: pointer;
+}
+
+.userNameWrapper {
+  grid-area: userNameWrapper;
+  position: relative;
+  /* border: 1px solid salmon; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.passwordWrapper {
+  grid-area: passwordWrapper;
+  position: relative;
+  /* border: 1px solid greenyellow; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.iconDiv {
+  /* border: 1px solid green; */
+  width: 10%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  /* font-size: 0.8em; */
+}
+
+.textIcon {
+  color: #9baece;
+  padding: 0px;
+  margin: 0px;
+  font-size: 0.8rem;
+}
+
+.textDiv {
+  /* border: 1px solid orange; */
+  width: 85%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  overflow-x: scroll;
+  padding-right: 10px;
+  scrollbar-width: none;
+  /* firefox hide scrollbar  */
+  -ms-overflow-style: none;
+  /* firefox hide scrollbar  */
+}
+
+.textDiv::-webkit-scrollbar {
+  display: none;
+}
+
+.textDiv p {
+  font-family: "Quicksand", sans-serif;
+  margin: 0px 0px 0px 5px;
+  font-weight: 650;
+  font-size: 13px;
+  letter-spacing: 0.8px;
+  /* color: rgb(112, 112, 112); */
+  color: var(--loginId-text-color);
+  font-size: 0.81rem;
+}
+
+.inputField {
+  width: 100%;
+  height: 85%;
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 550;
+  letter-spacing: 0.2px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 0px 5px 0px 5px;
+  margin: 0px 0px 0px 0px;
+  border: 1px dashed #00b7fd;
+  background: #00b5fd11;
+  color: #00b7fd;
+  /* font-size: 0.82rem; */
+}
+
+.light {
+  background-color: white;
+}
+
+.dark {
+  background-color: #2b2c3e;
+}
+
+.inputField:focus {
+  border: 2px solid #1072f1;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .loginIdContainer {
+    position: relative;
+    display: grid;
+    width: 83% !important;
+    /* aspect-ratio: 3.73/1 !important; */
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: 25% minmax(0, 1fr) minmax(0, 1fr) !important;
+    /* grid-template-columns: 70px minmax(0, 1fr) minmax(0, 1fr) !important; */
+    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+
+  }
+
+  .inputField {
+    font-size: clamp(0.81rem, 0.23rem + 2.9vw, 1.1rem) !important;
+  }
+
+  .textIcon {
+    font-size: clamp(0.8rem, 0.2rem + 3vw, 1.1rem) !important;
+  }
+
+  .textDiv p {
+    font-size: clamp(0.81rem, 0.23rem + 2.9vw, 1.1rem) !important;
+  }
+
+  .websiteDiv p {
+    font-size: clamp(0.85rem, 0.15rem + 3.5vw, 1.2rem) !important;
+  }
+
+  .favIcon {
+    height: clamp(1.1rem, 0.30000000000000027rem + 3.9999999999999996vw, 1.5rem) !important;
+    /* height: 1.1rem; */
+    /* height: 1.5rem; */
+
+
+  }
+
+  .pencilIcon {
+    height: clamp(1.1rem, 0.30000000000000027rem + 3.9999999999999996vw, 1.5rem) !important;
+  }
+
+  .trashIcon {
+    height: clamp(1.1rem, 0.30000000000000027rem + 3.9999999999999996vw, 1.5rem) !important;
+
+  }
+
+  .checkIcon {
+    height: clamp(1.1rem, 0.30000000000000027rem + 3.9999999999999996vw, 1.5rem) !important;
+  }
+
+  .cancelIcon {
+    height: clamp(1.1rem, 0.30000000000000027rem + 3.9999999999999996vw, 1.5rem) !important;
+  }
+
+}
+
+@media only screen and (max-width: 320px) {
+  .loginIdContainer {
+    position: relative;
+    display: grid;
+    width: 83% !important;
+    /* aspect-ratio: 3.73/1 !important; */
+    height: auto;
+
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: 25% minmax(0, 1fr) minmax(0, 1fr) !important;
+    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .textIcon {
+    font-size: 0.8rem;
+    font-size: 0.5rem;
+    font-size: clamp(0.5rem, 0rem + 4vw, 0.8rem) !important;
+  }
+
+  .textDiv p {
+    font-size: 0.81rem;
+    font-size: 0.65rem;
+    font-size: clamp(0.65rem, 0.3833rem + 2.133vw, 0.81rem) !important;
+  }
+
+  .websiteDiv p {
+    font-size: 0.85rem;
+    font-size: 0.7rem;
+    font-size: clamp(0.7rem, 0.45rem + 2vw, 0.85rem) !important;
+  }
+
+  .favIcon {
+
+    font-size: clamp(0.9rem, 0.5675rem + 2.6vw, 1.1rem) !important;
+    font-size: clamp(0.7rem, 0.03375rem + 5.33vw, 1.1rem) !important;
+  }
+
+  .pencilIcon {
+    font-size: 0.7em;
+    font-size: clamp(0.7rem, 0.03375rem + 5.33vw, 1.1rem) !important;
+  }
+
+  .trashIcon {
+    font-size: 1.1em;
+    font-size: 0.7em;
+    font-size: clamp(0.7rem, 0.03375rem + 5.33vw, 1.1rem) !important;
+  }
+
+  .checkIcon {
+    font-size: 1.1em;
+    font-size: clamp(0.7rem, 0.03375rem + 5.33vw, 1.1rem) !important;
+  }
+
+  .cancelIcon {
+    font-size: 1.1em;
+    font-size: clamp(0.7rem, 0.03375rem + 5.33vw, 1.1rem) !important;
+  }
+}
+
+/*____NEW CSS RULES END_____  */
+
+/* ____MEDIA QUERIES___ */
+/* @media screen and (max-width: 650px) {
+  .loginIdContainer {
+    position: relative;
+    display: grid;
+    width: 83% !important;
+    aspect-ratio: 3.73/1 !important;
+    height: auto;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background-color: #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .trashIcon {
+    font-size: 17px;
+    cursor: pointer;
+    font-size: 1.3em;
+  }
+  .pencilIcon {
+    font-size: 17px;
+    cursor: pointer;
+    font-size: 1.3em;
+  }
+  .cancelIcon {
+    font-size: 17px;
+    cursor: pointer;
+    font-size: 1.3em;
+  }
+  .checkIcon {
+    font-size: 17px;
+    cursor: pointer;
+    font-size: 1.3em;
+  }
+  .favIcon {
+    font-size: 17px;
+    cursor: pointer;
+    font-size: 1.5em;
+  }
+}
+@media screen and (max-width: 345px) {
+  .favIcon {
+    font-size: 19px;
+    font-size: 1.3em;
+  }
+  .pencilIcon {
+    font-size: 1.1em;
+  }
+  .trashIcon {
+    font-size: 20px;
+    font-size: 1.1em;
+  }
+
+  .checkIcon {
+    font-size: 20px;
+    font-size: 1.2em;
+  }
+  .cancelIcon {
+    font-size: 20px;
+    font-size: 1.2em;
+  }
+}
+@media screen and (max-width: 300px) {
+  .favIcon {
+    font-size: 19px;
+    font-size: 1em;
+  }
+  .pencilIcon {
+    font-size: 0.8em;
+  }
+
+  .trashIcon {
+    font-size: 0.8em;
+  }
+
+  .checkIcon {
+    font-size: 20px;
+    font-size: 1.2em;
+  }
+  .cancelIcon {
+    font-size: 20px;
+    font-size: 1.2em;
+  }
+  .textDiv p {
+    font-family: "Quicksand", sans-serif;
+    margin: 0px 0px 0px 5px;
+    font-weight: 650;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+  }
+  .websiteDiv p {
+    margin: 0px 0px 0px 5px;
+    font-family: "Quicksand", sans-serif;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    font-size: 12px;
+  }
+} */

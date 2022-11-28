@@ -1,0 +1,111 @@
+.modalContainer {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  min-width: 250px;
+  width: 90%;
+  height: 130px;
+  border-radius: 10px;
+  background-color: white;
+  display: grid;
+  grid-template-rows: 1fr 30%;
+  align-items: center;
+  z-index: 40;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.075), 0 5px 5px rgba(0, 0, 0, 0.048);
+  /* border: 1px solid red; */
+  -webkit-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
+    0 15px 12px rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
+    0 15px 12px rgba(0, 0, 0, 0.22);
+  -ms-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
+    0 15px 12px rgba(0, 0, 0, 0.22);
+  -o-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  box-sizing: border-box;
+  padding: 5px;
+}
+.dialogDiv {
+  /* position: absolute; */
+  grid-row-start: 1;
+  grid-row-end: 2;
+  /* border: 1px solid blue; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* padding: 5%; */
+  /* background-color: white; */
+}
+.icon {
+  font-size: 25px;
+  color: #eb5757;
+  margin: 0px 0px 15px 5px;
+}
+.dialogDiv p {
+  margin: 0px 0px 0px 0px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 650;
+  color: black;
+  font-size: 13px;
+}
+.modalBtnDiv {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  /* border: 1px solid red; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.modalCancelBtn {
+  width: 40%;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #edf4fa;
+  cursor: pointer;
+
+}
+.modalCancelBtn p {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  color: gray;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+}
+.modalCancelBtn:hover {
+  background-color: #d1dbe4;
+}
+.modalConfirmBtn {
+  width: 100px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border-radius: 5px;
+  background-color: #eb5757;
+  cursor: pointer;
+
+}
+.modalConfirmBtn p {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  color: white;
+  font-size: 14px;
+  /* width: 100%; */
+  margin: 0px 0px 0px 0px;
+  letter-spacing: 0.3px;
+}

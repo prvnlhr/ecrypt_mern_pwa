@@ -1,0 +1,185 @@
+.loginsList {
+  position: relative;
+  width: 99.8%;
+  height: 100%;
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  align-content: center;
+  z-index: 45;
+  webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.spinnerDiv {
+  position: absolute;
+
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.contentContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  scroll-behavior: smooth;
+
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  /* border: 1px solid green; */
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-bottom: 200px;
+  box-sizing: border-box;
+
+
+  scrollbar-width: none;
+  /* firefox hide scrollbar  */
+  -ms-overflow-style: none;
+  /* firefox hide scrollbar  */
+
+}
+
+
+
+/*_____________________*/
+
+
+.fullContentCard {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  background-color: white;
+}
+
+/*_____________________*/
+
+
+
+.contentContainerCollapse {
+  border-radius: 0px 0px 0px 0px;
+  width: 100%;
+  height: 100%;
+  /* width: 70% !important; */
+  /* border: 1px solid green; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  overflow-y: scroll !important;
+  /* align-items: center; */
+  scroll-behavior: smooth;
+
+  /* background-color: rgb(255, 255, 255); */
+  /* background-color: #482ff7; */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  /* border-radius: 0px 0px 0px 0px; */
+}
+
+.contentContainer::-webkit-scrollbar {
+  /* background-color: rgba(255, 255, 255, 0); */
+  height: 4px;
+  width: 5px;
+  /* display: none; */
+}
+
+.contentContainer::-webkit-scrollbar-track {
+  background-color: rgb(231, 228, 228);
+  background-color: rgba(231, 228, 228, 0.062);
+
+  width: 2px;
+}
+
+.contentContainer::-webkit-scrollbar-thumb {
+  background-color: #2f89fc;
+  border-radius: 4px;
+}
+
+.contentContainerCollapse::-webkit-scrollbar {
+  background-color: #fff;
+  background-color: rgba(231, 228, 228, 0.062);
+
+  height: 4px;
+  width: 5px;
+}
+
+.contentContainerCollapse::-webkit-scrollbar-track {
+  background-color: rgb(231, 228, 228);
+}
+
+.contentContainerCollapse::-webkit-scrollbar-thumb {
+  background-color: #2f89fc;
+  border-radius: 4px;
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.ldsRing div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .contentContainer {
+    padding-left: 0;
+    padding-right: 0;
+    /* border: 1px solid black; */
+    height: 90%;
+  }
+}

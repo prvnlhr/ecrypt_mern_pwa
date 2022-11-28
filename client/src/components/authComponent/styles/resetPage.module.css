@@ -1,0 +1,355 @@
+/* __________________________________________________________-*/
+/* __________________________________________________________-*/
+/* __________________________________________________________-*/
+
+.formComponent {
+  position: absolute;
+  /* position: relative; */
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* height: 400px; */
+  aspect-ratio: 4/5;
+  top: 25%;
+  bottom: 25%;
+  right: 0;
+  left: 0;
+  /* border: 1px solid rgba(114, 114, 114, 0.164); */
+  border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  overflow: hidden;
+  background-color: white;
+  /* background-color: rgb(255, 255, 255); */
+  /* backdrop-filter: blur(4px); */
+  /* -webkit-backdrop-filter: blur(4px); */
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.075), 0 5px 5px rgba(0, 0, 0, 0.048);
+  box-sizing: border-box;
+  z-index: 45;
+  /* 
+    -webkit-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
+      0 15px 12px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
+      0 15px 12px rgba(0, 0, 0, 0.22);
+    -ms-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
+      0 15px 12px rgba(0, 0, 0, 0.22);
+    -o-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); */
+}
+
+.formTag {
+  border: 1px solid rgba(0, 0, 0, 0.055);
+  position: relative;
+  width: 95%;
+  height: 95%;
+  /* aspect-ratio: 1/1; */
+  /* top: 2%; */
+  /* right: 0; */
+  /* left: 0; */
+  display: grid;
+  /* grid-template-rows: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%; */
+  grid-template-rows: 0.8fr 0.5fr 1fr 1fr 0.8fr 0.3fr;
+  /* grid-template-columns: 50% 50%; */
+
+  grid-template-columns: 100%;
+  grid-template-areas:
+    "headingWrapper"
+    "messageWrapper"
+    "password1Wrapper"
+    "password2Wrapper"
+    "buttonWrapper"
+    "BottomLinkWrapper";
+
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  background-color: white;
+
+  /* background-color: rgba(255, 255, 255, 0.938); */
+  /* backdrop-filter: blur(20px); */
+  /* -webkit-backdrop-filter: blur(20px); */
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 0 20px 0 20px;
+  grid-gap: 0px;
+}
+.headingWrapper {
+  position: relative;
+  grid-area: headingWrapper;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border-bottom: 1px solid #1072f1;
+}
+
+.HeadingText {
+  font-family: "Quicksand", sans-serif;
+  /* text-transform: uppercase; */
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+  margin: 0px 0px 0px 2px;
+  letter-spacing: 0.3px;
+}
+
+.messageWrapper {
+  grid-area: messageWrapper;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  /* border: 1px solid green; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+.errorDiv {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fee4e3;
+  border: 1px solid #cf4949;
+  color: #cf4949;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+  /* text-transform: uppercase; */
+  font-size: 0.8em;
+  font-weight: 550;
+  margin: 0px 0px 0px 0px;
+  letter-spacing: 0.3px;
+}
+.successDiv {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d4f9e8;
+  border: 1px solid #3bc47f;
+  color: #3bc47f;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+  /* text-transform: uppercase; */
+  font-size: 0.8em;
+  font-weight: 550;
+  margin: 0px 0px 0px 0px;
+  letter-spacing: 0.3px;
+}
+.icon {
+  font-size: 17px;
+  margin: 0px 5px 0px 0px;
+}
+.password1Wrapper {
+  grid-area: password1Wrapper;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  /* border: 1px solid rgb(255, 230, 0); */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* align-items: center; */
+}
+.password2Wrapper {
+  grid-area: password2Wrapper;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  /* border: 1px solid rgb(66, 61, 11); */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* align-items: center; */
+}
+.buttonWrapper {
+  grid-area: buttonWrapper;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.BottomLinkWrapper {
+  grid-area: BottomLinkWrapper;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.BottomLinkWrapper p {
+  font-family: "Quicksand", sans-serif;
+  /* text-transform: uppercase; */
+  font-size: 13px;
+  color: rgb(34, 33, 33);
+  font-weight: 550;
+  margin: 0px 0px 0px 0px;
+  letter-spacing: 0.3px;
+}
+.link {
+  font-family: "Quicksand", sans-serif;
+  /* text-transform: uppercase; */
+  font-size: 13px;
+  color: #071a52 !important;
+  font-weight: bold;
+  margin: 0px 0px 0px 2px;
+  letter-spacing: 0.3px;
+  text-decoration: underline;
+}
+.buttonWrapper button {
+  width: 90%;
+  height: 30px;
+  background-color: #0075ff;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  /* outline: 2px double slategray; */
+}
+button p {
+  font-family: "Quicksand", sans-serif;
+  /* text-transform: uppercase; */
+  font-size: 13px;
+  color: white;
+  font-weight: 550;
+  margin: 0px 0px 0px 0px;
+  letter-spacing: 0.3px;
+}
+.labelDiv {
+  height: 30%;
+  width: 100%;
+  /* border: 1px solid black; */
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  box-sizing: border-box;
+  /* padding-left: 5%; */
+}
+.labelText {
+  font-family: "Quicksand", sans-serif;
+  text-transform: capitalize;
+  font-size: 13px;
+  color: #8b8ea1;
+  font-weight: bold;
+  margin: 0px 0px 0px 2px;
+  letter-spacing: 0.3px;
+}
+.inputDiv {
+  width: 100%;
+  height: 60%;
+  display: flex;
+
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  /* border: 1px solid black; */
+  box-sizing: border-box;
+  /* padding-left: 5%; */
+}
+.inputField {
+  display: flex;
+  /* flex-direction: row; */
+  /* justify-content: flex-start; */
+  text-align: start;
+  width: 100%;
+  height: 90%;
+  border: 1px solid #dbdbe3;
+  border-radius: 5px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 13px;
+  color: slategrey;
+  font-weight: 550;
+  letter-spacing: 0.4px;
+
+  margin: 0px 0px 0px 0px;
+  padding: 0 0 0 10px;
+  box-sizing: border-box;
+  caret-color: #1072f1;
+  outline: none;
+}
+.inputField:focus {
+  /* outline: 1px solid red; */
+  border: 2px solid #1072f1;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .formComponent {
+    /* width:300px; */
+    width: 78%;
+    /* height: 400px; */
+    aspect-ratio: 4/5;
+  }
+  .labelText {
+    font-family: "Quicksand", sans-serif;
+    text-transform: uppercase;
+    font-size: clamp(0.6rem , -1.1102230246251565e-16rem + 3.0000000000000004vw, 0.9rem) !important;
+    color: #8b8ea1;
+    font-weight: bold;
+    margin: 0px 0px 0px 2px;
+    letter-spacing: 0.3px;
+  }
+  .buttonWrapper button {
+    width: 80%;
+    height: clamp(1.4rem , -0.20000000000000062rem + 8.000000000000004vw, 2.2rem) !important;
+  }
+  button p {
+    font-size: 1rem !important;
+    font-size: clamp(
+      0.7rem , 0.09999999999999987rem + 3.0000000000000004vw, 1.0rem
+    ) !important;
+  }
+  .BottomLinkWrapper p {
+    font-size: 1.1rem;
+    margin: 0px 0px 0px 0px;
+    letter-spacing: 0.3px;
+    font-size: clamp(0.7rem , -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
+  }
+  .link {
+    margin: 0px 0px 0px 3px;
+    font-size: clamp(
+      0.7rem,
+      -0.10000000000000031rem + 4.000000000000002vw,
+      1.1rem
+    ) !important;
+  }
+  .inputField::placeholder {
+    font-family: "Quicksand", sans-serif;
+    font-size: clamp(
+      0.7rem,
+      -0.10000000000000031rem + 4.000000000000002vw,
+      1.1rem
+    ) !important;
+  }
+}
+

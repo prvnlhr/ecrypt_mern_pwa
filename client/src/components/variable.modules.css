@@ -1,0 +1,198 @@
+:root {
+  /* App background styles*/
+  --app-bg-strip-one: #fff9f9;
+  --app-bg-strip-two: #f2f1fd;
+  --app-bg-strip-three: #f6fbfe;
+  --card-bg-dark: white;
+  /* tabBar styles */
+  --tab-links-text-color: #92939d;
+  --tab-bar-indicator-color: #00b7fd;
+  /* card Styles */
+  --card-bg: white;
+  --card-ring-div-color: #021639;
+  --card-ring-color: #4d4c7d;
+  --card-ring-after-color: #827397;
+  --card-labels-text-color: white;
+  --card-number-text-color: white;
+  --card-other-text-color: white;
+  --card-overlay-text-color: #4d4c7d;
+  --card-text-color: black;
+  --card-cardNo-text-color: #708090;
+  --card-label-text: #708090;
+  /* icons  */
+
+  /* loginIds */
+  --loginId-website-text-color: black;
+  --loginId-text-color: slategray;
+  --loginId-logo-div-border: rgba(19, 18, 18, 0.103);
+
+  /* dashboard */
+  --dashboard-count-text: black;
+  --dashboard-footer-text: slategray;
+
+  /* activity List */
+  --activity-heading-text: black;
+
+  --right-portion-after: rgba(112, 128, 144, 0.336);
+  --date-container-after:  linear-gradient(180deg, #F2F9ED 0%, #E1F0F2 53.94%, #D3EDF8 100%);
+  --date-container-bg: #f2f2f2;
+  --date-container-border: #30303021;
+
+  --date-text-color: black;
+  --month-text-color: rgba(112, 128, 144, 0.781);
+  --time-text-color: black;
+  --old-value-text-color: black;
+  --new-value-text-color: #2c5fdc;
+  --changed-to-text-color: gray;
+  --changed-to-arrow-color: black;
+  --action-div-bg: #edf4fa;
+  --action-div-border: rgba(112, 128, 144, 0.123);
+  --action-text-color: black;
+  --category-div-bg: #fffbfa;
+
+  /* doc */
+  --doc-bg: #fffbfa;
+  --doc-border-color: rgba(255, 255, 255, 0.904);
+  --doc-title-text: slategray;
+
+  /* settings */
+  --settings-profile-label: gray;
+  --settings-heading-text: black;
+  --profile-inactive-input-bg: rgba(245, 245, 245, 0.404);
+  --profile-active-input-bg: #00b5fd2f;
+  --profile-inactive-text-color: slategray;
+  --profile-active-text-color: black;
+  --delete-input-label-color: black;
+
+  /* forms */
+  --form-component-body-color: rgba(255, 255, 255, 0.25);
+  --form-tag-body-color: white;
+  --form-tag-border-color: rgba(0, 0, 0, 0.075);
+  --form-input-text-color: slategrey;
+  --form-input-border-color: #dbdbe3;
+
+  --form-input-label-color: #8b8ea1;
+  --form-input-placeholder-color: rgba(116, 113, 113, 0.418);
+  --form-heading-text-color: rgb(82, 81, 81);
+
+  /* logout popup */
+  --popup-bg: white;
+  --popup-username-text-color: rgb(82, 81, 81);
+  --popup-logout-btn-color: rgba(253, 1, 1, 0.425);
+  --theme-toggle-switch-color: #00b7fd;
+  --theme-toggle-circle-color: white;
+
+  /* searchBar */
+
+  --input-small-color: white;
+  --input-full-color: white;
+
+  /* searchList */
+  --list-bg-color: hsla(205, 55%, 94%, 1);
+  --list-bg-gradient: linear-gradient(
+    90deg,
+    hsla(205, 55%, 94%, 1) 19%,
+    hsla(209, 94%, 93%, 1) 68%,
+    hsla(208, 87%, 91%, 1) 98%
+  );
+  --list-bg-gradient-moz: -moz-linear-gradient(
+    90deg,
+    hsla(205, 55%, 94%, 1) 19%,
+    hsla(209, 94%, 93%, 1) 68%,
+    hsla(208, 87%, 91%, 1) 98%
+  );
+  --list-bg-gradient-webkit: -webkit-linear-gradient(
+    90deg,
+    hsla(205, 55%, 94%, 1) 19%,
+    hsla(209, 94%, 93%, 1) 68%,
+    hsla(208, 87%, 91%, 1) 98%
+  );
+
+
+
+  /* userBadge */
+  --badge-wrapper-color: white;
+  --badge-wrapper-border-color: rgba(112, 128, 144, 0.233);
+  --badge-text-color: #00b7fd;
+  --badge-border-color: rgba(112, 128, 144, 0.233);
+
+
+
+}
+
+[data-theme="dark"] {
+  --card-bg: #26273b;
+  --app-bg-strip-one: #3d3e51;
+  --app-bg-strip-two: #40445a;
+  --app-bg-strip-three: #4c5265;
+  --card-ring-color: #4d4c7d;
+  --card-ring-after-color: #827397;
+  --card-label-text: white;
+  --card-text-color: white;
+  --card-cardNo-text-color: white;
+  --loginId-website-text-color: white;
+  --loginId-text-color: white;
+  --tab-links-text-color: rgba(255, 255, 255, 0.26);
+  --loginId-logo-div-border: rgba(255, 255, 255, 0.123);
+  --activity-heading-text: white;
+  --dashboard-count-text: white;
+  --dashboard-footer-text: #b4b4b7;
+  --right-portion-after: rgba(112, 128, 144, 0.336);
+  --date-container-after: #3d3e51;
+  --date-container-bg: #26273b;
+  --date-container-border: transparent;
+  --date-text-color: white;
+  --month-text-color: rgba(207, 208, 209, 0.781);
+  --time-text-color: white;
+  --old-value-text-color: white;
+  --new-value-text-color: black;
+  --changed-to-text-color: #acacac;
+  --new-value-text-color: #cbabea;
+  --changed-to-arrow-color: white;
+  --action-div-bg: #26273b31;
+  --action-div-border: #71739c;
+  --action-text-color: white;
+  --category-div-bg: transparent;
+  --doc-bg: #26273b;
+  --doc-border-color: rgba(255, 255, 255, 0.226);
+  --doc-title-text: white;
+  --settings-profile-label: rgb(202, 202, 202);
+  --settings-heading-text: white;
+  --profile-inactive-input-bg: rgba(129, 56, 151, 0.116);
+  --profile-inactive-text-color: #acacac;
+  --profile-active-text-color: white;
+  --delete-input-label-color: white;
+
+  --form-component-body-color: #26273b7c;
+  --form-tag-body-color: #26273b;
+  --form-tag-border-color: rgba(0, 0, 0, 0.075);
+  --form-input-text-color: white;
+  --form-input-border-color: #dbdbe359;
+
+  --form-input-label-color: white;
+  --form-input-placeholder-color: #acacac71;
+  --form-heading-text-color: #c4c4c4;
+
+  --popup-bg: #26273b;
+  --popup-username-text-color: white;
+  --popup-logout-btn-color: rgba(253, 1, 1, 0.425);
+  --theme-toggle-switch-color: white;
+  --theme-toggle-circle-color: black;
+
+  --input-small-color: #26273b7e;
+  --input-full-color: #26273b7e;
+  --input-text-color: #ffffff;
+  --input-x-icon-color: #ffffff;
+
+  --list-bg-color: #4c5265;
+  --list-bg-gradient: #4c5265;
+  --list-bg-gradient-moz: #4c5265;
+  --list-bg-gradient-webkit: #4c5265;
+
+
+  --badge-wrapper-color: #26273b;
+  --badge-text-color: #00b7fd;
+  --badge-border-color: slategray;
+  --badge-wrapper-border-color: transparent
+
+}

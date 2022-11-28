@@ -1,0 +1,86 @@
+@import "../../variable.modules.css";
+
+
+.searchList {
+  position: absolute;
+  /* position: fixed; */
+  /* border-top: 1px solid rgba(175, 173, 173, 0.377); */
+  top: 0;
+  /* overflow: hidden; */
+
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  /* border-radius: 10px 10px 0px 0px; */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  /* border: 1px solid rgba(175, 173, 173, 0.377); */
+
+  background-color: rgba(58, 58, 58, 0.815);
+  z-index: 50;
+  padding-top: 5%;
+  background: var(--list-bg-color);
+  background: var(--list-bg-gradient);
+  background: var(--list-bg-gradient-moz);
+  background:var(--list-bg-gradient-webkit);
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E7F1F8", endColorstr="#DDEEFE", GradientType=1 );
+  z-index: 800;
+  box-sizing: border-box;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.appBgDiv1 {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  /* border:1px solid red; */
+}
+.section1 {
+  width: 45%;
+  height: 100%;
+  /* border:1px solid black; */
+  background-color: #fff9f9;
+}
+.section2 {
+  width: 35%;
+  height: 100%;
+  /* border:1px solid black; */
+  background-color: #f2f1fd;
+}
+.section3 {
+  width: 20%;
+  height: 100%;
+  /* border:1px solid black; */
+  background-color: #f6fbfe;
+}
+
+.searchList::-webkit-scrollbar {
+  background-color: rgba(231, 228, 228, 0.062);
+
+  height: 4px;
+  width: 5px;
+  z-index: 18;
+  /* display: none; */
+}
+.searchList::-webkit-scrollbar-track {
+  background-color: rgba(231, 228, 228, 0.062);
+
+  width: 2px;
+  z-index: 18;
+}
+.searchList::-webkit-scrollbar-thumb {
+  background-color: #2f89fc;
+  border-radius: 4px;
+  z-index: 18;
+}

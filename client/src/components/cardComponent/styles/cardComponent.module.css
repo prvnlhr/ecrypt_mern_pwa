@@ -1,0 +1,738 @@
+@import "../../variable.modules.css";
+
+
+.cardComponent {
+  position: relative;
+  width: 250px;
+  /* height: auto; */
+  height: 155px;
+
+  aspect-ratio: 8/5 !important;
+  border-radius: 15px;
+  margin: 15px 15px 15px 15px;
+  margin: 30px 30px 15px 30px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.5fr) minmax(0, 0.5fr);
+  grid-template-rows: 25% 25% 25% 25%;
+  grid-template-areas:
+    "logoWrapper buttonWrapper buttonWrapper"
+    "bankNameWrapper bankNameWrapper chipWrapper "
+    "cardNoWrapper cardNoWrapper cardNoWrapper"
+    "cardHolderWrapper cvvWrapper cardExpiryWrapper";
+  /* padding-left: 20px; */
+  /* background-color: red; */
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.075), 0 5px 5px rgba(0, 0, 0, 0.048);
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+  z-index: 3;
+  /* background: #021639; */
+  background: var(--card-bg);
+  /* background: rgba(31, 22, 33, 0.46); */
+  backdrop-filter: blur(19.6133px);
+}
+
+.overlayDiv {
+  /* display: none; */
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  bottom: 0px;
+  right: 0px;
+  z-index: 2;
+  overflow: hidden;
+  padding: 0px;
+  border-radius: 8px;
+
+
+}
+
+.designElement {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  border: 1px solid red;
+
+}
+
+.logoWrapper {
+  grid-area: logoWrapper;
+  position: relative;
+  /* border: 1px solid red; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.logoDiv {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: end;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+  padding-left: 10px;
+  object-fit: contain;
+}
+
+.logo {
+  height: 70%;
+  /* border: 1px solid red; */
+}
+
+.buttonWrapper {
+  grid-area: buttonWrapper;
+  position: relative;
+  /* border: 1px solid darkblue; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  z-index: 3;
+
+}
+
+.buttonContainer {
+  position: relative;
+  grid-area: buttonDiv;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
+.favBtn {
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+  background: none;
+  outline: none;
+  border: none;
+  width: 15%;
+  width: 25%;
+  height: 100%;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 3;
+  /* border: 1px solid red; */
+}
+
+.editBtnsContainer {
+  /* border: 1px solid red; */
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.deleteIconDiv {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* border: 1px solid red; */
+}
+
+.editIconDiv {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
+.editIconDiv button {
+  position: relative;
+}
+
+.cancelIconDiv {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fafafa;
+  background: none;
+}
+
+.checkIconDiv {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fafafa;
+  background: none;
+}
+
+.pencilIcon {
+  cursor: pointer;
+  height: 1.2rem;
+}
+
+.trashIcon {
+  cursor: pointer;
+  height: 1.2rem;
+}
+
+.favIcon {
+  cursor: pointer;
+  height: 1.2rem;
+}
+
+.checkIcon {
+  cursor: pointer;
+  height: 1.2rem;
+}
+
+.cancelIcon {
+  cursor: pointer;
+  height: 1.2rem;
+}
+
+.bankNameWrapper {
+  grid-area: bankNameWrapper;
+  position: relative;
+  /* border: 1px solid lightblue; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  z-index: 3;
+
+}
+
+.bankTextDiv {
+  position: relative;
+  border: 1px solid rgba(128, 128, 128, 0);
+  /* border: 1px solid red; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 5px;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+.bankTextDiv::-webkit-scrollbar {
+  display: none;
+}
+
+.bankNameText {
+  font-family: "Quicksand", sans-serif;
+
+  margin: 0px 0px 0px 5px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--card-text-color);
+  font-size: 1rem;
+}
+
+.bankInputField {
+  width: 100%;
+  height: 80%;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  font-family: "Quicksand", sans-serif;
+
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 0px 0px 0px 5px;
+  border: 1px dashed #00b7fd;
+  background: #00b5fd11;
+  color: #00b7fd;
+  margin: 0px 0px 0px 5px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 1rem;
+}
+
+.chipWrapper {
+  grid-area: chipWrapper;
+  position: relative;
+  /* border: 1px solid rgb(252, 252, 244); */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.chipDiv {
+  width: 50%;
+  /* height: 80%; */
+  color: white;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.cardNoWrapper {
+  grid-area: cardNoWrapper;
+  position: relative;
+  /* border: 1px solid purple; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  z-index: 3;
+
+}
+
+.cardNoTextDiv {
+  position: relative;
+  border: 1px solid rgba(128, 128, 128, 0);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 5px;
+  overflow-x: scroll;
+  white-space: nowrap;
+  scrollbar-width: none;
+  /* firefox hide scrollbar  */
+  -ms-overflow-style: none;
+  /* firefox hide scrollbar  */
+}
+
+.cardNoTextDiv::-webkit-scrollbar {
+  display: none;
+}
+
+.cardNumberText {
+  position: relative;
+  font-family: "Share Tech Mono", monospace;
+  margin: 0px 0px 0px 5px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: var(--card-cardNo-text-color);
+
+  font-size: 1rem;
+}
+
+.cardNoInputField {
+  width: 90%;
+  height: 80%;
+  outline: none;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 0px 5px 0px 5px;
+  border: 1px dashed #00b7fd;
+  background: #00b5fd11;
+  color: #00b7fd;
+  font-family: "Share Tech Mono", monospace;
+  margin: 0px 0px 0px 5px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  font-size: 1rem;
+}
+
+.cardHolderWrapper {
+  grid-area: cardHolderWrapper;
+  position: relative;
+  /* border: 1px solid blue; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  z-index: 3;
+
+}
+
+.cardholderTextDiv {
+  position: relative;
+  border: 1px solid rgba(128, 128, 128, 0);
+  /* border: 1px solid gray; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 5px;
+  /* font-smooth: always; */
+  overflow-x: scroll;
+  white-space: nowrap;
+  scrollbar-width: none;
+  /* firefox hide scrollbar  */
+  -ms-overflow-style: none;
+  /* firefox hide scrollbar  */
+}
+
+.cardholderTextDiv::-webkit-scrollbar {
+  display: none;
+}
+
+.cardholderText {
+  font-family: "Quicksand", sans-serif;
+  margin: 0px 0px 0px 5px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--card-text-color);
+  font-size: 0.9rem;
+  font-smooth: always;
+}
+
+.cardHolderInputField {
+  width: 90%;
+  height: 80%;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  font-family: "Quicksand", sans-serif;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 0px 0px 0px 5px;
+  border: 1px dashed #00b7fd;
+  background: #00b5fd11;
+  color: #00b7fd;
+  margin: 0px 0px 0px 5px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+
+.cvvWrapper {
+  grid-area: cvvWrapper;
+  position: relative;
+  /* border: 1px solid green; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  z-index: 3;
+
+}
+
+.cardExpiryWrapper {
+  grid-area: cardExpiryWrapper;
+  position: relative;
+  /* border: 1px solid orange; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+.containerTop {
+  position: relative;
+  /* border: 1px solid red; */
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.labelText {
+  font-family: "Poppins", sans-serif;
+  margin: 0px 0px 0px 0px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: var(--card-label-text);
+  font-size: 0.6rem;
+}
+
+.containerBottom {
+  position: relative;
+  /* border: 1px solid blue; */
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.cvvTextDiv {
+  position: relative;
+  border: 1px solid rgba(128, 128, 128, 0);
+  /* border: 1px solid gray; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+  padding: 2px 0px 0px 0px;
+}
+
+.expiryTextDiv {
+  position: relative;
+  border: 1px solid rgba(128, 128, 128, 0);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+  padding: 2px 0px 0px 0px;
+}
+
+.cvvText {
+  font-family: "Share Tech Mono", monospace;
+  margin: 0px 0px 0px 0px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--card-text-color);
+
+  font-size: 0.8rem;
+}
+
+.expiryText {
+  font-family: "Share Tech Mono", monospace;
+  margin: 0px 0px 0px 0px;
+  color: var(--card-text-color);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+}
+
+.cardCvvInputField {
+  width: 80%;
+  height: auto;
+  outline: none;
+  box-sizing: border-box;
+  border-radius: 2px;
+  padding: 2px 0px 2px 0px;
+  border: 1px dashed #00b7fd;
+  background: #00b5fd11;
+  color: #00b7fd;
+  font-family: "Share Tech Mono", monospace;
+  margin: 0px 0px 0px 0px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+  text-align: center;
+  box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.cardExpiryInputField {
+  width: 80%;
+  height: auto;
+  outline: none;
+  box-sizing: border-box;
+  border-radius: 2px;
+  padding: 2px 0px 2px 0px;
+  border: 1px dashed #00b7fd;
+  background: #00b5fd11;
+  color: #00b7fd;
+  font-family: "Share Tech Mono", monospace;
+  margin: 0px 0px 0px 0px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+/* 320--480 */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .cardComponent {
+    width: 79%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+
+  .favIcon {
+    height: clamp(1.1rem,
+        0.30000000000000027rem + 3.9999999999999996vw,
+        1.5rem) !important;
+  }
+
+  .pencilIcon {
+    height: clamp(1.1rem,
+        0.30000000000000027rem + 3.9999999999999996vw,
+        1.5rem) !important;
+  }
+
+  .trashIcon {
+    height: clamp(1.1rem,
+        0.30000000000000027rem + 3.9999999999999996vw,
+        1.5rem) !important;
+  }
+
+  .checkIcon {
+    height: clamp(1.1rem,
+        0.30000000000000027rem + 3.9999999999999996vw,
+        1.5rem) !important;
+  }
+
+  .cancelIcon {
+    height: clamp(1.1rem,
+        0.30000000000000027rem + 3.9999999999999996vw,
+        1.5rem) !important;
+  }
+
+  .cvvText {
+    margin: 0px 0px 0px 0px;
+    letter-spacing: 0.5px;
+    font-size: 1rem;
+    font-size: clamp(0.7rem,
+        0.09999999999999987rem + 3.0000000000000004vw,
+        1rem) !important;
+  }
+
+  .expiryText {
+    margin: 0px 0px 0px 0px;
+    letter-spacing: 0.5px;
+    font-size: 0.7rem;
+    font-size: 1rem;
+    font-size: clamp(0.7rem,
+        0.09999999999999987rem + 3.0000000000000004vw,
+        1rem) !important;
+  }
+
+  .labelText {
+    margin: 0px 0px 0px 0px;
+    letter-spacing: 0.5px;
+    font-size: 0.6rem;
+    font-size: 0.8rem;
+    font-size: clamp(0.6rem,
+        0.19999999999999984rem + 2.000000000000001vw,
+        0.8rem) !important;
+  }
+
+  .cardholderText {
+    margin: 0px 0px 0px 5px;
+    letter-spacing: 0.2px;
+    /* font-size: clamp(0.8rem, 0.4rem + 2vw, 1rem) !important; */
+    font-size: 0.9rem;
+    /* font-size: 1.5rem; */
+    font-size: clamp(0.9rem, 0.09999999999999998rem + 4vw, 1.3rem) !important;
+  }
+
+  .bankNameText {
+    margin: 0px 0px 0px 5px;
+    letter-spacing: 0.2px;
+    font-size: 1.4rem;
+
+    font-size: clamp(1rem,
+        0.20000000000000018rem + 3.9999999999999996vw,
+        1.4rem) !important;
+  }
+
+  .cardNumberText {
+    margin: 0px 0px 0px 5px;
+    letter-spacing: 2px;
+    font-size: clamp(1rem, 0.4rem + 3vw, 1.3rem) !important;
+  }
+
+  .logo {
+    height: 1.5rem;
+    /* height: 2.5rem; */
+    height: clamp(1.5rem, -0.5rem + 10.0vw, 2.5rem) !important;
+  }
+
+  .bankInputField {
+
+    margin: 0px 0px 0px 5px;
+    font: weight 400px;
+    letter-spacing: 0.2px;
+    font-size: clamp(1rem,
+        0.20000000000000018rem + 3.9999999999999996vw,
+        1.4rem) !important;
+  }
+
+  .cardNoInputField {
+
+    margin: 0px 0px 0px 5px;
+    font-weight: 400;
+    letter-spacing: 2px;
+
+    font-size: clamp(1rem, 0.4rem + 3vw, 1.3rem) !important;
+
+  }
+
+  .cardHolderInputField {
+
+    margin: 0px 0px 0px 5px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    font-size: clamp(0.9rem, 0.09999999999999998rem + 4vw, 1.3rem) !important;
+
+    box-sizing: border-box;
+  }
+
+  .cardCvvInputField {
+    margin: 0px 0px 0px 0px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    font-size: clamp(0.7rem,
+        0.09999999999999987rem + 3.0000000000000004vw,
+        1rem) !important;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .cardExpiryInputField {
+
+    margin: 0px 0px 0px 0px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    font-size: clamp(0.7rem,
+        0.09999999999999987rem + 3.0000000000000004vw,
+        1rem) !important;
+    text-align: center;
+  }
+}

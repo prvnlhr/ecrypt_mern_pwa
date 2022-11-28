@@ -1,0 +1,288 @@
+.formComponent {
+  position: absolute;
+  /* position: relative; */
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* height: 400px; */
+  aspect-ratio: 4/5;
+  top: 2%;
+  right: 0;
+  left: 0;
+  /* border: 1px solid rgba(114, 114, 114, 0.164); */
+  border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+
+  /* background-color: rgb(255, 255, 255); */
+  /* backdrop-filter: blur(4px); */
+  /* -webkit-backdrop-filter: blur(4px); */
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.075), 0 5px 5px rgba(0, 0, 0, 0.048);
+  box-sizing: border-box;
+  z-index: 45;
+
+  background: var(--form-component-body-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  -webkit-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
+    0 15px 12px rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
+    0 15px 12px rgba(0, 0, 0, 0.22);
+  -ms-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3),
+    0 15px 12px rgba(0, 0, 0, 0.22);
+  -o-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  padding: 5px;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  will-change:transform;
+}
+
+.formComponentClose {
+  position: absolute;
+  /* position: relative; */
+  bottom: 5%;
+  /* top: 0%; */
+  right: 5%;
+  /* left: 0; */
+  width: 0px;
+  height: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  overflow: hidden;
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+  -webkit-animation: scale-out-center 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    both;
+  animation: scale-out-center 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+.formTag {
+  border: 1px solid var(--form-tag-border-color);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* aspect-ratio: 1/1; */
+  /* top: 2%; */
+  /* right: 0; */
+  /* left: 0; */
+  display: grid;
+  grid-template-rows: 13% 18% 18% 18% 18% 15%;
+  grid-template-columns: 50% 50%;
+  grid-template-areas:
+    "headingWrapper headingWrapper"
+    "cardNoWrapper cardNoWrapper"
+    "bankNameWrapper bankNameWrapper"
+    "expiryDateWrapper cvvWrapper"
+    "cardHolderWrapper cardHolderWrapper"
+    "buttonWrapper buttonWrapper";
+
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  background-color: var(--form-tag-body-color);
+
+  /* background-color: rgba(255, 255, 255, 0.938); */
+  /* backdrop-filter: blur(20px); */
+  /* -webkit-backdrop-filter: blur(20px); */
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 0 15px 0 15px;
+  /* grid-gap: 5px; */
+}
+.headingWrapper {
+  position: relative;
+
+  grid-area: headingWrapper;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border-bottom: 1px solid #1072f1;
+}
+.HeadingText {
+  font-family: "Quicksand", sans-serif;
+  /* text-transform: uppercase; */
+  font-size: 16px;
+  color: var(--form-heading-text-color);
+
+  font-weight: bold;
+  margin: 0px 0px 0px 2px;
+  letter-spacing: 0.3px;
+}
+.cardNoWrapper {
+  grid-area: cardNoWrapper;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  /* border: 1px solid green; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* align-items: center; */
+}
+.bankNameWrapper {
+  grid-area: bankNameWrapper;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  /* border: 1px solid green; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* align-items: center; */
+}
+.expiryDateWrapper {
+  grid-area: expiryDateWrapper;
+  width: 95%;
+  height: 100%;
+  box-sizing: border-box;
+  /* border: 1px solid orange; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* align-items: center; */
+}
+.cvvWrapper {
+  grid-area: cvvWrapper;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  /* border: 1px solid violet; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* align-items: center; */
+}
+.cardHolderWrapper {
+  grid-area: cardHolderWrapper;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  /* border: 1px solid rgb(255, 230, 0); */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* align-items: center; */
+}
+.buttonWrapper {
+  grid-area: buttonWrapper;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.buttonWrapper button {
+  width: 80%;
+  height: 32px;
+  background-color: #0075ff;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  /* outline: 2px double slategray; */
+}
+button p {
+  font-family: "Quicksand", sans-serif;
+  /* text-transform: uppercase; */
+  font-size: 13px;
+  color: white;
+  font-weight: 550;
+  margin: 0px 0px 0px 0px;
+  letter-spacing: 0.3px;
+}
+.labelDiv {
+  height: 40%;
+  width: 100%;
+  /* border: 1px solid black; */
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  box-sizing: border-box;
+  /* padding-left: 5%; */
+}
+.labelText {
+  font-family: "Quicksand", sans-serif;
+  text-transform: capitalize;
+  font-size: 12px;
+  color: var(--form-input-label-color);
+  font-weight: bold;
+  margin: 0px 0px 0px 2px;
+  letter-spacing: 0.3px;
+}
+.inputDiv {
+  width: 100%;
+  height: 60%;
+  display: flex;
+
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  /* border: 1px solid black; */
+  box-sizing: border-box;
+  /* padding-left: 5%; */
+}
+.inputField {
+  display: flex;
+  /* flex-direction: row; */
+  /* justify-content: flex-start; */
+  text-align: start;
+  width: 100%;
+  height: 90%;
+  border: 1px solid var(--form-input-border-color);
+  border-radius: 5px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 13px;
+  color: var(--form-input-text-color);
+  font-weight: 550;
+  letter-spacing: 0.4px;
+  margin: 0px 0px 0px 0px;
+  padding: 0 0 0 10px;
+  box-sizing: border-box;
+  caret-color: #1072f1;
+  outline: none;
+  background:transparent;
+}
+
+
+
+.inputField::placeholder {
+  font-family: "Quicksand", sans-serif;
+  color: var(--form-input-placeholder-color);
+}
+
+
+.inputField:focus {
+  /* outline: 1px solid red; */
+  border: 2px solid #1072f1;
+}
+@media screen and (max-width: 550px) {
+  .formComponent {
+    width: 78%;
+    aspect-ratio: 4/5;
+  }
+}
