@@ -1,0 +1,337 @@
+.cardWrapper {
+    /* border: 1px solid blue; */
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 33% 33% 33%;
+    grid-template-areas:
+        "cardHolderWrapper cardHolderWrapper"
+        "cardNumberWrapper cardNumberWrapper"
+        "dobDateWrapper issueDateWrapper";
+    padding-bottom: 0%;
+    padding-top: 0%;
+    box-sizing: border-box;
+    justify-items: center;
+}
+
+/* _____________________________________________ */
+
+.cardHolderWrapper {
+    grid-area: cardHolderWrapper;
+    width: 90%;
+    height: 100%;
+    /* border: 1px solid orange; */
+}
+
+.cardHolderContainer {
+    height: 70%;
+    /* border: 1px solid black; */
+    display: grid;
+    align-items: center;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+        "cardHolderIconDiv cardHolderLabelTextDiv"
+        "cardHolderIconDiv cardHolderInputDiv";
+    background-color: #F3F5F9;
+    border-radius: 10px;
+}
+
+.cardHolderIconDiv {
+    grid-area: cardHolderIconDiv;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardHolderIcon {
+    font-size: 30px;
+}
+
+.cardHolderLabelTextDiv {
+    grid-area: cardHolderLabelTextDiv;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.cardHolderLabelTextDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #7E8DA4;
+}
+
+.cardHolderInputDiv {
+    grid-area: cardHolderInputDiv;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+}
+
+.cardHolderInputDiv input {
+    width: 80%;
+    height: 100%;
+    border-bottom: 1px solid #7E8DA4;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+}
+
+/* _____________________________________________ */
+.cardNumberWrapper {
+    grid-area: cardNumberWrapper;
+    width: 90%;
+    height: 100%;
+    /* border: 1px solid green; */
+}
+
+.cardNumerContainer {
+    height: 70%;
+    /* border: 1px solid black; */
+    display: grid;
+    align-items: center;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+        "cardNumberIconDiv cardNumberLabelTextDiv"
+        "cardNumberIconDiv cardNumberInputDiv";
+    background-color: #F3F5F9;
+    border-radius: 10px;
+}
+
+
+.cardNumberIconDiv {
+    grid-area: cardNumberIconDiv;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardNumIcon {
+    font-size: 25px;
+}
+
+.cardNumberLabelTextDiv {
+    grid-area: cardNumberLabelTextDiv;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.cardNumberLabelTextDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #7E8DA4;
+}
+
+.cardNumberInputDiv {
+    grid-area: cardNumberInputDiv;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+}
+
+.cardNumberInputDiv input {
+    width: 80%;
+    height: 100%;
+    /* border: 1px solid black; */
+    outline: none;
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+    border-bottom: 1px solid #7E8DA4;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+
+/* _____________________________________________ */
+
+.dobDateWrapper {
+    grid-area: dobDateWrapper;
+    width: 80%;
+    height: 100%;
+    /* border: 1px solid blue; */
+}
+
+.dobDateContainer {
+    height: 70%;
+    /* border: 1px solid black; */
+    display: grid;
+    align-items: center;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+        "dobIconDiv dobLabelTextDiv"
+        "dobIconDiv dobDateInputDiv";
+    background-color: #F3F5F9;
+    border-radius: 10px;
+}
+
+.dobIconDiv {
+    grid-area: dobIconDiv;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.doBIcon {
+    font-size: 22px;
+}
+
+
+.dobLabelTextDiv {
+    grid-area: dobLabelTextDiv;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.dobLabelTextDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #7E8DA4;
+}
+
+.dobDateInputDiv {
+    grid-area: dobDateInputDiv;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.dobDateInputDiv input {
+    width: 80%;
+    height: 100%;
+    outline: none;
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+    border-bottom: 1px solid #7E8DA4;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    text-align: start;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* _____________________________________________ */
+
+.issueDateWrapper {
+    grid-area: issueDateWrapper;
+    width: 80%;
+    height: 100%;
+    /* border: 1px solid red; */
+}
+
+.issueDateContainer {
+    height: 70%;
+    /* border: 1px solid black; */
+    display: grid;
+    align-items: center;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+        "issueIconDiv issueLabelTextDiv"
+        "issueIconDiv issueDateInputDiv";
+    background-color: #F3F5F9;
+    border-radius: 10px;
+}
+
+.issueIconDiv {
+    grid-area: issueIconDiv;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.issueDateIcon {
+    font-size: 22px;
+}
+
+
+.issueLabelTextDiv {
+    grid-area: issueLabelTextDiv;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.issueLabelTextDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #7E8DA4;
+}
+
+.issueDateInputDiv {
+    grid-area: issueDateInputDiv;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.issueDateInputDiv input {
+    width: 80%;
+    height: 100%;
+    outline: none;
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+    border-bottom: 1px solid #7E8DA4;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    text-align: start;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}

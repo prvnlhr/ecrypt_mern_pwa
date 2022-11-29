@@ -1,42 +1,42 @@
 .cardWrapper {
-/* display: flex; */
-display: none;
-width: 60%;
-height: 100%;
-display: flex;
-justify-content: flex-start;
-align-items: center;
-background-color: white;
-padding-left: 5%;
-webkit-tap-highlight-color: transparent;
--webkit-touch-callout: none;
--webkit-user-select: none;
--khtml-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
+    /* display: flex; */
+    display: none;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    padding-left: 5%;
+    webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .cardWrapperClose {
-     /* display: flex; */
-     display: none;
-     width: 0%;
-     height: 100%;
-     display: flex;
-     justify-content: flex-start;
-     align-items: center;
-     background-color: white;
-     padding-left: 0%;
-     webkit-tap-highlight-color: transparent;
-     -webkit-touch-callout: none;
-     -webkit-user-select: none;
-     -khtml-user-select: none;
-     -moz-user-select: none;
-     -ms-user-select: none;
-     user-select: none;
-     overflow: hidden;
-     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-     scroll-behavior: smooth;
+    /* display: flex; */
+    display: none;
+    width: 0%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    padding-left: 0%;
+    webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    scroll-behavior: smooth;
 
 }
 
@@ -333,7 +333,7 @@ user-select: none;
         align-items: flex-end;
         background-color: white;
         margin-top: 14%;
-
+        /* border: 1px solid orange; */
     }
 
     .cardWrapperClose {
@@ -368,14 +368,12 @@ user-select: none;
         grid-template-columns: 25% minmax(0, 1fr);
         grid-template-rows: 10% 17% 14% 14% 22% 22%;
         grid-template-rows: 10% 18% 14% 14% 22% 22%;
-        grid-template-rows: 10% 20% 15% 15% 20% 20%;
+        grid-template-rows: 10% 20% 15% 55%;
         grid-template-areas:
             "cardHeader cardHeader"
             "logoTitleWrapper logoTitleWrapper"
             "categoryWrapper categoryWrapper"
-            "cardHolderWrapper cardHolderWrapper"
-            "cardNumberWrapper cardNumberWrapper"
-            "dateOfBirthWrapper expiryIssueWrapper";
+            "subcardWrapper subcardWrapper";
         padding-bottom: 0%;
         padding-top: 0%;
         box-sizing: border-box;
@@ -634,5 +632,12 @@ user-select: none;
         width: 80%;
     }
 
+    .subCardWrapper {
+        grid-area: subcardWrapper;
+        display: grid;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid red; */
+    }
 
 }

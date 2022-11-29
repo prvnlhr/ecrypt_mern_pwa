@@ -150,7 +150,7 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
                         <div className={styles.appWebSiteIconDiv} >
                             <Icon
                                 className={styles.websiteIcon}
-                                icon="fluent-mdl2:website" color="#002A9A" />
+                                icon="tabler:app-window" color="#002a9a" />
                         </div>
                         <div className={styles.appWebSiteTitleDiv} >
                             <p>App / Website</p>
@@ -165,7 +165,9 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
                         <div className={styles.usernameIconDiv} >
                             <Icon
                                 className={styles.usernameIcon}
-                                icon="mingcute:user-1-line" color="#002A9A" /></div>
+                                icon="prime:user" color="#002a9a" 
+                                />
+                        </div>
                         <div className={styles.usernameTitleDiv} >
                             <p>USERNAME / EMAIL</p>
                         </div>
@@ -181,7 +183,7 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
                         <div className={styles.passwordIconDiv} >
                             <Icon
                                 className={styles.passwordIcon}
-                                icon="fluent:password-24-regular" color="#002A9A" /></div>
+                                icon="fluent:password-20-regular" color="#002a9a" /></div>
                         <div className={styles.passwordTitleDiv} >
                             <p>PASSWORD</p>
                         </div>

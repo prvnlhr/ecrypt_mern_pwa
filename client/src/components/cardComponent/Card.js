@@ -33,11 +33,14 @@ const Card = ({ cardData, handleCardClicked }) => {
       </div>
       <div className={styles.titleWrapper} >
         <p className={styles.titleText}>
-
+          {cardData.title}
         </p>
       </div>
       <div className={styles.usernameWrapper} >
         <p className={styles.userNameText}>
+          {
+            cardData.category === "License" ? cardData.licenseNumber : cardData.cardNumber
+          }
         </p>
       </div>
       <div className={styles.favBtnWrapper} ></div>

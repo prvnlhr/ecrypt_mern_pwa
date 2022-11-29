@@ -1,64 +1,73 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import styles from "./styles/fullCardComponent.module.css"
-import BackBtnIcon from "../icons/BackBtnIcon"
+import styles from "../styles/fullCardComponent.module.css"
+import BackBtnIcon from "../../icons/BackBtnIcon"
 import { Icon } from '@iconify/react';
+import BankCardSubComponent from './BankCardSubComponent';
+import IdentityCardSubComponent from './IdentityCardSubComponent';
+import LicenseCardSubComponent from './LicenseCardSubComponent';
 
-const FullCardComponent = ({ showContentCard, handleFullContentBackBtnClicked }) => {
+const FullCardComponent = ({ showContentCard, handleFullContentBackBtnClicked,
+    fullContentCardData
+
+}) => {
     const [popUpOpen, setPopUpOpen] = useState(false);
+    // console.log(fullContentCardData)
 
-    const [bankCardData, setBankCardData] = useState({
-        title: "",
-        category: "",
-        cardHolder: "",
-        cardNumber: "",
-        expiry: "",
-        cvv: "",
-    })
-    const [identityCardData, setIdentityCardData] = useState({
-        title: "",
-        category: "",
-        cardHolder: "",
-        cardNumber: "",
-        expiry: "",
-        dob: "",
-    })
-    const [licenseCardData, setLicenseCardData] = useState({
-        title: "",
-        category: "",
-        cardHolder: "",
-        cardNumber: "",
-        expiry: "",
-        dov: "",
-    })
+
+
+    // const [bankCardData, setBankCardData] = useState({
+    //     title: "",
+    //     category: "",
+    //     cardHolder: "",
+    //     cardNumber: "",
+    //     expiry: "",
+    //     cvv: "",
+    // })
+    // const [identityCardData, setIdentityCardData] = useState({
+    //     title: "",
+    //     category: "",
+    //     cardHolder: "",
+    //     cardNumber: "",
+    //     issueDate: "",
+    //     dob: "",
+    // })
+    // const [licenseCardData, setLicenseCardData] = useState({
+    //     title: "",
+    //     category: "",
+    //     cardHolder: "",
+    //     licenseNumber: "",
+    //     expiry: "",
+    //     dob: "",
+    // })
 
     const handleOpClick = (op) => {
 
-        switch (op) {
-            case "Identity":
-                setIdentityCardData({
-                    ...identityCardData,
-                    category: op
-                })
-                break;
+        // switch (op) {
+        //     case "Identity":
+        //         setIdentityCardData({
+        //             ...identityCardData,
+        //             category: op
+        //         })
+        //         break;
 
-            case "License":
-                setLicenseCardData({
-                    ...licenseCardData,
-                    category: op
-                })
-                break;
+        //     case "License":
+        //         setLicenseCardData({
+        //             ...licenseCardData,
+        //             category: op
+        //         })
+        //         break;
 
-            case "Bank":
-                setBankCardData({
-                    ...bankCardData,
-                    category: op
-                })
-                break;
+        //     case "Bank":
+        //         setBankCardData({
+        //             ...bankCardData,
+        //             category: op
+        //         })
+        //         break;
 
-            default:
-                break;
-        }
+        //     default:
+        //         break;
+        // }
 
         // setCurrData({
         //     ...currData,
@@ -103,7 +112,7 @@ const FullCardComponent = ({ showContentCard, handleFullContentBackBtnClicked })
                                 <p className={styles.titleTitleText}>TITLE</p>
                             </div>
                             <div className={styles.titleTextDiv}>
-                                <p className={styles.titleText}>Aadhar card</p>
+                                <p className={styles.titleText}>{fullContentCardData.title}</p>
                             </div>
                         </div>
 
@@ -122,7 +131,7 @@ const FullCardComponent = ({ showContentCard, handleFullContentBackBtnClicked })
                         <div className={styles.catergoryInputDiv} >
                             <input
                                 className={styles.categoryInput}
-                                value={""}
+                                value={fullContentCardData.category}
                                 readOnly={true}
 
                             />
@@ -156,6 +165,20 @@ const FullCardComponent = ({ showContentCard, handleFullContentBackBtnClicked })
                         </div>
                     </div>
                 </div>
+
+                <div className={styles.subCardWrapper}>
+
+
+                    {fullContentCardData.category === "Bank" ?
+                        <BankCardSubComponent /> : fullContentCardData.category === "Identity" ?
+                            <IdentityCardSubComponent /> : fullContentCardData.category === "License" ?
+                                <LicenseCardSubComponent /> : null
+                    }
+
+                </div>
+
+
+
             </div>
         </div>
     )
