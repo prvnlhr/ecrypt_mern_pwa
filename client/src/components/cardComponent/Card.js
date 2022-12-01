@@ -21,7 +21,7 @@ import CheckIcon from "../icons/CheckIcon";
 const Card = ({ cardData, handleCardClicked }) => {
 
   return (
-    <div className={styles.cardComponent}
+    <div className={cardData.category === "Bank" ? styles.cardComponentBank : styles.cardComponent}
       onClick={() => {
         handleCardClicked(cardData);
       }}
@@ -43,7 +43,13 @@ const Card = ({ cardData, handleCardClicked }) => {
           }
         </p>
       </div>
-      <div className={styles.favBtnWrapper} ></div>
+      <div className={cardData.category === "Bank" ? styles.bankCardLogoWrapperShow : styles.bankCardLogoWrapperHide} >
+        <Icon className={styles.bankCardLogo} icon="logos:visa" />
+      </div>
+      <div className={styles.favBtnWrapper} >
+        <Icon className={styles.favBtnIcon} icon="ion:bookmark-outline" color="#7e8da4" />
+
+      </div>
     </div>
   );
 };

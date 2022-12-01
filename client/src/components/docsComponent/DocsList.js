@@ -62,95 +62,39 @@ const DocsList = ({
   //   }, 200);
   // };
 
+  const docsData = [
+    {
+      title: "Aadhar card",
+      imageUrl: "",
+    },
+    {
+      title: "Pan card",
+      imageUrl: "",
+    }, {
+      title: "XII marksheet",
+      imageUrl: "",
+    }, {
+      title: "X marksheet",
+      imageUrl: "",
+    }, {
+      title: "Domicle",
+      imageUrl: "",
+    }
+
+  ]
+
+
   return (
     <div className={styles.docsList}>
-      DOCSLIST
-      {/* <div className={styles.contentContainer} ref={node}>
-        {docsFetching === true && docs.length < 1 ? (
-          <>
-            <DocSkeleton />
-            <DocSkeleton />
-            <DocSkeleton />
-            <DocSkeleton />
-            <DocSkeleton />
-            <DocSkeleton />
-          </>
-        ) : docsFetching === false && docs.length < 1 ? (
-          <div className={noContentStyles.messageContainer}>
-            <p>No Logins Added</p>
 
-            <div className={noContentStyles.footerDIv}>
-              Click
-              <FiPlusCircle className={noContentStyles.icon} fontSize="19px" />
-              to add
-            </div>
-          </div>
-        ) : (
-          docsFetching === false &&
-          docs.length >= 1 && (
-            <>
-              {docs.map((doc, i) => (
-                <Document
-                  key={i}
-                  showEditButton={showEditButton}
-                  setEditButton={setEditButton}
-                  doc={doc}
-                  btnExpandId={btnExpandId}
-                  setBtnExpandId={setBtnExpandId}
-                  btnExpand={btnExpand}
-                  setBtnExpand={setBtnExpand}
-                  imageData={imageData}
-                  setImageData={setImageData}
-                  maximizeOrNot={maximizeOrNot}
-                  setMaximizeOrNot={setMaximizeOrNot}
-                  showHeaderFooter={showHeaderFooter}
-                  setShowHeaderFooter={setShowHeaderFooter}
-                  currDeletingDocId={currDeletingDocId}
-                />
-              ))}
-            </>
-          )
-        )}
-      </div>
-      <Suspense
-        fallback={
-          <div>
-            <CircleSpinner size={12} color="gray" loading={true} />
-          </div>
+      <div className={styles.contentContainer}>
+        {
+          docsData.map((doc, index) => (
+            <Document doc={doc} key={index} />
+          ))
         }
-      >
-        <DocForm formMode={formMode} setFormMode={setFormMode} />
-      </Suspense>
+      </div>
 
-      {formMode === false ? (
-        <div
-          className={
-            isScrolling === false
-              ? btnStyles.addBtnWrapper
-              : btnStyles.addBtnWrapperHidden
-          }
-          onClick={formToggle}
-        >
-          <div className={btnStyles.addBtnIconDIv}>
-            <HiPlus />
-          </div>
-          <div className={btnStyles.addBtnTextDiv}>
-            <p>Add</p>
-          </div>
-        </div>
-      ) : null}
-
-      {isLoading === true && place === "doc" && process === "add" ? (
-        <div className={styles.loadingDiv}>
-          <div className={styles.loadingHeader}>
-            <p>Upload in progress</p>
-            <CircleSpinner size={12} color="#2f89fc" loading={true} />
-          </div>
-          <div className={styles.loadingFooter}>
-            <p>This may take a while</p>
-          </div>
-        </div>
-      ) : null} */}
 
     </div>
   );

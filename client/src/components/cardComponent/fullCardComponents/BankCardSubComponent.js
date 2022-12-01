@@ -18,6 +18,10 @@ const BankCardSubComponent = () => {
                     <div className={styles.cardHolderInputDiv}>
                         <input value={"Anderw Garfield"} />
                     </div>
+
+                    <div className={styles.cardVenderIconDiv}>
+                        <Icon className={styles.cardVenderIcon} icon="logos:visa" />
+                    </div>
                 </div>
             </div>
             <div className={styles.cardNumberWrapper}>

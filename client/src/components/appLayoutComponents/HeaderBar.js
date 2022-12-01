@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
 import { HiX, HiChevronDown, HiChevronUp } from "react-icons/hi";
 import { CircleSpinner } from "react-spinners-kit";
-
+import { Icon } from '@iconify/react';
 
 import moment from "moment";
 import { RiSearch2Line } from "react-icons/ri";
@@ -40,29 +40,22 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
 
   useEffect(() => { }, [user.firstName]);
 
-  // useEffect(() => {
-  //   let handler = (e) => {
-  //     if (!node.current.contains(e.target)) {
-  //       setOpen(false);
-  //     }
-  //   };
-  //   document.addEventListener("mousedown", handler);
-  //   return () => {
-  //     document.removeEventListener("mousedown", handler);
-  //   };
-  // }, []);
+  useEffect(() => {
+    let handler = (e) => {
+      if (!node.current.contains(e.target)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  }, []);
 
-  const handleClick = (e) => {
-    if (node.current.contains(e.target)) {
-      console.log("inside", e.target, node.current);
-      // inside click
-      return;
-    } else {
-      // outside click
-      console.log("outside", e.target, node.current);
-      setOpen(false);
-    }
-  };
+
+  const [lightTheme, setTheme] = useState(true);
+
+
   const handleLogout = () => {
     localStorage.removeItem("firstLogin");
     dispatch(logout(navigate));
@@ -85,8 +78,19 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
       dispatch(toggleTheme("dark"));
     }
   };
+
+
+  const themeToggle = (e) => {
+    setTheme(!lightTheme);
+    e.currentTarget.classList.toggle('toggleBtnPos');
+  }
+
+
   const day = moment().format("dddd");
   const date = moment().format('DD MMM YYYY');
+
+
+
 
 
   //________________________________________________________________________________________________
@@ -153,8 +157,9 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
           </div>
         </div>
       </div>
-      <div className={headerStyles.popUpWrapper} >
+      <div className={headerStyles.popUpWrapper} ref={node} >
         <svg
+          onClick={() => setOpen((open) => !open)}
           className={headerStyles.popUpIcon}
           width="103" height="103" viewBox="0 0 103 103" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="18.24" cy="18.24" r="18.24" fill="#7E8DA4" />
@@ -163,8 +168,60 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
           <circle cx="84.7205" cy="84.72" r="18.24" fill="#7E8DA4" />
         </svg>
 
+        {open && (
+          <div className={`${headerStyles.popUpMenuContainer}`}>
+            <div className={headerStyles.topSection} >
+              <div className={headerStyles.themeToggleWrapper}>
+                <div className={headerStyles.toggleContainer}
+                  onClick={themeToggle}
+                >
+                  <div className={
+                    lightTheme ?
+
+                      headerStyles.toggleBtnDivLeft
+                      :
+                      headerStyles.toggleBtnDivRight
+
+                  }
+                  >
+                    <div className={headerStyles.toggleIconDiv}
+
+                    >
+                      {lightTheme ? (
+                        < Icon className={headerStyles.toggleIcon} icon="icon-park-outline:sun-one" color="#f3b821" rotate={1} />
+                      )
+                        :
+                        (<Icon className={headerStyles.toggleIcon} icon="akar-icons:moon" color="#5d6175" />)
+                      }
+                    </div>
+                    <div className={headerStyles.toggleTextDiv}>
+
+                      {lightTheme ?
+                        <p>Light</p> :
+                        <p>Dark</p>
+                      }
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div className={headerStyles.settingsContainer}>
+                <Icon className={headerStyles.settingsIcon} icon="ph:gear-six" rotate={1} />
+                <p className={headerStyles.settingsText}>Settings</p>
+
+              </div>
+            </div>
+            <div className={headerStyles.bottomSection} >
+              <div className={headerStyles.logOutDiv} >
+                <Icon className={headerStyles.logoutIcon} icon="material-symbols:logout-rounded" color="#f3212d" />
+                <p className={headerStyles.logoutText}>Logout</p>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
-    </div>
+
+    </div >
   );
 };
 export default HeaderBar;

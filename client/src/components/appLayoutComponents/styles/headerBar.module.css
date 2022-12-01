@@ -172,6 +172,19 @@
   /* border: 1px solid black; */
 }
 
+.popUpMenuContainer {
+  position: absolute;
+  /* right: 10px; */
+  /* top: 70px !important; */
+  width: 170px;
+  height: 200px;
+  /* background-color: white; */
+  display: grid;
+  z-index: 900;
+
+
+}
+
 .logoWrapper {
   display: none;
   grid-area: logoWrapper;
@@ -198,13 +211,12 @@
     /* border: 1px solid orange; */
     height: 100%;
     width: 100% !important;
-    height: 100%;
     display: grid;
-    grid-template-columns: 22% 25% 45% 15%;
+    grid-template-columns: 20% 25% 45% 10%;
     grid-template-rows: 100%;
     grid-template-areas: "logoWrapper dateWrapper avatarNameWrapper popUpWrapper";
     align-items: center;
-    /* overflow: hidden; */
+    overflow: unset;
     box-sizing: border-box;
   }
 
@@ -372,7 +384,7 @@
 
   .popUpWrapper {
     grid-area: popUpWrapper;
-    /* border: 1px solid green; */
+    /* border: 1px solid red; */
     width: 100%;
     height: 100%;
     display: flex;
@@ -382,17 +394,192 @@
 
   .popUpIcon {
     position: relative;
-    width: 30%;
-    height: 30%;
+    width: 45%;
+    height: 45%;
     /* border: 1px solid black; */
+  }
+
+  .popUpMenuContainer {
+    position: absolute;
+    right: 5%;
+    top: 80% !important;
+    width: 150px;
+    height: 170px;
+    /* background-color: white; */
+
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 70% 30%;
+    grid-template-areas:
+      "topSection"
+      "bottomSection";
+    z-index: 900;
+    border-radius: 5px;
+    overflow: hidden;
+    grid-gap: 2%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+  }
+
+  .topSection {
+    position: relative;
+
+    grid-area: topSection;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: white;
+
+  }
+
+  .themeToggleWrapper {
+    position: relative;
+    height: 50%;
+    width: 80%;
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .toggleContainer {
+    position: relative;
+    width: 100%;
+    height: 60%;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    background-color: #F3F5F9;
+    border-radius: 10px;
+
   }
 
 
 
+  .toggleBtnDivLeft {
+    position: relative;
+    width: 50%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #7E8DA4;
+    border-radius: 10px;
+
+  }
+
+  .toggleBtnDivRight {
+    position: relative;
+    width: 50%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #7E8DA4;
+    border-radius: 10px;
+    left: 50%;
+
+  }
+
+  .toggleIconDiv {
+    width: 35%;
+    height: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .toggleIcon {
+    font-size: 15px;
+  }
+
+  .toggleTextDiv {
+    width: 65%;
+    height: 100%;
+    /* border: 1px solid orange; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 5%;
+    box-sizing: border-box;
+  }
+
+  .toggleTextDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    color: black;
+  }
+
+  .settingsContainer {
+    height: 40%;
+    width: 80%;
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .settingsIcon {
+    font-size: 20px;
+    margin-right: 5%;
+
+  }
+
+  .settingsText {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: black;
+  }
+
+  .bottomSection {
+    grid-area: bottomSection;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+  }
+
+  .logOutDiv {
+    width: 80%;
+    height: 70%;
+    /* border: 1px solid orange; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .logoutIcon {
+    font-size: 20px;
+    margin-right: 5%;
+  }
+
+  .logoutText {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #f3212d;
+  }
+
+
+  /* _______________________________ */
 
 
 }
-
-
-
-/* _______________________________ */
