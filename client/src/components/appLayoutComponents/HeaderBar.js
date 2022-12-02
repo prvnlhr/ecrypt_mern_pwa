@@ -27,16 +27,6 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
   const [searchQuery, setQuery] = useState("");
   const [searchMode, setSearchMode] = useState(false);
 
-  const switchSearchMode = () => {
-    setSearchMode(!searchMode);
-    setFieldLength(null);
-    setQuery("");
-  };
-
-  useEffect(() => {
-    handleSearch(searchQuery);
-    setFieldLength(searchQuery.length);
-  }, [searchQuery]);
 
   useEffect(() => { }, [user.firstName]);
 
@@ -205,11 +195,11 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
 
                 </div>
               </div>
-              <div className={headerStyles.settingsContainer}>
+              <Link to="/user/settings" className={headerStyles.settingsLinkContainer}
+              >
                 <Icon className={headerStyles.settingsIcon} icon="ph:gear-six" rotate={1} />
                 <p className={headerStyles.settingsText}>Settings</p>
-
-              </div>
+              </Link>
             </div>
             <div className={headerStyles.bottomSection} >
               <div className={headerStyles.logOutDiv} >

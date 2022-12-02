@@ -1,20 +1,19 @@
 import React from "react";
-import { useState, useRef, lazy, Suspense } from "react";
+import { useState, useRef, } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Location, useLocation } from "react-router-dom";
 import homeStyles from "./styles/home.module.css";
 import ContentDisplay from "./ContentDisplay";
 
 import { logout } from "../../redux/actions/auth";
 import HeaderBar from "./HeaderBar";
 import TabBar from "./TabBar";
-import MaximizeDoc from "../docsComponent/MaximizeDoc";
 import { toggleTheme } from "../../redux/actions/userAction";
 import SearchSection from "./SearchSection";
 import SideBar from "./SideBar";
 import { Icon } from '@iconify/react';
+import Settings from "./Settings";
 
-// const MaximizeDoc = lazy(() => import("../document/MaximizeDoc"));
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -22,24 +21,19 @@ const Home = () => {
   const node = useRef();
   const user = useSelector((state) => state.user.user);
   const [open, setOpen] = useState(false);
-  const [heading, setHeading] = useState();
-  const [fieldLength, setFieldLength] = useState();
-
-  const [maximizeOrNot, setMaximizeOrNot] = useState(false);
-  const [imageData, setImageData] = useState("");
-  const [showHeaderFooter, setShowHeaderFooter] = useState(false);
   const loadState = useSelector((state) => state.loading);
   const theme = useSelector((state) => state.theme.theme);
 
-  const { place, isLoading } = loadState;
 
-  // for spinner while deleting document
-  const [currDeletingDocId, setCurrentDeletingDocId] = useState(null);
+
+  const location = useLocation();
+
+
+
 
   const handleLogout = () => {
     localStorage.removeItem("firstLogin");
     dispatch(logout(useNavigate));
-    // history.push("/login");
   };
   const toggleAppTheme = () => {
     if (theme === "dark") {
@@ -50,20 +44,26 @@ const Home = () => {
   };
 
   return (
-    <div className={homeStyles.homeComponent}>
-      <div className={homeStyles.sideBarSection}>
-        <SideBar />
-      </div>
+    <div className={location.pathname === "/user/settings" ? homeStyles.homeComponentForSettings : homeStyles.homeComponent}>
 
-      <HeaderBar
-        setFieldLength={setFieldLength}
-        open={open}
-        setOpen={setOpen}
-        node={node} />
+      {location.pathname === "/user/settings"
+        ?
+        <Settings />
+        :
+        <>
+          <div className={homeStyles.sideBarSection}>
+            <SideBar />
+          </div>
 
-      <SearchSection />
-      <ContentDisplay />
-      <TabBar />
+          <HeaderBar
+            open={open}
+            setOpen={setOpen}
+            node={node} />
+          <SearchSection />
+          <ContentDisplay />
+          <TabBar />
+        </>
+      }
     </div>
   );
 };

@@ -20,6 +20,37 @@
   overflow: hidden;
 }
 
+.homeComponent {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid orange; */
+  display: grid;
+  grid-template-columns: minmax(0, 0.25fr) minmax(0, 1fr);
+  grid-template-rows: 15% 10% 75%;
+  grid-template-areas:
+    "sideBarSection headerBar"
+    "sideBarSection searchTitleSection"
+    "sideBarSection contentDisplay";
+  align-items: center;
+  overflow: hidden;
+}
+
+.homeComponentForSettings {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid orange; */
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  grid-template-areas:
+    "SetttingsComponent";
+  align-items: center;
+  overflow: hidden;
+}
+
+
 .sideBarSection {
   grid-area: sideBarSection;
   /* border: 1px solid black; */

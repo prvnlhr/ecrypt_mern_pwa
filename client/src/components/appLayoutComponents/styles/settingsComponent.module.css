@@ -1,0 +1,775 @@
+.SetttingsComponent {
+    grid-area: SetttingsComponent;
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 100%;
+    grid-template-areas:
+        "profilePicSection profileFromSection";
+    box-sizing: border-box;
+}
+
+.profilePicSection {
+    grid-area: profilePicSection;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid red; */
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 20% 60%;
+    grid-template-areas:
+        "headingWrapper"
+        "profilePicWrapper"
+        "joinedUpdateDateWrapper";
+    box-sizing: border-box;
+}
+
+.headingWrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    grid-area: headingWrapper;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+}
+
+.headingDiv {
+    margin-top: 10%;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+.backBtnDiv {
+    margin-left: 5%;
+    width: auto;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+
+.backBtnIcon {
+    font-size: 30px;
+}
+
+.headingDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+}
+
+.profilePicWrapper {
+    position: relative;
+    grid-area: profilePicWrapper;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profileContainer {
+    width: 80%;
+    height: 80%;
+    /* border: 1px solid black; */
+    display: flex;
+}
+
+.profilePicDiv {
+    width: 50%;
+    height: 100%;
+    /* border: 1px solid red; */
+}
+
+.profilePicEditBtnDiv {
+    width: 50%;
+    height: 100%;
+    /* border: 1px solid blue; */
+}
+
+.joinedUpdateDateWrapper {
+    position: relative;
+    grid-area: joinedUpdateDateWrapper;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.joinedUpadateDateContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 40%;
+    /* border: 1px solid red; */
+}
+
+.joinedDateDiv {
+    width: 100%;
+    height: 50%;
+    /* border: 1px solid black; */
+}
+
+.updatedDateDiv {
+    width: 100%;
+    height: 50%;
+    /* border: 1px solid black; */
+}
+
+.profileFromSection {
+    grid-area: profileFromSection;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid blue; */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
+
+    .SetttingsComponent {
+        grid-area: SetttingsComponent;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 20% 80%;
+        grid-template-areas:
+            "profilePicSection"
+            "profileFromSection";
+        box-sizing: border-box;
+
+    }
+
+    .profilePicSection {
+        grid-area: profilePicSection;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid red; */
+        display: grid;
+        grid-template-rows: 30% 70%;
+        grid-template-columns: 50% 50%;
+        grid-template-areas:
+            "headingWrapper headingWrapper"
+            "profilePicWrapper joinedUpdateDateWrapper";
+        box-sizing: border-box;
+    }
+
+    .headingWrapper {
+        grid-area: headingWrapper;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+    }
+
+    .headingContainer {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        /* border: 1px solid red; */
+        padding-left: 0px;
+    }
+
+    .backBtnDiv {
+        margin: 0px;
+        width: 10%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border: 1px solid black; */
+    }
+
+    .headingDiv {
+        position: relative;
+        width: 90%;
+        height: 100%;
+        /* border: 1px solid blue; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 0px;
+    }
+
+    .headingDiv::after {
+        content: "";
+        position: absolute;
+        background-color: #002A9A;
+        width: 40px;
+        height: 3px;
+        bottom: 0px;
+        left: 0px;
+        border-radius: 10px;
+    }
+
+
+
+
+    .backBtnIcon {
+        font-size: 32px;
+    }
+
+    .headingDiv p {
+        font-family: "Poppins", sans-serif;
+        font-size: 22px;
+        font-weight: 500;
+        color: black;
+    }
+
+    /* _________________________________________________ */
+    .profilePicWrapper {
+        grid-area: profilePicWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+    }
+
+    .profileContainer {
+        width: 70%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .profilePicDiv {
+        width: unset;
+        height: 65%;
+        aspect-ratio: 1/1;
+        /* border: 1px solid red; */
+        border-radius: 50px;
+        background-color: white;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+
+    .profilePicEditBtnDiv {
+        width: 30%;
+        height: 100%;
+        /* border: 1px solid blue; */
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        box-sizing: border-box;
+        padding-bottom: 15%;
+    }
+
+    .editBtnIcon {
+        font-size: 25px;
+        color: slategray;
+    }
+
+
+    .joinedUpdateDateWrapper {
+        grid-area: joinedUpdateDateWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .joinedUpadateDateContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        height: 70%;
+        /* border: 1px solid red; */
+    }
+
+    .joinedDateDiv {
+        width: 100%;
+        height: 40%;
+        /* border: 1px solid black; */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .labelText {
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: #7E8DA4;
+    }
+
+    .updatedDateDiv {
+        width: 100%;
+        height: 40%;
+        /* border: 1px solid black; */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .dateText {
+        font-family: "Poppins", sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        color: black;
+    }
+
+
+    .profileFromSection {
+        grid-area: profileFromSection;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid blue; */
+    }
+
+
+    /* ___________________________________ */
+
+    .profileFromSection {
+        grid-area: profileFromSection;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid blue; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+
+    }
+
+    .formWrapper {
+        width: 85%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 40% 25% 35%;
+        grid-template-areas:
+            "profileNameWrapper"
+            "profilePassWrapper"
+            "profileDeleteWrapper";
+        box-sizing: border-box;
+        grid-gap: 2px;
+    }
+
+    /* ________________________________________________________________- */
+
+    .profileNameWrapper {
+        grid-area: profileNameWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid orange; */
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 20% 30% 30% 20%;
+        grid-template-areas:
+            "profileHeadingContainer profileHeadingContainer"
+            "profileFirstNameContainer profileLastNameContainer "
+            "profileEmailNameContainer profileEmailNameContainer"
+            "profileEditBtnContainer profileEditBtnContainer";
+        box-sizing: border-box;
+        background-color: white;
+
+    }
+
+    .profileHeadingContainer {
+        grid-area: profileHeadingContainer;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+    }
+
+    /* ______________________________________________________________ */
+
+    .formSectionHeadingDiv {
+        position: relative;
+        width: 80%;
+        height: 90%;
+        /* border: 1px solid blue; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .formSectionHeadingDiv p {
+        font-family: "Poppins", sans-serif;
+        font-size: 17px;
+        font-weight: 600;
+        color: black;
+    }
+
+    .formSectionHeadingDiv::after {
+        content: "";
+        position: absolute;
+        background-color: #002A9A;
+        width: 40px;
+        height: 3px;
+        bottom: 0px;
+        left: 0px;
+        border-radius: 10px;
+    }
+
+    .formBtns {
+        width: auto;
+        height: 28px;
+        background-color: #002A9A;
+        border-radius: 6px;
+        border: none;
+        outline: none;
+        padding-left: 4%;
+        padding-right: 4%;
+        margin: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .btnText {
+        font-family: "Poppins", sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        color: white;
+        letter-spacing: 0.5px;
+    }
+
+    /* ______________________________________________________________ */
+
+    .profileFirstNameContainer {
+        grid-area: profileFirstNameContainer;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .profileFirstNameDiv {
+        width: 90%;
+        height: 80%;
+        /* border: 1px solid black; */
+        background-color: #F3F5F9;
+        border-radius: 10px;
+
+    }
+
+    .labelDiv {
+        width: 100%;
+        height: 50%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        box-sizing: border-box;
+        padding-left: 5%;
+
+    }
+
+    .labelDiv p {
+        font-family: "Poppins", sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        color: #7E8DA4;
+    }
+
+
+    .inputDiv {
+        width: 100%;
+        height: 50%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 5%;
+    }
+
+    .inputDiv input {
+        width: 80%;
+        height: 100%;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+        background: none;
+        font-family: "Poppins", sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        color: black;
+    }
+
+
+
+    .profileLastNameContainer {
+        grid-area: profileLastNameContainer;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+    }
+
+    .profileLastNameDiv {
+        width: 90%;
+        height: 80%;
+        /* border: 1px solid black; */
+        background-color: #F3F5F9;
+        border-radius: 10px;
+
+    }
+
+    .profileEmailNameContainer {
+        grid-area: profileEmailNameContainer;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .profileEmailNameDiv {
+        width: 95%;
+        height: 80%;
+        /* border: 1px solid black; */
+        background-color: #F3F5F9;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .profileEditBtnContainer {
+        grid-area: profileEditBtnContainer;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+
+
+    /* ________________________________________________________________- */
+
+    .profilePassWrapper {
+        grid-area: profilePassWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid blue; */
+        display: grid;
+        grid-template-columns: 50%;
+        grid-template-rows: 33% 33% 33%;
+        grid-template-areas:
+            "passHeadingContainer passHeadingContainer"
+            "passOldInputContainer passNewInputContainer"
+            "passChangeBtnContainer passChangeBtnContainer";
+        box-sizing: border-box;
+        background-color: white;
+
+    }
+
+    .passHeadingContainer {
+        grid-area: passHeadingContainer;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .passOldInputContainer {
+        grid-area: passOldInputContainer;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .passNewInputContainer {
+        grid-area: passNewInputContainer;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .passChangeBtnContainer {
+        grid-area: passChangeBtnContainer;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+
+    /* ________________________________________________________________- */
+
+    .profileDeleteWrapper {
+        grid-area: profileDeleteWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid red; */
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 20% 60% 20%;
+        grid-template-areas:
+            "deleteHeadingContainer"
+            "deleteMsgContainer"
+            "deleteBtnContainer";
+        box-sizing: border-box;
+        background-color: white;
+
+    }
+
+    .deleteHeadingContainer {
+        grid-area: deleteHeadingContainer;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-bottom: 1%;
+    }
+
+    .deleteMsgContainer {
+        grid-area: deleteMsgContainer;
+        width: 100%;
+        height: 90%;
+        /* border: 1px solid black; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2%;
+    }
+
+    .text1Container {
+        width: 100%;
+        height: 33%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .text1Container p {
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        color: #F3212D;
+        letter-spacing: 0px;
+    }
+
+
+    .text2Container {
+        width: 100%;
+        height: 33%;
+        /* border: 1px solid black; */
+        word-wrap: break-word;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .text2Container p {
+        width: 85%;
+        font-family: "Poppins", sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        color: black;
+        letter-spacing: 0px;
+    }
+
+    .text3Container {
+        width: 100%;
+        height: 33%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .text3Container p {
+        width: 85%;
+        font-family: "Poppins", sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        color: black;
+        letter-spacing: 0px;
+
+    }
+
+
+
+    .textIconDiv {
+        width: auto;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        /* border: 1px solid black; */
+        padding-right: 3%;
+    }
+
+    .text1Icon {
+        font-size: 20px;
+    }
+
+    .dotIcon {
+        font-size: 20px;
+    }
+
+
+    .deleteBtnContainer {
+        grid-area: deleteBtnContainer;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+
+
+    /* ________________________________________________________________- */
+
+}
