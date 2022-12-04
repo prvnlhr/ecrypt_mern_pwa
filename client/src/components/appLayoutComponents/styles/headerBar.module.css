@@ -307,6 +307,8 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  text-decoration: none;
+  color: black;
 }
 
 .settingsIcon {
@@ -320,7 +322,9 @@
   font-size: 15px;
   font-weight: 500;
   color: black;
+  text-decoration: none;
 }
+
 
 .bottomSection {
   grid-area: bottomSection;
@@ -623,6 +627,7 @@
     justify-content: center;
     align-items: center;
 
+
   }
 
   .toggleContainer {
@@ -648,6 +653,7 @@
     align-items: center;
     border: 1px solid #7E8DA4;
     border-radius: 10px;
+
 
   }
 
