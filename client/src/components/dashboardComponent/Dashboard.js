@@ -16,9 +16,31 @@ const Dashboard = ({ setHeading }) => {
 
   return (
     <div className={styles.dashboardComponent}>
-      <div className={styles.overviewWrapper}></div>
-      <div className={styles.recentActivitesWrapper}></div>
-      <div className={styles.recentlyAddedWrapper}></div>
+      <div className={styles.overviewWrapper}>
+        <div className={styles.overviewHeadingContainer}>
+          <div className={styles.wrapperHeadingDiv}>
+            <p>Overview</p>
+          </div>
+        </div>
+        <div className={styles.overviewContentContainer}>
+        </div>
+      </div>
+      <div className={styles.recentActivitesWrapper}>
+        <div className={styles.recentActivitesHeadingContianer}>
+          <div className={styles.wrapperHeadingDiv}>
+            <p>Recent Activities</p>
+          </div>
+        </div>
+        <div className={styles.recentActivitesContentContianer}></div>
+      </div>
+      <div className={styles.recentlyAddedWrapper}>
+        <div className={styles.recentlyAddedHeadingContainer}>
+          <div className={styles.wrapperHeadingDiv}>
+            <p>Recently Added</p>
+          </div>
+        </div>
+        <div className={styles.recentlyAddedContentContainer}></div>
+      </div>
     </div>
   );
 };

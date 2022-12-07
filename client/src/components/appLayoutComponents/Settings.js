@@ -87,8 +87,8 @@ const Settings = () => {
                                     <input value={"will.iam.butcher@gmail.com"} />
                                 </div>
                             </div>
-
                         </div>
+                        
                         <div className={styles.profileEditBtnContainer} >
                             <button className={styles.formBtns}>
                                 <p className={styles.btnText}>
@@ -164,11 +164,6 @@ const Settings = () => {
                     </div>
 
                 </div>
-
-
-
-
-
 
             </div>
 
