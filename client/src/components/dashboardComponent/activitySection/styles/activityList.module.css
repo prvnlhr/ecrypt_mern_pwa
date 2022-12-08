@@ -1,35 +1,34 @@
 .activityList {
   position: relative;
   width: 100%;
-  height: 480px;
+  height: 100%;
+
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  /* border: 1px solid black; */
-  /* background-color: rgb(136, 182, 182); */
+
   z-index: 3;
+
   overflow-y: scroll;
   box-sizing: border-box;
-  height: 60%;
-  height: 100%;
-  /* border: 1px solid black; */
+
   overflow-y: scroll;
-  display: flex;
-  flex-direction: column;
-  /* justify-content: center; */
-  align-items: center;
-  /* background-color: rgb(136, 182, 182); */
-  z-index: 3;
-  overflow-y: scroll;
-  box-sizing: border-box;
+
   padding: 20px 10px 20px 10px;
-  scrollbar-width: none;   /* firefox hide scrollbar  */
-  -ms-overflow-style: none;   /* firefox hide scrollbar  */
+  border: 1px solid black;
+
+
+  scrollbar-width: none;
+  /* firefox hide scrollbar  */
+  -ms-overflow-style: none;
+  /* firefox hide scrollbar  */
 }
+
 .activityList::-webkit-scrollbar {
   display: none;
 }
+
 /* .activityList::after {
   position: absolute;
   content: "";
