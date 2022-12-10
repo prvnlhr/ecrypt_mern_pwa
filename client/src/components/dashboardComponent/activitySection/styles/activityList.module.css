@@ -1,44 +1,34 @@
 .activityList {
-  position: relative;
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-
-  z-index: 3;
-
-  overflow-y: scroll;
-  box-sizing: border-box;
-
-  overflow-y: scroll;
-
-  padding: 20px 10px 20px 10px;
-  border: 1px solid black;
-
-
-  scrollbar-width: none;
-  /* firefox hide scrollbar  */
-  -ms-overflow-style: none;
-  /* firefox hide scrollbar  */
+    grid-area: activityList;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: scroll !important;
+    /* border: 1px solid blue; */
+    box-sizing: border-box;
+    padding: 20px 10px 20px 10px;
+    scrollbar-width: none;
+    /* -ms-overflow-style: none; */
 }
 
 .activityList::-webkit-scrollbar {
-  display: none;
+    /* display: none; */
 }
 
 /* .activityList::after {
-  position: absolute;
-  content: "";
-  height: 100%;
-  width: 1px;
-  background-color: rgb(223, 222, 222);
-  left: 20%;
-} */
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 1px;
+    background-color: rgb(223, 222, 222);
+    left: 20%;
+  } */
 @media screen and (max-width: 650px) {
-  .activityList {
-    padding: 20px 10px 20px 0px;
-  }
+    .activityList {
+        padding: 5% 0% 10% 0%;
+    }
 }

@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { Icon } from '@iconify/react';
 import styles from "./styles/dashboard.module.css";
 import ActivityList from "./activitySection/ActivityList";
+import ActivityComponentOuter from "./activitySection/ActivityComponentOuter";
 const Dashboard = ({ setHeading }) => {
   const loginIdsArray = useSelector((state) => state.logins.loginIds);
   const cardsArray = useSelector((state) => state.cards.cards);
@@ -85,10 +86,11 @@ const Dashboard = ({ setHeading }) => {
           </div>
         </div>
 
-        {/* _Activities */}
         <div className={styles.recentActivitesContentContianer}>
           <ActivityList />
         </div>
+
+
       </div>
       <div className={styles.recentlyAddedWrapper}>
         <div className={styles.recentlyAddedHeadingContainer}>
