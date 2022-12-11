@@ -5,9 +5,45 @@ const ActivityComponentOuter = () => {
     return (
         <div className={styles.activityWrapperOuter}>
 
-            <div className={styles.innerBox} ></div>
-            <div className={styles.innerBox} ></div>
-            <div className={styles.innerBox} ></div>
+            <div className={styles.dateTimeTaskTypeWrapper} >
+
+                <div className={styles.dateWrapper}>
+                    <div className={styles.dateContainer} >
+
+                        <div className={styles.monthDiv} >
+                            <p>Oct</p>
+                        </div>
+                        <div className={styles.dateDiv} >
+                            <p>16</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div className={styles.timeWrapper}>
+                    <div className={styles.timeContainer} >
+                        <p>09 : 12 AM</p>
+                    </div>
+                </div>
+
+
+                <div className={styles.typeWrapper}>
+                    <div className={styles.typeContainer} >
+                        <p>Login</p>
+                    </div>
+                </div>
+
+
+                <div className={styles.taskWrapper}>
+                    <div className={styles.taskContainer} >
+                        <p>Edited</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div className={styles.innerBox}></div>
+            <div className={styles.innerBox}></div>
         </div>
     )
 }

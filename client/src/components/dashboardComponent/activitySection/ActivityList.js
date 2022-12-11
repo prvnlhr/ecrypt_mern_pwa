@@ -68,10 +68,9 @@ const ActivityList = () => {
 
   return (
     <div className={styles.activityList} >
-
       <ActivityComponentOuter />
       <ActivityComponentOuter />
-      <ActivityComponentOuter />
+      {/* <ActivityComponentOuter /> */}
     </div>
   )
 }

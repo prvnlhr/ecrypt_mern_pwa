@@ -4,25 +4,246 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 90%;
+    width: 95%;
     height: auto;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     box-sizing: border-box;
-    margin-top: 10px;
-    padding-top: 5%;
+    margin-top: 2%;
+    margin-left: 5%;
+    padding-top: 0%;
     padding-bottom: 5%;
 }
 
-.innerBox {
+.activityWrapperOuter::after {
+    position: absolute;
+    left: 7%;
+    bottom: 6px;
+    content: "";
+    background-color: #7E8DA4;
+    width: 1px;
+    height: 65%;
+    border-radius: 10px;
+}
+
+
+.dateTimeTaskTypeWrapper {
+    width: 100%;
+    height: 70px;
+    /* border: 1px solid black; */
+    display: grid;
+    grid-template-columns: 20% 30% 30%;
+    grid-template-rows: 40% 60%;
+    grid-template-areas:
+        "dateWrapper timeWrapper timeWrapper"
+        "dateWrapper typeWrapper taskWrapper";
+}
+
+/* ___________________________________________ */
+.dateWrapper {
+    position: relative;
+    grid-area: dateWrapper;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid pink; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.dateWrapper::after {
+    position: absolute;
+    right: 15%;
+    content: "";
+    background-color: #002A9A;
+    width: 2.5px;
+    height: 80%;
+    border-radius: 10px;
+}
+
+.dateContainer {
+    width: 68%;
+    height: 100%;
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+
+.monthDiv {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 50%;
+    /* border: 1px solid black; */
+}
+
+.monthDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.dateDiv {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 50%;
+    /* border: 1px solid black; */
+
+}
+
+.dateDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: #002A9A;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* ___________________________________________ */
+
+
+.timeWrapper {
+    grid-area: timeWrapper;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.timeContainer {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.timeContainer p {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: black;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* ___________________________________________ */
+
+.typeWrapper {
+    grid-area: typeWrapper;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid orange; */
+    /* background-color: red; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.typeContainer {
     width: 80%;
-    height: 50px;
+    height: 70%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9px;
+    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+
+
+}
+
+.typeContainer p {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: black;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* ___________________________________________ */
+
+.taskWrapper {
+    grid-area: taskWrapper;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.taskContainer {
+    width: 80%;
+    height: 70%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9px;
+    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+
+}
+
+.taskContainer p {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: black;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* ___________________________________________ */
+
+.innerBox {
+    position: relative;
+    width: 78%;
+    height: 60px;
     background-color: white;
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
-    border: 1px solid black;
+    align-items: center;
+    /* border: 1px solid black; */
+    border-radius: 15px;
+    margin-top: 8px;
+    margin-right: 5.5%;
+    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+
+}
+
+.innerBox::before {
+    position: absolute;
+    left: 0px;
+    content: "";
+    background-color: #002A9A;
+    width: 2.5px;
+    height: 40%;
+    border-radius: 10px;
 }
