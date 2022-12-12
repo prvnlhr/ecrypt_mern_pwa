@@ -1,7 +1,13 @@
 import React from 'react'
 import styles from "./styles/activityWrapper.module.css"
+import ChangeFieldComponent from "./ChangeFieldComponent"
 
-const ActivityComponentOuter = () => {
+const ActivityComponentOuter = ({ activity }) => {
+
+    Object.entries(activity).map(([key, val]) => (
+        console.log(key, val.oldVal, val.newVal)
+    ))
+
     return (
         <div className={styles.activityWrapperOuter}>
 
@@ -29,21 +35,31 @@ const ActivityComponentOuter = () => {
 
                 <div className={styles.typeWrapper}>
                     <div className={styles.typeContainer} >
-                        <p>Login</p>
+                        <p>{activity.type}</p>
                     </div>
                 </div>
 
 
                 <div className={styles.taskWrapper}>
                     <div className={styles.taskContainer} >
-                        <p>Edited</p>
+                        <p>{activity.task}</p>
                     </div>
                 </div>
 
             </div>
 
-            <div className={styles.innerBox}></div>
-            <div className={styles.innerBox}></div>
+            {Object.entries(activity).map(([item, val]) => (
+
+                < ChangeFieldComponent
+                    item={item}
+                    value={val}
+                />
+
+            ))}
+
+
+
+
         </div>
     )
 }

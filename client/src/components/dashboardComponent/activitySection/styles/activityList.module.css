@@ -16,7 +16,7 @@
 }
 
 .activityList::-webkit-scrollbar {
-    /* display: none; */
+    display: none;
 }
 
 /* .activityList::after {
@@ -29,7 +29,8 @@
   } */
 @media screen and (max-width: 650px) {
     .activityList {
+        height: 90%;
         /* padding: 5% 0% 10% 0%; */
-        padding: 0% 0% 0% 0%;
+        padding: 0% 0% 5% 0%;
     }
 }

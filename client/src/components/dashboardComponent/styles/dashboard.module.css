@@ -297,7 +297,8 @@
     /* border: 1px solid black; */
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 45% 55% 100%;
+    /* grid-template-rows: 45% 55% 100%; */
+    grid-template-rows: 40% 60% 100%;
     grid-template-areas:
       "overviewWrapper"
       "recentActivitesWrapper"
@@ -446,7 +447,7 @@
     /* border: 1px solid black; */
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     padding: 0px;
   }
 
