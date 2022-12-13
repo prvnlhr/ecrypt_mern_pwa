@@ -1,0 +1,82 @@
+.fieldWrapper {
+    position: relative;
+    width: 78%;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 12px;
+    margin-top: 8px;
+    margin-right: 5.5%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+
+.fieldContainer {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+
+
+.fieldNameLabelWrapper {
+    position: relative;
+    width: auto;
+    height: 100%;
+    /* border: 1px solid red; */
+    /* background-color: red; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 8px;
+    padding-right: 5px;
+}
+
+
+
+.fieldNameLabelWrapper p {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: black;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.valWrapper {
+    position: relative;
+    width: auto;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* padding-top: 2px; */
+    padding-left: 5px;
+}
+
+.valWrapper p {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: #002A9A;
+    margin: 0px;
+    padding: 0px;
+}
+
+.fieldWrapper::before {
+    position: absolute;
+    left: 0px;
+    content: "";
+    background-color: #002A9A;
+    width: 2.5px;
+    height: 40%;
+    border-radius: 10px;
+}

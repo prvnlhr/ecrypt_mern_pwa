@@ -1,12 +1,14 @@
 import React from 'react'
 import styles from "./styles/activityWrapper.module.css"
 import ChangeFieldComponent from "./ChangeFieldComponent"
+import NewDeletedField from './NewDeletedField';
 
 const ActivityComponentOuter = ({ activity }) => {
 
-    Object.entries(activity).map(([key, val]) => (
-        console.log(key, val.oldVal, val.newVal)
-    ))
+
+
+
+    console.log(activity.type);
 
     return (
         <div className={styles.activityWrapperOuter}>
@@ -17,10 +19,10 @@ const ActivityComponentOuter = ({ activity }) => {
                     <div className={styles.dateContainer} >
 
                         <div className={styles.monthDiv} >
-                            <p>Oct</p>
+                            <p>{activity.month}</p>
                         </div>
                         <div className={styles.dateDiv} >
-                            <p>16</p>
+                            <p>{activity.date}</p>
                         </div>
                     </div>
                 </div>
@@ -28,7 +30,7 @@ const ActivityComponentOuter = ({ activity }) => {
 
                 <div className={styles.timeWrapper}>
                     <div className={styles.timeContainer} >
-                        <p>09 : 12 AM</p>
+                        <p>{activity.time}</p>
                     </div>
                 </div>
 
@@ -48,14 +50,29 @@ const ActivityComponentOuter = ({ activity }) => {
 
             </div>
 
-            {Object.entries(activity).map(([item, val]) => (
 
-                < ChangeFieldComponent
-                    item={item}
-                    value={val}
-                />
 
-            ))}
+
+            {activity.subType == 2 ?
+
+                Object.entries(activity).map(([item, val]) => (
+                    < ChangeFieldComponent
+                        item={item}
+                        value={val}
+                    />
+
+                ))
+                :
+
+                Object.entries(activity).map(([item, val]) => (
+                    < NewDeletedField
+                        item={item}
+                        activity={activity}
+                    />
+                ))
+
+            }
+
 
 
 

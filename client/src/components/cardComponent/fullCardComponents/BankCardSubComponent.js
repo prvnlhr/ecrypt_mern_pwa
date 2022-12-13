@@ -3,7 +3,7 @@ import styles from "../styles/bankCardSubComponent.module.css"
 import { Icon } from '@iconify/react';
 const BankCardSubComponent = () => {
     return (
-        <div className={styles.cardWrapper} >
+        <div className={styles.subCardWrapper} >
             <div className={styles.cardHolderWrapper}>
                 <div className={styles.cardHolderContainer}>
                     <div className={styles.cardHolderIconDiv}>
@@ -19,9 +19,6 @@ const BankCardSubComponent = () => {
                         <input value={"Anderw Garfield"} />
                     </div>
 
-                    <div className={styles.cardVenderIconDiv}>
-                        <Icon className={styles.cardVenderIcon} icon="logos:visa" />
-                    </div>
                 </div>
             </div>
             <div className={styles.cardNumberWrapper}>
@@ -34,6 +31,9 @@ const BankCardSubComponent = () => {
                     </div>
                     <div className={styles.cardNumberInputDiv}>
                         <input value={"5242 7230 1846 1202"} />
+                    </div>
+                    <div className={styles.cardVenderIconDiv}>
+                        <Icon className={styles.cardVenderIcon} icon="logos:visa" />
                     </div>
                 </div>
             </div>

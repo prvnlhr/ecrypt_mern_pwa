@@ -75,6 +75,12 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
     e.currentTarget.classList.toggle('toggleBtnPos');
   }
 
+  const settingsLinkedClicked = (e) => {
+    setOpen(false);
+  }
+
+
+
 
   const day = moment().format("dddd");
   const date = moment().format('DD MMM YYYY');
@@ -195,7 +201,7 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
 
                 </div>
               </div>
-              <Link to="/user/settings" className={headerStyles.settingsLinkContainer}
+              <Link to="/user/settings" onClick={settingsLinkedClicked} className={headerStyles.settingsLinkContainer}
               >
                 <Icon className={headerStyles.settingsIcon} icon="ph:gear-six" rotate={1} />
                 <p className={headerStyles.settingsText}>Settings</p>

@@ -3,7 +3,6 @@
     width: 78%;
     height: 60px;
     background-color: white;
-    /* border: 1px solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,8 +11,10 @@
     border-radius: 15px;
     margin-top: 8px;
     margin-right: 5.5%;
-    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+
+
 }
 
 .fieldContainer {
@@ -166,7 +167,7 @@
     padding: 0px;
 }
 
-.filedWrapper::before {
+.fieldWrapper::before {
     position: absolute;
     left: 0px;
     content: "";

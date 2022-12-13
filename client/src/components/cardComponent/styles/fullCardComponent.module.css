@@ -15,6 +15,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    /* border: 1px solid black; */
 }
 
 .cardWrapperClose {
@@ -43,8 +44,8 @@
 .cardContainer {
     width: 70%;
     height: 90%;
-    /* border: 1px solid red; */
-    /* border: 1px solid black; */
+    /* border: 1px solid red;
+
     display: grid;
     grid-template-columns: 10% 90%;
     grid-template-rows: 15% 20% 15% 10% 20% 20%;
@@ -58,6 +59,21 @@
         "cardNumberWrapper cardNumberWrapper"
         "dateOfBirthWrapper expiryIssueWrapper";
     box-sizing: border-box;
+    */
+    display: grid;
+    grid-template-columns: 25% minmax(0, 1fr);
+    grid-template-rows: 10% 17% 14% 14% 22% 22%;
+    grid-template-rows: 10% 18% 14% 14% 22% 22%;
+    grid-template-rows: 10% 20% 15% 55%;
+    grid-template-areas:
+        "cardHeader cardHeader"
+        "logoTitleWrapper logoTitleWrapper"
+        "categoryWrapper categoryWrapper"
+        "subcardWrapper subcardWrapper";
+    padding-bottom: 0%;
+    padding-top: 0%;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
 }
 
 .cardHeader {
@@ -318,6 +334,14 @@
 .inputPopUpText:hover {
     background-color: red;
     width: 80%;
+}
+
+.subCardWrapper {
+    grid-area: subcardWrapper;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid red; */
 }
 
 
