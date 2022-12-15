@@ -34,6 +34,7 @@
 }
 
 .contentContainer {
+  position: relative;
   height: 100%;
   width: 100%;
   display: flex;
@@ -58,6 +59,8 @@
 }
 
 .contentContainerClose {
+  position: relative;
+
   height: 100%;
   width: 40%;
   display: flex;
@@ -103,6 +106,7 @@
 
 
 .contentContainerCollapse {
+  position: relative;
   border-radius: 0px 0px 0px 0px;
   width: 100%;
   height: 100%;
@@ -251,11 +255,9 @@
     padding-right: 0;
 
     scrollbar-width: none;
-    /* firefox hide scrollbar  */
     -ms-overflow-style: none;
-    /* firefox hide scrollbar  */
-    /* border: 1px solid black; */
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-
   }
+
+
 }

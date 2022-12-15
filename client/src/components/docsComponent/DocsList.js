@@ -23,6 +23,7 @@ const DocsList = ({
   showHeaderFooter,
   setShowHeaderFooter,
   currDeletingDocId,
+  setDocFullScreen = { setDocFullScreen }
 }) => {
   const [showEditButton, setEditButton] = useState(true);
 
@@ -90,7 +91,12 @@ const DocsList = ({
       <div className={styles.contentContainer}>
         {
           docsData.map((doc, index) => (
-            <Document doc={doc} key={index} />
+            <Document
+              doc={doc}
+              key={index}
+              setDocFullScreen={setDocFullScreen}
+
+            />
           ))
         }
       </div>

@@ -1,0 +1,168 @@
+.documentFullScreenWrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 10px;
+    /* border: 1px solid rgba(255, 255, 255, 0.18); */
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.documentFullScreenWrapperClose {
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 10px;
+    /* border: 1px solid rgba(255, 255, 255, 0.18); */
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.imageContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+.headerContainer {
+    position: absolute;
+    top: 0px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+}
+
+.headerContainerClose {
+    position: absolute;
+    top: -50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+}
+
+.backBtnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: 100%;
+    /* border: 1px solid red; */
+}
+
+.backBtnDiv {
+    width: 70%;
+    height: 50%;
+    /* border: 1px solid black; */
+}
+
+.deleteBtnContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    /* border: 1px solid black; */
+}
+
+.favBtnContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 25%;
+    height: 100%;
+    /* border: 1px solid black; */
+}
+
+.footerContainer {
+    position: absolute;
+    bottom: 0px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+}
+
+.footerContainerClose {
+    position: absolute;
+    bottom: -50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+}
+
+.titleDiv {
+    width: 80%;
+    height: 100%;
+    /* border: 1px solid black; */
+}
+
+.titleEditBtnIconDiv {
+    width: 20%;
+    height: 100%;
+    /* border: 1px solid black; */
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .backBtnContainer {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 25%;
+        height: 100%;
+        /* border: 1px solid red; */
+    }
+
+    .backBtnDiv {
+        width: 80%;
+        height: 80%;
+        /* border: 1px solid black; */
+    }
+
+}

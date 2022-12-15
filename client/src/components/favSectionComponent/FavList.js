@@ -47,7 +47,6 @@ const FavList = ({
   // }
   return (
     <div className={styles.favListComponent}>
-      FAVLIST
       {/* <div className={styles.navHeaderContainer}>
         <NavLink
 

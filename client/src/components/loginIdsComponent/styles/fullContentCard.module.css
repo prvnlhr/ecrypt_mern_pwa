@@ -546,6 +546,7 @@
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 
     .cardWrapper {
+
         display: flex;
         width: 100%;
         height: 90%;
@@ -557,6 +558,7 @@
         margin-top: 14%;
 
     }
+
 
     .cardWrapperClose {
         display: flex;
@@ -578,8 +580,9 @@
         padding: 0px;
         margin: 0px;
         transition: none;
-        /* border: 1px solid black; */
     }
+
+
 
     .cardContainer {
         /* border: 1px solid black; */

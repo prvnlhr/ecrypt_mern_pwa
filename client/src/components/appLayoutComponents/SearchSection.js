@@ -9,6 +9,8 @@ const SearchSection = () => {
 
     const [searchMode, setSearchMode] = useState(false);
 
+    const [listCount, setListCount] = useState(0);
+
     const [listTitle, setListTitle] = useState("");
 
 
@@ -16,6 +18,7 @@ const SearchSection = () => {
         switch (location.pathname) {
             case "/dashboard":
                 setListTitle("Dashboard");
+
                 break;
             case "/user/display_loginIds":
                 setListTitle("Logins");
@@ -44,6 +47,13 @@ const SearchSection = () => {
                 <div className={styles.listTitleTextDiv}>
                     <p>{listTitle}</p>
                 </div>
+
+                {location.pathname === "/dashboard" || location.pathname === "/user/favorites/*"
+                    ? null :
+                    <div className={styles.listCountDiv} >
+                        <p>16</p>
+                    </div>
+                }
             </div>
             <div className={styles.searchInputWrapper}>
 

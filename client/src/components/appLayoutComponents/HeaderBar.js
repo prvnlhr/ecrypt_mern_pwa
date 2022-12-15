@@ -168,34 +168,18 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
           <div className={`${headerStyles.popUpMenuContainer}`}>
             <div className={headerStyles.topSection} >
               <div className={headerStyles.themeToggleWrapper}>
-                <div className={headerStyles.toggleContainer}
-                  onClick={themeToggle}
-                >
-                  <div className={
-                    lightTheme ?
-
-                      headerStyles.toggleBtnDivLeft
-                      :
-                      headerStyles.toggleBtnDivRight
-
-                  }
-                  >
-                    <div className={headerStyles.toggleIconDiv}
-
-                    >
-                      {lightTheme ? (
-                        < Icon className={headerStyles.toggleIcon} icon="icon-park-outline:sun-one" color="#f3b821" rotate={1} />
-                      )
-                        :
-                        (<Icon className={headerStyles.toggleIcon} icon="akar-icons:moon" color="#5d6175" />)
+                <div className={headerStyles.toggleContainer} onClick={themeToggle}>
+                  <div className={lightTheme ? headerStyles.toggleBtnDivLeft : headerStyles.toggleBtnDivRight} >
+                    <div className={headerStyles.toggleIconDiv} >
+                      {lightTheme ?
+                        <Icon className={headerStyles.toggleIconLight} icon="mingcute:sun-line" color="#f3b821" /> :
+                        <Icon className={headerStyles.toggleIconDark} icon="akar-icons:moon" color="#5d6175" />
                       }
                     </div>
-                    <div className={headerStyles.toggleTextDiv}>
-
-                      {lightTheme ?
-                        <p>Light</p> :
-                        <p>Dark</p>
-                      }
+                    <div className={headerStyles.toggleTextDiv} >
+                      <p>
+                        {lightTheme ? "Light" : "Dark"}
+                      </p>
                     </div>
                   </div>
 

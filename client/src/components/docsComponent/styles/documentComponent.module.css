@@ -1,76 +1,178 @@
-.documentCompoentWrapper {
+.documentComponentWrapper {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
     width: 150px;
     height: 200px;
-    /* margin: 15px 15px 15px 15px; */
-    /* margin: 0px 0px 0px 0px; */
+    background-color: white;
     border-radius: 15px;
-    border: 1px solid rgb(67, 66, 66);
+    margin-left: 20px;
+    /* border: 1px solid black; */
+    margin-top: 20px;
 }
 
 .documenComponentContainer {
+    position: relative;
+    width: 95%;
+    height: 95%;
     display: grid;
-    width: 90%;
-    height: 90%;
-    border: 1px solid rgb(230, 228, 228);
-    display: grid;
+    grid-template-rows: 85% 15%;
     grid-template-columns: 100%;
-    grid-template-rows: 10% 70% 20%;
     grid-template-areas:
-        "cardHeader "
-        "imageDiv"
-        "titleDiv";
-    box-sizing: border-box;
-    border-radius: 12px;
+        "imageContainer"
+        "footerContainer";
+
+    /* border: 1px solid black; */
+
 
 }
 
-.cardHeader {
-    grid-area: cardHeader;
+.imageContainer {
+    position: relative;
+    grid-area: imageContainer;
     width: 100%;
     height: 100%;
     /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #DDEFF3;
+    border-radius: 15px;
 }
 
-.imageDiv {
-    grid-area: imageDiv;
+.footerContainer {
+    position: relative;
+    grid-area: footerContainer;
     width: 100%;
     height: 100%;
     /* border: 1px solid orange; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .titleDiv {
-    grid-area: titleDiv;
-    width: 100%;
+    position: relative;
+    width: 80%;
     height: 100%;
     /* border: 1px solid blue; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-left: 10%;
 }
 
 .titleText {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
-    color: #7E8DA4;
+    color: black;
 }
 
-@media screen and (max-width: 650px) {
+.favBtnDiv {
+    position: relative;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* border: 1px solid black; */
+    /* background-color: blueviolet; */
+}
 
-    .documentCompoentWrapper {
+.favBtnIcon {
+    font-size: 15px;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+@media screen and (max-width: 650px) {
+    .documentComponentWrapper {
         position: relative;
+        width: 100%;
+        height: 200px;
+        background-color: white;
+        margin: unset;
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: white;
-        width: 45% !important;
-        height: 200px;
-        border-radius: 15px;
-        border: 1px solid rgb(67, 66, 66);
-        flex-grow: 0;
-        flex-shrink: 1;
-        flex-basis: 45%;
+    }
+
+    .documenComponentContainer {
+        position: relative;
+        width: 92%;
+        height: 92%;
+        display: grid;
+        grid-template-rows: 85% 15%;
+        grid-template-columns: 100%;
+        grid-template-areas:
+            "imageContainer"
+            "footerContainer";
+        justify-content: center;
+        align-items: center;
+        /* border: 1px solid black; */
+
+    }
+
+    .imageContainer {
+        position: relative;
+        grid-area: imageContainer;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+        background-color: #DDEFF3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 12px;
+    }
+
+    .footerContainer {
+        position: relative;
+        grid-area: footerContainer;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid orange; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .titleDiv {
+        position: relative;
+        width: 80%;
+        height: 100%;
+        /* border: 1px solid blue; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        padding-left: 5%;
+    }
+
+    .titleText {
+        font-family: "Poppins", sans-serif;
+        font-size: 12px;
+        font-weight: 450;
+        color: black;
+    }
+
+    .favBtnDiv {
+        position: relative;
+        width: 20%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        /* border: 1px solid black; */
+        /* background-color: blueviolet; */
+    }
+
+    .favBtnIcon {
+        font-size: 16px;
+        margin: 0px;
+        padding: 0px;
+        /* border: 1px solid black; */
     }
 }

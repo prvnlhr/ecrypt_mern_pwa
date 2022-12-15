@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState, useRef, } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate, Location, useLocation } from "react-router-dom";
 import homeStyles from "./styles/home.module.css";
+
+import docFullStyles from "../docsComponent/styles/documentFullScreen.module.css";
 import ContentDisplay from "./ContentDisplay";
 
 import { logout } from "../../redux/actions/auth";
@@ -13,6 +15,7 @@ import SearchSection from "./SearchSection";
 import SideBar from "./SideBar";
 import { Icon } from '@iconify/react';
 import Settings from "./Settings";
+import DocFullScreen from "../docsComponent/DocFullScreen";
 
 
 const Home = () => {
@@ -24,10 +27,13 @@ const Home = () => {
   const loadState = useSelector((state) => state.loading);
   const theme = useSelector((state) => state.theme.theme);
 
-
+  const [docFullScreen, setDocFullScreen] = useState(false);
 
   const location = useLocation();
 
+  useEffect(() => {
+    console.log(docFullScreen);
+  }, [docFullScreen])
 
 
 
@@ -46,6 +52,14 @@ const Home = () => {
   return (
     <div className={location.pathname === "/user/settings" ? homeStyles.homeComponentForSettings : homeStyles.homeComponent}>
 
+
+
+      <DocFullScreen
+        setDocFullScreen={setDocFullScreen}
+        docFullScreen={docFullScreen}
+      />
+      {/* {docFullScreen &&
+      } */}
       {location.pathname === "/user/settings"
         ?
         <Settings />
@@ -60,7 +74,9 @@ const Home = () => {
             setOpen={setOpen}
             node={node} />
           <SearchSection />
-          <ContentDisplay />
+          <ContentDisplay
+            setDocFullScreen={setDocFullScreen}
+          />
           <TabBar />
         </>
       }

@@ -34,6 +34,7 @@ const ContentDisplay = ({
   showHeaderFooter,
   setShowHeaderFooter,
   currDeletingDocId,
+  setDocFullScreen
 }) => {
   const dispatch = useDispatch();
 
@@ -129,6 +130,7 @@ const ContentDisplay = ({
         <Route path="/user/diplay_documents"
           element={
             <DocsList
+              setDocFullScreen={setDocFullScreen}
             // docs={docsArray}
             // setHeading={setHeading}
             // imageData={imageData}
