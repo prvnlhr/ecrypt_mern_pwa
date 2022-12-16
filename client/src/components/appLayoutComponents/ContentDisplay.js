@@ -34,7 +34,8 @@ const ContentDisplay = ({
   showHeaderFooter,
   setShowHeaderFooter,
   currDeletingDocId,
-  setDocFullScreen
+  setDocFullScreen,
+  setFullScreenDocData
 }) => {
   const dispatch = useDispatch();
 
@@ -131,6 +132,8 @@ const ContentDisplay = ({
           element={
             <DocsList
               setDocFullScreen={setDocFullScreen}
+              setFullScreenDocData={setFullScreenDocData}
+
             // docs={docsArray}
             // setHeading={setHeading}
             // imageData={imageData}

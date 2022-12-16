@@ -6,8 +6,6 @@ import { Icon } from '@iconify/react';
 import styles from "./styles/tabBar.module.css"
 const TabBar = () => {
 
-  const [] = useState("");
-
   const refDash = useRef();
   const refLogins = useRef();
   const refCards = useRef();
@@ -95,31 +93,31 @@ const TabBar = () => {
 
       <div className={styles.tabIconContainer} ref={refDash}  >
         <Link className={styles.tabbarIconsDiv} to="/dashboard"   >
-          <Icon className={styles.tabbarIcons} onClick={() => linkedClicked(1)} icon="iconoir:home-simple" color="#7e8da4" />
+          <Icon className={styles.tabbarIcons} onClick={() => linkedClicked(1)} icon="iconoir:home-simple" color={location.pathname === "/dashboard" ? "black" : "#7e8da4"} />
         </Link>
       </div>
 
       <div className={styles.tabIconContainer} ref={refLogins}   >
         <Link className={styles.tabbarIconsDiv} to="/user/display_loginIds">
-          <Icon className={styles.tabbarIcons} onClick={() => linkedClicked(2)} icon="ant-design:key-outlined" color="#7e8da4" />
+          <Icon className={styles.tabbarIcons} onClick={() => linkedClicked(2)} icon="ant-design:key-outlined" color={location.pathname === "/user/display_loginIds" ? "black" : "#7e8da4"} />
         </Link>
       </div>
 
       <div className={styles.tabIconContainer} ref={refCards} >
         <Link className={styles.tabbarIconsDiv} to="/user/display_cards"  >
-          <Icon className={styles.tabbarIcons} onClick={() => linkedClicked(3)} icon="bi:credit-card-2-back" color="#7e8da4" />
+          <Icon className={styles.tabbarIcons} onClick={() => linkedClicked(3)} icon="bi:credit-card-2-back" color={location.pathname === "/user/display_cards" ? "black" : "#7e8da4"} />
         </Link>
       </div>
 
       <div className={styles.tabIconContainer} ref={refNotes} >
         <Link className={styles.tabbarIconsDiv} to="/user/diplay_documents">
-          <Icon className={styles.tabbarIcons} onClick={() => linkedClicked(4)} icon="system-uicons:document-words" color="#7e8da4" />
+          <Icon className={styles.tabbarIcons} onClick={() => linkedClicked(4)} icon="system-uicons:document-words" color={location.pathname === "/user/diplay_documents" ? "black" : "#7e8da4"} />
         </Link>
       </div>
 
       <div className={styles.tabIconContainer} ref={refFavs}  >
         <Link className={styles.tabbarIconsDiv} to="/user/favorites/*" >
-          <Icon className={styles.tabbarIcons} onClick={() => linkedClicked(5)} icon="ion:bookmark-outline" color="#7e8da4" />
+          <Icon className={styles.tabbarIcons} onClick={() => linkedClicked(5)} icon="ion:bookmark-outline" color={location.pathname === "/user/favorites/*" ? "black" : "#7e8da4"} />
         </Link>
       </div>
 

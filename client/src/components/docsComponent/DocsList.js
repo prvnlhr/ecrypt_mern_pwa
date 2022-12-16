@@ -23,7 +23,8 @@ const DocsList = ({
   showHeaderFooter,
   setShowHeaderFooter,
   currDeletingDocId,
-  setDocFullScreen = { setDocFullScreen }
+  setDocFullScreen,
+  setFullScreenDocData
 }) => {
   const [showEditButton, setEditButton] = useState(true);
 
@@ -95,6 +96,7 @@ const DocsList = ({
               doc={doc}
               key={index}
               setDocFullScreen={setDocFullScreen}
+              setFullScreenDocData={setFullScreenDocData}
 
             />
           ))

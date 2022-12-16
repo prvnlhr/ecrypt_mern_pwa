@@ -681,10 +681,11 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    padding-left: 2%;
   }
 
   .settingsIcon {
-    font-size: 20px;
+    font-size: 15px;
     margin-right: 5%;
 
   }
@@ -714,10 +715,12 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    padding-left: 2%;
+
   }
 
   .logoutIcon {
-    font-size: 20px;
+    font-size: 18px;
     margin-right: 5%;
   }
 

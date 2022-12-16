@@ -2,10 +2,12 @@ import React from 'react'
 import styles from "./styles/documentComponent.module.css"
 import { Icon, InlineIcon } from "@iconify/react";
 
-const Document = ({ doc, setDocFullScreen }) => {
+const Document = ({ doc, setDocFullScreen, setFullScreenDocData }) => {
 
   const docClicked = () => {
+    setFullScreenDocData(doc);
     setDocFullScreen(true);
+
   }
   return (
     <div className={styles.documentComponentWrapper} >

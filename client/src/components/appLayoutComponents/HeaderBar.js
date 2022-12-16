@@ -187,7 +187,7 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
               </div>
               <Link to="/user/settings" onClick={settingsLinkedClicked} className={headerStyles.settingsLinkContainer}
               >
-                <Icon className={headerStyles.settingsIcon} icon="ph:gear-six" rotate={1} />
+                <Icon className={headerStyles.settingsIcon} icon="lucide:settings-2" rotate={1} />
                 <p className={headerStyles.settingsText}>Settings</p>
               </Link>
             </div>

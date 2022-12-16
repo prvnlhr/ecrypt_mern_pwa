@@ -28,7 +28,7 @@ const Home = () => {
   const theme = useSelector((state) => state.theme.theme);
 
   const [docFullScreen, setDocFullScreen] = useState(false);
-
+  const [fullScreenData, setFullScreenDocData] = useState({});
   const location = useLocation();
 
   useEffect(() => {
@@ -57,6 +57,7 @@ const Home = () => {
       <DocFullScreen
         setDocFullScreen={setDocFullScreen}
         docFullScreen={docFullScreen}
+        fullScreenData={fullScreenData}
       />
       {/* {docFullScreen &&
       } */}
@@ -76,6 +77,7 @@ const Home = () => {
           <SearchSection />
           <ContentDisplay
             setDocFullScreen={setDocFullScreen}
+            setFullScreenDocData={setFullScreenDocData}
           />
           <TabBar />
         </>

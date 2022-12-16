@@ -2,8 +2,9 @@ import React from 'react';
 import { useState } from 'react';
 import BackBtnIcon from '../icons/BackBtnIcon';
 import styles from "./styles/documentFullScreen.module.css"
+import { Icon } from '@iconify/react';
 
-const DocFullScreen = ({ setDocFullScreen, docFullScreen }) => {
+const DocFullScreen = ({ setDocFullScreen, docFullScreen, fullScreenData }) => {
 
     const [headerFooterShow, setHeaderFooterShow] = useState(true);
 
@@ -32,8 +33,10 @@ const DocFullScreen = ({ setDocFullScreen, docFullScreen }) => {
             </div>
             <div className={headerFooterShow ? styles.footerContainer : styles.footerContainerClose}  >
                 <div className={styles.titleDiv} >
+                    <p>{fullScreenData.title}</p>
                 </div>
                 <div className={styles.titleEditBtnIconDiv} >
+                    <Icon className={styles.titleEditIcon} icon="lucide:edit" />
                 </div>
             </div>
         </div>

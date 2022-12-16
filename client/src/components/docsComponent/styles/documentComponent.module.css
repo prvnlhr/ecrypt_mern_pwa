@@ -60,7 +60,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
-    padding-left: 10%;
+    overflow: hidden;
 }
 
 .titleText {
@@ -68,6 +68,10 @@
     font-size: 12px;
     font-weight: 500;
     color: black;
+    width: 80%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
 }
 
 .favBtnDiv {
@@ -98,6 +102,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        overflow: hidden;
     }
 
     .documenComponentContainer {
@@ -148,7 +153,7 @@
         display: flex;
         justify-content: flex-start;
         align-items: flex-end;
-        padding-left: 5%;
+        overflow: hidden;
     }
 
     .titleText {
@@ -156,6 +161,11 @@
         font-size: 12px;
         font-weight: 450;
         color: black;
+        width: 80%;
+        margin-left: 5%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis
     }
 
     .favBtnDiv {
