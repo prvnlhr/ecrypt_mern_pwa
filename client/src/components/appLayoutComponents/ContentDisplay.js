@@ -35,7 +35,8 @@ const ContentDisplay = ({
   setShowHeaderFooter,
   currDeletingDocId,
   setDocFullScreen,
-  setFullScreenDocData
+  setFullScreenDocData,
+  setLogoComponentShow
 }) => {
   const dispatch = useDispatch();
 
@@ -108,6 +109,7 @@ const ContentDisplay = ({
         <Route path="/user/display_loginIds"
           element={
             <LoginIdsList
+            setLogoComponentShow={setLogoComponentShow}
             // loginIds={loginIdsArray}
             // currentId={currentId}
             // setCurrentId={setCurrentId}
@@ -119,6 +121,7 @@ const ContentDisplay = ({
         <Route path="/user/display_cards"
           element={
             <CardsList
+            setLogoComponentShow={setLogoComponentShow}
             // cards={cardsArray}
             // currentId={currentId}
             // setCurrentId={setCurrentId}

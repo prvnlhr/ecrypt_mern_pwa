@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import styles from "./styles/fullContentCard.module.css"
 import BackBtnIcon from "../icons/BackBtnIcon"
 import { Icon } from '@iconify/react';
-const FullContentCard = ({ fullContentCardData, showContentCard, handleFullContentBackBtnClicked }) => {
+const FullContentCard = ({ fullContentCardData, showContentCard, handleFullContentBackBtnClicked, setLogoComponentShow }) => {
 
 
     const [currData, setCurrData] = useState({
@@ -34,6 +34,9 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
         })
         setPopUpOpen(!popUpOpen)
     }
+    const logoclicked = () => {
+        setLogoComponentShow(true);
+    }
     return (
         <div className={showContentCard ? styles.cardWrapper : styles.cardWrapperClose}>
             <div className={styles.cardContainer}>
@@ -58,7 +61,7 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
                     <div className={styles.logoTitleContainer} >
 
 
-                        <div className={styles.logoContainer} >
+                        <div className={styles.logoContainer} onClick={logoclicked} >
                             <div className={styles.logoDiv}>
                                 <Icon
                                     className={styles.logoIcon}
@@ -165,8 +168,8 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
                         <div className={styles.usernameIconDiv} >
                             <Icon
                                 className={styles.usernameIcon}
-                                icon="prime:user" color="#002a9a" 
-                                />
+                                icon="prime:user" color="#002a9a"
+                            />
                         </div>
                         <div className={styles.usernameTitleDiv} >
                             <p>USERNAME / EMAIL</p>

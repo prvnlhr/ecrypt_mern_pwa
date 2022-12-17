@@ -1,0 +1,17 @@
+.logoContainer {
+    position: relative;
+    aspect-ratio: 1/1;
+    border: 1px solid #F3F5F9;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.109);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.svgStyles {
+    position: relative;
+    width: 70%;
+    /* border: 1px solid #000; */
+}

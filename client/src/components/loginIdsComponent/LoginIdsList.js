@@ -13,7 +13,10 @@ import { CircleSpinner } from "react-spinners-kit";
 import FullContentCard from "./FullContentCard";
 const LoginIdForm = lazy(() => import("./LoginIdForm"));
 
-const LoginIdsList = (
+const LoginIdsList = ({
+
+  setLogoComponentShow
+}
   // { loginIds, currentId, setCurrentId, setHeading }
 ) => {
   const [formMode, setFormMode] = useState(false);
@@ -150,6 +153,7 @@ const LoginIdsList = (
       </div>
 
       <FullContentCard
+        setLogoComponentShow={setLogoComponentShow}
         fullContentCardData={fullContentCardData}
         showContentCard={showContentCard}
         handleFullContentBackBtnClicked={handleFullContentBackBtnClicked}

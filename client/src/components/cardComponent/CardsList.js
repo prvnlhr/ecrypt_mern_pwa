@@ -14,7 +14,7 @@ import { CircleSpinner } from "react-spinners-kit";
 import FullCardComponent from "./fullCardComponents/FullCardComponent";
 const CardForm = lazy(() => import("./CardForm"));
 
-const CardsList = ({ cards, currentId, setCurrentId, setHeading }) => {
+const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponentShow }) => {
 
   const [bankCardData, setBankCardData] = useState({
     title: "",
@@ -141,6 +141,7 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading }) => {
       </div>
       {showContentCard ?
         <FullCardComponent
+          setLogoComponentShow={setLogoComponentShow}
           showContentCard={showContentCard}
           handleFullContentBackBtnClicked={handleFullContentBackBtnClicked}
           fullContentCardData={

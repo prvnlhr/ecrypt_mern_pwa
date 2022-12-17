@@ -6,12 +6,15 @@ import { Icon } from '@iconify/react';
 import BankCardSubComponent from './BankCardSubComponent';
 import IdentityCardSubComponent from './IdentityCardSubComponent';
 import LicenseCardSubComponent from './LicenseCardSubComponent';
+import LogoComponent from "../../logoComponents/LogoComponent"
 
 const FullCardComponent = ({ showContentCard, handleFullContentBackBtnClicked,
-    fullContentCardData
+    fullContentCardData, setLogoComponentShow
 
 }) => {
     const [popUpOpen, setPopUpOpen] = useState(false);
+
+
     // console.log(fullContentCardData)
 
 
@@ -76,8 +79,13 @@ const FullCardComponent = ({ showContentCard, handleFullContentBackBtnClicked,
         setPopUpOpen(!popUpOpen)
     }
 
+    const logoclicked = () => {
+        setLogoComponentShow(true);
+    }
+
     return (
         <div className={showContentCard ? styles.cardWrapper : styles.cardWrapperClose}>
+
             <div className={styles.cardContainer}>
 
                 <div className={styles.cardHeader} >
@@ -96,8 +104,7 @@ const FullCardComponent = ({ showContentCard, handleFullContentBackBtnClicked,
 
                     <div className={styles.logoTitleContainer} >
 
-
-                        <div className={styles.logoContainer} >
+                        <div className={styles.logoContainer} onClick={logoclicked} >
                             <div className={styles.logoDiv}>
                                 <Icon
                                     className={styles.logoIcon}

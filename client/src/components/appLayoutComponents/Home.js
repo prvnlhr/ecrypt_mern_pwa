@@ -16,7 +16,7 @@ import SideBar from "./SideBar";
 import { Icon } from '@iconify/react';
 import Settings from "./Settings";
 import DocFullScreen from "../docsComponent/DocFullScreen";
-
+import LogoComponent from "../logoComponents/LogoComponent"
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ const Home = () => {
   const [open, setOpen] = useState(false);
   const loadState = useSelector((state) => state.loading);
   const theme = useSelector((state) => state.theme.theme);
-
+  const [logoComponentShow, setLogoComponentShow] = useState(false);
   const [docFullScreen, setDocFullScreen] = useState(false);
   const [fullScreenData, setFullScreenDocData] = useState({});
   const location = useLocation();
@@ -34,7 +34,6 @@ const Home = () => {
   useEffect(() => {
     console.log(docFullScreen);
   }, [docFullScreen])
-
 
 
   const handleLogout = () => {
@@ -52,15 +51,16 @@ const Home = () => {
   return (
     <div className={location.pathname === "/user/settings" ? homeStyles.homeComponentForSettings : homeStyles.homeComponent}>
 
-
+      {logoComponentShow &&
+        <LogoComponent setLogoComponentShow={setLogoComponentShow} />
+      }
 
       <DocFullScreen
         setDocFullScreen={setDocFullScreen}
         docFullScreen={docFullScreen}
         fullScreenData={fullScreenData}
       />
-      {/* {docFullScreen &&
-      } */}
+
       {location.pathname === "/user/settings"
         ?
         <Settings />
@@ -78,6 +78,7 @@ const Home = () => {
           <ContentDisplay
             setDocFullScreen={setDocFullScreen}
             setFullScreenDocData={setFullScreenDocData}
+            setLogoComponentShow={setLogoComponentShow}
           />
           <TabBar />
         </>
