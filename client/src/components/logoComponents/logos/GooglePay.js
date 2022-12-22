@@ -2,7 +2,8 @@ import React from 'react'
 import styles from "../styles/logosStyles.module.css"
 const GooglePay = () => {
     return (
-        <svg className={styles.svgStyles}
+        <svg
+            className={styles.svgStyles}
             //  width="48" height="48" 
             viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_16_8)">

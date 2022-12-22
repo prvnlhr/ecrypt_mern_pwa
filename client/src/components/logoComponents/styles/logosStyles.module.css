@@ -1,8 +1,20 @@
+.logoWrapper {
+    position: relative;
+    aspect-ratio: 1/1.5;
+    /* border: 1px solid #F3F5F9; */
+    /* background-color: white; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .logoContainer {
     position: relative;
     aspect-ratio: 1/1;
-    border: 1px solid #F3F5F9;
-    background-color: white;
+    width: 100%;
+    /* height: 70%; */
+    /* border: 1px solid red; */
     border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 0.109);
     display: flex;
@@ -10,8 +22,41 @@
     align-items: center;
 }
 
+/* .logoDiv {
+    width: 100%;
+    height: 100%;
+} */
+
+.logoDiv {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .svgStyles {
     position: relative;
     width: 70%;
     /* border: 1px solid #000; */
+}
+
+.logoLabelContainer {
+    width: 100%;
+    height: 30%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.logoLabelContainer p {
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    font-weight: 450;
+    color: black;
 }
