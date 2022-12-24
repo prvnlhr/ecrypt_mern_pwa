@@ -3,16 +3,21 @@ import { useState, useEffect } from 'react';
 import styles from "../styles/fullCardComponent.module.css"
 import BackBtnIcon from "../../icons/BackBtnIcon"
 import { Icon } from '@iconify/react';
+import { logosArray, logosData } from "../../logoComponents/logosData";
 import BankCardSubComponent from './BankCardSubComponent';
 import IdentityCardSubComponent from './IdentityCardSubComponent';
 import LicenseCardSubComponent from './LicenseCardSubComponent';
-import LogoComponent from "../../logoComponents/LogoComponent"
-
+import LogoComponentWrapper from "../../logoComponents/LogoComponentWrapper"
 const FullCardComponent = ({ showContentCard, handleFullContentBackBtnClicked,
-    fullContentCardData, setLogoComponentShow
+    fullContentCardData,
 
 }) => {
     const [popUpOpen, setPopUpOpen] = useState(false);
+
+    const [logoIndx, setLogoIndx] = useState(undefined);
+
+    const [logoComponentShow, setLogoComponentShow] = useState(false);
+
 
 
     // console.log(fullContentCardData)
@@ -82,10 +87,20 @@ const FullCardComponent = ({ showContentCard, handleFullContentBackBtnClicked,
     const logoclicked = () => {
         setLogoComponentShow(true);
     }
+    useEffect(() => {
+        console.log(fullContentCardData.logoIndex)
+        setLogoIndx(fullContentCardData.logoIndex)
+    }, [fullContentCardData])
 
     return (
         <div className={showContentCard ? styles.cardWrapper : styles.cardWrapperClose}>
-
+            {logoComponentShow &&
+                <LogoComponentWrapper
+                    setLogoComponentShow={setLogoComponentShow}
+                    logoIndx={logoIndx}
+                    setLogoIndx={setLogoIndx}
+                />
+            }
             <div className={styles.cardContainer}>
 
                 <div className={styles.cardHeader} >
@@ -106,9 +121,9 @@ const FullCardComponent = ({ showContentCard, handleFullContentBackBtnClicked,
 
                         <div className={styles.logoContainer} onClick={logoclicked} >
                             <div className={styles.logoDiv}>
-                                <Icon
-                                    className={styles.logoIcon}
-                                    icon="logos:google-pay-icon" color="#0473ff" />
+                                {logoIndx !== undefined &&
+                                    logosArray[logoIndx].logo
+                                }
                             </div>
 
                         </div>

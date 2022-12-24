@@ -51,7 +51,8 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
       cardHolder: "Praveen Lohar",
       cardNumber: 52455626554,
       expiry: "andrew@122",
-      cvv: 123
+      cvv: 123,
+      logoIndex: 72,
     },
     {
       category: "Identity",
@@ -60,6 +61,8 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
       cardNumber: "504186331908",
       expiry: "",
       dob: "23/01/1996",
+      logoIndex: 98,
+
     }
     , {
       category: "License",
@@ -68,6 +71,7 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
       licenseNumber: "52DL-855C",
       expiry: "18/05/2024",
       dov: "23/01/1996",
+      logoIndex: 0,
     }
 
   ]
@@ -81,7 +85,6 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
   }
 
   const handleCardClicked = (cardData) => {
-    setShowContentCard(true);
     console.log(cardData)
     switch (cardData.category) {
       case "Identity":
@@ -93,6 +96,8 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
           cardNumber: cardData.cardNumber,
           issueDate: cardData.issueDate,
           dob: cardData.dob,
+          logoIndex: cardData.logoIndex,
+
         })
         break;
 
@@ -105,6 +110,8 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
           licenseNumber: cardData.licenseNumber,
           expiry: cardData.expiry,
           dob: cardData.dob,
+          logoIndex: cardData.logoIndex,
+
         })
         break;
 
@@ -117,12 +124,14 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
           cardNumber: cardData.cardNumber,
           expiry: cardData.expiry,
           cvv: cardData.cvv,
+          logoIndex: cardData.logoIndex,
         })
         break;
 
       default:
         break;
     }
+    setShowContentCard(true);
 
   }
 

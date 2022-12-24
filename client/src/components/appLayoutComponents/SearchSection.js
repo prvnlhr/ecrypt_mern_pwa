@@ -18,7 +18,6 @@ const SearchSection = () => {
         switch (location.pathname) {
             case "/dashboard":
                 setListTitle("Dashboard");
-
                 break;
             case "/user/display_loginIds":
                 setListTitle("Logins");

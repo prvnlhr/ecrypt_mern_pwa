@@ -16,7 +16,7 @@ import SideBar from "./SideBar";
 import { Icon } from '@iconify/react';
 import Settings from "./Settings";
 import DocFullScreen from "../docsComponent/DocFullScreen";
-import LogoComponent from "../logoComponents/LogoComponent"
+import LogoComponentWrapper from "../logoComponents/LogoComponentWrapper"
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -51,9 +51,9 @@ const Home = () => {
   return (
     <div className={location.pathname === "/user/settings" ? homeStyles.homeComponentForSettings : homeStyles.homeComponent}>
 
-      {logoComponentShow &&
-        <LogoComponent setLogoComponentShow={setLogoComponentShow} />
-      }
+      {/* {logoComponentShow &&
+        <LogoComponentWrapper setLogoComponentShow={setLogoComponentShow} />
+      } */}
 
       <DocFullScreen
         setDocFullScreen={setDocFullScreen}

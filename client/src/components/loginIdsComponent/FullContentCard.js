@@ -3,18 +3,24 @@ import { useState, useEffect } from 'react';
 import styles from "./styles/fullContentCard.module.css"
 import BackBtnIcon from "../icons/BackBtnIcon"
 import { Icon } from '@iconify/react';
-const FullContentCard = ({ fullContentCardData, showContentCard, handleFullContentBackBtnClicked, setLogoComponentShow }) => {
+import { logosArray } from "../logoComponents/logosData"
+import LogoComponentWrapper from "../logoComponents/LogoComponentWrapper"
+const FullContentCard = ({ fullContentCardData, showContentCard, handleFullContentBackBtnClicked }) => {
 
 
     const [currData, setCurrData] = useState({
-        app: "",
-        category: "",
-        title: "",
-        username: "",
-        password: "",
+        // app: "",
+        // category: "",
+        // title: "",
+        // username: "",
+        // password: "",
+        // logoIndex: "",
     });
     const [popUpOpen, setPopUpOpen] = useState(false);
 
+    const [logoIndx, setLogoIndx] = useState(undefined);
+
+    const [logoComponentShow, setLogoComponentShow] = useState(false);
 
     useEffect(() => {
         setCurrData({
@@ -23,9 +29,16 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
             title: fullContentCardData.title,
             username: fullContentCardData.username,
             password: fullContentCardData.password,
+            logoIndex: fullContentCardData.logoIndex,
         })
+        setLogoIndx(fullContentCardData.logoIndex)
     }, [fullContentCardData]);
 
+    useEffect(() => {
+        // console.log(logoIndx, logosArray[logoIndx])
+    }, [logoIndx]);
+
+    console.log(currData);
 
     const handleOpClick = (op) => {
         setCurrData({
@@ -39,10 +52,16 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
     }
     return (
         <div className={showContentCard ? styles.cardWrapper : styles.cardWrapperClose}>
+            {logoComponentShow &&
+                <LogoComponentWrapper
+                    setLogoComponentShow={setLogoComponentShow}
+                    logoIndx={logoIndx}
+                    setLogoIndx={setLogoIndx}
+                />
+            }
             <div className={styles.cardContainer}>
 
                 <div className={styles.cardHeader}>
-
                     <div className={styles.backBtnContainer} >
                         <div className={styles.backBtnDiv}
                             onClick={() => handleFullContentBackBtnClicked()}
@@ -59,17 +78,13 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
                 <div className={styles.logoTitleWrapper} >
 
                     <div className={styles.logoTitleContainer} >
-
-
                         <div className={styles.logoContainer} onClick={logoclicked} >
                             <div className={styles.logoDiv}>
-                                <Icon
-                                    className={styles.logoIcon}
-                                    icon="logos:google-pay-icon" color="#0473ff" />
+                                {logoIndx !== undefined &&
+                                    logosArray[logoIndx].logo
+                                }
                             </div>
-
                         </div>
-
 
                         <div className={styles.titleContainer} >
                             <div className={styles.titleTitleDiv}>
@@ -171,11 +186,11 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
                                 icon="prime:user" color="#002a9a"
                             />
                         </div>
-                        <div className={styles.usernameTitleDiv} >
+                        <div className={styles.usernameLabelDiv} >
                             <p>USERNAME / EMAIL</p>
                         </div>
-                        <div className={styles.usernameTextDiv} >
-                            <p>{currData.username}</p>
+                        <div className={styles.usernameInputDiv} >
+                            <input className={styles.usernameInput} value={currData.username} />
                         </div>
                     </div>
                 </div>
@@ -187,11 +202,11 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
                             <Icon
                                 className={styles.passwordIcon}
                                 icon="fluent:password-20-regular" color="#002a9a" /></div>
-                        <div className={styles.passwordTitleDiv} >
+                        <div className={styles.passwordLabelDiv} >
                             <p>PASSWORD</p>
                         </div>
-                        <div className={styles.passwordTextDiv} >
-                            <p>{currData.password}</p>
+                        <div className={styles.passwordInputDiv} >
+                            <input className={styles.usernameInput} value={currData.password} />
                         </div>
                     </div></div>
             </div>

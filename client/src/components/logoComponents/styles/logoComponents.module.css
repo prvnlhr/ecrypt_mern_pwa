@@ -10,7 +10,7 @@
         "logoSearchWrapper"
         "logoListWrapper";
     grid-template-columns: 100%;
-    grid-template-rows: 8% 12% 80%;
+    grid-template-rows: 8% 10% 82%;
     z-index: 999;
     border-radius: 10px;
     border: 1px solid #00000031;
@@ -62,9 +62,9 @@ transform: translateX(-50%); */
 
     .componentWrapper {
         position: absolute;
-        width: 85%;
-        height: 60%;
-        min-height: 60%;
+        width: 80%;
+        height: 85%;
+        min-height: 85%;
         background-color: #f7f7f7;
         display: grid;
         grid-template-areas:
@@ -72,17 +72,17 @@ transform: translateX(-50%); */
             "logoSearchWrapper"
             "logoListWrapper";
         grid-template-columns: 100%;
-        grid-template-rows: 8% 12% 80%;
+        grid-template-rows: 8% 10% 82%;
         z-index: 999;
         border-radius: 10px;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
         /* border: 1px solid #00000031; */
         left: 0;
         right: 0;
         margin-left: auto;
         margin-right: auto;
-        bottom: 15%;
+        bottom: unset;
+        top: 20px;
     }
 
 }

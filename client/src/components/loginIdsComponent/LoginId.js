@@ -14,6 +14,7 @@ import BookmarkFill from "../icons/BookmarkFill";
 import PencilIcon from "../icons/PencilIcon";
 import CancelIcon from "../icons/CancelIcon";
 import CheckIcon from "../icons/CheckIcon";
+import { logosArray } from "../logoComponents/logosData"
 
 
 // icons set
@@ -101,7 +102,8 @@ const LoginId = ({
     setModalShow(!modalShow);
   };
 
-
+  // console.log(loginId.logoIndex, loginId.title)
+  // console.log(logosArray)
 
   return (
     <>
@@ -109,10 +111,10 @@ const LoginId = ({
         onClick={() => {
           handleLoginIdClicked(loginId);
         }}
-        >
+      >
         <div className={styles.logoWrapper} >
           <div className={styles.logoDiv}>
-
+            {logosArray[loginId.logoIndex].logo}
           </div>
         </div>
         <div className={styles.titleWrapper} >

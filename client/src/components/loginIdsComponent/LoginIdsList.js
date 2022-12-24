@@ -29,13 +29,14 @@ const LoginIdsList = ({
   const [showContentCard, setShowContentCard] = useState(false);
 
   const [fullContentCardData, setFullContentCardData] = useState(
-    {
-      app: "",
-      category: "",
-      title: "",
-      username: "",
-      password: "",
-    }
+    // {
+    //   app: "",
+    //   category: "",
+    //   title: "",
+    //   username: "",
+    //   password: "",
+    // }
+    undefined
   )
   // useEffect(() => {
   //   setHeading("LoginIds");
@@ -77,6 +78,7 @@ const LoginIdsList = ({
       title: "Google pay",
       username: "andrew.GarF@gmial.com",
       password: "andrew@122",
+      logoIndex: 39,
     },
     {
       app: "Amazon",
@@ -84,6 +86,8 @@ const LoginIdsList = ({
       title: "Amazon shopping app",
       username: "andrew@amz.com",
       password: "andrew@1dsds",
+      logoIndex: 5,
+
     }
     , {
       app: "Instagram",
@@ -91,30 +95,39 @@ const LoginIdsList = ({
       title: "Instagram app",
       username: "andrew@facebook.com",
       password: "andrew@1d32",
+      logoIndex: 50,
+
     }, {
       app: "facebbok",
       category: "Social",
       title: "Facebook.com",
       username: "andrew@facebook.com",
       password: "andrew@1d32",
+      logoIndex: 28,
+
     }, {
       app: "Gmail",
       category: "Social",
       title: "Gmail primary",
       username: "andrew@facebook.com",
       password: "andrew@1d32",
+      logoIndex: 35,
+
     }, {
       app: "Github",
       category: "Social",
       title: "Github.com",
       username: "andrew@facebook.com",
       password: "andrew@1d32",
+      logoIndex: 34,
+
     }, {
       app: "Spotify",
       category: "Social",
       title: "Spotify music app",
       username: "andrew@facebook.com",
       password: "andrew@1d32",
+      logoIndex: 79,
     }
 
   ]
@@ -126,7 +139,6 @@ const LoginIdsList = ({
   }
 
   const handleLoginIdClicked = (loginIData) => {
-    setShowContentCard(true);
     if (loginIData != undefined) {
       setFullContentCardData({
         app: loginIData.app,
@@ -134,8 +146,10 @@ const LoginIdsList = ({
         title: loginIData.title,
         username: loginIData.username,
         password: loginIData.password,
+        logoIndex: loginIData.logoIndex,
       })
     }
+    setShowContentCard(true);
   }
 
   return (
@@ -152,12 +166,14 @@ const LoginIdsList = ({
         ))}
       </div>
 
-      <FullContentCard
-        setLogoComponentShow={setLogoComponentShow}
-        fullContentCardData={fullContentCardData}
-        showContentCard={showContentCard}
-        handleFullContentBackBtnClicked={handleFullContentBackBtnClicked}
-      />
+      {fullContentCardData &&
+        <FullContentCard
+          setLogoComponentShow={setLogoComponentShow}
+          fullContentCardData={fullContentCardData}
+          showContentCard={showContentCard}
+          handleFullContentBackBtnClicked={handleFullContentBackBtnClicked}
+        />
+      }
     </div >
   );
 };

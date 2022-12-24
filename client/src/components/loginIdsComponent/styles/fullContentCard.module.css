@@ -408,8 +408,8 @@
     grid-template-columns: 20% 80%;
     grid-template-rows: 50% 50%;
     grid-template-areas:
-        "usernameIconDiv usernameTitleDiv"
-        "usernameIconDiv usernameTextDiv";
+        "usernameIconDiv usernameLabelDiv"
+        "usernameIconDiv usernameInputDiv";
     background-color: #F3F5F9;
     border-radius: 10px;
 
@@ -431,8 +431,8 @@
     height: 50%;
 }
 
-.usernameTitleDiv {
-    grid-area: usernameTitleDiv;
+.usernameLabelDiv {
+    grid-area: usernameLabelDiv;
     width: 100%;
     height: 100%;
     /* border: 1px solid black; */
@@ -441,15 +441,15 @@
     align-items: center;
 }
 
-.usernameTitleDiv p {
+.usernameLabelDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
     color: #7E8DA4;
 }
 
-.usernameTextDiv {
-    grid-area: usernameTextDiv;
+.usernameInputDiv {
+    grid-area: usernameInputDiv;
     width: 100%;
     height: 100%;
     /* border: 1px solid black; */
@@ -458,7 +458,7 @@
     align-items: center;
 }
 
-.usernameTextDiv p {
+.usernameInputDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
@@ -486,8 +486,8 @@
     grid-template-columns: 20% 80%;
     grid-template-rows: 50% 50%;
     grid-template-areas:
-        "passwordIconDiv passwordTitleDiv"
-        "passwordIconDiv passwordTextDiv";
+        "passwordIconDiv passwordLabelDiv"
+        "passwordIconDiv passwordInputDiv";
     background-color: #F3F5F9;
     border-radius: 10px;
 
@@ -509,8 +509,8 @@
     height: 55%;
 }
 
-.passwordTitleDiv {
-    grid-area: passwordTitleDiv;
+.passwordLabelDiv {
+    grid-area: passwordLabelDiv;
     width: 100%;
     height: 100%;
     /* border: 1px solid black; */
@@ -519,15 +519,15 @@
     align-items: center;
 }
 
-.passwordTitleDiv p {
+.passwordLabelDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
     color: #7E8DA4;
 }
 
-.passwordTextDiv {
-    grid-area: passwordTextDiv;
+.passwordInputDiv {
+    grid-area: passwordInputDiv;
     width: 100%;
     height: 100%;
     /* border: 1px solid black; */
@@ -536,7 +536,7 @@
     align-items: center;
 }
 
-.passwordTextDiv p {
+.passwordInputDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
@@ -546,7 +546,7 @@
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 
     .cardWrapper {
-
+        position: relative;
         display: flex;
         width: 100%;
         height: 90%;
@@ -556,7 +556,7 @@
         align-items: flex-end;
         background-color: white;
         margin-top: 14%;
-
+        /* border: 1px solid black; */
     }
 
 
@@ -679,7 +679,7 @@
     .logoDiv {
         /* width: 80%; */
         aspect-ratio: 1/1;
-        height: 60%;
+        height: 80%;
         /* border: 1px solid black; */
         border-radius: 20px;
         display: flex;
@@ -946,8 +946,8 @@
         grid-template-columns: 20% 80%;
         grid-template-rows: 50% 50%;
         grid-template-areas:
-            "usernameIconDiv usernameTitleDiv"
-            "usernameIconDiv usernameTextDiv";
+            "usernameIconDiv usernameLabelDiv"
+            "usernameIconDiv usernameInputDiv";
         background-color: #F3F5F9;
         border-radius: 10px;
 
@@ -969,8 +969,8 @@
         height: 50%;
     }
 
-    .usernameTitleDiv {
-        grid-area: usernameTitleDiv;
+    .usernameLabelDiv {
+        grid-area: usernameLabelDiv;
         width: 100%;
         height: 100%;
         /* border: 1px solid black; */
@@ -979,15 +979,15 @@
         align-items: center;
     }
 
-    .usernameTitleDiv p {
+    .usernameLabelDiv p {
         font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 500;
         color: #7E8DA4;
     }
 
-    .usernameTextDiv {
-        grid-area: usernameTextDiv;
+    .usernameInputDiv {
+        grid-area: usernameInputDiv;
         width: 100%;
         height: 100%;
         /* border: 1px solid black; */
@@ -996,12 +996,23 @@
         align-items: center;
     }
 
-    .usernameTextDiv p {
+
+
+    .usernameInputDiv input {
+        width: 80%;
+        height: 100%;
+        border-bottom: 1px solid #7E8DA4;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        outline: none;
+        background: transparent;
         font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 500;
         color: black;
     }
+
 
     .passwordWrapper {
         grid-area: passwordWrapper;
@@ -1024,8 +1035,8 @@
         grid-template-columns: 20% 80%;
         grid-template-rows: 50% 50%;
         grid-template-areas:
-            "passwordIconDiv passwordTitleDiv"
-            "passwordIconDiv passwordTextDiv";
+            "passwordIconDiv passwordLabelDiv"
+            "passwordIconDiv passwordInputDiv";
         background-color: #F3F5F9;
         border-radius: 10px;
 
@@ -1047,8 +1058,8 @@
         height: 55%;
     }
 
-    .passwordTitleDiv {
-        grid-area: passwordTitleDiv;
+    .passwordLabelDiv {
+        grid-area: passwordLabelDiv;
         width: 100%;
         height: 100%;
         /* border: 1px solid black; */
@@ -1057,15 +1068,15 @@
         align-items: center;
     }
 
-    .passwordTitleDiv p {
+    .passwordLabelDiv p {
         font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 500;
         color: #7E8DA4;
     }
 
-    .passwordTextDiv {
-        grid-area: passwordTextDiv;
+    .passwordInputDiv {
+        grid-area: passwordInputDiv;
         width: 100%;
         height: 100%;
         /* border: 1px solid black; */
@@ -1074,12 +1085,23 @@
         align-items: center;
     }
 
-    .passwordTextDiv p {
+    .passwordInputDiv input {
+        width: 80%;
+        height: 100%;
+        border-bottom: 1px solid #7E8DA4;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        outline: none;
+        background: transparent;
         font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 500;
         color: black;
     }
+
+
+
 
     /* ----------------------------------------------
  * Generated by Animista on 2022-11-28 19:46:20

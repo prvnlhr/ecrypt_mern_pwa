@@ -18,6 +18,8 @@ import PencilIcon from "../icons/PencilIcon";
 import CancelIcon from "../icons/CancelIcon";
 import CheckIcon from "../icons/CheckIcon";
 
+import { logosArray } from "../logoComponents/logosData"
+
 const Card = ({ cardData, handleCardClicked }) => {
 
   return (
@@ -28,7 +30,7 @@ const Card = ({ cardData, handleCardClicked }) => {
     >
       <div className={styles.logoWrapper} >
         <div className={styles.logoDiv}>
-
+          {logosArray[cardData.logoIndex].logo}
         </div>
       </div>
       <div className={styles.titleWrapper} >

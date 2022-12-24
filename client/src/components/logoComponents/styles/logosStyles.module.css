@@ -1,12 +1,13 @@
 .logoWrapper {
     position: relative;
     aspect-ratio: 1/1.5;
-    /* border: 1px solid #F3F5F9; */
+    /* border: 1px solid #000000; */
     /* background-color: white; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0px;
 }
 
 .logoContainer {
@@ -15,17 +16,29 @@
     width: 100%;
     /* height: 70%; */
     /* border: 1px solid red; */
-    border-radius: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.109);
+    border-radius: 15px;
+    /* border: 1px solid rgba(0, 0, 0, 0.109); */
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: white;
 }
 
-/* .logoDiv {
+.logoContainerActive {
+    position: relative;
+    aspect-ratio: 1/1;
     width: 100%;
-    height: 100%;
-} */
+    /* height: 70%; */
+    /* border: 1px solid red; */
+    border-radius: 15px;
+    /* border: 1px solid rgba(0, 0, 0, 0.109); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: cyan;
+}
+
+
 
 .logoDiv {
     position: relative;
@@ -46,12 +59,13 @@
 
 .logoLabelContainer {
     width: 100%;
-    height: 30%;
+    /* height: 30%; */
     /* border: 1px solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-top: 5px;
 }
 
 .logoLabelContainer p {

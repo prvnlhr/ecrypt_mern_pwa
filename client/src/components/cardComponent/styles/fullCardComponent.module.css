@@ -141,7 +141,7 @@
 .logoContainer {
     /* width: 10%; */
     height: 100%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -477,7 +477,7 @@
     .logoDiv {
         /* width: 80%; */
         aspect-ratio: 1/1;
-        height: 60%;
+        height: 80%;
         /* border: 1px solid black; */
         border-radius: 20px;
         display: flex;
