@@ -187,7 +187,7 @@ const ActivityList = () => {
   const data = diff(oldData, newData);
   // data.type = "bankcard";
   // data.task = "edit";
-  console.log(data);
+  // console.log(data);
 
 
 

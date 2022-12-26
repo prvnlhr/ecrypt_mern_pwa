@@ -4,6 +4,12 @@ import { useState, useRef, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import { Icon } from '@iconify/react';
 import styles from "./styles/tabBar.module.css"
+
+import BookmarksFillIcon from "../icons/BookmarksFillIcon"
+import CardsIcon from "../icons/CardsIcon"
+import DashboardIcon from "../icons/DashboardIcon"
+import LoginIdsIcon from "../icons/LoginIdsIcon"
+import DocsIcon from "../icons/DocsIcon"
 const TabBar = () => {
 
   const refDash = useRef();
@@ -56,9 +62,11 @@ const TabBar = () => {
   const linkedClicked = (val) => {
     switch (val) {
       case 1:
+
         var pos = refDash.current.offsetLeft;
         var newPos = pos + "px";
         indicatorRef.current.style.left = newPos;
+        console.log(indicatorRef, newPos)
 
         break;
       case 2:
@@ -91,33 +99,43 @@ const TabBar = () => {
     <div className={styles.tabBarSection} >
       <div className={styles.tabBarIndicator} ref={indicatorRef} ></div>
 
-      <div className={styles.tabIconContainer} ref={refDash}  >
-        <Link className={styles.tabbarIconsDiv} to="/dashboard"   >
-          <Icon className={styles.tabbarIcons} onClick={() => linkedClicked(1)} icon="iconoir:home-simple" color={location.pathname === "/dashboard" ? "black" : "#7e8da4"} />
+      <div className={styles.tabIconWrapper} ref={refDash}  >
+        <Link className={styles.tabLinks} to="/dashboard" onClick={() => linkedClicked(1)} >
+          <div className={styles.iconsDiv} >
+            <DashboardIcon />
+          </div>
         </Link>
       </div>
 
-      <div className={styles.tabIconContainer} ref={refLogins}   >
-        <Link className={styles.tabbarIconsDiv} to="/user/display_loginIds">
-          <Icon className={styles.tabbarIcons} onClick={() => linkedClicked(2)} icon="ant-design:key-outlined" color={location.pathname === "/user/display_loginIds" ? "black" : "#7e8da4"} />
+      <div className={styles.tabIconWrapper} ref={refLogins}   >
+        <Link className={styles.tabLinks} to="/user/display_loginIds" onClick={() => linkedClicked(2)}>
+          <div className={styles.iconsDiv} >
+            <LoginIdsIcon />
+          </div>
         </Link>
       </div>
 
-      <div className={styles.tabIconContainer} ref={refCards} >
-        <Link className={styles.tabbarIconsDiv} to="/user/display_cards"  >
-          <Icon className={styles.tabbarIcons} onClick={() => linkedClicked(3)} icon="bi:credit-card-2-back" color={location.pathname === "/user/display_cards" ? "black" : "#7e8da4"} />
+      <div className={styles.tabIconWrapper} ref={refCards} >
+        <Link className={styles.tabLinks} to="/user/display_cards" onClick={() => linkedClicked(3)}  >
+          <div className={styles.iconsDiv} >
+            <CardsIcon />
+          </div>
         </Link>
       </div>
 
-      <div className={styles.tabIconContainer} ref={refNotes} >
-        <Link className={styles.tabbarIconsDiv} to="/user/diplay_documents">
-          <Icon className={styles.tabbarIcons} onClick={() => linkedClicked(4)} icon="system-uicons:document-words" color={location.pathname === "/user/diplay_documents" ? "black" : "#7e8da4"} />
+      <div className={styles.tabIconWrapper} ref={refNotes} >
+        <Link className={styles.tabLinks} to="/user/diplay_documents" onClick={() => linkedClicked(4)}>
+          <div className={styles.iconsDiv} >
+            <DocsIcon />
+          </div>
         </Link>
       </div>
 
-      <div className={styles.tabIconContainer} ref={refFavs}  >
-        <Link className={styles.tabbarIconsDiv} to="/user/favorites/*" >
-          <Icon className={styles.tabbarIcons} onClick={() => linkedClicked(5)} icon="ion:bookmark-outline" color={location.pathname === "/user/favorites/*" ? "black" : "#7e8da4"} />
+      <div className={styles.tabIconWrapper} ref={refFavs}  >
+        <Link className={styles.tabLinks} to="/user/favorites/*" onClick={() => linkedClicked(5)} >
+          <div className={styles.iconsDiv} >
+            <BookmarksFillIcon />
+          </div>
         </Link>
       </div>
 

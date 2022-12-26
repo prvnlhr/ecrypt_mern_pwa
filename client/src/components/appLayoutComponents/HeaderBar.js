@@ -5,6 +5,9 @@ import { HiX, HiChevronDown, HiChevronUp } from "react-icons/hi";
 import { CircleSpinner } from "react-spinners-kit";
 import { Icon } from '@iconify/react';
 
+import LogoutIcon from "../icons/LogoutIcon"
+import SettingsIcon from "../icons/SettingsIcon"
+
 import moment from "moment";
 import { RiSearch2Line } from "react-icons/ri";
 import headerStyles from "./styles/headerBar.module.css";
@@ -187,13 +190,19 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
               </div>
               <Link to="/user/settings" onClick={settingsLinkedClicked} className={headerStyles.settingsLinkContainer}
               >
-                <Icon className={headerStyles.settingsIcon} icon="lucide:settings-2" rotate={1} />
+                {/* <Icon className={headerStyles.settingsIcon} icon="lucide:settings-2" rotate={1} /> */}
+                <div className={headerStyles.iconDiv} >
+                  <SettingsIcon />
+                </div>
+
                 <p className={headerStyles.settingsText}>Settings</p>
               </Link>
             </div>
             <div className={headerStyles.bottomSection} >
               <div className={headerStyles.logOutDiv} >
-                <Icon className={headerStyles.logoutIcon} icon="material-symbols:logout-rounded" color="#f3212d" />
+                <div className={headerStyles.logOutIconDiv} >
+                  < LogoutIcon />
+                </div>
                 <p className={headerStyles.logoutText}>Logout</p>
               </div>
             </div>

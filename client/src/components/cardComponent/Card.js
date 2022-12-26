@@ -17,6 +17,7 @@ import BookmarkFill from "../icons/BookmarkFill";
 import PencilIcon from "../icons/PencilIcon";
 import CancelIcon from "../icons/CancelIcon";
 import CheckIcon from "../icons/CheckIcon";
+import BookmarksIcon from "../icons/BookmarksIcon"
 
 import { logosArray } from "../logoComponents/logosData"
 
@@ -49,7 +50,11 @@ const Card = ({ cardData, handleCardClicked }) => {
         <Icon className={styles.bankCardLogo} icon="logos:visa" />
       </div>
       <div className={styles.favBtnWrapper} >
-        <Icon className={styles.favBtnIcon} icon="ion:bookmark-outline" color="#7e8da4" />
+        {/* <Icon className={styles.favBtnIcon} icon="ion:bookmark-outline" color="#7e8da4" /> */}
+
+        <div className={styles.favBtnIconDiv}>
+          <BookmarksIcon />
+        </div>
 
       </div>
     </div>

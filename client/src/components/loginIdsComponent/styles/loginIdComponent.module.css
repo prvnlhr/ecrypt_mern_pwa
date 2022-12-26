@@ -1,7 +1,7 @@
 .loginInWrapper {
   position: relative;
   display: grid;
-  grid-template-columns: 75px minmax(0, 1fr) minmax(0, 0.2fr);
+  grid-template-columns: 80px minmax(0, 1fr) minmax(0, 0.2fr);
   grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
   grid-template-areas:
     "logoWrapper titleWrapper favBtnWrapper"
@@ -40,10 +40,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid rgba(128, 128, 128, 0.543);
+  /* border: 1px solid rgba(128, 128, 128, 0.543); */
   width: 80%;
   height: 80%;
   border-radius: 10px;
+  background-color: #F3F5F9;
 }
 
 .titleWrapper {

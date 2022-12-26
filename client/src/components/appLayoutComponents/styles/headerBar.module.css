@@ -324,10 +324,14 @@
   color: black;
 }
 
-.settingsIcon {
-  font-size: 20px;
-  margin-right: 5%;
+.iconDiv {
+  height: 50%;
+  aspect-ratio: 1/1;
+  /* border: 1px solid black; */
+  margin-right: 8%;
 }
+
+
 
 .settingsText {
   font-family: "Poppins", sans-serif;
@@ -358,10 +362,12 @@
   align-items: center;
 }
 
-.logoutIcon {
-  font-size: 20px;
+.logOutIconDiv {
+  height: 80%;
+  aspect-ratio: 1/1;
   margin-right: 5%;
 }
+
 
 .logoutText {
   font-family: "Poppins", sans-serif;

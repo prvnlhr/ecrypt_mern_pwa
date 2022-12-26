@@ -8,7 +8,7 @@ const ActivityComponentOuter = ({ activity }) => {
 
 
 
-    console.log(activity.type);
+    // console.log(activity.type);
 
     return (
         <div className={styles.activityWrapperOuter}>

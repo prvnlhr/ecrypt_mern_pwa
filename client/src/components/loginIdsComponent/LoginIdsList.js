@@ -11,6 +11,8 @@ import { FiPlusCircle } from "react-icons/fi";
 import { HiPlus } from "react-icons/hi";
 import { CircleSpinner } from "react-spinners-kit";
 import FullContentCard from "./FullContentCard";
+import AddBtn from "../buttons/AddBtn";
+import LoginIdInputForm from "./LoginIdInputForm";
 const LoginIdForm = lazy(() => import("./LoginIdForm"));
 
 const LoginIdsList = ({
@@ -25,6 +27,7 @@ const LoginIdsList = ({
   const loadState = useSelector((state) => state.loading);
   const { place, isLoading, loginsFetching } = loadState;
 
+  const [showInputForm, setShowInputForm] = useState(false);
 
   const [showContentCard, setShowContentCard] = useState(false);
 
@@ -65,9 +68,9 @@ const LoginIdsList = ({
   //   }, 200);
   // };
 
-  // const formToggle = () => {
-  //   setFormMode(!formMode);
-  // };
+  const formToggle = () => {
+    setShowInputForm(!showInputForm);
+  };
 
 
   const loginIds = [
@@ -155,6 +158,9 @@ const LoginIdsList = ({
   return (
     <div className={styles.loginsList}>
 
+      {!showInputForm &&
+        <AddBtn formToggle={formToggle} />
+      }
       <div className={showContentCard ? styles.contentContainerClose : styles.contentContainer}>
         {loginIds.map((loginId, index) => (
           <LoginId
@@ -172,6 +178,14 @@ const LoginIdsList = ({
           fullContentCardData={fullContentCardData}
           showContentCard={showContentCard}
           handleFullContentBackBtnClicked={handleFullContentBackBtnClicked}
+        />
+      }
+      {showInputForm &&
+        <LoginIdInputForm
+          showInputForm={showInputForm}
+          setShowInputForm={setShowInputForm}
+          formToggle={formToggle}
+
         />
       }
     </div >

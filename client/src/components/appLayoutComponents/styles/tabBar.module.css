@@ -23,7 +23,7 @@
     user-select: none;
   }
 
-  .tabIconContainer {
+  .tabIconWrapper {
     position: relative;
     display: flex;
     justify-content: center;
@@ -31,16 +31,28 @@
     width: 15%;
     aspect-ratio: 1/1;
     border-radius: 15px;
+    /* border: 1px solid red; */
+
   }
 
-  .tabbarIconsDiv {
+  .tabLinks {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
-    border-radius: 15px;
+    /* border-radius: 15px; */
+    /* border: 1px solid blue; */
+  }
+
+  .iconsDiv {
+    width: 60%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
   }
 
   .tabbarIcons {

@@ -1,0 +1,26 @@
+.addBtnWrapper {
+    width: 100px;
+    height: 50px;
+    /* border: 1px solid black; */
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 65;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: white;
+    border-radius: 18px;
+}
+
+.addBtnWrapper p {
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #002A9A;
+}
+
+.plusIcon {
+    font-size: 22px;
+}
