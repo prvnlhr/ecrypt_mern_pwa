@@ -41,11 +41,17 @@ const LogoListComponent = ({ searchQuery, logoIndx, setLogoIndx }) => {
         //       </div>
         //     </div>
         //   ))
+
+
         searchQuery ? logosArray.filter(
           (item) =>
             item.label?.toLowerCase().includes(searchQuery?.toLowerCase())
         ).map((logo, index) => (
-          <Logo logo={logo} />
+          <Logo
+            logo={logo}
+            logoIndx={logoIndx}
+            setLogoIndx={setLogoIndx}
+          />
         )) :
           logosArray.map((logo, index) => (
             <Logo

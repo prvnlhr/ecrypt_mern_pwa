@@ -12,6 +12,8 @@ import noContentStyles from "../docsComponent/styles/noContentMessage.module.css
 import btnStyles from "../add_button/buttons.module.css";
 import { CircleSpinner } from "react-spinners-kit";
 import FullCardComponent from "./fullCardComponents/FullCardComponent";
+import AddBtn from "../buttons/AddBtn";
+import CardInputForm from "./inputForms/CardInputForm";
 const CardForm = lazy(() => import("./CardForm"));
 
 const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponentShow }) => {
@@ -40,8 +42,12 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
     expiry: "",
     dov: "",
   })
+  const [showInputForm, setShowInputForm] = useState(false);
 
 
+  const formToggle = () => {
+    setShowInputForm(!showInputForm);
+  };
 
   const cardsData = [
 
@@ -78,7 +84,7 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
   const loadState = useSelector((state) => state.loading);
   const [showContentCard, setShowContentCard] = useState(false);
 
-  const [fullContentCardCategory, setFullContentCardCatergory] = useState("");
+  const [fullContentCardCategory, setFullContentCardCatergory] = useState("BankCard");
 
   const handleFullContentBackBtnClicked = () => {
     setShowContentCard(false);
@@ -137,6 +143,10 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
 
   return (
     <div className={`${styles.cardList} `}>
+
+      {!showInputForm &&
+        <AddBtn formToggle={formToggle} />
+      }
       <div className={showContentCard ? styles.contentContainerClose : styles.contentContainer}>
         {cardsData.map((card, index) => (
           <Card
@@ -159,7 +169,11 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
 
         />
         : null}
-
+      {showInputForm &&
+        <CardInputForm
+          formToggle={formToggle}
+        />
+      }
     </div>
   );
 };

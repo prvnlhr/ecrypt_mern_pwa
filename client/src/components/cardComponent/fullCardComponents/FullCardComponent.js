@@ -12,6 +12,7 @@ const FullCardComponent = ({ showContentCard, handleFullContentBackBtnClicked,
     fullContentCardData,
 
 }) => {
+    
     const [popUpOpen, setPopUpOpen] = useState(false);
 
     const [logoIndx, setLogoIndx] = useState(undefined);

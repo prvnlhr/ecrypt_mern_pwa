@@ -114,10 +114,7 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
                                 readOnly={true}
 
                             />
-                            <div
-                                className={styles.popUpBtnIconDiv}
-
-                            >
+                            <div className={styles.popUpBtnIconDiv}>
                                 <Icon
                                     onClick={() =>
                                         setPopUpOpen(!popUpOpen)

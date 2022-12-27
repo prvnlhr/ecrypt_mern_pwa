@@ -7,14 +7,15 @@ import LogoComponentWrapper from "../logoComponents/LogoComponentWrapper"
 import styles from "./styles/loginIdInputForm.module.css"
 const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
-    const [currData, setCurrData] = useState({
-        // app: "",
-        // category: "",
-        // title: "",
-        // username: "",
-        // password: "",
-        // logoIndex: "",
+    const [formData, setformData] = useState({
+        app: "",
+        category: "",
+        title: "",
+        username: "",
+        password: "",
+        logoIndex: "",
     });
+
     const [popUpOpen, setPopUpOpen] = useState(false);
 
     const [logoIndx, setLogoIndx] = useState(undefined);
@@ -24,22 +25,47 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
 
 
+    const handleInputValueChange = (e) => {
+        setformData({
+            ...formData,
+            [e.target.name]: e.target.value,
+        })
+    }
 
 
+    const saveBtnClicked = () => {
+        console.table(formData);
+
+    }
+
+    useEffect(() => {
+        setLogoIndx(logoIndx)
+        setformData({
+            ...formData,
+            logoIndex: logoIndx
+        })
+    }, [logoIndx])
 
     const handleOpClick = (op) => {
-        setCurrData({
-            ...currData,
+        setformData({
+            ...formData,
             category: op
         })
         setPopUpOpen(!popUpOpen)
     }
-    const logoclicked = () => {
+
+    const handleLogoClicked = () => {
         setLogoComponentShow(true);
     }
     return (
         <div className={styles.cardWrapper}>
-
+            {logoComponentShow &&
+                <LogoComponentWrapper
+                    setLogoComponentShow={setLogoComponentShow}
+                    logoIndx={logoIndx}
+                    setLogoIndx={setLogoIndx}
+                />
+            }
             <div className={styles.cardContainer}>
 
                 <div className={styles.cardHeader}>
@@ -48,17 +74,21 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                             <BackBtnIcon />
                         </div>
                     </div>
-                    <div className={styles.editBtnContainer} >
-
+                    <div className={styles.crudBtnContainer}   >
+                        <div className={styles.saveBtnDiv} onClick={saveBtnClicked}>
+                            <p>Save</p>
+                        </div>
                     </div>
                 </div>
 
                 <div className={styles.logoTitleWrapper} >
 
                     <div className={styles.logoTitleContainer} >
-                        <div className={styles.logoContainer} onClick={logoclicked} >
+                        <div className={styles.logoContainer} onClick={handleLogoClicked} >
                             <div className={styles.logoDiv}>
-
+                                {logoIndx !== undefined &&
+                                    logosArray[logoIndx].logo
+                                }
                             </div>
                         </div>
 
@@ -67,7 +97,10 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                                 <p className={styles.titleLabelText}>TITLE</p>
                             </div>
                             <div className={styles.titleInputDiv}>
-                                <input />
+                                <input onChange={handleInputValueChange}
+                                    value={formData.title}
+                                    name={"title"}
+                                />
                             </div>
                         </div>
 
@@ -86,12 +119,17 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                             <input
                                 list="websites"
                                 className={styles.categoryInput}
-                                value={""}
-                                readOnly={true}
+                                value={formData.category}
+                                onChange={handleInputValueChange}
 
                             />
                             <div className={styles.popUpBtnIconDiv}>
-
+                                <Icon
+                                    onClick={() =>
+                                        setPopUpOpen(!popUpOpen)
+                                    }
+                                    className={styles.popUpIcon}
+                                    icon="tabler:chevron-down" color="black" />
                             </div>
 
                             {
@@ -142,7 +180,11 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                             <p>App / Website</p>
                         </div>
                         <div className={styles.appWebsiteInputDiv} >
-                            <input value={""} />
+                            <input
+                                value={formData.app}
+                                onChange={handleInputValueChange}
+                                name={"app"}
+                            />
                         </div>
                     </div>
 
@@ -160,7 +202,13 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                             <p>USERNAME / EMAIL</p>
                         </div>
                         <div className={styles.usernameInputDiv} >
-                            <input className={styles.usernameInput} value={""} />
+                            <input className={styles.usernameInput}
+                                onChange={(e) => setformData({ ...formData, username: e.target.value })}
+                                // onChange={(e) => handleInputValueChange(e)}
+                                value={formData.username}
+                                name={"username"}
+
+                            />
                         </div>
                     </div>
                 </div>
@@ -176,7 +224,12 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                             <p>PASSWORD</p>
                         </div>
                         <div className={styles.passwordInputDiv} >
-                            <input className={styles.usernameInput} value={""} />
+                            <input className={styles.usernameInput}
+                                onChange={handleInputValueChange}
+                                value={formData.password}
+                                name={"password"}
+
+                            />
                         </div>
                     </div></div>
             </div>

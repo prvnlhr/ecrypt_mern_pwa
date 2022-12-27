@@ -6,9 +6,8 @@ const Logo = ({ logo, logoIndx, setLogoIndx }) => {
 
     const [active, setActive] = useState(false);
     const handleLogoClicked = () => {
-        console.log(logo, logoIndx, logosArray[logoIndx]);
+        // console.log(logo, logoIndx, logosArray[logoIndx]);
         setLogoIndx(logo.logoIndex)
-        // setActive(true)
     }
 
     return (

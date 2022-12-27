@@ -15,6 +15,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    /* border: 1px solid black; */
 }
 
 .cardWrapperClose {
@@ -43,8 +44,8 @@
 .cardContainer {
     width: 70%;
     height: 90%;
-    /* border: 1px solid red; */
-    /* border: 1px solid black; */
+    /* border: 1px solid red;
+
     display: grid;
     grid-template-columns: 10% 90%;
     grid-template-rows: 15% 20% 15% 10% 20% 20%;
@@ -54,10 +55,25 @@
         "cardHeader cardHeader"
         "logoTitleWrapper logoTitleWrapper"
         "categoryWrapper categoryWrapper"
-        "appWebSiteWrapper appWebSiteWrapper"
-        "usernameWrapper usernameWrapper"
-        "passwordWrapper passwordWrapper";
+        "cardHolderWrapper cardHolderWrapper"
+        "cardNumberWrapper cardNumberWrapper"
+        "dateOfBirthWrapper expiryIssueWrapper";
     box-sizing: border-box;
+    */
+    display: grid;
+    grid-template-columns: 25% minmax(0, 1fr);
+    grid-template-rows: 10% 17% 14% 14% 22% 22%;
+    grid-template-rows: 10% 18% 14% 14% 22% 22%;
+    grid-template-rows: 10% 20% 15% 55%;
+    grid-template-areas:
+        "cardHeader cardHeader"
+        "logoTitleWrapper logoTitleWrapper"
+        "categoryWrapper categoryWrapper"
+        "subcardWrapper subcardWrapper";
+    padding-bottom: 0%;
+    padding-top: 0%;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
 }
 
 .cardHeader {
@@ -128,7 +144,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    /* border: 1px solid rgba(17, 17, 17, 0.293); */
+    /* border: 1px solid blue; */
     padding-left: 0%;
 }
 
@@ -181,7 +197,7 @@
     padding-left: 5%;
 }
 
-.titleLabelDiv {
+.titleTitleDiv {
     width: 80%;
     height: 80%;
     /* border: 1px solid black; */
@@ -190,7 +206,7 @@
     align-items: flex-end;
 }
 
-.titleLabelDiv p {
+.titleTitleDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
@@ -222,12 +238,12 @@
     color: black;
 }
 
-/* .titleLabelText {
+.titleInputDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 20px;
     font-weight: 500;
     color: black;
-} */
+}
 
 .categoryWrapper {
     grid-area: categoryWrapper;
@@ -357,228 +373,14 @@
     width: 80%;
 }
 
-.appWebSiteWrapper {
-    grid-area: appWebSiteWrapper;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    /* border: 1px solid purple; */
-    padding-left: 0%;
-}
-
-
-.appWebSiteContainer {
-    width: 100%;
-    height: 60%;
-    /* border: 1px solid black; */
-    display: flex;
+.subCardWrapper {
+    grid-area: subcardWrapper;
     display: grid;
-    grid-template-columns: 20% 40% 40%;
-    grid-template-rows: 100%;
-    grid-template-areas:
-        "appWebSiteIconDiv appWebSiteTitleDiv appWebsiteInputDiv";
-    background-color: #F6F6F6;
-    border-radius: 10px;
-
-}
-
-.appWebSiteIconDiv {
-    grid-area: appWebSiteIconDiv;
     width: 100%;
     height: 100%;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* border: 1px solid red; */
 }
 
-.websiteIcon {
-    font-size: 25px;
-    color: #002A9A;
-}
-
-.appWebSiteTitleDiv {
-    grid-area: appWebSiteTitleDiv;
-    width: 100%;
-    height: 100%;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.appWebSiteTitleDiv p {
-    font-family: "Poppins", sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    color: black;
-}
-
-.appWebsiteInputDiv {
-    grid-area: appWebsiteInputDiv;
-    width: 100%;
-    height: 100%;
-    /* border: 1px solid black; */
-}
-
-
-.usernameWrapper {
-    grid-area: usernameWrapper;
-    width: 100%;
-    height: 100%;
-    /* border: 1px solid orange; */
-    padding-left: 0;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-
-}
-
-.usernameContainer {
-    width: 100%;
-    height: 70%;
-    /* border: 1px solid black; */
-    display: grid;
-    align-items: center;
-    grid-template-columns: 20% 80%;
-    grid-template-rows: 50% 50%;
-    grid-template-areas:
-        "usernameIconDiv usernameLabelDiv"
-        "usernameIconDiv usernameInputDiv";
-    background-color: #F3F5F9;
-    border-radius: 10px;
-
-
-}
-
-.usernameIconDiv {
-    grid-area: usernameIconDiv;
-    width: 100%;
-    height: 100%;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.usernameIcon {
-    width: 50%;
-    height: 50%;
-}
-
-.usernameLabelDiv {
-    grid-area: usernameLabelDiv;
-    width: 100%;
-    height: 100%;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.usernameLabelDiv p {
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: #7E8DA4;
-}
-
-.usernameInputDiv {
-    grid-area: usernameInputDiv;
-    width: 100%;
-    height: 100%;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.usernameInputDiv p {
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: black;
-}
-
-.passwordWrapper {
-    grid-area: passwordWrapper;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    /* border: 1px solid orange; */
-    padding-left: 0%;
-
-}
-
-.passwordContainer {
-    width: 100%;
-    height: 70%;
-    /* border: 1px solid black; */
-    display: grid;
-    align-items: center;
-    grid-template-columns: 20% 80%;
-    grid-template-rows: 50% 50%;
-    grid-template-areas:
-        "passwordIconDiv passwordLabelDiv"
-        "passwordIconDiv passwordInputDiv";
-    background-color: #F3F5F9;
-    border-radius: 10px;
-
-
-}
-
-.passwordIconDiv {
-    grid-area: passwordIconDiv;
-    width: 100%;
-    height: 100%;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.passwordIcon {
-    width: 55%;
-    height: 55%;
-}
-
-.passwordLabelDiv {
-    grid-area: passwordLabelDiv;
-    width: 100%;
-    height: 100%;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.passwordLabelDiv p {
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: #7E8DA4;
-}
-
-.passwordInputDiv {
-    grid-area: passwordInputDiv;
-    width: 100%;
-    height: 100%;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.passwordInputDiv p {
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: black;
-}
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 
@@ -593,9 +395,8 @@
         align-items: flex-end;
         background-color: white;
         margin-top: 14%;
-        /* border: 1px solid black; */
+        /* border: 1px solid orange; */
     }
-
 
     .cardWrapperClose {
         width: 100%;
@@ -616,9 +417,9 @@
         padding: 0px;
         margin: 0px;
         transition: none;
+        border: 1px solid black;
+
     }
-
-
 
     .cardContainer {
         /* border: 1px solid black; */
@@ -628,14 +429,12 @@
         grid-template-columns: 25% minmax(0, 1fr);
         grid-template-rows: 10% 17% 14% 14% 22% 22%;
         grid-template-rows: 10% 18% 14% 14% 22% 22%;
-        grid-template-rows: 10% 20% 15% 15% 20% 20%;
+        grid-template-rows: 10% 20% 15% 55%;
         grid-template-areas:
             "cardHeader cardHeader"
             "logoTitleWrapper logoTitleWrapper"
             "categoryWrapper categoryWrapper"
-            "appWebSiteWrapper appWebSiteWrapper"
-            "usernameWrapper usernameWrapper"
-            "passwordWrapper passwordWrapper";
+            "subcardWrapper subcardWrapper";
         padding-bottom: 0%;
         padding-top: 0%;
         box-sizing: border-box;
@@ -716,7 +515,7 @@
         /* width: 80%; */
         aspect-ratio: 1/1;
         height: 80%;
-        /* border: 1px solid black; */
+        border: 1px solid black;
         border-radius: 20px;
         display: flex;
         justify-content: center;
@@ -875,6 +674,8 @@
         padding-left: 10%;
         border-radius: 5px;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        /* border: 1px solid #0475ff84; */
+        z-index: 999;
 
     }
 
@@ -894,302 +695,12 @@
         width: 80%;
     }
 
-    .appWebSiteWrapper {
-        grid-area: appWebSiteWrapper;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        /* border: 1px solid purple; */
-        padding-left: 0%;
-    }
-
-
-    .appWebSiteContainer {
-        width: 90%;
-        height: 60%;
-        /* border: 1px solid black; */
-        display: flex;
-
+    .subCardWrapper {
+        grid-area: subcardWrapper;
         display: grid;
-        grid-template-columns: 20% 40% 40%;
-        grid-template-rows: 100%;
-        grid-template-areas:
-            "appWebSiteIconDiv appWebSiteTitleDiv appWebsiteInputDiv";
-        background-color: #F3F5F9;
-        border-radius: 10px;
-
-    }
-
-    .appWebSiteIconDiv {
-        grid-area: appWebSiteIconDiv;
         width: 100%;
         height: 100%;
-        /* border: 1px solid black; */
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        /* border: 1px solid red; */
     }
 
-    .websiteIcon {
-        height: 50%;
-    }
-
-    .appWebSiteTitleDiv {
-        grid-area: appWebSiteTitleDiv;
-        width: 100%;
-        height: 100%;
-        /* border: 1px solid black; */
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    }
-
-    .appWebSiteTitleDiv p {
-        font-family: "Poppins", sans-serif;
-        font-size: 16px;
-        font-weight: 500;
-        color: black;
-    }
-
-    .appWebsiteInputDiv {
-        grid-area: appWebsiteInputDiv;
-        width: 100%;
-        height: 100%;
-        /* border: 1px solid black; */
-    }
-
-    .appWebsiteInputDiv input {
-        width: 80%;
-        height: 100%;
-        border-bottom: 1px solid #7E8DA4;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        outline: none;
-        background: transparent;
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: black;
-    }
-
-    .usernameWrapper {
-        grid-area: usernameWrapper;
-        width: 100%;
-        height: 100%;
-        /* border: 1px solid orange; */
-        padding-left: 0px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-    }
-
-    .usernameContainer {
-        width: 90%;
-        height: 70%;
-        /* border: 1px solid black; */
-        display: grid;
-        align-items: center;
-        grid-template-columns: 20% 80%;
-        grid-template-rows: 50% 50%;
-        grid-template-areas:
-            "usernameIconDiv usernameLabelDiv"
-            "usernameIconDiv usernameInputDiv";
-        background-color: #F3F5F9;
-        border-radius: 10px;
-
-
-    }
-
-    .usernameIconDiv {
-        grid-area: usernameIconDiv;
-        width: 100%;
-        height: 100%;
-        /* border: 1px solid black; */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .usernameIcon {
-        width: 50%;
-        height: 50%;
-    }
-
-    .usernameLabelDiv {
-        grid-area: usernameLabelDiv;
-        width: 100%;
-        height: 100%;
-        /* border: 1px solid black; */
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    }
-
-    .usernameLabelDiv p {
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: #7E8DA4;
-    }
-
-    .usernameInputDiv {
-        grid-area: usernameInputDiv;
-        width: 100%;
-        height: 100%;
-        /* border: 1px solid black; */
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    }
-
-
-
-    .usernameInputDiv input {
-        width: 80%;
-        height: 100%;
-        border-bottom: 1px solid #7E8DA4;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        outline: none;
-        background: transparent;
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: black;
-    }
-
-
-    .passwordWrapper {
-        grid-area: passwordWrapper;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        /* border: 1px solid orange; */
-        padding-left: 0%;
-
-    }
-
-    .passwordContainer {
-        width: 90%;
-        height: 70%;
-        /* border: 1px solid black; */
-        display: grid;
-        align-items: center;
-        grid-template-columns: 20% 80%;
-        grid-template-rows: 50% 50%;
-        grid-template-areas:
-            "passwordIconDiv passwordLabelDiv"
-            "passwordIconDiv passwordInputDiv";
-        background-color: #F3F5F9;
-        border-radius: 10px;
-
-
-    }
-
-    .passwordIconDiv {
-        grid-area: passwordIconDiv;
-        width: 100%;
-        height: 100%;
-        /* border: 1px solid black; */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .passwordIcon {
-        width: 55%;
-        height: 55%;
-    }
-
-    .passwordLabelDiv {
-        grid-area: passwordLabelDiv;
-        width: 100%;
-        height: 100%;
-        /* border: 1px solid black; */
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    }
-
-    .passwordLabelDiv p {
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: #7E8DA4;
-    }
-
-    .passwordInputDiv {
-        grid-area: passwordInputDiv;
-        width: 100%;
-        height: 100%;
-        /* border: 1px solid black; */
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    }
-
-    .passwordInputDiv input {
-        width: 80%;
-        height: 100%;
-        border-bottom: 1px solid #7E8DA4;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        outline: none;
-        background: transparent;
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: black;
-    }
-
-
-
-
-    /* ----------------------------------------------
- * Generated by Animista on 2022-11-28 19:46:20
- * Licensed under FreeBSD License.
- * See http://animista.net/license for more info. 
- * w: http://animista.net, t: @cssanimista
- * ---------------------------------------------- */
-
-    /**
- * ----------------------------------------
- * animation slide-in-bottom
- * ----------------------------------------
- */
-    @-webkit-keyframes slide-in-bottom {
-        0% {
-            -webkit-transform: translateY(1000px);
-            transform: translateY(1000px);
-            opacity: 0;
-        }
-
-        100% {
-            -webkit-transform: translateY(0);
-            transform: translateY(0);
-            opacity: 1;
-        }
-    }
-
-    @keyframes slide-in-bottom {
-        0% {
-            -webkit-transform: translateY(1000px);
-            transform: translateY(1000px);
-            opacity: 0;
-        }
-
-        100% {
-            -webkit-transform: translateY(0);
-            transform: translateY(0);
-            opacity: 1;
-        }
-    }
 }
