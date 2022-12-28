@@ -51,11 +51,31 @@ transform: translateX(-50%); */
     right: 0px;
 }
 
+.saveIconDiv {
+    position: relative;
+    aspect-ratio: 1/1;
+    height: 70%;
+    border-radius: 50%;
+    background-color: #34a8537f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 0px;
+    margin-right: 10px;
+}
+
 .closeIcon {
     position: relative;
     font-size: 13px;
     /* border: 1px solid black; */
     color: #002A9A
+}
+
+.saveIcon {
+    position: relative;
+    font-size: 13px;
+    /* border: 1px solid black; */
+    color: #2aa54b;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {

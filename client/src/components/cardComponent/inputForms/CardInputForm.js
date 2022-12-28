@@ -8,6 +8,8 @@ import IdentityCardSubComponent from './IdentityCardSubComponent';
 import LicenseCardSubComponent from './LicenseCardSubComponent';
 import LogoComponentWrapper from "../../logoComponents/LogoComponentWrapper"
 import styles from "../styles/cardInputForm.module.css"
+import bankCardFormstyles from "../styles/bankCardSubComponent.module.css"
+import CardLogo, { getCardType } from "../CardLogo"
 const CardInputForm = ({ formToggle }) => {
 
 
@@ -18,6 +20,8 @@ const CardInputForm = ({ formToggle }) => {
     const [formCategory, setFormCategory] = useState("Bank");
 
     const [logoComponentShow, setLogoComponentShow] = useState(false);
+
+    const [currCardVender, setCurrCardVender] = useState(undefined);
 
 
     const [bankCardData, setBankCardData] = useState({
@@ -181,10 +185,16 @@ const CardInputForm = ({ formToggle }) => {
                 break;
         }
 
-
-
     }
 
+    //> For setting cardVender logo Dynamically
+    useEffect(() => {
+        if (bankCardData.cardNumber.length >= 16) {
+            let cardVenderLogo = <CardLogo className={bankCardFormstyles.cardVenderLogo} cardNo={bankCardData.cardNumber} />
+            setCurrCardVender(cardVenderLogo)
+        }
+
+    }, [bankCardData.cardNumber])
 
 
     return (
@@ -295,7 +305,7 @@ const CardInputForm = ({ formToggle }) => {
                 <div className={styles.subCardWrapper}>
 
                     {
-                        formCategory === "Bank" ? <BankCardSubComponent bankCardData={bankCardData} setBankCardData={setBankCardData} handleFormDataChange={handleFormDataChange} />
+                        formCategory === "Bank" ? <BankCardSubComponent bankCardData={bankCardData} setBankCardData={setBankCardData} handleFormDataChange={handleFormDataChange} currCardVender={currCardVender} />
                             : formCategory === "Identity" ? <IdentityCardSubComponent identityCardData={identityCardData} setIdentityCardData={setIdentityCardData} handleFormDataChange={handleFormDataChange} />
                                 : formCategory === "License" ? <LicenseCardSubComponent licenseCardData={licenseCardData} setLicenseCardData={licenseCardData} handleFormDataChange={handleFormDataChange} /> : null
                     }

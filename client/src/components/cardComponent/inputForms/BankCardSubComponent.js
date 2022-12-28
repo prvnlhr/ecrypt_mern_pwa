@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from "../styles/bankCardSubComponent.module.css"
 import { Icon } from '@iconify/react';
-const BankCardSubComponent = (
+const BankCardSubComponent = ({ bankCardData, setBankCardData, handleFormDataChange, currCardVender, handleCardNumberChanged }) => {
 
-    { bankCardData, setBankCardData, handleFormDataChange
+
+
+    const setCardVenderLogo = () => {
+        return 0;
     }
-
-) => {
     return (
         <div className={styles.subCardWrapper} >
             <div className={styles.cardHolderWrapper}>
@@ -40,11 +41,15 @@ const BankCardSubComponent = (
                     <div className={styles.cardNumberInputDiv}>
                         <input value={bankCardData.cardNumber}
                             name="cardNumber"
-                            onChange={handleFormDataChange}
+                            onChange={
+                                handleFormDataChange
+
+                            }
                         />
                     </div>
                     <div className={styles.cardVenderIconDiv}>
-                        <Icon className={styles.cardVenderIcon} icon="logos:visa" />
+                        {currCardVender}
+                        {/* <Icon className={styles.cardVenderIcon} icon="logos:visa" /> */}
                     </div>
                 </div>
             </div>

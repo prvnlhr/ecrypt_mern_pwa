@@ -1,19 +1,52 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from "./styles/logoListComponent.module.css"
 import { logosArray } from "./logosData"
 import Logo from './Logo'
-const LogoListComponent = ({ searchQuery, logoIndx, setLogoIndx }) => {
+const LogoListComponent = ({ searchQuery, logoIndx, setLogoIndx,
+  logoIndexUntilSaved,
+  setLogoIndexUntilSaved
 
+}) => {
 
-
+  const [selectedLogoIndex, setSelectedLogoIndex] = useState(undefined);
 
   return (
     <div className={styles.logoListWrapper}>
 
-
-
       {
-        // searchQuery ? logosArray.filter(
+        searchQuery ? logosArray.filter(
+          (item) =>
+            item.label?.toLowerCase().includes(searchQuery?.toLowerCase())
+        ).map((logo, index) => (
+          <Logo
+            logo={logo}
+            logoIndx={logoIndx}
+            setLogoIndx={setLogoIndx}
+            selectedLogoIndex={selectedLogoIndex}
+            setSelectedLogoIndex={setSelectedLogoIndex}
+            logoIndexUntilSaved={logoIndexUntilSaved}
+            setLogoIndexUntilSaved={setLogoIndexUntilSaved}
+          />
+        )) :
+          logosArray.map((logo, index) => (
+            <Logo
+              logo={logo}
+              logoIndx={logoIndx}
+              setLogoIndx={setLogoIndx}
+              selectedLogoIndex={selectedLogoIndex}
+              setSelectedLogoIndex={setSelectedLogoIndex}
+              logoIndexUntilSaved={logoIndexUntilSaved}
+              setLogoIndexUntilSaved={setLogoIndexUntilSaved}
+            />
+          ))
+      }
+    </div>
+  )
+}
+
+export default LogoListComponent
+
+    // searchQuery ? logosArray.filter(
         //   (item) =>
         //     item.label?.toLowerCase().includes(searchQuery?.toLowerCase())
 
@@ -41,29 +74,3 @@ const LogoListComponent = ({ searchQuery, logoIndx, setLogoIndx }) => {
         //       </div>
         //     </div>
         //   ))
-
-
-        searchQuery ? logosArray.filter(
-          (item) =>
-            item.label?.toLowerCase().includes(searchQuery?.toLowerCase())
-        ).map((logo, index) => (
-          <Logo
-            logo={logo}
-            logoIndx={logoIndx}
-            setLogoIndx={setLogoIndx}
-          />
-        )) :
-          logosArray.map((logo, index) => (
-            <Logo
-              logo={logo}
-              logoIndx={logoIndx}
-              setLogoIndx={setLogoIndx}
-            />
-          ))
-      }
-    </div>
-  )
-}
-
-export default LogoListComponent
-

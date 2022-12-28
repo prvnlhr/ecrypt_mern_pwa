@@ -116,8 +116,10 @@
     align-items: center;
 }
 
-.cardVenderIcon {
-    font-size: 12px;
+.cardVenderLogo {
+    /* height: 70%; */
+    width: 70%;
+    /* border: 1px solid black; */
 }
 
 /* _____________________________________________ */
@@ -495,9 +497,7 @@
         align-items: center;
     }
 
-    .cardVenderIcon {
-        font-size: 12px;
-    }
+
 
     /* _____________________________________________ */
     .cardNumberWrapper {

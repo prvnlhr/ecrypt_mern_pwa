@@ -144,8 +144,9 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
   return (
     <div className={`${styles.cardList} `}>
 
-      {!showInputForm &&
-        <AddBtn formToggle={formToggle} />
+      {
+        (!showInputForm && !showContentCard) &&
+        < AddBtn formToggle={formToggle} />
       }
       <div className={showContentCard ? styles.contentContainerClose : styles.contentContainer}>
         {cardsData.map((card, index) => (

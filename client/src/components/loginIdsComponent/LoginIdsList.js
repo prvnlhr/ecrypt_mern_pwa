@@ -158,8 +158,9 @@ const LoginIdsList = ({
   return (
     <div className={styles.loginsList}>
 
-      {!showInputForm &&
-        <AddBtn formToggle={formToggle} />
+      {
+        (!showInputForm && !showContentCard) &&
+        < AddBtn formToggle={formToggle} />
       }
       <div className={showContentCard ? styles.contentContainerClose : styles.contentContainer}>
         {loginIds.map((loginId, index) => (

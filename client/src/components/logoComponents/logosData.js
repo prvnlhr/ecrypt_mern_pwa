@@ -293,7 +293,7 @@ export const logosArray = [
     {
         logo: <div className={styles.logoDiv}  ><Git /></div>,
 
-        logoIndex: 32,
+        logoIndex: 33,
         label: "Git"
     },
     {
