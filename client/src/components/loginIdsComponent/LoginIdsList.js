@@ -69,6 +69,10 @@ const LoginIdsList = ({
   // };
 
   const formToggle = () => {
+
+    if(showInputForm){
+      
+    }
     setShowInputForm(!showInputForm);
   };
 
@@ -157,12 +161,11 @@ const LoginIdsList = ({
 
   return (
     <div className={styles.loginsList}>
-
       {
         (!showInputForm && !showContentCard) &&
         < AddBtn formToggle={formToggle} />
       }
-      <div className={showContentCard ? styles.contentContainerClose : styles.contentContainer}>
+      <div className={(showContentCard || showInputForm) ? styles.contentContainerClose : styles.contentContainer}>
         {loginIds.map((loginId, index) => (
           <LoginId
             key={index}
@@ -181,14 +184,14 @@ const LoginIdsList = ({
           handleFullContentBackBtnClicked={handleFullContentBackBtnClicked}
         />
       }
-      {showInputForm &&
-        <LoginIdInputForm
-          showInputForm={showInputForm}
-          setShowInputForm={setShowInputForm}
-          formToggle={formToggle}
+      <LoginIdInputForm
+        showInputForm={showInputForm}
+        setShowInputForm={setShowInputForm}
+        formToggle={formToggle}
 
-        />
-      }
+      />
+      {/* {showInputForm &&
+      } */}
     </div >
   );
 };

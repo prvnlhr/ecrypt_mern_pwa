@@ -9,13 +9,18 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
 
 
     const [currData, setCurrData] = useState({
-        // app: "",
-        // category: "",
-        // title: "",
-        // username: "",
-        // password: "",
-        // logoIndex: "",
+        app: "",
+        category: "",
+        title: "",
+        username: "",
+        password: "",
+        logoIndex: "",
     });
+
+
+
+    const [editMode, setEditMode] = useState(false);
+
     const [popUpOpen, setPopUpOpen] = useState(false);
 
     const [logoIndx, setLogoIndx] = useState(undefined);
@@ -36,9 +41,13 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
 
     useEffect(() => {
         // console.log(logoIndx, logosArray[logoIndx])
+        setCurrData({
+            ...currData,
+            logoIndex: logoIndx
+        })
     }, [logoIndx]);
 
-    console.log(currData);
+    // console.log(currData);
 
     const handleOpClick = (op) => {
         setCurrData({
@@ -49,6 +58,24 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
     }
     const logoclicked = () => {
         setLogoComponentShow(true);
+    }
+
+    const editBtnClicked = () => {
+        setEditMode(true);
+    }
+    const cancelBtnClicked = () => {
+        setEditMode(false);
+    }
+
+    const handleInputValueChange = (e) => {
+        setCurrData({
+            ...currData,
+            [e.target.name]: e.target.value,
+        })
+    }
+
+    const saveBtnClicked = () => {
+        console.log(currData)
     }
     return (
         <div className={showContentCard ? styles.cardWrapper : styles.cardWrapperClose}>
@@ -69,8 +96,22 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
                             <BackBtnIcon />
                         </div>
                     </div>
-                    <div className={styles.editBtnContainer} >
+                    <div className={styles.curdBtnContainer} >
 
+
+                        {editMode ?
+                            <>
+                                <div className={styles.editBtnDiv} onClick={saveBtnClicked}  >
+                                    <p>Save</p>
+                                </div>
+
+                                <div className={styles.eidtCancelBtnDiv} onClick={cancelBtnClicked}>
+                                    <p>Cancel</p>
+                                </div>
+                            </> : <div className={styles.editBtnDiv} onClick={editBtnClicked}  >
+                                <p>Edit</p>
+                            </div>
+                        }
                     </div>
                 </div>
 
@@ -87,11 +128,16 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
                         </div>
 
                         <div className={styles.titleContainer} >
-                            <div className={styles.titleTitleDiv}>
+                            <div className={styles.titleLabelDiv}>
                                 <p className={styles.titleTitleText}>TITLE</p>
                             </div>
-                            <div className={styles.titleTextDiv}>
-                                <p className={styles.titleText}>{currData.title}</p>
+                            <div className={styles.titleInputDiv}>
+                                <input
+                                    className={editMode ? styles.titleInputActive : styles.titleInputNotActive}
+                                    value={currData.title}
+                                    name={"title"}
+                                    onChange={handleInputValueChange}
+                                    readOnly={editMode ? false : true} />
                             </div>
                         </div>
 
@@ -103,7 +149,7 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
 
                 <div className={styles.categoryWrapper} >
                     <div className={styles.categoryContainer} >
-                        <div className={styles.catergoryTitleDiv} >
+                        <div className={styles.categoryLabelDiv} >
                             <p>Category</p>
                         </div>
                         <div className={styles.catergoryInputDiv} >
@@ -111,16 +157,16 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
                                 list="websites"
                                 className={styles.categoryInput}
                                 value={currData.category}
-                                readOnly={true}
+                                readOnly={editMode ? false : true}
 
                             />
                             <div className={styles.popUpBtnIconDiv}>
-                                <Icon
-                                    onClick={() =>
-                                        setPopUpOpen(!popUpOpen)
-                                    }
-                                    className={styles.popUpIcon}
-                                    icon="tabler:chevron-down" color="black" />
+                                {editMode &&
+                                    <Icon onClick={() => setPopUpOpen(!popUpOpen)}
+                                        className={styles.popUpIcon}
+                                        icon="tabler:chevron-down" color="black"
+                                    />
+                                }
                             </div>
 
                             {
@@ -167,10 +213,17 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
                                 className={styles.websiteIcon}
                                 icon="tabler:app-window" color="#002a9a" />
                         </div>
-                        <div className={styles.appWebSiteTitleDiv} >
+                        <div className={styles.appWebsiteLabelDiv} >
                             <p>App / Website</p>
                         </div>
-                        <div className={styles.appWebSiteTextDiv} ></div>
+                        <div className={styles.appWebSiteInputDiv} >
+                            <input
+                                className={editMode ? styles.appWebSiteInputActive : styles.appWebSiteInputNotActive}
+                                value={currData.app} readOnly={editMode ? false : true}
+                                name={"app"}
+                                onChange={handleInputValueChange}
+                            />
+                        </div>
                     </div>
 
                 </div>
@@ -187,7 +240,12 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
                             <p>USERNAME / EMAIL</p>
                         </div>
                         <div className={styles.usernameInputDiv} >
-                            <input className={styles.usernameInput} value={currData.username} />
+                            <input
+                                className={editMode ? styles.userNameInputActive : styles.userNameInputNotActive}
+                                value={currData.username} readOnly={editMode ? false : true}
+                                name={"username"}
+                                onChange={handleInputValueChange}
+                            />
                         </div>
                     </div>
                 </div>
@@ -203,7 +261,10 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
                             <p>PASSWORD</p>
                         </div>
                         <div className={styles.passwordInputDiv} >
-                            <input className={styles.usernameInput} value={currData.password} />
+                            <input className={editMode ? styles.passwordInputActive : styles.passwordInputNotActive}
+                                name={"password"}
+                                onChange={handleInputValueChange}
+                                value={currData.password} readOnly={editMode ? false : true} />
                         </div>
                     </div></div>
             </div>

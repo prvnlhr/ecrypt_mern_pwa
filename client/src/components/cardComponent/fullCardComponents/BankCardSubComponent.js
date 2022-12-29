@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from "../styles/bankCardSubComponent.module.css"
+
+import CardLogo from "../CardLogo"
 import { Icon } from '@iconify/react';
-const BankCardSubComponent = () => {
+const BankCardSubComponent = ({ cardData }) => {
+    const [venderLogo, setVenderLogo] = useState();
     return (
         <div className={styles.subCardWrapper} >
             <div className={styles.cardHolderWrapper}>

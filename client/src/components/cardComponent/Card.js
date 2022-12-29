@@ -23,6 +23,19 @@ import { logosArray } from "../logoComponents/logosData"
 
 const Card = ({ cardData, handleCardClicked }) => {
 
+  const [venderLogo, setVenderLogo] = useState();
+  useEffect(() => {
+
+    if (cardData.category === 'Bank') {
+      setVenderLogo(
+        < CardLogo cardNo={cardData.cardNumber} />
+      )
+    }
+
+  }, [cardData])
+
+
+
   return (
     <div className={cardData.category === "Bank" ? styles.cardComponentBank : styles.cardComponent}
       onClick={() => {
@@ -47,7 +60,9 @@ const Card = ({ cardData, handleCardClicked }) => {
         </p>
       </div>
       <div className={cardData.category === "Bank" ? styles.bankCardLogoWrapperShow : styles.bankCardLogoWrapperHide} >
-        <Icon className={styles.bankCardLogo} icon="logos:visa" />
+        <div className={styles.bankCardVenderLogoDiv}>
+          {venderLogo}
+        </div>
       </div>
       <div className={styles.favBtnWrapper} >
         {/* <Icon className={styles.favBtnIcon} icon="ion:bookmark-outline" color="#7e8da4" /> */}

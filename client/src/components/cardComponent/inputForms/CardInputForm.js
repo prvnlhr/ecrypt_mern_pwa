@@ -10,7 +10,7 @@ import LogoComponentWrapper from "../../logoComponents/LogoComponentWrapper"
 import styles from "../styles/cardInputForm.module.css"
 import bankCardFormstyles from "../styles/bankCardSubComponent.module.css"
 import CardLogo, { getCardType } from "../CardLogo"
-const CardInputForm = ({ formToggle }) => {
+const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
 
     const [popUpOpen, setPopUpOpen] = useState(false);
@@ -198,7 +198,7 @@ const CardInputForm = ({ formToggle }) => {
 
 
     return (
-        <div className={styles.cardWrapper}>
+        <div className={showInputForm ? styles.cardWrapper : styles.cardWrapperClose}>
             {logoComponentShow &&
                 <LogoComponentWrapper
                     setLogoComponentShow={setLogoComponentShow}
@@ -211,8 +211,7 @@ const CardInputForm = ({ formToggle }) => {
                 <div className={styles.cardHeader} >
                     <div className={styles.backBtnContainer} >
                         <div className={styles.backBtnDiv}
-                            onClick={() => formToggle()}
-                        >
+                            onClick={() => formToggle()}>
                             <BackBtnIcon />
                         </div>
                     </div>
@@ -261,7 +260,7 @@ const CardInputForm = ({ formToggle }) => {
 
                 <div className={styles.categoryWrapper} >
                     <div className={styles.categoryContainer} >
-                        <div className={styles.catergoryTitleDiv} >
+                        <div className={styles.categoryLabelDiv} >
                             <p>Category</p>
                         </div>
                         <div className={styles.catergoryInputDiv} >

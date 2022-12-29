@@ -56,6 +56,8 @@
   justify-content: flex-start;
   align-items: flex-end;
   padding-left: 5%;
+  overflow: hidden;
+
 }
 
 .titleText {
@@ -63,6 +65,9 @@
   font-size: 14px;
   font-weight: 500;
   color: black;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
 }
 
 .usernameWrapper {

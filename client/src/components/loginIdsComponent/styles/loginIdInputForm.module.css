@@ -15,6 +15,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    /* border: 1px solid black; */
 }
 
 .cardWrapperClose {
@@ -158,7 +159,7 @@
     /* width: 80%; */
     aspect-ratio: 1/1;
     height: 100%;
-    /* border: 1px solid black; */
+    border: 1px solid rgb(209, 204, 204);
     border-radius: 20px;
     display: flex;
     justify-content: center;
@@ -253,7 +254,7 @@
 
 }
 
-.catergoryTitleDiv {
+.categoryLabelContainer {
     width: 100%;
     height: 100%;
     /* border: 1px solid black; */
@@ -263,7 +264,7 @@
     padding-left: 5%;
 }
 
-.catergoryTitleDiv p {
+.categoryLabelContainer p {
     font-family: "Poppins", sans-serif;
     font-size: 18px;
     font-weight: 600;
@@ -289,7 +290,7 @@
     border: none;
     outline: none !important;
     height: 75%;
-    width: 45%;
+    width: 80%;
     border-radius: 8px;
     display: flex;
     justify-content: center;
@@ -322,7 +323,7 @@
     /* border: 1px solid #0475ff84; */
 }
 
-.inputPopUpDiv {
+.categoryInputPopDiv {
     top: 105%;
     position: absolute;
     width: 150px;
@@ -350,11 +351,15 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    /* border: 1px solid black; */
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .inputPopUpText:hover {
-    background-color: red;
+    background-color: #a8ccf9b5;
     width: 80%;
+    border-radius: 5px;
 }
 
 .appWebSiteWrapper {
@@ -378,7 +383,7 @@
     grid-template-columns: 20% 40% 40%;
     grid-template-rows: 100%;
     grid-template-areas:
-        "appWebSiteIconDiv appWebSiteTitleDiv appWebsiteInputDiv";
+        "appWebSiteIconDiv appWebsiteLabelDiv appWebsiteInputDiv";
     background-color: #F6F6F6;
     border-radius: 10px;
 
@@ -399,8 +404,8 @@
     color: #002A9A;
 }
 
-.appWebSiteTitleDiv {
-    grid-area: appWebSiteTitleDiv;
+.appWebsiteLabelDiv {
+    grid-area: appWebsiteLabelDiv;
     width: 100%;
     height: 100%;
     /* border: 1px solid black; */
@@ -409,7 +414,7 @@
     align-items: center;
 }
 
-.appWebSiteTitleDiv p {
+.appWebsiteLabelDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: 500;
@@ -423,6 +428,20 @@
     /* border: 1px solid black; */
 }
 
+.appWebsiteInputDiv input {
+    width: 80%;
+    height: 80%;
+    border-bottom: 1px solid #7E8DA4;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+}
 
 .usernameWrapper {
     grid-area: usernameWrapper;
@@ -493,6 +512,21 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+}
+
+.usernameInputDiv input {
+    width: 80%;
+    height: 80%;
+    border-bottom: 1px solid #7E8DA4;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
 }
 
 .usernameInputDiv p {
@@ -571,6 +605,21 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+}
+
+.passwordInputDiv input {
+    width: 80%;
+    height: 80%;
+    border-bottom: 1px solid #7E8DA4;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
 }
 
 .passwordInputDiv p {
@@ -796,7 +845,7 @@
 
     }
 
-    .catergoryTitleDiv {
+    .categoryLabelContainer {
         width: 40%;
         height: 100%;
         /* border: 1px solid black; */
@@ -806,7 +855,7 @@
         padding-left: 5%;
     }
 
-    .catergoryTitleDiv p {
+    .categoryLabelContainer p {
         font-family: "Poppins", sans-serif;
         font-size: 18px;
         font-weight: 600;
@@ -859,7 +908,7 @@
         /* border: 1px solid #0475ff84; */
     }
 
-    .inputPopUpDiv {
+    .categoryInputPopDiv {
         top: 105%;
         position: absolute;
         width: 150px;
@@ -916,7 +965,7 @@
         grid-template-columns: 20% 40% 40%;
         grid-template-rows: 100%;
         grid-template-areas:
-            "appWebSiteIconDiv appWebSiteTitleDiv appWebsiteInputDiv";
+            "appWebSiteIconDiv appWebsiteLabelDiv appWebsiteInputDiv";
         background-color: #F3F5F9;
         border-radius: 10px;
 
@@ -936,8 +985,8 @@
         height: 50%;
     }
 
-    .appWebSiteTitleDiv {
-        grid-area: appWebSiteTitleDiv;
+    .appWebsiteLabelDiv {
+        grid-area: appWebsiteLabelDiv;
         width: 100%;
         height: 100%;
         /* border: 1px solid black; */
@@ -946,7 +995,7 @@
         align-items: center;
     }
 
-    .appWebSiteTitleDiv p {
+    .appWebsiteLabelDiv p {
         font-family: "Poppins", sans-serif;
         font-size: 16px;
         font-weight: 500;

@@ -78,12 +78,14 @@
 .titleWrapper {
   grid-area: titleWrapper;
   /* border: 1px solid black; */
-  width: 100%;
+  width: 90%;
   height: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
   padding-left: 5%;
+  overflow: hidden;
+
 }
 
 .titleText {
@@ -91,6 +93,9 @@
   font-size: 14px;
   font-weight: 500;
   color: black;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
 }
 
 .usernameWrapper {
@@ -131,8 +136,13 @@
   align-items: center;
 }
 
-.bankCardLogo {
-  font-size: 13px;
+.bankCardVenderLogoDiv {
+  width: 60%;
+  /* height: 80%; */
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -173,4 +183,12 @@
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   }
 
+  .bankCardVenderLogoDiv {
+    width: 60%;
+    /* height: 80%; */
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

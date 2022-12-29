@@ -55,7 +55,7 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
       category: "Bank",
       title: "State Bank Card",
       cardHolder: "Praveen Lohar",
-      cardNumber: 52455626554,
+      cardNumber: 5242720011394202,
       expiry: "andrew@122",
       cvv: 123,
       logoIndex: 72,
@@ -78,7 +78,15 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
       expiry: "18/05/2024",
       dov: "23/01/1996",
       logoIndex: 0,
-    }
+    }, {
+      category: "Bank",
+      title: "Punjab National Bank card",
+      cardHolder: "Elean Salvatore",
+      cardNumber: 6250941006528599,
+      expiry: "alenaSAL@122",
+      cvv: 454,
+      logoIndex: 72,
+    },
 
   ]
   const loadState = useSelector((state) => state.loading);
@@ -148,7 +156,7 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
         (!showInputForm && !showContentCard) &&
         < AddBtn formToggle={formToggle} />
       }
-      <div className={showContentCard ? styles.contentContainerClose : styles.contentContainer}>
+      <div className={(showContentCard || showInputForm) ? styles.contentContainerClose : styles.contentContainer}>
         {cardsData.map((card, index) => (
           <Card
             key={index}
@@ -167,12 +175,13 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
           fullContentCardData={
             fullContentCardCategory === "Bank" ? bankCardData : fullContentCardCategory === "Identity" ? identityCardData : fullContentCardCategory === "License" ? licenseCardData : undefined
           }
-
         />
         : null}
       {showInputForm &&
         <CardInputForm
           formToggle={formToggle}
+          showInputForm={showInputForm}
+          setShowInputForm={showInputForm}
         />
       }
     </div>

@@ -1,8 +1,8 @@
 .componentWrapper {
     position: absolute;
     width: 300px;
-    height: 60%;
-    min-height: 60%;
+    height: 70%;
+    min-height: 70%;
     background-color: #F3F5F9;
     display: grid;
     grid-template-areas:
@@ -17,7 +17,7 @@
     bottom: 30px;
     left: 0;
     right: 0;
-    top: 20%;
+    top: 10%;
     margin-left: auto;
     margin-right: auto;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;

@@ -37,7 +37,16 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
         console.table(formData);
 
     }
-
+    const formClear = () => {
+        setformData({
+            app: "",
+            category: "",
+            title: "",
+            username: "",
+            password: "",
+            logoIndex: "",
+        })
+    }
     useEffect(() => {
         setLogoIndx(logoIndx)
         setformData({
@@ -58,7 +67,7 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
         setLogoComponentShow(true);
     }
     return (
-        <div className={styles.cardWrapper}>
+        <div className={showInputForm ? styles.cardWrapper : styles.cardWrapperClose}>
             {logoComponentShow &&
                 <LogoComponentWrapper
                     setLogoComponentShow={setLogoComponentShow}
@@ -70,7 +79,12 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
                 <div className={styles.cardHeader}>
                     <div className={styles.backBtnContainer} >
-                        <div className={styles.backBtnDiv} onClick={() => formToggle()}>
+                        <div className={styles.backBtnDiv}
+                            onClick={() => {
+                                formToggle();
+                                formClear();
+                            }
+                            }>
                             <BackBtnIcon />
                         </div>
                     </div>
@@ -112,7 +126,7 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
                 <div className={styles.categoryWrapper} >
                     <div className={styles.categoryContainer} >
-                        <div className={styles.catergoryTitleDiv} >
+                        <div className={styles.categoryLabelContainer} >
                             <p>Category</p>
                         </div>
                         <div className={styles.catergoryInputDiv} >
@@ -121,6 +135,7 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                                 className={styles.categoryInput}
                                 value={formData.category}
                                 onChange={handleInputValueChange}
+                                readOnly={true}
 
                             />
                             <div className={styles.popUpBtnIconDiv}>
@@ -134,7 +149,7 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
                             {
                                 popUpOpen ? (
-                                    <div className={styles.inputPopUpDiv}>
+                                    <div className={styles.categoryInputPopDiv}>
                                         <p className={styles.inputPopUpText}
                                             onClick={() => {
                                                 handleOpClick("Finance")
@@ -176,7 +191,7 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                                 className={styles.websiteIcon}
                                 icon="tabler:app-window" color="#002a9a" />
                         </div>
-                        <div className={styles.appWebSiteTitleDiv} >
+                        <div className={styles.appWebsiteLabelDiv} >
                             <p>App / Website</p>
                         </div>
                         <div className={styles.appWebsiteInputDiv} >
@@ -233,7 +248,7 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                         </div>
                     </div></div>
             </div>
-        </div>
+        </div >
     )
 }
 

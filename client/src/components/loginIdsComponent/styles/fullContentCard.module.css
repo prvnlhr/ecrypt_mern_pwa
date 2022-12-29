@@ -92,12 +92,59 @@
     padding-top: 0%;
 }
 
-.editBtnContainer {
+.curdBtnContainer {
     width: 50%;
     height: 100%;
     /* border: 1px solid black; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+.editBtnDiv {
+    width: auto;
+    height: 20px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+}
+
+.editBtnDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #7E8DA4;
+}
+
+
+.eidtCancelBtnDiv {
+    width: auto;
+    height: 20px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-radius: 5px;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+}
+
+.eidtCancelBtnDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #7E8DA4;
+}
 
 .logoTitleWrapper {
     grid-area: logoTitleWrapper;
@@ -159,7 +206,7 @@
     padding-left: 5%;
 }
 
-.titleTitleDiv {
+.titleLabelDiv {
     width: 80%;
     height: 80%;
     /* border: 1px solid black; */
@@ -168,7 +215,7 @@
     align-items: flex-end;
 }
 
-.titleTitleDiv p {
+.titleLabelDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
@@ -176,7 +223,7 @@
 
 }
 
-.titleTextDiv {
+.titleInputDiv {
     width: 80%;
     height: 80%;
     /* border: 1px solid black; */
@@ -185,11 +232,41 @@
     align-items: flex-start;
 }
 
-.titleTextDiv p {
+
+
+.titleInputActive {
+    width: 80%;
+    height: auto;
+    border-bottom: 1px solid #7E8DA4;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    /* border: 1px solid #7E8DA4; */
+    outline: none;
+    background: transparent;
     font-family: "Poppins", sans-serif;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
     color: black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.titleInputNotActive {
+    width: 80%;
+    height: auto;
+    border: none;
+    /* border: 1px solid #7E8DA4; */
+    outline: none;
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .categoryWrapper {
@@ -216,7 +293,7 @@
 
 }
 
-.catergoryTitleDiv {
+.categoryLabelDiv {
     width: 100%;
     height: 100%;
     /* border: 1px solid black; */
@@ -226,7 +303,7 @@
     padding-left: 5%;
 }
 
-.catergoryTitleDiv p {
+.categoryLabelDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 18px;
     font-weight: 600;
@@ -252,7 +329,7 @@
     border: none;
     outline: none !important;
     height: 75%;
-    width: 45%;
+    width: 70%;
     border-radius: 8px;
     display: flex;
     justify-content: center;
@@ -313,11 +390,16 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .inputPopUpText:hover {
-    background-color: red;
     width: 80%;
+    background-color: #a8ccf9b5;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-radius: 5px;
 }
 
 .appWebSiteWrapper {
@@ -341,7 +423,7 @@
     grid-template-columns: 20% 40% 40%;
     grid-template-rows: 100%;
     grid-template-areas:
-        "appWebSiteIconDiv appWebSiteTitleDiv appWebSiteTextDiv";
+        "appWebSiteIconDiv appWebsiteLabelDiv appWebSiteInputDiv";
     background-color: #F6F6F6;
     border-radius: 10px;
 
@@ -362,8 +444,8 @@
     color: #002A9A;
 }
 
-.appWebSiteTitleDiv {
-    grid-area: appWebSiteTitleDiv;
+.appWebsiteLabelDiv {
+    grid-area: appWebsiteLabelDiv;
     width: 100%;
     height: 100%;
     /* border: 1px solid black; */
@@ -372,20 +454,57 @@
     align-items: center;
 }
 
-.appWebSiteTitleDiv p {
+.appWebsiteLabelDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: 500;
     color: black;
 }
 
-.appWebSiteTextDiv {
-    grid-area: appWebSiteTextDiv;
+.appWebSiteInputDiv {
+    grid-area: appWebSiteInputDiv;
     width: 100%;
     height: 100%;
     /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
 }
 
+
+.appWebSiteInputActive {
+    width: 80%;
+    height: auto;
+    border-bottom: 1px solid #7E8DA4;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    /* border: 1px solid #7E8DA4; */
+    outline: none;
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.appWebSiteInputNotActive {
+    width: 80%;
+    height: auto;
+    border: none;
+    /* border: 1px solid #7E8DA4; */
+    outline: none;
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
 
 .usernameWrapper {
     grid-area: usernameWrapper;
@@ -457,6 +576,42 @@
     justify-content: flex-start;
     align-items: center;
 }
+
+.userNameInputActive {
+    width: 80%;
+    height: auto;
+    border-bottom: 1px solid #7E8DA4;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    /* border: 1px solid #7E8DA4; */
+    outline: none;
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.userNameInputNotActive {
+    width: 80%;
+    height: auto;
+    border: none;
+    /* border: 1px solid #7E8DA4; */
+    outline: none;
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 
 .usernameInputDiv p {
     font-family: "Poppins", sans-serif;
@@ -536,11 +691,39 @@
     align-items: center;
 }
 
-.passwordInputDiv p {
+.passwordInputActive {
+    width: 80%;
+    height: auto;
+    border-bottom: 1px solid #7E8DA4;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    /* border: 1px solid #7E8DA4; */
+    outline: none;
+    background: transparent;
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
     color: black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.passwordInputNotActive {
+    width: 80%;
+    height: auto;
+    border: none;
+    /* border: 1px solid #7E8DA4; */
+    outline: none;
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
@@ -638,10 +821,14 @@
 
 
 
-    .editBtnContainer {
+    .curdBtnContainer {
         width: 50%;
         height: 100%;
         /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 8%;
     }
 
 
@@ -703,7 +890,7 @@
         padding-left: 5%;
     }
 
-    .titleTitleDiv {
+    .titleLabelDiv {
         width: 80%;
         height: 80%;
         /* border: 1px solid black; */
@@ -712,7 +899,7 @@
         align-items: flex-end;
     }
 
-    .titleTitleDiv p {
+    .titleLabelDiv p {
         font-family: "Poppins", sans-serif;
         font-size: 15px;
         font-weight: 500;
@@ -720,7 +907,7 @@
 
     }
 
-    .titleTextDiv {
+    .titleInputDiv {
         width: 80%;
         height: 80%;
         /* border: 1px solid black; */
@@ -729,7 +916,7 @@
         align-items: flex-start;
     }
 
-    .titleTextDiv p {
+    .titleInputDiv p {
         font-family: "Poppins", sans-serif;
         font-size: 20px;
         font-weight: 600;
@@ -760,7 +947,7 @@
 
     }
 
-    .catergoryTitleDiv {
+    .categoryLabelDiv {
         width: 40%;
         height: 100%;
         /* border: 1px solid black; */
@@ -770,7 +957,7 @@
         padding-left: 5%;
     }
 
-    .catergoryTitleDiv p {
+    .categoryLabelDiv p {
         font-family: "Poppins", sans-serif;
         font-size: 18px;
         font-weight: 600;
@@ -880,7 +1067,7 @@
         grid-template-columns: 20% 40% 40%;
         grid-template-rows: 100%;
         grid-template-areas:
-            "appWebSiteIconDiv appWebSiteTitleDiv appWebSiteTextDiv";
+            "appWebSiteIconDiv appWebsiteLabelDiv appWebSiteInputDiv";
         background-color: #F3F5F9;
         border-radius: 10px;
 
@@ -900,8 +1087,8 @@
         height: 50%;
     }
 
-    .appWebSiteTitleDiv {
-        grid-area: appWebSiteTitleDiv;
+    .appWebsiteLabelDiv {
+        grid-area: appWebsiteLabelDiv;
         width: 100%;
         height: 100%;
         /* border: 1px solid black; */
@@ -910,15 +1097,15 @@
         align-items: center;
     }
 
-    .appWebSiteTitleDiv p {
+    .appWebsiteLabelDiv p {
         font-family: "Poppins", sans-serif;
         font-size: 16px;
         font-weight: 500;
         color: black;
     }
 
-    .appWebSiteTextDiv {
-        grid-area: appWebSiteTextDiv;
+    .appWebSiteInputDiv {
+        grid-area: appWebSiteInputDiv;
         width: 100%;
         height: 100%;
         /* border: 1px solid black; */

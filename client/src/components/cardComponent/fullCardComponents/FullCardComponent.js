@@ -12,7 +12,7 @@ const FullCardComponent = ({ showContentCard, handleFullContentBackBtnClicked,
     fullContentCardData,
 
 }) => {
-    
+
     const [popUpOpen, setPopUpOpen] = useState(false);
 
     const [logoIndx, setLogoIndx] = useState(undefined);
@@ -193,7 +193,7 @@ const FullCardComponent = ({ showContentCard, handleFullContentBackBtnClicked,
 
 
                     {fullContentCardData.category === "Bank" ?
-                        <BankCardSubComponent /> : fullContentCardData.category === "Identity" ?
+                        <BankCardSubComponent cardData={fullContentCardData} /> : fullContentCardData.category === "Identity" ?
                             <IdentityCardSubComponent /> : fullContentCardData.category === "License" ?
                                 <LicenseCardSubComponent /> : null
                     }

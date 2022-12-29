@@ -16,6 +16,7 @@ import React from "react";
 // import { Icon, InlineIcon } from "@iconify/react";
 
 const getCardType = (number) => {
+  console.log(typeof number)
   const numberFormatted = number.replace(/\D/g, "");
   var patterns = {
     VISA: /^4[0-9]{12}(?:[0-9]{3})?$/,
@@ -44,7 +45,7 @@ const getCardType = (number) => {
 const CardLogo = ({ className, cardNo }) => {
   const cardNumber = cardNo;
   const cNo = cardNumber.toString();
-
+  console.log(cardNo, cardNumber, cNo);
   const cardType = getCardType(cNo);
 
   let logo;
