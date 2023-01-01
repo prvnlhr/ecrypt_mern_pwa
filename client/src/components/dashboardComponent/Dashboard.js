@@ -6,14 +6,7 @@ import styles from "./styles/dashboard.module.css";
 import ActivityList from "./activitySection/ActivityList";
 import ActivityComponentOuter from "./activitySection/ActivityComponentOuter";
 const Dashboard = ({ setHeading }) => {
-  const loginIdsArray = useSelector((state) => state.logins.loginIds);
-  const cardsArray = useSelector((state) => state.cards.cards);
-  const docsArray = useSelector((state) => state.docs.docs);
-  const activitiesArray = useSelector((state) => state.activities);
 
-  // useEffect(() => {
-  //   setHeading("Dashboard");
-  // }, []);
 
   return (
     <div className={styles.dashboardComponent}>

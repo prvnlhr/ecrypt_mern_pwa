@@ -1,13 +1,21 @@
 import axios from "axios";
-import { store } from "../redux/store/index";
-import { logout, updateToken } from "../redux/actions/auth";
+import { store } from "../store/store";
+import { logout, updateToken } from "../actions/auth";
+// import  store  from "../store/index";
 let url = process.env.REACT_APP_BASE_URL;
 console.log(process.env.REACT_APP_BASE_URL);
+
+
+
+//for production server
 const API = axios.create({
   baseURL: url,
 });
 
-// const API = axios.create({ baseURL: "http://localhost:9000" });
+//for development server
+// const API = axios.create({ 
+// baseURL: "http://localhost:9000" 
+// });
 
 const reqHandler = (request) => {
   // console.log("request", request);
@@ -105,6 +113,8 @@ export const getUser = (token) =>
   API.get("/user/auth/info", {
     headers: { Authorization: `${token}` },
   });
+
+
 //PROFILE SETTINGS__________________________________________________________________________________________
 export const editProfile = (token, profileData) =>
   API.post(

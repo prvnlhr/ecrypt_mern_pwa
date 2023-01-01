@@ -1,37 +1,21 @@
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
-import { HiX, HiChevronDown, HiChevronUp } from "react-icons/hi";
-import { CircleSpinner } from "react-spinners-kit";
 import { Icon } from '@iconify/react';
 
 import LogoutIcon from "../icons/LogoutIcon"
 import SettingsIcon from "../icons/SettingsIcon"
 
 import moment from "moment";
-import { RiSearch2Line } from "react-icons/ri";
 import headerStyles from "./styles/headerBar.module.css";
-import { logout } from "../../redux/actions/auth";
-import { search } from "../../redux/actions/searchAction";
-import { toggleTheme } from "../../redux/actions/userAction";
-import AppLogo from "./AppLogo";
 
 const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
-  const user = useSelector((state) => state.user.user);
-  const theme = useSelector((state) => state.theme.theme);
-  const loadState = useSelector((state) => state.loading);
-  const { place, isLoading } = loadState;
 
-  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const handleSearch = (val) => {
-    dispatch(search(val));
-  };
+
   const [searchQuery, setQuery] = useState("");
   const [searchMode, setSearchMode] = useState(false);
 
 
-  useEffect(() => { }, [user.firstName]);
 
   useEffect(() => {
     let handler = (e) => {
@@ -49,10 +33,7 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
   const [lightTheme, setTheme] = useState(true);
 
 
-  const handleLogout = () => {
-    localStorage.removeItem("firstLogin");
-    dispatch(logout(navigate));
-  };
+
 
   const togglePopup = () => {
     if (open === true) {
@@ -61,22 +42,6 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
       setOpen(true);
     }
   };
-
-  const toggleAppTheme = () => {
-    if (theme === "dark") {
-      localStorage.setItem("theme", "light");
-      dispatch(toggleTheme("light"));
-    } else {
-      localStorage.setItem("theme", "dark");
-      dispatch(toggleTheme("dark"));
-    }
-  };
-
-
-  const themeToggle = (e) => {
-    setTheme(!lightTheme);
-    e.currentTarget.classList.toggle('toggleBtnPos');
-  }
 
   const settingsLinkedClicked = (e) => {
     setOpen(false);
@@ -171,7 +136,7 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
           <div className={`${headerStyles.popUpMenuContainer}`}>
             <div className={headerStyles.topSection} >
               <div className={headerStyles.themeToggleWrapper}>
-                <div className={headerStyles.toggleContainer} onClick={themeToggle}>
+                <div className={headerStyles.toggleContainer} >
                   <div className={lightTheme ? headerStyles.toggleBtnDivLeft : headerStyles.toggleBtnDivRight} >
                     <div className={headerStyles.toggleIconDiv} >
                       {lightTheme ?

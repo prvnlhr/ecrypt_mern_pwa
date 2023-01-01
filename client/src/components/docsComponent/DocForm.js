@@ -1,7 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { addNewDoc } from "../../redux/actions/documentsAction";
 import styles from "./styles/docFormNew.module.css";
 import { HiX } from "react-icons/hi";
 import { Icon } from "@iconify/react";
@@ -17,10 +15,10 @@ const variants = {
     scale: 0,
   },
 };
+
 const DocForm = ({ formMode, setFormMode }) => {
   const userId = useSelector((state) => state.user.user._id);
 
-  const dispatch = useDispatch();
   const [name, setName] = useState();
   const [file, setFile] = useState();
   const [previewImg, setPreviewImg] = useState("");

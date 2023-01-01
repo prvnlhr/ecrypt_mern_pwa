@@ -1,9 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { deleteCard, editCard } from "../../redux/actions/cardsAction";
-import { cardFavToggle } from "../../redux/actions/cardsAction";
-import { CircleSpinner } from "react-spinners-kit";
+
 import styles from "./styles/cardComponent.module.css";
 import CardLogo, { getCardType } from "./CardLogo";
 import modalStyles from "../modal/modal.module.css";

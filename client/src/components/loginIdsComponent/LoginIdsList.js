@@ -1,9 +1,6 @@
 import React from "react";
 import { useState, useEffect, useRef, lazy, Suspense } from "react";
-import { useSelector } from "react-redux";
-// import LoginIdForm from "./LoginIdForm";
 import LoginId from "./LoginId";
-import LoginIdSkeleton from "../skelotons/LoginIdSkeleton";
 import styles from "./styles/loginList.module.css";
 import noContentStyles from "../docsComponent/styles/noContentMessage.module.css";
 import btnStyles from "../add_button/buttons.module.css";
@@ -13,19 +10,12 @@ import { CircleSpinner } from "react-spinners-kit";
 import FullContentCard from "./FullContentCard";
 import AddBtn from "../buttons/AddBtn";
 import LoginIdInputForm from "./LoginIdInputForm";
-const LoginIdForm = lazy(() => import("./LoginIdForm"));
 
-const LoginIdsList = ({
-
-  setLogoComponentShow
-}
-  // { loginIds, currentId, setCurrentId, setHeading }
+const LoginIdsList = ({ setLogoComponentShow }
 ) => {
   const [formMode, setFormMode] = useState(false);
   const [showEditButton, setEditButton] = useState(true);
   const [currEditId, setCurrEditId] = useState(null);
-  const loadState = useSelector((state) => state.loading);
-  const { place, isLoading, loginsFetching } = loadState;
 
   const [showInputForm, setShowInputForm] = useState(false);
 
@@ -70,8 +60,8 @@ const LoginIdsList = ({
 
   const formToggle = () => {
 
-    if(showInputForm){
-      
+    if (showInputForm) {
+
     }
     setShowInputForm(!showInputForm);
   };

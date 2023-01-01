@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect, useRef, lazy, Suspense } from "react";
-import { useSelector } from "react-redux";
 import Card from "./Card";
 // import CardForm from "./CardForm";
 import { FiPlusCircle } from "react-icons/fi";
@@ -14,7 +13,6 @@ import { CircleSpinner } from "react-spinners-kit";
 import FullCardComponent from "./fullCardComponents/FullCardComponent";
 import AddBtn from "../buttons/AddBtn";
 import CardInputForm from "./inputForms/CardInputForm";
-const CardForm = lazy(() => import("./CardForm"));
 
 const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponentShow }) => {
 
@@ -89,7 +87,6 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
     },
 
   ]
-  const loadState = useSelector((state) => state.loading);
   const [showContentCard, setShowContentCard] = useState(false);
 
   const [fullContentCardCategory, setFullContentCardCatergory] = useState("BankCard");

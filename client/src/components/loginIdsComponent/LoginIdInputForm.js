@@ -1,12 +1,16 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux'
 import BackBtnIcon from "../icons/BackBtnIcon"
 import { Icon } from '@iconify/react';
 import { logosArray } from "../logoComponents/logosData"
 import LogoComponentWrapper from "../logoComponents/LogoComponentWrapper"
 import styles from "./styles/loginIdInputForm.module.css"
+import { addLoginId } from "../../redux/features/loginsId/loginsIdSlice"
 const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
+
+    const dispatch = useDispatch();
     const [formData, setformData] = useState({
         app: "",
         category: "",
@@ -35,7 +39,7 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
     const saveBtnClicked = () => {
         console.table(formData);
-
+        dispatch(addLoginId(formData))
     }
     const formClear = () => {
         setformData({
