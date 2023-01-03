@@ -1,17 +1,8 @@
-import React from "react";
-import { useState, useEffect, useRef, lazy, Suspense } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-// import LoginIdForm from "./LoginIdForm";
 import LoginId from "./LoginId";
-import LoginIdSkeleton from "../skelotons/LoginIdSkeleton";
 import styles from "./styles/loginList.module.css";
-import noContentStyles from "../docsComponent/styles/noContentMessage.module.css";
-import btnStyles from "../add_button/buttons.module.css";
-import { FiPlusCircle } from "react-icons/fi";
-import { HiPlus } from "react-icons/hi";
-import { CircleSpinner } from "react-spinners-kit";
 import FullContentCard from "./FullContentCard";
-const LoginIdForm = lazy(() => import("./LoginIdForm"));
 
 const LoginIdsList = (
   // { loginIds, currentId, setCurrentId, setHeading }

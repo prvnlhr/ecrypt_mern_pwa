@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 
 const loginsController = {
   getLoginIds: async (req, res) => {
+    console.log(req.query.user_id)
     try {
       const loginIds = await UserDatabase.findOne({ _id: req.query.user_id });
       res.status(200).send(loginIds.loginIdsArray);
@@ -18,6 +19,7 @@ const loginsController = {
         { $push: { loginIdsArray: req.body.data } },
         { returnOriginal: false }
       );
+      console.log(response)
       const data = response;
       res.status(200).send(data);
     } catch (error) {
@@ -27,6 +29,8 @@ const loginsController = {
   deleteLoginId: async (req, res) => {
     const loginIdID = req.params.id;
     const userId = req.body.user_id;
+
+    console.log(loginIdID, userId);
     try {
       const response = await UserDatabase.findOneAndUpdate(
         { _id: userId },
@@ -46,16 +50,18 @@ const loginsController = {
   },
   editLoginId: async (req, res) => {
     const id = req.params.id;
-    const { website, username, password } = req.body;
-
+    const { title, category, app, username, password, logoIndex } = req.body;
     try {
       const response = await UserDatabase.findOneAndUpdate(
         { "loginIdsArray._id": id },
         {
           $set: {
-            "loginIdsArray.$.website": website,
+            "loginIdsArray.$.title": title,
+            "loginIdsArray.$.app": app,
+            "loginIdsArray.$.category": category,
             "loginIdsArray.$.username": username,
             "loginIdsArray.$.password": password,
+            "loginIdsArray.$.logoIndex": logoIndex,
           },
         },
         { returnOriginal: false }

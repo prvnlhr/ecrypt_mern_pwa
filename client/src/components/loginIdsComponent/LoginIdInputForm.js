@@ -6,7 +6,7 @@ import { Icon } from '@iconify/react';
 import { logosArray } from "../logoComponents/logosData"
 import LogoComponentWrapper from "../logoComponents/LogoComponentWrapper"
 import styles from "./styles/loginIdInputForm.module.css"
-import { addLoginId } from "../../redux/features/loginsId/loginsIdSlice"
+import { addNewLoginIdData } from "../../redux/features/loginsId/loginsIdSlice"
 const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
 
@@ -39,7 +39,22 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
     const saveBtnClicked = () => {
         console.table(formData);
-        dispatch(addLoginId(formData))
+        dispatch(addNewLoginIdData({
+            data: formData,
+            user_id: "63b43ab32fc8d3c100cafecc",
+        }))
+        setShowInputForm(false);
+        setformData({
+            id_: "",
+            app: "",
+            category: "",
+            title: "",
+            username: "",
+            password: "",
+            logoIndex: "",
+        })
+
+
     }
     const formClear = () => {
         setformData({

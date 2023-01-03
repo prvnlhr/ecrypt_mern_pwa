@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect, useRef, lazy, Suspense } from "react";
+import { useSelector } from 'react-redux';
 import LoginId from "./LoginId";
 import styles from "./styles/loginList.module.css";
 import noContentStyles from "../docsComponent/styles/noContentMessage.module.css";
@@ -13,10 +14,16 @@ import LoginIdInputForm from "./LoginIdInputForm";
 
 const LoginIdsList = ({ setLogoComponentShow }
 ) => {
+
+  const loginIdsArray = useSelector((state => state.loginIds.loginsIdData));
+
+  // console.table(loginIdsArray);
   const [formMode, setFormMode] = useState(false);
   const [showEditButton, setEditButton] = useState(true);
   const [currEditId, setCurrEditId] = useState(null);
 
+
+  const [editMode, setEditMode] = useState(false);
   const [showInputForm, setShowInputForm] = useState(false);
 
   const [showContentCard, setShowContentCard] = useState(false);
@@ -133,11 +140,14 @@ const LoginIdsList = ({ setLogoComponentShow }
 
   const handleFullContentBackBtnClicked = () => {
     setShowContentCard(false);
+    setEditMode(false);
   }
 
   const handleLoginIdClicked = (loginIData) => {
+    // console.log(loginIData)
     if (loginIData != undefined) {
       setFullContentCardData({
+        _id: loginIData._id,
         app: loginIData.app,
         category: loginIData.category,
         title: loginIData.title,
@@ -156,10 +166,9 @@ const LoginIdsList = ({ setLogoComponentShow }
         < AddBtn formToggle={formToggle} />
       }
       <div className={(showContentCard || showInputForm) ? styles.contentContainerClose : styles.contentContainer}>
-        {loginIds.map((loginId, index) => (
+        {loginIdsArray.map((loginId, index) => (
           <LoginId
-            key={index}
-            index={index}
+            key={loginId._id}
             loginId={loginId}
             handleLoginIdClicked={handleLoginIdClicked}
           />
@@ -170,8 +179,12 @@ const LoginIdsList = ({ setLogoComponentShow }
         <FullContentCard
           setLogoComponentShow={setLogoComponentShow}
           fullContentCardData={fullContentCardData}
+          setFullContentCardData={setFullContentCardData}
           showContentCard={showContentCard}
+          setShowContentCard={setShowContentCard}
           handleFullContentBackBtnClicked={handleFullContentBackBtnClicked}
+          setEditMode={setEditMode}
+          editMode={editMode}
         />
       }
       <LoginIdInputForm

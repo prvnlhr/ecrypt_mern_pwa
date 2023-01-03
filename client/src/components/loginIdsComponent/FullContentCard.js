@@ -1,25 +1,19 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
+
+import { useDispatch } from 'react-redux';
 import styles from "./styles/fullContentCard.module.css"
 import BackBtnIcon from "../icons/BackBtnIcon"
 import { Icon } from '@iconify/react';
 import { logosArray } from "../logoComponents/logosData"
 import LogoComponentWrapper from "../logoComponents/LogoComponentWrapper"
-const FullContentCard = ({ fullContentCardData, showContentCard, handleFullContentBackBtnClicked }) => {
 
+//> Reduc
+import { editLoginIdData, deleteLoginData } from "../../redux/features/loginsId/loginsIdSlice"
 
-    const [currData, setCurrData] = useState({
-        app: "",
-        category: "",
-        title: "",
-        username: "",
-        password: "",
-        logoIndex: "",
-    });
+const FullContentCard = ({ fullContentCardData, setFullContentCardData, showContentCard, setShowContentCard, handleFullContentBackBtnClicked, editMode, setEditMode }) => {
 
-
-
-    const [editMode, setEditMode] = useState(false);
+    const dispatch = useDispatch();
 
     const [popUpOpen, setPopUpOpen] = useState(false);
 
@@ -28,30 +22,20 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
     const [logoComponentShow, setLogoComponentShow] = useState(false);
 
     useEffect(() => {
-        setCurrData({
-            app: fullContentCardData.app,
-            category: fullContentCardData.category,
-            title: fullContentCardData.title,
-            username: fullContentCardData.username,
-            password: fullContentCardData.password,
-            logoIndex: fullContentCardData.logoIndex,
-        })
-        setLogoIndx(fullContentCardData.logoIndex)
-    }, [fullContentCardData]);
+        if (logoIndx !== undefined) {
+            console.log(fullContentCardData, logoIndx)
+            setFullContentCardData({
+                ...fullContentCardData,
+                logoIndex: logoIndx
+            })
+        }
+    }, [logoIndx])
 
-    useEffect(() => {
-        // console.log(logoIndx, logosArray[logoIndx])
-        setCurrData({
-            ...currData,
-            logoIndex: logoIndx
-        })
-    }, [logoIndx]);
-
-    // console.log(currData);
 
     const handleOpClick = (op) => {
-        setCurrData({
-            ...currData,
+
+        setFullContentCardData({
+            ...fullContentCardData,
             category: op
         })
         setPopUpOpen(!popUpOpen)
@@ -68,14 +52,31 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
     }
 
     const handleInputValueChange = (e) => {
-        setCurrData({
-            ...currData,
+
+        setFullContentCardData({
+            ...fullContentCardData,
             [e.target.name]: e.target.value,
         })
     }
 
     const saveBtnClicked = () => {
-        console.log(currData)
+        // console.table(fullContentCardData)
+        dispatch(editLoginIdData({
+            updatedData: fullContentCardData,
+            login_id: fullContentCardData._id,
+        }))
+        setShowContentCard(false);
+        setEditMode(false);
+
+    }
+    const deleteBtnClicked = () => {
+        console.table(fullContentCardData._id, '63b43ab32fc8d3c100cafecc')
+        dispatch(deleteLoginData({
+            login_id: fullContentCardData._id,
+            user_id: '63b43ab32fc8d3c100cafecc'
+        }))
+        setShowContentCard(false);
+
     }
     return (
         <div className={showContentCard ? styles.cardWrapper : styles.cardWrapperClose}>
@@ -92,25 +93,31 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
                     <div className={styles.backBtnContainer} >
                         <div className={styles.backBtnDiv}
                             onClick={() => handleFullContentBackBtnClicked()}
-                        >
-                            <BackBtnIcon />
+                        ><BackBtnIcon />
                         </div>
                     </div>
                     <div className={styles.curdBtnContainer} >
 
-
                         {editMode ?
                             <>
-                                <div className={styles.editBtnDiv} onClick={saveBtnClicked}  >
+                                <div className={styles.saveBtnDiv} onClick={saveBtnClicked}  >
                                     <p>Save</p>
                                 </div>
 
-                                <div className={styles.eidtCancelBtnDiv} onClick={cancelBtnClicked}>
+                                <div className={styles.cancelBtnDiv} onClick={cancelBtnClicked}>
                                     <p>Cancel</p>
                                 </div>
-                            </> : <div className={styles.editBtnDiv} onClick={editBtnClicked}  >
-                                <p>Edit</p>
-                            </div>
+                            </>
+
+                            :
+                            <>
+                                <div className={styles.deleteBtnDiv} onClick={deleteBtnClicked}  >
+                                    <p>Delete</p>
+                                </div>
+                                <div className={styles.editBtnDiv} onClick={editBtnClicked}  >
+                                    <p>Edit</p>
+                                </div>
+                            </>
                         }
                     </div>
                 </div>
@@ -121,8 +128,9 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
                     <div className={styles.logoTitleContainer} >
                         <div className={styles.logoContainer} onClick={logoclicked} >
                             <div className={styles.logoDiv}>
-                                {logoIndx !== undefined &&
-                                    logosArray[logoIndx].logo
+                                {
+                                    fullContentCardData.logoIndex != undefined &&
+                                    logosArray[fullContentCardData.logoIndex].logo
                                 }
                             </div>
                         </div>
@@ -134,7 +142,7 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
                             <div className={styles.titleInputDiv}>
                                 <input
                                     className={editMode ? styles.titleInputActive : styles.titleInputNotActive}
-                                    value={currData.title}
+                                    value={fullContentCardData.title}
                                     name={"title"}
                                     onChange={handleInputValueChange}
                                     readOnly={editMode ? false : true} />
@@ -156,7 +164,7 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
                             <input
                                 list="websites"
                                 className={styles.categoryInput}
-                                value={currData.category}
+                                value={fullContentCardData.category}
                                 readOnly={editMode ? false : true}
 
                             />
@@ -172,12 +180,9 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
                             {
                                 popUpOpen ? (
                                     <div className={styles.inputPopUpDiv}>
-                                        <p className={styles.inputPopUpText}
-                                            onClick={() => {
-                                                handleOpClick("Finance")
-                                            }}>
-                                            Finance
-                                        </p>
+                                        <p className={styles.inputPopUpText} onClick={() => {
+                                            handleOpClick("Finance")
+                                        }}>Finance</p>
 
                                         <p className={styles.inputPopUpText} onClick={() => {
                                             handleOpClick("Personal")
@@ -219,7 +224,7 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
                         <div className={styles.appWebSiteInputDiv} >
                             <input
                                 className={editMode ? styles.appWebSiteInputActive : styles.appWebSiteInputNotActive}
-                                value={currData.app} readOnly={editMode ? false : true}
+                                value={fullContentCardData.app} readOnly={editMode ? false : true}
                                 name={"app"}
                                 onChange={handleInputValueChange}
                             />
@@ -242,7 +247,7 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
                         <div className={styles.usernameInputDiv} >
                             <input
                                 className={editMode ? styles.userNameInputActive : styles.userNameInputNotActive}
-                                value={currData.username} readOnly={editMode ? false : true}
+                                value={fullContentCardData.username} readOnly={editMode ? false : true}
                                 name={"username"}
                                 onChange={handleInputValueChange}
                             />
@@ -264,7 +269,7 @@ const FullContentCard = ({ fullContentCardData, showContentCard, handleFullConte
                             <input className={editMode ? styles.passwordInputActive : styles.passwordInputNotActive}
                                 name={"password"}
                                 onChange={handleInputValueChange}
-                                value={currData.password} readOnly={editMode ? false : true} />
+                                value={fullContentCardData.password} readOnly={editMode ? false : true} />
                         </div>
                     </div></div>
             </div>

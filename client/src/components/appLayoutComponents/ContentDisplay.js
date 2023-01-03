@@ -1,13 +1,15 @@
 import React from "react";
 import { useState, useEffect, lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-
+import { useDispatch } from "react-redux";
 import LoginIdsList from "../loginIdsComponent/LoginIdsList";
 import CardsList from "../cardComponent/CardsList";
 import FavList from "../favSectionComponent/FavList";
 import DocsList from "../docsComponent/DocsList"
 import Dashboard from "../dashboardComponent/Dashboard"
 import Settings from "./Settings"
+
+import { fecthLoginIdsData } from "../../redux/features/loginsId/loginsIdSlice"
 
 import styles from "./styles/contentDisplay.module.css";
 
@@ -30,11 +32,18 @@ const ContentDisplay = ({
   setLogoComponentShow
 }) => {
 
-
+  const dispatch = useDispatch();
 
   useEffect(() => {
     // console.log(fieldLength);
   }, [fieldLength]);
+
+  useEffect(() => {
+    dispatch(fecthLoginIdsData({
+      user_id: '63b43ab32fc8d3c100cafecc'
+    }
+    ));
+  }, []);
 
   return (
 
