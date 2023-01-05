@@ -57,40 +57,38 @@ const loginsIdSlice = createSlice({
 
     // },
 
-    extraReducers: {
-        [fecthLoginIdsData.fulfilled]: (state, action) => {
-            return {
-                ...state,
-                loginsIdData: action.payload
-            };
-        },
-        [addNewLoginIdData.fulfilled]: (state, action) => {
-            return {
-                ...state,
-                loginsIdData: [action.payload, ...state.loginsIdData]
-            };
-        },
-        [editLoginIdData.fulfilled]: (state, action) => {
+    extraReducers: (builder) => {
+        builder.
+            addCase(fecthLoginIdsData.fulfilled, (state, action) => {
+                return {
+                    ...state,
+                    loginsIdData: action.payload
+                };
+            }).addCase(addNewLoginIdData.fulfilled, (state, action) => {
+                return {
+                    ...state,
+                    loginsIdData: [action.payload, ...state.loginsIdData]
+                };
+            }).addCase(editLoginIdData.fulfilled, (state, action) => {
+                const newArray = state.loginsIdData.map((loginId) => {
+                    if (loginId._id === action.payload._id) {
+                        return action.payload;
+                    } else {
+                        return loginId;
+                    }
+                });
+                console.log(newArray);
+                return {
+                    ...state,
+                    loginsIdData: newArray,
+                };
+            }).addCase(deleteLoginData.fulfilled, (state, action) => {
+                return {
+                    ...state,
+                    loginsIdData: action.payload
+                };
+            })
 
-            const newArray = state.loginsIdData.map((loginId) => {
-                if (loginId._id === action.payload._id) {
-                    return action.payload;
-                } else {
-                    return loginId;
-                }
-            });
-            console.log(newArray);
-            return {
-                ...state,
-                loginsIdData: newArray,
-            };
-        },
-        [deleteLoginData.fulfilled]: (state, action) => {
-            return {
-                ...state,
-                loginsIdData: action.payload
-            };
-        },
     }
 
 })

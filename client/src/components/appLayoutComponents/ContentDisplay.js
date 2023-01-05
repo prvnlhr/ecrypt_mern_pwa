@@ -10,6 +10,7 @@ import Dashboard from "../dashboardComponent/Dashboard"
 import Settings from "./Settings"
 
 import { fecthLoginIdsData } from "../../redux/features/loginsId/loginsIdSlice"
+import { fecthCardsData } from "../../redux/features/cards/cardsSlice"
 
 import styles from "./styles/contentDisplay.module.css";
 
@@ -39,10 +40,8 @@ const ContentDisplay = ({
   }, [fieldLength]);
 
   useEffect(() => {
-    dispatch(fecthLoginIdsData({
-      user_id: '63b43ab32fc8d3c100cafecc'
-    }
-    ));
+    dispatch(fecthLoginIdsData({ user_id: '63b43ab32fc8d3c100cafecc' }));
+    dispatch(fecthCardsData({ user_id: '63b43ab32fc8d3c100cafecc' }));
   }, []);
 
   return (

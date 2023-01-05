@@ -15,38 +15,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    cardsArray: [
-      {
-        user: {
-          type: String,
-          required: true,
-        },
-        bank: {
-          type: String,
-          required: true,
-        },
-        cardNo: {
-          type: Number,
-          required: true,
-        },
-        expiry: {
-          type: String,
-          required: true,
-        },
-        cvv: {
-          type: Number,
-          required: true,
-        },
-        pin: {
-          type: Number,
-          required: true,
-        },
-        isFavourite: {
-          type: Boolean,
-          default: false,
-        },
-      },
-    ],
+    cardsArray: [{}],
     loginIdsArray: [
       {
         title: {

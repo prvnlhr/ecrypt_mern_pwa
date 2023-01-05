@@ -2,7 +2,6 @@ import React from 'react'
 import styles from "../styles/IdentityCardSubComponent.module.css"
 import { Icon } from '@iconify/react';
 const IdentityCardSubComponent = (
-
   { identityCardData, setIdentityCardData, handleFormDataChange }
 ) => {
   return (
@@ -20,6 +19,7 @@ const IdentityCardSubComponent = (
           </div>
           <div className={styles.cardHolderInputDiv}>
             <input value={identityCardData.cardHolder}
+              className={styles.inputActive}
               name="cardHolder"
               onChange={handleFormDataChange}
             />
@@ -37,6 +37,7 @@ const IdentityCardSubComponent = (
           <div className={styles.cardNumberInputDiv}>
             <input value={identityCardData.cardNumber}
               name="cardNumber"
+              className={styles.inputActive}
               onChange={handleFormDataChange}
 
             />
@@ -55,6 +56,7 @@ const IdentityCardSubComponent = (
           <div className={styles.dobDateInputDiv} >
             <input value={identityCardData.dob}
               name="dob"
+              className={styles.inputActive}
               onChange={handleFormDataChange}
             />
           </div>
@@ -71,6 +73,7 @@ const IdentityCardSubComponent = (
           <div className={styles.issueDateInputDiv} >
             <input value={identityCardData.issueDate}
               name="issueDate"
+              className={styles.inputActive}
               onChange={handleFormDataChange}
             />
           </div>

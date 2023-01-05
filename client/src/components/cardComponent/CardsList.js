@@ -1,5 +1,7 @@
 import React from "react";
 import { useState, useEffect, useRef, lazy, Suspense } from "react";
+import { useSelector } from 'react-redux';
+
 import Card from "./Card";
 // import CardForm from "./CardForm";
 import { FiPlusCircle } from "react-icons/fi";
@@ -15,32 +17,46 @@ import AddBtn from "../buttons/AddBtn";
 import CardInputForm from "./inputForms/CardInputForm";
 
 const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponentShow }) => {
+  const cardsArray = useSelector((state => state.cards.cardsData));
+
+
+
 
   const [bankCardData, setBankCardData] = useState({
     title: "",
-    category: "",
+    category: "Bank",
     cardHolder: "",
     cardNumber: "",
     expiry: "",
     cvv: "",
+    logoIndex: "",
+    isFavourite: false
+
   })
+
   const [identityCardData, setIdentityCardData] = useState({
     title: "",
-    category: "",
+    category: "Identity",
     cardHolder: "",
     cardNumber: "",
-    expiry: "",
+    issueDate: "",
     dob: "",
+    logoIndex: "",
+    isFavourite: false
   })
   const [licenseCardData, setLicenseCardData] = useState({
     title: "",
-    category: "",
+    category: ":License",
     cardHolder: "",
-    cardNumber: "",
+    licenseNumber: "",
     expiry: "",
-    dov: "",
+    dob: "",
+    logoIndex: "",
+    isFavourite: false
   })
+
   const [showInputForm, setShowInputForm] = useState(false);
+  const [editMode, setEditMode] = useState(false);
 
 
   const formToggle = () => {
@@ -48,7 +64,6 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
   };
 
   const cardsData = [
-
     {
       category: "Bank",
       title: "State Bank Card",
@@ -96,11 +111,12 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
   }
 
   const handleCardClicked = (cardData) => {
-    console.log(cardData)
     switch (cardData.category) {
       case "Identity":
         setFullContentCardCatergory("Identity")
         setIdentityCardData({
+          ...identityCardData,
+          _id: cardData._id,
           title: cardData.title,
           category: cardData.category,
           cardHolder: cardData.cardHolder,
@@ -108,13 +124,14 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
           issueDate: cardData.issueDate,
           dob: cardData.dob,
           logoIndex: cardData.logoIndex,
-
         })
         break;
 
       case "License":
         setFullContentCardCatergory("License")
         setLicenseCardData({
+          ...licenseCardData,
+          _id: cardData._id,
           title: cardData.title,
           category: cardData.category,
           cardHolder: cardData.cardHolder,
@@ -129,6 +146,8 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
       case "Bank":
         setFullContentCardCatergory("Bank")
         setBankCardData({
+          ...bankCardData,
+          _id: cardData._id,
           title: cardData.title,
           category: cardData.category,
           cardHolder: cardData.cardHolder,
@@ -154,7 +173,7 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
         < AddBtn formToggle={formToggle} />
       }
       <div className={(showContentCard || showInputForm) ? styles.contentContainerClose : styles.contentContainer}>
-        {cardsData.map((card, index) => (
+        {cardsArray.map((card, index) => (
           <Card
             key={index}
             index={index}
@@ -172,6 +191,12 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
           fullContentCardData={
             fullContentCardCategory === "Bank" ? bankCardData : fullContentCardCategory === "Identity" ? identityCardData : fullContentCardCategory === "License" ? licenseCardData : undefined
           }
+
+          setFullContentCardData={
+            fullContentCardCategory === "Bank" ? setBankCardData : fullContentCardCategory === "Identity" ? setIdentityCardData : fullContentCardCategory === "License" ? setLicenseCardData : undefined
+          }
+          setEditMode={setEditMode}
+          editMode={editMode}
         />
         : null}
       {showInputForm &&

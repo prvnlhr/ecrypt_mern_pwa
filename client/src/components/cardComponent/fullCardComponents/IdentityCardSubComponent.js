@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from "../styles/IdentityCardSubComponent.module.css"
 import { Icon } from '@iconify/react';
-const IdentityCardSubComponent = () => {
+const IdentityCardSubComponent = ({ fullContentCardData, setFullContentCardData, editMode, setEditMode }) => {
+
+  const handleInputValueChange = (e) => {
+    setFullContentCardData({
+      ...fullContentCardData,
+      [e.target.name]: e.target.value,
+    })
+  }
   return (
     <div className={styles.cardWrapper} >
       <div className={styles.cardHolderWrapper}>
@@ -16,7 +23,13 @@ const IdentityCardSubComponent = () => {
             <p>CARD HOLDER</p>
           </div>
           <div className={styles.cardHolderInputDiv}>
-            <input value={"Anderw Garfield"} />
+            <input
+              className={editMode ? styles.cardHolderInputActive : styles.cardHolderInputNotActive}
+              value={fullContentCardData.cardHolder}
+              readOnly={editMode ? false : true}
+              onChange={handleInputValueChange}
+              name={"cardHolder"}
+            />
           </div>
         </div>
       </div>
@@ -29,7 +42,13 @@ const IdentityCardSubComponent = () => {
             <p>CARD NUMBER</p>
           </div>
           <div className={styles.cardNumberInputDiv}>
-            <input value={"5041 8675 1096"} />
+            <input
+              className={editMode ? styles.inputActive : styles.inputNotActive}
+              value={fullContentCardData.cardNumber}
+              readOnly={editMode ? false : true}
+              onChange={handleInputValueChange}
+              name={"cardNumber"}
+            />
           </div>
         </div>
       </div>
@@ -43,7 +62,13 @@ const IdentityCardSubComponent = () => {
             <p>DOB</p>
           </div>
           <div className={styles.dobDateInputDiv} >
-            <input value={"23/01/96"} />
+            <input
+              className={editMode ? styles.inputActive : styles.inputNotActive}
+              value={fullContentCardData.dob}
+              readOnly={editMode ? false : true}
+              onChange={handleInputValueChange}
+              name={"dob"}
+            />
           </div>
         </div>
       </div>
@@ -56,7 +81,13 @@ const IdentityCardSubComponent = () => {
             <p>ISSUE DATE</p>
           </div>
           <div className={styles.issueDateInputDiv} >
-            <input value={"23/01/96"} />
+            <input
+              className={editMode ? styles.inputActive : styles.inputNotActive}
+              value={fullContentCardData.issueDate}
+              readOnly={editMode ? false : true}
+              onChange={handleInputValueChange}
+              name={"issueDate"}
+            />
           </div>
 
         </div>

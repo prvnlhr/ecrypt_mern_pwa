@@ -3,8 +3,27 @@ import styles from "../styles/bankCardSubComponent.module.css"
 
 import CardLogo from "../CardLogo"
 import { Icon } from '@iconify/react';
-const BankCardSubComponent = ({ cardData }) => {
+const BankCardSubComponent = ({ fullContentCardData, setFullContentCardData, editMode, setEditMode }) => {
+
     const [venderLogo, setVenderLogo] = useState();
+
+
+    useEffect(() => {
+        if (fullContentCardData.category === 'Bank') {
+            setVenderLogo(
+                < CardLogo cardNo={fullContentCardData.cardNumber} />
+            )
+        }
+    }, [fullContentCardData])
+
+    const handleInputValueChange = (e) => {
+        setFullContentCardData({
+            ...fullContentCardData,
+            [e.target.name]: e.target.value,
+        })
+    }
+
+
     return (
         <div className={styles.subCardWrapper} >
             <div className={styles.cardHolderWrapper}>
@@ -19,7 +38,12 @@ const BankCardSubComponent = ({ cardData }) => {
                         <p>CARD HOLDER</p>
                     </div>
                     <div className={styles.cardHolderInputDiv}>
-                        <input value={"Anderw Garfield"} />
+                        <input
+                            className={editMode ? styles.cardHolderInputActive : styles.cardHolderInputNotActive}
+                            readOnly={editMode ? false : true}
+                            onChange={handleInputValueChange}
+                            name={"cardHolder"}
+                            value={fullContentCardData.cardHolder} />
                     </div>
 
                 </div>
@@ -33,10 +57,17 @@ const BankCardSubComponent = ({ cardData }) => {
                         <p>CARD NUMBER</p>
                     </div>
                     <div className={styles.cardNumberInputDiv}>
-                        <input value={"5242 7230 1846 1202"} />
+                        <input
+                            className={editMode ? styles.inputActive : styles.inputNotActive}
+                            readOnly={editMode ? false : true}
+                            onChange={handleInputValueChange}
+                            name={"cardNumber"}
+                            value={fullContentCardData.cardNumber} />
                     </div>
-                    <div className={styles.cardVenderIconDiv}>
-                        <Icon className={styles.cardVenderIcon} icon="logos:visa" />
+                    <div className={styles.cardVenderIconContainer}>
+                        <div className={styles.cardVenderIconDiv} >
+                            {venderLogo}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -51,7 +82,12 @@ const BankCardSubComponent = ({ cardData }) => {
                         <p>EXPIRY</p>
                     </div>
                     <div className={styles.expiryInputDiv} >
-                        <input value={"04/24"} />
+                        <input
+                            className={editMode ? styles.inputActive : styles.inputNotActive}
+                            readOnly={editMode ? false : true}
+                            onChange={handleInputValueChange}
+                            name={"expiry"}
+                            value={fullContentCardData.expiry} />
                     </div>
                 </div>
             </div>
@@ -66,7 +102,12 @@ const BankCardSubComponent = ({ cardData }) => {
                         <p>CVV</p>
                     </div>
                     <div className={styles.cvvNumberInputDiv} >
-                        <input value={"256"} />
+                        <input
+                            className={editMode ? styles.inputActive : styles.inputNotActive}
+                            readOnly={editMode ? false : true}
+                            onChange={handleInputValueChange}
+                            name={"cvv"}
+                            value={fullContentCardData.cvv} />
                     </div>
 
                 </div>

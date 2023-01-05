@@ -17,16 +17,25 @@ const userSchema = new mongoose.Schema(
     },
     cardsArray: [
       {
-        user: {
+        title: {
           type: String,
           required: true,
         },
-        bank: {
+
+        category: {
           type: String,
           required: true,
         },
-        cardNo: {
-          type: Number,
+        cardHolder: {
+          type: String,
+          required: true,
+        },
+        cardNumber: {
+          type: String,
+          required: true,
+        },
+        logoIndex: {
+          type: String,
           required: true,
         },
         expiry: {
@@ -34,19 +43,17 @@ const userSchema = new mongoose.Schema(
           required: true,
         },
         cvv: {
-          type: Number,
-          required: true,
-        },
-        pin: {
-          type: Number,
+          type: String,
           required: true,
         },
         isFavourite: {
           type: Boolean,
           default: false,
+          required: true,
         },
       },
     ],
+
     loginIdsArray: [
       {
         title: {

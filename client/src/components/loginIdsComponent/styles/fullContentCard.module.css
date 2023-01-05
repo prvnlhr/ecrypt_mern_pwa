@@ -1236,7 +1236,7 @@
 
 
 
-    .usernameInputDiv input {
+    /* .usernameInputDiv input {
         width: 80%;
         height: 100%;
         border-bottom: 1px solid #7E8DA4;
@@ -1249,7 +1249,7 @@
         font-size: 14px;
         font-weight: 500;
         color: black;
-    }
+    } */
 
 
     .passwordWrapper {
@@ -1323,7 +1323,7 @@
         align-items: center;
     }
 
-    .passwordInputDiv input {
+    /* .passwordInputDiv input {
         width: 80%;
         height: 100%;
         border-bottom: 1px solid #7E8DA4;
@@ -1336,7 +1336,7 @@
         font-size: 14px;
         font-weight: 500;
         color: black;
-    }
+    } */
 
 
 

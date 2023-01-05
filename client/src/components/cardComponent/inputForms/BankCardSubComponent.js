@@ -22,7 +22,9 @@ const BankCardSubComponent = ({ bankCardData, setBankCardData, handleFormDataCha
                         <p>CARD HOLDER</p>
                     </div>
                     <div className={styles.cardHolderInputDiv}>
-                        <input value={bankCardData.cardHolder}
+                        <input
+                            className={styles.inputActive}
+                            value={bankCardData.cardHolder}
                             name="cardHolder"
                             onChange={handleFormDataChange}
                         />
@@ -40,6 +42,7 @@ const BankCardSubComponent = ({ bankCardData, setBankCardData, handleFormDataCha
                     </div>
                     <div className={styles.cardNumberInputDiv}>
                         <input value={bankCardData.cardNumber}
+                            className={styles.inputActive}
                             name="cardNumber"
                             onChange={
                                 handleFormDataChange
@@ -65,6 +68,7 @@ const BankCardSubComponent = ({ bankCardData, setBankCardData, handleFormDataCha
                     </div>
                     <div className={styles.expiryInputDiv} >
                         <input value={bankCardData.expiry}
+                            className={styles.inputActive}
                             name="expiry"
                             onChange={handleFormDataChange}
                         />
@@ -83,6 +87,7 @@ const BankCardSubComponent = ({ bankCardData, setBankCardData, handleFormDataCha
                     </div>
                     <div className={styles.cvvNumberInputDiv} >
                         <input value={bankCardData.cvv}
+                            className={styles.inputActive}
                             name="cvv"
                             onChange={handleFormDataChange}
 

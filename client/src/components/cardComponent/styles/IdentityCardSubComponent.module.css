@@ -76,19 +76,40 @@
     /* border: 1px solid black; */
 }
 
-.cardHolderInputDiv input {
-    width: 80%;
-    height: 100%;
+
+.cardHolderInputActive {
+    width: 95%;
+    height: auto;
     border-bottom: 1px solid #7E8DA4;
     border-top: none;
     border-left: none;
     border-right: none;
+    /* border: 1px solid #7E8DA4; */
     outline: none;
     background: transparent;
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     color: black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.cardHolderInputNotActive {
+    width: 95%;
+    height: auto;
+    border: none;
+    /* border: 1px solid #7E8DA4; */
+    outline: none;
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 /* _____________________________________________ */
@@ -152,21 +173,7 @@
     /* border: 1px solid black; */
 }
 
-.cardNumberInputDiv input {
-    width: 80%;
-    height: 100%;
-    /* border: 1px solid black; */
-    outline: none;
-    background: transparent;
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: black;
-    border-bottom: 1px solid #7E8DA4;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-}
+
 
 
 /* _____________________________________________ */
@@ -236,24 +243,7 @@
     align-items: center;
 }
 
-.dobDateInputDiv input {
-    width: 80%;
-    height: 100%;
-    outline: none;
-    background: transparent;
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: black;
-    border-bottom: 1px solid #7E8DA4;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    text-align: start;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
+
 
 /* _____________________________________________ */
 
@@ -323,20 +313,36 @@
     align-items: center;
 }
 
-.issueDateInputDiv input {
+.inputActive {
     width: 80%;
-    height: 100%;
-    outline: none;
-    background: transparent;
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: black;
+    height: auto;
     border-bottom: 1px solid #7E8DA4;
     border-top: none;
     border-left: none;
     border-right: none;
-    text-align: start;
+    /* border: 1px solid #7E8DA4; */
+    outline: none;
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.inputNotActive {
+    width: 80%;
+    height: auto;
+    border: none;
+    /* border: 1px solid #7E8DA4; */
+    outline: none;
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -422,20 +428,7 @@
         /* border: 1px solid black; */
     }
 
-    .cardHolderInputDiv input {
-        width: 80%;
-        height: 100%;
-        border-bottom: 1px solid #7E8DA4;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        outline: none;
-        background: transparent;
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: black;
-    }
+
 
     /* _____________________________________________ */
     .cardNumberWrapper {
@@ -498,21 +491,7 @@
         /* border: 1px solid black; */
     }
 
-    .cardNumberInputDiv input {
-        width: 80%;
-        height: 100%;
-        /* border: 1px solid black; */
-        outline: none;
-        background: transparent;
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: black;
-        border-bottom: 1px solid #7E8DA4;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-    }
+
 
 
     /* _____________________________________________ */
@@ -585,24 +564,6 @@
         align-items: center;
     }
 
-    .dobDateInputDiv input {
-        width: 80%;
-        height: 100%;
-        outline: none;
-        background: transparent;
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: black;
-        border-bottom: 1px solid #7E8DA4;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        text-align: start;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    }
 
     /* _____________________________________________ */
 
@@ -673,23 +634,5 @@
         align-items: center;
     }
 
-    .issueDateInputDiv input {
-        width: 80%;
-        height: 100%;
-        outline: none;
-        background: transparent;
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: black;
-        border-bottom: 1px solid #7E8DA4;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        text-align: start;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    }
 
 }

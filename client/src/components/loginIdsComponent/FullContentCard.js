@@ -44,12 +44,7 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
         setLogoComponentShow(true);
     }
 
-    const editBtnClicked = () => {
-        setEditMode(true);
-    }
-    const cancelBtnClicked = () => {
-        setEditMode(false);
-    }
+
 
     const handleInputValueChange = (e) => {
 
@@ -58,7 +53,13 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
             [e.target.name]: e.target.value,
         })
     }
-
+    
+    const editBtnClicked = () => {
+        setEditMode(true);
+    }
+    const cancelBtnClicked = () => {
+        setEditMode(false);
+    }
     const saveBtnClicked = () => {
         // console.table(fullContentCardData)
         dispatch(editLoginIdData({

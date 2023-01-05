@@ -46,8 +46,8 @@
     grid-template-columns: 20% 60% 20%;
     grid-template-rows: 50% 50%;
     grid-template-areas:
-        "cardHolderIconDiv cardHolderLabelTextDiv cardVenderIconDiv  "
-        "cardHolderIconDiv cardHolderInputDiv cardVenderIconDiv";
+        "cardHolderIconDiv cardHolderLabelTextDiv cardVenderIconContainer  "
+        "cardHolderIconDiv cardHolderInputDiv cardVenderIconContainer";
     background-color: #F3F5F9;
     border-radius: 10px;
 }
@@ -90,7 +90,42 @@
     /* border: 1px solid black; */
 }
 
-.cardHolderInputDiv input {
+.cardHolderInputActive {
+    width: 95%;
+    height: auto;
+    border-bottom: 1px solid #7E8DA4;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    /* border: 1px solid #7E8DA4; */
+    outline: none;
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.cardHolderInputNotActive {
+    width: 95%;
+    height: auto;
+    border: none;
+    /* border: 1px solid #7E8DA4; */
+    outline: none;
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* .cardHolderInputDiv input {
     width: 80%;
     height: 100%;
     border-bottom: 1px solid #7E8DA4;
@@ -103,17 +138,26 @@
     font-size: 14px;
     font-weight: 500;
     color: black;
-}
+} */
 
 /* _____________________________________________________ */
-.cardVenderIconDiv {
-    grid-area: cardVenderIconDiv;
+.cardVenderIconContainer {
+    grid-area: cardVenderIconContainer;
     width: 100%;
     height: 100%;
     /* border: 1px solid black; */
     display: flex;
     justify-content: flex-start;
     align-items: center;
+}
+
+.cardVenderIconDiv {
+    aspect-ratio: 1/1;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .cardVenderLogo {
@@ -139,8 +183,8 @@
     grid-template-columns: 20% 60% 20%;
     grid-template-rows: 50% 50%;
     grid-template-areas:
-        "cardNumberIconDiv cardNumberLabelTextDiv cardVenderIconDiv  "
-        "cardNumberIconDiv cardNumberInputDiv cardVenderIconDiv";
+        "cardNumberIconDiv cardNumberLabelTextDiv cardVenderIconContainer  "
+        "cardNumberIconDiv cardNumberInputDiv cardVenderIconContainer";
     background-color: #F3F5F9;
     border-radius: 10px;
 }
@@ -184,21 +228,7 @@
     /* border: 1px solid black; */
 }
 
-.cardNumberInputDiv input {
-    width: 80%;
-    height: 100%;
-    /* border: 1px solid black; */
-    outline: none;
-    background: transparent;
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: black;
-    border-bottom: 1px solid #7E8DA4;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-}
+
 
 
 /* _____________________________________________ */
@@ -269,7 +299,7 @@
     align-items: center;
 }
 
-.expiryInputDiv input {
+/* .expiryInputDiv input {
     width: 80%;
     height: 100%;
     outline: none;
@@ -286,7 +316,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-}
+} */
 
 /* _____________________________________________ */
 
@@ -355,7 +385,7 @@
     align-items: center;
 }
 
-.cvvNumberInputDiv input {
+/* .cvvNumberInputDiv input {
     width: 80%;
     height: 100%;
     outline: none;
@@ -372,8 +402,42 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+} */
+
+.inputActive {
+    width: 80%;
+    height: auto;
+    border-bottom: 1px solid #7E8DA4;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    /* border: 1px solid #7E8DA4; */
+    outline: none;
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
+.inputNotActive {
+    width: 80%;
+    height: auto;
+    border: none;
+    /* border: 1px solid #7E8DA4; */
+    outline: none;
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 
@@ -427,8 +491,8 @@
         grid-template-columns: 20% 60% 20%;
         grid-template-rows: 50% 50%;
         grid-template-areas:
-            "cardHolderIconDiv cardHolderLabelTextDiv cardVenderIconDiv  "
-            "cardHolderIconDiv cardHolderInputDiv cardVenderIconDiv";
+            "cardHolderIconDiv cardHolderLabelTextDiv cardVenderIconContainer  "
+            "cardHolderIconDiv cardHolderInputDiv cardVenderIconContainer";
         background-color: #F3F5F9;
         border-radius: 10px;
     }
@@ -471,7 +535,7 @@
         /* border: 1px solid black; */
     }
 
-    .cardHolderInputDiv input {
+    /* .cardHolderInputDiv input {
         width: 80%;
         height: 100%;
         border-bottom: 1px solid #7E8DA4;
@@ -484,11 +548,11 @@
         font-size: 14px;
         font-weight: 500;
         color: black;
-    }
+    } */
 
     /* _____________________________________________________ */
-    .cardVenderIconDiv {
-        grid-area: cardVenderIconDiv;
+    .cardVenderIconContainer {
+        grid-area: cardVenderIconContainer;
         width: 100%;
         height: 100%;
         /* border: 1px solid black; */
@@ -515,8 +579,8 @@
         grid-template-columns: 20% 60% 20%;
         grid-template-rows: 50% 50%;
         grid-template-areas:
-            "cardNumberIconDiv cardNumberLabelTextDiv cardVenderIconDiv  "
-            "cardNumberIconDiv cardNumberInputDiv cardVenderIconDiv";
+            "cardNumberIconDiv cardNumberLabelTextDiv cardVenderIconContainer  "
+            "cardNumberIconDiv cardNumberInputDiv cardVenderIconContainer";
         background-color: #F3F5F9;
         border-radius: 10px;
     }
@@ -560,10 +624,9 @@
         /* border: 1px solid black; */
     }
 
-    .cardNumberInputDiv input {
+    /* .cardNumberInputDiv input {
         width: 80%;
         height: 100%;
-        /* border: 1px solid black; */
         outline: none;
         background: transparent;
         font-family: "Poppins", sans-serif;
@@ -574,7 +637,7 @@
         border-top: none;
         border-left: none;
         border-right: none;
-    }
+    } */
 
 
     /* _____________________________________________ */
@@ -647,6 +710,7 @@
         align-items: center;
     }
 
+    /* 
     .expiryInputDiv input {
         width: 80%;
         height: 100%;
@@ -664,7 +728,7 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
-    }
+    } */
 
     /* _____________________________________________ */
 
@@ -734,7 +798,7 @@
         align-items: center;
     }
 
-    .cvvNumberInputDiv input {
+    /* .cvvNumberInputDiv input {
         width: 80%;
         height: 100%;
         outline: none;
@@ -751,7 +815,7 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
-    }
+    } */
 
 
 }

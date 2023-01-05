@@ -1,4 +1,5 @@
 import React from 'react'
+import { useDispatch, useSelector } from "react-redux"
 import { useState, useEffect } from 'react';
 import BackBtnIcon from "../../icons/BackBtnIcon"
 import { Icon } from '@iconify/react';
@@ -10,8 +11,11 @@ import LogoComponentWrapper from "../../logoComponents/LogoComponentWrapper"
 import styles from "../styles/cardInputForm.module.css"
 import bankCardFormstyles from "../styles/bankCardSubComponent.module.css"
 import CardLogo, { getCardType } from "../CardLogo"
+
+import { addNewCardData } from "../../../redux/features/cards/cardsSlice"
 const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
+    const dispatch = useDispatch();
 
     const [popUpOpen, setPopUpOpen] = useState(false);
 
@@ -31,7 +35,9 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
         cardNumber: "",
         expiry: "",
         cvv: "",
-        logoIndex: ""
+        logoIndex: "",
+        isFavourite: false
+
     })
     const [identityCardData, setIdentityCardData] = useState({
         title: "",
@@ -40,7 +46,8 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
         cardNumber: "",
         issueDate: "",
         dob: "",
-        logoIndex: ""
+        logoIndex: "",
+        isFavourite: false
     })
     const [licenseCardData, setLicenseCardData] = useState({
         title: "",
@@ -49,7 +56,8 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
         licenseNumber: "",
         expiry: "",
         dob: "",
-        logoIndex: ""
+        logoIndex: "",
+        isFavourite: false
     })
 
     useEffect(() => {
@@ -171,19 +179,33 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
         switch (formCategory) {
             case "Identity":
                 console.table(identityCardData);
+                dispatch(addNewCardData({
+                    data: identityCardData,
+                    user_id: "63b43ab32fc8d3c100cafecc"
+                }))
                 break;
 
             case "License":
                 console.table(licenseCardData);
+                dispatch(addNewCardData({
+                    data: licenseCardData,
+                    user_id: "63b43ab32fc8d3c100cafecc"
+                }))
                 break;
 
             case "Bank":
                 console.table(bankCardData);
+                dispatch(addNewCardData({
+                    data: bankCardData,
+                    user_id: "63b43ab32fc8d3c100cafecc"
+                }))
                 break;
 
             default:
                 break;
         }
+        formToggle();
+
 
     }
 

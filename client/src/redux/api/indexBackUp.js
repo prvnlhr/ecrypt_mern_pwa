@@ -165,6 +165,7 @@ export const fetchUser = (token) =>
         headers: { Authorization: `Bearer ${token}` },
     });
 
+    
 // CARDS URLS______________________________________________________________________
 export const fetchUserCards = (user_id) =>
     API.get("/user/cards/getCards", {

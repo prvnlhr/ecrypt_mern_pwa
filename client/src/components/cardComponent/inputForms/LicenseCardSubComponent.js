@@ -22,6 +22,7 @@ const LicenseCardSubComponent = (
           <div className={styles.cardHolderInputDiv}>
             <input value={licenseCardData.cardHolder}
               onChange={handleFormDataChange}
+              className={styles.inputActive}
               name="cardHolder"
             />
           </div>
@@ -41,6 +42,7 @@ const LicenseCardSubComponent = (
             <input value={licenseCardData.licenseNumber}
               name="licenseNumber"
               onChange={handleFormDataChange}
+              className={styles.inputActive}
             />
           </div>
         </div>
@@ -58,6 +60,7 @@ const LicenseCardSubComponent = (
           <div className={styles.dobDateInputDiv} >
             <input value={licenseCardData.dob}
               name="dob"
+              className={styles.inputActive}
               onChange={handleFormDataChange}
             />
           </div>
@@ -77,6 +80,7 @@ const LicenseCardSubComponent = (
             <input
               value={licenseCardData.expiry}
               onChange={handleFormDataChange}
+              className={styles.inputActive}
               name="expiry"
             />
           </div>
