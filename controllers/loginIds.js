@@ -1,4 +1,4 @@
-const UserDatabase = require("../models/userData");
+const { UserDatabase } = require("../models/userData");
 const mongoose = require("mongoose");
 
 const loginsController = {
@@ -6,6 +6,7 @@ const loginsController = {
     console.log(req.query.user_id)
     try {
       const loginIds = await UserDatabase.findOne({ _id: req.query.user_id });
+      console.log(loginIds)
       res.status(200).send(loginIds.loginIdsArray);
     } catch (error) {
       res.status(404).json({ message: error.message });

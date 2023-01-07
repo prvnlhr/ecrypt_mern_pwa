@@ -11,9 +11,9 @@ const initialState = {
 
 export const fecthLoginIdsData = createAsyncThunk("loginIds/fetch", async ({ user_id }, { getState }) => {
     const res = await api.fetchUserLoginIds(user_id);
-    // console.log(res);
+    console.log(res);
     const { data } = res;
-    // console.table(data);
+    console.table(data);
     data.reverse();
     return data;
 });

@@ -9,19 +9,23 @@ const initialState = {
 export const fecthCardsData = createAsyncThunk("cards/fetch", async ({ user_id }, { getState }) => {
     const res = await api.fetchUserCards(user_id);
     // console.log(res);
-    const { data } = res;
-    console.log(data);
-    data.reverse();
-    return data;
+    const { licenseCardsArray, bankCardsArray, identityCardsArray } = res.data;
+    // console.log(licenseCardsArray, bankCardsArray, identityCardsArray);
+    const CardsData = bankCardsArray.concat(identityCardsArray, licenseCardsArray);
+    // console.table(CardsData);
+    // data.reverse();
+    let SortedData = CardsData.sort(
+        (c1, c2) => (c1.time < c2.time) ? 1 : (c1.time > c2.time) ? -1 : 0);
+    // console.table(SortedData)
+    return SortedData;
 });
 
 
 export const addNewCardData = createAsyncThunk("cards/add", async ({ data, user_id }, { getState }) => {
-    console.table(data, user_id)
+    // console.table(data, user_id)
     const res = await api.addNewCard(data, user_id)
-    const { cardsArray } = res.data;
-    // console.table(cardsArray)
-    return cardsArray[cardsArray.length - 1];
+    console.log(res.data);
+    return res.data;
 });
 
 export const editCardData = createAsyncThunk("cards/edit", async ({ updatedData, card_id }, { getState }) => {
@@ -61,7 +65,7 @@ const cardsSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(fecthCardsData.fulfilled, (state, action) => {
-                console.log(action.payload)
+                // console.log(action.payload)
                 return {
                     ...state,
                     cardsData: action.payload

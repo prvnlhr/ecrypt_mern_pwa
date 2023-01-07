@@ -204,7 +204,7 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
             default:
                 break;
         }
-        // formToggle();
+        formToggle();
 
 
     }

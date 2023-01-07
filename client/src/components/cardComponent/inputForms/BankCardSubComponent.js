@@ -50,9 +50,10 @@ const BankCardSubComponent = ({ bankCardData, setBankCardData, handleFormDataCha
                             }
                         />
                     </div>
-                    <div className={styles.cardVenderIconDiv}>
+                    <div className={styles.cardVenderIconContainer}>
+
                         {currCardVender}
-                        {/* <Icon className={styles.cardVenderIcon} icon="logos:visa" /> */}
+
                     </div>
                 </div>
             </div>

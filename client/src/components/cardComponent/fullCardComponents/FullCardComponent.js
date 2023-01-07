@@ -10,7 +10,7 @@ import IdentityCardSubComponent from './IdentityCardSubComponent';
 import LicenseCardSubComponent from './LicenseCardSubComponent';
 import LogoComponentWrapper from "../../logoComponents/LogoComponentWrapper"
 import { editCardData } from "../../../redux/features/cards/cardsSlice"
-const FullCardComponent = ({ showContentCard, handleFullContentBackBtnClicked,
+const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullContentBackBtnClicked,
     fullContentCardData, setFullContentCardData, editMode, setEditMode
 
 }) => {
@@ -60,7 +60,10 @@ const FullCardComponent = ({ showContentCard, handleFullContentBackBtnClicked,
     }
 
     const logoclicked = () => {
-        setLogoComponentShow(true);
+        if (editMode) {
+            setLogoComponentShow(true);
+        }
+
     }
 
     useEffect(() => {
@@ -87,6 +90,8 @@ const FullCardComponent = ({ showContentCard, handleFullContentBackBtnClicked,
             card_id: fullContentCardData._id,
         }))
         setEditMode(false);
+        setShowContentCard(false);
+
 
     }
     const deleteBtnClicked = () => {
@@ -155,7 +160,9 @@ const FullCardComponent = ({ showContentCard, handleFullContentBackBtnClicked,
                     <div className={styles.logoTitleContainer} >
 
                         <div className={styles.logoContainer} onClick={logoclicked} >
-                            <div className={styles.logoDiv}>
+                            <div className={
+                                editMode ? styles.logoDivActive : styles.logoDiv
+                            }>
                                 {fullContentCardData.logoIndex != undefined &&
                                     logosArray[fullContentCardData.logoIndex].logo
                                 }

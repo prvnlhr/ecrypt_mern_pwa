@@ -551,16 +551,6 @@
     } */
 
     /* _____________________________________________________ */
-    .cardVenderIconContainer {
-        grid-area: cardVenderIconContainer;
-        width: 100%;
-        height: 100%;
-        /* border: 1px solid black; */
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    }
-
 
 
     /* _____________________________________________ */
@@ -623,6 +613,17 @@
         height: 100%;
         /* border: 1px solid black; */
     }
+
+    .cardVenderIconContainer {
+        grid-area: cardVenderIconContainer;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
 
     /* .cardNumberInputDiv input {
         width: 80%;

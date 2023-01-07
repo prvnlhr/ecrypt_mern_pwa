@@ -187,6 +187,7 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
         <FullCardComponent
           setLogoComponentShow={setLogoComponentShow}
           showContentCard={showContentCard}
+          setShowContentCard={setShowContentCard}
           handleFullContentBackBtnClicked={handleFullContentBackBtnClicked}
           fullContentCardData={
             fullContentCardCategory === "Bank" ? bankCardData : fullContentCardCategory === "Identity" ? identityCardData : fullContentCardCategory === "License" ? licenseCardData : undefined
