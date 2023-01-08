@@ -41,6 +41,15 @@
     border-radius: 15px;
 }
 
+.imageContainer img {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    cursor: pointer;
+    border-radius: 10px 10px 10px 10px;
+}
+
 .footerContainer {
     position: relative;
     grid-area: footerContainer;

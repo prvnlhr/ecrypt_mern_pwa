@@ -9,7 +9,7 @@ import BankCardSubComponent from './BankCardSubComponent';
 import IdentityCardSubComponent from './IdentityCardSubComponent';
 import LicenseCardSubComponent from './LicenseCardSubComponent';
 import LogoComponentWrapper from "../../logoComponents/LogoComponentWrapper"
-import { editCardData } from "../../../redux/features/cards/cardsSlice"
+import { editCardData, deleteCardData } from "../../../redux/features/cards/cardsSlice"
 const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullContentBackBtnClicked,
     fullContentCardData, setFullContentCardData, editMode, setEditMode
 
@@ -22,7 +22,6 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
     const [logoComponentShow, setLogoComponentShow] = useState(false);
 
     const dispatch = useDispatch();
-
 
     const handleOpClick = (op) => {
 
@@ -82,6 +81,7 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
     const cancelBtnClicked = () => {
         setEditMode(false);
     }
+
     const saveBtnClicked = () => {
         console.table(fullContentCardData)
 
@@ -92,17 +92,18 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
         setEditMode(false);
         setShowContentCard(false);
 
-
     }
+
     const deleteBtnClicked = () => {
-        // console.table(fullContentCardData._id, '63b43ab32fc8d3c100cafecc')
-        // dispatch(deleteLoginData({
-        //     login_id: fullContentCardData._id,
-        //     user_id: '63b43ab32fc8d3c100cafecc'
-        // }))
-        // setShowContentCard(false);
-
+        console.table(fullContentCardData._id, '63b43ab32fc8d3c100cafecc')
+        dispatch(deleteCardData({
+            card_id: fullContentCardData._id,
+            user_id: '63b43ab32fc8d3c100cafecc',
+            cardData: fullContentCardData
+        }))
+        setShowContentCard(false);
     }
+
     const handleInputValueChange = (e) => {
         setFullContentCardData({
             ...fullContentCardData,
@@ -181,7 +182,8 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
                                     value={fullContentCardData.title}
                                     name={"title"}
                                     onChange={handleInputValueChange}
-                                    readOnly={editMode ? false : true} />
+                                    readOnly={editMode ? false : true}
+                                />
                             </div>
                         </div>
 

@@ -1,4 +1,4 @@
-const UserDatabase = require("../models/userData");
+const { UserDatabase } = require("../models/userData");
 const cloudinary = require("../utils/cloudinaryConfig");
 const documentsController = {
   getDocs: async (req, res) => {
@@ -15,11 +15,13 @@ const documentsController = {
     const fileName = req.body.name;
     const filePath = req.file.path;
 
+    // console.log(id, fileName, filePath)
+
     try {
       const cloudinaryResponse = await cloudinary.v2.uploader.upload(filePath, {
         folder: "eCrypt",
       });
-      console.log("cldnr resounse", cloudinaryResponse);
+      console.log("cldnr response", cloudinaryResponse);
       const docData = {
         imageName: fileName,
         imageUrl: cloudinaryResponse.secure_url,
@@ -44,11 +46,10 @@ const documentsController = {
     }
   },
   deleteDoc: async (req, res) => {
-    console.log("deleteDoc controller", req.body);
     const cloudId = req.body.cloudId;
     const userId = req.body.userId;
     const docId = req.params.id;
-
+    console.log("deleteDoc controller", cloudId, userId, docId);
     try {
       const result = await cloudinary.v2.uploader.destroy(cloudId);
       const response = await UserDatabase.findOneAndUpdate(

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Icon } from '@iconify/react';
@@ -6,6 +6,27 @@ import styles from "./styles/dashboard.module.css";
 import ActivityList from "./activitySection/ActivityList";
 import ActivityComponentOuter from "./activitySection/ActivityComponentOuter";
 const Dashboard = ({ setHeading }) => {
+
+  const loginIdsArray = useSelector((state => state.loginIds.loginsIdData));
+  const cardsArray = useSelector((state => state.cards.cardsData));
+  const docsArray = useSelector((state) => state.docs.docsData);
+  const [dataCount, setDataCount] = useState({
+    loginsCount: 0,
+    cardsCount: 0,
+    docsCount: 0,
+  });
+
+  useEffect(() => {
+
+    setDataCount({
+      ...dataCount,
+      loginsCount: loginIdsArray.length,
+      cardsCount: cardsArray.length,
+      docsCount: docsArray.length
+    })
+
+  }, [loginIdsArray, cardsArray, docsArray])
+
 
 
   return (
@@ -26,7 +47,7 @@ const Dashboard = ({ setHeading }) => {
             </div>
             <div className={styles.count_and_Label_Container}>
               <div className={styles.countDiv}>
-                <p>32</p>
+                <p>{dataCount.loginsCount}</p>
               </div>
               <div className={styles.labelDiv}>
                 <p>Logins</p>
@@ -43,7 +64,7 @@ const Dashboard = ({ setHeading }) => {
             </div>
             <div className={styles.count_and_Label_Container}>
               <div className={styles.countDiv}>
-                <p>18</p>
+                <p>{dataCount.cardsCount}</p>
               </div>
               <div className={styles.labelDiv}>
                 <p>Cards</p>
@@ -60,7 +81,7 @@ const Dashboard = ({ setHeading }) => {
             </div>
             <div className={styles.count_and_Label_Container}>
               <div className={styles.countDiv}>
-                <p>9</p>
+                <p>{dataCount.docsCount}</p>
               </div>
               <div className={styles.labelDiv}>
                 <p>Docs</p>

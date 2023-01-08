@@ -43,6 +43,7 @@ const Home = () => {
         setDocFullScreen={setDocFullScreen}
         docFullScreen={docFullScreen}
         fullScreenData={fullScreenData}
+        setFullScreenDocData={setFullScreenDocData}
       />
 
       {location.pathname === "/user/settings"

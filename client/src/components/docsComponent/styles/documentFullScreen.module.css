@@ -52,6 +52,20 @@
     background-color: black;
 }
 
+.imageContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 .headerContainer {
     position: absolute;
     top: 0px;
@@ -102,6 +116,24 @@
     /* border: 1px solid black; */
 }
 
+.deleteBtnDiv {
+    width: 75px;
+    height: 25px;
+    background-color: red;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deleteBtnDiv p {
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 450;
+    color: white;
+}
+
 .favBtnContainer {
     display: flex;
     justify-content: flex-end;
@@ -137,7 +169,7 @@
 
 }
 
-.titleDiv {
+.titleInputDiv {
     width: 80%;
     height: 100%;
     /* border: 1px solid black; */
@@ -147,7 +179,23 @@
     overflow: hidden;
 }
 
-.titleDiv p {
+.titleInputDiv input {
+    width: 70%;
+    height: 70%;
+    border-bottom: 1px solid #7E8DA4;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #002A9A;
+    padding-left: 10%;
+}
+
+.titleInputDiv p {
     position: relative;
     font-family: "Poppins", sans-serif;
     font-size: 14px;
@@ -160,7 +208,7 @@
     text-overflow: ellipsis
 }
 
-.titleEditBtnIconDiv {
+.titleEditBtnIconContainer {
     width: 20%;
     height: 100%;
     /* border: 1px solid black; */
@@ -169,7 +217,16 @@
     align-items: center;
 }
 
-.titleEditIcon {
+.titleCrudIconDiv {
+    height: 70%;
+    aspect-ratio: 1/1;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titleCrudIcon {
     font-size: 16px;
 }
 

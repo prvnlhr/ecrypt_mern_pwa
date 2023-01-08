@@ -4,7 +4,6 @@ const { MongoClient, ObjectID } = require('mongodb');
 const { response } = require("express");
 const newObjectId = new ObjectID();
 
-
 const cardsController = {
   getCards: async (req, res) => {
     try {
@@ -122,24 +121,68 @@ const cardsController = {
       res.status(404).json({ message: error.message });
     }
   },
-  deleteCard: async (req, res) => {
 
+
+  deleteCard: async (req, res) => {
     const cardId = req.params.id;
     const userId = req.body.user_id;
+    const CATEGORY = req.body.cardData.category;
+    // console.log(cardId, userId, CATEGORY)
     try {
-      const response = await UserDatabase.findOneAndUpdate(
-        { _id: userId },
-        {
-          $pull: {
-            cardsArray: {
-              _id: cardId,
+      // console.log(CATEGORY)
+      let response;
+
+
+      switch (CATEGORY) {
+        case 'Bank':
+          // console.log(req.body.cardData)
+          response = await UserDatabase.findOneAndUpdate(
+            { _id: userId },
+            {
+              $pull: {
+                'cardsData.bankCardsArray': {
+                  _id: cardId,
+                },
+              },
             },
-          },
-        },
-        { returnOriginal: false }
-      );
-      res.status(200).send(response.cardsArray);
+            { returnOriginal: false }
+          );
+          break;
+
+        case 'Identity':
+          response = await UserDatabase.findOneAndUpdate(
+            { _id: userId },
+            {
+              $pull: {
+                'cardsData.identityCardsArray': {
+                  _id: cardId,
+                },
+              },
+            },
+            { returnOriginal: false }
+          );
+          break;
+
+        case 'License':
+          response = await UserDatabase.findOneAndUpdate(
+            { _id: userId },
+            {
+              $pull: {
+                'cardsData.licenseCardsArray': {
+                  _id: cardId,
+                },
+              },
+            },
+            { returnOriginal: false }
+          );
+          break;
+
+        default:
+          break;
+      }
+      res.status(200).send(response);
     } catch (error) {
+      console.log(error)
       res.status(404).json({ message: error.message });
     }
   },

@@ -13,7 +13,7 @@ export const fecthLoginIdsData = createAsyncThunk("loginIds/fetch", async ({ use
     const res = await api.fetchUserLoginIds(user_id);
     console.log(res);
     const { data } = res;
-    console.table(data);
+    // console.table(data);
     data.reverse();
     return data;
 });
@@ -33,7 +33,7 @@ export const editLoginIdData = createAsyncThunk("loginIds/edit", async ({ update
     return updatedData;
 });
 export const deleteLoginData = createAsyncThunk("loginIds/delete", async ({ login_id, user_id }, { getState }) => {
-    console.table(login_id, user_id);
+    // console.table(login_id, user_id);
 
     const res = await api.deleteLoginId(login_id, user_id);
     // console.log(res);

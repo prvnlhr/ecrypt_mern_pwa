@@ -51,9 +51,32 @@ export const addNewCard = (newCardData, user_id) =>
 export const editCard = (card_id, cardData) =>
   API.patch(`/user/cards/editCard/${card_id}`, cardData);
 
-export const deleteCard = (card_id, user_id) =>
+export const deleteCard = (card_id, user_id, carData) =>
   API.delete(`/user/cards/deleteCard/${card_id}`, {
     data: {
       user_id: user_id,
+      cardData: carData,
+    },
+  });
+
+//> DOCS API______________________________________________
+export const fetchDocs = (user_id) =>
+  API.get("/user/docs/getDocs", {
+    params: {
+      user_id: user_id,
+    },
+  });
+//add new doc___
+export const addNewDoc = (data) => API.post("/user/docs/addDoc", data);
+
+//edit doc___
+export const editDoc = (doc_Id, docData) =>
+  API.patch(`/user/docs/editDoc/${doc_Id}`, docData);
+//delete doc___
+export const deleteDoc = (doc_id, user_id, cloud_id) =>
+  API.delete(`/user/docs/deleteDoc/${doc_id}`, {
+    data: {
+      userId: user_id,
+      cloudId: cloud_id,
     },
   });

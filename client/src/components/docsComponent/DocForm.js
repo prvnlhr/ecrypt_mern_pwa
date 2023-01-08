@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import styles from "./styles/docFormNew.module.css";
 import { HiX } from "react-icons/hi";
 import { Icon } from "@iconify/react";
@@ -17,7 +18,10 @@ const variants = {
 };
 
 const DocForm = ({ formMode, setFormMode }) => {
-  const userId = useSelector((state) => state.user.user._id);
+
+  const dispatch = useDispatch();
+
+  // const userId = useSelector((state) => state.user.user._id);
 
   const [name, setName] = useState();
   const [file, setFile] = useState();
@@ -37,20 +41,18 @@ const DocForm = ({ formMode, setFormMode }) => {
     };
   };
 
-  const uploadDoc = () => {
-    // e.preventDefault();
-    formToggle();
-    const data = new FormData();
-    data.append("userId", userId);
-    data.append("name", name);
-    data.append("file", file);
-    // console.log(file);
-    axios
-      .post("https://httpbin.org/anything", data)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
-    dispatch(addNewDoc(data, name, userId));
-  };
+  // const uploadDoc = () => {
+  //   formToggle();
+  //   const data = new FormData();
+  //   data.append("userId", userId);
+  //   data.append("name", name);
+  //   data.append("file", file);
+  //   axios
+  //     .post("https://httpbin.org/anything", data)
+  //     .then((res) => console.log(res))
+  //     .catch((err) => console.log(err));
+  //   dispatch(addNewDoc(data, name, userId));
+  // };
   const handleChange = (e) => {
     const file = e.target.files[0];
     setFile(file);
@@ -58,7 +60,7 @@ const DocForm = ({ formMode, setFormMode }) => {
   };
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    uploadDoc();
+    // uploadDoc();
     // console.log(name, file);
   };
 

@@ -31,7 +31,6 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
     cvv: "",
     logoIndex: "",
     isFavourite: false
-
   })
 
   const [identityCardData, setIdentityCardData] = useState({
@@ -139,7 +138,6 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
           expiry: cardData.expiry,
           dob: cardData.dob,
           logoIndex: cardData.logoIndex,
-
         })
         break;
 

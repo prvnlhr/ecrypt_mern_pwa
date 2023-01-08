@@ -99,7 +99,12 @@ import Youtube from "./logos/Youtube"
 import YoutubeMusic from "./logos/YoutubeMusic"
 import Zomato from "./logos/Zomato"
 import Zoom from "./logos/Zoom"
-
+import PanCard from "./logos/PanCard"
+import Figma from "./logos/Figma";
+import CodingNinjas from "./logos/CodingNinjas";
+import Pycharm from "./logos/Pycharm";
+import DrivingLicense from "./logos/DrivingLicense";
+import StackOverflow from "./logos/StackOverflow";
 export const logosArray = [
 
     {
@@ -534,7 +539,7 @@ export const logosArray = [
         logo: <div className={styles.logoDiv}  ><Sbi /></div>,
 
         logoIndex: 72,
-        label: "Sbi"
+        label: "State Bank of India"
     },
     {
         logo: <div className={styles.logoDiv}  ><Shazam /></div>,
@@ -688,10 +693,41 @@ export const logosArray = [
         logoIndex: 97,
         label: "Zoom"
 
-    }, {
+    },
+    {
         logo: <div className={styles.logoDiv}  ><AadharCard /></div>,
         logoIndex: 98,
         label: "Aadhar card"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><PanCard /></div>,
+        logoIndex: 99,
+        label: "Pan card"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><Figma /></div>,
+        logoIndex: 100,
+        label: "Figma"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><CodingNinjas /></div>,
+        logoIndex: 101,
+        label: "Coding Ninjas"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><Pycharm /></div>,
+        logoIndex: 102,
+        label: "Pycharm"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><DrivingLicense /></div>,
+        logoIndex: 103,
+        label: "Driving License"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><StackOverflow /></div>,
+        logoIndex: 104,
+        label: "Stack Overflow"
     },
 
     // < div className = { styles.logoDiv } > <AdobePhotoshop /></ >,

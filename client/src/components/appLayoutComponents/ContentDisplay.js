@@ -11,6 +11,7 @@ import Settings from "./Settings"
 
 import { fecthLoginIdsData } from "../../redux/features/loginsId/loginsIdSlice"
 import { fecthCardsData } from "../../redux/features/cards/cardsSlice"
+import { fetchDocsData } from "../../redux/features/docs/docsSlice"
 
 import styles from "./styles/contentDisplay.module.css";
 
@@ -42,6 +43,7 @@ const ContentDisplay = ({
   useEffect(() => {
     dispatch(fecthLoginIdsData({ user_id: '63b43ab32fc8d3c100cafecc' }));
     dispatch(fecthCardsData({ user_id: '63b43ab32fc8d3c100cafecc' }));
+    dispatch(fetchDocsData({ user_id: '63b43ab32fc8d3c100cafecc' }))
   }, []);
 
   return (
