@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { addActivityData } from "../activity/activitiesSlice"
 import * as api from "../../api"
 
 const initialState = {
@@ -6,40 +7,78 @@ const initialState = {
 }
 
 
-
-
-
-export const fecthLoginIdsData = createAsyncThunk("loginIds/fetch", async ({ user_id }, { getState }) => {
-    const res = await api.fetchUserLoginIds(user_id);
-    console.log(res);
-    const { data } = res;
-    // console.table(data);
-    data.reverse();
-    return data;
+export const fecthLoginIdsData = createAsyncThunk("loginIds/fetch", async ({ user_id }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
+    try {
+        const res = await api.fetchUserLoginIds(user_id);
+        const { data } = res;
+        data.reverse();
+        return fulfillWithValue(data);
+    } catch (error) {
+        throw rejectWithValue(error);
+    }
 });
 
 
-export const addNewLoginIdData = createAsyncThunk("loginIds/add", async ({ data, user_id }, { getState }) => {
-    const res = await api.addNewLoginIdA(data, user_id)
-    const { loginIdsArray } = res.data;
-    // console.table(loginIdsArray)
-    return loginIdsArray[loginIdsArray.length - 1];
+export const addNewLoginIdData = createAsyncThunk("loginIds/add", async ({ data, user_id, activityData }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
+    try {
+        const res = await api.addNewLoginIdA(data, user_id)
+        dispatch(addActivityData({
+            activityData: activityData,
+            userId: user_id
+        }))
+        const { loginIdsArray } = res.data;
+        return fulfillWithValue(loginIdsArray[loginIdsArray.length - 1]);
+    } catch (error) {
+        throw rejectWithValue(error);
+    }
+
 });
 
-export const editLoginIdData = createAsyncThunk("loginIds/edit", async ({ updatedData, login_id }, { getState }) => {
-    // console.table(updatedData, login_id);
-    const res = await api.editLoginId(login_id, updatedData);
-    // console.log(updatedData);
-    return updatedData;
-});
-export const deleteLoginData = createAsyncThunk("loginIds/delete", async ({ login_id, user_id }, { getState }) => {
-    // console.table(login_id, user_id);
+// export const editLoginIdData = createAsyncThunk("loginIds/edit", async ({ updatedData, login_id, activityData }, { getState }) => {
+//     // console.table(updatedData, login_id);
+//     const res = await api.editLoginId(login_id, updatedData);
 
-    const res = await api.deleteLoginId(login_id, user_id);
-    // console.log(res);
-    const { data } = res;
-    // console.log(data);
-    return data.reverse();
+//     // console.log(updatedData);
+//     const payload = {
+//         activiyData: activityData,
+//         updatedData: updatedData,
+//     }
+//     return payload;
+// });
+
+export const editLoginIdData = createAsyncThunk("loginIds/edit", async ({ updatedData, login_id, activityData, userId }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
+    try {
+        const res = await api.editLoginId(login_id, updatedData);
+
+        dispatch(addActivityData({
+            activityData: activityData,
+            userId: userId
+        }))
+
+        return fulfillWithValue(updatedData);
+
+    } catch (error) {
+        console.log(error);
+        throw rejectWithValue(updatedData);
+    }
+});
+
+
+
+export const deleteLoginData = createAsyncThunk("loginIds/delete", async ({ login_id, user_id, activityData }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
+    try {
+        const res = await api.deleteLoginId(login_id, user_id);
+        dispatch(addActivityData({
+            activityData: activityData,
+            userId: user_id
+        }))
+        const { data } = res;
+        return fulfillWithValue(data.reverse());
+
+    } catch (error) {
+        console.log(error);
+        throw rejectWithValue(error);
+    }
 });
 
 
@@ -64,12 +103,15 @@ const loginsIdSlice = createSlice({
                     ...state,
                     loginsIdData: action.payload
                 };
-            }).addCase(addNewLoginIdData.fulfilled, (state, action) => {
+            }).
+            addCase(addNewLoginIdData.fulfilled, (state, action) => {
                 return {
                     ...state,
                     loginsIdData: [action.payload, ...state.loginsIdData]
                 };
-            }).addCase(editLoginIdData.fulfilled, (state, action) => {
+            }).
+            addCase(editLoginIdData.fulfilled, (state, action) => {
+                console.log(action.payload)
                 const newArray = state.loginsIdData.map((loginId) => {
                     if (loginId._id === action.payload._id) {
                         return action.payload;
@@ -77,12 +119,14 @@ const loginsIdSlice = createSlice({
                         return loginId;
                     }
                 });
-                console.log(newArray);
                 return {
                     ...state,
                     loginsIdData: newArray,
                 };
-            }).addCase(deleteLoginData.fulfilled, (state, action) => {
+            }).addCase(editLoginIdData.rejected, (state, action) => {
+                console.log(action.payload)
+            }).
+            addCase(deleteLoginData.fulfilled, (state, action) => {
                 return {
                     ...state,
                     loginsIdData: action.payload
@@ -94,6 +138,6 @@ const loginsIdSlice = createSlice({
 })
 
 
-export const { addLoginId, deleteLoginId, editLoginId } = loginsIdSlice.actions;
+export const { deleteLoginId, editLoginId } = loginsIdSlice.actions;
 
 export default loginsIdSlice.reducer;

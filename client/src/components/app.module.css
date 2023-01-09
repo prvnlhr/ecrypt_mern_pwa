@@ -47,6 +47,8 @@ html {
   /* background: linear-gradient(180deg, #F2F9ED 0%, #E2F1F3 49.77%, #D4EDF8 100%); */
 
   background: linear-gradient(180deg, #F2F9ED 0%, #D3EDF8 100%);
+  background: linear-gradient(180deg, #DFEDF4 33.14%, #E8F0EC 51.89%, #F7F9F6 76.37%);
+  /* background-color: #DFEDF4; */
 }
 
 .app::-webkit-scrollbar {

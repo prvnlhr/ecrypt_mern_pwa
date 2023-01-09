@@ -3,48 +3,26 @@ const mongoose = require("mongoose");
 
 const loginsController = {
   getLoginIds: async (req, res) => {
-    console.log(req.query.user_id)
+    // console.log(req.query.user_id)
     try {
       const loginIds = await UserDatabase.findOne({ _id: req.query.user_id });
-      console.log(loginIds)
+      // console.log(loginIds)
       res.status(200).send(loginIds.loginIdsArray);
     } catch (error) {
       res.status(404).json({ message: error.message });
     }
   },
   addLoginId: async (req, res) => {
-    console.log("at loginId controller", req.body);
+    // console.log("at loginId controller", req.body);
     try {
       const response = await UserDatabase.findOneAndUpdate(
         { _id: req.body.user_id },
         { $push: { loginIdsArray: req.body.data } },
         { returnOriginal: false }
       );
-      console.log(response)
+      // console.log(response)
       const data = response;
       res.status(200).send(data);
-    } catch (error) {
-      res.status(404).json({ message: error.message });
-    }
-  },
-  deleteLoginId: async (req, res) => {
-    const loginIdID = req.params.id;
-    const userId = req.body.user_id;
-
-    console.log(loginIdID, userId);
-    try {
-      const response = await UserDatabase.findOneAndUpdate(
-        { _id: userId },
-        {
-          $pull: {
-            loginIdsArray: {
-              _id: loginIdID,
-            },
-          },
-        },
-        { returnOriginal: false }
-      );
-      res.status(200).send(response.loginIdsArray);
     } catch (error) {
       res.status(404).json({ message: error.message });
     }
@@ -72,6 +50,29 @@ const loginsController = {
       res.status(404).json({ message: error.message });
     }
   },
+  deleteLoginId: async (req, res) => {
+    const loginIdID = req.params.id;
+    const userId = req.body.user_id;
+
+    // console.log(loginIdID, userId);
+    try {
+      const response = await UserDatabase.findOneAndUpdate(
+        { _id: userId },
+        {
+          $pull: {
+            loginIdsArray: {
+              _id: loginIdID,
+            },
+          },
+        },
+        { returnOriginal: false }
+      );
+      res.status(200).send(response.loginIdsArray);
+    } catch (error) {
+      res.status(404).json({ message: error.message });
+    }
+  },
+
   toggleFav: async (req, res) => {
     const id = req.params.id;
 

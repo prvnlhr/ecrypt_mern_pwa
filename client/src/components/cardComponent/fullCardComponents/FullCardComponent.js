@@ -17,6 +17,8 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
     console.log(fullContentCardData)
     const [popUpOpen, setPopUpOpen] = useState(false);
 
+    const [oldCardData, setOldCardData] = useState('');
+
     const [logoIndx, setLogoIndx] = useState(undefined);
 
     const [logoComponentShow, setLogoComponentShow] = useState(false);
@@ -76,9 +78,11 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
     }, [logoIndx])
 
     const editBtnClicked = () => {
+        setOldCardData(fullContentCardData);
         setEditMode(true);
     }
     const cancelBtnClicked = () => {
+        setFullContentCardData(oldCardData);
         setEditMode(false);
     }
 

@@ -8,7 +8,7 @@ const initialState = {
 
 export const fetchDocsData = createAsyncThunk("docs/fetch", async ({ user_id }, { getState }) => {
     const res = await api.fetchDocs(user_id);
-    console.table(res.data)
+    // console.table(res.data)
     const { data } = res;
     return data.reverse();
 });

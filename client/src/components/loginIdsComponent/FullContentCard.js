@@ -1,23 +1,30 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-
 import { useDispatch } from 'react-redux';
 import styles from "./styles/fullContentCard.module.css"
 import BackBtnIcon from "../icons/BackBtnIcon"
 import { Icon } from '@iconify/react';
+import moment from "moment";
 import { logosArray } from "../logoComponents/logosData"
 import LogoComponentWrapper from "../logoComponents/LogoComponentWrapper"
 
-//> Reduc
+import { diff, generateActivityData } from "../utils/ActivityDataChangeFuction"
+
+//> Redux
 import { editLoginIdData, deleteLoginData } from "../../redux/features/loginsId/loginsIdSlice"
 
+
 const FullContentCard = ({ fullContentCardData, setFullContentCardData, showContentCard, setShowContentCard, handleFullContentBackBtnClicked, editMode, setEditMode }) => {
+
 
     const dispatch = useDispatch();
 
     const [popUpOpen, setPopUpOpen] = useState(false);
 
     const [logoIndx, setLogoIndx] = useState(undefined);
+
+    const [oldCardData, setOldCardData] = useState('');
+
 
     const [logoComponentShow, setLogoComponentShow] = useState(false);
 
@@ -32,8 +39,49 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
     }, [logoIndx])
 
 
-    const handleOpClick = (op) => {
 
+    // const generateActivityData = (SUBTYPE) => {
+    //     let generatedData = {};
+    //     let date;
+    //     let month;
+    //     let time;
+    //     switch (SUBTYPE) {
+    //         case 1:
+    //             Object.assign(generatedData, oldCardData);
+    //             console.log(generatedData)
+    //             date = moment().format('DD');
+    //             month = moment().format('MMM');
+    //             time = moment().format('LT');
+    //             generatedData.time = time;
+    //             generatedData.month = month;
+    //             generatedData.data = date;
+    //             generatedData.task = "Deleted";
+    //             generatedData.type = "Login"
+    //             generatedData.subType = 1;
+    //             break;
+    //         case 2:
+    //             date = moment().format('DD');
+    //             month = moment().format('MMM');
+    //             time = moment().format('LT');
+    //             generatedData = diff(oldCardData, fullContentCardData);
+    //             generatedData.time = time;
+    //             generatedData.month = month;
+    //             generatedData.data = date;
+    //             generatedData.task = "Edit";
+    //             generatedData.type = "Login"
+    //             generatedData.subType = 2;
+    //             break;
+
+    //         default:
+    //             break;
+    //     }
+    //     return generatedData;
+
+    // }
+
+
+    //> Handling Category change field______
+    const handleOpClick = (op) => {
         setFullContentCardData({
             ...fullContentCardData,
             category: op
@@ -44,8 +92,7 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
         setLogoComponentShow(true);
     }
 
-
-
+    //> Input val Change_________
     const handleInputValueChange = (e) => {
 
         setFullContentCardData({
@@ -53,32 +100,49 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
             [e.target.name]: e.target.value,
         })
     }
-    
+
+    //> Edit Btn Cicked__________
     const editBtnClicked = () => {
+        setOldCardData(fullContentCardData);
         setEditMode(true);
     }
+
+    //> Cancel Btn clicked______
     const cancelBtnClicked = () => {
+        //> setting back oldCardData
+        setFullContentCardData(oldCardData);
         setEditMode(false);
     }
+    //> Save Btn clicked_________
     const saveBtnClicked = () => {
-        // console.table(fullContentCardData)
+        const activity_data = generateActivityData(3, oldCardData, fullContentCardData);
+
+        console.log(activity_data)
+
         dispatch(editLoginIdData({
             updatedData: fullContentCardData,
             login_id: fullContentCardData._id,
+            activityData: activity_data,
+            userId: '63b43ab32fc8d3c100cafecc'
         }))
         setShowContentCard(false);
         setEditMode(false);
 
     }
+    //> Delete Btn clicked________
     const deleteBtnClicked = () => {
+        const activity_data = generateActivityData(2, fullContentCardData, '');
+        console.log(activity_data)
         console.table(fullContentCardData._id, '63b43ab32fc8d3c100cafecc')
         dispatch(deleteLoginData({
             login_id: fullContentCardData._id,
-            user_id: '63b43ab32fc8d3c100cafecc'
+            user_id: '63b43ab32fc8d3c100cafecc',
+            activityData: activity_data,
         }))
         setShowContentCard(false);
 
     }
+
     return (
         <div className={showContentCard ? styles.cardWrapper : styles.cardWrapperClose}>
             {logoComponentShow &&

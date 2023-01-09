@@ -5,7 +5,7 @@ import { Icon, InlineIcon } from "@iconify/react";
 const Document = ({ doc, setDocFullScreen, setFullScreenDocData }) => {
 
   const docClicked = () => {
-    console.log(doc)
+    // console.log(doc)
     setFullScreenDocData(doc);
     setDocFullScreen(true);
   }

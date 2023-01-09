@@ -218,8 +218,7 @@ const userSchema = new mongoose.Schema(
           required: true,
         },
       },
-    ],
-    activities: [{}],
+    ], activitiesArray: [{ type: mongoose.Schema.Types.Mixed, }],
   }
 
 );

@@ -114,7 +114,7 @@ const cardsController = {
       // console.log(cardsData)
       let resData;
       resData = (CATEGORY === 'Bank') ? cardsData.bankCardsArray : (CATEGORY === 'Identity') ? cardsData.identityCardsArray : cardsData.licenseCardsArray;
-      console.log(resData)
+      // console.log(resData)
       res.status(200).send(resData[resData.length - 1]);
     } catch (error) {
       console.log(error)
@@ -260,7 +260,7 @@ const cardsController = {
         default:
           break;
       }
-      console.log(response)
+      // console.log(response)
       res.status(201).json(response);
     } catch (error) {
       console.log(error)

@@ -66,7 +66,7 @@ const TabBar = () => {
         var pos = refDash.current.offsetLeft;
         var newPos = pos + "px";
         indicatorRef.current.style.left = newPos;
-        console.log(indicatorRef, newPos)
+        // console.log(indicatorRef, newPos)
 
         break;
       case 2:

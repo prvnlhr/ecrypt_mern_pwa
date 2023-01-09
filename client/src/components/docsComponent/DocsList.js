@@ -32,7 +32,7 @@ const DocsList = ({
   const docsArray = useSelector((state) => state.docs.docsData);
 
   useEffect(() => {
-    console.log(docsArray);
+    // console.log(docsArray);
   }, [docsArray])
 
   const docsData = [

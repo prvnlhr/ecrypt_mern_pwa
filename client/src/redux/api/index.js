@@ -80,3 +80,17 @@ export const deleteDoc = (doc_id, user_id, cloud_id) =>
       cloudId: cloud_id,
     },
   });
+
+//> ACTIVITY API___________________________________________________________________________________________
+export const fetchUserActivities = (user_id) =>
+  API.get("/user/activity/getActivities", {
+    params: {
+      user_id: user_id,
+    },
+  });
+//add activity___
+export const addActivity = (user_id, activityData) =>
+  API.post("/user/activity/addActivity", {
+    data: activityData,
+    user_id: user_id,
+  });

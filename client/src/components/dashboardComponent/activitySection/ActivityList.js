@@ -1,10 +1,13 @@
 import React from 'react'
 import ActivityComponentOuter from './ActivityComponentOuter'
+import { useSelector } from 'react-redux';
+
 import styles from "./styles/activityList.module.css"
 const ActivityList = () => {
 
 
-
+  const activitiesArray = useSelector((state => state.activities.activitiesData));
+  // console.log(activitiesArray)
   const oldData = {
     category: "bankCard",
     title: "State Bank of India",
@@ -20,20 +23,10 @@ const ActivityList = () => {
 
 
 
+  // subType for conditional rendering of activity field
   // subType -> 1 for newly added or deleted
   // subType -> 2 for already existing edited, profile update
-  // subType for conditional rendering of activity field
-
   /*
-
-
-
-
-  
-
-
-
-   
 
    */
 
@@ -82,7 +75,6 @@ const ActivityList = () => {
       "type": "Login",
       "task": "Edit",
       "subType": 2
-
     }, {
       "Email": "andrew.g@gmail.com",
       "App": "Gpay",
@@ -94,8 +86,8 @@ const ActivityList = () => {
       "type": "Login",
       "task": "Added",
       "subType": 1
-
-    }, {
+    },
+    {
       "Email": "andrew.g@gmail.com",
       "App": "Gpay",
       "title": "Google pay",
@@ -113,6 +105,7 @@ const ActivityList = () => {
         "oldVal": "SBI debit card ",
         "newVal": "HDFC Debit"
       },
+
       "app": {
         "CardNumber": 5242720011394203,
         "newVal": 5421785511236420
@@ -190,13 +183,10 @@ const ActivityList = () => {
   // console.log(data);
 
 
-
-
   return (
     <div className={styles.activityList} >
 
-
-      {activitiesData.map((activity, index) => (
+      {activitiesArray.map((activity, index) => (
         <ActivityComponentOuter
           key={index}
           activity={activity}

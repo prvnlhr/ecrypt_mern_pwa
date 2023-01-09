@@ -7,17 +7,19 @@ import { logosArray } from "../logoComponents/logosData"
 import LogoComponentWrapper from "../logoComponents/LogoComponentWrapper"
 import styles from "./styles/loginIdInputForm.module.css"
 import { addNewLoginIdData } from "../../redux/features/loginsId/loginsIdSlice"
+import { generateActivityData } from "../utils/ActivityDataChangeFuction"
 const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
 
     const dispatch = useDispatch();
+
     const [formData, setformData] = useState({
         app: "",
         category: "",
         title: "",
         username: "",
         password: "",
-        logoIndex: "",
+        logoIndex: undefined,
     });
 
     const [popUpOpen, setPopUpOpen] = useState(false);
@@ -36,14 +38,7 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
         })
     }
 
-
-    const saveBtnClicked = () => {
-        console.table(formData);
-        dispatch(addNewLoginIdData({
-            data: formData,
-            user_id: "63b43ab32fc8d3c100cafecc",
-        }))
-        setShowInputForm(false);
+    const clearForm = () => {
         setformData({
             id_: "",
             app: "",
@@ -51,20 +46,21 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
             title: "",
             username: "",
             password: "",
-            logoIndex: "",
+            logoIndex: undefined,
         })
-
-
     }
-    const formClear = () => {
-        setformData({
-            app: "",
-            category: "",
-            title: "",
-            username: "",
-            password: "",
-            logoIndex: "",
-        })
+
+    const saveBtnClicked = () => {
+        const activity_data = generateActivityData(1, formData, {})
+        console.log(activity_data)
+        console.table(formData);
+        dispatch(addNewLoginIdData({
+            data: formData,
+            user_id: "63b43ab32fc8d3c100cafecc",
+            activityData: activity_data
+        }))
+        setShowInputForm(false);
+        clearForm();
     }
     useEffect(() => {
         setLogoIndx(logoIndx)
@@ -101,7 +97,7 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                         <div className={styles.backBtnDiv}
                             onClick={() => {
                                 formToggle();
-                                formClear();
+                                clearForm();
                             }
                             }>
                             <BackBtnIcon />
@@ -119,8 +115,8 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                     <div className={styles.logoTitleContainer} >
                         <div className={styles.logoContainer} onClick={handleLogoClicked} >
                             <div className={styles.logoDiv}>
-                                {logoIndx !== undefined &&
-                                    logosArray[logoIndx].logo
+                                {formData.logoIndex !== undefined &&
+                                    logosArray[formData.logoIndex].logo
                                 }
                             </div>
                         </div>

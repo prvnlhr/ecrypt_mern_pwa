@@ -1,11 +1,9 @@
 import React from 'react'
 import styles from "./styles/activityWrapper.module.css"
 import ChangeFieldComponent from "./ChangeFieldComponent"
-import NewDeletedField from './NewDeletedField';
+import NewAddedDeletedField from './NewAddedDeletedField';
 
 const ActivityComponentOuter = ({ activity }) => {
-
-
 
 
     // console.log(activity.type);
@@ -53,24 +51,22 @@ const ActivityComponentOuter = ({ activity }) => {
 
 
 
-            {activity.subType == 2 ?
+            {
+                (activity.subType === 3) ?
+                    Object.entries(activity).map(([item, val]) => (
+                        < ChangeFieldComponent
+                            item={item}
+                            value={val}
+                        />
 
-                Object.entries(activity).map(([item, val]) => (
-                    < ChangeFieldComponent
-                        item={item}
-                        value={val}
-                    />
-
-                ))
-                :
-
-                Object.entries(activity).map(([item, val]) => (
-                    < NewDeletedField
-                        item={item}
-                        activity={activity}
-                    />
-                ))
-
+                    ))
+                    : (activity.subType === 2 || activity.subType === 1) &&
+                    Object.entries(activity).map(([item, val]) => (
+                        < NewAddedDeletedField
+                            item={item}
+                            activity={activity}
+                        />
+                    ))
             }
 
 
