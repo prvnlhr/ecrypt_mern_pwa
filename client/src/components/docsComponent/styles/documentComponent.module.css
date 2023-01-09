@@ -80,7 +80,8 @@
     width: 80%;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis
+    text-overflow: ellipsis;
+    margin-left: 5%;
 }
 
 .favBtnDiv {

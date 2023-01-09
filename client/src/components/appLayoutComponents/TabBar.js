@@ -25,7 +25,7 @@ const TabBar = () => {
 
     if (indicatorRef.current !== null) {
       switch (location.pathname) {
-        case "/dashboard":
+        case "/":
           var pos = refDash.current.offsetLeft;
           var newPos = pos + "px";
           indicatorRef.current.style.left = newPos;
@@ -100,7 +100,7 @@ const TabBar = () => {
       <div className={styles.tabBarIndicator} ref={indicatorRef} ></div>
 
       <div className={styles.tabIconWrapper} ref={refDash}  >
-        <Link className={styles.tabLinks} to="/dashboard" onClick={() => linkedClicked(1)} >
+        <Link className={styles.tabLinks} to="/" onClick={() => linkedClicked(1)} >
           <div className={styles.iconsDiv} >
             <DashboardIcon />
           </div>

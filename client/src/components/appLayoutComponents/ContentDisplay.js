@@ -12,7 +12,7 @@ import Settings from "./Settings"
 import { fecthLoginIdsData } from "../../redux/features/loginsId/loginsIdSlice"
 import { fecthCardsData } from "../../redux/features/cards/cardsSlice"
 import { fetchDocsData } from "../../redux/features/docs/docsSlice"
-import { fectchActivitiesData} from "../../redux/features/activity/activitiesSlice"
+import { fectchActivitiesData } from "../../redux/features/activity/activitiesSlice"
 
 import styles from "./styles/contentDisplay.module.css";
 
@@ -55,7 +55,7 @@ const ContentDisplay = ({
     <div className={styles.contentDisplay}>
 
       <Routes>
-        <Route path="/dashboard"
+        <Route path="/"
           element={
             <Dashboard
             // setHeading={setHeading}

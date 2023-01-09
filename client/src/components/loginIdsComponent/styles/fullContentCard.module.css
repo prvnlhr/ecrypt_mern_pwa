@@ -15,9 +15,9 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-}
-
-.cardWrapperClose {
+  }
+  
+  .cardWrapperClose {
     /* display: flex; */
     display: none;
     width: 0%;
@@ -37,10 +37,10 @@
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     scroll-behavior: smooth;
-
-}
-
-.cardContainer {
+  
+  }
+  
+  .cardContainer {
     width: 70%;
     height: 90%;
     /* border: 1px solid red; */
@@ -49,7 +49,7 @@
     grid-template-columns: 10% 90%;
     grid-template-rows: 15% 20% 15% 10% 20% 20%;
     grid-template-rows: 10% 20% 15% 15% 20% 20%;
-
+  
     grid-template-areas:
         "cardHeader cardHeader"
         "logoTitleWrapper logoTitleWrapper"
@@ -58,9 +58,9 @@
         "usernameWrapper usernameWrapper"
         "passwordWrapper passwordWrapper";
     box-sizing: border-box;
-}
-
-.cardHeader {
+  }
+  
+  .cardHeader {
     grid-area: cardHeader;
     width: 100%;
     height: 100%;
@@ -68,9 +68,9 @@
     justify-content: center;
     align-items: center;
     /* border: 1px solid orange; */
-}
-
-.backBtnContainer {
+  }
+  
+  .backBtnContainer {
     width: 50%;
     height: 100%;
     /* border: 1px solid blue; */
@@ -79,9 +79,9 @@
     align-items: flex-start;
     padding-left: 0%;
     padding-top: 0%;
-}
-
-.backBtnDiv {
+  }
+  
+  .backBtnDiv {
     /* width: 40%; */
     height: 50%;
     /* border: 1px solid black; */
@@ -90,9 +90,9 @@
     align-items: flex-start;
     padding-left: 0%;
     padding-top: 0%;
-}
-
-.curdBtnContainer {
+  }
+  
+  .curdBtnContainer {
     width: 50%;
     height: 100%;
     /* border: 1px solid black; */
@@ -100,12 +100,12 @@
     justify-content: flex-end;
     align-items: center;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.editBtnDiv {
+  }
+  
+  .editBtnDiv {
     width: auto;
     height: 22px;
-
+  
     /* border: 1px solid black; */
     background-color: #A6CBFB;
     display: flex;
@@ -116,17 +116,17 @@
     border-radius: 5px;
     margin-right: 10px;
     /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
-
-}
-
-.editBtnDiv p {
+  
+  }
+  
+  .editBtnDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 12px;
     font-weight: 400;
     color: #002A9A;
-}
-
-.saveBtnDiv {
+  }
+  
+  .saveBtnDiv {
     width: auto;
     height: 22px;
     /* border: 1px solid black; */
@@ -139,22 +139,22 @@
     border-radius: 5px;
     margin-right: 10px;
     /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
-
-}
-
-.saveBtnDiv p {
+  
+  }
+  
+  .saveBtnDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 11px;
     font-weight: 400;
     color: white;
-}
-
-
-
-.cancelBtnDiv {
+  }
+  
+  
+  
+  .cancelBtnDiv {
     width: auto;
     height: 22px;
-
+  
     /* border: 1px solid black; */
     background-color: #BFBFBF;
     display: flex;
@@ -164,19 +164,19 @@
     padding-right: 5%;
     border-radius: 5px;
     /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
-}
-
-.cancelBtnDiv p {
+  }
+  
+  .cancelBtnDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 11px;
     font-weight: 400;
     color: white;
-}
-
-.deleteBtnDiv {
+  }
+  
+  .deleteBtnDiv {
     width: auto;
     height: 22px;
-
+  
     /* border: 1px solid black; */
     background-color: #f31e13;
     display: flex;
@@ -187,17 +187,17 @@
     border-radius: 5px;
     margin-right: 10px;
     /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
-}
-
-.deleteBtnDiv p {
+  }
+  
+  .deleteBtnDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 11px;
     font-weight: 400;
     color: white;
-}
-
-
-.logoTitleWrapper {
+  }
+  
+  
+  .logoTitleWrapper {
     grid-area: logoTitleWrapper;
     width: 100%;
     height: 100%;
@@ -206,9 +206,9 @@
     align-items: flex-start;
     /* border: 1px solid blue; */
     padding-left: 0%;
-}
-
-.logoTitleContainer {
+  }
+  
+  .logoTitleContainer {
     width: 100%;
     height: 70%;
     /* border: 1px solid black; */
@@ -217,20 +217,20 @@
     justify-content: flex-start;
     align-items: center;
     padding-left: 2%;
-
-}
-
-.logoContainer {
+  
+  }
+  
+  .logoContainer {
     /* width: 10%; */
     height: 100%;
     /* border: 1px solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-
-.logoDiv {
+  }
+  
+  
+  .logoDiv {
     /* width: 80%; */
     aspect-ratio: 1/1;
     height: 100%;
@@ -239,14 +239,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.logoIcon {
+  }
+  
+  .logoIcon {
     width: 100%;
     height: 100%;
-}
-
-.titleContainer {
+  }
+  
+  .titleContainer {
     width: 70%;
     height: 100%;
     /* border: 1px solid red; */
@@ -255,37 +255,37 @@
     align-items: flex-start;
     flex-direction: column;
     padding-left: 5%;
-}
-
-.titleLabelDiv {
+  }
+  
+  .titleLabelDiv {
     width: 80%;
     height: 80%;
     /* border: 1px solid black; */
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
-}
-
-.titleLabelDiv p {
+  }
+  
+  .titleLabelDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
     color: #7E8DA4;
-
-}
-
-.titleInputDiv {
+  
+  }
+  
+  .titleInputDiv {
     width: 80%;
     height: 80%;
     /* border: 1px solid black; */
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-}
-
-
-
-.titleInputActive {
+  }
+  
+  
+  
+  .titleInputActive {
     width: 80%;
     height: auto;
     border-bottom: 1px solid #7E8DA4;
@@ -302,9 +302,9 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-}
-
-.titleInputNotActive {
+  }
+  
+  .titleInputNotActive {
     width: 80%;
     height: auto;
     border: none;
@@ -318,9 +318,9 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-}
-
-.categoryWrapper {
+  }
+  
+  .categoryWrapper {
     grid-area: categoryWrapper;
     width: 100%;
     height: 100%;
@@ -329,10 +329,10 @@
     align-items: center;
     /* border: 1px solid rgb(182, 69, 88); */
     padding-left: 0%;
-
-}
-
-.categoryContainer {
+  
+  }
+  
+  .categoryContainer {
     width: 100%;
     height: 60%;
     /* border: 1px solid black; */
@@ -341,10 +341,10 @@
     align-items: center;
     background-color: #F3F5F9;
     border-radius: 10px;
-
-}
-
-.categoryLabelDiv {
+  
+  }
+  
+  .categoryLabelDiv {
     width: 100%;
     height: 100%;
     /* border: 1px solid black; */
@@ -352,16 +352,16 @@
     justify-content: flex-start;
     align-items: center;
     padding-left: 5%;
-}
-
-.categoryLabelDiv p {
+  }
+  
+  .categoryLabelDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 18px;
     font-weight: 600;
     color: black;
-}
-
-.catergoryInputDiv {
+  }
+  
+  .catergoryInputDiv {
     position: relative;
     width: 80%;
     height: 100%;
@@ -369,9 +369,9 @@
     justify-content: flex-end;
     align-items: center;
     /* border: 1px solid black; */
-}
-
-.categoryInput {
+  }
+  
+  .categoryInput {
     font-family: "Poppins", sans-serif;
     font-size: 15px;
     font-weight: 500;
@@ -393,27 +393,27 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-}
-
-.popUpBtnIconDiv {
+  }
+  
+  .popUpBtnIconDiv {
     width: 15%;
     height: 100%;
     /* border: 1px solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.popUpIcon {
+  }
+  
+  .popUpIcon {
     font-size: 20px;
-
-}
-
-.categoryInput:focus {
+  
+  }
+  
+  .categoryInput:focus {
     /* border: 1px solid #0475ff84; */
-}
-
-.inputPopUpDiv {
+  }
+  
+  .inputPopUpDiv {
     top: 105%;
     position: absolute;
     width: 150px;
@@ -429,10 +429,10 @@
     padding-left: 10%;
     border-radius: 5px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-
-}
-
-.inputPopUpText {
+  
+  }
+  
+  .inputPopUpText {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 400;
@@ -443,17 +443,17 @@
     align-items: center;
     padding-left: 5%;
     padding-right: 5%;
-}
-
-.inputPopUpText:hover {
+  }
+  
+  .inputPopUpText:hover {
     width: 80%;
     background-color: #a8ccf9b5;
     padding-left: 5%;
     padding-right: 5%;
     border-radius: 5px;
-}
-
-.appWebSiteWrapper {
+  }
+  
+  .appWebSiteWrapper {
     grid-area: appWebSiteWrapper;
     width: 100%;
     height: 100%;
@@ -462,10 +462,10 @@
     align-items: center;
     /* border: 1px solid purple; */
     padding-left: 0%;
-}
-
-
-.appWebSiteContainer {
+  }
+  
+  
+  .appWebSiteContainer {
     width: 100%;
     height: 60%;
     /* border: 1px solid black; */
@@ -477,10 +477,10 @@
         "appWebSiteIconDiv appWebsiteLabelDiv appWebSiteInputDiv";
     background-color: #F6F6F6;
     border-radius: 10px;
-
-}
-
-.appWebSiteIconDiv {
+  
+  }
+  
+  .appWebSiteIconDiv {
     grid-area: appWebSiteIconDiv;
     width: 100%;
     height: 100%;
@@ -488,14 +488,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.websiteIcon {
+  }
+  
+  .websiteIcon {
     font-size: 25px;
     color: #002A9A;
-}
-
-.appWebsiteLabelDiv {
+  }
+  
+  .appWebsiteLabelDiv {
     grid-area: appWebsiteLabelDiv;
     width: 100%;
     height: 100%;
@@ -503,26 +503,26 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-}
-
-.appWebsiteLabelDiv p {
+  }
+  
+  .appWebsiteLabelDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: 500;
     color: black;
-}
-
-.appWebSiteInputDiv {
+  }
+  
+  .appWebSiteInputDiv {
     grid-area: appWebSiteInputDiv;
     width: 100%;
     height: 100%;
     /* border: 1px solid black; */
     display: flex;
     align-items: center;
-}
-
-
-.appWebSiteInputActive {
+  }
+  
+  
+  .appWebSiteInputActive {
     width: 80%;
     height: auto;
     border-bottom: 1px solid #7E8DA4;
@@ -539,9 +539,9 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-}
-
-.appWebSiteInputNotActive {
+  }
+  
+  .appWebSiteInputNotActive {
     width: 80%;
     height: auto;
     border: none;
@@ -555,9 +555,9 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-}
-
-.usernameWrapper {
+  }
+  
+  .usernameWrapper {
     grid-area: usernameWrapper;
     width: 100%;
     height: 100%;
@@ -566,10 +566,10 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-
-}
-
-.usernameContainer {
+  
+  }
+  
+  .usernameContainer {
     width: 100%;
     height: 70%;
     /* border: 1px solid black; */
@@ -582,11 +582,11 @@
         "usernameIconDiv usernameInputDiv";
     background-color: #F3F5F9;
     border-radius: 10px;
-
-
-}
-
-.usernameIconDiv {
+  
+  
+  }
+  
+  .usernameIconDiv {
     grid-area: usernameIconDiv;
     width: 100%;
     height: 100%;
@@ -594,14 +594,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.usernameIcon {
+  }
+  
+  .usernameIcon {
     width: 50%;
     height: 50%;
-}
-
-.usernameLabelDiv {
+  }
+  
+  .usernameLabelDiv {
     grid-area: usernameLabelDiv;
     width: 100%;
     height: 100%;
@@ -609,16 +609,16 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-}
-
-.usernameLabelDiv p {
+  }
+  
+  .usernameLabelDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
     color: #7E8DA4;
-}
-
-.usernameInputDiv {
+  }
+  
+  .usernameInputDiv {
     grid-area: usernameInputDiv;
     width: 100%;
     height: 100%;
@@ -626,9 +626,9 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-}
-
-.userNameInputActive {
+  }
+  
+  .userNameInputActive {
     width: 80%;
     height: auto;
     border-bottom: 1px solid #7E8DA4;
@@ -645,9 +645,9 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-}
-
-.userNameInputNotActive {
+  }
+  
+  .userNameInputNotActive {
     width: 80%;
     height: auto;
     border: none;
@@ -661,17 +661,17 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-}
-
-
-.usernameInputDiv p {
+  }
+  
+  
+  .usernameInputDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
     color: black;
-}
-
-.passwordWrapper {
+  }
+  
+  .passwordWrapper {
     grid-area: passwordWrapper;
     width: 100%;
     height: 100%;
@@ -680,10 +680,10 @@
     align-items: center;
     /* border: 1px solid orange; */
     padding-left: 0%;
-
-}
-
-.passwordContainer {
+  
+  }
+  
+  .passwordContainer {
     width: 100%;
     height: 70%;
     /* border: 1px solid black; */
@@ -696,11 +696,11 @@
         "passwordIconDiv passwordInputDiv";
     background-color: #F3F5F9;
     border-radius: 10px;
-
-
-}
-
-.passwordIconDiv {
+  
+  
+  }
+  
+  .passwordIconDiv {
     grid-area: passwordIconDiv;
     width: 100%;
     height: 100%;
@@ -708,14 +708,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.passwordIcon {
+  }
+  
+  .passwordIcon {
     width: 55%;
     height: 55%;
-}
-
-.passwordLabelDiv {
+  }
+  
+  .passwordLabelDiv {
     grid-area: passwordLabelDiv;
     width: 100%;
     height: 100%;
@@ -723,16 +723,16 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-}
-
-.passwordLabelDiv p {
+  }
+  
+  .passwordLabelDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
     color: #7E8DA4;
-}
-
-.passwordInputDiv {
+  }
+  
+  .passwordInputDiv {
     grid-area: passwordInputDiv;
     width: 100%;
     height: 100%;
@@ -740,9 +740,9 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-}
-
-.passwordInputActive {
+  }
+  
+  .passwordInputActive {
     width: 80%;
     height: auto;
     border-bottom: 1px solid #7E8DA4;
@@ -759,9 +759,9 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-}
-
-.passwordInputNotActive {
+  }
+  
+  .passwordInputNotActive {
     width: 80%;
     height: auto;
     border: none;
@@ -775,10 +775,10 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-}
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-
+  }
+  
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  
     .cardWrapper {
         position: relative;
         display: flex;
@@ -792,8 +792,8 @@
         margin-top: 14%;
         /* border: 1px solid black; */
     }
-
-
+  
+  
     .cardWrapperClose {
         display: flex;
         width: 100%;
@@ -815,9 +815,9 @@
         margin: 0px;
         transition: none;
     }
-
-
-
+  
+  
+  
     .cardContainer {
         /* border: 1px solid black; */
         width: 100%;
@@ -837,9 +837,9 @@
         padding-bottom: 0%;
         padding-top: 0%;
         box-sizing: border-box;
-
+  
     }
-
+  
     .cardHeader {
         grid-area: cardHeader;
         width: 100%;
@@ -849,7 +849,7 @@
         align-items: center;
         /* border: 1px solid orange; */
     }
-
+  
     .backBtnContainer {
         width: 50%;
         height: 100%;
@@ -860,7 +860,7 @@
         padding-left: 5%;
         padding-top: 0%;
     }
-
+  
     .backBtnDiv {
         width: 50%;
         height: 50%;
@@ -869,9 +869,9 @@
         justify-content: flex-start;
         align-items: center;
     }
-
-
-
+  
+  
+  
     .curdBtnContainer {
         width: 50%;
         height: 100%;
@@ -881,8 +881,8 @@
         align-items: center;
         padding-right: 8%;
     }
-
-
+  
+  
     .logoTitleWrapper {
         grid-area: logoTitleWrapper;
         width: 100%;
@@ -893,7 +893,7 @@
         /* border: 1px solid blue; */
         padding-left: 0%;
     }
-
+  
     .logoTitleContainer {
         width: 90%;
         height: 100%;
@@ -903,7 +903,7 @@
         justify-content: center;
         align-items: center;
     }
-
+  
     .logoContainer {
         width: 30%;
         height: 100%;
@@ -912,8 +912,8 @@
         justify-content: center;
         align-items: center;
     }
-
-
+  
+  
     .logoDiv {
         /* width: 80%; */
         aspect-ratio: 1/1;
@@ -924,12 +924,12 @@
         justify-content: center;
         align-items: center;
     }
-
+  
     .logoIcon {
         width: 100%;
         height: 100%;
     }
-
+  
     .titleContainer {
         width: 70%;
         height: 100%;
@@ -940,7 +940,7 @@
         flex-direction: column;
         padding-left: 5%;
     }
-
+  
     .titleLabelDiv {
         width: 80%;
         height: 80%;
@@ -949,15 +949,15 @@
         justify-content: flex-start;
         align-items: flex-end;
     }
-
+  
     .titleLabelDiv p {
         font-family: "Poppins", sans-serif;
         font-size: 15px;
         font-weight: 500;
         color: #7E8DA4;
-
+  
     }
-
+  
     .titleInputDiv {
         width: 80%;
         height: 80%;
@@ -966,14 +966,14 @@
         justify-content: flex-start;
         align-items: flex-start;
     }
-
+  
     .titleInputDiv p {
         font-family: "Poppins", sans-serif;
         font-size: 20px;
         font-weight: 600;
         color: black;
     }
-
+  
     .categoryWrapper {
         grid-area: categoryWrapper;
         width: 100%;
@@ -983,9 +983,9 @@
         align-items: center;
         /* border: 1px solid rgb(182, 69, 88); */
         padding-left: 0%;
-
+  
     }
-
+  
     .categoryContainer {
         width: 90%;
         height: 60%;
@@ -995,9 +995,9 @@
         align-items: center;
         background-color: #F3F5F9;
         border-radius: 10px;
-
+  
     }
-
+  
     .categoryLabelDiv {
         width: 40%;
         height: 100%;
@@ -1007,7 +1007,7 @@
         align-items: center;
         padding-left: 5%;
     }
-
+  
     .categoryLabelDiv p {
         font-family: "Poppins", sans-serif;
         font-size: 18px;
@@ -1016,7 +1016,7 @@
         margin: 0px;
         padding: 0px;
     }
-
+  
     .catergoryInputDiv {
         position: relative;
         width: 60%;
@@ -1026,7 +1026,7 @@
         align-items: center;
         /* border: 1px solid black; */
     }
-
+  
     .categoryInput {
         font-family: "Poppins", sans-serif;
         font-size: 15px;
@@ -1043,7 +1043,7 @@
         align-items: center;
         text-align: center;
     }
-
+  
     .popUpBtnIconDiv {
         width: 15%;
         height: 100%;
@@ -1052,15 +1052,15 @@
         justify-content: center;
         align-items: center;
     }
-
+  
     .popUpIcon {
         font-size: 20px;
     }
-
+  
     .categoryInput:focus {
         /* border: 1px solid #0475ff84; */
     }
-
+  
     .inputPopUpDiv {
         top: 105%;
         position: absolute;
@@ -1077,9 +1077,9 @@
         padding-left: 10%;
         border-radius: 5px;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-
+  
     }
-
+  
     .inputPopUpText {
         font-family: "Poppins", sans-serif;
         font-size: 15px;
@@ -1090,12 +1090,12 @@
         justify-content: flex-start;
         align-items: center;
     }
-
+  
     .inputPopUpText:hover {
         background-color: red;
         width: 80%;
     }
-
+  
     .appWebSiteWrapper {
         grid-area: appWebSiteWrapper;
         width: 100%;
@@ -1106,14 +1106,14 @@
         /* border: 1px solid purple; */
         padding-left: 0%;
     }
-
-
+  
+  
     .appWebSiteContainer {
         width: 90%;
         height: 60%;
         /* border: 1px solid black; */
         display: flex;
-
+  
         display: grid;
         grid-template-columns: 20% 40% 40%;
         grid-template-rows: 100%;
@@ -1121,9 +1121,9 @@
             "appWebSiteIconDiv appWebsiteLabelDiv appWebSiteInputDiv";
         background-color: #F3F5F9;
         border-radius: 10px;
-
+  
     }
-
+  
     .appWebSiteIconDiv {
         grid-area: appWebSiteIconDiv;
         width: 100%;
@@ -1133,11 +1133,11 @@
         justify-content: center;
         align-items: center;
     }
-
+  
     .websiteIcon {
         height: 50%;
     }
-
+  
     .appWebsiteLabelDiv {
         grid-area: appWebsiteLabelDiv;
         width: 100%;
@@ -1147,22 +1147,22 @@
         justify-content: flex-start;
         align-items: center;
     }
-
+  
     .appWebsiteLabelDiv p {
         font-family: "Poppins", sans-serif;
         font-size: 16px;
         font-weight: 500;
         color: black;
     }
-
+  
     .appWebSiteInputDiv {
         grid-area: appWebSiteInputDiv;
         width: 100%;
         height: 100%;
         /* border: 1px solid black; */
     }
-
-
+  
+  
     .usernameWrapper {
         grid-area: usernameWrapper;
         width: 100%;
@@ -1172,9 +1172,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
-
+  
     }
-
+  
     .usernameContainer {
         width: 90%;
         height: 70%;
@@ -1188,10 +1188,10 @@
             "usernameIconDiv usernameInputDiv";
         background-color: #F3F5F9;
         border-radius: 10px;
-
-
+  
+  
     }
-
+  
     .usernameIconDiv {
         grid-area: usernameIconDiv;
         width: 100%;
@@ -1201,12 +1201,12 @@
         justify-content: center;
         align-items: center;
     }
-
+  
     .usernameIcon {
         width: 50%;
         height: 50%;
     }
-
+  
     .usernameLabelDiv {
         grid-area: usernameLabelDiv;
         width: 100%;
@@ -1216,14 +1216,14 @@
         justify-content: flex-start;
         align-items: center;
     }
-
+  
     .usernameLabelDiv p {
         font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 500;
         color: #7E8DA4;
     }
-
+  
     .usernameInputDiv {
         grid-area: usernameInputDiv;
         width: 100%;
@@ -1233,9 +1233,9 @@
         justify-content: flex-start;
         align-items: center;
     }
-
-
-
+  
+  
+  
     /* .usernameInputDiv input {
         width: 80%;
         height: 100%;
@@ -1250,8 +1250,8 @@
         font-weight: 500;
         color: black;
     } */
-
-
+  
+  
     .passwordWrapper {
         grid-area: passwordWrapper;
         width: 100%;
@@ -1261,9 +1261,9 @@
         align-items: center;
         /* border: 1px solid orange; */
         padding-left: 0%;
-
+  
     }
-
+  
     .passwordContainer {
         width: 90%;
         height: 70%;
@@ -1277,10 +1277,10 @@
             "passwordIconDiv passwordInputDiv";
         background-color: #F3F5F9;
         border-radius: 10px;
-
-
+  
+  
     }
-
+  
     .passwordIconDiv {
         grid-area: passwordIconDiv;
         width: 100%;
@@ -1290,12 +1290,12 @@
         justify-content: center;
         align-items: center;
     }
-
+  
     .passwordIcon {
         width: 55%;
         height: 55%;
     }
-
+  
     .passwordLabelDiv {
         grid-area: passwordLabelDiv;
         width: 100%;
@@ -1305,14 +1305,14 @@
         justify-content: flex-start;
         align-items: center;
     }
-
+  
     .passwordLabelDiv p {
         font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 500;
         color: #7E8DA4;
     }
-
+  
     .passwordInputDiv {
         grid-area: passwordInputDiv;
         width: 100%;
@@ -1322,7 +1322,7 @@
         justify-content: flex-start;
         align-items: center;
     }
-
+  
     /* .passwordInputDiv input {
         width: 80%;
         height: 100%;
@@ -1337,47 +1337,47 @@
         font-weight: 500;
         color: black;
     } */
-
-
-
-
+  
+  
+  
+  
     /* ----------------------------------------------
- * Generated by Animista on 2022-11-28 19:46:20
- * Licensed under FreeBSD License.
- * See http://animista.net/license for more info. 
- * w: http://animista.net, t: @cssanimista
- * ---------------------------------------------- */
-
+  * Generated by Animista on 2022-11-28 19:46:20
+  * Licensed under FreeBSD License.
+  * See http://animista.net/license for more info. 
+  * w: http://animista.net, t: @cssanimista
+  * ---------------------------------------------- */
+  
     /**
- * ----------------------------------------
- * animation slide-in-bottom
- * ----------------------------------------
- */
+  * ----------------------------------------
+  * animation slide-in-bottom
+  * ----------------------------------------
+  */
     @-webkit-keyframes slide-in-bottom {
         0% {
             -webkit-transform: translateY(1000px);
             transform: translateY(1000px);
             opacity: 0;
         }
-
+  
         100% {
             -webkit-transform: translateY(0);
             transform: translateY(0);
             opacity: 1;
         }
     }
-
+  
     @keyframes slide-in-bottom {
         0% {
             -webkit-transform: translateY(1000px);
             transform: translateY(1000px);
             opacity: 0;
         }
-
+  
         100% {
             -webkit-transform: translateY(0);
             transform: translateY(0);
             opacity: 1;
         }
     }
-}
+  }
