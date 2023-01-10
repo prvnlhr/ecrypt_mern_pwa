@@ -38,48 +38,6 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
         }
     }, [logoIndx])
 
-
-
-    // const generateActivityData = (SUBTYPE) => {
-    //     let generatedData = {};
-    //     let date;
-    //     let month;
-    //     let time;
-    //     switch (SUBTYPE) {
-    //         case 1:
-    //             Object.assign(generatedData, oldCardData);
-    //             console.log(generatedData)
-    //             date = moment().format('DD');
-    //             month = moment().format('MMM');
-    //             time = moment().format('LT');
-    //             generatedData.time = time;
-    //             generatedData.month = month;
-    //             generatedData.data = date;
-    //             generatedData.task = "Deleted";
-    //             generatedData.type = "Login"
-    //             generatedData.subType = 1;
-    //             break;
-    //         case 2:
-    //             date = moment().format('DD');
-    //             month = moment().format('MMM');
-    //             time = moment().format('LT');
-    //             generatedData = diff(oldCardData, fullContentCardData);
-    //             generatedData.time = time;
-    //             generatedData.month = month;
-    //             generatedData.data = date;
-    //             generatedData.task = "Edit";
-    //             generatedData.type = "Login"
-    //             generatedData.subType = 2;
-    //             break;
-
-    //         default:
-    //             break;
-    //     }
-    //     return generatedData;
-
-    // }
-
-
     //> Handling Category change field______
     const handleOpClick = (op) => {
         setFullContentCardData({
@@ -88,8 +46,12 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
         })
         setPopUpOpen(!popUpOpen)
     }
+
+    //> Handling form logoClicked ______
     const logoclicked = () => {
-        setLogoComponentShow(true);
+        if (editMode) {
+            setLogoComponentShow(true);
+        }
     }
 
     //> Input val Change_________
@@ -115,10 +77,9 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
     }
     //> Save Btn clicked_________
     const saveBtnClicked = () => {
-        const activity_data = generateActivityData(3, oldCardData, fullContentCardData);
+        const activity_data = generateActivityData(3, 'Login', fullContentCardData, oldCardData);
 
         console.log(activity_data)
-
         dispatch(editLoginIdData({
             updatedData: fullContentCardData,
             login_id: fullContentCardData._id,
@@ -131,7 +92,7 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
     }
     //> Delete Btn clicked________
     const deleteBtnClicked = () => {
-        const activity_data = generateActivityData(2, fullContentCardData, '');
+        const activity_data = generateActivityData(2, 'Login', fullContentCardData, '');
         console.log(activity_data)
         console.table(fullContentCardData._id, '63b43ab32fc8d3c100cafecc')
         dispatch(deleteLoginData({
@@ -166,20 +127,24 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
                         {editMode ?
                             <>
                                 <div className={styles.saveBtnDiv} onClick={saveBtnClicked}  >
+                                    <Icon className={styles.crudIcons} icon="charm:tick-double" color="white" />
                                     <p>Save</p>
                                 </div>
 
                                 <div className={styles.cancelBtnDiv} onClick={cancelBtnClicked}>
+                                    {/* <Icon className={styles.crudIcons} icon="tabler:x" color="#5B5A68" /> */}
+                                    <Icon className={styles.crudIcons} icon="tabler:x" color="white" />
                                     <p>Cancel</p>
                                 </div>
                             </>
-
                             :
                             <>
                                 <div className={styles.deleteBtnDiv} onClick={deleteBtnClicked}  >
+                                    <Icon className={styles.crudIcons} icon="gg:trash-empty" color="white" />
                                     <p>Delete</p>
                                 </div>
                                 <div className={styles.editBtnDiv} onClick={editBtnClicked}  >
+                                    <Icon className={styles.crudIcons} icon="ph:pencil-simple-line" color="#002A9A" />
                                     <p>Edit</p>
                                 </div>
                             </>
@@ -193,10 +158,13 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
                     <div className={styles.logoTitleContainer} >
                         <div className={styles.logoContainer} onClick={logoclicked} >
                             <div className={styles.logoDiv}>
-                                {
-                                    fullContentCardData.logoIndex != undefined &&
-                                    logosArray[fullContentCardData.logoIndex].logo
-                                }
+                                <div className={
+                                    editMode ? styles.logoDivActive : styles.logoDiv
+                                }>
+                                    {fullContentCardData.logoIndex != undefined &&
+                                        logosArray[fullContentCardData.logoIndex].logo
+                                    }
+                                </div>
                             </div>
                         </div>
 

@@ -1,11 +1,11 @@
 .formWrapper {
     position: absolute;
-    bottom: 50px;
-    width: 80%;
-    height: 80%;
+    aspect-ratio: 1/1;
+    width: 30%;
     background-color: white;
     z-index: 99;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
     border-radius: 10px;
     display: grid;
     grid-template-columns: 100%;
@@ -13,6 +13,11 @@
     grid-template-areas:
         " headerWrapper"
         " fomrContainerWrapper";
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 50px;
 }
 
 .headerWrapper {
@@ -194,31 +199,46 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    /* border: 1px solid black; */
 }
 
 .buttonWrapper button {
-    width: 55%;
+    width: auto;
     height: 30px;
-    background-color: #002A9A;
+    background-color: #2552FE;
     border: none;
-    border-radius: 8px;
+    border-radius: 30px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    /* border: 1px solid black; */
+    padding-left: 20px;
+
+}
+
+.btnIconDiv {
+    height: 100%;
+    aspect-ratio: 1/1;
+    /* border: 1px solid white; */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4067F0;
 }
 
 .btnIcon {
     font-size: 18px;
-    margin: 0px 5px 0px 0px;
+    margin: unset;
 }
 
 button p {
     font-family: "Poppins", sans-serif;
     font-size: 13px;
     color: white;
-    font-weight: 450;
+    font-weight: 400;
     margin: 0px 0px 0px 0px;
     letter-spacing: 0.3px;
 }
@@ -247,7 +267,8 @@ label {
 .uploadContainer {
     position: relative;
     width: 85%;
-    height: 60%;
+    height: 100%;
+    /* aspect-ratio: 1/1; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -255,7 +276,6 @@ label {
     box-sizing: border-box;
     /* border: 1px dashed 002A9A; */
     /* margin: 0px 0px 5px 0px; */
-    /* border: 1px dotted #010a16; */
     border: 1px dashed #002A9A;
     background-color: #3b87eb10;
     border-radius: 10px;
@@ -373,4 +393,396 @@ label p {
     z-index: 45;
 }
 
-@media screen and (max-width: 550px) {}
+@media screen and (max-width: 550px) {
+    .formWrapper {
+        position: absolute;
+        bottom: 50px;
+        width: 80%;
+        height: 80%;
+        background-color: white;
+        z-index: 99;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        border-radius: 10px;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 10% 90%;
+        grid-template-areas:
+            " headerWrapper"
+            " fomrContainerWrapper";
+    }
+
+    .headerWrapper {
+        grid-area: headerWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 2%;
+    }
+
+    .formContainerWrapper {
+        grid-area: fomrContainerWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+    }
+
+    .closeIconDiv {
+        position: relative;
+        aspect-ratio: 1/1;
+        height: 60%;
+        border-radius: 50%;
+        background-color: #93C2FF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        right: 0px;
+    }
+
+    .closeIcon {
+        position: relative;
+        font-size: 13px;
+        /* border: 1px solid black; */
+        color: #002A9A;
+    }
+
+    .formTag {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-rows: 55px minmax(0, 1fr) 50px 50px;
+        grid-template-columns: 100%;
+        grid-template-areas:
+            "headingWrapper"
+            "uploadImgWrapper"
+            "titleWrapper"
+            "buttonWrapper";
+        box-sizing: border-box;
+        border-radius: 8px;
+        padding: 0 15px 0 15px;
+    }
+
+    .headingWrapper {
+        position: relative;
+        grid-area: headingWrapper;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        background-color: transparent;
+        /* border: 1px solid black; */
+    }
+
+    .heading1 {
+        position: relative;
+        font-family: "Poppins", sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        margin: 5px 0px 0px 0px;
+        letter-spacing: 0.3px;
+    }
+
+    .heading2 {
+        font-family: "Poppins", sans-serif;
+        font-size: 12px;
+        color: #7E8DA4;
+        font-weight: 500;
+        margin: 2px 0px 5px 0px;
+        letter-spacing: 0.3px;
+    }
+
+    .uploadImgWrapper {
+        position: relative;
+        grid-area: uploadImgWrapper;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    .titleWrapper {
+        position: relative;
+        grid-area: titleWrapper;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        /* border: 1px solid black; */
+    }
+
+    .labelDiv {
+        height: 40%;
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        box-sizing: border-box;
+        padding-left: 5%;
+        /* border: 1px solid black; */
+    }
+
+    .labelDiv p {
+        font-family: "Poppins", sans-serif;
+        text-transform: capitalize;
+        font-size: 12px;
+        font-weight: 450;
+        margin: 0px 0px 0px 2px;
+        letter-spacing: 0.3px;
+    }
+
+    .inputDiv {
+        width: 100%;
+        height: 60%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        /* border: 1px solid black; */
+        box-sizing: border-box;
+        padding-left: 5%;
+    }
+
+    .inputField {
+        display: flex;
+        text-align: start;
+        width: 90%;
+        height: 90%;
+        border-radius: 5px;
+        border: 2px solid #A6CBFB;
+        font-family: "Poppins", sans-serif;
+        font-size: 13px;
+        font-weight: 550;
+        letter-spacing: 0.4px;
+
+        margin: 0px 0px 0px 0px;
+        padding: 0 0 0 10px;
+        box-sizing: border-box;
+        caret-color: 002A9A;
+        outline: none;
+        background: transparent;
+
+    }
+
+    .inputField:focus {
+        border: 2px solid #002A9A;
+    }
+
+    .buttonWrapper {
+        grid-area: buttonWrapper;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .buttonWrapper button {
+        position: relative;
+        width: auto;
+        height: 30px;
+        background-color: #002A9A;
+        border: none;
+        border-radius: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        /* border: 1px solid black; */
+        padding-left: 20px;
+
+    }
+
+    .btnIconDiv {
+        position: relative;
+        height: 100%;
+        aspect-ratio: 1/1;
+        /* border: 1px solid white; */
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #4067F0;
+    }
+
+    .btnIcon {
+        font-size: 18px;
+        margin: unset;
+    }
+
+    button p {
+        font-family: "Poppins", sans-serif;
+        font-size: 13px;
+        color: white;
+        font-weight: 400;
+        margin: 0px 10px 0px 0px;
+        letter-spacing: 0.3px;
+    }
+
+    /*___for file input_____ */
+    label {
+        position: relative;
+        width: 100%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        /* border: 1px solid #002A9A; */
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .uploadContainer {
+        position: relative;
+        width: 85%;
+        height: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        /* border: 1px dashed 002A9A; */
+        /* margin: 0px 0px 5px 0px; */
+        /* border: 1px dotted #010a16; */
+        border: 1px dashed #002A9A;
+        background-color: #3b87eb10;
+        border-radius: 10px;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    label p {
+        margin: 0px 0px 0px 0px;
+        font-family: "Poppins", sans-serif;
+        color: #002A9A;
+        font-weight: 650;
+        font-size: 13px;
+        letter-spacing: 0.2px;
+
+
+    }
+
+    .imgPreviewContainer {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        /* border: 1px solid 002A9A; */
+        /* background-size: cover; */
+    }
+
+    .imgPreviewContainer img {
+        position: relative;
+        object-fit: contain;
+        width: 95%;
+        height: 95%;
+    }
+
+    .folderIcon {
+        /* border: 1px solid 002A9A; */
+        /* font-size: 100px; */
+        width: 65px;
+        height: 65px;
+        color: #002A9A;
+        margin: 0px 0px 0px 0px;
+    }
+
+    .imgFileInput {
+        border: none;
+        outline: none;
+        background: none;
+        width: 100%;
+        height: 10%;
+        /* width:90%; */
+        border: 1px solid black;
+        display: none;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        /* border: 1px solid black; */
+        /* height: 30px !important; */
+        margin: 0px 0px 0px 0px;
+        font-family: "Poppins", sans-serif;
+
+        color: black;
+        font-weight: 650;
+        letter-spacing: 0.2px;
+        cursor: pointer;
+    }
+
+    .imgFileInput::-webkit-file-upload-button {
+        visibility: hidden;
+        width: 0px;
+        background: #071a52;
+        font-family: "Poppins", sans-serif;
+
+        color: black;
+        font-size: 13px;
+        border-radius: 5px;
+        background-color: #dae5eb;
+    }
+
+    .cancelBtnDiv {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 25px;
+        height: 25px;
+        border: 2px solid rgba(151, 151, 151, 0.267);
+        /* border: 1px solid rgb(187, 187, 187); */
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); */
+        font-size: 15px;
+        font-family: "Poppins", sans-serif;
+
+        font-weight: 650;
+        letter-spacing: 0.2px !important;
+        color: slategray;
+        border-radius: 50%;
+        cursor: pointer;
+        /* box-shadow: 20px 20px 30px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.05),
+            -6px -6px 6px rgba(255, 255, 255, 0.6),
+            inset 2px 2px 5px rgba(0, 0, 0, 0.03),
+            inset -2px -2px 5px rgba(255, 255, 255, 0.4); */
+        box-sizing: border-box;
+        z-index: 45;
+    }
+
+}

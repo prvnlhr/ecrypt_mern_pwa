@@ -16,7 +16,7 @@ const SearchSection = () => {
 
     useEffect(() => {
         switch (location.pathname) {
-            case "/dashboard":
+            case "/":
                 setListTitle("Dashboard");
                 break;
             case "/user/display_loginIds":

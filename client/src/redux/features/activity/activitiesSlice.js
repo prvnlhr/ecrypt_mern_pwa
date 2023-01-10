@@ -6,7 +6,7 @@ export const fectchActivitiesData = createAsyncThunk("activity/fetch", async ({ 
     try {
         const res = await api.fetchUserActivities(user_id)
         // console.log(res.data)
-        return fulfillWithValue(res.data);
+        return fulfillWithValue(res.data.reverse());
     } catch (error) {
         return rejectWithValue(error);
     }

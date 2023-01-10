@@ -11,7 +11,7 @@ import LogoComponentWrapper from "../../logoComponents/LogoComponentWrapper"
 import styles from "../styles/cardInputForm.module.css"
 import bankCardFormstyles from "../styles/bankCardSubComponent.module.css"
 import CardLogo, { getCardType } from "../CardLogo"
-
+import { generateActivityData } from "../../utils/ActivityDataChangeFuction"
 import { addNewCardData } from "../../../redux/features/cards/cardsSlice"
 const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
@@ -175,35 +175,49 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
         }
 
     }
+
+
+    //>Save Btn clicked
     const saveBtnClicked = () => {
+        let activity_data;
         switch (formCategory) {
             case "Identity":
                 console.table(identityCardData);
+                activity_data = generateActivityData(1, 'Card', identityCardData, '');
+                console.log(activity_data);
                 dispatch(addNewCardData({
                     data: identityCardData,
-                    user_id: "63b43ab32fc8d3c100cafecc"
+                    user_id: "63b43ab32fc8d3c100cafecc",
+                    activityData: activity_data
                 }))
+
                 break;
 
             case "License":
                 console.table(licenseCardData);
+                activity_data = generateActivityData(1, 'Card', licenseCardData, '');
                 dispatch(addNewCardData({
                     data: licenseCardData,
-                    user_id: "63b43ab32fc8d3c100cafecc"
+                    user_id: "63b43ab32fc8d3c100cafecc",
+                    activityData: activity_data
+
                 }))
                 break;
 
             case "Bank":
                 console.table(bankCardData);
+                activity_data = generateActivityData(1, 'Card', bankCardData, '');
                 dispatch(addNewCardData({
                     data: bankCardData,
-                    user_id: "63b43ab32fc8d3c100cafecc"
+                    user_id: "63b43ab32fc8d3c100cafecc",
+                    activityData: activity_data
                 }))
                 break;
 
             default:
                 break;
         }
+        console.log(activity_data)
         formToggle();
 
 
@@ -239,6 +253,7 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                     </div>
                     <div className={styles.crudBtnContainer} >
                         <div className={styles.saveBtnDiv} onClick={saveBtnClicked}>
+                            <Icon className={styles.crudIcons} icon="charm:tick-double" color="white" />
                             <p>Save</p>
                         </div>
                     </div>

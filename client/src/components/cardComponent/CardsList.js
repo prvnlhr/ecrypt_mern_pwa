@@ -165,7 +165,6 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
 
   return (
     <div className={`${styles.cardList} `}>
-
       {
         (!showInputForm && !showContentCard) &&
         < AddBtn formToggle={formToggle} />

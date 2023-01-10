@@ -17,20 +17,21 @@ const NewAddedDeletedField = ({ item, activity }) => {
                                 : item == "time" ? null
                                     : item == "month" ? null
                                         : item == "logoIndex" ? null
-                                            : item == "_id" ? null
-                                                :
-                                                <div className={styles.fieldWrapper} >
-                                                    <div className={styles.fieldContainer} >
-                                                        <div className={styles.fieldNameLabelWrapper} >
-                                                            <p>{key} - </p>
-                                                        </div>
-                                                        <div className={styles.valWrapper} >
-                                                            <p>
-                                                                {activity[item]}
-                                                            </p>
+                                            : item == "isFavourite" ? null
+                                                : item == "_id" ? null
+                                                    :
+                                                    <div className={styles.fieldWrapper} >
+                                                        <div className={styles.fieldContainer} >
+                                                            <div className={styles.fieldNameLabelWrapper} >
+                                                                <p>{key} - </p>
+                                                            </div>
+                                                            <div className={styles.valWrapper} >
+                                                                <p>
+                                                                    {activity[item]}
+                                                                </p>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
             }
         </>
 

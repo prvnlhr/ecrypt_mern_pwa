@@ -5,6 +5,7 @@ import { Icon } from '@iconify/react';
 import { HiX } from "react-icons/hi";
 import { motion, AnimatePresence } from "framer-motion";
 import { addNewDocData } from "../../redux/features/docs/docsSlice"
+import { generateActivityData } from "../utils/ActivityDataChangeFuction"
 import axios from "axios";
 
 const DocInputForm = ({ setShowDocInputForm, showDocInputForm, formToggle }) => {
@@ -22,7 +23,7 @@ const DocInputForm = ({ setShowDocInputForm, showDocInputForm, formToggle }) => 
         }
         reader.onloadend = () => {
             setPreviewImg(reader.result);
-            console.log(reader.result);
+            // console.log(reader.result);
         };
     };
     const closeBtnClicked = () => {
@@ -34,15 +35,22 @@ const DocInputForm = ({ setShowDocInputForm, showDocInputForm, formToggle }) => 
         data.append("userId", '63b43ab32fc8d3c100cafecc');
         data.append("name", name);
         data.append("file", file);
+
         axios
             .post("https://httpbin.org/anything", data)
             .then((res) => console.log(res))
             .catch((err) => console.log(err));
+        const toMakeActvityData = {
+            title: name,
+        }
+        const activity_data = generateActivityData(1, 'Doc', toMakeActvityData, '');
+        console.log(activity_data);
         console.log(data, name, '63b43ab32fc8d3c100cafecc')
         dispatch(addNewDocData({
             data: data,
             name: name,
-            userId: '63b43ab32fc8d3c100cafecc'
+            userId: '63b43ab32fc8d3c100cafecc',
+            activityData: activity_data,
         }
         ));
     };
@@ -55,7 +63,7 @@ const DocInputForm = ({ setShowDocInputForm, showDocInputForm, formToggle }) => 
     const handleFormSubmit = (e) => {
         e.preventDefault();
         uploadDoc();
-        console.log(name, file);
+        // console.log(name, file);
     };
     return (
         <div className={styles.formWrapper}>
@@ -113,12 +121,13 @@ const DocInputForm = ({ setShowDocInputForm, showDocInputForm, formToggle }) => 
                     <div className={styles.buttonWrapper}>
 
                         <motion.button whileTap={{ scale: 0.95 }} type="submit">
-                            <Icon
-                                icon="eva:arrow-circle-up-outline"
-                                color="white"
-                                className={styles.btnIcon}
-                            />
                             <p>Upload</p>
+                            <div className={styles.btnIconDiv}>
+                                <Icon icon="fluent:arrow-sort-up-24-filled" color='white'
+                                    className={styles.btnIcon}
+                                />
+                            </div>
+
                         </motion.button>
                     </div>
                 </form>

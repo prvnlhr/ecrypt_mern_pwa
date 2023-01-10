@@ -5,6 +5,7 @@ import BackBtnIcon from '../icons/BackBtnIcon';
 import styles from "./styles/documentFullScreen.module.css"
 import { Icon } from '@iconify/react';
 import { deleteDocData, editDocData } from "../../redux/features/docs/docsSlice"
+import { generateActivityData } from ".././utils/ActivityDataChangeFuction"
 
 const DocFullScreen = ({ setDocFullScreen, setFullScreenDocData, docFullScreen, fullScreenData }) => {
     const dispatch = useDispatch();
@@ -12,6 +13,8 @@ const DocFullScreen = ({ setDocFullScreen, setFullScreenDocData, docFullScreen, 
 
     const [imageName, setImageName] = useState("");
     const [editMode, setEditMode] = useState(false);
+
+    const [oldTitle, setOldTitle] = useState('');
 
 
     const handleHeaderFooterShowHide = () => {
@@ -23,24 +26,48 @@ const DocFullScreen = ({ setDocFullScreen, setFullScreenDocData, docFullScreen, 
     }
 
     const editBtnClicked = () => {
+        // console.log(fullScreenData.imageName);
+        setOldTitle(fullScreenData.imageName)
         setEditMode(true);
     }
     const cancelBtnClicked = () => {
-        setEditMode(true);
+        setFullScreenDocData({
+            ...fullScreenData,
+            imageName: oldTitle
+        })
+        setEditMode(false);
     }
     const saveBtnClicked = () => {
+        console.log(fullScreenData.imageName)
+        const oldData = {
+            title: oldTitle
+        }
+        const newData = {
+            title: fullScreenData.imageName
+        }
+        console.log(oldData, newData);
+        const activity_data = generateActivityData(3, 'Doc', newData, oldData);
+        console.log(activity_data);
         dispatch(editDocData({
             docId: fullScreenData._id,
-            docData: fullScreenData
+            docData: fullScreenData,
+            activityData: activity_data,
+            userId: '63b43ab32fc8d3c100cafecc'
         }))
         setEditMode(false);
     }
 
     const handleDeleteBtnClicked = () => {
+        const newData = {
+            title: fullScreenData.imageName
+        }
+        const activity_data = generateActivityData(2, 'Doc', newData, '');
+        console.log(activity_data);
         dispatch(deleteDocData({
             docId: fullScreenData._id,
             cloudId: fullScreenData.cloudinary_id,
             userId: '63b43ab32fc8d3c100cafecc',
+            activityData: activity_data,
         }))
         setDocFullScreen(false)
     }
@@ -59,6 +86,7 @@ const DocFullScreen = ({ setDocFullScreen, setFullScreenDocData, docFullScreen, 
                 </div>
                 <div className={styles.deleteBtnContainer} >
                     <div className={styles.deleteBtnDiv} onClick={handleDeleteBtnClicked} >
+                        <Icon className={styles.crudIcons} icon="gg:trash-empty" color="white" />
                         <p>Delete</p>
                     </div>
                 </div>
@@ -83,14 +111,14 @@ const DocFullScreen = ({ setDocFullScreen, setFullScreenDocData, docFullScreen, 
                 <div className={styles.titleEditBtnIconContainer} >
                     {!editMode ?
                         <div className={styles.titleCrudIconDiv} onClick={editBtnClicked} >
-                            <Icon className={styles.titleCrudIcon} icon="lucide:edit" />
+                            <Icon className={styles.titleCrudIcon} icon="ph:pencil-simple-line" color="#002A9A" />
                         </div> :
                         <>
                             <div className={styles.titleCrudIconDiv} onClick={cancelBtnClicked} >
-                                <Icon icon="ph:x-bold" />
+                                <Icon className={styles.titleCrudIcon} icon="ph:x-bold" color="#5B5966" />
                             </div>
                             <div className={styles.titleCrudIconDiv} onClick={saveBtnClicked} >
-                                <Icon icon="charm:tick" />
+                                <Icon className={styles.titleCrudIcon} icon="charm:tick-double" color="#58BF6F" />
                             </div>
                         </>
                     }

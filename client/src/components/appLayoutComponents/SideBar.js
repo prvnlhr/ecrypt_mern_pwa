@@ -14,7 +14,7 @@ const SideBar = () => {
                 <div className={styles.linkContainer}>
                     <div className={styles.linkIconDiv}></div>
                     <div className={styles.linkDiv}>
-                        <NavLink to="/dashboard" className={styles.linkText}
+                        <NavLink to="/" className={styles.linkText}
                             style={({ isActive }) =>
                                 isActive
                                     ? {

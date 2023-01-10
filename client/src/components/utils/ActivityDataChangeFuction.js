@@ -43,10 +43,10 @@ export const diff = (x = {}, y = {}) =>
 //# SUBTYPE 1 ->  ADDED , DELETED
 //# SUBTYPE 2 ->  DELETED
 //# SUBTYPE 3 ->  EDITED
-export const generateActivityData = (SUBTYPE, oldCardData, originalData) => {
-    console.log(SUBTYPE, oldCardData, originalData)
+export const generateActivityData = (SUBTYPE, type, newData, oldData) => {
+    // console.log(SUBTYPE, newData, oldData)
     let generatedData = {};
-    Object.assign(generatedData, oldCardData);
+    Object.assign(generatedData, newData);
     let date;
     let month;
     let time;
@@ -58,8 +58,8 @@ export const generateActivityData = (SUBTYPE, oldCardData, originalData) => {
             generatedData.time = time;
             generatedData.month = month;
             generatedData.date = date;
+            generatedData.type = type
             generatedData.task = "Added";
-            generatedData.type = "Login"
             generatedData.subType = 1;
             break;
         case 2:
@@ -69,20 +69,20 @@ export const generateActivityData = (SUBTYPE, oldCardData, originalData) => {
             generatedData.time = time;
             generatedData.month = month;
             generatedData.date = date;
+            generatedData.type = type;
             generatedData.task = "Deleted";
-            generatedData.type = "Login"
             generatedData.subType = 2;
             break;
         case 3:
             date = moment().format('DD');
             month = moment().format('MMM');
             time = moment().format('LT');
-            generatedData = diff(oldCardData, originalData);
+            generatedData = diff(oldData, newData);
             generatedData.time = time;
             generatedData.month = month;
             generatedData.date = date;
+            generatedData.type = type;
             generatedData.task = "Edit";
-            generatedData.type = "Login"
             generatedData.subType = 3;
             break;
 

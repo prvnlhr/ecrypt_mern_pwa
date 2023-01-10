@@ -51,7 +51,7 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
     }
 
     const saveBtnClicked = () => {
-        const activity_data = generateActivityData(1, formData, {})
+        const activity_data = generateActivityData(1, 'Login', formData, '')
         console.log(activity_data)
         console.table(formData);
         dispatch(addNewLoginIdData({
@@ -105,6 +105,7 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                     </div>
                     <div className={styles.crudBtnContainer}   >
                         <div className={styles.saveBtnDiv} onClick={saveBtnClicked}>
+                            <Icon className={styles.crudIcons} icon="charm:tick-double" color="white" />
                             <p>Save</p>
                         </div>
                     </div>

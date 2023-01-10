@@ -10,11 +10,12 @@ import IdentityCardSubComponent from './IdentityCardSubComponent';
 import LicenseCardSubComponent from './LicenseCardSubComponent';
 import LogoComponentWrapper from "../../logoComponents/LogoComponentWrapper"
 import { editCardData, deleteCardData } from "../../../redux/features/cards/cardsSlice"
+import { generateActivityData } from "../../utils/ActivityDataChangeFuction"
 const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullContentBackBtnClicked,
     fullContentCardData, setFullContentCardData, editMode, setEditMode
 
 }) => {
-    console.log(fullContentCardData)
+    // console.log(fullContentCardData)
     const [popUpOpen, setPopUpOpen] = useState(false);
 
     const [oldCardData, setOldCardData] = useState('');
@@ -87,23 +88,30 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
     }
 
     const saveBtnClicked = () => {
-        console.table(fullContentCardData)
+        // console.table(fullContentCardData)
+        const activity_data = generateActivityData(3, 'Card', fullContentCardData, oldCardData)
+        console.log(activity_data);
 
-        dispatch(editCardData({
-            updatedData: fullContentCardData,
-            card_id: fullContentCardData._id,
-        }))
+        // dispatch(editCardData({
+        //     updatedData: fullContentCardData,
+        //     card_id: fullContentCardData._id,
+        //     activityData: activity_data,
+        //     userId: '63b43ab32fc8d3c100cafecc'
+        // }))
         setEditMode(false);
         setShowContentCard(false);
 
     }
 
     const deleteBtnClicked = () => {
-        console.table(fullContentCardData._id, '63b43ab32fc8d3c100cafecc')
+        // console.table(fullContentCardData._id, '63b43ab32fc8d3c100cafecc')
+        const activity_data = generateActivityData(2, 'Card', fullContentCardData, '')
+        // console.log(activity_data);
         dispatch(deleteCardData({
             card_id: fullContentCardData._id,
             user_id: '63b43ab32fc8d3c100cafecc',
-            cardData: fullContentCardData
+            cardData: fullContentCardData,
+            activityData: activity_data
         }))
         setShowContentCard(false);
     }
@@ -139,10 +147,13 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
                         {editMode ?
                             <>
                                 <div className={styles.saveBtnDiv} onClick={saveBtnClicked}  >
+                                    <Icon className={styles.crudIcons} icon="charm:tick-double" color="white" />
                                     <p>Save</p>
                                 </div>
 
                                 <div className={styles.cancelBtnDiv} onClick={cancelBtnClicked}>
+                                    {/* <Icon className={styles.crudIcons} icon="tabler:x" color="#7E8DA4" /> */}
+                                    <Icon className={styles.crudIcons} icon="tabler:x" color="white" />
                                     <p>Cancel</p>
                                 </div>
                             </>
@@ -150,9 +161,11 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
                             :
                             <>
                                 <div className={styles.deleteBtnDiv} onClick={deleteBtnClicked}  >
+                                    <Icon className={styles.crudIcons} icon="gg:trash-empty" color="white" />
                                     <p>Delete</p>
                                 </div>
                                 <div className={styles.editBtnDiv} onClick={editBtnClicked}  >
+                                    <Icon className={styles.crudIcons} icon="ph:pencil-simple-line" color="#002A9A" />
                                     <p>Edit</p>
                                 </div>
                             </>
