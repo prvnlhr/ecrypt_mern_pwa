@@ -1,8 +1,7 @@
 import React from 'react'
+import styles from "./styles/activityList.module.css"
 import ActivityComponentOuter from './ActivityComponentOuter'
 import { useSelector } from 'react-redux';
-
-import styles from "./styles/activityList.module.css"
 const ActivityList = () => {
 
 
@@ -185,7 +184,6 @@ const ActivityList = () => {
 
   return (
     <div className={styles.activityList} >
-
       {activitiesArray.map((activity, index) => (
         <ActivityComponentOuter
           key={index}

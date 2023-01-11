@@ -294,7 +294,8 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
                         <div className={styles.passwordIconDiv} >
                             <Icon
                                 className={styles.passwordIcon}
-                                icon="fluent:password-20-regular" color="#002a9a" /></div>
+                                icon="fluent:password-20-regular" color="#002a9a" />
+                                </div>
                         <div className={styles.passwordLabelDiv} >
                             <p>PASSWORD</p>
                         </div>

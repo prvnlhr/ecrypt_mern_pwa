@@ -5,6 +5,7 @@ import { Icon } from '@iconify/react';
 import styles from "./styles/dashboard.module.css";
 import ActivityList from "./activitySection/ActivityList";
 import ActivityComponentOuter from "./activitySection/ActivityComponentOuter";
+import RecentlyAddedList from "./recentlyAddedSection/RecentlyAddedList"
 const Dashboard = ({ setHeading }) => {
 
   const loginIdsArray = useSelector((state => state.loginIds.loginsIdData));
@@ -103,7 +104,6 @@ const Dashboard = ({ setHeading }) => {
           <ActivityList />
         </div>
 
-
       </div>
       <div className={styles.recentlyAddedWrapper}>
         <div className={styles.recentlyAddedHeadingContainer}>
@@ -111,7 +111,9 @@ const Dashboard = ({ setHeading }) => {
             <p>Recently Added</p>
           </div>
         </div>
-        <div className={styles.recentlyAddedContentContainer}></div>
+        <div className={styles.recentlyAddedContentContainer}>
+          <RecentlyAddedList />
+        </div>
       </div>
     </div >
   );
