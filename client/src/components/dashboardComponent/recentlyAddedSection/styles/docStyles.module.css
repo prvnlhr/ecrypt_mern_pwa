@@ -1,0 +1,74 @@
+.cardWrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 83%;
+    height: 80px !important;
+    min-height: 80px;
+    background-color: white;
+    border-radius: 15px;
+    scroll-behavior: smooth;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.cardContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid red; */
+    display: grid;
+    grid-template-columns: 80px minmax(0, 1fr);
+    grid-template-rows: 100%;
+    grid-template-areas:
+        "logoWrapper titleWrapper";
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.logoWrapper {
+    grid: logoWrapper;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoDiv {
+    width: 80%;
+    height: 80%;
+    /* border: 1px solid red; */
+    border-radius: 8px;
+    background-color: #F3F5F9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.docIcon {
+    width: 80%;
+    aspect-ratio: 1/1;
+}
+
+.titleWrapper {
+    grid: titleWrapper;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 5%;
+}
+
+.titleWrapper p {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}

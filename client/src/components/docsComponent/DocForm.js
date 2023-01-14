@@ -1,191 +1,139 @@
-import React from "react";
-import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import styles from "./styles/docFormNew.module.css";
+import React, { useState, useEffect } from 'react'
+import { useDispatch } from 'react-redux';
+import styles from "./styles/docInputForm.module.css"
+import { Icon } from '@iconify/react';
 import { HiX } from "react-icons/hi";
-import { Icon } from "@iconify/react";
 import { motion, AnimatePresence } from "framer-motion";
+import { addNewDocData } from "../../redux/features/docs/docsSlice"
+import { generateActivityData } from "../utils/ActivityDataChangeFuction"
 import axios from "axios";
 
-const variants = {
-  open: {
-    opacity: 1,
-    scale: 1,
-  },
-  closed: {
-    scale: 0,
-  },
-};
+const DocInputForm = ({ setShowDocInputForm, showDocInputForm, formToggle }) => {
 
-const DocForm = ({ formMode, setFormMode }) => {
+    const dispatch = useDispatch();
+    const [name, setName] = useState();
+    const [file, setFile] = useState();
+    const [previewImg, setPreviewImg] = useState("");
 
-  const dispatch = useDispatch();
 
-  // const userId = useSelector((state) => state.user.user._id);
-
-  const [name, setName] = useState();
-  const [file, setFile] = useState();
-  const [previewImg, setPreviewImg] = useState("");
-
-  const formToggle = () => {
-    setFormMode(!formMode);
-  };
-  const previewFile = (file) => {
-    const reader = new FileReader();
-    if (file) {
-      reader.readAsDataURL(file);
-    }
-    reader.onloadend = () => {
-      setPreviewImg(reader.result);
-      console.log(reader.result);
+    const previewFile = (file) => {
+        const reader = new FileReader();
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+        reader.onloadend = () => {
+            setPreviewImg(reader.result);
+            // console.log(reader.result);
+        };
     };
-  };
+    const closeBtnClicked = () => {
+        setShowDocInputForm(false);
+    }
+    const uploadDoc = () => {
+        formToggle();
+        const data = new FormData();
+        data.append("userId", '63b43ab32fc8d3c100cafecc');
+        data.append("name", name);
+        data.append("file", file);
 
-  // const uploadDoc = () => {
-  //   formToggle();
-  //   const data = new FormData();
-  //   data.append("userId", userId);
-  //   data.append("name", name);
-  //   data.append("file", file);
-  //   axios
-  //     .post("https://httpbin.org/anything", data)
-  //     .then((res) => console.log(res))
-  //     .catch((err) => console.log(err));
-  //   dispatch(addNewDoc(data, name, userId));
-  // };
-  const handleChange = (e) => {
-    const file = e.target.files[0];
-    setFile(file);
-    previewFile(file);
-  };
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    // uploadDoc();
-    // console.log(name, file);
-  };
+        axios
+            .post("https://httpbin.org/anything", data)
+            .then((res) => console.log(res))
+            .catch((err) => console.log(err));
+        const toMakeActvityData = {
+            title: name,
+        }
+        const activity_data = generateActivityData(1, 'Doc', toMakeActvityData, '');
+        console.log(activity_data);
+        console.log(data, name, '63b43ab32fc8d3c100cafecc')
+        dispatch(addNewDocData({
+            data: data,
+            name: name,
+            userId: '63b43ab32fc8d3c100cafecc',
+            activityData: activity_data,
+        }
+        ));
+    };
+    const handleChange = (e) => {
+        const file = e.target.files[0];
+        setFile(file);
+        previewFile(file);
+    };
 
-  return (
-    <AnimatePresence>
-      {formMode === true && (
-        <motion.div
-          initial={{ scale: 0 }}
-          variants={variants}
-          animate={{
-            scale: 1,
-            transition: {
-              duration: 0.2,
-            },
-          }}
-          exit={{
-            scale: 0,
-            transition: {
-              duration: 0.2,
-            },
-          }}
-          className={styles.formComponent}
-        >
-          <form className={styles.formTag} onSubmit={handleFormSubmit}>
-            <div className={styles.cancelBtnDiv} onClick={formToggle}>
-              <HiX fontSize="15px" />
-            </div>
-            <div className={styles.headingWrapper}>
-              <p className={styles.heading1}>Upload your file</p>
-              <p className={styles.heading2}>File should be image</p>
-            </div>
-            <div className={styles.uploadImgWrapper}>
-              <label htmlFor="file">
-                {previewImg ? (
-                  <div className={styles.imgPreviewContainer}>
-                    <img src={previewImg} alt="doc" />
-                  </div>
-                ) : (
-                  <div className={styles.uploadContainer}>
-                    <Icon icon="bi:folder-fill" className={styles.folderIcon} />
-                    <p>Click to choose file</p>
-                  </div>
-                )}
-              </label>
-              <input
-                type="file"
-                id="file"
-                className={styles.imgFileInput}
-                onChange={handleChange}
-              />
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+        uploadDoc();
+        // console.log(name, file);
+    };
+    return (
+        <div className={styles.formWrapper}>
+
+
+            <div className={styles.headerWrapper}>
+                <div className={styles.closeIconDiv} onClick={closeBtnClicked}>
+                    <Icon className={styles.closeIcon} icon="ph:x-bold" />
+                </div>
             </div>
 
-            <div className={styles.titleWrapper}>
-              <div className={styles.labelDiv}>
-                <p className={styles.labelText}>Image title</p>
-              </div>
 
-              <div className={styles.inputDiv}>
-                <input
-                  className={styles.inputField}
-                  required
-                  type="text"
-                  id="name"
-                  onChange={(e) => setName(e.target.value)}
-                />
-              </div>
+            <div className={styles.formContainer} >
+                <form className={styles.formTag} onSubmit={handleFormSubmit}>
+                    <div className={styles.uploadImgWrapper}>
+                        <label htmlFor="file">
+                            {previewImg ? (
+                                <div className={styles.imgPreviewContainer}>
+                                    <img src={previewImg} alt="doc" />
+                                </div>
+                            ) : (
+                                <div className={styles.uploadContainer}>
+                                    <Icon icon="bi:folder-fill" className={styles.folderIcon} />
+                                    <p>Click to choose file</p>
+                                </div>
+                            )}
+                        </label>
+                        <input
+                            type="file"
+                            id="file"
+                            className={styles.imgFileInput}
+                            onChange={handleChange}
+                        />
+                    </div>
+
+                    <div className={styles.titleWrapper}>
+                        <div className={styles.labelDiv}>
+                            <p className={styles.labelText}>Image title</p>
+                        </div>
+
+                        <div className={styles.inputDiv}>
+                            <input
+                                className={styles.inputField}
+                                required
+                                type="text"
+                                id="name"
+                                onChange={(e) => setName(e.target.value)}
+                            />
+                        </div>
+                    </div>
+                    <div className={styles.buttonWrapper}>
+
+                        <motion.button whileTap={{ scale: 0.95 }} type="submit">
+                            <p>Upload</p>
+                            <div className={styles.btnIconDiv}>
+                                <Icon icon="fluent:arrow-sort-up-24-filled" color='white'
+                                    className={styles.btnIcon}
+                                />
+                            </div>
+
+                        </motion.button>
+                    </div>
+                </form>
+
             </div>
-            <div className={styles.buttonWrapper}>
-              <motion.button whileTap={{ scale: 0.95 }} type="submit">
-                <Icon
-                  icon="eva:arrow-circle-up-outline"
-                  color="white"
-                  className={styles.btnIcon}
-                />
-                <p>Upload</p>
-              </motion.button>
-            </div>
-          </form>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  );
-};
 
-export default DocForm;
 
-// return (
-//   <div
-//     className={
-//       formMode === false
-//         ? formStyles.docFormContainerCollapse
-//         : formStyles.docFormContainer
-//     }
-//   >
-//     <form onSubmit={uploadDoc} method="post" encType="multipart/form-data">
-//       <div className={formStyles.fileInputDiv}>
-//         <p>Click to choose a file</p>
 
-//         <input
-//           type="file"
-//           id="file"
-//           className={formStyles.fileInput}
-//           onChange={(e) => setFile(e.target.files[0])}
-//         ></input>
-//       </div>
+        </div>
+    )
+}
 
-//       <div className={formStyles.titleInputDiv}>
-//         <p>Title</p>
-//         <input
-//           className={formStyles.titleInput}
-//           type="text"
-//           id="name"
-//           onChange={(e) => setName(e.target.value)}
-//         ></input>
-//       </div>
-
-//       <div className={formStyles.btnDiv}>
-//         <button type="submit" className={formStyles.submitBtn}>
-//         <p>Add</p>
-//         </button>
-//       </div>
-//     </form>
-
-//     <div className={btnStyles.cancelBtnDiv} onClick={formToggle}>
-//       <HiX fontSize="15px" />
-//     </div>
-//   </div>
-// );
+export default DocInputForm

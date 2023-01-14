@@ -6,7 +6,12 @@ import styles from "./styles/dashboard.module.css";
 import ActivityList from "./activitySection/ActivityList";
 import ActivityComponentOuter from "./activitySection/ActivityComponentOuter";
 import RecentlyAddedList from "./recentlyAddedSection/RecentlyAddedList"
-const Dashboard = ({ setHeading }) => {
+const Dashboard = ({ setHeading,
+  docFullScreenAct,
+  setDocFullScreenAct,
+  docFullScreenActData,
+  setDocFullScreenActData
+}) => {
 
   const loginIdsArray = useSelector((state => state.loginIds.loginsIdData));
   const cardsArray = useSelector((state => state.cards.cardsData));
@@ -112,7 +117,12 @@ const Dashboard = ({ setHeading }) => {
           </div>
         </div>
         <div className={styles.recentlyAddedContentContainer}>
-          <RecentlyAddedList />
+          <RecentlyAddedList
+            docFullScreenAct={docFullScreenAct}
+            setDocFullScreenAct={setDocFullScreenAct}
+            docFullScreenActData={docFullScreenActData}
+            setDocFullScreenActData={setDocFullScreenActData}
+          />
         </div>
       </div>
     </div >

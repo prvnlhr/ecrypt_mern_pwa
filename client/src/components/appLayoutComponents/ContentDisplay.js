@@ -32,7 +32,11 @@ const ContentDisplay = ({
   currDeletingDocId,
   setDocFullScreen,
   setFullScreenDocData,
-  setLogoComponentShow
+  setLogoComponentShow,
+  docFullScreenAct,
+  setDocFullScreenAct,
+  docFullScreenActData,
+  setDocFullScreenActData
 }) => {
 
   const dispatch = useDispatch();
@@ -58,8 +62,12 @@ const ContentDisplay = ({
         <Route path="/"
           element={
             <Dashboard
-            // setHeading={setHeading}
-            // activities={activitiesArray}
+              // setHeading={setHeading}
+              // activities={activitiesArray}
+              docFullScreenAct={docFullScreenAct}
+              setDocFullScreenAct={setDocFullScreenAct}
+              docFullScreenActData={docFullScreenActData}
+              setDocFullScreenActData={setDocFullScreenActData}
             />}
         >
         </Route>

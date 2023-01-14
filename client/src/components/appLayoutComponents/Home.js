@@ -14,6 +14,7 @@ import { Icon } from '@iconify/react';
 import Settings from "./Settings";
 import DocFullScreen from "../docsComponent/DocFullScreen";
 import LogoComponentWrapper from "../logoComponents/LogoComponentWrapper"
+import DocFullScreenRecentAct from "../dashboardComponent/recentlyAddedSection/DocFullScreenRecentAct";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -21,6 +22,14 @@ const Home = () => {
   const [open, setOpen] = useState(false);
   const [logoComponentShow, setLogoComponentShow] = useState(false);
   const [docFullScreen, setDocFullScreen] = useState(false);
+
+  const [docFullScreenAct, setDocFullScreenAct] = useState(false);
+  const [docFullScreenActData, setDocFullScreenActData] = useState({});
+
+
+
+
+
   const [fullScreenData, setFullScreenDocData] = useState({});
   const location = useLocation();
 
@@ -38,6 +47,13 @@ const Home = () => {
       {/* {logoComponentShow &&
         <LogoComponentWrapper setLogoComponentShow={setLogoComponentShow} />
       } */}
+
+      <DocFullScreenRecentAct
+        docFullScreenAct={docFullScreenAct}
+        setDocFullScreenAct={setDocFullScreenAct}
+        docFullScreenActData={docFullScreenActData}
+        setDocFullScreenActData={setDocFullScreenActData}
+      />
 
       <DocFullScreen
         setDocFullScreen={setDocFullScreen}
@@ -64,6 +80,10 @@ const Home = () => {
             setDocFullScreen={setDocFullScreen}
             setFullScreenDocData={setFullScreenDocData}
             setLogoComponentShow={setLogoComponentShow}
+            docFullScreenAct={docFullScreenAct}
+            setDocFullScreenAct={setDocFullScreenAct}
+            docFullScreenActData={docFullScreenActData}
+            setDocFullScreenActData={setDocFullScreenActData}
           />
           <TabBar />
         </>

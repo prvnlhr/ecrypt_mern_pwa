@@ -1,6 +1,8 @@
 import React from 'react'
 import styles from "./styles/recentlyAddedList.module.css"
 import LoginId from "./LoginId"
+import Card from './Card'
+import Doc from './Doc'
 
 
 
@@ -9,7 +11,13 @@ import LoginId from "./LoginId"
 
 
 
-const RecentlyAddedList = () => {
+const RecentlyAddedList = ({
+
+    docFullScreenAct,
+    setDocFullScreenAct,
+    docFullScreenActData,
+    setDocFullScreenActData
+}) => {
 
     const recentlyAddedData = [
         {
@@ -82,7 +90,13 @@ const RecentlyAddedList = () => {
     return (
         <div className={styles.recentAddedList} >
             <LoginId />
-            <LoginId />
+            <Card />
+            <Doc
+                docFullScreenAct={docFullScreenAct}
+                setDocFullScreenAct={setDocFullScreenAct}
+                docFullScreenActData={docFullScreenActData}
+                setDocFullScreenActData={setDocFullScreenActData}
+            />
         </div>
     )
 }

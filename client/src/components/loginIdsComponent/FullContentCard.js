@@ -5,6 +5,7 @@ import styles from "./styles/fullContentCard.module.css"
 import BackBtnIcon from "../icons/BackBtnIcon"
 import { Icon } from '@iconify/react';
 import moment from "moment";
+
 import { logosArray } from "../logoComponents/logosData"
 import LogoComponentWrapper from "../logoComponents/LogoComponentWrapper"
 
@@ -105,7 +106,10 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
     }
 
     return (
-        <div className={showContentCard ? styles.cardWrapper : styles.cardWrapperClose}>
+        <div className={
+            // styles.cardWrapper
+            showContentCard ? styles.cardWrapper : styles.cardWrapperClose
+        }>
             {logoComponentShow &&
                 <LogoComponentWrapper
                     setLogoComponentShow={setLogoComponentShow}
@@ -295,7 +299,7 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
                             <Icon
                                 className={styles.passwordIcon}
                                 icon="fluent:password-20-regular" color="#002a9a" />
-                                </div>
+                        </div>
                         <div className={styles.passwordLabelDiv} >
                             <p>PASSWORD</p>
                         </div>
