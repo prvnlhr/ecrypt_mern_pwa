@@ -115,17 +115,8 @@ const ContentDisplay = ({
             />
           } ></Route>
 
-        <Route path="/user/favorites/*"
-          element={
-            <FavList
-            // setHeading={setHeading}
-            // favoritesCardsArray={favoritesCardsArray}
-            // favoritesDocsArray={favoritesDocsArray}
-            // favoritesLoginsArray={favoritesLoginsArray}
-            // setImageData={setImageData}
-            // setMaximizeOrNot={setMaximizeOrNot}
-            />
-          } >
+        <Route path="/user/favorites/*" element={<FavList />} >
+
         </Route>
 
         <Route path="/user/settings"

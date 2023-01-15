@@ -22,7 +22,7 @@ const TabBar = () => {
   const location = useLocation();
 
   useEffect(() => {
-
+    console.log(location.pathname)
     if (indicatorRef.current !== null) {
       switch (location.pathname) {
         case "/":
@@ -45,7 +45,7 @@ const TabBar = () => {
           var newPos = pos + "px";
           indicatorRef.current.style.left = newPos;
           break;
-        case "/user/favorites/*":
+        case "/user/favorites/logins":
           var pos = refFavs.current.offsetLeft;
           var newPos = pos + "px";
           indicatorRef.current.style.left = newPos;
@@ -132,7 +132,7 @@ const TabBar = () => {
       </div>
 
       <div className={styles.tabIconWrapper} ref={refFavs}  >
-        <Link className={styles.tabLinks} to="/user/favorites/*" onClick={() => linkedClicked(5)} >
+        <Link className={styles.tabLinks} to="/user/favorites/logins" onClick={() => linkedClicked(5)} >
           <div className={styles.iconsDiv} >
             <BookmarksFillIcon />
           </div>

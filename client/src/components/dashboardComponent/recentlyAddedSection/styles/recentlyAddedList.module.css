@@ -3,14 +3,56 @@
     width: 100%;
     height: 100%;
     min-height: 100%;
+
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    overflow-y: scroll !important;
-    /* border: 1px solid blue; */
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 20px;
     box-sizing: border-box;
-    padding: 0px 0px 20px 0px;
-    scrollbar-width: none;
-    /* -ms-overflow-style: none; */
+}
+
+.recentAddedList::-webkit-scrollbar {
+    background-color: rgba(255, 255, 255, 0);
+    height: 4px;
+    width: 5px;
+}
+
+.recentAddedList::-webkit-scrollbar-track {
+    background-color: rgb(231, 228, 228);
+    background-color: rgba(231, 228, 228, 0.062);
+
+    width: 2px;
+}
+
+.recentAddedList::-webkit-scrollbar-thumb {
+    background-color: #2f89fc;
+    border-radius: 4px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .recentAddedList {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        overflow-y: scroll !important;
+        /* border: 1px solid blue; */
+        box-sizing: border-box;
+        padding: 0px 0px 20px 0px;
+        scrollbar-width: none;
+        /* -ms-overflow-style: none; */
+    }
+
+
+
 }

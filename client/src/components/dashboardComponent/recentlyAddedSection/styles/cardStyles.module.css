@@ -1,9 +1,9 @@
 .cardWrapperExpand {
     position: relative;
     margin-top: 20px;
-    width: 90%;
-    height: 90%;
-    min-height: 90%;
+    width: 50%;
+    height: 150%;
+    min-height: 150%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,6 +11,7 @@
     background-color: white;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     /* border: 1px solid black; */
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
 }
 
@@ -20,14 +21,17 @@
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    width: 83%;
-    height: 80px !important;
-    min-height: 80px;
+    width: 280px;
+    height: 75px;
+    min-height: 75px;
     background-color: white;
     border-radius: 15px;
     scroll-behavior: smooth;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     /* border: 1px solid black; */
+    margin: 15px 15px 15px 15px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
 }
 
 .cardContainerShrink {
@@ -572,4 +576,588 @@
 
 .cvvIcon {
     font-size: 25px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .cardWrapperExpand {
+        position: relative;
+        margin-top: 20px;
+        width: 90%;
+        height: 90%;
+        min-height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        background-color: white;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        /* border: 1px solid black; */
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    }
+
+    .cardWrapperShrink {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        width: 280px;
+        height: 75px;
+        min-height: 75px;
+        background-color: white;
+        border-radius: 15px;
+        scroll-behavior: smooth;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        /* border: 1px solid black; */
+        margin: 15px 15px 15px 15px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    }
+
+    .cardContainerShrink {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid red; */
+        display: grid;
+        grid-template-columns: 80px minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-rows: 50% 50%;
+        grid-template-areas:
+            "logoWrapper titleWrapper titleWrapper"
+            "logoWrapper cardNoWrapperShrink cardNoWrapperShrink";
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .cardContainerExpand {
+        position: relative;
+        width: 90%;
+        height: 90%;
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: 25% 15% 20% 20% 20%;
+        /* grid-row-gap: 3%; */
+        grid-column-gap: 0%;
+        grid-template-areas:
+            "logoWrapper titleWrapper titleWrapper titleWrapper"
+            "categoryWrapper categoryWrapper categoryWrapper categoryWrapper"
+            "cardHolderWrapper cardHolderWrapper cardHolderWrapper cardHolderWrapper"
+            "cardNoWrapper cardNoWrapper cardNoWrapper cardNoWrapper"
+            "expiryWrapper expiryWrapper cvvWrapper cvvWrapper";
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        /* border: 1px solid black; */
+    }
+
+    /* _________________________________________ */
+    .titleWrapper {
+        grid-area: titleWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid green; */
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .logoWrapper {
+        grid-area: logoWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid greenyellow; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-height: 80px;
+        overflow: hidden;
+    }
+
+    .logoDivShrink {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 85%;
+        width: 85%;
+        background-color: #F3F5F9;
+        border-radius: 8px;
+    }
+
+    .logoDivExpand {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 85%;
+        width: 85%;
+        border-radius: 8px;
+    }
+
+    .titleWrapperExpand {
+        grid-area: titleWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid greenyellow; */
+        display: grid;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas:
+            "titleLabelWrapper"
+            "titleTextWrapper";
+
+    }
+
+    .titleWrapperShrink {
+        grid-area: titleWrapper;
+        width: 100%;
+        height: 50%;
+        /* border: 1px solid greenyellow; */
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 100%;
+        grid-template-areas:
+            "titleTextWrapper";
+    }
+
+    .titleLabelWrapper {
+        grid: titleLabelWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid orange; */
+    }
+
+    .titleLabelDiv {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .titleLabelDiv p {
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: #7E8DA4;
+    }
+
+    .titleTextWrapper {
+        grid: titleTextWrapper;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .titleTextDivExpand {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .titleTextDivShrink {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        padding-left: 5%;
+    }
+
+
+    .titleTextDivExpand p {
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: black;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis
+    }
+
+    .titleTextDivShrink p {
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: black;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis
+    }
+
+
+    /* ______________________________________________ */
+    .categoryWrapper {
+        grid-area: categoryWrapper;
+        width: 100%;
+        height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border: 1px solid black; */
+        display: flex;
+        flex-direction: row;
+        background-color: #F3F5F9;
+        border-radius: 8px;
+    }
+
+    .categoryLabelWrapper {
+        /* border: 1px solid red; */
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .categoryLabelWrapper p {
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        color: black;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-left: 8%;
+    }
+
+    .categoryTextWrapper {
+        width: 50%;
+        height: 100%;
+        /* border: 1px solid red; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .categoryTextDiv {
+        width: 80%;
+        height: 60%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #a8ccf9b5;
+        border-radius: 8px;
+        border-radius: 8px;
+    }
+
+    .categoryTextDiv p {
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        color: #002A9A;
+    }
+
+
+    /* ______________________________________________ */
+
+    .cardHolderWrapper {
+        grid-area: cardHolderWrapper;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 90%;
+        /* border: 1px solid black; */
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas:
+            "cardHolderIconWrapper cardHolderLabelWrapper"
+            "cardHolderIconWrapper cardHolderTextWrapper";
+        background-color: #F3F5F9;
+        border-radius: 8px;
+    }
+
+    .cardHolderIconWrapper {
+        grid-area: cardHolderIconWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid blue; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cardHolderLabelWrapper {
+        grid-area: cardHolderLabelWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid blue; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 5%;
+    }
+
+    .cardHolderLabelWrapper p {
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: #7E8DA4;
+    }
+
+    .cardHolderTextWrapper {
+        grid-area: cardHolderTextWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid blue; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 5%;
+    }
+
+    .cardHolderTextWrapper p {
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: black;
+    }
+
+    /* _______________________________________________________ */
+
+    .cardNoWrapperShrink {
+        grid-area: cardNoWrapperShrink;
+        display: flex;
+        width: 100%;
+        height: 90%;
+        justify-content: center;
+        align-items: center;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 100%;
+        grid-template-areas:
+            "cardNoTextWrapperShrink";
+        /* border: 1px solid black; */
+    }
+
+    .cardNoWrapperExpand {
+        grid-area: cardNoWrapper;
+        display: flex;
+        width: 100%;
+        height: 90%;
+        justify-content: center;
+        align-items: center;
+        /* border: 1px solid black; */
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas:
+            "cardNoIconWrapper cardNoLabelWrapper"
+            "cardNoIconWrapper cardNoTextWrapper";
+        background-color: #F3F5F9;
+        border-radius: 8px;
+    }
+
+    .cardNoIconWrapper {
+        grid-area: cardNoIconWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid blue; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cardNoLabelWrapper {
+        grid-area: cardNoLabelWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid blue; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 5%;
+    }
+
+    .cardNoLabelWrapper p {
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: #7E8DA4;
+    }
+
+    .cardNoTextWrapper {
+        grid-area: cardNoTextWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid blue; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 5%;
+    }
+
+    .cardNoTextWrapperShrink {
+        grid-area: cardNoTextWrapperShrink;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid blue; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 5%;
+    }
+
+    .cardNoTextWrapper p {
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: black;
+    }
+
+    .cardNoTextWrapperShrink p {
+        font-family: "Poppins", sans-serif;
+        font-size: 13px;
+        font-weight: 450;
+        color: #7E8DA4;
+    }
+
+    /* ____________________________________________________ */
+
+    .expiryWrapper {
+        grid-area: expiryWrapper;
+        width: 100%;
+        height: 90%;
+        justify-content: center;
+        align-items: center;
+        /* border: 1px solid black; */
+        display: grid;
+        grid-template-columns: 35% 65%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas:
+            "cardExpiryIconWrapper cardExpiryLabelWrapper"
+            "cardExpiryIconWrapper cardExpiryTextWrapper";
+        background-color: #F3F5F9;
+        border-radius: 8px;
+    }
+
+
+    .cardExpiryIconWrapper {
+        grid-area: cardExpiryIconWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid blue; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cardExpiryLabelWrapper {
+        grid-area: cardExpiryLabelWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid blue; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .cardExpiryLabelWrapper p {
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: #7E8DA4;
+    }
+
+    .cardExpiryTextWrapper {
+        grid-area: cardExpiryTextWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid blue; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .cardExpiryTextWrapper p {
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: black;
+    }
+
+    /* ________________________________________ */
+    .cvvWrapper {
+        grid-area: cvvWrapper;
+        width: 100%;
+        height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border: 1px solid black; */
+        display: grid;
+        grid-template-columns: 35% 65%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas:
+            "cardCvvIconWrapper cardCvvLabelWrapper"
+            "cardCvvIconWrapper cardCvvTextWrapper";
+        background-color: #F3F5F9;
+        border-radius: 8px;
+    }
+
+    .cardCvvIconWrapper {
+        grid-area: cardCvvIconWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid blue; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cardCvvLabelWrapper {
+        grid-area: cardCvvLabelWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid blue; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .cardCvvLabelWrapper p {
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: #7E8DA4;
+    }
+
+    .cardCvvTextWrapper {
+        grid-area: cardCvvTextWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid blue; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .cardCvvTextWrapper p {
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: black;
+    }
+
+    .cardHolderIcon {
+        font-size: 28px;
+    }
+
+    .cardNumIcon {
+        font-size: 25px;
+    }
+
+    .expiryDateIcon {
+        font-size: 25px;
+    }
+
+    .cvvIcon {
+        font-size: 25px;
+    }
+
+
 }
