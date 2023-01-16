@@ -46,6 +46,9 @@ export const addNewLoginIdData = createAsyncThunk("loginIds/add", async ({ data,
 //     return payload;
 // });
 
+
+
+
 export const editLoginIdData = createAsyncThunk("loginIds/edit", async ({ updatedData, login_id, activityData, userId }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
         const res = await api.editLoginId(login_id, updatedData);
@@ -54,7 +57,6 @@ export const editLoginIdData = createAsyncThunk("loginIds/edit", async ({ update
             activityData: activityData,
             userId: userId
         }))
-
         return fulfillWithValue(updatedData);
 
     } catch (error) {
@@ -80,6 +82,19 @@ export const deleteLoginData = createAsyncThunk("loginIds/delete", async ({ logi
         throw rejectWithValue(error);
     }
 });
+export const toggleIsFav = createAsyncThunk("loginIds/toggleFav", async ({ loginId_id, isFav }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
+    try {
+        console.log(loginId_id, isFav);
+        const res = await api.loginIdFavouriteToggle(loginId_id, isFav)
+        console.log(res.data);
+        // const { loginIdsArray } = res.data;
+        return fulfillWithValue({ favValue: isFav, id: loginId_id });
+    } catch (error) {
+        throw rejectWithValue(error);
+    }
+
+});
+
 
 
 
@@ -130,6 +145,23 @@ const loginsIdSlice = createSlice({
                 return {
                     ...state,
                     loginsIdData: action.payload
+                };
+            }).
+            addCase(toggleIsFav.fulfilled, (state, action) => {
+                console.log(action.payload)
+                const favVal = action.payload.favValue;
+                const id = action.payload.id;
+                const old = state.loginsIdData;
+                const newLoginsArray = old.map((l) => {
+                    if (l._id === id) {
+                        return { ...l, isFavourite: favVal };
+                    } else {
+                        return l;
+                    }
+                });
+                return {
+                    ...state,
+                    loginsIdData: newLoginsArray,
                 };
             })
 

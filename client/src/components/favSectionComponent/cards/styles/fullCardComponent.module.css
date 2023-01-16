@@ -1,0 +1,839 @@
+.cardWrapper {
+    /* display: flex; */
+    display: none;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    padding-left: 5%;
+    webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow: hidden;
+
+}
+
+.cardWrapperClose {
+    /* display: flex; */
+    display: none;
+    width: 0%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+    padding-left: 0%;
+    webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    scroll-behavior: smooth;
+}
+
+.cardContainer {
+    width: 70%;
+    height: 90%;
+    /* border: 1px solid red;
+
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-template-rows: 15% 20% 15% 10% 20% 20%;
+    grid-template-rows: 10% 20% 15% 15% 20% 20%;
+
+    grid-template-areas:
+        "cardHeader cardHeader"
+        "logoTitleWrapper logoTitleWrapper"
+        "categoryWrapper categoryWrapper"
+        "cardHolderWrapper cardHolderWrapper"
+        "cardNumberWrapper cardNumberWrapper"
+        "dateOfBirthWrapper expiryIssueWrapper";
+    box-sizing: border-box;
+    */
+    display: grid;
+    grid-template-columns: 25% minmax(0, 1fr);
+    grid-template-rows: 10% 17% 14% 14% 22% 22%;
+    grid-template-rows: 10% 18% 14% 14% 22% 22%;
+    grid-template-rows: 10% 20% 15% 55%;
+    grid-template-areas:
+        "cardHeader cardHeader"
+        "logoTitleWrapper logoTitleWrapper"
+        "categoryWrapper categoryWrapper"
+        "subcardWrapper subcardWrapper";
+    padding-bottom: 0%;
+    padding-top: 0%;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+}
+
+.cardHeader {
+    grid-area: cardHeader;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid orange; */
+}
+
+.backBtnContainer {
+    width: 50%;
+    height: 100%;
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 0%;
+    padding-top: 0%;
+}
+
+.backBtnDiv {
+    /* width: 40%; */
+    height: 50%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 0%;
+    padding-top: 0%;
+}
+
+
+.curdBtnContainer {
+    width: 50%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.editBtnDiv {
+    width: auto;
+    height: 22px;
+    height: 25px;
+    /* border: 1px solid black; */
+    background-color: #9DC1FA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-radius: 5px;
+    margin-right: 10px;
+    /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+
+}
+
+.editBtnDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #002A9A;
+}
+
+.saveBtnDiv {
+    width: auto;
+    height: 22px;
+    height: 25px;
+
+    /* border: 1px solid black; */
+    background-color: #58BF6F;
+    /* background-color: white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-radius: 5px;
+    margin-right: 10px;
+    /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+}
+
+.saveBtnDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    color: white;
+}
+
+.cancelBtnDiv {
+    width: auto;
+    height: 22px;
+    height: 25px;
+
+    /* border: 1px solid black; */
+    background-color: #B4B3BA;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-radius: 5px;
+    margin-right: 10px;
+    /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+
+}
+
+.cancelBtnDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    font-weight: 450;
+    color: white;
+
+}
+
+.deleteBtnDiv {
+    width: auto;
+    height: 25px;
+    /* border: 1px solid black; */
+    background-color: #D64339;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-radius: 5px;
+    margin-right: 10px;
+    /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+
+}
+
+.deleteBtnDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    color: white;
+}
+
+.crudIcons {
+    margin-right: 5px;
+}
+
+
+.logoTitleWrapper {
+    grid-area: logoTitleWrapper;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* border: 1px solid blue; */
+    padding-left: 0%;
+}
+
+.logoTitleContainer {
+    width: 100%;
+    height: 70%;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 2%;
+
+}
+
+.logoContainer {
+    /* width: 10%; */
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+
+}
+
+
+.logoDiv {
+    /* width: 80%; */
+    aspect-ratio: 1/1;
+    height: 100%;
+    /* background-color: #a8ccf9b5; */
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+
+}
+
+.logoDivActive {
+    /* width: 80%; */
+    aspect-ratio: 1/1;
+    height: 100%;
+    border: 2px solid #a8ccf9b5;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.logoIcon {
+    width: 100%;
+    height: 100%;
+}
+
+.titleContainer {
+    width: 70%;
+    height: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 5%;
+}
+
+.titleLabelDiv {
+    width: 80%;
+    height: 80%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.titleLabelDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #7E8DA4;
+
+}
+
+.titleInputDiv {
+    width: 95%;
+    height: 80%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.titleInputActive {
+    width: 80%;
+    height: auto;
+    border-bottom: 1px solid #7E8DA4;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    /* border: 1px solid #7E8DA4; */
+    outline: none;
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.titleInputNotActive {
+    width: 80%;
+    height: auto;
+    border: none;
+    /* border: 1px solid #7E8DA4; */
+    outline: none;
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.categoryWrapper {
+    grid-area: categoryWrapper;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid rgb(182, 69, 88); */
+    padding-left: 0%;
+
+}
+
+.categoryContainer {
+    width: 100%;
+    height: 60%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F3F5F9;
+    border-radius: 10px;
+
+}
+
+.categoryLabelDiv {
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 5%;
+}
+
+.categoryLabelDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+}
+
+.catergoryInputDiv {
+    position: relative;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+
+.categoryInput {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #002A9A;
+    background-color: #a8ccf9b5;
+    border: none;
+    outline: none !important;
+    height: 75%;
+    width: 45%;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+
+.popUpBtnIconDiv {
+    width: 15%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popUpIcon {
+    font-size: 20px;
+
+}
+
+.categoryInput:focus {
+    /* border: 1px solid #0475ff84; */
+}
+
+.inputPopUpDiv {
+    top: 105%;
+    position: absolute;
+    width: 150px;
+    height: 200px;
+    background-color: white;
+    border: 1px solid rgba(128, 128, 128, 0.363);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 10%;
+    border-radius: 5px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+}
+
+.inputPopUpText {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: black;
+    margin: 5px 0px 0px 0px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.inputPopUpText:hover {
+    background-color: red;
+    width: 80%;
+}
+
+.subCardWrapper {
+    grid-area: subcardWrapper;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid red; */
+}
+
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
+    .cardWrapper {
+        display: flex;
+        width: 100%;
+        height: 90%;
+        padding-left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        background-color: white;
+        margin-top: 14%;
+        /* border: 1px solid orange; */
+    }
+
+    .cardWrapperClose {
+        display: flex;
+        width: 100%;
+        height: 0%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: white;
+        padding-left: 0%;
+        webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        overflow: hidden;
+        padding: 0px;
+        margin: 0px;
+        transition: none;
+        /* border: 1px solid black; */
+
+    }
+
+    .cardContainer {
+        /* border: 1px solid black; */
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 25% minmax(0, 1fr);
+        grid-template-rows: 10% 17% 14% 14% 22% 22%;
+        grid-template-rows: 10% 18% 14% 14% 22% 22%;
+        grid-template-rows: 10% 20% 15% 55%;
+        grid-template-areas:
+            "cardHeader cardHeader"
+            "logoTitleWrapper logoTitleWrapper"
+            "categoryWrapper categoryWrapper"
+            "subcardWrapper subcardWrapper";
+        padding-bottom: 0%;
+        padding-top: 0%;
+        box-sizing: border-box;
+
+    }
+
+    .cardHeader {
+        grid-area: cardHeader;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border: 1px solid orange; */
+    }
+
+    .backBtnContainer {
+        width: 50%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 5%;
+        padding-top: 0%;
+    }
+
+    .backBtnDiv {
+        width: 50%;
+        height: 50%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+
+
+    .curdBtnContainer {
+        width: 50%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 8%;
+    }
+
+    .logoTitleWrapper {
+        grid-area: logoTitleWrapper;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border: 1px solid blue; */
+        padding-left: 0%;
+    }
+
+    .logoTitleContainer {
+        width: 90%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logoContainer {
+        width: 30%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .logoDiv {
+        /* width: 80%; */
+        aspect-ratio: 1/1;
+        height: 80%;
+        /* border: 1px solid black; */
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logoDivActive {
+        /* width: 80%; */
+        aspect-ratio: 1/1;
+        height: 80%;
+        border: 3px solid #a8ccf9b5;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logoIcon {
+        width: 100%;
+        height: 100%;
+    }
+
+    .titleContainer {
+        width: 70%;
+        height: 100%;
+        /* border: 1px solid red; */
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        padding-left: 5%;
+    }
+
+    .titleLabelDiv {
+        width: 80%;
+        height: 80%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+    }
+
+    .titleLabelDiv p {
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        color: #7E8DA4;
+
+    }
+
+    .titleInputDiv {
+        width: 95%;
+        height: 80%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .titleInputDiv p {
+        font-family: "Poppins", sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        color: black;
+    }
+
+    .categoryWrapper {
+        grid-area: categoryWrapper;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border: 1px solid rgb(182, 69, 88); */
+        padding-left: 0%;
+
+    }
+
+    .categoryContainer {
+        width: 90%;
+        height: 60%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #F3F5F9;
+        border-radius: 10px;
+
+    }
+
+    .categoryLabelDiv {
+        width: 40%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 5%;
+    }
+
+    .categoryLabelDiv p {
+        font-family: "Poppins", sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        color: black;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .catergoryInputDiv {
+        position: relative;
+        width: 60%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        /* border: 1px solid black; */
+    }
+
+    .categoryInput {
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        color: #0073ff;
+        background-color: #a8ccf9b5;
+        border: 1px solid rgba(142, 138, 138, 0.13);
+        outline: none !important;
+        height: 65%;
+        width: 85%;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .popUpBtnIconDiv {
+        width: 15%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .popUpIcon {
+        font-size: 20px;
+    }
+
+    .categoryInput:focus {
+        /* border: 1px solid #0475ff84; */
+    }
+
+    .inputPopUpDiv {
+        top: 105%;
+        position: absolute;
+        width: 150px;
+        height: 200px;
+        background-color: white;
+        border: unset;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        padding-left: 10%;
+        border-radius: 5px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    }
+
+    .inputPopUpText {
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        color: black;
+        margin: 5% 0px 0px 0px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .inputPopUpText:hover {
+        background-color: red;
+        width: 80%;
+    }
+
+    .subCardWrapper {
+        grid-area: subcardWrapper;
+        display: grid;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid red; */
+    }
+
+}

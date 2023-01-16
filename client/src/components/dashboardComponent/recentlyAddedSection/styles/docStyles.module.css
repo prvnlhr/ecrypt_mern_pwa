@@ -12,7 +12,7 @@
     scroll-behavior: smooth;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     margin: 15px 15px 15px 15px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
 
 }
@@ -75,4 +75,26 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .cardWrapper {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        width: 83%;
+        height: 75px;
+        min-height: 75px;
+        background-color: white;
+        border-radius: 15px;
+        scroll-behavior: smooth;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        margin: 15px 15px 15px 15px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    }
+
+
 }

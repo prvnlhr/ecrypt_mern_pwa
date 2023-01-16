@@ -88,9 +88,31 @@ export const fetchUserActivities = (user_id) =>
       user_id: user_id,
     },
   });
-//add activity___
+//>add activity___
 export const addActivity = (user_id, activityData) =>
   API.post("/user/activity/addActivity", {
     data: activityData,
     user_id: user_id,
+  });
+
+
+//>FAVOURITE TOGGLE URL_____________________________________________________________________
+export const loginIdFavouriteToggle = (loginCard_Id, isFav) =>
+  API.patch(`/user/loginIds/toggleFavourite/${loginCard_Id}`, {
+    data: isFav,
+  });
+
+export const cardFavouriteToggle = (card_id, isFav) =>
+  API.patch(`/user/cards/toggleFavourite/${card_id}`, {
+    data: isFav,
+  });
+export const docsFavouriteToggle = (doc_id, isFav) =>
+  API.patch(`/user/docs/toggleFavourite/${doc_id}`, {
+    data: isFav,
+  });
+export const fetchFavorites = (user_id) =>
+  API.get("/user/loginIds/getFavorites", {
+    params: {
+      user_id: user_id,
+    },
   });

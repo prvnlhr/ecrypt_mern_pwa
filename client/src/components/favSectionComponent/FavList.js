@@ -2,12 +2,14 @@ import React from "react";
 import { useState, useRef, useEffect } from "react";
 
 import { Link, Route, Routes, useLocation } from "react-router-dom";
-import FavCardsList from "./FavCardsList";
-import FavDocsList from "./FavDocsList";
-import FavLoginIdsList from "./FavLoginIdsList";
+import FavCardsList from "./cards/FavCardsList";
+import FavDocsList from "./docs/FavDocsList";
+import FavLoginIdsList from "./loginIds/FavLoginIdsList";
 import styles from "./styles/favList.module.css";
-
 const FavList = ({ }) => {
+
+
+
   const location = useLocation();
 
   const indicatorRef = useRef();
@@ -67,6 +69,7 @@ const FavList = ({ }) => {
 
   return (
     <div className={styles.favListWrapper}>
+
       <div className={styles.navigationBarWrapper} >
         <div className={styles.indicatorDiv} ref={indicatorRef}  ></div>
 

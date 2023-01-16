@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./styles/loginIdComponent.module.css";
 import { logosArray } from "../logoComponents/logosData"
+import BookmarksIcon from "../icons/BookmarksIcon"
+import BookmarksIconFill from "../icons/BookmarksIconFill"
 const LoginId = ({ loginId, handleLoginIdClicked }) => {
 
   return (
@@ -25,7 +27,15 @@ const LoginId = ({ loginId, handleLoginIdClicked }) => {
             {loginId.username}
           </p>
         </div>
-        <div className={styles.favBtnWrapper} ></div>
+        <div className={styles.favBtnWrapper} >
+          <div className={styles.favBtnDiv} >
+            {
+              loginId.isFavourite === true ?
+                <BookmarksIconFill /> :
+                <BookmarksIcon />
+            }
+          </div>
+        </div>
       </div>
     </>
   );

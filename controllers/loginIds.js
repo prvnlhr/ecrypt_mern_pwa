@@ -27,9 +27,11 @@ const loginsController = {
       res.status(404).json({ message: error.message });
     }
   },
+
   editLoginId: async (req, res) => {
     const id = req.params.id;
     const { title, category, app, username, password, logoIndex } = req.body;
+    console.log("at edit loginId")
     try {
       const response = await UserDatabase.findOneAndUpdate(
         { "loginIdsArray._id": id },
@@ -75,8 +77,8 @@ const loginsController = {
 
   toggleFav: async (req, res) => {
     const id = req.params.id;
-
     const isFav = req.body.data;
+    console.log(id, isFav);
 
     try {
       const response = await UserDatabase.findOneAndUpdate(

@@ -22,25 +22,13 @@ const LoginIdsList = ({ setLogoComponentShow }
   const [showEditButton, setEditButton] = useState(true);
   const [currEditId, setCurrEditId] = useState(null);
 
-
   const [editMode, setEditMode] = useState(false);
   const [showInputForm, setShowInputForm] = useState(false);
 
   const [showContentCard, setShowContentCard] = useState(false);
 
-  const [fullContentCardData, setFullContentCardData] = useState(
-    // {
-    //   app: "",
-    //   category: "",
-    //   title: "",
-    //   username: "",
-    //   password: "",
-    // }
-    undefined
-  )
-  // useEffect(() => {
-  //   setHeading("LoginIds");
-  // }, []);
+  const [fullContentCardData, setFullContentCardData] = useState(undefined)
+
 
   // SCROLLING BUTTON HIDE__
   // const node = useRef();
@@ -143,8 +131,25 @@ const LoginIdsList = ({ setLogoComponentShow }
     setEditMode(false);
   }
 
+  const currCardDataInStore = useSelector((state) =>
+    fullContentCardData !== undefined ? state.loginIds.loginsIdData.find((l) => l._id === fullContentCardData._id) : null
+  );
+  // useEffect(() => {
+  //   console.table(currCardDataInStore);
+  //   // handleLoginIdClicked(currCardDataInStore);
+  //   setFullContentCardData({
+  //     _id: currCardDataInStore._id,
+  //     app: currCardDataInStore.app,
+  //     category: currCardDataInStore.category,
+  //     title: currCardDataInStore.title,
+  //     username: currCardDataInStore.username,
+  //     password: currCardDataInStore.password,
+  //     logoIndex: currCardDataInStore.logoIndex,
+  //     isFavourite: currCardDataInStore.isFavourite,
+  //   })
+  // }, [currCardDataInStore])
+
   const handleLoginIdClicked = (loginIData) => {
-    // console.log(loginIData)
     if (loginIData != undefined) {
       setFullContentCardData({
         _id: loginIData._id,
@@ -154,6 +159,7 @@ const LoginIdsList = ({ setLogoComponentShow }
         username: loginIData.username,
         password: loginIData.password,
         logoIndex: loginIData.logoIndex,
+        isFavourite: loginIData.isFavourite,
       })
     }
     setShowContentCard(true);
@@ -188,6 +194,7 @@ const LoginIdsList = ({ setLogoComponentShow }
           handleFullContentBackBtnClicked={handleFullContentBackBtnClicked}
           setEditMode={setEditMode}
           editMode={editMode}
+          handleLoginIdClicked={handleLoginIdClicked}
         />
       }
       <LoginIdInputForm

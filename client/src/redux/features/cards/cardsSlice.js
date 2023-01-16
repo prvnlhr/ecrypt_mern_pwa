@@ -42,7 +42,7 @@ export const addNewCardData = createAsyncThunk("cards/add", async ({ data, user_
 
 export const editCardData = createAsyncThunk("cards/edit", async ({ updatedData, card_id, activityData, userId }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
-        // console.table(updatedData, card_id);
+        console.table('cardSlice', updatedData, card_id);
         // console.log(updatedData, card_id)
         const res = await api.editCard(card_id, updatedData);
         console.log(activityData, userId)
