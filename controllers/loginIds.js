@@ -95,28 +95,43 @@ const loginsController = {
       res.status(404).json({ message: error.message });
     }
   },
+
   getFavorites: async (req, res) => {
+    console.log('at fav fetch', req.query.user_id)
     try {
       const response = await UserDatabase.aggregate([
         { $match: { _id: mongoose.Types.ObjectId(req.query.user_id) } },
-
         {
           $project: {
-            loginIdsArray: {
+            'loginIdsFavArray': {
               $filter: {
                 input: "$loginIdsArray",
                 as: "item",
                 cond: { $eq: ["$$item.isFavourite", true] },
               },
             },
-            cardsArray: {
+            'cardsFavArray.bankCards': {
               $filter: {
-                input: "$cardsArray",
+                input: "$cardsData.bankCardsArray",
                 as: "item",
                 cond: { $eq: ["$$item.isFavourite", true] },
               },
             },
-            docsArray: {
+            'cardsFavArray.identityCards': {
+              $filter: {
+                input: "$cardsData.identityCardsArray",
+                as: "item",
+                cond: { $eq: ["$$item.isFavourite", true] },
+              },
+            },
+            'cardsFavArray.licenseCards': {
+              $filter: {
+                input: "$cardsData.licenseCardsArray",
+                as: "item",
+                cond: { $eq: ["$$item.isFavourite", true] },
+              },
+            },
+            'docsArrayFavArray': {
               $filter: {
                 input: "$docsArray",
                 as: "item",
@@ -126,7 +141,6 @@ const loginsController = {
           },
         },
       ]);
-
       res.status(200).send(response);
     } catch (error) {
       res.status(404).json(error);

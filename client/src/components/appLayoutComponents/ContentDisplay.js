@@ -13,7 +13,7 @@ import { fecthLoginIdsData } from "../../redux/features/loginsId/loginsIdSlice"
 import { fecthCardsData } from "../../redux/features/cards/cardsSlice"
 import { fetchDocsData } from "../../redux/features/docs/docsSlice"
 import { fectchActivitiesData } from "../../redux/features/activity/activitiesSlice"
-
+import { fetchFavoritesData } from "../../redux/features/favorites/favoritesSlice";
 import styles from "./styles/contentDisplay.module.css";
 
 
@@ -52,6 +52,7 @@ const ContentDisplay = ({
     dispatch(fecthCardsData({ user_id: '63b43ab32fc8d3c100cafecc' }));
     dispatch(fetchDocsData({ user_id: '63b43ab32fc8d3c100cafecc' }))
     dispatch(fectchActivitiesData({ user_id: '63b43ab32fc8d3c100cafecc' }))
+    dispatch(fetchFavoritesData({ user_id: '63b43ab32fc8d3c100cafecc' }))
   }, []);
 
   return (

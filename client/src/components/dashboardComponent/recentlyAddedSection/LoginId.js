@@ -4,7 +4,6 @@ import { logosArray } from "../../logoComponents/logosData"
 import { Icon } from '@iconify/react';
 import { motion, AnimatePresence } from "framer-motion"
 
-
 const LoginId = () => {
 
     const [cardExpand, setCardExpand] = useState(false);

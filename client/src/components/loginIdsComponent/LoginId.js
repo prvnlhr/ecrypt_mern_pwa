@@ -1,9 +1,18 @@
 import React, { useEffect } from "react";
 import styles from "./styles/loginIdComponent.module.css";
+import { useSelector } from "react-redux";
 import { logosArray } from "../logoComponents/logosData"
 import BookmarksIcon from "../icons/BookmarksIcon"
 import BookmarksIconFill from "../icons/BookmarksIconFill"
-const LoginId = ({ loginId, handleLoginIdClicked }) => {
+const LoginId = ({ loginId, handleLoginIdClicked, setFullContentCardData }) => {
+
+  const currCardDataInStore = useSelector((state) =>
+    loginId._id ? state.loginIds.loginsIdData.find((l) => l._id === loginId._id) : null
+  );
+  //>  This will update the bookmark icon of fullContentCard once isFavourite is toogle
+  useEffect(() => {
+    setFullContentCardData(currCardDataInStore)
+  }, [currCardDataInStore.isFavourite])
 
   return (
     <>

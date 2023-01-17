@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { addActivityData } from "../activity/activitiesSlice"
+import { addToFavLoginsData } from "../favorites/favoritesSlice";
 import * as api from "../../api"
 
 const initialState = {
@@ -33,19 +34,6 @@ export const addNewLoginIdData = createAsyncThunk("loginIds/add", async ({ data,
     }
 
 });
-
-// export const editLoginIdData = createAsyncThunk("loginIds/edit", async ({ updatedData, login_id, activityData }, { getState }) => {
-//     // console.table(updatedData, login_id);
-//     const res = await api.editLoginId(login_id, updatedData);
-
-//     // console.log(updatedData);
-//     const payload = {
-//         activiyData: activityData,
-//         updatedData: updatedData,
-//     }
-//     return payload;
-// });
-
 
 
 
@@ -82,20 +70,20 @@ export const deleteLoginData = createAsyncThunk("loginIds/delete", async ({ logi
         throw rejectWithValue(error);
     }
 });
+
 export const toggleIsFav = createAsyncThunk("loginIds/toggleFav", async ({ loginId_id, isFav }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
-        console.log(loginId_id, isFav);
         const res = await api.loginIdFavouriteToggle(loginId_id, isFav)
-        console.log(res.data);
-        // const { loginIdsArray } = res.data;
+        console.log('toggel isFav Login', res.data);
+
+        const favLoginsArray = res.data.filter((item) => item.isFavourite);
+        dispatch(addToFavLoginsData(favLoginsArray.reverse()));
+
         return fulfillWithValue({ favValue: isFav, id: loginId_id });
     } catch (error) {
         throw rejectWithValue(error);
     }
-
 });
-
-
 
 
 //* Slice
@@ -139,7 +127,7 @@ const loginsIdSlice = createSlice({
                     loginsIdData: newArray,
                 };
             }).addCase(editLoginIdData.rejected, (state, action) => {
-                console.log(action.payload)
+                // console.log(action.payload)
             }).
             addCase(deleteLoginData.fulfilled, (state, action) => {
                 return {
@@ -148,7 +136,6 @@ const loginsIdSlice = createSlice({
                 };
             }).
             addCase(toggleIsFav.fulfilled, (state, action) => {
-                console.log(action.payload)
                 const favVal = action.payload.favValue;
                 const id = action.payload.id;
                 const old = state.loginsIdData;

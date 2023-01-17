@@ -16,6 +16,7 @@ const ActivateAccount = () => {
   const handleAccountActivate = () => {
     dispatch(activationEmail(activation_token));
   };
+  
   // useEffect(() => {
   //   console.log(activation_token);
   // }, [activation_token]);

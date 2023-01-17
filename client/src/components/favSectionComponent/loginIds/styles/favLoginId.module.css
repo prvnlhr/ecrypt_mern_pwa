@@ -1,66 +1,190 @@
-.loginInWrapper {
+.cardWrapperShrink {
     position: relative;
-    display: grid;
-    grid-template-columns: 80px minmax(0, 1fr) minmax(0, 0.2fr);
-    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
-    grid-template-areas:
-        "logoWrapper titleWrapper favBtnWrapper"
-        "logoWrapper usernameWrapper favBtnWrapper";
-    align-items: center;
-    width: 280px;
-    height: 75px;
-    aspect-ratio: 3.73/1 !important;
-    border-radius: 12px;
-    margin: 15px 15px 15px 15px;
-    background-color: var(--card-bg);
-    /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.075), 0 5px 5px rgba(0, 0, 0, 0.048); */
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    box-sizing: border-box;
-    cursor: pointer;
-}
-
-.logoWrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    grid-area: logoWrapper;
+    margin-top: 20px;
+    width: 280px;
+    height: 75px;
+    min-height: 75px;
+    background-color: white;
+    border-radius: 15px;
+    scroll-behavior: smooth;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    margin: 15px 15px 15px 15px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.cardWrapperExpand {
+    position: relative;
+    margin-top: 20px;
+    width: 50%;
+    height: 150%;
+    min-height: 150%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background-color: white;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+}
+
+.cardOpenCloseIconDivShrink {
+    position: absolute;
+    width: auto;
     /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 5px;
+    right: 5px;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+}
+
+.cardOpenCloseIconDivExpand {
+    position: absolute;
+    width: auto;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 5px;
+    left: 5px;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    transform: rotate(180deg);
+}
+
+.favBtnDiv {
+    position: absolute;
+    width: 30px;
+    aspect-ratio: 1/1;
+    /* border: 1px solid black; */
+    right: 5%;
+    top: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardContainerShrink {
+    position: relative;
     width: 100%;
     height: 100%;
+    /* border: 1px solid red; */
+    display: grid;
+    grid-template-columns: 80px minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+        "logoWrapper titleWrapper titleWrapper "
+        "logoWrapper usernameWrapperShrink usernameWrapperShrink";
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    padding: 1%;
+}
+
+.cardContainerExpand {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 20% 15% 15% 25% 25%;
+    grid-template-rows: 20% 15% 15% 25% 25%;
+    grid-template-rows: 25% 15% 15% 20% 20%;
+    grid-row-gap: 2%;
+    grid-template-areas:
+        "logoWrapper titleWrapper titleWrapper titleWrapper"
+        "categoryLabelWrapper categoryLabelWrapper categroryTextWrapper categroryTextWrapper"
+        "appWebsiteLabelWrapper appWebsiteLabelWrapper appWebsiteTextWrapper appWebsiteTextWrapper"
+        "usernameWrapper usernameWrapper usernameWrapper usernameWrapper"
+        "passwordWrapper passwordWrapper passwordWrapper passwordWrapper";
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+    /* border: 1px solid black; */
+
+}
+
+/* ____________________________________ */
+
+.logoWrapper {
+    grid-area: logoWrapper;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    /* border: 1px solid black; */
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .logoDiv {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: 1px solid rgba(128, 128, 128, 0.543); */
-    width: 80%;
-    height: 80%;
+    aspect-ratio: 1/1;
+    width: 100%;
+    /* height: 100%; */
+    border-radius: 10px;
+    /* background-color: #F3F5F9; */
+}
+
+.logoDivShrink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 90%;
     border-radius: 10px;
     background-color: #F3F5F9;
 }
 
+/* ____________________________________ */
+
 .titleWrapper {
     grid-area: titleWrapper;
-    /* border: 1px solid black; */
     width: 100%;
     height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.titleLabelDiv {
+    width: 100%;
+    height: 50%;
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
+    /* border: 1px solid black; */
     padding-left: 5%;
-    overflow: hidden;
 
 }
 
-.titleText {
+.titleLabelDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #7E8DA4;
+}
+
+.titleTextDiv {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* border: 1px solid black; */
+    padding-left: 5%;
+}
+
+.titleTextDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
@@ -70,45 +194,736 @@
     text-overflow: ellipsis
 }
 
-.usernameWrapper {
-    grid-area: usernameWrapper;
-    /* border: 1px solid black; */
+.titleTextDivShrink {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-end;
+    /* border: 1px solid black; */
     padding-left: 5%;
 
 }
 
-.userNameText {
+.titleTextDivShrink p {
     font-family: "Poppins", sans-serif;
-    font-size: 12px;
+    font-size: 17px;
+    font-weight: 500;
+    color: black;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+
+/* ____________________________________ */
+
+.categoryLabelWrapper {
+    grid-area: categoryLabelWrapper;
+    width: 100%;
+    height: 80%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #F3F5F9;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+
+.categoryLabelDiv {
+    width: 1000%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10%;
+}
+
+.categoryLabelDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+}
+
+.categroryTextWrapper {
+    grid-area: categroryTextWrapper;
+    width: 100%;
+    height: 80%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F3F5F9;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+
+}
+
+.categoryTextDiv {
+    width: 80%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+    background-color: #a8ccf9b5;
+    border-radius: 5px;
+
+}
+
+.categoryTextDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #002A9A;
+}
+
+/* ____________________________________ */
+
+.appWebsiteLabelWrapper {
+    grid-area: appWebsiteLabelWrapper;
+    width: 100%;
+    height: 80%;
+    /* border: 1px solid black; */
+    background-color: #F3F5F9;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.appWebsiteLabelDiv {
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10%;
+}
+
+.appWebsiteLabelDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+}
+
+.appWebsiteTextWrapper {
+    grid-area: appWebsiteTextWrapper;
+    width: 100%;
+    height: 80%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F3F5F9;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.appWebsiteTextDiv {
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 50%;
+}
+
+.appWebsiteTextDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+}
+
+/* ___________________________________________ */
+
+.usernameWrapper {
+    grid-area: usernameWrapper;
+    display: grid;
+    height: 80%;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+        "usernameIconWrapper usernameLabelWrapper"
+        "usernameIconWrapper usernameTextWrapper";
+    /* border: 1px solid green; */
+    /* background-color: forestgreen; */
+    background-color: #F3F5F9;
+    border-radius: 8px;
+
+}
+
+.usernameWrapperShrink {
+    grid-area: usernameWrapperShrink;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    grid-template-areas:
+        "usernameTextWrapper";
+    /* background-color: forestgreen; */
+}
+
+
+.usernameIconWrapper {
+    grid-area: usernameIconWrapper;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.usernameLabelWrapper {
+    grid-area: usernameLabelWrapper;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.usernameLabelWrapper p {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
     font-weight: 500;
     color: #7E8DA4;
 }
 
-.favBtnWrapper {
-    grid-area: favBtnWrapper;
-    /* border: 1px solid black; */
+
+.usernameTextWrapper {
+    grid-area: usernameTextWrapper;
     width: 100%;
     height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.usernameText {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+}
+
+.usernameTextShrink {
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #7E8DA4;
+    margin-left: 5%;
+}
+
+/* ____________________________________ */
+
+.passwordWrapper {
+    grid-area: passwordWrapper;
+    width: 100%;
+    height: 80%;
+    /* border: 1px solid red; */
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+        "passwordIconWrapper passwordLabelWrapper"
+        "passwordIconWrapper passwordTextWrapper";
+    background-color: #F3F5F9;
+    border-radius: 8px;
+}
+
+.passwordIconWrapper {
+    grid-area: passwordIconWrapper;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.passwordLabelWrapper {
+    grid-area: passwordLabelWrapper;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.passwordLabelWrapper p {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #7E8DA4;
+}
+
+
+.passwordTextWrapper {
+    grid-area: passwordTextWrapper;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+}
+
+.passwordTextWrapper p {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+}
+
+.iconsStyles {
+    font-size: 28px !important;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .cardWrapperExpand {
+        position: relative;
+        margin-top: 20px;
+        width: 90%;
+        height: 90%;
+        min-height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        background-color: white;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .cardWrapperShrink {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        width: 83%;
+        height: 80px !important;
+        min-height: 80px;
+        background-color: white;
+        border-radius: 15px;
+        scroll-behavior: smooth;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
 
 
-    .loginInWrapper {
-        width: 83% !important;
-        height: auto;
-        margin-left: auto;
-        margin-right: auto;
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+
+
+
+    .cardContainerExpand {
+        position: relative;
+        width: 90%;
+        height: 90%;
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: 20% 15% 15% 25% 25%;
+        grid-template-rows: 20% 15% 15% 25% 25%;
+        grid-template-rows: 25% 15% 15% 20% 20%;
+        grid-row-gap: 2%;
+        grid-template-areas:
+            "logoWrapper titleWrapper titleWrapper titleWrapper"
+            "categoryLabelWrapper categoryLabelWrapper categroryTextWrapper categroryTextWrapper"
+            "appWebsiteLabelWrapper appWebsiteLabelWrapper appWebsiteTextWrapper appWebsiteTextWrapper"
+            "usernameWrapper usernameWrapper usernameWrapper usernameWrapper"
+            "passwordWrapper passwordWrapper passwordWrapper passwordWrapper";
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+        /* border: 1px solid black; */
+
+    }
+
+    /* ____________________________________ */
+
+    .logoWrapper {
+        grid-area: logoWrapper;
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
+        /* border: 1px solid black; */
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logoDiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        aspect-ratio: 1/1;
+        width: 100%;
+        /* height: 100%; */
+        border-radius: 10px;
+        /* background-color: #F3F5F9; */
+    }
+
+    .logoDivShrink {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        height: 90%;
+        border-radius: 10px;
+        background-color: #F3F5F9;
+    }
+
+    /* ____________________________________ */
+
+    .titleWrapper {
+        grid-area: titleWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .titleLabelDiv {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        /* border: 1px solid black; */
+        padding-left: 5%;
+
+    }
+
+    .titleLabelDiv p {
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: #7E8DA4;
+    }
+
+    .titleTextDiv {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        /* border: 1px solid black; */
+        padding-left: 5%;
+    }
+
+    .titleTextDiv p {
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: black;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis
+    }
+
+    .titleTextDivShrink {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        /* border: 1px solid black; */
+        padding-left: 5%;
+
+    }
+
+    .titleTextDivShrink p {
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        color: black;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis
+    }
+
+
+    /* ____________________________________ */
+
+    .categoryLabelWrapper {
+        grid-area: categoryLabelWrapper;
+        width: 100%;
+        height: 80%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: #F3F5F9;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+    }
+
+
+    .categoryLabelDiv {
+        width: 1000%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 10%;
+    }
+
+    .categoryLabelDiv p {
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        color: black;
+    }
+
+    .categroryTextWrapper {
+        grid-area: categroryTextWrapper;
+        width: 100%;
+        height: 80%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #F3F5F9;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+
+
+    }
+
+    .categoryTextDiv {
+        width: 80%;
+        height: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border: 1px solid black; */
+        background-color: #a8ccf9b5;
+        border-radius: 5px;
+
+    }
+
+    .categoryTextDiv p {
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        color: #002A9A;
+    }
+
+    /* ____________________________________ */
+
+    .appWebsiteLabelWrapper {
+        grid-area: appWebsiteLabelWrapper;
+        width: 100%;
+        height: 80%;
+        /* border: 1px solid black; */
+        background-color: #F3F5F9;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+    }
+
+    .appWebsiteLabelDiv {
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid red; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 10%;
+    }
+
+    .appWebsiteLabelDiv p {
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        color: black;
+    }
+
+    .appWebsiteTextWrapper {
+        grid-area: appWebsiteTextWrapper;
+        width: 100%;
+        height: 80%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #F3F5F9;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+
+    .appWebsiteTextDiv {
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid red; */
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 2%;
+    }
+
+    .appWebsiteTextDiv p {
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        color: black;
+        white-space: nowrap;
+        overflow: hidden;
+        /* text-overflow: ellipsis; */
+        width: 100%;
+    }
+
+    /* ___________________________________________ */
+
+    .usernameWrapper {
+        grid-area: usernameWrapper;
+        display: grid;
+        height: 80%;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas:
+            "usernameIconWrapper usernameLabelWrapper"
+            "usernameIconWrapper usernameTextWrapper";
+        /* border: 1px solid green; */
+        /* background-color: forestgreen; */
+        background-color: #F3F5F9;
+        border-radius: 8px;
+
+    }
+
+    .usernameWrapperShrink {
+        grid-area: usernameWrapperShrink;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 100%;
+        grid-template-areas:
+            "usernameTextWrapper";
+        /* background-color: forestgreen; */
+    }
+
+
+    .usernameIconWrapper {
+        grid-area: usernameIconWrapper;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .usernameLabelWrapper {
+        grid-area: usernameLabelWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+    }
+
+    .usernameLabelWrapper p {
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: #7E8DA4;
+    }
+
+
+    .usernameTextWrapper {
+        grid-area: usernameTextWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .usernameText {
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: black;
+    }
+
+    .usernameTextShrink {
+        font-family: "Poppins", sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        color: #7E8DA4;
+        margin-left: 5%;
+    }
+
+    /* ____________________________________ */
+
+    .passwordWrapper {
+        grid-area: passwordWrapper;
+        width: 100%;
+        height: 80%;
+        /* border: 1px solid red; */
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas:
+            "passwordIconWrapper passwordLabelWrapper"
+            "passwordIconWrapper passwordTextWrapper";
+        background-color: #F3F5F9;
+        border-radius: 8px;
+    }
+
+    .passwordIconWrapper {
+        grid-area: passwordIconWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .passwordLabelWrapper {
+        grid-area: passwordLabelWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .passwordLabelWrapper p {
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: #7E8DA4;
+    }
+
+
+    .passwordTextWrapper {
+        grid-area: passwordTextWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+    }
+
+    .passwordTextWrapper p {
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: black;
+    }
+
+    .iconsStyles {
+        font-size: 28px !important;
     }
 
 }
-
-/* 
-  /user/favorites/logins
-  */

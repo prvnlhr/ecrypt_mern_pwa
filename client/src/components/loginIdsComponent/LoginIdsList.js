@@ -179,7 +179,9 @@ const LoginIdsList = ({ setLogoComponentShow }
           <LoginId
             key={loginId._id}
             loginId={loginId}
+            setFullContentCardData={setFullContentCardData}
             handleLoginIdClicked={handleLoginIdClicked}
+            fullContentCardData={fullContentCardData}
           />
         ))}
       </div>

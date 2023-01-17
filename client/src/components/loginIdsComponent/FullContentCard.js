@@ -100,7 +100,7 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
             activityData: activity_data,
             userId: '63b43ab32fc8d3c100cafecc'
         }))
-        setShowContentCard(false);
+        // setShowContentCard(false);
         setEditMode(false);
 
     }
