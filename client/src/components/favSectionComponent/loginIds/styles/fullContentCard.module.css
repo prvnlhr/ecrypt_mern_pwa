@@ -15,6 +15,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  overflow: hidden;
 }
 
 .cardWrapperClose {
@@ -102,112 +103,15 @@
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.editBtnDiv {
-  width: auto;
-  height: 22px;
-  height: 25px;
-  /* border: 1px solid black; */
-  background-color: #9DC1FA;
+.favBtnDiv {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 5%;
-  padding-right: 5%;
-  border-radius: 5px;
-  margin-right: 10px;
-  /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-
-}
-
-.editBtnDiv p {
-  font-family: "Poppins", sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-  color: #002A9A;
-}
-
-.saveBtnDiv {
-  width: auto;
-  height: 22px;
-  height: 25px;
-
+  height: 60%;
+  aspect-ratio: 1/1;
   /* border: 1px solid black; */
-  background-color: #58BF6F;
-  /* background-color: white; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-left: 5%;
-  padding-right: 5%;
-  border-radius: 5px;
-  margin-right: 10px;
-  /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
 }
 
-.saveBtnDiv p {
-  font-family: "Poppins", sans-serif;
-  font-size: 11px;
-  font-weight: 400;
-  color: white;
-}
-
-.cancelBtnDiv {
-  width: auto;
-  height: 22px;
-  height: 25px;
-
-  /* border: 1px solid black; */
-  background-color: #E2E1E4;
-  background-color: #B4B3BA;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-left: 5%;
-  padding-right: 5%;
-  border-radius: 5px;
-  margin-right: 10px;
-  /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-
-}
-
-.cancelBtnDiv p {
-  font-family: "Poppins", sans-serif;
-  font-size: 11px;
-  font-weight: 450 !important;
-  /* color: #5B5A68; */
-  color: white;
-}
-
-.deleteBtnDiv {
-  width: auto;
-  height: 25px;
-  /* border: 1px solid black; */
-  background-color: #D64339;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-left: 5%;
-  padding-right: 5%;
-  border-radius: 5px;
-  margin-right: 10px;
-  /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-
-}
-
-.deleteBtnDiv p {
-  font-family: "Poppins", sans-serif;
-  font-size: 11px;
-  font-weight: 400;
-  color: white;
-}
-
-.crudIcons {
-  margin-right: 5px;
-}
 
 
 .logoTitleWrapper {
@@ -254,17 +158,6 @@
   align-items: center;
 }
 
-.logoDivActive {
-  /* width: 80%; */
-  aspect-ratio: 1/1;
-  height: 100%;
-  border: 3px solid #a8ccf9b5;
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-}
 
 .logoIcon {
   width: 100%;
@@ -296,10 +189,9 @@
   font-size: 14px;
   font-weight: 500;
   color: #7E8DA4;
-
 }
 
-.titleInputDiv {
+.titleTextDiv {
   width: 80%;
   height: 80%;
   /* border: 1px solid black; */
@@ -308,42 +200,14 @@
   align-items: flex-start;
 }
 
-
-
-.titleInputActive {
-  width: 80%;
-  height: auto;
-  border-bottom: 1px solid #7E8DA4;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  /* border: 1px solid #7E8DA4; */
-  outline: none;
-  background: transparent;
+.titleTextDiv p {
   font-family: "Poppins", sans-serif;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 500;
   color: black;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
 }
 
-.titleInputNotActive {
-  width: 80%;
-  height: auto;
-  border: none;
-  /* border: 1px solid #7E8DA4; */
-  outline: none;
-  background: transparent;
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  color: black;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
+
 
 .categoryWrapper {
   grid-area: categoryWrapper;
@@ -386,7 +250,7 @@
   color: black;
 }
 
-.catergoryInputDiv {
+.categoryTextDiv {
   position: relative;
   width: 80%;
   height: 100%;
@@ -396,86 +260,22 @@
   /* border: 1px solid black; */
 }
 
-.categoryInput {
-  font-family: "Poppins", sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  color: #002A9A;
-  background-color: #a8ccf9b5;
-  border: none;
-  outline: none !important;
-  height: 75%;
+.categoryTextBox {
   width: 70%;
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.popUpBtnIconDiv {
-  width: 15%;
-  height: 100%;
+  height: 80%;
   /* border: 1px solid black; */
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 8px;
+  background-color: #A6CBFB;
 }
 
-.popUpIcon {
-  font-size: 20px;
-
-}
-
-.categoryInput:focus {
-  /* border: 1px solid #0475ff84; */
-}
-
-.inputPopUpDiv {
-  top: 105%;
-  position: absolute;
-  width: 150px;
-  height: 200px;
-  background-color: white;
-  border: 1px solid rgba(128, 128, 128, 0.363);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding-top: 5%;
-  padding-bottom: 5%;
-  padding-left: 10%;
-  border-radius: 5px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  border: 2px solid rgba(57, 83, 212, 0.365);
-}
-
-.inputPopUpText {
+.categoryTextBox p {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   color: black;
-  margin: 5px 0px 0px 0px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding-left: 5%;
-  padding-right: 5%;
-}
-
-.inputPopUpText:hover {
-  width: 80%;
-  background-color: #a8ccf9b5;
-  padding-left: 5%;
-  padding-right: 5%;
-  border-radius: 5px;
 }
 
 .appWebSiteWrapper {
@@ -499,7 +299,7 @@
   grid-template-columns: 20% 40% 40%;
   grid-template-rows: 100%;
   grid-template-areas:
-    "appWebSiteIconDiv appWebsiteLabelDiv appWebSiteInputDiv";
+    "appWebSiteIconDiv appWebsiteLabelDiv appWebsiteTextDiv";
   background-color: #F6F6F6;
   border-radius: 10px;
 
@@ -537,8 +337,8 @@
   color: black;
 }
 
-.appWebSiteInputDiv {
-  grid-area: appWebSiteInputDiv;
+.appWebsiteTextDiv {
+  grid-area: appWebsiteTextDiv;
   width: 100%;
   height: 100%;
   /* border: 1px solid black; */
@@ -546,40 +346,11 @@
   align-items: center;
 }
 
-
-.appWebSiteInputActive {
-  width: 80%;
-  height: auto;
-  border-bottom: 1px solid #7E8DA4;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  /* border: 1px solid #7E8DA4; */
-  outline: none;
-  background: transparent;
+.appWebsiteTextDiv p {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
   color: black;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.appWebSiteInputNotActive {
-  width: 80%;
-  height: auto;
-  border: none;
-  /* border: 1px solid #7E8DA4; */
-  outline: none;
-  background: transparent;
-  font-family: "Poppins", sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  color: black;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
 }
 
 .usernameWrapper {
@@ -604,11 +375,9 @@
   grid-template-rows: 50% 50%;
   grid-template-areas:
     "usernameIconDiv usernameLabelDiv"
-    "usernameIconDiv usernameInputDiv";
+    "usernameIconDiv usernameTextDiv";
   background-color: #F3F5F9;
   border-radius: 10px;
-
-
 }
 
 .usernameIconDiv {
@@ -643,8 +412,8 @@
   color: #7E8DA4;
 }
 
-.usernameInputDiv {
-  grid-area: usernameInputDiv;
+.usernameTextDiv {
+  grid-area: usernameTextDiv;
   width: 100%;
   height: 100%;
   /* border: 1px solid black; */
@@ -653,43 +422,8 @@
   align-items: center;
 }
 
-.userNameInputActive {
-  width: 80%;
-  height: auto;
-  border-bottom: 1px solid #7E8DA4;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  /* border: 1px solid #7E8DA4; */
-  outline: none;
-  background: transparent;
-  font-family: "Poppins", sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  color: black;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
 
-.userNameInputNotActive {
-  width: 80%;
-  height: auto;
-  border: none;
-  /* border: 1px solid #7E8DA4; */
-  outline: none;
-  background: transparent;
-  font-family: "Poppins", sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  color: black;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-
-.usernameInputDiv p {
+.usernameTextDiv p {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
@@ -718,7 +452,7 @@
   grid-template-rows: 50% 50%;
   grid-template-areas:
     "passwordIconDiv passwordLabelDiv"
-    "passwordIconDiv passwordInputDiv";
+    "passwordIconDiv passwordTextDiv";
   background-color: #F3F5F9;
   border-radius: 10px;
 
@@ -757,8 +491,8 @@
   color: #7E8DA4;
 }
 
-.passwordInputDiv {
-  grid-area: passwordInputDiv;
+.passwordTextDiv {
+  grid-area: passwordTextDiv;
   width: 100%;
   height: 100%;
   /* border: 1px solid black; */
@@ -767,40 +501,14 @@
   align-items: center;
 }
 
-.passwordInputActive {
-  width: 80%;
-  height: auto;
-  border-bottom: 1px solid #7E8DA4;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  /* border: 1px solid #7E8DA4; */
-  outline: none;
-  background: transparent;
+.passwordTextDiv p {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
   color: black;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
 }
 
-.passwordInputNotActive {
-  width: 80%;
-  height: auto;
-  border: none;
-  /* border: 1px solid #7E8DA4; */
-  outline: none;
-  background: transparent;
-  font-family: "Poppins", sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  color: black;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
+
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 
@@ -814,8 +522,8 @@
     justify-content: center;
     align-items: flex-end;
     background-color: white;
-    margin-top: 14%;
-    /* border: 1px solid black; */
+    /* border: 1px solid red; */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   }
 
 
@@ -839,6 +547,11 @@
     padding: 0px;
     margin: 0px;
     transition: none;
+    transition: all 10s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* border: 1px solid red; */
+    opacity: 0;
+
   }
 
 
@@ -862,6 +575,7 @@
     padding-bottom: 0%;
     padding-top: 0%;
     box-sizing: border-box;
+    overflow: hidden;
 
   }
 
@@ -876,7 +590,7 @@
   }
 
   .backBtnContainer {
-    width: 50%;
+    width: 30%;
     height: 100%;
     /* border: 1px solid black; */
     display: flex;
@@ -887,8 +601,8 @@
   }
 
   .backBtnDiv {
-    width: 50%;
-    height: 50%;
+    width: 80%;
+    height: 80%;
     /* border: 1px solid black; */
     display: flex;
     justify-content: flex-start;
@@ -896,17 +610,24 @@
   }
 
 
-
   .curdBtnContainer {
-    width: 50%;
+    width: 70%;
     height: 100%;
     /* border: 1px solid black; */
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding-right: 8%;
+    padding-right: 5%;
   }
 
+  .favBtnDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65%;
+    aspect-ratio: 1/1;
+    /* border: 1px solid black; */
+  }
 
   .logoTitleWrapper {
     grid-area: logoTitleWrapper;
@@ -983,7 +704,7 @@
 
   }
 
-  .titleInputDiv {
+  .titleTextDiv {
     width: 80%;
     height: 80%;
     /* border: 1px solid black; */
@@ -992,7 +713,7 @@
     align-items: flex-start;
   }
 
-  .titleInputDiv p {
+  .titleTextDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 20px;
     font-weight: 600;
@@ -1042,7 +763,7 @@
     padding: 0px;
   }
 
-  .catergoryInputDiv {
+  .categoryTextDiv {
     position: relative;
     width: 60%;
     height: 100%;
@@ -1144,7 +865,7 @@
     grid-template-columns: 20% 40% 40%;
     grid-template-rows: 100%;
     grid-template-areas:
-      "appWebSiteIconDiv appWebsiteLabelDiv appWebSiteInputDiv";
+      "appWebSiteIconDiv appWebsiteLabelDiv appWebsiteTextDiv";
     background-color: #F3F5F9;
     border-radius: 10px;
 
@@ -1181,8 +902,8 @@
     color: black;
   }
 
-  .appWebSiteInputDiv {
-    grid-area: appWebSiteInputDiv;
+  .appWebsiteTextDiv {
+    grid-area: appWebsiteTextDiv;
     width: 100%;
     height: 100%;
     /* border: 1px solid black; */
@@ -1211,7 +932,7 @@
     grid-template-rows: 50% 50%;
     grid-template-areas:
       "usernameIconDiv usernameLabelDiv"
-      "usernameIconDiv usernameInputDiv";
+      "usernameIconDiv usernameTextDiv";
     background-color: #F3F5F9;
     border-radius: 10px;
 
@@ -1250,8 +971,8 @@
     color: #7E8DA4;
   }
 
-  .usernameInputDiv {
-    grid-area: usernameInputDiv;
+  .usernameTextDiv {
+    grid-area: usernameTextDiv;
     width: 100%;
     height: 100%;
     /* border: 1px solid black; */
@@ -1262,7 +983,7 @@
 
 
 
-  /* .usernameInputDiv input {
+  /* .usernameTextDiv input {
         width: 80%;
         height: 100%;
         border-bottom: 1px solid #7E8DA4;
@@ -1300,7 +1021,7 @@
     grid-template-rows: 50% 50%;
     grid-template-areas:
       "passwordIconDiv passwordLabelDiv"
-      "passwordIconDiv passwordInputDiv";
+      "passwordIconDiv passwordTextDiv";
     background-color: #F3F5F9;
     border-radius: 10px;
 
@@ -1339,8 +1060,8 @@
     color: #7E8DA4;
   }
 
-  .passwordInputDiv {
-    grid-area: passwordInputDiv;
+  .passwordTextDiv {
+    grid-area: passwordTextDiv;
     width: 100%;
     height: 100%;
     /* border: 1px solid black; */
@@ -1349,7 +1070,7 @@
     align-items: center;
   }
 
-  /* .passwordInputDiv input {
+  /* .passwordTextDiv input {
         width: 80%;
         height: 100%;
         border-bottom: 1px solid #7E8DA4;

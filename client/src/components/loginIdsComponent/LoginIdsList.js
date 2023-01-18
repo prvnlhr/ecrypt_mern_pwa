@@ -171,10 +171,7 @@ const LoginIdsList = ({ setLogoComponentShow }
         (!showInputForm && !showContentCard) &&
         < AddBtn formToggle={formToggle} />
       }
-      <div className={
-        // styles.contentContainer
-        (showContentCard || showInputForm) ? styles.contentContainerClose : styles.contentContainer
-      }>
+      <div className={(showContentCard || showInputForm) ? styles.contentContainerClose : styles.contentContainer}>
         {loginIdsArray.map((loginId, index) => (
           <LoginId
             key={loginId._id}
@@ -186,7 +183,8 @@ const LoginIdsList = ({ setLogoComponentShow }
         ))}
       </div>
 
-      {fullContentCardData &&
+      {
+        fullContentCardData &&
         <FullContentCard
           setLogoComponentShow={setLogoComponentShow}
           fullContentCardData={fullContentCardData}
