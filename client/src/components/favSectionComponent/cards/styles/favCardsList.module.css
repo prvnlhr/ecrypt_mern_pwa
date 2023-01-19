@@ -2,7 +2,7 @@
     position: relative;
     width: 99.8%;
     height: 100%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -56,7 +56,6 @@
     padding-left: 20px;
     padding-bottom: 100px;
     box-sizing: border-box;
-
     scrollbar-width: none;
     /* firefox hide scrollbar  */
     -ms-overflow-style: none;
@@ -128,14 +127,15 @@
         padding-left: 0;
         padding-right: 0;
         /* border: 1px solid black; */
-        height: 90%;
-        margin-top: 10%;
+        height: 95%;
+        margin-top: 5%;
+        /* transition: all 10s cubic-bezier(0.25, 0.8, 0.25, 1); */
         transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
     }
 
     .contentContainerClose {
-        height: 0%;
+        height: 5%;
         width: 100%;
         display: flex;
         flex-direction: row;
@@ -151,7 +151,10 @@
         padding-right: 0;
         scrollbar-width: none;
         -ms-overflow-style: none;
+        /* transition: all 10s cubic-bezier(0.25, 0.8, 0.25, 1); */
         transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        /* border: 1px solid black; */
+        overflow: hidden;
     }
 
 

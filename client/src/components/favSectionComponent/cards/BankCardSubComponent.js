@@ -3,22 +3,22 @@ import styles from "./styles/bankCardSubComponent.module.css"
 
 import CardLogo from "../cards/CardLogo"
 import { Icon } from '@iconify/react';
-const BankCardSubComponent = ({ fullContentCardData, setFullContentCardData, editMode, setEditMode }) => {
+const BankCardSubComponent = ({ favFullCardData, setFavFullCardData, }) => {
 
     const [venderLogo, setVenderLogo] = useState();
 
 
     useEffect(() => {
-        if (fullContentCardData.category === 'Bank') {
+        if (favFullCardData.category === 'Bank') {
             setVenderLogo(
-                < CardLogo cardNo={fullContentCardData.cardNumber} />
+                < CardLogo cardNo={favFullCardData.cardNumber} />
             )
         }
-    }, [fullContentCardData])
+    }, [favFullCardData])
 
     const handleInputValueChange = (e) => {
-        setFullContentCardData({
-            ...fullContentCardData,
+        setFavFullCardData({
+            ...favFullCardData,
             [e.target.name]: e.target.value,
         })
     }
@@ -37,13 +37,8 @@ const BankCardSubComponent = ({ fullContentCardData, setFullContentCardData, edi
                     <div className={styles.cardHolderLabelTextDiv}>
                         <p>CARD HOLDER</p>
                     </div>
-                    <div className={styles.cardHolderInputDiv}>
-                        <input
-                            className={editMode ? styles.cardHolderInputActive : styles.cardHolderInputNotActive}
-                            readOnly={editMode ? false : true}
-                            onChange={handleInputValueChange}
-                            name={"cardHolder"}
-                            value={fullContentCardData.cardHolder} />
+                    <div className={styles.cardHolderTextDiv}>
+                        <p>{favFullCardData.cardHolder}</p>
                     </div>
 
                 </div>
@@ -56,13 +51,8 @@ const BankCardSubComponent = ({ fullContentCardData, setFullContentCardData, edi
                     <div className={styles.cardNumberLabelTextDiv}>
                         <p>CARD NUMBER</p>
                     </div>
-                    <div className={styles.cardNumberInputDiv}>
-                        <input
-                            className={editMode ? styles.inputActive : styles.inputNotActive}
-                            readOnly={editMode ? false : true}
-                            onChange={handleInputValueChange}
-                            name={"cardNumber"}
-                            value={fullContentCardData.cardNumber} />
+                    <div className={styles.cardNumberTextDiv}>
+                        <p>{favFullCardData.cardNumber}</p>
                     </div>
                     <div className={styles.cardVenderIconContainer}>
                         <div className={styles.cardVenderIconDiv} >
@@ -81,13 +71,8 @@ const BankCardSubComponent = ({ fullContentCardData, setFullContentCardData, edi
                     <div className={styles.expiryLabelTextDiv} >
                         <p>EXPIRY</p>
                     </div>
-                    <div className={styles.expiryInputDiv} >
-                        <input
-                            className={editMode ? styles.inputActive : styles.inputNotActive}
-                            readOnly={editMode ? false : true}
-                            onChange={handleInputValueChange}
-                            name={"expiry"}
-                            value={fullContentCardData.expiry} />
+                    <div className={styles.expiryTextDiv} >
+                        <p>{favFullCardData.expiry}</p>
                     </div>
                 </div>
             </div>
@@ -101,13 +86,8 @@ const BankCardSubComponent = ({ fullContentCardData, setFullContentCardData, edi
                     <div className={styles.cvvNumberLabelTextDiv} >
                         <p>CVV</p>
                     </div>
-                    <div className={styles.cvvNumberInputDiv} >
-                        <input
-                            className={editMode ? styles.inputActive : styles.inputNotActive}
-                            readOnly={editMode ? false : true}
-                            onChange={handleInputValueChange}
-                            name={"cvv"}
-                            value={fullContentCardData.cvv} />
+                    <div className={styles.cvvNumberTextDiv} >
+                        <p>{favFullCardData.cvv}</p>
                     </div>
 
                 </div>

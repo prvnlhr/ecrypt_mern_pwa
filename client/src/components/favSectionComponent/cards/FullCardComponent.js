@@ -4,134 +4,43 @@ import { useDispatch } from 'react-redux'
 import styles from "./styles/fullCardComponent.module.css"
 import BackBtnIcon from "../../icons/BackBtnIcon"
 import { Icon } from '@iconify/react';
-// import { logosArray, logosData } from "../../logoComponents/logosData";
+import { logosArray, logosData } from "../../logoComponents/logosData";
 import BankCardSubComponent from './BankCardSubComponent';
 import IdentityCardSubComponent from './IdentityCardSubComponent';
 import LicenseCardSubComponent from './LicenseCardSubComponent';
 import LogoComponentWrapper from "../../logoComponents/LogoComponentWrapper"
+import BookmarksIconFill from "../../icons/BookmarksIconFill"
+import { toggleIsFav } from '../../../redux/features/cards/cardsSlice';
 // import { editCardData, deleteCardData } from "../../../redux/features/cards/cardsSlice"
 // import { generateActivityData } from "../../utils/ActivityDataChangeFuction"
 
-const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullContentBackBtnClicked,
-    fullContentCardData, setFullContentCardData, editMode, setEditMode
-
+const FullCardComponent = ({
+    showFullFavCard,
+    setShowFullFavCard,
+    handleFavLoginIdClick,
+    favFullCardData,
+    setFavFullCardData
 }) => {
-    // console.log(fullContentCardData)
-    const [popUpOpen, setPopUpOpen] = useState(false);
-
-    const [oldCardData, setOldCardData] = useState('');
-
-    const [logoIndx, setLogoIndx] = useState(undefined);
-
-    const [logoComponentShow, setLogoComponentShow] = useState(false);
 
     const dispatch = useDispatch();
+    const favItemClicked = () => {
 
-    const handleOpClick = (op) => {
-
-        // switch (op) {
-        //     case "Identity":
-        //         setIdentityCardData({
-        //             ...identityCardData,
-        //             category: op
-        //         })
-        //         break;
-
-        //     case "License":
-        //         setLicenseCardData({
-        //             ...licenseCardData,
-        //             category: op
-        //         })
-        //         break;
-
-        //     case "Bank":
-        //         setBankCardData({
-        //             ...bankCardData,
-        //             category: op
-        //         })
-        //         break;
-
-        //     default:
-        //         break;
-        // }
-
-        // setCurrData({
-        //     ...currData,
-        //     category: op
-        // })
-        setPopUpOpen(!popUpOpen)
+        dispatch(toggleIsFav({
+            card_id: favFullCardData._id,
+            isFav: !favFullCardData.isFavourite,
+            category: favFullCardData.category
+        }))
+        setShowFullFavCard(false);
+    }
+    const handleFullContentBackBtnClicked = () => {
+        setShowFullFavCard(!showFullFavCard);
     }
 
-    // const logoclicked = () => {
-    //     if (editMode) {
-    //         setLogoComponentShow(true);
-    //     }
 
-    // }
-
-    // useEffect(() => {
-    //     if (logoIndx !== undefined) {
-    //         console.log(fullContentCardData, logoIndx)
-    //         setFullContentCardData({
-    //             ...fullContentCardData,
-    //             logoIndex: logoIndx
-    //         })
-    //     }
-    // }, [logoIndx])
-
-    // const editBtnClicked = () => {
-    //     setOldCardData(fullContentCardData);
-    //     setEditMode(true);
-    // }
-    // const cancelBtnClicked = () => {
-    //     setFullContentCardData(oldCardData);
-    //     setEditMode(false);
-    // }
-
-    // const saveBtnClicked = () => {
-    //     console.table('saveBtnC lcik', fullContentCardData)
-    //     const activity_data = generateActivityData(3, 'Card', fullContentCardData, oldCardData)
-    //     console.log(activity_data);
-    //     dispatch(editCardData({
-    //         updatedData: fullContentCardData,
-    //         card_id: fullContentCardData._id,
-    //         activityData: activity_data,
-    //         userId: '63b43ab32fc8d3c100cafecc'
-    //     }))
-    //     // setEditMode(false);
-    //     // setShowContentCard(false);
-
-    // }
-
-    // const deleteBtnClicked = () => {
-    //     // console.table(fullContentCardData._id, '63b43ab32fc8d3c100cafecc')
-    //     const activity_data = generateActivityData(2, 'Card', fullContentCardData, '')
-    //     // console.log(activity_data);
-    //     dispatch(deleteCardData({
-    //         card_id: fullContentCardData._id,
-    //         user_id: '63b43ab32fc8d3c100cafecc',
-    //         cardData: fullContentCardData,
-    //         activityData: activity_data
-    //     }))
-    //     setShowContentCard(false);
-    // }
-
-    // const handleInputValueChange = (e) => {
-    //     setFullContentCardData({
-    //         ...fullContentCardData,
-    //         [e.target.name]: e.target.value,
-    //     })
-    // }
 
     return (
-        <div className={showContentCard ? styles.cardWrapper : styles.cardWrapperClose}>
-            {/* {logoComponentShow &&
-                <LogoComponentWrapper
-                    setLogoComponentShow={setLogoComponentShow}
-                    logoIndx={logoIndx}
-                    setLogoIndx={setLogoIndx}
-                />
-            } */}
+        <div className={showFullFavCard ? styles.cardWrapper : styles.cardWrapperClose}>
+
             <div className={styles.cardContainer}>
 
                 <div className={styles.cardHeader} >
@@ -143,32 +52,9 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
                         </div>
                     </div>
                     <div className={styles.curdBtnContainer} >
-
-                        {/* {editMode ?
-                            <>
-                                <div className={styles.saveBtnDiv} onClick={saveBtnClicked}  >
-                                    <Icon className={styles.crudIcons} icon="charm:tick-double" color="white" />
-                                    <p>Save</p>
-                                </div>
-
-                                <div className={styles.cancelBtnDiv} onClick={cancelBtnClicked}>
-                                    <Icon className={styles.crudIcons} icon="tabler:x" color="white" />
-                                    <p>Cancel</p>
-                                </div>
-                            </>
-
-                            :
-                            <>
-                                <div className={styles.deleteBtnDiv} onClick={deleteBtnClicked}  >
-                                    <Icon className={styles.crudIcons} icon="gg:trash-empty" color="white" />
-                                    <p>Delete</p>
-                                </div>
-                                <div className={styles.editBtnDiv} onClick={editBtnClicked}  >
-                                    <Icon className={styles.crudIcons} icon="ph:pencil-simple-line" color="#002A9A" />
-                                    <p>Edit</p>
-                                </div>
-                            </>
-                        } */}
+                        <div className={styles.favBtnDiv} onClick={favItemClicked}  >
+                            <BookmarksIconFill />
+                        </div>
                     </div>
                 </div>
 
@@ -176,16 +62,11 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
                 <div className={styles.logoTitleWrapper} >
                     <div className={styles.logoTitleContainer} >
 
-                        <div className={styles.logoContainer}
-                        // onClick={logoclicked} 
-                        >
-                            <div className={
-                                styles.logoDiv
-                                // editMode ? styles.logoDivActive : styles.logoDiv
-                            }>
-                                {/* {fullContentCardData.logoIndex != undefined &&
-                                    logosArray[fullContentCardData.logoIndex].logo
-                                } */}
+                        <div className={styles.logoContainer}>
+                            <div className={styles.logoDiv}>
+                                {favFullCardData.logoIndex != undefined &&
+                                    logosArray[favFullCardData.logoIndex].logo
+                                }
                             </div>
 
                         </div>
@@ -196,13 +77,7 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
                                 <p className={styles.titleTitleText}>TITLE</p>
                             </div>
                             <div className={styles.titleInputDiv}>
-                                {/* <input
-                                    className={editMode ? styles.titleInputActive : styles.titleInputNotActive}
-                                    value={fullContentCardData.title}
-                                    name={"title"}
-                                    onChange={handleInputValueChange}
-                                    readOnly={editMode ? false : true}
-                                /> */}
+                                <p> {favFullCardData.title} </p>
                             </div>
                         </div>
 
@@ -215,72 +90,35 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
                         <div className={styles.categoryLabelDiv} >
                             <p>Category</p>
                         </div>
-                        <div className={styles.catergoryInputDiv} >
-                            {/* <input
-                                className={styles.categoryInput}
-                                value={fullContentCardData.category}
-                                readOnly={true}
-
-                            /> */}
-                            <div className={styles.popUpBtnIconDiv}>
-                                <Icon
-                                    className={styles.popUpIcon}
-                                    icon="tabler:chevron-down" color="black" />
+                        <div className={styles.categoryTextDiv} >
+                            <div className={styles.categoryTextBox} >
+                                <p>{favFullCardData.category}</p>
                             </div>
-
-                            {
-                                popUpOpen ? (
-                                    <div className={styles.inputPopUpDiv}>
-                                        <p className={styles.inputPopUpText}
-                                            onClick={() => {
-                                                handleOpClick("Identity")
-                                            }}>
-                                            Identity
-                                        </p>
-
-                                        <p className={styles.inputPopUpText} onClick={() => {
-                                            handleOpClick("License")
-                                        }}>License</p>
-
-                                        <p className={styles.inputPopUpText} onClick={() => {
-                                            handleOpClick("Bank")
-                                        }}>Bank</p>
-
-                                    </div>
-                                ) : null
-                            }
                         </div>
                     </div>
                 </div>
 
                 <div className={styles.subCardWrapper}>
 
-
                     {
-                        fullContentCardData.category === "Bank" ?
+                        favFullCardData.category === "Bank" ?
                             <BankCardSubComponent
-                                setEditMode={setEditMode}
-                                editMode={editMode}
-                                fullContentCardData={fullContentCardData}
-                                setFullContentCardData={setFullContentCardData}
+                                favFullCardData={favFullCardData}
+                                setFavFullCardData={setFavFullCardData}
                             />
 
 
-                            : fullContentCardData.category === "Identity" ?
+                            : favFullCardData.category === "Identity" ?
                                 <IdentityCardSubComponent
-                                    setEditMode={setEditMode}
-                                    editMode={editMode}
-                                    fullContentCardData={fullContentCardData}
-                                    setFullContentCardData={setFullContentCardData}
+                                    favFullCardData={favFullCardData}
+                                    setFavFullCardData={setFavFullCardData}
                                 />
 
 
-                                : fullContentCardData.category === "License" ?
+                                : favFullCardData.category === "License" ?
                                     <LicenseCardSubComponent
-                                        setEditMode={setEditMode}
-                                        editMode={editMode}
-                                        fullContentCardData={fullContentCardData}
-                                        setFullContentCardData={setFullContentCardData}
+                                        favFullCardData={favFullCardData}
+                                        setFavFullCardData={setFavFullCardData}
                                     /> :
 
                                     null

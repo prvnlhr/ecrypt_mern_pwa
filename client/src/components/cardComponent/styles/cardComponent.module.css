@@ -157,9 +157,12 @@
 }
 
 .favBtnIconDiv {
-  width: 55%;
+  width: 60%;
   aspect-ratio: 1/1;
   /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 

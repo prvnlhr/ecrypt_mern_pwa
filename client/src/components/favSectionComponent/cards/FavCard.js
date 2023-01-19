@@ -1,36 +1,38 @@
 import React from 'react'
 import styles from "./styles/favCard.module.css"
-import BookmarksIcon from "../../icons/BookmarksIcon"
-const FavCard = () => {
+import BookmarksIconFill from "../../icons/BookmarksIconFill"
+import { logosArray } from '../../logoComponents/logosData'
+const FavCard = ({ favItem, handleFavCardClick }) => {
+   
     return (
         <div className={
-            styles.cardComponentBank
-            // cardData.category === "Bank" ? styles.cardComponentBank : styles.cardComponent
+            // styles.cardComponentBank
+            favItem.category === "Bank" ? styles.cardComponentBank : styles.cardComponent
         }
-        // onClick={() => {
-        //     handleCardClicked(cardData);
-        // }}
+            onClick={() => {
+                handleFavCardClick(favItem);
+            }}
         >
             <div className={styles.logoWrapper} >
                 <div className={styles.logoDiv}>
-                    {/* {logosArray[cardData.logoIndex].logo} */}
+                    {logosArray[favItem.logoIndex].logo}
                 </div>
             </div>
             <div className={styles.titleWrapper} >
                 <p className={styles.titleText}>
-                    {/* {cardData.title} */}
+                    {favItem.title}
                 </p>
             </div>
             <div className={styles.usernameWrapper} >
                 <p className={styles.userNameText}>
-                    {/* {
-                        cardData.category === "License" ? cardData.licenseNumber : cardData.cardNumber
-                    } */}
+                    {
+                        favItem.category === "License" ? favItem.licenseNumber : favItem.cardNumber
+                    }
                 </p>
             </div>
             <div className={
                 styles.bankCardLogoWrapperShow
-                // cardData.category === "Bank" ? styles.bankCardLogoWrapperShow : styles.bankCardLogoWrapperHide
+                // favItem.category === "Bank" ? styles.bankCardLogoWrapperShow : styles.bankCardLogoWrapperHide
             } >
                 <div className={styles.bankCardVenderLogoDiv}>
                     {/* {venderLogo} */}
@@ -40,7 +42,7 @@ const FavCard = () => {
                 {/* <Icon className={styles.favBtnIcon} icon="ion:bookmark-outline" color="#7e8da4" /> */}
 
                 <div className={styles.favBtnIconDiv}>
-                    <BookmarksIcon />
+                    <BookmarksIconFill />
                 </div>
 
             </div>

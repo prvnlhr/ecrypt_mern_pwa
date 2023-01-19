@@ -9,8 +9,10 @@ import BankCardSubComponent from './BankCardSubComponent';
 import IdentityCardSubComponent from './IdentityCardSubComponent';
 import LicenseCardSubComponent from './LicenseCardSubComponent';
 import LogoComponentWrapper from "../../logoComponents/LogoComponentWrapper"
-import { editCardData, deleteCardData } from "../../../redux/features/cards/cardsSlice"
+import { editCardData, deleteCardData, toggleIsFav } from "../../../redux/features/cards/cardsSlice"
 import { generateActivityData } from "../../utils/ActivityDataChangeFuction"
+import BookmarksIcon from "../../icons/BookmarksIcon"
+import BookmarksIconFill from "../../icons/BookmarksIconFill"
 const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullContentBackBtnClicked,
     fullContentCardData, setFullContentCardData, editMode, setEditMode
 
@@ -114,14 +116,21 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
         }))
         setShowContentCard(false);
     }
-
     const handleInputValueChange = (e) => {
         setFullContentCardData({
             ...fullContentCardData,
             [e.target.name]: e.target.value,
         })
     }
-
+    //> Handle fav btn Clicked
+    const favBtnClicked = () => {
+        // console.log(fullContentCardData)
+        dispatch(toggleIsFav({
+            card_id: fullContentCardData._id,
+            isFav: !fullContentCardData.isFavourite,
+            category: fullContentCardData.category
+        }))
+    }
     return (
         <div className={showContentCard ? styles.cardWrapper : styles.cardWrapperClose}>
             {logoComponentShow &&
@@ -169,6 +178,14 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
                                 </div>
                             </>
                         }
+                        <div className={styles.favBtnDiv} onClick={favBtnClicked} >
+
+                            {fullContentCardData.isFavourite === true ?
+                                < BookmarksIconFill />
+                                :
+                                <BookmarksIcon />
+                            }
+                        </div>
                     </div>
                 </div>
 

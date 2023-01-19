@@ -30,7 +30,7 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
     expiry: "",
     cvv: "",
     logoIndex: "",
-    isFavourite: false
+    isFavourite: ""
   })
 
   const [identityCardData, setIdentityCardData] = useState({
@@ -41,7 +41,7 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
     issueDate: "",
     dob: "",
     logoIndex: "",
-    isFavourite: false
+    isFavourite: ""
   })
   const [licenseCardData, setLicenseCardData] = useState({
     title: "",
@@ -51,7 +51,7 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
     expiry: "",
     dob: "",
     logoIndex: "",
-    isFavourite: false
+    isFavourite: ""
   })
 
   const [showInputForm, setShowInputForm] = useState(false);
@@ -123,6 +123,7 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
           issueDate: cardData.issueDate,
           dob: cardData.dob,
           logoIndex: cardData.logoIndex,
+          isFavourite: cardData.isFavourite
         })
         break;
 
@@ -138,6 +139,7 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
           expiry: cardData.expiry,
           dob: cardData.dob,
           logoIndex: cardData.logoIndex,
+          isFavourite: cardData.isFavourite
         })
         break;
 
@@ -153,6 +155,7 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
           expiry: cardData.expiry,
           cvv: cardData.cvv,
           logoIndex: cardData.logoIndex,
+          isFavourite: cardData.isFavourite
         })
         break;
 
@@ -176,6 +179,11 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
             index={index}
             cardData={card}
             handleCardClicked={handleCardClicked}
+            setFullCardData={card.category === 'Bank' ?
+              setBankCardData : card.category === 'Identity' ?
+                setIdentityCardData : card.category === 'License' &&
+                setLicenseCardData
+            }
           />
         ))}
 

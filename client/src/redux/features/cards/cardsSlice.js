@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import * as api from "../../api"
 import { addActivityData } from "../activity/activitiesSlice"
+import { addToFavCardsData, removeFromFavCardsData } from "../favorites/favoritesSlice";
 
 const initialState = {
     cardsData: [],
@@ -31,7 +32,7 @@ export const addNewCardData = createAsyncThunk("cards/add", async ({ data, user_
             activityData: activityData,
             userId: user_id
         }))
-        console.log(res.data);
+        // console.log(res.data);
         return fulfillWithValue(res.data);
 
     } catch (error) {
@@ -44,8 +45,9 @@ export const editCardData = createAsyncThunk("cards/edit", async ({ updatedData,
     try {
         console.table('cardSlice', updatedData, card_id);
         // console.log(updatedData, card_id)
+
         const res = await api.editCard(card_id, updatedData);
-        console.log(activityData, userId)
+        // console.log(activityData, userId)
         dispatch(addActivityData({
             activityData: activityData,
             userId: userId
@@ -56,19 +58,22 @@ export const editCardData = createAsyncThunk("cards/edit", async ({ updatedData,
         return rejectWithValue(error);
     }
 });
+
+
+
 export const deleteCardData = createAsyncThunk("cards/delete", async ({ cardData, user_id, card_id, activityData }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
 
     try {
 
-        console.table(user_id, card_id, cardData);
+        // console.table(user_id, card_id, cardData);
         const res = await api.deleteCard(card_id, user_id, cardData);
         dispatch(addActivityData({
             activityData: activityData,
             userId: user_id
         }))
-        console.log(res);
+        // console.log(res);
         const { data } = res;
-        console.log(data);
+        // console.log(data);
         return fulfillWithValue(cardData);
     } catch (error) {
         console.log(error);
@@ -77,6 +82,28 @@ export const deleteCardData = createAsyncThunk("cards/delete", async ({ cardData
 
 });
 
+
+export const toggleIsFav = createAsyncThunk("cards/toggleFav", async ({ card_id, isFav, category }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
+    try {
+        const res = await api.cardFavouriteToggle(card_id, isFav, category)
+        const currToggleCardInDb = res.data.filter((item) => item._id === card_id);
+        // console.log(currToggleCardInDb[0].isFavourite)
+        if (currToggleCardInDb[0].isFavourite === false) {
+            // console.log('false')
+            dispatch(removeFromFavCardsData({
+                card_id
+            }))
+        } else {
+            // console.log('true')
+            dispatch(addToFavCardsData({
+                card: currToggleCardInDb[0]
+            }))
+        }
+        return fulfillWithValue({ favValue: isFav, id: card_id });
+    } catch (error) {
+        throw rejectWithValue(error);
+    }
+});
 //* Slice
 const cardsSlice = createSlice({
 
@@ -129,6 +156,22 @@ const cardsSlice = createSlice({
                 return {
                     ...state,
                     cardsData: state.cardsData,
+                };
+            }).
+            addCase(toggleIsFav.fulfilled, (state, action) => {
+                const favVal = action.payload.favValue;
+                const id = action.payload.id;
+                const old = state.cardsData;
+                const newCardsArray = old.map((l) => {
+                    if (l._id === id) {
+                        return { ...l, isFavourite: favVal };
+                    } else {
+                        return l;
+                    }
+                });
+                return {
+                    ...state,
+                    cardsData: newCardsArray,
                 };
             })
     }

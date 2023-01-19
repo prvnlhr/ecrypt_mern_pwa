@@ -102,9 +102,12 @@ export const loginIdFavouriteToggle = (loginCard_Id, isFav) =>
     data: isFav,
   });
 
-export const cardFavouriteToggle = (card_id, isFav) =>
+export const cardFavouriteToggle = (card_id, isFav,category) =>
   API.patch(`/user/cards/toggleFavourite/${card_id}`, {
-    data: isFav,
+    data: {
+      isFav,
+      category,
+    },
   });
 export const docsFavouriteToggle = (doc_id, isFav) =>
   API.patch(`/user/docs/toggleFavourite/${doc_id}`, {

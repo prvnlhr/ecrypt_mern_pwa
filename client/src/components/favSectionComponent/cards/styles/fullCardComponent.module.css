@@ -405,7 +405,8 @@
     color: black;
 }
 
-.catergoryInputDiv {
+
+.categoryTextDiv {
     position: relative;
     width: 80%;
     height: 100%;
@@ -415,83 +416,22 @@
     /* border: 1px solid black; */
 }
 
-.categoryInput {
-    font-family: "Poppins", sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-    color: #002A9A;
-    background-color: #a8ccf9b5;
-    border: none;
-    outline: none !important;
-    height: 75%;
-    width: 45%;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-
-
-.popUpBtnIconDiv {
-    width: 15%;
-    height: 100%;
+.categoryTextBox {
+    width: 70%;
+    height: 80%;
     /* border: 1px solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 8px;
+    background-color: #A6CBFB;
 }
 
-.popUpIcon {
-    font-size: 20px;
-
-}
-
-.categoryInput:focus {
-    /* border: 1px solid #0475ff84; */
-}
-
-.inputPopUpDiv {
-    top: 105%;
-    position: absolute;
-    width: 150px;
-    height: 200px;
-    background-color: white;
-    border: 1px solid rgba(128, 128, 128, 0.363);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    padding-left: 10%;
-    border-radius: 5px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-
-}
-
-.inputPopUpText {
+.categoryTextBox p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 500;
     color: black;
-    margin: 5px 0px 0px 0px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.inputPopUpText:hover {
-    background-color: red;
-    width: 80%;
 }
 
 .subCardWrapper {
@@ -502,20 +442,27 @@
     /* border: 1px solid red; */
 }
 
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 
     .cardWrapper {
+        position: relative;
         display: flex;
         width: 100%;
-        height: 90%;
+        height: 95%;
         padding-left: 0;
         display: flex;
         justify-content: center;
         align-items: flex-end;
         background-color: white;
-        margin-top: 14%;
-        /* border: 1px solid orange; */
+        /* border: 1px solid red; */
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        margin-bottom: 2px;
     }
 
     .cardWrapperClose {
@@ -538,7 +485,10 @@
         padding: 0px;
         margin: 0px;
         transition: none;
-        /* border: 1px solid black; */
+        transition: all 10s cubic-bezier(0.25, 0.8, 0.25, 1);
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        /* border: 1px solid red; */
+        opacity: 0;
 
     }
 
@@ -602,6 +552,15 @@
         justify-content: flex-end;
         align-items: center;
         padding-right: 8%;
+    }
+
+    .favBtnDiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 65%;
+        aspect-ratio: 1/1;
+        /* border: 1px solid black; */
     }
 
     .logoTitleWrapper {

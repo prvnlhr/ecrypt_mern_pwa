@@ -74,8 +74,6 @@ export const deleteLoginData = createAsyncThunk("loginIds/delete", async ({ logi
 export const toggleIsFav = createAsyncThunk("loginIds/toggleFav", async ({ loginId_id, isFav }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
         const res = await api.loginIdFavouriteToggle(loginId_id, isFav)
-        console.log('toggel isFav Login', res.data);
-
         const favLoginsArray = res.data.filter((item) => item.isFavourite);
         dispatch(addToFavLoginsData(favLoginsArray.reverse()));
 

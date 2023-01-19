@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-
+import { useSelector } from "react-redux";
 import styles from "./styles/cardComponent.module.css";
 import CardLogo, { getCardType } from "./CardLogo";
 import modalStyles from "../modal/modal.module.css";
@@ -15,10 +15,21 @@ import PencilIcon from "../icons/PencilIcon";
 import CancelIcon from "../icons/CancelIcon";
 import CheckIcon from "../icons/CheckIcon";
 import BookmarksIcon from "../icons/BookmarksIcon"
+import BookmarksIconFill from "../icons/BookmarksIconFill"
 
 import { logosArray } from "../logoComponents/logosData"
 
-const Card = ({ cardData, handleCardClicked }) => {
+const Card = ({ cardData, handleCardClicked, setFullCardData }) => {
+
+
+  const currCardDataInStore = useSelector((state) =>
+    cardData._id ? state.cards.cardsData.find((l) => l._id === cardData._id) : null
+  );
+
+  useEffect(() => {
+    setFullCardData(currCardDataInStore)
+  }, [currCardDataInStore.isFavourite])
+
 
   const [venderLogo, setVenderLogo] = useState();
   useEffect(() => {
@@ -64,7 +75,12 @@ const Card = ({ cardData, handleCardClicked }) => {
         {/* <Icon className={styles.favBtnIcon} icon="ion:bookmark-outline" color="#7e8da4" /> */}
 
         <div className={styles.favBtnIconDiv}>
-          <BookmarksIcon />
+          {cardData.isFavourite === true ?
+            <BookmarksIconFill />
+            :
+            <BookmarksIcon />
+
+          }
         </div>
 
       </div>

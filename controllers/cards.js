@@ -18,7 +18,7 @@ const cardsController = {
     // console.log(req.body.data, req.body.user_id)
     let card;
     const CATEGORY = req.body.data.category;
-    console.log(CATEGORY)
+    // console.log(CATEGORY)
 
     switch (CATEGORY) {
       case 'Bank':
@@ -64,6 +64,18 @@ const cardsController = {
 
     // console.log('card', card);
     try {
+
+      // const rs = await UserDatabase.findOneAndUpdate(
+      //   { _id: req.body.user_id },
+      //   {
+      //     $push:
+      //     {
+      //       "cardsMixedArray": { $each: [card] },
+      //     },
+      //   },
+      //   { returnOriginal: false }
+      // );
+      // console.log(rs);
       let response;
       switch (CATEGORY) {
         case 'Bank':
@@ -196,6 +208,13 @@ const cardsController = {
     const cardId = '63b974adb9acaa24a4ebec8b';
 
     try {
+
+      // const rs = await UserDatabase.findOneAndUpdate(
+      //   { _id: collId },
+      //   { $set: { "cardsMixedArray.$.title.field": req.body.title } },
+      //   { arrayFilters: [{ 'element._id': '63b974adb9acaa24a4ebec8b' }] }
+      // );
+      // console.log(rs)
       let response;
 
       switch (CATEGORY) {
@@ -267,20 +286,71 @@ const cardsController = {
       res.status(404).json({ message: error.message });
     }
   },
+
   toggleFav: async (req, res) => {
     const id = req.params.id;
-    const isFav = req.body.data;
+    const isFav = req.body.data.isFav;
+    const CATEGORY = req.body.data.category
+    console.log(CATEGORY, isFav, id)
     try {
-      const response = await UserDatabase.findOneAndUpdate(
-        { "cardsArray._id": id },
-        {
-          $set: {
-            "cardsArray.$.isFavourite": isFav,
-          },
-        },
-        { returnOriginal: false }
-      );
-      res.status(201).json(response.cardsArray);
+
+      // const response = await UserDatabase.findOneAndUpdate(
+      //   { "cardsData.bankCardsArray._id": id },
+      //   {
+      //     $set: {
+
+      //       "cardsData.bankCardsArray.$.isFavourite": isFav
+      //     },
+      //   },
+      //   { returnOriginal: false }
+      // );
+      // console.log(response.cardsData.bankCardsArray);
+      let response;
+
+      switch (CATEGORY) {
+        case "Bank":
+          response = await UserDatabase.findOneAndUpdate(
+            { "cardsData.bankCardsArray._id": id },
+            {
+              $set: {
+
+                "cardsData.bankCardsArray.$.isFavourite": isFav
+              },
+            },
+            { returnOriginal: false }
+          );
+          break;
+
+        case "Identity":
+          response = await UserDatabase.findOneAndUpdate(
+            { "cardsData.identityCardsArray._id": id },
+            {
+              $set: {
+
+                "cardsData.identityCardsArray.$.isFavourite": isFav
+              },
+            },
+            { returnOriginal: false }
+          );
+          break;
+
+        case "License":
+          response = await UserDatabase.findOneAndUpdate(
+            { "cardsData.licenseCardsArray._id": id },
+            {
+              $set: {
+                "cardsData.licenseCardsArray.$.isFavourite": isFav
+              },
+            },
+            { returnOriginal: false }
+          );
+          break;
+        default:
+          break;
+      }
+
+      // console.log(CATEGORY === 'Bank' ? response.cardsData.bankCardsArray : CATEGORY === 'Identity' ? response.cardsData.identityCardsArray : response.cardsData.licenseCardsArray);
+      res.status(201).json(CATEGORY === 'Bank' ? response.cardsData.bankCardsArray : CATEGORY === 'Identity' ? response.cardsData.identityCardsArray : response.cardsData.licenseCardsArray);
     } catch (error) {
       res.status(404).json({ message: error.message });
     }
@@ -288,7 +358,6 @@ const cardsController = {
 };
 
 module.exports = cardsController;
-
 
 
 

@@ -38,9 +38,7 @@ const FavLoginIdsList = () => {
                 handleFavLoginIdClick={handleFavLoginIdClick}
                 favFullCardData={favFullCardData}
             />
-            {/* {
-                showFullFavCard &&
-            } */}
+
 
         </div>
     )

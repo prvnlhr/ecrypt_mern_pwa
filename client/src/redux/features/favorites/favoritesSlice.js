@@ -33,13 +33,26 @@ const favoritesSlice = createSlice({
     initialState: initialState,
     reducers: {
         addToFavLoginsData(state, action) {
-            console.log(action.payload)
             return {
                 ...state,
                 favoriteLoginIds: action.payload
             }
         },
+
+        addToFavCardsData(state, action) {
+            return {
+                ...state,
+                favoriteCards: [action.payload.card, ...state.favoriteCards]
+            }
+        },
+        removeFromFavCardsData(state, action) {
+            return {
+                ...state,
+                favoriteCards: state.favoriteCards.filter(item => item._id != action.payload.card_id)
+            }
+        },
     },
+
     extraReducers: (builder) => {
 
         builder.addCase(fetchFavoritesData.fulfilled, (state, action) => {
@@ -54,5 +67,5 @@ const favoritesSlice = createSlice({
 
 })
 
-export const { addToFavLoginsData } = favoritesSlice.actions;
+export const { addToFavLoginsData, addToFavCardsData, removeFromFavCardsData } = favoritesSlice.actions;
 export default favoritesSlice.reducer;

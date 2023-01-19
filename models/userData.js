@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+const objectSchema = new mongoose.Schema({}, { _id: true });
+
 const userSchema = new mongoose.Schema(
   {
     name: {
@@ -14,7 +16,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    // cardsArray: [{ type: mongoose.Schema.Types.Mixed, }],
+    cardsMixedArray: [objectSchema],
 
     cardsData: {
 
@@ -228,3 +230,22 @@ const userSchema = new mongoose.Schema(
 
 const UserDatabase = mongoose.model("userdatas", userSchema);
 module.exports = { UserDatabase };
+
+
+
+/*
+  
+db.collection.updateOne(
+    { _id: <document_id> },
+    { $set: { "array.$[element].field": <new_value> } },
+    { arrayFilters: [ { "element.field": <current_value> } ] }
+)
+
+
+const objectSchema = new Schema({}, { _id: true });
+
+const arraySchema = new Schema({
+  array: [objectSchema],
+});
+
+*/

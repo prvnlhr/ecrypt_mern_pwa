@@ -33,7 +33,7 @@
     grid-template-rows: 50% 50%;
     grid-template-areas:
         "cardHolderIconDiv cardHolderLabelTextDiv"
-        "cardHolderIconDiv cardHolderInputDiv";
+        "cardHolderIconDiv cardHolderTextDiv";
     background-color: #F3F5F9;
     border-radius: 10px;
 }
@@ -69,47 +69,18 @@
     color: #7E8DA4;
 }
 
-.cardHolderInputDiv {
-    grid-area: cardHolderInputDiv;
+.cardHolderTextDiv {
+    grid-area: cardHolderTextDiv;
     width: 100%;
     height: 100%;
     /* border: 1px solid black; */
 }
 
-
-.cardHolderInputActive {
-    width: 95%;
-    height: auto;
-    border-bottom: 1px solid #7E8DA4;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    /* border: 1px solid #7E8DA4; */
-    outline: none;
-    background: transparent;
+.cardHolderTextDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     color: black;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.cardHolderInputNotActive {
-    width: 95%;
-    height: auto;
-    border: none;
-    /* border: 1px solid #7E8DA4; */
-    outline: none;
-    background: transparent;
-    font-family: "Poppins", sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    color: black;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
 }
 
 /* _____________________________________________ */
@@ -129,7 +100,7 @@
     grid-template-rows: 50% 50%;
     grid-template-areas:
         "cardNumberIconDiv cardNumberLabelTextDiv"
-        "cardNumberIconDiv cardNumberInputDiv";
+        "cardNumberIconDiv cardNumberTextDiv";
     background-color: #F3F5F9;
     border-radius: 10px;
 }
@@ -166,13 +137,19 @@
     color: #7E8DA4;
 }
 
-.cardNumberInputDiv {
-    grid-area: cardNumberInputDiv;
+.cardNumberTextDiv {
+    grid-area: cardNumberTextDiv;
     width: 100%;
     height: 100%;
     /* border: 1px solid black; */
 }
 
+.cardNumberTextDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+}
 
 
 
@@ -196,7 +173,7 @@
     grid-template-rows: 50% 50%;
     grid-template-areas:
         "dobIconDiv dobLabelTextDiv"
-        "dobIconDiv dobDateInputDiv";
+        "dobIconDiv dobDateTextDiv";
     background-color: #F3F5F9;
     border-radius: 10px;
 }
@@ -233,8 +210,8 @@
     color: #7E8DA4;
 }
 
-.dobDateInputDiv {
-    grid-area: dobDateInputDiv;
+.dobDateTextDiv {
+    grid-area: dobDateTextDiv;
     width: 100%;
     height: 100%;
     /* border: 1px solid black; */
@@ -243,6 +220,12 @@
     align-items: center;
 }
 
+.dobDateTextDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+}
 
 
 /* _____________________________________________ */
@@ -266,7 +249,7 @@
     grid-template-rows: 50% 50%;
     grid-template-areas:
         "issueIconDiv issueLabelTextDiv"
-        "issueIconDiv issueDateInputDiv";
+        "issueIconDiv issueDateTextDiv";
     background-color: #F3F5F9;
     border-radius: 10px;
 }
@@ -303,8 +286,8 @@
     color: #7E8DA4;
 }
 
-.issueDateInputDiv {
-    grid-area: issueDateInputDiv;
+.issueDateTextDiv {
+    grid-area: issueDateTextDiv;
     width: 100%;
     height: 100%;
     /* border: 1px solid black; */
@@ -313,40 +296,13 @@
     align-items: center;
 }
 
-.inputActive {
-    width: 80%;
-    height: auto;
-    border-bottom: 1px solid #7E8DA4;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    /* border: 1px solid #7E8DA4; */
-    outline: none;
-    background: transparent;
+.issueDateTextDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     color: black;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
 }
 
-.inputNotActive {
-    width: 80%;
-    height: auto;
-    border: none;
-    /* border: 1px solid #7E8DA4; */
-    outline: none;
-    background: transparent;
-    font-family: "Poppins", sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    color: black;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 
@@ -385,7 +341,7 @@
         grid-template-rows: 50% 50%;
         grid-template-areas:
             "cardHolderIconDiv cardHolderLabelTextDiv"
-            "cardHolderIconDiv cardHolderInputDiv";
+            "cardHolderIconDiv cardHolderTextDiv";
         background-color: #F3F5F9;
         border-radius: 10px;
     }
@@ -421,8 +377,8 @@
         color: #7E8DA4;
     }
 
-    .cardHolderInputDiv {
-        grid-area: cardHolderInputDiv;
+    .cardHolderTextDiv {
+        grid-area: cardHolderTextDiv;
         width: 100%;
         height: 100%;
         /* border: 1px solid black; */
@@ -447,7 +403,7 @@
         grid-template-rows: 50% 50%;
         grid-template-areas:
             "cardNumberIconDiv cardNumberLabelTextDiv"
-            "cardNumberIconDiv cardNumberInputDiv";
+            "cardNumberIconDiv cardNumberTextDiv";
         background-color: #F3F5F9;
         border-radius: 10px;
     }
@@ -484,8 +440,8 @@
         color: #7E8DA4;
     }
 
-    .cardNumberInputDiv {
-        grid-area: cardNumberInputDiv;
+    .cardNumberTextDiv {
+        grid-area: cardNumberTextDiv;
         width: 100%;
         height: 100%;
         /* border: 1px solid black; */
@@ -517,7 +473,7 @@
         grid-template-rows: 50% 50%;
         grid-template-areas:
             "dobIconDiv dobLabelTextDiv"
-            "dobIconDiv dobDateInputDiv";
+            "dobIconDiv dobDateTextDiv";
         background-color: #F3F5F9;
         border-radius: 10px;
     }
@@ -554,8 +510,8 @@
         color: #7E8DA4;
     }
 
-    .dobDateInputDiv {
-        grid-area: dobDateInputDiv;
+    .dobDateTextDiv {
+        grid-area: dobDateTextDiv;
         width: 100%;
         height: 100%;
         /* border: 1px solid black; */
@@ -587,7 +543,7 @@
         grid-template-rows: 50% 50%;
         grid-template-areas:
             "issueIconDiv issueLabelTextDiv"
-            "issueIconDiv issueDateInputDiv";
+            "issueIconDiv issueDateTextDiv";
         background-color: #F3F5F9;
         border-radius: 10px;
     }
@@ -624,8 +580,8 @@
         color: #7E8DA4;
     }
 
-    .issueDateInputDiv {
-        grid-area: issueDateInputDiv;
+    .issueDateTextDiv {
+        grid-area: issueDateTextDiv;
         width: 100%;
         height: 100%;
         /* border: 1px solid black; */

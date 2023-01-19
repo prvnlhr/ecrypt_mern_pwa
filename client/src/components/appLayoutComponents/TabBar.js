@@ -50,6 +50,16 @@ const TabBar = () => {
           var newPos = pos + "px";
           indicatorRef.current.style.left = newPos;
           break;
+        case "/user/favorites/cards":
+          var pos = refFavs.current.offsetLeft;
+          var newPos = pos + "px";
+          indicatorRef.current.style.left = newPos;
+          break;
+        case "/user/favorites/docs":
+          var pos = refFavs.current.offsetLeft;
+          var newPos = pos + "px";
+          indicatorRef.current.style.left = newPos;
+          break;
         default:
           break;
       }

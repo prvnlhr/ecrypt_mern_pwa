@@ -2,11 +2,11 @@ import React from 'react'
 import styles from "./styles/licenseCardSubComponent.module.css"
 import { Icon } from '@iconify/react';
 
-const LicenseCardSubComponent = ({ fullContentCardData, setFullContentCardData, editMode, setEditMode }) => {
+const LicenseCardSubComponent = ({ favFullCardData, setFavFullCardData }) => {
 
   const handleInputValueChange = (e) => {
-    setFullContentCardData({
-      ...fullContentCardData,
+    setFavFullCardData({
+      ...favFullCardData,
       [e.target.name]: e.target.value,
     })
   }
@@ -23,14 +23,8 @@ const LicenseCardSubComponent = ({ fullContentCardData, setFullContentCardData, 
           <div className={styles.cardHolderLabelTextDiv}>
             <p>CARD HOLDER</p>
           </div>
-          <div className={styles.cardHolderInputDiv}>
-            <input
-              className={editMode ? styles.cardHolderInputActive : styles.cardHolderInputNotActive}
-              readOnly={editMode ? false : true}
-              onChange={handleInputValueChange}
-              name={"cardHolder"}
-              value={fullContentCardData.cardHolder}
-            />
+          <div className={styles.cardHolderTextDiv}>
+            <p>{favFullCardData.cardHolder}</p>
           </div>
         </div>
       </div>
@@ -44,15 +38,9 @@ const LicenseCardSubComponent = ({ fullContentCardData, setFullContentCardData, 
           <div className={styles.cardNumberLabelTextDiv}>
             <p>LICENSE NUMBER</p>
           </div>
-          <div className={styles.cardNumberInputDiv}>
-            <input
-              className={editMode ? styles.inputActive : styles.inputNotActive}
-              readOnly={editMode ? false : true}
-              onChange={handleInputValueChange}
-              name={"licenseNumber"}
-              value={fullContentCardData.licenseNumber}
+          <div className={styles.cardNumberTextDiv}>
+            <p>{favFullCardData.licenseNumber}</p>
 
-            />
           </div>
         </div>
       </div>
@@ -66,14 +54,9 @@ const LicenseCardSubComponent = ({ fullContentCardData, setFullContentCardData, 
           <div className={styles.dobLabelTextDiv} >
             <p>DOB</p>
           </div>
-          <div className={styles.dobDateInputDiv} >
-            <input
-              className={editMode ? styles.inputActive : styles.inputNotActive}
-              readOnly={editMode ? false : true}
-              onChange={handleInputValueChange}
-              name={"dob"}
-              value={fullContentCardData.dob}
-            />
+          <div className={styles.dobDateTextDiv} >
+            <p>{favFullCardData.dob}</p>
+
           </div>
         </div>
       </div>
@@ -87,15 +70,9 @@ const LicenseCardSubComponent = ({ fullContentCardData, setFullContentCardData, 
           <div className={styles.expiryLabelTextDiv} >
             <p>EXPIRY</p>
           </div>
-          <div className={styles.expiryDateInputDiv} >
-            <input
-              className={editMode ? styles.inputActive : styles.inputNotActive}
-              readOnly={editMode ? false : true}
-              onChange={handleInputValueChange}
-              name={"expiry"}
-              value={fullContentCardData.expiry}
+          <div className={styles.expiryDateTextDiv} >
+            <p>{favFullCardData.expiry}</p>
 
-            />
           </div>
 
         </div>
