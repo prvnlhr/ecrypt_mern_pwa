@@ -220,7 +220,9 @@ const userSchema = new mongoose.Schema(
           required: true,
         },
       },
-    ], activitiesArray: [{ type: mongoose.Schema.Types.Mixed, }],
+    ],
+    activitiesArray: [{ type: mongoose.Schema.Types.Mixed, }],
+    recentlyAddedArray: [{ type: mongoose.Schema.Types.Mixed, }],
   }
 
 );

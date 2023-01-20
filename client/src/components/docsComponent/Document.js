@@ -1,14 +1,22 @@
 import React, { useEffect } from 'react'
 import styles from "./styles/documentComponent.module.css"
+import { useSelector } from 'react-redux'
 import { Icon, InlineIcon } from "@iconify/react";
-
+import BookmarksIconFill from "../icons/BookmarksIconFill"
+import BookmarksIcon from "../icons/BookmarksIcon"
 const Document = ({ doc, setDocFullScreen, setFullScreenDocData }) => {
 
+  const currDocDataInStore = useSelector((state) =>
+    doc._id ? state.docs.docsData.find((l) => l._id === doc._id) : null
+  );
+
+
+
   const docClicked = () => {
-    // console.log(doc)
     setFullScreenDocData(doc);
     setDocFullScreen(true);
   }
+
   return (
     <div className={styles.documentComponentWrapper} >
       <div className={styles.documenComponentContainer}>
@@ -21,8 +29,15 @@ const Document = ({ doc, setDocFullScreen, setFullScreenDocData }) => {
               {doc.imageName}
             </p>
           </div>
-          <div className={styles.favBtnDiv} >
-            <Icon className={styles.favBtnIcon} icon="ion:bookmark-outline" color="#002A9A" />
+          <div className={styles.favBtnContainer} >
+            <div className={styles.favBtnDiv} >
+
+              {doc.isFavourite === true ?
+                <BookmarksIconFill /> :
+                <BookmarksIcon />
+              }
+            </div>
+            {/* <Icon className={styles.favBtnIcon} icon="ion:bookmark-outline" color="#002A9A" /> */}
           </div>
         </div>
       </div>

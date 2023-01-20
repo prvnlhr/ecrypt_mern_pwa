@@ -317,7 +317,8 @@
     display: grid;
     grid-template-columns: 100%;
     /* grid-template-rows: 45% 55% 100%; */
-    grid-template-rows: 40% 60% 100%;
+    /* grid-template-rows: 40% 60% 100%; */
+    grid-template-rows: 35% 65% 100%;
     grid-template-areas:
       "overviewWrapper"
       "recentActivitesWrapper"
@@ -332,7 +333,7 @@
     grid-area: overviewWrapper;
     width: 100%;
     height: 100%;
-    /* border: 1px solid orange; */
+    /* border: 1px solid red; */
   }
 
   .overviewHeadingContainer {
@@ -354,7 +355,7 @@
     /* background-color: blue; */
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-end;
     flex-wrap: wrap;
     margin-top: 0%;
     padding-left: 0%;
@@ -362,7 +363,10 @@
   }
 
   .boxContainer {
-    width: 35%;
+    /* width: 35%; */
+    /* height: 40%; */
+
+    width: 32%;
     height: 40%;
     /* border: 1px solid black; */
     border-radius: 15px;
@@ -387,6 +391,7 @@
   .iconDiv1 {
     position: relative;
     width: 80%;
+    width: 70%;
     height: unset;
     aspect-ratio: 1/1;
     /* border: 1px solid black; */
@@ -400,6 +405,8 @@
   .iconDiv2 {
     position: relative;
     width: 80%;
+    width: 70%;
+
     height: unset;
     aspect-ratio: 1/1;
     /* border: 1px solid black; */
@@ -413,6 +420,7 @@
   .iconDiv3 {
     position: relative;
     width: 80%;
+    width: 70%;
     height: unset;
     aspect-ratio: 1/1;
     /* border: 1px solid black; */
@@ -425,6 +433,7 @@
 
   .countIcon {
     font-size: 30px;
+    font-size: 25px;
     color: black;
   }
 
@@ -452,7 +461,7 @@
   .countDiv p {
     position: relative;
     font-family: "Poppins", sans-serif;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 600;
     color: black;
     margin: 0px;
@@ -473,7 +482,7 @@
   .labelDiv p {
     position: relative;
     font-family: "Poppins", sans-serif;
-    font-size: 13px;
+    font-size: 12.5px;
     font-weight: 500;
     color: black;
     margin: 0px;
@@ -485,7 +494,7 @@
     grid-area: recentActivitesWrapper;
     width: 100%;
     height: 100%;
-    /* border: 1px solid red; */
+    /* border: 1px solid green; */
   }
 
   .recentActivitesHeadingContianer {

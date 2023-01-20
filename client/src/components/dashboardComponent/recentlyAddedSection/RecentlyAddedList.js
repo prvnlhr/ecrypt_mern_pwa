@@ -13,10 +13,10 @@ import Doc from './Doc'
 
 const RecentlyAddedList = ({
 
-    docFullScreenAct,
-    setDocFullScreenAct,
-    docFullScreenActData,
-    setDocFullScreenActData
+    recAddDocFullScreen,
+    setRecAddDocFullScreen,
+    recAddDocFullScreenData,
+    setRecAddDocFullScreenData
 }) => {
 
     const recentlyAddedData = [
@@ -92,10 +92,10 @@ const RecentlyAddedList = ({
             <LoginId />
             <Card />
             <Doc
-                docFullScreenAct={docFullScreenAct}
-                setDocFullScreenAct={setDocFullScreenAct}
-                docFullScreenActData={docFullScreenActData}
-                setDocFullScreenActData={setDocFullScreenActData}
+                recAddDocFullScreen={recAddDocFullScreen}
+                setRecAddDocFullScreen={setRecAddDocFullScreen}
+                recAddDocFullScreenData={recAddDocFullScreenData}
+                setRecAddDocFullScreenData={setRecAddDocFullScreenData}
             />
         </div>
     )

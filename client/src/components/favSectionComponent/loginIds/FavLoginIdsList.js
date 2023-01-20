@@ -15,7 +15,6 @@ const FavLoginIdsList = () => {
         setShowFullFavCard(!showFullFavCard);
     }
 
-
     return (
         <div className={styles.favLoginListWrapper}  >
             <div

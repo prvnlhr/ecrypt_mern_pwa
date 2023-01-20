@@ -22,7 +22,7 @@ const TabBar = () => {
   const location = useLocation();
 
   useEffect(() => {
-    console.log(location.pathname)
+    // console.log(location.pathname)
     if (indicatorRef.current !== null) {
       switch (location.pathname) {
         case "/":

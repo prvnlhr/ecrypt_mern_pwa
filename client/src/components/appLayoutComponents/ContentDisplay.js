@@ -33,10 +33,14 @@ const ContentDisplay = ({
   setDocFullScreen,
   setFullScreenDocData,
   setLogoComponentShow,
-  docFullScreenAct,
-  setDocFullScreenAct,
-  docFullScreenActData,
-  setDocFullScreenActData
+  recAddDocFullScreen,
+  setRecAddDocFullScreen,
+  recAddDocFullScreenData,
+  setRecAddDocFullScreenData,
+  setShowFavDocFullScreen,
+  showFavDocFullScreen,
+  setFavDocFullScreenData,
+  favDocFullScreenData
 }) => {
 
   const dispatch = useDispatch();
@@ -65,10 +69,10 @@ const ContentDisplay = ({
             <Dashboard
               // setHeading={setHeading}
               // activities={activitiesArray}
-              docFullScreenAct={docFullScreenAct}
-              setDocFullScreenAct={setDocFullScreenAct}
-              docFullScreenActData={docFullScreenActData}
-              setDocFullScreenActData={setDocFullScreenActData}
+              recAddDocFullScreen={recAddDocFullScreen}
+              setRecAddDocFullScreen={setRecAddDocFullScreen}
+              recAddDocFullScreenData={recAddDocFullScreenData}
+              setRecAddDocFullScreenData={setRecAddDocFullScreenData}
             />}
         >
         </Route>
@@ -116,7 +120,13 @@ const ContentDisplay = ({
             />
           } ></Route>
 
-        <Route path="/user/favorites/*" element={<FavList />} >
+        <Route path="/user/favorites/*" element={<FavList
+
+          setShowFavDocFullScreen={setShowFavDocFullScreen}
+          showFavDocFullScreen={showFavDocFullScreen}
+          setFavDocFullScreenData={setFavDocFullScreenData}
+          favDocFullScreenData={favDocFullScreenData}
+        />} >
 
         </Route>
 

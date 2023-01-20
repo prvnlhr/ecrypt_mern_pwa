@@ -15,30 +15,21 @@ import Settings from "./Settings";
 import DocFullScreen from "../docsComponent/DocFullScreen";
 import LogoComponentWrapper from "../logoComponents/LogoComponentWrapper"
 import DocFullScreenRecentAct from "../dashboardComponent/recentlyAddedSection/DocFullScreenRecentAct";
-
+import FavDocFullScreen from "../favSectionComponent/docs/FavDocFullScreen"
 const Home = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const node = useRef();
+
   const [open, setOpen] = useState(false);
   const [logoComponentShow, setLogoComponentShow] = useState(false);
   const [docFullScreen, setDocFullScreen] = useState(false);
-
-  const [docFullScreenAct, setDocFullScreenAct] = useState(false);
-  const [docFullScreenActData, setDocFullScreenActData] = useState({});
-
-
-
-
-
+  const [recAddDocFullScreen, setRecAddDocFullScreen] = useState(false);
+  const [recAddDocFullScreenData, setRecAddDocFullScreenData] = useState({});
   const [fullScreenData, setFullScreenDocData] = useState({});
-  const location = useLocation();
 
-  useEffect(() => {
-    console.log(docFullScreen);
-  }, [docFullScreen])
-
-
-
+  const [showFavDocFullScreen, setShowFavDocFullScreen] = useState(false);
+  const [favDocFullScreenData, setFavDocFullScreenData] = useState({});
 
 
   return (
@@ -49,10 +40,17 @@ const Home = () => {
       } */}
 
       <DocFullScreenRecentAct
-        docFullScreenAct={docFullScreenAct}
-        setDocFullScreenAct={setDocFullScreenAct}
-        docFullScreenActData={docFullScreenActData}
-        setDocFullScreenActData={setDocFullScreenActData}
+        recAddDocFullScreen={recAddDocFullScreen}
+        setRecAddDocFullScreen={setRecAddDocFullScreen}
+        recAddDocFullScreenData={recAddDocFullScreenData}
+        setRecAddDocFullScreenData={setRecAddDocFullScreenData}
+      />
+
+      <FavDocFullScreen
+        setShowFavDocFullScreen={setShowFavDocFullScreen}
+        showFavDocFullScreen={showFavDocFullScreen}
+        setFavDocFullScreenData={setFavDocFullScreenData}
+        favDocFullScreenData={favDocFullScreenData}
       />
 
       <DocFullScreen
@@ -80,10 +78,14 @@ const Home = () => {
             setDocFullScreen={setDocFullScreen}
             setFullScreenDocData={setFullScreenDocData}
             setLogoComponentShow={setLogoComponentShow}
-            docFullScreenAct={docFullScreenAct}
-            setDocFullScreenAct={setDocFullScreenAct}
-            docFullScreenActData={docFullScreenActData}
-            setDocFullScreenActData={setDocFullScreenActData}
+            recAddDocFullScreen={recAddDocFullScreen}
+            setRecAddDocFullScreen={setRecAddDocFullScreen}
+            recAddDocFullScreenData={recAddDocFullScreenData}
+            setRecAddDocFullScreenData={setRecAddDocFullScreenData}
+            setShowFavDocFullScreen={setShowFavDocFullScreen}
+            showFavDocFullScreen={showFavDocFullScreen}
+            setFavDocFullScreenData={setFavDocFullScreenData}
+            favDocFullScreenData={favDocFullScreenData}
           />
           <TabBar />
         </>

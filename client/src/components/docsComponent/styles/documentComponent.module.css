@@ -84,23 +84,25 @@
     margin-left: 5%;
 }
 
-.favBtnDiv {
+.favBtnContainer {
     position: relative;
     width: 20%;
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     /* border: 1px solid black; */
     /* background-color: blueviolet; */
 }
 
-.favBtnIcon {
-    font-size: 15px;
-    margin: 0px;
-    padding: 0px;
+.favBtnDiv {
+    height: 80%;
+    aspect-ratio: 1/1;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
-
 
 @media screen and (max-width: 650px) {
     .documentComponentWrapper {
@@ -178,7 +180,7 @@
         text-overflow: ellipsis
     }
 
-    .favBtnDiv {
+    .favBtnContainer {
         position: relative;
         width: 20%;
         height: 100%;

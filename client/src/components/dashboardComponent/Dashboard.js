@@ -7,10 +7,10 @@ import ActivityList from "./activitySection/ActivityList";
 import ActivityComponentOuter from "./activitySection/ActivityComponentOuter";
 import RecentlyAddedList from "./recentlyAddedSection/RecentlyAddedList"
 const Dashboard = ({ setHeading,
-  docFullScreenAct,
-  setDocFullScreenAct,
-  docFullScreenActData,
-  setDocFullScreenActData
+  recAddDocFullScreen,
+  setRecAddDocFullScreen,
+  recAddDocFullScreenData,
+  setRecAddDocFullScreenData
 }) => {
 
   const loginIdsArray = useSelector((state => state.loginIds.loginsIdData));
@@ -118,10 +118,10 @@ const Dashboard = ({ setHeading,
         </div>
         <div className={styles.recentlyAddedContentContainer}>
           <RecentlyAddedList
-            docFullScreenAct={docFullScreenAct}
-            setDocFullScreenAct={setDocFullScreenAct}
-            docFullScreenActData={docFullScreenActData}
-            setDocFullScreenActData={setDocFullScreenActData}
+            recAddDocFullScreen={recAddDocFullScreen}
+            setRecAddDocFullScreen={setRecAddDocFullScreen}
+            recAddDocFullScreenData={recAddDocFullScreenData}
+            setRecAddDocFullScreenData={setRecAddDocFullScreenData}
           />
         </div>
       </div>

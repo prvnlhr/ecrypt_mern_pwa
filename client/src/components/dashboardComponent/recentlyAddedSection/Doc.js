@@ -5,19 +5,19 @@ import { Icon } from '@iconify/react';
 import { motion, AnimatePresence } from "framer-motion"
 
 const Doc = ({
-    docFullScreenAct,
-    setDocFullScreenAct,
-    docFullScreenActData,
-    setDocFullScreenActData
+    recAddDocFullScreen,
+    setRecAddDocFullScreen,
+    recAddDocFullScreenData,
+    setRecAddDocFullScreenData
 }) => {
     const [cardExpand, setCardExpand] = useState(false);
     const changeCardView = () => {
-        setDocFullScreenActData({
-            ...docFullScreenActData,
+        setRecAddDocFullScreenData({
+            ...recAddDocFullScreenData,
             imageName: "Aadhar card",
             imageUrl: "cscs"
         })
-        setDocFullScreenAct(!docFullScreenAct)
+        setRecAddDocFullScreen(!recAddDocFullScreen)
     }
     return (
         <div className={styles.cardWrapper} onClick={changeCardView}>

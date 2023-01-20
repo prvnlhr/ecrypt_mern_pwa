@@ -1,13 +1,29 @@
 import React from 'react';
-import { useState } from 'react';
-import { useDispatch } from 'react-redux'
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux'
 import BackBtnIcon from '../icons/BackBtnIcon';
 import styles from "./styles/documentFullScreen.module.css"
 import { Icon } from '@iconify/react';
-import { deleteDocData, editDocData } from "../../redux/features/docs/docsSlice"
+import { deleteDocData, editDocData, toggleIsFav } from "../../redux/features/docs/docsSlice"
 import { generateActivityData } from ".././utils/ActivityDataChangeFuction"
-
+import BookmarksIcon from "../icons/BookmarksIcon"
+import BookmarksIconFill from "../icons/BookmarksIconFill"
 const DocFullScreen = ({ setDocFullScreen, setFullScreenDocData, docFullScreen, fullScreenData }) => {
+
+    const currDocDataInStore = useSelector((state) =>
+        fullScreenData._id ? state.docs.docsData.find((l) => l._id === fullScreenData._id) : null
+    );
+
+    useEffect(() => {
+        if (currDocDataInStore) {
+            // console.log(currDocDataInStore);
+            setFullScreenDocData({
+                ...fullScreenData,
+                isFavourite: currDocDataInStore.isFavourite
+            })
+        }
+    }, [currDocDataInStore])
+
     const dispatch = useDispatch();
     const [headerFooterShow, setHeaderFooterShow] = useState(true);
 
@@ -71,6 +87,13 @@ const DocFullScreen = ({ setDocFullScreen, setFullScreenDocData, docFullScreen, 
         }))
         setDocFullScreen(false)
     }
+    //> fav btn Clicked
+    const handleFavBtnClicked = () => {
+        dispatch(toggleIsFav({
+            doc_id: fullScreenData._id,
+            isFav: !fullScreenData.isFavourite
+        }))
+    }
     return (
         <div className={docFullScreen ? styles.documentFullScreenWrapper : styles.documentFullScreenWrapperClose} >
 
@@ -90,7 +113,16 @@ const DocFullScreen = ({ setDocFullScreen, setFullScreenDocData, docFullScreen, 
                         <p>Delete</p>
                     </div>
                 </div>
-                <div className={styles.favBtnContainer} ></div>
+                <div className={styles.favBtnContainer} >
+                    <div className={styles.favBtnDiv} onClick={handleFavBtnClicked}  >
+                        {
+                            fullScreenData.isFavourite === true ?
+                                <BookmarksIconFill /> :
+                                <BookmarksIcon />
+                        }
+                    </div>
+
+                </div>
             </div>
 
             <div className={headerFooterShow ? styles.footerContainer : styles.footerContainerClose}  >

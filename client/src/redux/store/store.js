@@ -4,6 +4,7 @@ import cardsSlice from '../features/cards/cardsSlice'
 import docsSlice from "../features/docs/docsSlice"
 import activitiesSlice from '../features/activity/activitiesSlice'
 import favoritesSlice from '../features/favorites/favoritesSlice'
+import recentlyAddedSlice from "../features/recentlyAdded/recentlyAddedSlice"
 
 const store = configureStore({
     reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
         docs: docsSlice,
         activities: activitiesSlice,
         favorites: favoritesSlice,
+        recentlyAdded: recentlyAddedSlice
     },
 })
 

@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { addActivityData } from "../activity/activitiesSlice"
 import { addToFavLoginsData } from "../favorites/favoritesSlice";
+import { addRecentlyAddedData } from "../recentlyAdded/recentlyAddedSlice"
 import * as api from "../../api"
 
 const initialState = {
@@ -22,11 +23,18 @@ export const fecthLoginIdsData = createAsyncThunk("loginIds/fetch", async ({ use
 
 export const addNewLoginIdData = createAsyncThunk("loginIds/add", async ({ data, user_id, activityData }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
-        const res = await api.addNewLoginIdA(data, user_id)
+        const res = await api.addNewLoginId(data, user_id)
+
         dispatch(addActivityData({
             activityData: activityData,
             userId: user_id
         }))
+
+        dispatch(addRecentlyAddedData({
+            recentlyAddedData: data,
+            userId: user_id
+        }))
+
         const { loginIdsArray } = res.data;
         return fulfillWithValue(loginIdsArray[loginIdsArray.length - 1]);
     } catch (error) {

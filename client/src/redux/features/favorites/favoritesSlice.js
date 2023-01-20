@@ -45,6 +45,13 @@ const favoritesSlice = createSlice({
                 favoriteCards: [action.payload.card, ...state.favoriteCards]
             }
         },
+        addToFavDocsData(state, action) {
+            return {
+                ...state,
+                favoriteDocs: action.payload
+                // favoriteDocs: []
+            }
+        },
         removeFromFavCardsData(state, action) {
             return {
                 ...state,
@@ -67,5 +74,5 @@ const favoritesSlice = createSlice({
 
 })
 
-export const { addToFavLoginsData, addToFavCardsData, removeFromFavCardsData } = favoritesSlice.actions;
+export const { addToFavLoginsData, addToFavCardsData, removeFromFavCardsData, addToFavDocsData } = favoritesSlice.actions;
 export default favoritesSlice.reducer;

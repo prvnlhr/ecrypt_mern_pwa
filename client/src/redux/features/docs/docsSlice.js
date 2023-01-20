@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import * as api from "../../api"
 import { addActivityData } from "../activity/activitiesSlice"
 
-
+import { addToFavDocsData } from "../favorites/favoritesSlice"
 const initialState = {
     docsData: [],
 }
@@ -79,6 +79,22 @@ export const deleteDocData = createAsyncThunk("docs/delete", async ({ docId, clo
 
 });
 
+export const toggleIsFav = createAsyncThunk("docs/toggleFav", async ({ doc_id, isFav }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
+    try {
+
+        // console.log(doc_id, isFav)
+        const res = await api.docsFavouriteToggle(doc_id, isFav)
+        // console.log(res.data)
+        const favDocsArray = res.data.filter((item) => item.isFavourite);
+        // console.log(favDocsArray);
+        dispatch(addToFavDocsData(favDocsArray.reverse()));
+        return fulfillWithValue({ favValue: isFav, id: doc_id });
+    } catch (error) {
+        throw rejectWithValue(error);
+    }
+});
+
+
 //* Slice
 const docsSlice = createSlice({
 
@@ -131,6 +147,23 @@ const docsSlice = createSlice({
                     docsData: state.docsData,
                 };
             })
+            .addCase(toggleIsFav.fulfilled, (state, action) => {
+                const favVal = action.payload.favValue;
+                const id = action.payload.id;
+                const old = state.docsData;
+                const newDocsArray = old.map((l) => {
+                    if (l._id === id) {
+                        return { ...l, isFavourite: favVal };
+                    } else {
+                        return l;
+                    }
+                });
+                return {
+                    ...state,
+                    docsData: newDocsArray,
+                };
+            })
+
     }
 
 })

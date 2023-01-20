@@ -6,7 +6,12 @@ import FavCardsList from "./cards/FavCardsList";
 import FavDocsList from "./docs/FavDocsList";
 import FavLoginIdsList from "./loginIds/FavLoginIdsList";
 import styles from "./styles/favList.module.css";
-const FavList = ({ }) => {
+const FavList = ({
+  setShowFavDocFullScreen,
+  showFavDocFullScreen,
+  setFavDocFullScreenData,
+  favDocFullScreenData
+}) => {
 
 
 
@@ -97,7 +102,12 @@ const FavList = ({ }) => {
         <Routes>
           <Route path="/logins" element={<FavLoginIdsList />} />
           <Route path="/cards" element={<FavCardsList />} />
-          <Route path="/docs" element={<FavDocsList />} />
+          <Route path="/docs" element={<FavDocsList
+            setShowFavDocFullScreen={setShowFavDocFullScreen}
+            showFavDocFullScreen={showFavDocFullScreen}
+            setFavDocFullScreenData={setFavDocFullScreenData}
+            favDocFullScreenData={favDocFullScreenData}
+          />} />
         </Routes>
 
 

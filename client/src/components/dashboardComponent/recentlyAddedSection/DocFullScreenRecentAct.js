@@ -7,9 +7,9 @@ import { Icon } from '@iconify/react';
 // import { deleteDocData, editDocData } from "../../redux/features/docs/docsSlice"
 // import { generateActivityData } from ".././utils/ActivityDataChangeFuction"
 
-const DocFullScreenRecentAct = ({ setDocFullScreenAct, docFullScreenAct,
-    docFullScreenActData,
-    setDocFullScreenActData
+const DocFullScreenRecentAct = ({ setRecAddDocFullScreen, recAddDocFullScreen,
+    recAddDocFullScreenData,
+    setRecAddDocFullScreenData
 }) => {
     const dispatch = useDispatch();
     const [headerFooterShow, setHeaderFooterShow] = useState(true);
@@ -25,7 +25,7 @@ const DocFullScreenRecentAct = ({ setDocFullScreenAct, docFullScreenAct,
     }
 
     const docMinimises = () => {
-        setDocFullScreenAct(false);
+        setRecAddDocFullScreen(false);
     }
 
     // const editBtnClicked = () => {
@@ -74,7 +74,7 @@ const DocFullScreenRecentAct = ({ setDocFullScreenAct, docFullScreenAct,
     //     setDocFullScreen(false)
     // }
     return (
-        <div className={docFullScreenAct ? styles.documentFullScreenWrapper : styles.documentFullScreenWrapperClose} >
+        <div className={recAddDocFullScreen ? styles.documentFullScreenWrapper : styles.documentFullScreenWrapperClose} >
 
             <div className={styles.imageContainer} onClick={handleHeaderFooterShowHide}>
                 {/* <img src={fullScreenData.imageUrl} /> */}
@@ -91,7 +91,7 @@ const DocFullScreenRecentAct = ({ setDocFullScreenAct, docFullScreenAct,
 
             <div className={headerFooterShow ? styles.footerContainer : styles.footerContainerClose}  >
                 <div className={styles.titleInputDiv} >
-                    <p>{docFullScreenActData.imageName}</p>
+                    <p>{recAddDocFullScreenData.imageName}</p>
                 </div>
                 {/* <div className={styles.titleEditBtnIconContainer} >
                     {!editMode ?

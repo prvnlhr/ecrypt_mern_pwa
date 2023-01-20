@@ -13,7 +13,6 @@ const SearchSection = () => {
 
     const [listTitle, setListTitle] = useState("");
 
-
     useEffect(() => {
         switch (location.pathname) {
             case "/":
@@ -28,7 +27,13 @@ const SearchSection = () => {
             case "/user/diplay_documents":
                 setListTitle("Notes");
                 break;
-            case "/user/favorites/*":
+            case "/user/favorites/logins":
+                setListTitle("Favorites");
+                break;
+            case "/user/favorites/cards":
+                setListTitle("Favorites");
+                break;
+            case "/user/favorites/docs":
                 setListTitle("Favorites");
                 break;
             default:

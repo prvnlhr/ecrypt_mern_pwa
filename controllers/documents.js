@@ -91,9 +91,11 @@ const documentsController = {
       res.status(404).json({ message: error.message });
     }
   },
+
   toggleFav: async (req, res) => {
     const id = req.params.id;
     const isFav = req.body.data;
+    console.log(id, isFav)
     try {
       const response = await UserDatabase.findOneAndUpdate(
         { "docsArray._id": id },

@@ -1,0 +1,200 @@
+.documentComponentWrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 200px;
+    background-color: white;
+    border-radius: 15px;
+    margin-left: 20px;
+    /* border: 1px solid black; */
+    margin-top: 20px;
+}
+
+.documenComponentContainer {
+    position: relative;
+    width: 95%;
+    height: 95%;
+    display: grid;
+    grid-template-rows: 85% 15%;
+    grid-template-columns: 100%;
+    grid-template-areas:
+        "imageContainer"
+        "footerContainer";
+
+    /* border: 1px solid black; */
+
+
+}
+
+.imageContainer {
+    position: relative;
+    grid-area: imageContainer;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #DDEFF3;
+    border-radius: 15px;
+}
+
+.imageContainer img {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    cursor: pointer;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.footerContainer {
+    position: relative;
+    grid-area: footerContainer;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid orange; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titleDiv {
+    position: relative;
+    width: 80%;
+    height: 100%;
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.titleText {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: black;
+    width: 80%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 5%;
+}
+
+.favBtnContainer {
+    position: relative;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+    /* background-color: blueviolet; */
+}
+
+.favBtnDiv {
+    height: 80%;
+    aspect-ratio: 1/1;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+@media screen and (max-width: 650px) {
+    .documentComponentWrapper {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        background-color: white;
+        margin: unset;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .documenComponentContainer {
+        position: relative;
+        width: 92%;
+        height: 92%;
+        display: grid;
+        grid-template-rows: 85% 15%;
+        grid-template-columns: 100%;
+        grid-template-areas:
+            "imageContainer"
+            "footerContainer";
+        justify-content: center;
+        align-items: center;
+        /* border: 1px solid black; */
+
+    }
+
+    .imageContainer {
+        position: relative;
+        grid-area: imageContainer;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+        background-color: #DDEFF3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 12px;
+    }
+
+    .footerContainer {
+        position: relative;
+        grid-area: footerContainer;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid orange; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .titleDiv {
+        position: relative;
+        width: 80%;
+        height: 100%;
+        /* border: 1px solid blue; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        overflow: hidden;
+    }
+
+    .titleText {
+        font-family: "Poppins", sans-serif;
+        font-size: 12px;
+        font-weight: 450;
+        color: black;
+        width: 80%;
+        margin-left: 5%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis
+    }
+
+    .favBtnContainer {
+        position: relative;
+        width: 20%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        /* border: 1px solid black; */
+        /* background-color: blueviolet; */
+    }
+
+    .favBtnIcon {
+        font-size: 16px;
+        margin: 0px;
+        padding: 0px;
+        /* border: 1px solid black; */
+    }
+}

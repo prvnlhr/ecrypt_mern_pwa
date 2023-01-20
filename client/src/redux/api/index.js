@@ -19,7 +19,7 @@ export const fetchUserLoginIds = (user_id) =>
     },
   });
 
-export const addNewLoginIdA = (newLoginData, user_id) =>
+export const addNewLoginId = (newLoginData, user_id) =>
   API.post("/user/loginIds/addLoginId", {
     data: newLoginData,
     user_id: user_id,
@@ -95,6 +95,21 @@ export const addActivity = (user_id, activityData) =>
     user_id: user_id,
   });
 
+//> RECENTLY ADDED API___________________________________________________________________________________________
+export const fetchUserRecentlyAddedData = (user_id) =>
+  API.get("/user/recentlyAdded/getRecentlyAdded", {
+    params: {
+      user_id: user_id,
+    },
+  });
+
+//>add activity___
+export const addRecentlyData = (user_id, activityData) =>
+  API.post("/user/recentlyAdded/addRecentlyAdded", {
+    data: activityData,
+    user_id: user_id,
+  });
+
 
 //>FAVOURITE TOGGLE URL_____________________________________________________________________
 export const loginIdFavouriteToggle = (loginCard_Id, isFav) =>
@@ -102,7 +117,7 @@ export const loginIdFavouriteToggle = (loginCard_Id, isFav) =>
     data: isFav,
   });
 
-export const cardFavouriteToggle = (card_id, isFav,category) =>
+export const cardFavouriteToggle = (card_id, isFav, category) =>
   API.patch(`/user/cards/toggleFavourite/${card_id}`, {
     data: {
       isFav,

@@ -32,7 +32,9 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
 
   const [lightTheme, setTheme] = useState(true);
 
-
+  const toggleTheme = () => {
+    setTheme(!lightTheme);
+  }
 
 
   const togglePopup = () => {
@@ -131,13 +133,14 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
           <circle cx="18.24" cy="84.72" r="18.24" fill="#7E8DA4" fill-opacity="0.42" />
           <circle cx="84.7205" cy="84.72" r="18.24" fill="#7E8DA4" />
         </svg>
-
         {open && (
           <div className={`${headerStyles.popUpMenuContainer}`}>
             <div className={headerStyles.topSection} >
               <div className={headerStyles.themeToggleWrapper}>
-                <div className={headerStyles.toggleContainer} >
-                  <div className={lightTheme ? headerStyles.toggleBtnDivLeft : headerStyles.toggleBtnDivRight} >
+                <div className={headerStyles.toggleContainer}
+                  onClick={toggleTheme}
+                >
+                  <div className={lightTheme ? headerStyles.toggleBtnDivLeft : headerStyles.toggleBtnDivRight}  >
                     <div className={headerStyles.toggleIconDiv} >
                       {lightTheme ?
                         <Icon className={headerStyles.toggleIconLight} icon="mingcute:sun-line" color="#f3b821" /> :
