@@ -14,6 +14,9 @@ const DocFullScreenRecentAct = ({ setRecAddDocFullScreen, recAddDocFullScreen,
     const dispatch = useDispatch();
     const [headerFooterShow, setHeaderFooterShow] = useState(true);
 
+    // console.log(recAddDocFullScreenData);
+
+
     // const [imageName, setImageName] = useState("");
     // const [editMode, setEditMode] = useState(false);
 
@@ -77,7 +80,7 @@ const DocFullScreenRecentAct = ({ setRecAddDocFullScreen, recAddDocFullScreen,
         <div className={recAddDocFullScreen ? styles.documentFullScreenWrapper : styles.documentFullScreenWrapperClose} >
 
             <div className={styles.imageContainer} onClick={handleHeaderFooterShowHide}>
-                {/* <img src={fullScreenData.imageUrl} /> */}
+                <img src={recAddDocFullScreenData.imageUrl} />
             </div>
 
             <div className={headerFooterShow ? styles.headerContainer : styles.headerContainerClose} >

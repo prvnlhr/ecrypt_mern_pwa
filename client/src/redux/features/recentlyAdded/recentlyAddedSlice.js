@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import * as api from "../../api"
 // import { editLoginIdData } from "../loginsId/loginsIdSlice"
 
-export const fetchRecentlyAdddedData = createAsyncThunk("recentlyAdded/fetch", async ({ user_id }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
+export const fetchRecentlyAddedData = createAsyncThunk("recentlyAdded/fetch", async ({ user_id }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
         const res = await api.fetchUserRecentlyAddedData(user_id)
         // console.log(res.data)
@@ -18,7 +18,7 @@ export const addRecentlyAddedData = createAsyncThunk("recentlyAdded/add", async 
 
         const res = await api.addRecentlyData(userId, recentlyAddedData);
         // console.log('recentlyAdded response', res.data.activitiesArray)
-        const data = res.data.activitiesArray;
+        const data = res.data.recentlyAddedArray;
         return fulfillWithValue(data.reverse());
     } catch (error) {
         console.log(error)
@@ -27,7 +27,7 @@ export const addRecentlyAddedData = createAsyncThunk("recentlyAdded/add", async 
 })
 
 const initialState = {
-    recentlyAdddedData: [],
+    recentlyAddedData: [],
 }
 
 const recentlyAddedSlice = createSlice({
@@ -41,12 +41,12 @@ const recentlyAddedSlice = createSlice({
             addCase(addRecentlyAddedData.fulfilled, (state, action) => {
                 return {
                     ...state,
-                    recentlyAdddedData: action.payload
+                    recentlyAddedData: action.payload
                 };
-            }).addCase(fetchRecentlyAdddedData.fulfilled, (state, action) => {
+            }).addCase(fetchRecentlyAddedData.fulfilled, (state, action) => {
                 return {
                     ...state,
-                    recentlyAdddedData: action.payload
+                    recentlyAddedData: action.payload
                 }
             })
 

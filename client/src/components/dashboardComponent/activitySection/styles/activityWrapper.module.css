@@ -173,6 +173,7 @@
     border-radius: 9px;
     /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    /* border: 1px solid black; */
 
 
 
@@ -209,15 +210,30 @@
     border-radius: 9px;
     /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    /* border: 2px solid #D64339; */
+    box-sizing: border-box;
+}
 
+.taskContainerBorderAdded {
+    /* border: 3px solid #58bf6e9b; */
+    color: #58bf6e;
+}
 
+.taskContainerBorderDeleted {
+    /* border: 3px solid #d6433976; */
+    color: #d64339;
+}
+
+.taskContainerBorderEdit {
+    /* border: 3px solid #9dc1fae6; */
+    color: #668cf4;
 }
 
 .taskContainer p {
     font-family: "Poppins", sans-serif;
     font-size: 12px;
     font-weight: 500;
-    color: black;
+    /* color: black; */
     margin: 0px;
     padding: 0px;
 }

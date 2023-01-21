@@ -53,6 +53,7 @@ export const editLoginIdData = createAsyncThunk("loginIds/edit", async ({ update
             activityData: activityData,
             userId: userId
         }))
+        
         return fulfillWithValue(updatedData);
 
     } catch (error) {

@@ -3,10 +3,11 @@ const { UserDatabase } = require("../models/userData");
 
 const recentlyAddedController = {
     getRecentlyAdded: async (req, res) => {
-        console.log('get recently added', req.query.user_id)
+        // console.log('get recently added', req.query.user_id)
         try {
-            const res = await UserDatabase.findOne({ _id: req.query.user_id });
-            res.status(200).send(res.recentlyAddedArray);
+            const response = await UserDatabase.findOne({ _id: req.query.user_id });
+            console.log(response.recentlyAddedArray)
+            res.status(200).send(response.recentlyAddedArray);
         } catch (error) {
             console.log(error);
             res.status(404).json({ message: error.message });

@@ -94,10 +94,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 85%;
-    width: 85%;
+    height: 82%;
+    width: 82%;
     background-color: #F3F5F9;
     border-radius: 8px;
+    /* border: 1px solid black; */
 }
 
 .logoDivExpand {
@@ -675,8 +676,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 85%;
-        width: 85%;
+        height: 82%;
+        width: 82%;
         background-color: #F3F5F9;
         border-radius: 8px;
     }

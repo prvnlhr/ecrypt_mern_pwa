@@ -17,7 +17,6 @@ const FavDocFullScreen = ({ setShowFavDocFullScreen, showFavDocFullScreen,
 
     //> if favDocsArray is changed 
     useEffect(() => {
-        // console.log(docFavDataInStore);
         if (docFavDataInStore === undefined) {
             setShowFavDocFullScreen(false);
         }
@@ -31,7 +30,7 @@ const FavDocFullScreen = ({ setShowFavDocFullScreen, showFavDocFullScreen,
 
     const docMinimises = () => {
         setShowFavDocFullScreen(false);
-        setFavDocFullScreenData(undefined);
+        setFavDocFullScreenData({});
     }
 
     //> fav btn Clicked

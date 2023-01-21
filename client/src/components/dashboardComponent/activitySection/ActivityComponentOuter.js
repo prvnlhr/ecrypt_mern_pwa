@@ -39,17 +39,18 @@ const ActivityComponentOuter = ({ activity }) => {
                     </div>
                 </div>
 
-
+                {/* ${activity.task === 'Deleted' ? styles.taskContainerBorderDeleted : activity.task === 'Added' ? styles.taskContainerBorderAdded : styles.taskContainerBorderEdit} */}
                 <div className={styles.taskWrapper}>
-                    <div className={styles.taskContainer} >
-                        <p>{activity.task}</p>
+                    <div className={`${styles.taskContainer}
+
+                      `} >
+                        <p className={`${activity.task === 'Deleted' ? styles.taskContainerBorderDeleted : activity.task === 'Added' ? styles.taskContainerBorderAdded : styles.taskContainerBorderEdit}`}>
+                            {activity.task}
+                        </p>
                     </div>
                 </div>
 
             </div>
-
-
-
 
             {
                 (activity.subType === 3) ?
@@ -73,7 +74,7 @@ const ActivityComponentOuter = ({ activity }) => {
 
 
 
-        </div>
+        </div >
     )
 }
 

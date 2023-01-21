@@ -5,11 +5,15 @@ import { Icon } from '@iconify/react';
 import { motion, AnimatePresence } from "framer-motion"
 
 
-const Card = () => {
+const Card = ({ item }) => {
+    // console.log(item)
     const [cardExpand, setCardExpand] = useState(false);
+
+    //> Change card viewc
     const changeCardView = () => {
         setCardExpand(!cardExpand)
     }
+
     return (
         <div className={cardExpand ? styles.cardWrapperExpand : styles.cardWrapperShrink} onClick={changeCardView}>
             <div className={cardExpand ? styles.cardContainerExpand : styles.cardContainerShrink} >
@@ -17,7 +21,7 @@ const Card = () => {
                 <div className={styles.logoWrapper}>
                     <div className={cardExpand ? styles.logoDivExpand : styles.logoDivShrink}>
                         {
-                            logosArray[72].logo
+                            logosArray[item.logoIndex].logo
                         }
                     </div>
                 </div>
@@ -30,10 +34,9 @@ const Card = () => {
                     }
 
                     <div className={cardExpand ? styles.titleTextDivExpand : styles.titleTextDivShrink} >
-                        <p>State Bank Credit card</p>
+                        <p>{item.title}</p>
                     </div>
                 </div>
-
 
                 {cardExpand &&
                     <>
@@ -43,7 +46,7 @@ const Card = () => {
                             </div>
                             <div className={styles.categoryTextWrapper} >
                                 <div className={styles.categoryTextDiv} >
-                                    <p>Bank</p>
+                                    <p>{item.category}</p>
                                 </div>
                             </div>
                         </div>
@@ -55,10 +58,13 @@ const Card = () => {
                                 />
                             </div>
                             <div className={styles.cardHolderLabelWrapper} >
-                                <p>CARDHOLDER</p>
+                                <p>
+                                    CARDHOLDER
+
+                                </p>
                             </div>
                             <div className={styles.cardHolderTextWrapper} >
-                                <p>Anthony Stark</p>
+                                <p>{item.cardHolder}</p>
                             </div>
                         </div>
 
@@ -69,14 +75,23 @@ const Card = () => {
                                     icon="prime:calendar-times" color="#002a9a" />
                             </div>
                             <div className={styles.cardExpiryLabelWrapper} >
-                                <p>EXPIRY</p>
+                                <p>
+                                    {
+                                        item.category === 'Bank' ? 'EXPIRY' : 'DOB'
+                                    }
+                                </p>
                             </div>
                             <div className={styles.cardExpiryTextWrapper} >
                                 <p>
-                                    23/05
+                                    {
+                                        item.category === 'Bank' ? item.expiry : item.dob
+                                    }
                                 </p>
                             </div>
                         </div>
+
+
+
                         <div className={styles.cvvWrapper} >
                             <div className={styles.cardCvvIconWrapper} >
                                 <Icon
@@ -84,10 +99,18 @@ const Card = () => {
                                     icon="ph:password-bold" color="#002a9a" />
                             </div>
                             <div className={styles.cardCvvLabelWrapper} >
-                                <p>CVV</p>
+                                <p>
+                                    {
+                                        item.category === 'Bank' ? 'CVV' : item.category === 'Identity' ? 'ISSUE DATE' : item.category === 'License' && 'EXPIRY'
+                                    }
+                                </p>
                             </div>
                             <div className={styles.cardCvvTextWrapper} >
-                                <p>856</p>
+                                <p>
+                                    {
+                                        item.category === 'Bank' ? item.cvv : item.category === 'Identity' ? item.issueDate : item.category === 'License' && item.expiry
+                                    }
+                                </p>
                             </div>
                         </div>
                     </>
@@ -100,14 +123,22 @@ const Card = () => {
                             </div>
                             <div className={styles.cardNoLabelWrapper} >
                                 <p>
-                                    CARDNUMBER
+
+                                    {
+                                        item.category === 'License' ? 'LICENSE NUMBER' : 'CARD NUMBER'
+                                    }
+
                                 </p>
                             </div>
                         </>
                     }
 
                     <div className={cardExpand ? styles.cardNoTextWrapper : styles.cardNoTextWrapperShrink} >
-                        <p>524272001139452</p>
+                        <p>
+                            {
+                                item.category === 'License' ? item.licenseNumber : item.cardNumber
+                            }
+                        </p>
                     </div>
                 </div>
             </div>

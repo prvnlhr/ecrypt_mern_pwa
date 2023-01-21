@@ -1,0 +1,156 @@
+.modalWrapperOpen {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    height: 220px;
+    background-color: white;
+    border-radius: 10px;
+    top: 25%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 99;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* border: 1px solid red; */
+}
+
+.modalWrapperClose {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 0%;
+    height: 0%;
+    background-color: white;
+    border-radius: 10px;
+    top: 25%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 99;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* border: 1px solid red; */
+    /* opacity: 0; */
+    scale: 0;
+}
+
+.modalContainer {
+    width: 90%;
+    height: 90%;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContainerClose {
+    /* opacity: 0; */
+}
+
+.iconContainer {
+    width: 100%;
+    height: 25%;
+    /* border: 1px solid black; */
+    font-size: 45px;
+    color: #DC4543;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.dialogContainer {
+    width: 100%;
+    height: 50%;
+    /* border: 1px solid black; */
+
+    flex-direction: column;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.textTopDiv {
+    width: 100%;
+    height: 40%;
+    /* border: 1px solid red; */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* padding-bottom: 2%; */
+}
+
+.textTopDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+}
+
+.textBottomDiv {
+    width: 100%;
+    height: 60%;
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+}
+
+.textBottomDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 450;
+    color: #858585;
+
+}
+
+.btnContainer {
+    width: 100%;
+    height: 25%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.deleteBtnDiv {
+    width: 30%;
+    height: 60%;
+    border-radius: 5px;
+    background-color: #DC4543;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deleteBtnDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: white;
+}
+
+.cancelBtnDiv {
+    width: 30%;
+    height: 60%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(128, 128, 128, 0.355);
+}
+
+
+.cancelBtnDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 450;
+    color: black;
+}

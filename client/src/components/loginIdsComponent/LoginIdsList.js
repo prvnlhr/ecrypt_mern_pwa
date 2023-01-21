@@ -1,23 +1,21 @@
 import React from "react";
 import { useState, useEffect, useRef, lazy, Suspense } from "react";
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import LoginId from "./LoginId";
 import styles from "./styles/loginList.module.css";
-import noContentStyles from "../docsComponent/styles/noContentMessage.module.css";
-import btnStyles from "../add_button/buttons.module.css";
-import { FiPlusCircle } from "react-icons/fi";
-import { HiPlus } from "react-icons/hi";
-import { CircleSpinner } from "react-spinners-kit";
 import FullContentCard from "./FullContentCard";
 import AddBtn from "../buttons/AddBtn";
 import LoginIdInputForm from "./LoginIdInputForm";
+import DeleteModal from "../modal/DeleteModal"
+import { diff, generateActivityData } from "../utils/ActivityDataChangeFuction"
+import { editLoginIdData, deleteLoginData, toggleIsFav } from "../../redux/features/loginsId/loginsIdSlice"
 
-const LoginIdsList = ({ setLogoComponentShow }
-) => {
+const LoginIdsList = ({ setLogoComponentShow }) => {
+
+  const dispatch = useDispatch();
 
   const loginIdsArray = useSelector((state => state.loginIds.loginsIdData));
 
-  // console.table(loginIdsArray);
   const [formMode, setFormMode] = useState(false);
   const [showEditButton, setEditButton] = useState(true);
   const [currEditId, setCurrEditId] = useState(null);
@@ -29,101 +27,12 @@ const LoginIdsList = ({ setLogoComponentShow }
 
   const [fullContentCardData, setFullContentCardData] = useState(undefined)
 
+  const [deleteMode, setDeleteMode] = useState(false);
 
-  // SCROLLING BUTTON HIDE__
-  // const node = useRef();
-  // var timeOut = null;
-  // const [isScrolling, setIsScrolling] = useState(false);
-  // useEffect(() => {
-  //   if (node.current != null) {
-  //     node.current.addEventListener("scroll", handleScroll);
-  //   }
-  //   return () => {
-  //     if (node.current != null) {
-  //       node.current.removeEventListener("scroll", handleScroll);
-  //     }
-  //   };
-  // }, []);
-
-  // const handleScroll = (e) => {
-  //   setIsScrolling(true);
-  //   clearTimeout(timeOut);
-  //   timeOut = setTimeout(() => {
-  //     setIsScrolling(false);
-  //   }, 200);
-  // };
 
   const formToggle = () => {
-
-    if (showInputForm) {
-
-    }
     setShowInputForm(!showInputForm);
   };
-
-
-  const loginIds = [
-
-    {
-      app: "Gpay",
-      category: "Finance",
-      title: "Google pay",
-      username: "andrew.GarF@gmial.com",
-      password: "andrew@122",
-      logoIndex: 39,
-    },
-    {
-      app: "Amazon",
-      category: "Shopping",
-      title: "Amazon shopping app",
-      username: "andrew@amz.com",
-      password: "andrew@1dsds",
-      logoIndex: 5,
-
-    }
-    , {
-      app: "Instagram",
-      category: "Social",
-      title: "Instagram app",
-      username: "andrew@facebook.com",
-      password: "andrew@1d32",
-      logoIndex: 50,
-
-    }, {
-      app: "facebbok",
-      category: "Social",
-      title: "Facebook.com",
-      username: "andrew@facebook.com",
-      password: "andrew@1d32",
-      logoIndex: 28,
-
-    }, {
-      app: "Gmail",
-      category: "Social",
-      title: "Gmail primary",
-      username: "andrew@facebook.com",
-      password: "andrew@1d32",
-      logoIndex: 35,
-
-    }, {
-      app: "Github",
-      category: "Social",
-      title: "Github.com",
-      username: "andrew@facebook.com",
-      password: "andrew@1d32",
-      logoIndex: 34,
-
-    }, {
-      app: "Spotify",
-      category: "Social",
-      title: "Spotify music app",
-      username: "andrew@facebook.com",
-      password: "andrew@1d32",
-      logoIndex: 79,
-    }
-
-  ]
-
 
 
   const handleFullContentBackBtnClicked = () => {
@@ -134,20 +43,19 @@ const LoginIdsList = ({ setLogoComponentShow }
   const currCardDataInStore = useSelector((state) =>
     fullContentCardData !== undefined ? state.loginIds.loginsIdData.find((l) => l._id === fullContentCardData._id) : null
   );
-  // useEffect(() => {
-  //   console.table(currCardDataInStore);
-  //   // handleLoginIdClicked(currCardDataInStore);
-  //   setFullContentCardData({
-  //     _id: currCardDataInStore._id,
-  //     app: currCardDataInStore.app,
-  //     category: currCardDataInStore.category,
-  //     title: currCardDataInStore.title,
-  //     username: currCardDataInStore.username,
-  //     password: currCardDataInStore.password,
-  //     logoIndex: currCardDataInStore.logoIndex,
-  //     isFavourite: currCardDataInStore.isFavourite,
-  //   })
-  // }, [currCardDataInStore])
+  //> Delete Btn clicked________
+  const confirmDeleteBtnClicked = () => {
+    console.log('confirm delete')
+    const activity_data = generateActivityData(2, 'Login', fullContentCardData, '');
+    dispatch(deleteLoginData({
+      login_id: fullContentCardData._id,
+      user_id: '63b43ab32fc8d3c100cafecc',
+      activityData: activity_data,
+    }))
+
+    setDeleteMode(false);
+    setShowContentCard(false);
+  }
 
   const handleLoginIdClicked = (loginIData) => {
     if (loginIData != undefined) {
@@ -162,11 +70,25 @@ const LoginIdsList = ({ setLogoComponentShow }
         isFavourite: loginIData.isFavourite,
       })
     }
+    setDeleteMode(false);
     setShowContentCard(true);
   }
 
+
   return (
     <div className={styles.loginsList}>
+      <DeleteModal
+        setDeleteMode={setDeleteMode}
+        deleteMode={deleteMode}
+        confirmDeleteBtnClicked={confirmDeleteBtnClicked}
+      />
+      {/* {deleteMode &&
+        <DeleteModal
+          setDeleteMode={setDeleteMode}
+          deleteMode={deleteMode}
+          confirmDeleteBtnClicked={confirmDeleteBtnClicked}
+        />
+      } */}
       {
         (!showInputForm && !showContentCard) &&
         < AddBtn formToggle={formToggle} />
@@ -195,6 +117,8 @@ const LoginIdsList = ({ setLogoComponentShow }
           setEditMode={setEditMode}
           editMode={editMode}
           handleLoginIdClicked={handleLoginIdClicked}
+          setDeleteMode={setDeleteMode}
+          deleteMode={deleteMode}
         />
       }
       <LoginIdInputForm
@@ -286,3 +210,92 @@ export default LoginIdsList;
           </div>
         ) : null}
       </div> */}
+
+
+/*
+
+const loginIds = [
+
+{
+app: "Gpay",
+category: "Finance",
+title: "Google pay",
+username: "andrew.GarF@gmial.com",
+password: "andrew@122",
+logoIndex: 39,
+},
+{
+app: "Amazon",
+category: "Shopping",
+title: "Amazon shopping app",
+username: "andrew@amz.com",
+password: "andrew@1dsds",
+logoIndex: 5,
+
+}
+, {
+app: "Instagram",
+category: "Social",
+title: "Instagram app",
+username: "andrew@facebook.com",
+password: "andrew@1d32",
+logoIndex: 50,
+
+}, {
+app: "facebbok",
+category: "Social",
+title: "Facebook.com",
+username: "andrew@facebook.com",
+password: "andrew@1d32",
+logoIndex: 28,
+
+}, {
+app: "Gmail",
+category: "Social",
+title: "Gmail primary",
+username: "andrew@facebook.com",
+password: "andrew@1d32",
+logoIndex: 35,
+
+}, {
+app: "Github",
+category: "Social",
+title: "Github.com",
+username: "andrew@facebook.com",
+password: "andrew@1d32",
+logoIndex: 34,
+
+}, {
+app: "Spotify",
+category: "Social",
+title: "Spotify music app",
+username: "andrew@facebook.com",
+password: "andrew@1d32",
+logoIndex: 79,
+}
+
+]
+*/
+
+  // SCROLLING BUTTON HIDE__
+  // const node = useRef();
+  // var timeOut = null;
+  // const [isScrolling, setIsScrolling] = useState(false);
+  // useEffect(() => {
+  //   if (node.current != null) {
+  //     node.current.addEventListener("scroll", handleScroll);
+  //   }
+  //   return () => {
+  //     if (node.current != null) {
+  //       node.current.removeEventListener("scroll", handleScroll);
+  //     }
+  //   };
+  // }, []);
+
+  // const handleScroll = (e) => {
+  //   setIsScrolling(true);
+  //   clearTimeout(timeOut);
+  //   timeOut = setTimeout(() => {
+  //     setIsScrolling(false);
+  //   }, 200);
+  // };

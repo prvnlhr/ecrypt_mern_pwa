@@ -102,10 +102,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90%;
-    height: 90%;
     border-radius: 10px;
     background-color: #F3F5F9;
+    height: 82%;
+    width: 82%;
 }
 
 /* ____________________________________ */
@@ -551,8 +551,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 90%;
-        height: 90%;
+        height: 82%;
+        width: 82%;
         border-radius: 10px;
         background-color: #F3F5F9;
     }

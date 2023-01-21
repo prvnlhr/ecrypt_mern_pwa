@@ -10,7 +10,6 @@ const FavDoc = ({ favItem,
 }) => {
 
     const docClicked = () => {
-        console.log(favItem);
         setFavDocFullScreenData(favItem);
         setShowFavDocFullScreen(true);
     }

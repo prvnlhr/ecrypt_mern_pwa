@@ -1,23 +1,13 @@
 import React from 'react'
 import styles from "./styles/recentlyAddedList.module.css"
+import { useSelector } from 'react-redux'
 import LoginId from "./LoginId"
 import Card from './Card'
 import Doc from './Doc'
 
+const RecentlyAddedList = ({ recAddDocFullScreen, setRecAddDocFullScreen, recAddDocFullScreenData, setRecAddDocFullScreenData }) => {
 
-
-
-
-
-
-
-const RecentlyAddedList = ({
-
-    recAddDocFullScreen,
-    setRecAddDocFullScreen,
-    recAddDocFullScreenData,
-    setRecAddDocFullScreenData
-}) => {
+    const recentlyAddedArray = useSelector((state => state.recentlyAdded.recentlyAddedData));
 
     const recentlyAddedData = [
         {
@@ -89,14 +79,28 @@ const RecentlyAddedList = ({
 
     return (
         <div className={styles.recentAddedList} >
-            <LoginId />
+            {
+                recentlyAddedArray.map((item) => (
+                    item.hasOwnProperty('imageName') ?
+                        <Doc
+                            key={item._id} item={item}
+                            recAddDocFullScreen={recAddDocFullScreen}
+                            setRecAddDocFullScreen={setRecAddDocFullScreen}
+                            recAddDocFullScreenData={recAddDocFullScreenData}
+                            setRecAddDocFullScreenData={setRecAddDocFullScreenData} /> :
+                        item.hasOwnProperty('username') ?
+                            < LoginId key={item._id} item={item} /> :
+                            <Card key={item._id} item={item} />
+                ))
+            }
+            {/* <LoginId />
             <Card />
             <Doc
                 recAddDocFullScreen={recAddDocFullScreen}
                 setRecAddDocFullScreen={setRecAddDocFullScreen}
                 recAddDocFullScreenData={recAddDocFullScreenData}
                 setRecAddDocFullScreenData={setRecAddDocFullScreenData}
-            />
+            /> */}
         </div>
     )
 }

@@ -4,7 +4,9 @@ import { logosArray } from "../../logoComponents/logosData"
 import { Icon } from '@iconify/react';
 import { motion, AnimatePresence } from "framer-motion"
 
-const LoginId = () => {
+const LoginId = ({ item }) => {
+
+    // console.log(item)
 
     const [cardExpand, setCardExpand] = useState(false);
     const changeCardView = () => {
@@ -28,7 +30,7 @@ const LoginId = () => {
                             exit={{ opacity: 0 }}
                             className={cardExpand ? styles.logoDiv : styles.logoDivShrink} >
                             {
-                                logosArray[42].logo
+                                logosArray[item.logoIndex].logo
                             }
                         </div>
                     </div>
@@ -50,7 +52,7 @@ const LoginId = () => {
                         <div layout="position" className={cardExpand ? styles.titleTextDiv : styles.titleTextDivShrink} >
                             <p initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }} >Google pay</p>
+                                exit={{ opacity: 0 }} >{item.title}</p>
                         </div>
                     </div>
                     {
@@ -66,7 +68,7 @@ const LoginId = () => {
                             </div>
                             <div className={styles.categroryTextWrapper} >
                                 <div className={styles.categoryTextDiv} >
-                                    <p>Finance</p>
+                                    <p>{item.category}</p>
                                 </div>
                             </div>
 
@@ -78,7 +80,7 @@ const LoginId = () => {
                             </div>
                             <div className={styles.appWebsiteTextWrapper} >
                                 <div className={styles.appWebsiteTextDiv} >
-                                    <p>GPay</p>
+                                    <p>{item.app}</p>
                                 </div>
                             </div>
 
@@ -93,7 +95,7 @@ const LoginId = () => {
                                     <p>PASSWORD</p>
                                 </div>
                                 <div className={styles.passwordTextWrapper} >
-                                    <p>prvn@22342</p>
+                                    <p>{item.password}</p>
                                 </div>
                             </div>
                         </>
@@ -114,7 +116,7 @@ const LoginId = () => {
                         }
 
                         <div className={styles.usernameTextWrapper} >
-                            <p className={cardExpand ? styles.usernameText : styles.usernameTextShrink} >prvnlhr007@gmail.com</p>
+                            <p className={cardExpand ? styles.usernameText : styles.usernameTextShrink} >{item.username}</p>
                         </div>
                     </div>
                 </div>

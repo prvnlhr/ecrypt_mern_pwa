@@ -18,7 +18,10 @@ import { diff, generateActivityData } from "../utils/ActivityDataChangeFuction"
 import { editLoginIdData, deleteLoginData, toggleIsFav } from "../../redux/features/loginsId/loginsIdSlice"
 
 
-const FullContentCard = ({ fullContentCardData, setFullContentCardData, showContentCard, setShowContentCard, handleFullContentBackBtnClicked, editMode, setEditMode, handleLoginIdClicked }) => {
+const FullContentCard = ({ fullContentCardData, setFullContentCardData, showContentCard, setShowContentCard, handleFullContentBackBtnClicked, editMode, setEditMode, handleLoginIdClicked,
+    setDeleteMode,
+    deleteMode
+}) => {
 
     // const currCardDataInStore = useSelector((state) =>
     //     fullContentCardData._id ? state.loginIds.loginsIdData.find((l) => l._id === fullContentCardData._id) : null
@@ -106,17 +109,10 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
     }
     //> Delete Btn clicked________
     const deleteBtnClicked = () => {
-        const activity_data = generateActivityData(2, 'Login', fullContentCardData, '');
-        console.log(activity_data)
-        console.table(fullContentCardData._id, '63b43ab32fc8d3c100cafecc')
-        dispatch(deleteLoginData({
-            login_id: fullContentCardData._id,
-            user_id: '63b43ab32fc8d3c100cafecc',
-            activityData: activity_data,
-        }))
-        setShowContentCard(false);
-
+        //> this open delete modal
+        setDeleteMode(true);
     }
+
     //> Handle fav btn Clicked
     const favBtnClicked = () => {
         // console.log(fullContentCardData.isFavourite)
@@ -164,10 +160,14 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
                             </>
                             :
                             <>
-                                <div className={styles.deleteBtnDiv} onClick={deleteBtnClicked}  >
-                                    <Icon className={styles.crudIcons} icon="gg:trash-empty" color="white" />
-                                    <p>Delete</p>
-                                </div>
+
+                                {
+                                    !deleteMode &&
+                                    <div className={styles.deleteBtnDiv} onClick={deleteBtnClicked}  >
+                                        <Icon className={styles.crudIcons} icon="gg:trash-empty" color="white" />
+                                        <p>Delete</p>
+                                    </div>
+                                }
                                 <div className={styles.editBtnDiv} onClick={editBtnClicked}  >
                                     <Icon className={styles.crudIcons} icon="ph:pencil-simple-line" color="#002A9A" />
                                     <p>Edit</p>

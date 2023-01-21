@@ -8,14 +8,16 @@ const Doc = ({
     recAddDocFullScreen,
     setRecAddDocFullScreen,
     recAddDocFullScreenData,
-    setRecAddDocFullScreenData
+    setRecAddDocFullScreenData,
+    item
 }) => {
     const [cardExpand, setCardExpand] = useState(false);
+    // console.log(item)
     const changeCardView = () => {
         setRecAddDocFullScreenData({
             ...recAddDocFullScreenData,
-            imageName: "Aadhar card",
-            imageUrl: "cscs"
+            imageName: item.imageName,
+            imageUrl: item.imageUrl
         })
         setRecAddDocFullScreen(!recAddDocFullScreen)
     }
@@ -41,7 +43,7 @@ const Doc = ({
                 </div>
 
                 <div className={styles.titleWrapper} >
-                    <p>Aadhar card</p>
+                    <p>{item.imageName}</p>
                 </div>
 
             </div>

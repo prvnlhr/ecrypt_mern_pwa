@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import styles from "./styles/cardComponent.module.css";
 import CardLogo, { getCardType } from "./CardLogo";
-import modalStyles from "../modal/modal.module.css";
 import { motion } from "framer-motion";
 
 //icons set
