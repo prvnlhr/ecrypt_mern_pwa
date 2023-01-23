@@ -12,7 +12,7 @@ const sendMail = require("../utils/sendMail");
 const {
   ACTIVATION_TOKEN_SECRET,
   ACCESS_TOKEN_SECRET,
-  REFRESH_TOKEN_SECRET,
+  access_token_SECRET,
   CLIENT_URL,
   SEND_GRID_API_KEY,
   SENDER_EMAIL_ADDRESS,
@@ -132,15 +132,15 @@ const userController = {
       if (!isMatch)
         return res.status(400).json({ msg: "Password is incorrect." });
 
-      const refresh_token = createRefreshToken({ id: user._id });
-      res.cookie("refreshtoken", refresh_token, {
+      const access_token = createRefreshToken({ id: user._id });
+      res.cookie("refreshtoken", access_token, {
         httpOnly: true,
         secure: true,
         samSite: "none",
-        path: "/user/refresh_token",
+        path: "/user/access_token",
         maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
       });
-      console.log("new rftoken at login cntrl", refresh_token);
+      console.log("new rftoken at login cntrl", access_token);
 
       res.json({ msg: "Login success!" });
     } catch (err) {
@@ -155,7 +155,7 @@ const userController = {
       if (!rf_token) {
         return res.status(401).json({ msg: "Please Login to continue !" });
       }
-      const decode = jwt.verify(rf_token, REFRESH_TOKEN_SECRET);
+      const decode = jwt.verify(rf_token, access_token_SECRET);
       var userId = decode.id;
       const access_token = createAccessToken({ id: userId });
       res.status(200).json(access_token);
@@ -296,7 +296,7 @@ const userController = {
   },
   logout: async (req, res) => {
     try {
-      res.clearCookie("refreshtoken", { path: "/user/refresh_token" });
+      res.clearCookie("refreshtoken", { path: "/user/access_token" });
       return res.status(200).json({ msg: "Successfully Logged out" });
     } catch (error) {
       return res.status(404).send(error);
@@ -315,7 +315,7 @@ function createAccessToken(payload) {
   return jwt.sign(payload, ACCESS_TOKEN_SECRET, { expiresIn: "15m" });
 }
 function createRefreshToken(payload) {
-  return jwt.sign(payload, REFRESH_TOKEN_SECRET, { expiresIn: "7d" });
+  return jwt.sign(payload, access_token_SECRET, { expiresIn: "7d" });
 }
 
 function validateEmail(email) {

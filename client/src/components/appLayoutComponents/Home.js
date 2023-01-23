@@ -35,10 +35,6 @@ const Home = () => {
   return (
     <div className={location.pathname === "/user/settings" ? homeStyles.homeComponentForSettings : homeStyles.homeComponent}>
 
-      {/* {logoComponentShow &&
-        <LogoComponentWrapper setLogoComponentShow={setLogoComponentShow} />
-      } */}
-
       <DocFullScreenRecentAct
         recAddDocFullScreen={recAddDocFullScreen}
         setRecAddDocFullScreen={setRecAddDocFullScreen}

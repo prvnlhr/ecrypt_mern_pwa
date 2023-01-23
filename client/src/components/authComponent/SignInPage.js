@@ -1,138 +1,153 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, Link } from "react-router-dom";
-import { login } from "../../redux/actions/auth";
-import styles from "./styles/signInPageNew.module.css";
-import { CircleSpinner } from "react-spinners-kit";
-import { Icon } from "@iconify/react";
-import { motion } from "framer-motion";
-import logo from "../../img/ecryptLogo.svg";
-
-const initialState = {
-  email: "",
-  password: "",
-};
-
+import React, { useState } from 'react'
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux'
+import { Icon } from '@iconify/react';
+import styles from "./styles/signInPage.module.css"
+import { validateSignInForm } from "./helperFunctions/formValidation"
+import { loginUser } from "../../redux/features/auth/authSlice"
 const SignInPage = () => {
-  const loadState = useSelector((state) => state.loading);
-  const [formData, setFormData] = useState(initialState);
+
+  const authState = useSelector((state => state.auth));
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  // const isLoading = useSelector((state) => state.loading.isLoading);
-  const message = useSelector((state) => state.authResponseHandler);
 
-  // const { isLogged } = auth;
-  const { place, isLoading } = loadState;
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-  // useEffect(() => {
-  //   console.log(place, isLoading);
-  // }, [place, isLoading]);
+  const [formMessage, setFormMessage] = useState({
+    message: undefined,
+    error: false
+  });
 
-  const handleSubmit = async (e) => {
+  const { message, error } = formMessage;
+  const [currFocusField, setCurrFocusField] = useState(undefined);
+
+  const onFocus = (val) => {
+    setCurrFocusField(val)
+  }
+
+  const [formData, setFromData] = useState({
+    email: 'prvnlhr522@gmail.com',
+    password: 'Prvnpr@123',
+  });
+
+
+
+
+  const handleFormSubmit = async (e) => {
+    console.log(formData);
+
     e.preventDefault();
-    try {
-      // console.log(formData);
-      await dispatch(login(formData, navigate));
-    } catch (error) {
-      console.log(error);
+
+    setFormMessage({
+      message: undefined,
+      error: undefined
+    })
+    const res = validateSignInForm(formData);
+    if (res.error) {
+      setFormMessage({
+        message: res.message,
+        error: res.error
+      })
+      console.log('error');
+      return;
     }
-  };
-  const { email, password } = formData;
+    else {
+      setFormMessage({
+        message: undefined,
+        error: false
+      })
+      console.log(formData);
+      dispatch(loginUser(
+        {
+          formData: formData,
+          navigate: navigate
+        }
+      ));
 
+      console.log('confirm submit')
+    }
+
+  }
+  const handleDataFormChange = (e) => {
+    const { name, value } = e.target;
+    setFromData({
+      ...formData,
+      [name]: value,
+    })
+  }
   return (
-    <div className={styles.formPage}>
-      <div className={styles.appLogoWrapper}>
-        <div className={styles.logoDiv}>
-          {/* <p className={styles.textOne}>e</p>
-          <p className={styles.textTwo}>Crypt</p> */}
-           <img src={logo} />
+    <div className={styles.formPageWrapper} >
+      <div className={styles.formWrapper} >
+        <div className={styles.formHeaderWrapper} >
+          <div className={styles.formLabelDiv} >
+            <p>Sign In</p>
+          </div>
         </div>
-      </div>
-      <div className={styles.formComponent}>
-        <form className={styles.formTag} onSubmit={handleSubmit}>
-          <div className={styles.headingWrapper}>
-            <p className={styles.HeadingText}>Sign In</p>
-          </div>
-          <div className={styles.messageWrapper}>
-            {message.error && message.at === "login" ? (
-              <div className={styles.errorDiv}>
-                <Icon icon="carbon:warning" className={styles.icon} />
-                <p>{message.error}</p>
-              </div>
-            ) : (
-              message.success &&
-              (message.at === "login" || message.at === "resetPassSuccess") && (
-                <div className={styles.successDiv}>
-                  <Icon
-                    icon="akar-icons:circle-check"
-                    className={styles.icon}
-                  />
-                  <p>{message.success}</p>
+        <div className={styles.formMessageWrapper} >
+          {(authState.authResponseMessage || message) &&
+            <div className={`${styles.messageDiv} ${(error || authState.error) ? styles.messageDivError : styles.messageDivSuccess}`} >
+              {
+                (error || authState.error) &&
+                <div className={styles.errorMessageIconDiv} >
+                  <Icon className={styles.warningIcon} icon="ph:warning" />
                 </div>
-              )
-            )}
+              }
+              <p>{
+                formMessage.message !== undefined ? formMessage.message
+                  : authState.authResponseMessage !== undefined && authState.authResponseMessage
+              }</p>
+            </div>
+          }
+        </div>
+        <form className={styles.formTagContainer} onSubmit={handleFormSubmit} >
+
+          <div className={styles.emailAddressWrapper}>
+            <div className={`${styles.emailAddressContainer} ${currFocusField === 1 && styles.focusFieldStyle} `}  >
+              <div className={styles.iconDiv} >
+                <Icon className={styles.fieldIcon} icon="prime:user" />
+              </div>
+              <div className={styles.labelDiv} >
+                <p>EMAIL ADDRESS</p>
+              </div>
+              <div className={styles.inputDiv} >
+                <input value={formData.email} name="email" onFocus={() => onFocus(1)}
+                  onChange={handleDataFormChange}
+                />
+              </div>
+            </div>
           </div>
 
-          <div className={styles.emailWrapper}>
-            <div className={styles.labelDiv}>
-              <p className={styles.labelText}>Email Address</p>
-            </div>
-            <div className={styles.inputDiv}>
-              <input
-                className={styles.inputField}
-                required
-                placeholder="email address"
-                name="email"
-                value={email}
-                onChange={handleChange}
-              />
-            </div>
-          </div>
           <div className={styles.passwordWrapper}>
-            <div className={styles.labelDiv}>
-              <p className={styles.labelText}>Password</p>
-            </div>
-            <div className={styles.inputDiv}>
-              <input
-                className={styles.inputField}
-                required
-                placeholder="password"
-                name="password"
-                value={password}
-                onChange={handleChange}
-                type="password"
-              />
+            <div className={`${styles.passwordContainer} ${currFocusField === 2 && styles.focusFieldStyle} `}  >
+              <div className={styles.iconDiv} ><Icon className={styles.fieldIcon} icon="fluent:password-16-regular" /></div>
+              <div className={styles.labelDiv} >
+                <p>PASSWORD</p>
+              </div>
+              <div className={styles.inputDiv} >
+                <input value={formData.password} name="password" onFocus={() => onFocus(2)}
+                  onChange={handleDataFormChange}
+                />
+              </div>
             </div>
           </div>
-          <div className={styles.forgotPasswordWrapper}>
-            <Link to="/user/auth/forgotPassword" className={styles.fPlink}>
-              forgot password?
-            </Link>
+          <div className={styles.passForgetWrapper} >
+            <p>Forgot Password ?</p>
           </div>
 
-          <div className={styles.buttonWrapper}>
-            <motion.button whileTap={{ scale: 0.95 }} type="submit">
-              {place === "login" && isLoading === true ? (
-                <CircleSpinner size={15} color="white" loading={true} />
-              ) : (
-                <p>Sign In</p>
-              )}
-            </motion.button>
-          </div>
-          <div className={styles.BottomLinkWrapper}>
-            <p>
-              Don't have an account?
-              <Link to="/register" className={styles.link}>
-                Sign Up
-              </Link>
-            </p>
+          <div className={styles.submitBtnWrapper}>
+            <button className={styles.submitBtn}>Login</button>
           </div>
         </form>
-      </div>
-    </div>
-  );
-};
-export default SignInPage;
+
+        <div className={styles.formFooterWrapper} >
+          <p>Don't have an account ?
+            <Link to="/user/register">
+              <span>Sign Up </span>
+            </Link>
+          </p>
+        </div>
+      </div >
+    </div >
+  )
+}
+
+export default SignInPage

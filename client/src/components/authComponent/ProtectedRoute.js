@@ -2,11 +2,13 @@ import React, { useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-const UnAuthenticatedRoutes = ({ children }) => {
+const ProtectedRoute = ({ children }) => {
   const auth = useSelector((state) => state.auth);
+
   const { isLogged } = auth;
-  return isLogged === (false) ? children :
-    isLogged === true && <Navigate to="/" />
+
+  return isLogged === true ? children :
+    isLogged === false && <Navigate to="/user/login" />
 };
 
-export default UnAuthenticatedRoutes;
+export default ProtectedRoute;

@@ -1,0 +1,190 @@
+.acitveAccountPage {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.activateAccountForm {
+  position: relative;
+  width: 85%;
+  aspect-ratio: 3/2.5;
+  border-radius: 30px;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 30% auto 25% 20%;
+  grid-template-areas:
+    "formHeaderWrapper formHeaderWrapper"
+    "formMessageWrapper formMessageWrapper "
+    "formActivateBtnWrapper formActivateBtnWrapper"
+    "formFooterWrapper formFooterWrapper";
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  justify-content: center;
+  align-items: center;
+  webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* border: 1px solid springgreen; */
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.formHeaderWrapper {
+  grid-area: formHeaderWrapper;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formLabelDiv {
+  position: relative;
+  width: 80%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid black; */
+}
+
+.formLabelDiv p {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: black;
+}
+
+.formLabelDiv::after {
+  position: absolute;
+  content: '';
+  background-color: #002A9A;
+  width: 15%;
+  height: 3px;
+  border-radius: 20px;
+  bottom: 0px;
+}
+
+.formMessageWrapper {
+  grid-area: formMessageWrapper;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid blue; */
+  box-sizing: border-box;
+  padding-bottom: 2%;
+}
+
+.messageDiv {
+  width: auto;
+  max-width: 85%;
+  height: auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 6px;
+  padding: 1% 4% 1% 4%;
+  /* margin-top: 3%; */
+
+}
+
+.messageDivError {
+  background-color: #FCCED1;
+}
+
+.messageDivError p {
+  font-family: "Poppins", sans-serif;
+  font-size: 10.5px;
+  font-weight: 550;
+  color: #F3212D;
+}
+
+.messageDivSuccess {
+  background-color: #BAFFB4;
+
+}
+
+.messageDivSuccess p {
+  font-family: "Poppins", sans-serif;
+  font-size: 10.5px;
+  font-weight: 550;
+  color: #38c62b;
+}
+
+/* .messageDiv p {} */
+.errorMessageIconDiv {
+  width: 20px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid black; */
+  margin-right: 5px;
+}
+
+.warningIcon {
+  font-size: 15px !;
+  color: #F3212D;
+  padding: 0px;
+  margin: 0px;
+}
+
+.formActivateBtnWrapper {
+  grid-area: formActivateBtnWrapper;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.activateBtn {
+  width: 55%;
+  height: 55%;
+  border: none;
+  background-color: #002A9A;
+  border-radius: 12px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 450;
+  color: white;
+  letter-spacing: 0.5px;
+  /* outline: #AED2FF; */
+}
+
+
+.formFooterWrapper {
+  grid-area: formFooterWrapper;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.formFooterWrapper p {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 450;
+  color: black;
+}
+
+span {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 550;
+  color: #002A9A;
+  margin-left: 2px;
+}

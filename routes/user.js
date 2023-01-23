@@ -6,7 +6,7 @@ router.get("/getUser", auth, userController.getUser);
 router.post("/register", userController.register);
 router.post("/activation", userController.activateEmail);
 router.post("/login", userController.login);
-router.post("/refresh_token", userController.getAccessToken);
+router.post("/access_token", userController.getAccessToken);
 router.post("/forgotPassword", userController.forgotPassword);
 router.post("/resetPassword", auth, userController.resetPassword);
 router.post("/changePassword", auth, userController.changePassword);

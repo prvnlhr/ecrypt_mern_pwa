@@ -4,11 +4,10 @@ import App from './components/App';
 import { Provider } from "react-redux";
 import store from './redux/store/store';
 import { BrowserRouter as Router } from "react-router-dom";
-
+import axiosInterceptor from "./redux/api/index"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-
   // <React.StrictMode>
   <Provider store={store}>
     <Router>
@@ -18,3 +17,4 @@ root.render(
   // </React.StrictMode>
 );
 
+axiosInterceptor(store);

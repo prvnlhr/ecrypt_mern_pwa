@@ -29,18 +29,18 @@ const resHandler = (response) => {
 const errorHandler = (error) => {
     const originalRequest = error.config;
     // console.log("401 error", error.response.status, error.config);
-    // console.log("/user/auth/refresh_token", error.config.url);
-    // console.log("/user/auth/refresh_token" === error.config.url);
+    // console.log("/user/auth/access_token", error.config.url);
+    // console.log("/user/auth/access_token" === error.config.url);
     if (
         error.response.status === 401 &&
-        error.config.url !== "/user/auth/refresh_token" &&
+        error.config.url !== "/user/auth/access_token" &&
         error.config.url !== "/user/auth/activation" &&
         error.config.url !== "/user/auth/resetPassword" &&
         !originalRequest._retry
     ) {
         originalRequest._retry = true;
         return axios
-            .post(`${url}/user/auth/refresh_token`, null, {
+            .post(`${url}/user/auth/access_token`, null, {
                 withCredentials: true,
             })
             .then((res) => {
@@ -99,7 +99,7 @@ export const login = (formData) =>
 
 //get Token
 export const getToken = () =>
-    API.post("/user/auth/refresh_token", null, {
+    API.post("/user/auth/access_token", null, {
         withCredentials: true,
     });
 //Logout
@@ -165,7 +165,7 @@ export const fetchUser = (token) =>
         headers: { Authorization: `Bearer ${token}` },
     });
 
-    
+
 // CARDS URLS______________________________________________________________________
 export const fetchUserCards = (user_id) =>
     API.get("/user/cards/getCards", {

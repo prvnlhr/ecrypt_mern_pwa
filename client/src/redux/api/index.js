@@ -1,15 +1,80 @@
 import axios from "axios";
-// import store from "../store/store"
-// import { store } from "../store/store";
-// let url = process.env.REACT_APP_BASE_URL;
-// console.log(process.env.REACT_APP_BASE_URL);
 
+let url = process.env.REACT_APP_BASE_URL;
+console.log(process.env.REACT_APP_BASE_URL);
+
+
+// //for production server
+// const API = axios.create({
+//   baseURL: url,
+// });
 
 // for development server
 const API = axios.create({
   baseURL: "http://localhost:9000"
 });
 
+
+// ->______________________________________________________________________________
+const reqHandler = (request) => {
+  console.log(request);
+  return request;
+};
+
+const resHandler = (response) => {
+  if (response.status === 401) {
+  }
+  return response;
+};
+
+
+const axiosInterceptor = (store) => {
+
+  //> method used by API.interceptor to handle error
+  const errorHandler = (error) => {
+    const originalRequest = error.config;
+    if (
+      error.response.status === 401 &&
+      error.config.url !== "/user/auth/access_token" &&
+      error.config.url !== "/user/auth/activation" &&
+      error.config.url !== "/user/auth/resetPassword" &&
+      !originalRequest._retry
+    ) {
+      originalRequest._retry = true;
+      return axios
+        .post(`${url}/user/auth/access_token`, null, {
+          withCredentials: true,
+        })
+        .then((res) => {
+          if (res.status === 200) {
+            // store.dispatch(updateToken(res.data));
+            originalRequest.headers["Authorization"] = "Bearer " + res.data;
+            return axios(originalRequest);
+          }
+        })
+        .catch((err) => {
+          if (err.response.status === 401) {
+            // store.dispatch(logout());
+          }
+          return Promise.reject(err);
+        });
+    }
+    return Promise.reject(error);
+  };
+
+
+  API.interceptors.request.use(
+    (request) => reqHandler(request),
+    (error) => errorHandler(error)
+  );
+
+  API.interceptors.response.use(
+    (response) => resHandler(response),
+    (error) => errorHandler(error)
+  );
+}
+
+// ->_______________________________________________________________________________
 
 // > LOGINIDS API_______________________________________
 export const fetchUserLoginIds = (user_id) =>
@@ -134,3 +199,32 @@ export const fetchFavorites = (user_id) =>
       user_id: user_id,
     },
   });
+
+
+// __________________________________________________________
+// __________________________________________________________
+// ** Auth api
+
+//> Register new user
+export const registerNewUser = (formData) =>
+  API.post("/user/auth/register", formData);
+
+//> Login user
+export const login = (formData) =>
+  API.post("/user/auth/login", formData, {
+    withCredentials: true,
+  });
+
+//> Account activate 
+export const accountActivation = (activation_token) =>
+  API.post("/user/auth/activation", {
+    data: {
+      activation_token,
+    },
+  });
+//> get access Token
+export const getToken = () =>
+  API.post("/user/auth/access_token", null, {
+    withCredentials: true,
+  });
+export default axiosInterceptor;

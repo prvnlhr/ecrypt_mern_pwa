@@ -1,8 +1,9 @@
-const UserDatabase = require("../models/userData");
+const { UserDatabase } = require("../models/userData");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 var cookieParser = require("cookie-parser");
 const sendMail = require("../utils/sendMail");
+
 
 const {
   ACTIVATION_TOKEN_SECRET,
@@ -12,6 +13,7 @@ const {
   SEND_GRID_API_KEY,
   SENDER_EMAIL_ADDRESS,
 } = process.env;
+
 const sgMail = require("@sendgrid/mail");
 sgMail.setApiKey(SEND_GRID_API_KEY);
 //_________________________________________________________________________________________________________________________________________
@@ -20,37 +22,15 @@ sgMail.setApiKey(SEND_GRID_API_KEY);
 const authController = {
   register: async (req, res) => {
     const { email, password, confirmPassword, firstName, lastName } = req.body;
+    console.log(email, password, confirmPassword, firstName, lastName)
     try {
-      //checking all field fill or not.
-      if (!firstName || !lastName || !email || !password || !confirmPassword) {
-        return res.status(400).json({ msg: "Please fill in all fields" });
-      }
-      //checking email address is valid or not.
-      if (!validateEmail(email)) {
-        return res.status(400).json({ msg: "Not a valid email address" });
-      }
-      //checking if password fields match or not
-      if (password !== confirmPassword) {
-        return res.status(400).json({ msg: " Passwords does not match" });
-      }
-      //checking email address already exist or not.
-      const existingUser = await UserDatabase.findOne({ email });
-      if (existingUser) {
-        return res.status(400).json({ msg: "Email address already exist" });
-      }
-      //checking password length for minimum password length.
-      if (password.length < 6) {
-        return res.status(400).json({ msg: "Password must be least 6 digit" });
-      }
-      //hashing password.
       const passwordHash = await bcrypt.hash(password, 12);
-
       const newUser = {
         name: `${firstName} ${lastName}`,
         email,
         password: passwordHash,
       };
-      //creating jwt Token.
+      //> creating jwt Token.
       const activation_token = createActivationToken(newUser);
       const txt = "Account Activation Link";
       const url = `${CLIENT_URL}/user/auth/activate/${activation_token}`;
@@ -61,10 +41,11 @@ const authController = {
       console.log("error in registration", error);
     }
   },
+
   activateEmail: async (req, res) => {
     try {
       // const { activation_token } = req.body.data;
-      console.log("activation token cntorl", req.body.data);
+      console.log("activation token controller", req.body.data);
       const user = jwt.verify(
         req.body.data.activation_token,
         ACTIVATION_TOKEN_SECRET
@@ -73,8 +54,9 @@ const authController = {
       const { name, email, password } = user;
 
       const check = await UserDatabase.findOne({ email });
-      if (check)
+      if (check) {
         return res.status(400).json({ msg: "This email already exists." });
+      }
 
       const newUser = await UserDatabase.create({
         name: name,
@@ -94,31 +76,29 @@ const authController = {
       return res.status(500).json({ msg: err.message });
     }
   },
+
   login: async (req, res) => {
     try {
       const { email, password } = req.body;
-      // console.log("at login cntrl", req.body);
       const user = await UserDatabase.findOne({ email });
-      // console.log("user", user);
+
       if (!user)
         return res.status(400).json({ msg: "This email does not exist." });
-      // console.log("check1");
+
       const isMatch = await bcrypt.compare(password, user.password);
       if (!isMatch)
         return res.status(400).json({ msg: "Password is incorrect." });
-      // console.log("check2");
       const refresh_token = createRefreshToken({ id: user._id });
       res.cookie("refreshtoken", refresh_token, {
         httpOnly: true,
         secure: true,
         samSite: "none",
-        path: "/user/auth/refresh_token",
+        path: "/user/auth/access_token",
         maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
       });
-      // console.log("check3");
+
 
       const access_token = createAccessToken({ id: user._id });
-      // console.log("check4");
 
       res.status(200).json(access_token);
     } catch (err) {
@@ -129,7 +109,7 @@ const authController = {
   getAccessToken: async (req, res) => {
     try {
       const rf_token = req.cookies.refreshtoken;
-      // console.log("refresh_token from cookies::", req.cookies.refreshtoken);
+      console.log("access_token from cookies::", req.cookies.refreshtoken);
       if (!rf_token) {
         return res.status(401).json({ msg: "Please Login to continue !" });
       }
@@ -287,7 +267,7 @@ const authController = {
   },
   logout: async (req, res) => {
     try {
-      res.clearCookie("refreshtoken", { path: "/user/auth/refresh_token" });
+      res.clearCookie("refreshtoken", { path: "/user/auth/access_token" });
       return res.status(200).json({ msg: "Successfully Logged out" });
     } catch (error) {
       console.log("error at logout controller", error);

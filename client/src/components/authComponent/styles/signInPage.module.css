@@ -1,15 +1,731 @@
-.formWrapper {
+.formPageWrapper {
   position: relative;
   width: 100%;
   height: 100%;
-  border: 1px solid orange;
-  display: grid;
-  border-color: aqua;
+  /* border: 1px solid orange; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
 }
 
-.formContainer {
+.formPageWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.formWrapper {
+  position: relative;
+  width: 300px;
+  aspect-ratio: 2/2.5;
+  border-radius: 30px;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 20% 10% minmax(0, 1fr) 8%;
+  grid-template-rows: 20% auto minmax(0, 1fr) 8%;
+  grid-template-areas:
+    "formHeaderWrapper formHeaderWrapper"
+    "formMessageWrapper formMessageWrapper "
+    "formTagContainer formTagContainer"
+    "formFooterWrapper formFooterWrapper";
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  justify-content: center;
+  align-items: center;
+  webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* border: 1px solid springgreen; */
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+}
+
+/* ________________________________________________ */
+.formHeaderWrapper {
+  grid-area: formHeaderWrapper;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid orange; */
+}
+
+.formLabelDiv {
   position: relative;
   width: 80%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid black; */
+}
+
+.formLabelDiv p {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+}
+
+.formLabelDiv::after {
+  position: absolute;
+  content: '';
+  background-color: #002A9A;
+  width: 15%;
+  height: 3px;
+  border-radius: 20px;
+  bottom: 0px;
+}
+
+/* ________________________________________________ */
+
+.formMessageWrapper {
+  grid-area: formMessageWrapper;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  /* border: 1px solid blue; */
+  box-sizing: border-box;
+  padding-bottom: 2%;
+}
+
+.messageDiv {
+  width: auto;
+  max-width: 85%;
+  height: auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 6px;
+  padding: 1% 4% 1% 4%;
+  /* margin-top: 3%; */
+
+}
+
+.messageDivError {
+  background-color: #FCCED1;
+}
+
+.messageDivError p {
+  font-family: "Poppins", sans-serif;
+  font-size: 10.5px;
+  font-weight: 550;
+  color: #F3212D;
+}
+
+.messageDivSuccess {
+  background-color: #BAFFB4;
+
+}
+
+.messageDivSuccess p {
+  font-family: "Poppins", sans-serif;
+  font-size: 10.5px;
+  font-weight: 550;
+  color: #38c62b;
+}
+
+/* .messageDiv p {} */
+.errorMessageIconDiv {
+  width: 20px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid black; */
+  margin-right: 5px;
+}
+
+.warningIcon {
+  font-size: 15px !;
+  color: #F3212D;
+  padding: 0px;
+  margin: 0px;
+}
+
+/* ________________________________________________ */
+
+.formTagContainer {
+  grid-area: formTagContainer;
+  width: 85%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 30% 30% 10% 30%;
+  grid-template-areas:
+    "emailAddressWrapper emailAddressWrapper "
+    "passwordWrapper passwordWrapper"
+    "passForgetWrapper passForgetWrapper"
+    "submitBtnWrapper submitBtnWrapper";
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* border: 1px solid green; */
+}
+
+.emailAddressWrapper {
+  grid-area: emailAddressWrapper;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid black; */
+}
+
+.emailAddressContainer {
+  width: 100%;
   height: 80%;
-  border: 1px solid black;
+  background-color: #F3F5F9;
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 50% 50%;
+  grid-template-areas:
+    "iconDiv labelDiv"
+    "iconDiv inputDiv";
+  box-sizing: border-box;
+
+}
+
+.passwordWrapper {
+  grid-area: passwordWrapper;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid black; */
+}
+
+.passwordContainer {
+  width: 100%;
+  height: 80%;
+  background-color: #F3F5F9;
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 50% 50%;
+  grid-template-areas:
+    "iconDiv labelDiv"
+    "iconDiv inputDiv";
+}
+
+
+.passForgetWrapper {
+  grid-area: passForgetWrapper;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.passForgetWrapper p {
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 550;
+  color: #002A9A;
+  margin-right: 2%;
+}
+
+
+.iconDiv {
+  grid-area: iconDiv;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fieldIcon {
+  color: #002A9A;
+  font-size: 28px;
+}
+
+.labelDiv {
+  grid-area: labelDiv;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.labelDiv p {
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 450;
+  color: #AAAAAA;
+  margin-top: 5%;
+}
+
+.inputDiv {
+  grid-area: inputDiv;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-right: 2%;
+  box-sizing: border-box;
+}
+
+.inputDiv input {
+  width: 90%;
+  height: 60%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid rgba(91, 87, 87, 0.383);
+  border-bottom: none;
+  background: none;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 450;
+  color: black;
+  letter-spacing: 0.3px;
+
+}
+
+.focusFieldStyle {
+  border: 2px solid #00299a;
+}
+
+input:focus {
+  /* border-bottom: 1px solid #002A9A; */
+
+}
+
+.submitBtnWrapper {
+  grid-area: submitBtnWrapper;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submitBtn {
+  width: 55%;
+  height: 40%;
+  border: none;
+  background-color: #002A9A;
+  border-radius: 15px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 450;
+  color: white;
+  letter-spacing: 0.5px;
+  /* outline: #AED2FF; */
+}
+
+
+/* ________________________________________________ */
+
+.formFooterWrapper {
+  grid-area: formFooterWrapper;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  /* border: 1px solid red; */
+}
+
+.formFooterWrapper p {
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 450;
+  color: black;
+}
+
+span {
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 550;
+  color: #002A9A;
+  margin-left: 2px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
+  .formPageWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid orange; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+  }
+
+  .formPageWrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .formWrapper {
+    position: relative;
+    width: 85%;
+    aspect-ratio: 2/2.5;
+    border-radius: 30px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 20% 10% minmax(0, 1fr) 8%;
+    grid-template-rows: 20% auto minmax(0, 1fr) 8%;
+    grid-template-areas:
+      "formHeaderWrapper formHeaderWrapper"
+      "formMessageWrapper formMessageWrapper "
+      "formTagContainer formTagContainer"
+      "formFooterWrapper formFooterWrapper";
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    justify-content: center;
+    align-items: center;
+    webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* border: 1px solid springgreen; */
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  }
+
+  /* ________________________________________________ */
+  .formHeaderWrapper {
+    grid-area: formHeaderWrapper;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid orange; */
+  }
+
+  .formLabelDiv {
+    position: relative;
+    width: 80%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+  }
+
+  .formLabelDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+  }
+
+  .formLabelDiv::after {
+    position: absolute;
+    content: '';
+    background-color: #002A9A;
+    width: 15%;
+    height: 3px;
+    border-radius: 20px;
+    bottom: 0px;
+  }
+
+  /* ________________________________________________ */
+
+  .formMessageWrapper {
+    grid-area: formMessageWrapper;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* border: 1px solid blue; */
+    box-sizing: border-box;
+    padding-bottom: 2%;
+  }
+
+  .messageDiv {
+    width: auto;
+    max-width: 85%;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 6px;
+    padding: 1% 4% 1% 4%;
+    /* margin-top: 3%; */
+
+  }
+
+  .messageDivError {
+    background-color: #FCCED1;
+  }
+
+  .messageDivError p {
+    font-family: "Poppins", sans-serif;
+    font-size: 10.5px;
+    font-weight: 550;
+    color: #F3212D;
+  }
+
+  .messageDivSuccess {
+    background-color: #BAFFB4;
+
+  }
+
+  .messageDivSuccess p {
+    font-family: "Poppins", sans-serif;
+    font-size: 10.5px;
+    font-weight: 550;
+    color: #38c62b;
+  }
+
+  /* .messageDiv p {} */
+  .errorMessageIconDiv {
+    width: 20px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+    margin-right: 5px;
+  }
+
+  .warningIcon {
+    font-size: 15px !;
+    color: #F3212D;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  /* ________________________________________________ */
+
+  .formTagContainer {
+    grid-area: formTagContainer;
+    width: 85%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 30% 30% 10% 30%;
+    grid-template-areas:
+      "emailAddressWrapper emailAddressWrapper "
+      "passwordWrapper passwordWrapper"
+      "passForgetWrapper passForgetWrapper"
+      "submitBtnWrapper submitBtnWrapper";
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* border: 1px solid green; */
+  }
+
+  .emailAddressWrapper {
+    grid-area: emailAddressWrapper;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+  }
+
+  .emailAddressContainer {
+    width: 100%;
+    height: 80%;
+    background-color: #F3F5F9;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+      "iconDiv labelDiv"
+      "iconDiv inputDiv";
+    box-sizing: border-box;
+
+  }
+
+  .passwordWrapper {
+    grid-area: passwordWrapper;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+  }
+
+  .passwordContainer {
+    width: 100%;
+    height: 80%;
+    background-color: #F3F5F9;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+      "iconDiv labelDiv"
+      "iconDiv inputDiv";
+  }
+
+
+  .passForgetWrapper {
+    grid-area: passForgetWrapper;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .passForgetWrapper p {
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    font-weight: 550;
+    color: #002A9A;
+    margin-right: 2%;
+  }
+
+
+  .iconDiv {
+    grid-area: iconDiv;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .fieldIcon {
+    color: #002A9A;
+    font-size: 28px;
+  }
+
+  .labelDiv {
+    grid-area: labelDiv;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .labelDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    font-weight: 450;
+    color: #AAAAAA;
+    margin-top: 5%;
+  }
+
+  .inputDiv {
+    grid-area: inputDiv;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-right: 2%;
+    box-sizing: border-box;
+  }
+
+  .inputDiv input {
+    width: 90%;
+    height: 60%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid rgba(91, 87, 87, 0.383);
+    border-bottom: none;
+    background: none;
+    outline: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 450;
+    color: black;
+    letter-spacing: 0.3px;
+
+  }
+
+  .focusFieldStyle {
+    border: 2px solid #00299a;
+  }
+
+  input:focus {
+    /* border-bottom: 1px solid #002A9A; */
+
+  }
+
+  .submitBtnWrapper {
+    grid-area: submitBtnWrapper;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .submitBtn {
+    width: 55%;
+    height: 40%;
+    border: none;
+    background-color: #002A9A;
+    border-radius: 15px;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 450;
+    color: white;
+    letter-spacing: 0.5px;
+    /* outline: #AED2FF; */
+  }
+
+
+  /* ________________________________________________ */
+
+  .formFooterWrapper {
+    grid-area: formFooterWrapper;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* border: 1px solid red; */
+  }
+
+  .formFooterWrapper p {
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    font-weight: 450;
+    color: black;
+  }
+
+  span {
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    font-weight: 550;
+    color: #002A9A;
+    margin-left: 2px;
+  }
+
 }

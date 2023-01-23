@@ -43,7 +43,7 @@ export const formValidation = (formData) => {
 
 
 
-export const validateForm = ({ firstName, lastName, email, password, confirmPassword }) => {
+export const validateSignUpForm = ({ firstName, lastName, email, password, confirmPassword }) => {
 
     let errors = [];
 
@@ -64,7 +64,9 @@ export const validateForm = ({ firstName, lastName, email, password, confirmPass
     }
     else if (!email) {
         errors.push("Email is required.");
-    } else if (!email.includes("@")) {
+        res.message = 'Email is required.';
+        res.error = true;
+    } else if (!email.match(validRegex)) {
         errors.push("Email must be a valid address.");
         res.message = 'Email must be a valid address.';
         res.error = true;
@@ -92,6 +94,42 @@ export const validateForm = ({ firstName, lastName, email, password, confirmPass
         res.error = true;
     }
 
+
+    return res;
+}
+
+export const validateSignInForm = ({ email, password }) => {
+
+    let errors = [];
+
+    let res = {
+        message: undefined,
+        error: false,
+    };
+    console.log(email, password);
+
+    if (!email) {
+        errors.push("Email is required.");
+        res.message = 'Email is required.';
+        res.error = true;
+    } else if (!email.match(validRegex)) {
+        errors.push("Email must be a valid address.");
+        res.message = 'Email must be a valid address.';
+        res.error = true;
+    }
+    else if (!password) {
+        errors.push("Password is required.");
+        res.message = 'Password is required.';
+        res.error = true;
+    } else if (password.length < 8) {
+        errors.push("Password must be at least 8 characters long.");
+        res.message = 'Password must be at least 8 characters long.';
+        res.error = true;
+    } else if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/.test(password)) {
+        errors.push("Password must contain at least one uppercase letter, one lowercase letter, one number and one special character");
+        res.message = 'Password must contain at least one uppercase letter, one lowercase letter, one number and one special character';
+        res.error = true;
+    }
 
     return res;
 }

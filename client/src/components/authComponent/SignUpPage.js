@@ -1,8 +1,15 @@
 import React, { useState } from 'react'
+import { Routes, Route, Link } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux'
 import { Icon } from '@iconify/react';
 import styles from "./styles/signUpPage.module.css"
-import { formValidation, validateForm } from "./helperFunctions/formValidation"
+import { formValidation, validateSignUpForm } from "./helperFunctions/formValidation"
+import { registerUser } from "../../redux/features/auth/authSlice"
 const SignUpPage = () => {
+  const dispatch = useDispatch();
+
+  const authState = useSelector((state => state.auth));
+  // console.log(authState.authResponseMessage)
 
   const [formMessage, setFormMessage] = useState({
     message: undefined,
@@ -17,11 +24,11 @@ const SignUpPage = () => {
   }
 
   const [formData, setFromData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
+    firstName: 'Praveen',
+    lastName: 'Lohar',
+    email: 'prvnlhr522@gmail.com',
+    password: 'Prvnpr@123',
+    confirmPassword: 'Prvnpr@123',
   });
 
 
@@ -32,7 +39,7 @@ const SignUpPage = () => {
       message: undefined,
       error: undefined
     })
-    const res = validateForm(formData);
+    const res = validateSignUpForm(formData);
 
     if (res.error) {
       setFormMessage({
@@ -46,6 +53,8 @@ const SignUpPage = () => {
         message: undefined,
         error: false
       })
+      dispatch(registerUser(formData));
+
       console.log('confirm submit')
     }
 
@@ -66,15 +75,18 @@ const SignUpPage = () => {
           </div>
         </div>
         <div className={styles.formMessageWrapper} >
-          {message &&
-            <div className={`${styles.messageDiv} ${error ? styles.messageDivError : styles.messageDivSuccess}`} >
+          {(authState.authResponseMessage || message) &&
+            <div className={`${styles.messageDiv} ${(error || authState.error) ? styles.messageDivError : styles.messageDivSuccess}`} >
               {
                 error &&
                 <div className={styles.errorMessageIconDiv} >
                   <Icon className={styles.warningIcon} icon="ph:warning" />
                 </div>
               }
-              <p>{formMessage.message}</p>
+              <p>{
+                formMessage.message !== undefined ? formMessage.message
+                  : authState.authResponseMessage !== undefined && authState.authResponseMessage
+              }</p>
             </div>
           }
         </div>
@@ -184,7 +196,11 @@ const SignUpPage = () => {
 
         </form>
         <div className={styles.formFooterWrapper} >
-          <p>Already have an account ? <span>Sign In</span></p>
+          <p>Already have an account ?
+            <Link to="/user/login">
+              <span>Sign In</span>
+            </Link>
+          </p>
         </div>
       </div >
     </div >

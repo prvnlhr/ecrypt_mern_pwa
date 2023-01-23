@@ -71,7 +71,6 @@ const favoritesSlice = createSlice({
             }
         })
     }
-
 })
 
 export const { addToFavLoginsData, addToFavCardsData, removeFromFavCardsData, addToFavDocsData } = favoritesSlice.actions;

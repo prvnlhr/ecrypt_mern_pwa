@@ -1,76 +1,61 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import styles from "./styles/activateAccountComponent.module.css";
+import styles from "./styles/activateAccountPage.module.css";
 import { useParams, Link } from "react-router-dom";
-import { activationEmail } from "../../redux/actions/auth";
-import { CircleSpinner } from "react-spinners-kit";
 import { Icon } from "@iconify/react";
-import { motion } from "framer-motion";
-
+import { activateUserAccount } from "../../redux/features/auth/authSlice"
 const ActivateAccount = () => {
+
+  const authState = useSelector((state => state.auth));
+  const { authResponseMessage, error, success } = authState;
   const dispatch = useDispatch();
+
   const { activation_token } = useParams();
-  const loadState = useSelector((state) => state.loading);
-  const message = useSelector((state) => state.authResponseHandler);
-  const { place, isLoading } = loadState;
-  const handleAccountActivate = () => {
-    dispatch(activationEmail(activation_token));
-  };
-  
-  // useEffect(() => {
-  //   console.log(activation_token);
-  // }, [activation_token]);
 
+
+  const handleActivateBtnClicked = () => {
+    console.log(activation_token);
+    dispatch(activateUserAccount(activation_token))
+  }
   return (
-    <div className={styles.activateComponent}>
-      <div className={styles.activateContainer}>
-        <div className={styles.headingWrapper}>
-          <p className={styles.HeadingText}>Click button to activate account</p>
+    <div className={styles.acitveAccountPage}>
+      <div className={styles.activateAccountForm} >
+        <div className={styles.formHeaderWrapper} >
+          <div className={styles.formLabelDiv} >
+            <p>Click to activate account</p>
+          </div>
         </div>
-        <div className={styles.messageWrapper}>
-          {message.error && message.at === "activateAccount" ? (
-            <div className={styles.errorDiv}>
-              <Icon icon="carbon:warning" className={styles.icon} />
-
-              <p>{message.error}</p>
+        <div className={styles.formMessageWrapper} >
+          {authResponseMessage &&
+            <div className={`${styles.messageDiv} ${error ? styles.messageDivError : styles.messageDivSuccess}`} >
+              {
+                error &&
+                <div className={styles.errorMessageIconDiv} >
+                  <Icon className={styles.warningIcon} icon="ph:warning" />
+                </div>
+              }
+              <p>{authResponseMessage}</p>
             </div>
-          ) : (
-            message.success &&
-            message.at === "activateAccount" && (
-              <div className={styles.successDiv}>
-                <Icon icon="akar-icons:circle-check" className={styles.icon} />
-
-                <p>{message.success}</p>
-              </div>
-            )
-          )}
+          }
         </div>
-
-        <div className={styles.buttonWrapper}>
-          <motion.button
-            whileTap={{ scale: 0.95 }}
-            onClick={handleAccountActivate}
-          >
-            {place === "activateAccount" && isLoading === true ? (
-              <CircleSpinner size={15} color="white" loading={true} />
-            ) : (
-              <p>Activate account</p>
-            )}
-          </motion.button>
+        <div className={styles.formActivateBtnWrapper} >
+          <button onClick={handleActivateBtnClicked} className={styles.activateBtn}>Activate Account</button>
         </div>
-        <div className={styles.BottomLinkWrapper}>
-          {message.success && message.at === "activateAccount" ? (
-            <p>
-              <Link to="/login"> Login </Link>
-            </p>
-          ) : message.error && message.at === "activateAccount" ? (
-            <p>
-              Sign Up agin ?
-              <Link to="/register" className={styles.link}>
-                Sign Up
+        <div className={styles.formFooterWrapper} >
+          {error ?
+            <p>Sign Up again ?
+              <Link to="/user/register">
+                <span> Sign Up </span>
               </Link>
             </p>
-          ) : null}
+            : success &&
+            <p>
+              <Link to="/user/login">
+                <span>Login </span>
+              </Link>
+            </p>
+          }
+
         </div>
       </div>
     </div>
