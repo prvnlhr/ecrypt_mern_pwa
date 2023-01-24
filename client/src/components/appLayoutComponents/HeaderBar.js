@@ -1,21 +1,33 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux'
 import { Icon } from '@iconify/react';
-
 import LogoutIcon from "../icons/LogoutIcon"
 import SettingsIcon from "../icons/SettingsIcon"
+import { getUserDetails } from "../../redux/features/user/userSlice"
+
 
 import moment from "moment";
 import headerStyles from "./styles/headerBar.module.css";
 
+import { logOutUser } from "../../redux/features/auth/authSlice"
+
 const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const auth = useSelector((state) => state.auth);
+  const { token, } = auth;
 
   const [searchQuery, setQuery] = useState("");
   const [searchMode, setSearchMode] = useState(false);
 
 
+  const btnClicked = () => {
+    // console.log(token);
+    dispatch(getUserDetails(token));
+  }
 
   useEffect(() => {
     let handler = (e) => {
@@ -50,6 +62,10 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
   }
 
 
+  const logOutBtnClicked = () => {
+    console.log('logvnks')
+    dispatch(logOutUser({}))
+  }
 
 
   const day = moment().format("dddd");
@@ -118,7 +134,9 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
         </div>
         <div className={headerStyles.avatarContainer}>
           <div className={headerStyles.avatarDiv}>
-            <div className={headerStyles.avatarImgDiv}>
+            <div className={headerStyles.avatarImgDiv}
+              onClick={btnClicked}
+            >
             </div>
           </div>
         </div>
@@ -171,7 +189,7 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
                 <div className={headerStyles.logOutIconDiv} >
                   < LogoutIcon />
                 </div>
-                <p className={headerStyles.logoutText}>Logout</p>
+                <p className={headerStyles.logoutText} onClick={logOutBtnClicked} >Logout</p>
               </div>
             </div>
           </div>

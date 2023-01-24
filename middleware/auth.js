@@ -2,21 +2,23 @@
 const jwt = require("jsonwebtoken");
 
 const auth = async (req, res, next) => {
-  // console.log(req.header("Authorization").split(" ")[1]);
+  console.log('auth middle');
   try {
     const token = req.header("Authorization").split(" ")[1];
-
-    if (!token)
+    if (!token) {
       return res.status(401).json({ msg: "Access denied , token missing" });
+    }
+
     jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
       if (err) {
-        console.log("error at auth middleware 1", err);
         if (err.name === "TokenExpiredError") {
           return res.status(401).json({ msg: "TokenExpiredError!" });
-        } else if (err.name === "JsonWebTokenError") {
+        }
+        else if (err.name === "JsonWebTokenError") {
           return res.status(401).json({ msg: "Invalid token!" });
         }
       }
+
       req.user = user;
       next();
     });

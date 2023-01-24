@@ -48,12 +48,12 @@ export const addNewLoginIdData = createAsyncThunk("loginIds/add", async ({ data,
 export const editLoginIdData = createAsyncThunk("loginIds/edit", async ({ updatedData, login_id, activityData, userId }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
         const res = await api.editLoginId(login_id, updatedData);
-
+        console.log(res)
         dispatch(addActivityData({
             activityData: activityData,
             userId: userId
         }))
-        
+
         return fulfillWithValue(updatedData);
 
     } catch (error) {

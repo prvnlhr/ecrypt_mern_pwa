@@ -33,7 +33,7 @@ const SignInPage = () => {
 
 
   const handleFormSubmit = async (e) => {
-    console.log(formData);
+    // console.log(formData);
 
     e.preventDefault();
 

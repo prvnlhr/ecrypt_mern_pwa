@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import { setAuthToken, forceLogout, logOutUser } from "../features/auth/authSlice"
 let url = process.env.REACT_APP_BASE_URL;
 console.log(process.env.REACT_APP_BASE_URL);
 
@@ -17,7 +17,6 @@ const API = axios.create({
 
 // ->______________________________________________________________________________
 const reqHandler = (request) => {
-  console.log(request);
   return request;
 };
 
@@ -28,18 +27,12 @@ const resHandler = (response) => {
 };
 
 
-const axiosInterceptor = (store) => {
+const axiosInterceptor = async (store) => {
 
   //> method used by API.interceptor to handle error
   const errorHandler = (error) => {
     const originalRequest = error.config;
-    if (
-      error.response.status === 401 &&
-      error.config.url !== "/user/auth/access_token" &&
-      error.config.url !== "/user/auth/activation" &&
-      error.config.url !== "/user/auth/resetPassword" &&
-      !originalRequest._retry
-    ) {
+    if (error.response.status === 401 && error.config.url !== "/user/auth/access_token" && error.config.url !== "/user/auth/activation" && error.config.url !== "/user/auth/resetPassword" && !originalRequest._retry) {
       originalRequest._retry = true;
       return axios
         .post(`${url}/user/auth/access_token`, null, {
@@ -47,15 +40,18 @@ const axiosInterceptor = (store) => {
         })
         .then((res) => {
           if (res.status === 200) {
-            // store.dispatch(updateToken(res.data));
-            originalRequest.headers["Authorization"] = "Bearer " + res.data;
+            store.dispatch(setAuthToken(res.data));
+            originalRequest.headers['Authorization'] = "Bearer " + res.data;
             return axios(originalRequest);
           }
         })
         .catch((err) => {
           if (err.response.status === 401) {
-            // store.dispatch(logout());
+            console.log('logging out')
+            console.log('logging out 1')
           }
+          store.dispatch(logOutUser());
+          console.log(err);
           return Promise.reject(err);
         });
     }
@@ -175,7 +171,6 @@ export const addRecentlyData = (user_id, activityData) =>
     user_id: user_id,
   });
 
-
 //>FAVOURITE TOGGLE URL_____________________________________________________________________
 export const loginIdFavouriteToggle = (loginCard_Id, isFav) =>
   API.patch(`/user/loginIds/toggleFavourite/${loginCard_Id}`, {
@@ -209,11 +204,17 @@ export const fetchFavorites = (user_id) =>
 export const registerNewUser = (formData) =>
   API.post("/user/auth/register", formData);
 
+
 //> Login user
 export const login = (formData) =>
   API.post("/user/auth/login", formData, {
     withCredentials: true,
   });
+
+//> Logout
+export const logoutUser = () =>
+  API.get("/user/auth/logout", { withCredentials: true });
+
 
 //> Account activate 
 export const accountActivation = (activation_token) =>
@@ -222,9 +223,21 @@ export const accountActivation = (activation_token) =>
       activation_token,
     },
   });
+
 //> get access Token
 export const getToken = () =>
   API.post("/user/auth/access_token", null, {
     withCredentials: true,
   });
 export default axiosInterceptor;
+
+//> Get user
+export const getUser = (token) =>
+  API.get("/user/auth/info", {
+    headers: {
+      "Authorization": `Bearer ${token}`
+      // "Authorization": 'Bearer' + token
+    },
+  });
+
+  // originalRequest.headers["Authorization"] = "Bearer " + res.data;

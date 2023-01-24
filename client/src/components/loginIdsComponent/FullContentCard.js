@@ -33,6 +33,8 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
     // }, [currCardDataInStore])
 
     const dispatch = useDispatch();
+    const userId = useSelector((state) => state.user.user._id);
+
 
     const [popUpOpen, setPopUpOpen] = useState(false);
 
@@ -101,7 +103,7 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
             updatedData: fullContentCardData,
             login_id: fullContentCardData._id,
             activityData: activity_data,
-            userId: '63b43ab32fc8d3c100cafecc'
+            userId: userId
         }))
         // setShowContentCard(false);
         setEditMode(false);

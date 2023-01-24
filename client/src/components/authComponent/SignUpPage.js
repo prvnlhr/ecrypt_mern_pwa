@@ -9,8 +9,6 @@ const SignUpPage = () => {
   const dispatch = useDispatch();
 
   const authState = useSelector((state => state.auth));
-  // console.log(authState.authResponseMessage)
-
   const [formMessage, setFormMessage] = useState({
     message: undefined,
     error: false
@@ -54,8 +52,6 @@ const SignUpPage = () => {
         error: false
       })
       dispatch(registerUser(formData));
-
-      console.log('confirm submit')
     }
 
   }

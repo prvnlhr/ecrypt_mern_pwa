@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const ProtectedRoute = ({ children }) => {
+
   const auth = useSelector((state) => state.auth);
 
   const { isLogged } = auth;

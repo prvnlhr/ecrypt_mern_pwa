@@ -106,7 +106,7 @@ export const validateSignInForm = ({ email, password }) => {
         message: undefined,
         error: false,
     };
-    console.log(email, password);
+    // console.log(email, password);
 
     if (!email) {
         errors.push("Email is required.");

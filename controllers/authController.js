@@ -96,20 +96,20 @@ const authController = {
         path: "/user/auth/access_token",
         maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
       });
-
-
       const access_token = createAccessToken({ id: user._id });
-
+      console.log('login cont', access_token);
       res.status(200).json(access_token);
     } catch (err) {
       console.log("error at Login controller", err);
       return res.status(500).json({ msg: err.message });
     }
   },
+
   getAccessToken: async (req, res) => {
     try {
       const rf_token = req.cookies.refreshtoken;
-      console.log("access_token from cookies::", req.cookies.refreshtoken);
+      console.log('getToken controller')
+      // console.log("access_token from cookies::", req.cookies.refreshtoken);
       if (!rf_token) {
         return res.status(401).json({ msg: "Please Login to continue !" });
       }
@@ -247,6 +247,7 @@ const authController = {
     }
   },
   getUserInfo: async (req, res) => {
+    console.log('getUser');
     try {
       const user = await UserDatabase.findById(req.user.id).select("-password");
       res.json({ user });
@@ -267,6 +268,7 @@ const authController = {
   },
   logout: async (req, res) => {
     try {
+      console.log('at logout controller')
       res.clearCookie("refreshtoken", { path: "/user/auth/access_token" });
       return res.status(200).json({ msg: "Successfully Logged out" });
     } catch (error) {
@@ -284,10 +286,12 @@ function createActivationToken(payload) {
   return jwt.sign(payload, ACTIVATION_TOKEN_SECRET, { expiresIn: "5m" });
 }
 function createAccessToken(payload) {
-  return jwt.sign(payload, ACCESS_TOKEN_SECRET, { expiresIn: "15m" });
+  // return jwt.sign(payload, ACCESS_TOKEN_SECRET, { expiresIn: "15m" });
+  return jwt.sign(payload, ACCESS_TOKEN_SECRET, { expiresIn: "40s" });
 }
 function createRefreshToken(payload) {
-  return jwt.sign(payload, REFRESH_TOKEN_SECRET, { expiresIn: "2d" });
+  // return jwt.sign(payload, REFRESH_TOKEN_SECRET, { expiresIn: "2d" });
+  return jwt.sign(payload, REFRESH_TOKEN_SECRET, { expiresIn: "60s" });
 }
 
 function validateEmail(email) {

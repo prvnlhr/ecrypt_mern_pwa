@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect, lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import LoginIdsList from "../loginIdsComponent/LoginIdsList";
 import CardsList from "../cardComponent/CardsList";
 import FavList from "../favSectionComponent/FavList";
@@ -46,18 +46,19 @@ const ContentDisplay = ({
 
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    // console.log(fieldLength);
-  }, [fieldLength]);
+  const userId = useSelector((state) => state.user.user);
+
 
   useEffect(() => {
-    dispatch(fecthLoginIdsData({ user_id: '63b43ab32fc8d3c100cafecc' }));
-    dispatch(fecthCardsData({ user_id: '63b43ab32fc8d3c100cafecc' }));
-    dispatch(fetchDocsData({ user_id: '63b43ab32fc8d3c100cafecc' }))
-    dispatch(fectchActivitiesData({ user_id: '63b43ab32fc8d3c100cafecc' }))
-    dispatch(fetchFavoritesData({ user_id: '63b43ab32fc8d3c100cafecc' }))
-    dispatch(fetchRecentlyAddedData({ user_id: '63b43ab32fc8d3c100cafecc' }))
-  }, []);
+    if (userId) {
+      dispatch(fecthLoginIdsData({ user_id: userId }));
+      dispatch(fecthCardsData({ user_id: userId }));
+      dispatch(fetchDocsData({ user_id: userId }))
+      dispatch(fectchActivitiesData({ user_id: userId }))
+      dispatch(fetchFavoritesData({ user_id: userId }))
+      dispatch(fetchRecentlyAddedData({ user_id: userId }))
+    }
+  }, [dispatch, userId]);
 
   return (
 

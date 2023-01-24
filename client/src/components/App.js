@@ -10,17 +10,25 @@ import ActivateAccount from './authComponent/ActivateAccount';
 import { getAuthToken } from "../redux/features/auth/authSlice"
 import { fecthCardsData } from "../redux/features/cards/cardsSlice"
 import UnAuthenticatedRoutes from './authComponent/UnAuthenticatedRoutes';
+import { getUserDetails } from "../redux/features/user/userSlice"
+
 const App = () => {
+
+  const dispatch = useDispatch();
+  const auth = useSelector((state) => state.auth);
+  const { token } = auth;
 
   const getToken = async () => {
     await dispatch(getAuthToken({}))
   };
-  const dispatch = useDispatch();
-  // const auth = useSelector((state) => state.auth);
-  // const { token } = auth;
 
   useEffect(() => {
-    console.log("sss")
+    if (token) {
+      dispatch(getUserDetails(token));
+    }
+  }, [token])
+
+  useEffect(() => {
     getToken();
   }, [])
 

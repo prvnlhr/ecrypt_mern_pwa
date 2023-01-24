@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useState, useRef, } from "react";
 import { useNavigate, Location, useLocation } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux'
 import homeStyles from "./styles/home.module.css";
-
 import docFullStyles from "../docsComponent/styles/documentFullScreen.module.css";
 import ContentDisplay from "./ContentDisplay";
 
@@ -16,9 +16,20 @@ import DocFullScreen from "../docsComponent/DocFullScreen";
 import LogoComponentWrapper from "../logoComponents/LogoComponentWrapper"
 import DocFullScreenRecentAct from "../dashboardComponent/recentlyAddedSection/DocFullScreenRecentAct";
 import FavDocFullScreen from "../favSectionComponent/docs/FavDocFullScreen"
+
+import { getUserDetails } from "../../redux/features/user/userSlice"
 const Home = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const dispatch = useDispatch();
+
+  const auth = useSelector((state) => state.auth);
+  const { token } = auth;
+
+  // useEffect(() => {
+  //   dispatch(getUserDetails(token));
+
+  // }, [token])
   const node = useRef();
 
   const [open, setOpen] = useState(false);
