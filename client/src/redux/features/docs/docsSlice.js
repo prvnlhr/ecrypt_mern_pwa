@@ -12,6 +12,8 @@ const initialState = {
 export const fetchDocsData = createAsyncThunk("docs/fetch", async ({ user_id }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
 
     try {
+        const state = getState();
+
         const res = await api.fetchDocs(user_id);
         // console.table(res.data)
         const { data } = res;
@@ -27,12 +29,13 @@ export const fetchDocsData = createAsyncThunk("docs/fetch", async ({ user_id }, 
 export const addNewDocData = createAsyncThunk("docs/add", async ({ data, name, userId, activityData }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
 
     try {
-        const res = await api.addNewDoc(data, userId)
+        const state = getState();
+
+        const res = await api.addNewDoc(data, state.auth.token)
         dispatch(addActivityData({
             activityData: activityData,
             userId: userId
         }))
-
 
         dispatch(addRecentlyAddedData({
             recentlyAddedData: res.data[res.data.length - 1],
@@ -51,8 +54,10 @@ export const addNewDocData = createAsyncThunk("docs/add", async ({ data, name, u
 export const editDocData = createAsyncThunk("docs/edit", async ({ docId, docData, userId, activityData }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
 
     try {
+        const state = getState();
+
         console.log(docId, docData);
-        const res = await api.editDoc(docId, docData);
+        const res = await api.editDoc(docId, docData, state.auth.token);
         dispatch(addActivityData({
             activityData: activityData,
             userId: userId,
@@ -68,8 +73,9 @@ export const editDocData = createAsyncThunk("docs/edit", async ({ docId, docData
 export const deleteDocData = createAsyncThunk("docs/delete", async ({ docId, cloudId, userId, activityData }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
 
     try {
+        const state = getState();
         console.table(userId, docId, cloudId);
-        const res = await api.deleteDoc(docId, userId, cloudId);
+        const res = await api.deleteDoc(docId, userId, cloudId, state.auth.token);
         dispatch(addActivityData({
             activityData: activityData,
             userId: userId
@@ -87,9 +93,10 @@ export const deleteDocData = createAsyncThunk("docs/delete", async ({ docId, clo
 
 export const toggleIsFav = createAsyncThunk("docs/toggleFav", async ({ doc_id, isFav }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
+        const state = getState();
 
         // console.log(doc_id, isFav)
-        const res = await api.docsFavouriteToggle(doc_id, isFav)
+        const res = await api.docsFavouriteToggle(doc_id, isFav, state.auth.token)
         // console.log(res.data)
         const favDocsArray = res.data.filter((item) => item.isFavourite);
         // console.log(favDocsArray);

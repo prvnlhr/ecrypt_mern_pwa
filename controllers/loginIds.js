@@ -13,11 +13,11 @@ const loginsController = {
     }
   },
   addLoginId: async (req, res) => {
-    // console.log("at loginId controller", req.body);
+    console.log("at loginId controller", req.body.newLoginData, req.body.user_id);
     try {
       const response = await UserDatabase.findOneAndUpdate(
         { _id: req.body.user_id },
-        { $push: { loginIdsArray: req.body.data } },
+        { $push: { loginIdsArray: req.body.newLoginData } },
         { returnOriginal: false }
       );
       // console.log(response)
@@ -31,7 +31,7 @@ const loginsController = {
   editLoginId: async (req, res) => {
     const id = req.params.id;
     const { title, category, app, username, password, logoIndex } = req.body;
-    console.log("at edit loginId")
+    console.log("at edit loginId", title)
     try {
       const response = await UserDatabase.findOneAndUpdate(
         { "loginIdsArray._id": id },
@@ -97,7 +97,7 @@ const loginsController = {
   },
 
   getFavorites: async (req, res) => {
-    console.log('at fav fetch', req.query.user_id)
+    // console.log('at fav fetch', req.query.user_id)
     try {
       const response = await UserDatabase.aggregate([
         { $match: { _id: mongoose.Types.ObjectId(req.query.user_id) } },

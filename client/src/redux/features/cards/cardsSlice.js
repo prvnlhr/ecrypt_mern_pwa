@@ -24,8 +24,9 @@ export const fecthCardsData = createAsyncThunk("cards/fetch", async ({ user_id }
 
 export const addNewCardData = createAsyncThunk("cards/add", async ({ data, user_id, activityData }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
+        const state = getState();
 
-        const res = await api.addNewCard(data, user_id)
+        const res = await api.addNewCard(data, user_id, state.auth.token)
         dispatch(addActivityData({
             activityData: activityData,
             userId: user_id
@@ -46,8 +47,9 @@ export const editCardData = createAsyncThunk("cards/edit", async ({ updatedData,
     try {
         console.table('cardSlice', updatedData, card_id);
         // console.log(updatedData, card_id)
+        const state = getState();
 
-        const res = await api.editCard(card_id, updatedData);
+        const res = await api.editCard(card_id, updatedData, state.auth.token);
         // console.log(activityData, userId)
         dispatch(addActivityData({
             activityData: activityData,
@@ -63,9 +65,10 @@ export const editCardData = createAsyncThunk("cards/edit", async ({ updatedData,
 export const deleteCardData = createAsyncThunk("cards/delete", async ({ cardData, user_id, card_id, activityData }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
 
     try {
+        const state = getState();
 
         // console.table(user_id, card_id, cardData);
-        const res = await api.deleteCard(card_id, user_id, cardData);
+        const res = await api.deleteCard(card_id, user_id, cardData, state.auth.token);
         dispatch(addActivityData({
             activityData: activityData,
             userId: user_id
@@ -85,7 +88,9 @@ export const deleteCardData = createAsyncThunk("cards/delete", async ({ cardData
 
 export const toggleIsFav = createAsyncThunk("cards/toggleFav", async ({ card_id, isFav, category }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
-        const res = await api.cardFavouriteToggle(card_id, isFav, category)
+        const state = getState();
+
+        const res = await api.cardFavouriteToggle(card_id, isFav, category, state.auth.token)
         const currToggleCardInDb = res.data.filter((item) => item._id === card_id);
         // console.log(currToggleCardInDb[0].isFavourite)
         if (currToggleCardInDb[0].isFavourite === false) {

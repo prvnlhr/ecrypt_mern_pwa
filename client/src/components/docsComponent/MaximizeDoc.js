@@ -44,7 +44,8 @@ const MaximizeDoc = ({
 }) => {
   const dispatch = useDispatch();
   const location = useLocation();
-  const user = useSelector((state) => state.user.user);
+  const userId = useSelector((state) => state.user._id);
+
   const searchResultArray = useSelector(
     (state) => state.searchResults.searchResults
   );
@@ -140,9 +141,11 @@ const MaximizeDoc = ({
               duration: 0.2
             },
           }}
-          exit={{ scale: 0 ,transition: {
-            duration: 0.2
-          },}}
+          exit={{
+            scale: 0, transition: {
+              duration: 0.2
+            },
+          }}
           className={styles.maximizeImgWrapper}
         >
           {deleteModalShow === true ? (
@@ -166,9 +169,9 @@ const MaximizeDoc = ({
                   }}
                 >
                   {isLoading === true &&
-                  place === "doc" &&
-                  itemId === imageData._id &&
-                  process === "delete" ? (
+                    place === "doc" &&
+                    itemId === imageData._id &&
+                    process === "delete" ? (
                     <CircleSpinner size={12} color="white" loading={true} />
                   ) : (
                     <p>Delete</p>

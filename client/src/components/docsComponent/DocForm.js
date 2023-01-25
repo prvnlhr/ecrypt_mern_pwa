@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import styles from "./styles/docInputForm.module.css"
 import { Icon } from '@iconify/react';
 import { HiX } from "react-icons/hi";
@@ -9,6 +9,8 @@ import { generateActivityData } from "../utils/ActivityDataChangeFuction"
 import axios from "axios";
 
 const DocInputForm = ({ setShowDocInputForm, showDocInputForm, formToggle }) => {
+    const userId = useSelector((state) => state.user.user.userId);
+
 
     const dispatch = useDispatch();
     const [name, setName] = useState();
@@ -32,7 +34,7 @@ const DocInputForm = ({ setShowDocInputForm, showDocInputForm, formToggle }) => 
     const uploadDoc = () => {
         formToggle();
         const data = new FormData();
-        data.append("userId", '63b43ab32fc8d3c100cafecc');
+        data.append("userId", userId);
         data.append("name", name);
         data.append("file", file);
 
@@ -45,11 +47,11 @@ const DocInputForm = ({ setShowDocInputForm, showDocInputForm, formToggle }) => 
         }
         const activity_data = generateActivityData(1, 'Doc', toMakeActvityData, '');
         console.log(activity_data);
-        console.log(data, name, '63b43ab32fc8d3c100cafecc')
+        console.log(data, name, userId)
         dispatch(addNewDocData({
             data: data,
             name: name,
-            userId: '63b43ab32fc8d3c100cafecc',
+            userId: userId,
             activityData: activity_data,
         }
         ));

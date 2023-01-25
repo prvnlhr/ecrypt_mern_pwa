@@ -3,7 +3,7 @@ const { UserDatabase } = require("../models/userData");
 
 const activityController = {
   getActivities: async (req, res) => {
-    console.log(req.query.user_id)
+    // console.log(req.query.user_id)
     try {
 
       const activityRes = await UserDatabase.findOne({ _id: req.query.user_id });
@@ -17,7 +17,7 @@ const activityController = {
 
 
   addActivity: async (req, res) => {
-    console.log("Add activity controller", req.body);
+    // console.log("Add activity controller", req.body);
     try {
       const response = await UserDatabase.findOneAndUpdate(
         { _id: req.body.user_id },
@@ -38,7 +38,7 @@ const activityController = {
   },
 
   addRecentlyAdded: async (req, res) => {
-    console.log("Add recently controller", req.body);
+    // console.log("Add recently controller", req.body);
 
     try {
       const response = await UserDatabase.findOneAndUpdate(

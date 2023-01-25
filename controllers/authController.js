@@ -128,6 +128,26 @@ const authController = {
       return res.status(400).json({ msg: error });
     }
   },
+  getUserInfo: async (req, res) => {
+    console.log('getUser');
+    try {
+      const user = await UserDatabase.findById(req.user.id).select("-password");
+      res.json({ user });
+    } catch (error) {
+      console.log("error at getUserinfo controller", error);
+      return res.status(404).send(error);
+    }
+  },
+  logout: async (req, res) => {
+    try {
+      console.log('at logout controller')
+      res.clearCookie("refreshtoken", { path: "/user/auth/access_token" });
+      return res.status(200).json({ msg: "Successfully Logged out" });
+    } catch (error) {
+      console.log("error at logout controller", error);
+      return res.status(404).send(error);
+    }
+  },
   forgotPassword: async (req, res) => {
     try {
       const { email } = req.body;
@@ -246,16 +266,8 @@ const authController = {
       return res.status(404).send(error);
     }
   },
-  getUserInfo: async (req, res) => {
-    console.log('getUser');
-    try {
-      const user = await UserDatabase.findById(req.user.id).select("-password");
-      res.json({ user });
-    } catch (error) {
-      console.log("error at getUserinfo controller", error);
-      return res.status(404).send(error);
-    }
-  },
+
+
   getUser: async (req, res) => {
     try {
       const user = await UserDatabase.findById(req.user.id).select("-password");
@@ -264,16 +276,6 @@ const authController = {
       console.log(error);
 
       res.status(404).json({ message: error.message });
-    }
-  },
-  logout: async (req, res) => {
-    try {
-      console.log('at logout controller')
-      res.clearCookie("refreshtoken", { path: "/user/auth/access_token" });
-      return res.status(200).json({ msg: "Successfully Logged out" });
-    } catch (error) {
-      console.log("error at logout controller", error);
-      return res.status(404).send(error);
     }
   },
 };
@@ -286,12 +288,12 @@ function createActivationToken(payload) {
   return jwt.sign(payload, ACTIVATION_TOKEN_SECRET, { expiresIn: "5m" });
 }
 function createAccessToken(payload) {
-  // return jwt.sign(payload, ACCESS_TOKEN_SECRET, { expiresIn: "15m" });
-  return jwt.sign(payload, ACCESS_TOKEN_SECRET, { expiresIn: "40s" });
+  return jwt.sign(payload, ACCESS_TOKEN_SECRET, { expiresIn: "15m" });
+  // return jwt.sign(payload, ACCESS_TOKEN_SECRET, { expiresIn: "30s" });
 }
 function createRefreshToken(payload) {
-  // return jwt.sign(payload, REFRESH_TOKEN_SECRET, { expiresIn: "2d" });
-  return jwt.sign(payload, REFRESH_TOKEN_SECRET, { expiresIn: "60s" });
+  return jwt.sign(payload, REFRESH_TOKEN_SECRET, { expiresIn: "2d" });
+  // return jwt.sign(payload, REFRESH_TOKEN_SECRET, { expiresIn: "60s" });
 }
 
 function validateEmail(email) {

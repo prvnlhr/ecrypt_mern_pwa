@@ -33,7 +33,8 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
     // }, [currCardDataInStore])
 
     const dispatch = useDispatch();
-    const userId = useSelector((state) => state.user.user._id);
+    const userId = useSelector((state) => state.user._id);
+
 
 
     const [popUpOpen, setPopUpOpen] = useState(false);

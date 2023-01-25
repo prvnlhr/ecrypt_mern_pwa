@@ -14,6 +14,8 @@ const DocFullScreen = ({ setDocFullScreen, setFullScreenDocData, docFullScreen, 
         fullScreenData._id ? state.docs.docsData.find((l) => l._id === fullScreenData._id) : null
     );
 
+    const userId = useSelector((state) => state.user._id);
+
     useEffect(() => {
         if (currDocDataInStore) {
             // console.log(currDocDataInStore);
@@ -68,7 +70,7 @@ const DocFullScreen = ({ setDocFullScreen, setFullScreenDocData, docFullScreen, 
             docId: fullScreenData._id,
             docData: fullScreenData,
             activityData: activity_data,
-            userId: '63b43ab32fc8d3c100cafecc'
+            userId: userId
         }))
         setEditMode(false);
     }
@@ -82,7 +84,7 @@ const DocFullScreen = ({ setDocFullScreen, setFullScreenDocData, docFullScreen, 
         dispatch(deleteDocData({
             docId: fullScreenData._id,
             cloudId: fullScreenData.cloudinary_id,
-            userId: '63b43ab32fc8d3c100cafecc',
+            userId: userId,
             activityData: activity_data,
         }))
         setDocFullScreen(false)

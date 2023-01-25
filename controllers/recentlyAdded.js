@@ -6,7 +6,7 @@ const recentlyAddedController = {
         // console.log('get recently added', req.query.user_id)
         try {
             const response = await UserDatabase.findOne({ _id: req.query.user_id });
-            console.log(response.recentlyAddedArray)
+            // console.log(response.recentlyAddedArray)
             res.status(200).send(response.recentlyAddedArray);
         } catch (error) {
             console.log(error);
@@ -15,7 +15,7 @@ const recentlyAddedController = {
     },
 
     addRecentlyAdded: async (req, res) => {
-        console.log("Add recently controller", req.body);
+        // console.log("Add recently controller", req.body);
         try {
             const response = await UserDatabase.findOneAndUpdate(
                 { _id: req.body.user_id },
@@ -30,7 +30,7 @@ const recentlyAddedController = {
             res.status(200).send(response);
             // res.status(404).send(response);
         } catch (error) {
-            console.log("At add activity ", error);
+            // console.log("At add activity ", error);
             res.status(404).json({ message: error.message });
         }
     },

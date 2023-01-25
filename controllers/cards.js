@@ -15,47 +15,47 @@ const cardsController = {
   },
 
   addCard: async (req, res) => {
-    // console.log(req.body.data, req.body.user_id)
+    // console.log('at add card data ::', req.body)
     let card;
-    const CATEGORY = req.body.data.category;
+    const CATEGORY = req.body.newCardData.category;
     // console.log(CATEGORY)
 
     switch (CATEGORY) {
       case 'Bank':
         card = {
-          title: req.body.data.title,
-          category: req.body.data.category,
-          cardHolder: req.body.data.cardHolder,
-          cardNumber: req.body.data.cardNumber,
-          expiry: req.body.data.expiry,
-          cvv: req.body.data.cvv,
-          logoIndex: req.body.data.logoIndex,
-          isFavourite: req.body.data.isFavourite,
+          title: req.body.newCardData.title,
+          category: req.body.newCardData.category,
+          cardHolder: req.body.newCardData.cardHolder,
+          cardNumber: req.body.newCardData.cardNumber,
+          expiry: req.body.newCardData.expiry,
+          cvv: req.body.newCardData.cvv,
+          logoIndex: req.body.newCardData.logoIndex,
+          isFavourite: req.body.newCardData.isFavourite,
         }
         break;
       case 'Identity':
         card = {
-          title: req.body.data.title,
-          category: req.body.data.category,
-          cardHolder: req.body.data.cardHolder,
-          cardNumber: req.body.data.cardNumber,
-          issueDate: req.body.data.issueDate,
-          dob: req.body.data.dob,
-          logoIndex: req.body.data.logoIndex,
-          isFavourite: req.body.data.isFavourite,
+          title: req.body.newCardData.title,
+          category: req.body.newCardData.category,
+          cardHolder: req.body.newCardData.cardHolder,
+          cardNumber: req.body.newCardData.cardNumber,
+          issueDate: req.body.newCardData.issueDate,
+          dob: req.body.newCardData.dob,
+          logoIndex: req.body.newCardData.logoIndex,
+          isFavourite: req.body.newCardData.isFavourite,
         }
         break;
 
       case 'License':
         card = {
-          title: req.body.data.title,
-          category: req.body.data.category,
-          cardHolder: req.body.data.cardHolder,
-          licenseNumber: req.body.data.licenseNumber,
-          expiry: req.body.data.expiry,
-          dob: req.body.data.dob,
-          logoIndex: req.body.data.logoIndex,
-          isFavourite: req.body.data.isFavourite,
+          title: req.body.newCardData.title,
+          category: req.body.newCardData.category,
+          cardHolder: req.body.newCardData.cardHolder,
+          licenseNumber: req.body.newCardData.licenseNumber,
+          expiry: req.body.newCardData.expiry,
+          dob: req.body.newCardData.dob,
+          logoIndex: req.body.newCardData.logoIndex,
+          isFavourite: req.body.newCardData.isFavourite,
         }
         break;
       default:
@@ -201,20 +201,10 @@ const cardsController = {
 
   editCard: async (req, res) => {
     const id = req.params.id;
-    // console.log(req.body)
     const CATEGORY = req.body.category;
     console.log(CATEGORY);
-    const collId = '63b43ab32fc8d3c100cafecc';
-    const cardId = '63b974adb9acaa24a4ebec8b';
 
     try {
-
-      // const rs = await UserDatabase.findOneAndUpdate(
-      //   { _id: collId },
-      //   { $set: { "cardsMixedArray.$.title.field": req.body.title } },
-      //   { arrayFilters: [{ 'element._id': '63b974adb9acaa24a4ebec8b' }] }
-      // );
-      // console.log(rs)
       let response;
 
       switch (CATEGORY) {
@@ -288,9 +278,10 @@ const cardsController = {
   },
 
   toggleFav: async (req, res) => {
+    console.log(req.body)
     const id = req.params.id;
-    const isFav = req.body.data.isFav;
-    const CATEGORY = req.body.data.category
+    const isFav = req.body.isFav;
+    const CATEGORY = req.body.category
     console.log(CATEGORY, isFav, id)
     try {
 

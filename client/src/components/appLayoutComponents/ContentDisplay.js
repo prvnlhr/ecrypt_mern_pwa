@@ -46,11 +46,12 @@ const ContentDisplay = ({
 
   const dispatch = useDispatch();
 
-  const userId = useSelector((state) => state.user.user);
+  const userId = useSelector((state) => state.user._id);
+
 
 
   useEffect(() => {
-    if (userId) {
+    if (userId !== undefined) {
       dispatch(fecthLoginIdsData({ user_id: userId }));
       dispatch(fecthCardsData({ user_id: userId }));
       dispatch(fetchDocsData({ user_id: userId }))

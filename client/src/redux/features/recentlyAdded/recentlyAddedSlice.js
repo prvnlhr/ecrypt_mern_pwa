@@ -17,7 +17,6 @@ export const addRecentlyAddedData = createAsyncThunk("recentlyAdded/add", async 
 
 
         const res = await api.addRecentlyData(userId, recentlyAddedData);
-        // console.log('recentlyAdded response', res.data.activitiesArray)
         const data = res.data.recentlyAddedArray;
         return fulfillWithValue(data.reverse());
     } catch (error) {

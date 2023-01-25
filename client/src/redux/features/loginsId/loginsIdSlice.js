@@ -11,6 +11,7 @@ const initialState = {
 
 export const fecthLoginIdsData = createAsyncThunk("loginIds/fetch", async ({ user_id }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
+
         const res = await api.fetchUserLoginIds(user_id);
         const { data } = res;
         data.reverse();
@@ -23,8 +24,10 @@ export const fecthLoginIdsData = createAsyncThunk("loginIds/fetch", async ({ use
 
 export const addNewLoginIdData = createAsyncThunk("loginIds/add", async ({ data, user_id, activityData }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
-        const res = await api.addNewLoginId(data, user_id)
+        const state = getState();
 
+        const res = await api.addNewLoginId(data, user_id, state.auth.token)
+        console.log(res.data)
         dispatch(addActivityData({
             activityData: activityData,
             userId: user_id
@@ -47,8 +50,11 @@ export const addNewLoginIdData = createAsyncThunk("loginIds/add", async ({ data,
 
 export const editLoginIdData = createAsyncThunk("loginIds/edit", async ({ updatedData, login_id, activityData, userId }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
-        const res = await api.editLoginId(login_id, updatedData);
+        const state = getState();
+        console.log(state.auth)
+        const res = await api.editLoginId(login_id, updatedData, state.auth.token);
         console.log(res)
+
         dispatch(addActivityData({
             activityData: activityData,
             userId: userId
@@ -66,7 +72,8 @@ export const editLoginIdData = createAsyncThunk("loginIds/edit", async ({ update
 
 export const deleteLoginData = createAsyncThunk("loginIds/delete", async ({ login_id, user_id, activityData }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
-        const res = await api.deleteLoginId(login_id, user_id);
+        const state = getState();
+        const res = await api.deleteLoginId(login_id, user_id, state.auth.token);
         dispatch(addActivityData({
             activityData: activityData,
             userId: user_id
@@ -82,7 +89,8 @@ export const deleteLoginData = createAsyncThunk("loginIds/delete", async ({ logi
 
 export const toggleIsFav = createAsyncThunk("loginIds/toggleFav", async ({ loginId_id, isFav }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
-        const res = await api.loginIdFavouriteToggle(loginId_id, isFav)
+        const state = getState();
+        const res = await api.loginIdFavouriteToggle(loginId_id, isFav, state.auth.token)
         const favLoginsArray = res.data.filter((item) => item.isFavourite);
         dispatch(addToFavLoginsData(favLoginsArray.reverse()));
 

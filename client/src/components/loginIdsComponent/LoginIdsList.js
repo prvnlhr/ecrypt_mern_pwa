@@ -15,6 +15,8 @@ const LoginIdsList = ({ setLogoComponentShow }) => {
   const dispatch = useDispatch();
 
   const loginIdsArray = useSelector((state => state.loginIds.loginsIdData));
+  const userId = useSelector((state) => state.user._id);
+
 
   const [formMode, setFormMode] = useState(false);
   const [showEditButton, setEditButton] = useState(true);
@@ -49,7 +51,7 @@ const LoginIdsList = ({ setLogoComponentShow }) => {
     const activity_data = generateActivityData(2, 'Login', fullContentCardData, '');
     dispatch(deleteLoginData({
       login_id: fullContentCardData._id,
-      user_id: '63b43ab32fc8d3c100cafecc',
+      user_id: userId,
       activityData: activity_data,
     }))
 

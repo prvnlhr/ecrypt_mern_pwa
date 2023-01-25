@@ -10,7 +10,7 @@ const documentsController = {
     }
   },
   addDoc: async (req, res) => {
-    // console.log("add doc cntrl", req.body);
+    console.log("add doc cntrl", req.body);
     const id = req.body.userId;
     const fileName = req.body.name;
     const filePath = req.file.path;
@@ -21,6 +21,7 @@ const documentsController = {
       const cloudinaryResponse = await cloudinary.v2.uploader.upload(filePath, {
         folder: "eCrypt",
       });
+      
       console.log("cldnr response", cloudinaryResponse);
       const docData = {
         imageName: fileName,
@@ -63,12 +64,13 @@ const documentsController = {
         },
         { returnOriginal: false }
       );
-      // console.log(response);
+      console.log(response);
       res.status(200).send({
         data: response.docsArray,
         msg: "docDeleted",
       });
     } catch (error) {
+      console.log(error);
       res.status(404).json({ message: error.message });
     }
   },

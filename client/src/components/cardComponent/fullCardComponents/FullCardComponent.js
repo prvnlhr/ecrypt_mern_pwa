@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import styles from "../styles/fullCardComponent.module.css"
 import BackBtnIcon from "../../icons/BackBtnIcon"
 import { Icon } from '@iconify/react';
@@ -19,6 +19,9 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
 }) => {
     // console.log(fullContentCardData)
     const [popUpOpen, setPopUpOpen] = useState(false);
+    const userId = useSelector((state) => state.user._id);
+
+
 
     const [oldCardData, setOldCardData] = useState('');
 
@@ -97,7 +100,7 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
             updatedData: fullContentCardData,
             card_id: fullContentCardData._id,
             activityData: activity_data,
-            userId: '63b43ab32fc8d3c100cafecc'
+            userId: userId
         }))
         setEditMode(false);
         setShowContentCard(false);
@@ -105,12 +108,12 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
     }
 
     const deleteBtnClicked = () => {
-        // console.table(fullContentCardData._id, '63b43ab32fc8d3c100cafecc')
+        // console.table(fullContentCardData._id, _id)
         const activity_data = generateActivityData(2, 'Card', fullContentCardData, '')
         // console.log(activity_data);
         dispatch(deleteCardData({
             card_id: fullContentCardData._id,
-            user_id: '63b43ab32fc8d3c100cafecc',
+            user_id: userId,
             cardData: fullContentCardData,
             activityData: activity_data
         }))

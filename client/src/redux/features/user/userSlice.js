@@ -7,9 +7,11 @@ import { fectchActivitiesData } from "../activity/activitiesSlice"
 import { fetchRecentlyAddedData } from "../recentlyAdded/recentlyAddedSlice"
 import { fetchFavoritesData } from "../favorites/favoritesSlice"
 const initialState = {
-    user: undefined
+    firstName: undefined,
+    lastName: undefined,
+    email: undefined,
+    _id: undefined,
 }
-
 export const getUserDetails = createAsyncThunk("user/getUser", async (token, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     console.log('userSlice');
     try {
@@ -24,12 +26,14 @@ export const getUserDetails = createAsyncThunk("user/getUser", async (token, { g
         };
         const userId = data._id;
         console.log(res.data.user);
-        dispatch(fecthLoginIdsData({ user_id: userId }));
-        dispatch(fecthCardsData({ user_id: userId }));
-        dispatch(fetchDocsData({ user_id: userId }))
-        dispatch(fectchActivitiesData({ user_id: userId }))
-        dispatch(fetchFavoritesData({ user_id: userId }))
-        dispatch(fetchRecentlyAddedData({ user_id: userId }))
+
+        // dispatch(fecthLoginIdsData({ user_id: userId }));
+        // dispatch(fecthCardsData({ user_id: userId }));
+        // dispatch(fetchDocsData({ user_id: userId }))
+
+        // dispatch(fectchActivitiesData({ user_id: userId }))
+        // dispatch(fetchFavoritesData({ user_id: userId }))
+        // dispatch(fetchRecentlyAddedData({ user_id: userId }))
         return fulfillWithValue(data);
     } catch (error) {
         console.log('errror', error.response.data.msg)
@@ -48,9 +52,13 @@ const userSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(getUserDetails.fulfilled, (state, action) => {
+                console.log(action.payload)
                 return {
                     ...state,
-                    user: action.payload
+                    _id: action.payload._id,
+                    firstName: action.payload.firstName,
+                    lastName: action.payload.lastName,
+                    email: action.payload.email,
                 };
             })
 

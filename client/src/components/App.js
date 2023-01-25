@@ -23,7 +23,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    if (token) {
+    if (token != undefined) {
       dispatch(getUserDetails(token));
     }
   }, [token])

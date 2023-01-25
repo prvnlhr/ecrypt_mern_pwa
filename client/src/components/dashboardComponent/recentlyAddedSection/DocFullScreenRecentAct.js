@@ -31,51 +31,7 @@ const DocFullScreenRecentAct = ({ setRecAddDocFullScreen, recAddDocFullScreen,
         setRecAddDocFullScreen(false);
     }
 
-    // const editBtnClicked = () => {
-    //     setOldTitle(fullScreenData.imageName)
-    //     setEditMode(true);
-    // }
-    // const cancelBtnClicked = () => {
-    //     setFullScreenDocData({
-    //         ...fullScreenData,
-    //         imageName: oldTitle
-    //     })
-    //     setEditMode(false);
-    // }
-    // const saveBtnClicked = () => {
-    //     console.log(fullScreenData.imageName)
-    //     const oldData = {
-    //         title: oldTitle
-    //     }
-    //     const newData = {
-    //         title: fullScreenData.imageName
-    //     }
-    //     console.log(oldData, newData);
-    //     const activity_data = generateActivityData(3, 'Doc', newData, oldData);
-    //     console.log(activity_data);
-    //     dispatch(editDocData({
-    //         docId: fullScreenData._id,
-    //         docData: fullScreenData,
-    //         activityData: activity_data,
-    //         userId: '63b43ab32fc8d3c100cafecc'
-    //     }))
-    //     setEditMode(false);
-    // }
-
-    // const handleDeleteBtnClicked = () => {
-    //     const newData = {
-    //         title: fullScreenData.imageName
-    //     }
-    //     const activity_data = generateActivityData(2, 'Doc', newData, '');
-    //     console.log(activity_data);
-    //     dispatch(deleteDocData({
-    //         docId: fullScreenData._id,
-    //         cloudId: fullScreenData.cloudinary_id,
-    //         userId: '63b43ab32fc8d3c100cafecc',
-    //         activityData: activity_data,
-    //     }))
-    //     setDocFullScreen(false)
-    // }
+  
     return (
         <div className={recAddDocFullScreen ? styles.documentFullScreenWrapper : styles.documentFullScreenWrapperClose} >
 

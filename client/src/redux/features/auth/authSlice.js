@@ -52,7 +52,7 @@ export const loginUser = createAsyncThunk("auth/login", async ({ formData, navig
 export const logOutUser = createAsyncThunk("auth/logout", async ({ }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     console.log('logout slice')
     try {
-        const res = await api.logoutUser();
+        const res = await api.logout();
         console.log(res.data.msg);
         return fulfillWithValue(res.data.msg);
     } catch (error) {
@@ -90,11 +90,14 @@ const authSlice = createSlice({
             }
         },
         forceLogout(state, action) {
-            console.log(action.payload)
+            console.log(action.payload.msg)
             return {
                 ...state,
-                isLogged: false,
                 token: undefined,
+                authResponseMessage: action.payload.msg,
+                isLogged: false,
+                error: true,
+                success: false,
             }
         },
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import BackBtnIcon from "../icons/BackBtnIcon"
 import { Icon } from '@iconify/react';
 import { logosArray } from "../logoComponents/logosData"
@@ -12,6 +12,11 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
 
     const dispatch = useDispatch();
+    const userId = useSelector((state) => state.user._id);
+
+
+
+
 
     const [formData, setformData] = useState({
         app: "",
@@ -56,7 +61,7 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
         console.table(formData);
         dispatch(addNewLoginIdData({
             data: formData,
-            user_id: "63b43ab32fc8d3c100cafecc",
+            user_id: userId,
             activityData: activity_data
         }))
         setShowInputForm(false);

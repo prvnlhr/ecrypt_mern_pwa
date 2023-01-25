@@ -17,7 +17,12 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
     const dispatch = useDispatch();
 
+    const userId = useSelector((state) => state.user._id);
+
+
+
     const [popUpOpen, setPopUpOpen] = useState(false);
+
 
     const [logoIndx, setLogoIndx] = useState(undefined);
 
@@ -187,7 +192,7 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                 console.log(activity_data);
                 dispatch(addNewCardData({
                     data: identityCardData,
-                    user_id: "63b43ab32fc8d3c100cafecc",
+                    user_id: userId,
                     activityData: activity_data
                 }))
 
@@ -198,7 +203,7 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                 activity_data = generateActivityData(1, 'Card', licenseCardData, '');
                 dispatch(addNewCardData({
                     data: licenseCardData,
-                    user_id: "63b43ab32fc8d3c100cafecc",
+                    user_id: userId,
                     activityData: activity_data
 
                 }))
@@ -209,7 +214,7 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                 activity_data = generateActivityData(1, 'Card', bankCardData, '');
                 dispatch(addNewCardData({
                     data: bankCardData,
-                    user_id: "63b43ab32fc8d3c100cafecc",
+                    user_id: userId,
                     activityData: activity_data
                 }))
                 break;
