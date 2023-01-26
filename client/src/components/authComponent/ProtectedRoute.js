@@ -7,7 +7,6 @@ const ProtectedRoute = ({ children }) => {
   const auth = useSelector((state) => state.auth);
 
   const { isLogged } = auth;
-
   return isLogged === true ? children :
     isLogged === false && <Navigate to="/user/login" />
 };

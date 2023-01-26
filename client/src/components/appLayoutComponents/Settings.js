@@ -1,12 +1,68 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import styles from "./styles/settingsComponent.module.css";
 import { Icon } from '@iconify/react';
+import DeleteModal from "../modal/DeleteModal"
+
 const Settings = () => {
+
+    const [currFocusField, setCurrFocusField] = useState(undefined);
+
+    const [deleteMode, setDeleteMode] = useState(false);
+
+
+    const handleDeleteBtnClicked = () => {
+        setDeleteMode(true);
+    }
+
+    const onFocus = (val) => {
+        setCurrFocusField(val)
+    }
+
+    const [editMode, setEditMode] = useState({
+        isEditMode: false,
+        section: undefined
+    });
+
+    const formFieldEditable = (SECTION) => {
+        const { isEditMode, section } = editMode;
+        return (isEditMode && section === SECTION);
+    }
+
+
+    const handleEditChangeDeleteBtnClicked = (currSection) => {
+
+        setEditMode({
+            isEditMode: true,
+            section: currSection
+        })
+        if (currSection === 'PROFILE') {
+            setCurrFocusField(1);
+        } else if (currSection === 'PASS') {
+            setCurrFocusField(4);
+        }
+    }
+
+    const handleCancelBtnClicked = () => {
+        setEditMode({
+            isEditMode: false,
+            section: undefined,
+        })
+        setCurrFocusField(undefined);
+    }
+
+    const confirmDeleteBtnClicked = () => {
+        console.log('sldldd')
+    }
     const navigate = useNavigate();
     return (
         <div className={styles.SetttingsComponent}>
 
+            <DeleteModal
+                setDeleteMode={setDeleteMode}
+                deleteMode={deleteMode}
+                confirmDeleteBtnClicked={confirmDeleteBtnClicked}
+            />
             <div className={styles.profilePicSection} >
                 <div className={styles.headingWrapper} >
                     <div className={styles.headingContainer}  >
@@ -56,69 +112,99 @@ const Settings = () => {
                             </div>
                         </div>
                         <div className={styles.profileFirstNameContainer} >
-                            <div className={styles.profileFirstNameDiv} >
+                            <div className={`${styles.profileFirstNameDiv} ${currFocusField === 1 && styles.focusFieldStyle}`} >
                                 <div className={styles.labelDiv}>
                                     <p>FIRST NAME</p>
                                 </div>
                                 <div className={styles.inputDiv}>
-                                    <input value={"William"} />
+                                    <input disabled={!formFieldEditable('PROFILE')}
+                                        onFocus={() => onFocus(1)} value={"William"} />
                                 </div>
                             </div>
                         </div>
                         <div className={styles.profileLastNameContainer} >
-                            <div className={styles.profileLastNameDiv} >
+                            <div className={`${styles.profileLastNameDiv} ${currFocusField === 2 && styles.focusFieldStyle}`} >
                                 <div className={styles.labelDiv}>
                                     <p>LAST NAME</p>
                                 </div>
                                 <div className={styles.inputDiv}>
-                                    <input value={"Butcher"} />
+                                    <input
+                                        disabled={!formFieldEditable('PROFILE')}
+                                        onFocus={() => onFocus(2)} value={"Butcher"} />
                                 </div>
                             </div>
 
                         </div>
                         <div className={styles.profileEmailNameContainer} >
-                            <div className={styles.profileEmailNameDiv} >
+                            <div className={`${styles.profileEmailNameDiv} ${currFocusField === 3 && styles.focusFieldStyle}`} >
                                 <div className={styles.labelDiv}>
                                     <p>
                                         EMAIL ADDRESS
                                     </p>
                                 </div>
                                 <div className={styles.inputDiv}>
-                                    <input value={"will.iam.butcher@gmail.com"} />
+                                    <input
+                                        disabled={true}
+                                        // onFocus={() => onFocus(3)}
+                                        value={"will.iam.butcher@gmail.com"} />
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div className={styles.profileEditBtnContainer} >
-                            <button className={styles.formBtns}>
-                                <p className={styles.btnText}>
-                                    Edit  Profile
-                                </p>
-                            </button>
+
+
+                            {
+                                formFieldEditable('PROFILE') ?
+                                    <button className={styles.formBtns} onClick={handleCancelBtnClicked}>
+                                        <p className={styles.btnText} >
+                                            Cancel
+                                        </p>
+                                    </button> :
+                                    <button className={styles.formBtns} onClick={() => handleEditChangeDeleteBtnClicked("PROFILE")}>
+                                        <p className={styles.btnText} >
+                                            Edit  Profile
+                                        </p>
+                                    </button>
+                            }
+
                         </div>
                     </div>
                     <div className={styles.profilePassWrapper}>
+
                         <div className={styles.passHeadingContainer} >
                             <div className={styles.formSectionHeadingDiv} >
                                 <p>Password</p>
                             </div>
                         </div>
-                        <div className={styles.passOldInputContainer} >
-                            <div className={styles.inputDiv}>
-                                <input value={""} />
+                        <div className={formFieldEditable('PASS') ? styles.passFieldWrapperOpen : styles.passFieldWrapperClose} >
+                            <div className={`${styles.passOldInputContainer}  ${currFocusField === 4 && styles.focusFieldStyle}`} >
+                                <div className={styles.inputDiv}>
+                                    <input placeholder='New Password' onFocus={() => onFocus(4)} value={""} />
+                                </div>
                             </div>
-                        </div>
-                        <div className={styles.passNewInputContainer} >
-                            <div className={styles.inputDiv}>
-                                <input value={""} />
+                            <div className={`${styles.passNewInputContainer}  ${currFocusField === 5 && styles.focusFieldStyle}`} >
+                                <div className={styles.inputDiv}>
+                                    <input placeholder='Confirm Password' onFocus={() => onFocus(5)} value={""} />
+                                </div>
                             </div>
                         </div>
                         <div className={styles.passChangeBtnContainer} >
-                            <button className={styles.formBtns} >
-                                <p className={styles.btnText}>
-                                    Change Password
-                                </p>
-                            </button>
+
+                            {
+                                formFieldEditable('PASS') ?
+                                    <button className={styles.formBtns} onClick={handleCancelBtnClicked} >
+                                        <p className={styles.btnText}>
+                                            Cancel
+                                        </p>
+                                    </button>
+                                    :
+                                    <button className={styles.formBtns} onClick={() => handleEditChangeDeleteBtnClicked("PASS")} >
+                                        <p className={styles.btnText}>
+                                            Change Password
+                                        </p>
+                                    </button>
+                            }
                         </div>
                     </div>
                     <div className={styles.profileDeleteWrapper}>
@@ -154,7 +240,7 @@ const Settings = () => {
 
                         </div>
                         <div className={styles.deleteBtnContainer} >
-                            <button className={styles.formBtns}>
+                            <button className={styles.formBtns} onClick={handleDeleteBtnClicked}>
                                 <p className={styles.btnText}>
                                     Delete Account
                                 </p>
@@ -169,7 +255,7 @@ const Settings = () => {
 
 
 
-        </div>
+        </div >
     )
 }
 

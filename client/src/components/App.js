@@ -11,6 +11,8 @@ import { getAuthToken } from "../redux/features/auth/authSlice"
 import { fecthCardsData } from "../redux/features/cards/cardsSlice"
 import UnAuthenticatedRoutes from './authComponent/UnAuthenticatedRoutes';
 import { getUserDetails } from "../redux/features/user/userSlice"
+import ForgotPassword from './authComponent/ForgotPassword';
+import ResetPassword from './authComponent/ResetPassword';
 
 const App = () => {
 
@@ -47,6 +49,19 @@ const App = () => {
         <Route exact path='/user/login' element={
           <UnAuthenticatedRoutes>
             <SignInPage />
+          </UnAuthenticatedRoutes>
+        } />
+
+
+        <Route exact path='/user/forgotPassword' element={
+          <UnAuthenticatedRoutes>
+            <ForgotPassword />
+          </UnAuthenticatedRoutes>
+        } />
+
+        <Route exact path='/user/resetPassword/:reset_token' element={
+          <UnAuthenticatedRoutes>
+            <ResetPassword />
           </UnAuthenticatedRoutes>
         } />
 

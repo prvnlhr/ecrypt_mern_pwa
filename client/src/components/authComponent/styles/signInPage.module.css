@@ -601,6 +601,7 @@ span {
     font-weight: 550;
     color: #002A9A;
     margin-right: 2%;
+    white-space: nowrap;
   }
 
 

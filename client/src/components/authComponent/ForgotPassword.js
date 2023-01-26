@@ -1,104 +1,112 @@
-import React from "react";
-
-import { useState } from "react";
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { forgotPassword } from "../../redux/actions/auth";
-
-// import { GoogleLogin } from "react-google-login";
-// import { register } from "../actions/newAuth";
-
-import styles from "./styles/forgotPass.module.css";
-import { CircleSpinner } from "react-spinners-kit";
-import { Icon } from "@iconify/react";
-import { motion } from "framer-motion";
-
-const initialState = {
-  email: "",
-};
-
+import styles from "./styles/forgotPass.module.css"
+import { Link, useNavigate } from "react-router-dom";
+import { forgotAccountPass } from "../../redux/features/auth/authSlice"
+import { Icon } from '@iconify/react';
 const ForgotPassword = () => {
+
+
   const dispatch = useDispatch();
-  const [data, setData] = useState(initialState);
-  // const isLoading = useSelector((state) => state.loading.isLoading);
-  const message = useSelector((state) => state.authResponseHandler);
+  const [currFocusField, setCurrFocusField] = useState(undefined);
+  const authState = useSelector((state => state.auth));
 
-  const loadState = useSelector((state) => state.loading);
-  const { place, isLoading } = loadState;
-  const { email } = data;
+  const [formMessage, setFormMessage] = useState({
+    message: undefined,
+    error: false
+  });
+  const { message, error } = formMessage;
 
-  const handleChange = (e) => {
+  const validRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+  const validateEmail = (email) => {
+    if (validRegex.test(String(email).toLowerCase())) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
+  const [formData, setFromData] = useState({
+    email: 'prvnlhr522@gmail.com',
+  });
+
+  const onFocus = (val) => {
+    setCurrFocusField(val)
+  }
+  const handleDataFormChange = (e) => {
     const { name, value } = e.target;
-    setData({ ...data, [name]: value });
-  };
-  const handleForgotPassword = (e) => {
-    e.preventDefault();
-    dispatch(forgotPassword(email));
-  };
+    setFromData({
+      ...formData,
+      [name]: value,
+    })
+  }
 
+  const handleSubmitBtnClicked = () => {
+    if (validateEmail(formData.email)) {
+      console.log('submitting', formMessage)
+      dispatch(forgotAccountPass(formData.email));
+    } else {
+      setFormMessage({
+        ...formMessage,
+        message: 'Not a valid email id',
+        error: true,
+      })
+    }
+  }
   return (
-    <div className={styles.formComponent}>
-      <form className={styles.formTag} onSubmit={handleForgotPassword}>
-        <div className={styles.headingWrapper}>
-          <p className={styles.HeadingText}>
-            Verify your email to get reset link
-          </p>
-        </div>
-        <div className={styles.messageWrapper}>
-          {message.error && message.at === "forgotPassword" ? (
-            <div className={styles.errorDiv}>
-              <Icon icon="carbon:warning" className={styles.icon} />
+    <div className={styles.forgotPassPage} >
 
-              <p>{message.error}</p>
+      <div className={styles.forgotPassWrapper} >
+        <div className={styles.formHeaderWrapper} >
+          <div className={styles.formLabelDiv} >
+            <p>Verify your email to get reset link</p>
+          </div>
+        </div>
+        <div className={styles.formMessageWrapper} >
+          {(authState.authResponseMessage || message) &&
+            <div className={`${styles.messageDiv} ${(error || authState.error) ? styles.messageDivError : styles.messageDivSuccess}`} >
+              {
+                (error || authState.error) &&
+                <div className={styles.errorMessageIconDiv} >
+                  <Icon className={styles.warningIcon} icon="ph:warning" />
+                </div>
+              }
+              <p>{
+                formMessage.message !== undefined ? formMessage.message
+                  : authState.authResponseMessage !== undefined && authState.authResponseMessage
+              }</p>
             </div>
-          ) : (
-            message.success &&
-            message.at === "forgotPassword" && (
-              <div className={styles.successDiv}>
-                <Icon icon="akar-icons:circle-check" className={styles.icon} />
-
-                <p>{message.success}</p>
-              </div>
-            )
-          )}
+          }
         </div>
-
-        <div className={styles.emailWrapper}>
-          <div className={styles.labelDiv}>
-            <p className={styles.labelText}>Email Address</p>
+        <div className={styles.emailWrapper} >
+          <div className={`${styles.emailAddressContainer} ${currFocusField === 1 && styles.focusFieldStyle} `}  >
+            <div className={styles.iconDiv} >
+              <Icon className={styles.fieldIcon} icon="prime:user" />
+            </div>
+            <div className={styles.labelDiv} >
+              <p>EMAIL ADDRESS</p>
+            </div>
+            <div className={styles.inputDiv} >
+              <input value={formData.email} name="email" onFocus={() => onFocus(1)}
+                onChange={handleDataFormChange}
+              />
+            </div>
           </div>
-          <div className={styles.inputDiv}>
-            <input
-              className={styles.inputField}
-              required
-              placeholder="email address"
-              name="email"
-              value={email}
-              onChange={handleChange}
-              type="text"
-            />
-          </div>
-        </div>
 
-        <div className={styles.buttonWrapper}>
-          <motion.button whileTap={{ scale: 0.95 }} type="submit">
-            {place === "forgotPassword" && isLoading === true ? (
-              <CircleSpinner size={15} color="white" loading={true} />
-            ) : (
-              <p>Send email</p>
-            )}
-          </motion.button>
         </div>
-        <div className={styles.BottomLinkWrapper}>
-          <p>
-            <Link to="/login" className={styles.link}>
-              Login
-            </Link>
-          </p>
+        <div className={styles.sendResetLinkBtnWrapper} >
+          <button onClick={handleSubmitBtnClicked} className={styles.sendLinkBtn}>Send Link</button>
         </div>
-      </form>
+        <div className={styles.formFooterWrapper} >
+          <Link to="/user/login">
+            <p>Sign In</p>
+          </Link>
+        </div>
+      </div>
     </div>
-  );
-};
+  )
+}
 
-export default ForgotPassword;
+export default ForgotPassword

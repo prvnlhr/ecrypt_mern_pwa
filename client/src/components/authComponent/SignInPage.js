@@ -130,7 +130,9 @@ const SignInPage = () => {
             </div>
           </div>
           <div className={styles.passForgetWrapper} >
-            <p>Forgot Password ?</p>
+            <Link to="/user/forgotPassword">
+              <p>Forgot Password ?</p>
+            </Link>
           </div>
 
           <div className={styles.submitBtnWrapper}>

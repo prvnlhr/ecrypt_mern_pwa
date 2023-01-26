@@ -235,6 +235,8 @@
     grid-gap: 2px;
 }
 
+
+
 /* ________________________________________________________________- */
 
 .profileNameWrapper {
@@ -355,7 +357,7 @@
 
 .labelDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 500;
     color: #7E8DA4;
 }
@@ -377,12 +379,14 @@
     border-left: none;
     border-right: none;
     border-top: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.16); */
+    border-bottom: none;
     background: none;
     font-family: "Poppins", sans-serif;
     font-size: 13px;
     font-weight: 500;
     color: black;
+    outline: none;
 }
 
 
@@ -443,61 +447,90 @@
 
 /* ________________________________________________________________- */
 
+
 .profilePassWrapper {
     grid-area: profilePassWrapper;
     width: 100%;
     height: 100%;
     /* border: 1px solid blue; */
-    display: grid;
-    grid-template-columns: 50%;
-    grid-template-rows: 33% 33% 33%;
-    grid-template-areas:
-        "passHeadingContainer passHeadingContainer"
-        "passOldInputContainer passNewInputContainer"
-        "passChangeBtnContainer passChangeBtnContainer";
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
     background-color: white;
-
 }
 
 .passHeadingContainer {
     grid-area: passHeadingContainer;
     width: 100%;
-    height: 100%;
+    height: 33%;
     /* border: 1px solid black; */
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    margin-bottom: 1%;
+
+}
+
+.passFieldWrapperClose {
+    width: 100%;
+    height: 0%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* border: 1px solid red; */
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.passFieldWrapperOpen {
+    width: 100%;
+    height: 33%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* border: 1px solid red; */
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .passOldInputContainer {
     grid-area: passOldInputContainer;
-    width: 100%;
+    width: 45%;
     height: 100%;
     /* border: 1px solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #F3F5F9;
+    border-radius: 10px;
+    /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
+    margin-right: 2%;
+
 }
 
 .passNewInputContainer {
     grid-area: passNewInputContainer;
-    width: 100%;
+    width: 45%;
     height: 100%;
     /* border: 1px solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #F3F5F9;
+    border-radius: 10px;
+    /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
 }
 
 .passChangeBtnContainer {
     grid-area: passChangeBtnContainer;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
+    height: 25%;
     /* border: 1px solid black; */
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    margin-top: 1%;
 }
 
 
@@ -630,7 +663,15 @@
     align-items: flex-start;
 }
 
+.focusFieldStyle {
+    border: 2px solid #00299a;
+}
 
+/* -------------------------------------------------------------- */
+/* -------------------------------------------------------------- */
+/* -------------------------------------------------------------- */
+/* -------------------------------------------------------------- */
+/* -------------------------------------------------------------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 
 
@@ -1019,7 +1060,8 @@
         border-left: none;
         border-right: none;
         border-top: none;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+        /* border-bottom: 1px solid rgba(0, 0, 0, 0.16); */
+        border-bottom: none;
         background: none;
         font-family: "Poppins", sans-serif;
         font-size: 13px;
@@ -1027,6 +1069,13 @@
         color: black;
     }
 
+    input::placeholder {
+        font-family: "Poppins", sans-serif;
+        font-size: 11px;
+        font-weight: 450;
+        color: rgb(189, 189, 189);
+        text-align: center;
+    }
 
 
     .profileLastNameContainer {
@@ -1090,56 +1139,84 @@
         width: 100%;
         height: 100%;
         /* border: 1px solid blue; */
-        display: grid;
-        grid-template-columns: 50%;
-        grid-template-rows: 33% 33% 33%;
-        grid-template-areas:
-            "passHeadingContainer passHeadingContainer"
-            "passOldInputContainer passNewInputContainer"
-            "passChangeBtnContainer passChangeBtnContainer";
+        display: flex;
+        flex-direction: column;
         box-sizing: border-box;
         background-color: white;
-
     }
 
     .passHeadingContainer {
         grid-area: passHeadingContainer;
         width: 100%;
-        height: 100%;
+        height: 33%;
         /* border: 1px solid black; */
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
+        margin-bottom: 1%;
+
+    }
+
+    .passFieldWrapperClose {
+        width: 100%;
+        height: 0%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        /* border: 1px solid red; */
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .passFieldWrapperOpen {
+        width: 100%;
+        height: 33%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        /* border: 1px solid red; */
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
     .passOldInputContainer {
         grid-area: passOldInputContainer;
-        width: 100%;
+        width: 45%;
         height: 100%;
         /* border: 1px solid black; */
         display: flex;
         justify-content: center;
         align-items: center;
+        background-color: #F3F5F9;
+        border-radius: 10px;
+        /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
+        margin-right: 2%;
+
     }
 
     .passNewInputContainer {
         grid-area: passNewInputContainer;
-        width: 100%;
+        width: 45%;
         height: 100%;
         /* border: 1px solid black; */
         display: flex;
         justify-content: center;
         align-items: center;
+        background-color: #F3F5F9;
+        border-radius: 10px;
+        /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
     }
 
     .passChangeBtnContainer {
         grid-area: passChangeBtnContainer;
         width: 100%;
-        height: 100%;
+        /* height: 100%; */
+        height: 25%;
         /* border: 1px solid black; */
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        margin-top: 1%;
     }
 
 

@@ -74,6 +74,33 @@ export const getAuthToken = createAsyncThunk("auth/getAuthToken", async ({ }, { 
     }
 });
 
+export const forgotAccountPass = createAsyncThunk("auth/forgotPass", async (email, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
+
+    try {
+        const res = await api.forgotPass(email);
+        console.log(res.data.msg)
+        return fulfillWithValue(res.data.msg);
+    }
+
+    catch (error) {
+        console.log(error.response.data.msg)
+        return rejectWithValue(error.response.data.msg);
+    }
+});
+
+export const resetUserPass = createAsyncThunk("auth/resetPassword", async ({ password, token }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
+    try {
+        console.log(token, password);
+        const res = await api.resetPass(token, password);
+        console.log(res);
+        return fulfillWithValue(res.data.msg);
+    }
+    catch (error) {
+        console.log(error.response.data.msg)
+        return rejectWithValue(error.response.data.msg);
+    }
+});
+
 
 //* Slice
 const authSlice = createSlice({
@@ -200,6 +227,36 @@ const authSlice = createSlice({
                     ...state,
                     error: true,
                     success: false,
+                };
+            })
+            .addCase(forgotAccountPass.fulfilled, (state, action) => {
+                return {
+                    ...state,
+                    authResponseMessage: action.payload,
+                    token: undefined,
+                    error: false,
+                    success: true,
+                    isLogged: false,
+                };
+            })
+            .addCase(resetUserPass.fulfilled, (state, action) => {
+                return {
+                    ...state,
+                    authResponseMessage: action.payload,
+                    token: undefined,
+                    error: false,
+                    success: true,
+                    isLogged: false,
+                };
+            })
+            .addCase(resetUserPass.rejected, (state, action) => {
+                return {
+                    ...state,
+                    authResponseMessage: action.payload,
+                    token: undefined,
+                    error: true,
+                    success: false,
+                    isLogged: false,
                 };
             })
 

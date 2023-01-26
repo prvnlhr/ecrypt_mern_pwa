@@ -12,7 +12,6 @@ const ActivateAccount = () => {
 
   const { activation_token } = useParams();
 
-
   const handleActivateBtnClicked = () => {
     console.log(activation_token);
     dispatch(activateUserAccount(activation_token))

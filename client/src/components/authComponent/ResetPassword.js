@@ -1,227 +1,152 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, Link, useParams } from "react-router-dom";
-import { resetPassword, authErrorResponseHandler } from "../../redux/actions/auth";
-import styles from "./styles/resetPage.module.css";
-import { CircleSpinner } from "react-spinners-kit";
-import { Icon } from "@iconify/react";
-import { motion } from "framer-motion";
-
-const initialState = {
-  password: "",
-  confirmPassword: "",
-};
-
+import React, { useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { useHistory, Link, useParams, useNavigate } from "react-router-dom";
+import { Icon } from '@iconify/react';
+import styles from "./styles/resetPage.module.css"
+import { resetUserPass } from "../../redux/features/auth/authSlice"
+import { validateResetPassForm } from "./helperFunctions/formValidation"
 const ResetPassword = () => {
-  const dispatch = useDispatch();
+
   const navigate = useNavigate();
-  const [data, setData] = useState(initialState);
-  // const isLoading = useSelector((state) => state.loading.isLoading);
-  const loadState = useSelector((state) => state.loading);
-  const { place, isLoading } = loadState;
-  const message = useSelector((state) => state.authResponseHandler);
-  const { password, confirmPassword } = data;
-  // const resetSuccess = notification.success;
-  useEffect(() => {
-    if (message.success && message.at === "resetPassSuccess") {
-      navigate.push("/login");
-    }
-  }, [message.success]);
 
   const { reset_token } = useParams();
+  const authState = useSelector((state => state.auth));
+  useEffect(() => {
+    if (authState.authResponseMessage === 'Password successfully changed !' && authState.success === true) {
+      navigate('/user/login')
+    }
+  }, [authState.authResponseMessage])
+  const dispatch = useDispatch();
 
-  const handleChange = (e) => {
+  const [formMessage, setFormMessage] = useState({
+    message: undefined,
+    error: false
+  });
+
+  const { message, error } = formMessage;
+  const [currFocusField, setCurrFocusField] = useState(undefined);
+
+  const onFocus = (val) => {
+    setCurrFocusField(val)
+  }
+
+  const [formData, setFromData] = useState({
+    newPass: '',
+    confirmNewPass: '',
+  });
+  const handleDataFormChange = (e) => {
     const { name, value } = e.target;
-    setData({ ...data, [name]: value });
-  };
+    setFromData({
+      ...formData,
+      [name]: value,
+    })
+  }
 
-  const handleRestPassword = (e) => {
+  const handleFormSubmit = (e) => {
     e.preventDefault();
-
-    if (password !== confirmPassword) {
-      dispatch(
-        authErrorResponseHandler("Passwords does not match !", "resetPassword")
-      );
+    const res = validateResetPassForm({ password: formData.newPass, confirmPassword: formData.confirmNewPass })
+    if (res.error) {
+      setFormMessage({
+        message: res.message,
+        error: res.error
+      })
+      console.log('error');
       return;
     }
-    if (password.length < 6) {
-      dispatch(
-        authErrorResponseHandler(
-          "Password must be at least 6 digits",
-          "resetPassword"
-        )
-      );
-      return;
-    } else {
-      dispatch(resetPassword(reset_token, password));
+    else {
+      setFormMessage({
+        message: undefined,
+        error: false
+      })
+      dispatch(resetUserPass({
+        password: formData.newPass,
+        token: reset_token
+      }));
     }
-  };
-
-  console.log(reset_token);
+  }
 
   return (
-    <div className={styles.formComponent}>
-      <form className={styles.formTag} onSubmit={handleRestPassword}>
-        <div className={styles.headingWrapper}>
-          <p className={styles.HeadingText}>Reset Password</p>
+    <div className={styles.formPageWrapper} >
+      <div className={styles.formWrapper} >
+        <div className={styles.formHeaderWrapper} >
+          <div className={styles.formLabelDiv} >
+            <p>Set new password</p>
+          </div>
         </div>
-        <div className={styles.messageWrapper}>
-          {message.error && message.at === "resetPassword" ? (
-            <div className={styles.errorDiv}>
-              <Icon icon="carbon:warning" className={styles.icon} />
-
-              <p>{message.error}</p>
+        <div className={styles.formMessageWrapper} >
+          {(authState.authResponseMessage || message) &&
+            <div className={`${styles.messageDiv} ${(error || authState.error) ? styles.messageDivError : styles.messageDivSuccess}`} >
+              {
+                (error || authState.error) &&
+                <div className={styles.errorMessageIconDiv} >
+                  <Icon className={styles.warningIcon} icon="ph:warning" />
+                </div>
+              }
+              <p>{
+                formMessage.message !== undefined ? formMessage.message
+                  : authState.authResponseMessage !== undefined && authState.authResponseMessage
+              }</p>
             </div>
-          ) : (
-            message.success &&
-            message.at === "resetPassword" && (
-              <div className={styles.successDiv}>
-                <Icon icon="akar-icons:circle-check" className={styles.icon} />
-
-                <p>{message.success}</p>
+          }
+        </div>
+        <form className={styles.formTagContainer} onSubmit={handleFormSubmit}>
+          <div className={styles.emailAddressWrapper}>
+            <div className={`${styles.emailAddressContainer} ${currFocusField === 1 && styles.focusFieldStyle} `}  >
+              <div className={styles.iconDiv} >
+                <Icon className={styles.fieldIcon} icon="prime:user" />
               </div>
-            )
-          )}
-        </div>
+              <div className={styles.labelDiv} >
+                <p>NEW PASSWORD</p>
+              </div>
+              <div className={styles.inputDiv} >
+                <input value={formData.newPass} name="newPass" onFocus={() => onFocus(1)}
+                  onChange={handleDataFormChange}
+                />
+              </div>
+            </div>
+          </div>
+          <div className={styles.passwordWrapper}>
+            <div className={`${styles.passwordContainer} ${currFocusField === 2 && styles.focusFieldStyle} `}  >
+              <div className={styles.iconDiv} ><Icon className={styles.fieldIcon} icon="fluent:password-16-regular" /></div>
+              <div className={styles.labelDiv} >
+                <p>CONFIRM NEW PASSWORD</p>
+              </div>
+              <div className={styles.inputDiv} >
+                <input value={formData.confirmNewPass} name="confirmNewPass" onFocus={() => onFocus(2)}
+                  onChange={handleDataFormChange}
+                />
+              </div>
+            </div>
+          </div>
+          <div className={styles.passForgetWrapper} >
+            <Link to="/user/forgotPassword">
+              <p>Forgot Password ?</p>
+            </Link>
+          </div>
 
-        <div className={styles.password1Wrapper}>
-          <div className={styles.labelDiv}>
-            <p className={styles.labelText}>New password</p>
+          <div className={styles.submitBtnWrapper}>
+            {authState.authResponseMessage === 'TokenExpiredError!' ?
+              <Link to="/user/forgotPassword">
+                <span>Re-verify Password </span>
+              </Link>
+              :
+              <button className={styles.submitBtn} >
+                <p>Submit</p>
+              </button>
+            }
           </div>
-          <div className={styles.inputDiv}>
-            <input
-              className={styles.inputField}
-              required
-              placeholder="password"
-              name="password"
-              value={password}
-              onChange={handleChange}
-              type="password"
-            />
-          </div>
-        </div>
-        <div className={styles.password2Wrapper}>
-          <div className={styles.labelDiv}>
-            <p className={styles.labelText}>Confirm Password</p>
-          </div>
-          <div className={styles.inputDiv}>
-            <input
-              className={styles.inputField}
-              required
-              placeholder="confirm password"
-              name="confirmPassword"
-              value={confirmPassword}
-              onChange={handleChange}
-              type="password"
-            />
-          </div>
-        </div>
+        </form>
 
-        <div className={styles.buttonWrapper}>
-          <motion.button whileTap={{ scale: 0.95 }} type="submit">
-            {place === "resetPassword" && isLoading === true ? (
-              <CircleSpinner size={15} color="white" loading={true} />
-            ) : (
-              <p>Reset now</p>
-            )}
-          </motion.button>
-        </div>
-        <div className={styles.BottomLinkWrapper}>
-          <p>
-            <Link to="/user/auth/forgotPassword" className={styles.link}>
-              Re-verify email? Click Here !
+        <div className={styles.formFooterWrapper} >
+          <p>Don't have an account ?
+            <Link to="/user/register">
+              <span>Sign Up </span>
             </Link>
           </p>
         </div>
-      </form>
-    </div>
-  );
-};
-export default ResetPassword;
+      </div >
+    </div >
+  )
+}
 
-// __________________________________________
-// return (
-//   <div className={formStyles.resetPage}>
-//     <div className={formStyles.appNameDiv}>
-//       <p>
-//         <span>e</span>Crypt
-//       </p>
-//     </div>
-//     <br />
-
-//     <div className={formStyles.containerForm}>
-//       <Typography
-//         component="h1"
-//         variant="h5"
-//         className={formStyles.typography}
-//       >
-//         Enter your new password
-//       </Typography>
-//       <br />
-
-//       <div className={formStyles.form}>
-//         {notification.error || notification.success || validationError ? (
-//           <div
-//             className={
-//               notification.error || validationError
-//                 ? formStyles.notificationErrorDiv
-//                 : formStyles.notificationSuccessDiv
-//             }
-//           >
-//             {notification.error || validationError ? (
-//               <p>
-//                 {notification.error ? notification.error : validationError}
-//               </p>
-//             ) : (
-//               <p>{notification.success}</p>
-//             )}
-//           </div>
-//         ) : null}
-//         <TextField
-//           fullWidth
-//           variant="outlined"
-//           margin="normal"
-//           required
-//           label="Enter new password"
-//           name="password"
-//           type="password"
-//           name="password"
-//           id="password"
-//           value={password}
-//           onChange={handleChange}
-//           size="small"
-//           name="password"
-//           onChange={handleChange}
-//         />
-//         <TextField
-//           fullWidth
-//           variant="outlined"
-//           margin="normal"
-//           required
-//           label="Confirm new password"
-//           type="password"
-//           name="confirmPassword"
-//           id="confirmPassword"
-//           value={confirmPassword}
-//           onChange={handleChange}
-//           autoFocus
-//           onChange={handleChange}
-//           size="small"
-//         />
-
-//         <button onClick={handleRestPassword} className={formStyles.submitBtn}>
-//           {isLoading ? (
-//             <CircleSpinner size={15} color="white" loading={true} />
-//           ) : (
-//             <HiArrowNarrowRight fontSize="20px" />
-//           )}
-//         </button>
-//         <br />
-//         <p>
-//           <Link to="/forgotPassword">Re-verify email</Link>
-//         </p>
-//       </div>
-//     </div>
-//   </div>
-// );
+export default ResetPassword

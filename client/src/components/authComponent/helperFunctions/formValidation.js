@@ -133,3 +133,38 @@ export const validateSignInForm = ({ email, password }) => {
 
     return res;
 }
+
+
+export const validateResetPassForm = ({ password, confirmPassword }) => {
+
+    let errors = [];
+
+    let res = {
+        message: undefined,
+        error: false,
+    };
+
+    if (!password) {
+        errors.push("Password is required.");
+        res.message = 'Password is required.';
+        res.error = true;
+    } else if (password.length < 8) {
+        errors.push("Password must be at least 8 characters long.");
+        res.message = 'Password must be at least 8 characters long.';
+        res.error = true;
+    } else if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/.test(password)) {
+        errors.push("Password must contain at least one uppercase letter, one lowercase letter, one number and one special character");
+        res.message = 'Password must contain at least one uppercase letter, one lowercase letter, one number and one special character';
+        res.error = true;
+    }
+    else if (!confirmPassword) {
+        errors.push("Confirm password is required.");
+        res.message = 'First name is required.';
+        res.error = true;
+    } else if (password !== confirmPassword) {
+        errors.push("Passwords do not match.");
+        res.message = 'Passwords do not match.';
+        res.error = true;
+    }
+    return res;
+}

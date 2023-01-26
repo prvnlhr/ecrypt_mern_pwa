@@ -14,7 +14,6 @@ const API = axios.create({
   baseURL: "http://localhost:9000"
 });
 
-
 // ->______________________________________________________________________________
 const reqHandler = (request) => {
   return request;
@@ -293,6 +292,20 @@ export const getUser = (token) =>
     },
   });
 
+//> forgot user
+export const forgotPass = (email) =>
+  API.post("/user/auth/forgotPassword", { email });
+
+//> reset password_____
+export const resetPass = (token, password) =>
+  API.post(
+    "/user/auth/resetPassword",
+    { password },
+    {
+      headers: { Authorization: `Bearer ${token}` },
+    }
+  );
+  
 // originalRequest.headers["Authorization"] = "Bearer " + res.data;
 
 

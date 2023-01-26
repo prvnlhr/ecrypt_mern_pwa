@@ -6,12 +6,12 @@ import { motion, AnimatePresence } from "framer-motion"
 const DeleteModal = ({ setDeleteMode, deleteMode, confirmDeleteBtnClicked }) => {
 
     const deleteBtnClicked = () => {
-        console.log('fs')
         confirmDeleteBtnClicked();
     }
     const cancelBtnClicked = () => {
         setDeleteMode(false);
     }
+    const stylesS = styles.wapper
     return (
         <AnimatePresence>
             {deleteMode &&
@@ -68,7 +68,7 @@ const DeleteModal = ({ setDeleteMode, deleteMode, confirmDeleteBtnClicked }) => 
                     </div>
                 </motion.div>
             }
-        </AnimatePresence>
+        </AnimatePresence >
     )
 }
 

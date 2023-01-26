@@ -128,6 +128,7 @@ const authController = {
       return res.status(400).json({ msg: error });
     }
   },
+
   getUserInfo: async (req, res) => {
     console.log('getUser');
     try {
@@ -138,6 +139,7 @@ const authController = {
       return res.status(404).send(error);
     }
   },
+
   logout: async (req, res) => {
     try {
       console.log('at logout controller')
@@ -148,9 +150,12 @@ const authController = {
       return res.status(404).send(error);
     }
   },
+
   forgotPassword: async (req, res) => {
+
     try {
       const { email } = req.body;
+      console.log(email);
       const user = await UserDatabase.findOne({ email });
       if (!user) {
         return res.status(400).json({ msg: "Email Id doest not exist" });
@@ -165,7 +170,7 @@ const authController = {
       const reset_token = createAccessToken(tokenPayload);
       // const activation_token = createActivationToken(user);
 
-      const url = `${CLIENT_URL}/user/auth/reset/${reset_token}`;
+      const url = `${CLIENT_URL}/user/resetPassword/${reset_token}`;
       sendMail(email, url, "Reset your password. Click the below link");
       res.json({ msg: "Please check your email for reset link" });
     } catch (error) {
@@ -173,6 +178,7 @@ const authController = {
       return res.status(404).send(error);
     }
   },
+
   resetPassword: async (req, res) => {
     try {
       console.log("reset password cntrl", req.body);
@@ -189,6 +195,7 @@ const authController = {
       return res.status(404).send(error);
     }
   },
+
   changePassword: async (req, res) => {
     // console.log("at change PAss controller",req.body)
     try {
@@ -213,6 +220,7 @@ const authController = {
       return res.status(404).send(error);
     }
   },
+
   updateProfile: async (req, res) => {
     const { firstName, lastName, email } = req.body.profileData;
     try {
@@ -242,6 +250,7 @@ const authController = {
       return res.status(404).send(error);
     }
   },
+
   deleteAccountPermanently: async (req, res) => {
     try {
       console.log(req.body);
@@ -287,14 +296,18 @@ const authController = {
 function createActivationToken(payload) {
   return jwt.sign(payload, ACTIVATION_TOKEN_SECRET, { expiresIn: "5m" });
 }
+
 function createAccessToken(payload) {
   return jwt.sign(payload, ACCESS_TOKEN_SECRET, { expiresIn: "15m" });
   // return jwt.sign(payload, ACCESS_TOKEN_SECRET, { expiresIn: "30s" });
 }
+
+
 function createRefreshToken(payload) {
   return jwt.sign(payload, REFRESH_TOKEN_SECRET, { expiresIn: "2d" });
   // return jwt.sign(payload, REFRESH_TOKEN_SECRET, { expiresIn: "60s" });
 }
+
 
 function validateEmail(email) {
   const re =
