@@ -31,6 +31,7 @@ const DocInputForm = ({ setShowDocInputForm, showDocInputForm, formToggle }) => 
     const closeBtnClicked = () => {
         setShowDocInputForm(false);
     }
+
     const uploadDoc = () => {
         formToggle();
         const data = new FormData();
@@ -42,6 +43,7 @@ const DocInputForm = ({ setShowDocInputForm, showDocInputForm, formToggle }) => 
             .post("https://httpbin.org/anything", data)
             .then((res) => console.log(res))
             .catch((err) => console.log(err));
+
         const toMakeActvityData = {
             title: name,
         }

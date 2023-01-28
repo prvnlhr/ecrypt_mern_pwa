@@ -197,9 +197,9 @@ const authController = {
   },
 
   changePassword: async (req, res) => {
-    // console.log("at change PAss controller",req.body)
     try {
       const { oldPassword, newPassword } = req.body;
+      console.log(oldPassword, newPassword)
       const id = req.user.id;
       const user = await UserDatabase.findById(id);
       if (!user) {
@@ -222,7 +222,10 @@ const authController = {
   },
 
   updateProfile: async (req, res) => {
+
+
     const { firstName, lastName, email } = req.body.profileData;
+    console.log(firstName, lastName, email)
     try {
       const id = req.user.id;
       const user = await UserDatabase.findById(id);
@@ -234,7 +237,7 @@ const authController = {
         {
           $set: {
             name: `${firstName} ${lastName}`,
-            email: email,
+            // email: email,
           },
         },
         { returnOriginal: false }

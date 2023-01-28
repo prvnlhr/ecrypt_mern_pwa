@@ -3,7 +3,6 @@
     position: relative;
     width: 100%;
     height: 100%;
-
     display: grid;
     grid-template-columns: 20% 80%;
     grid-template-rows: 100%;
@@ -92,6 +91,7 @@
     color: black;
 }
 
+/* _______________________________________________ */
 .profilePicWrapper {
     position: relative;
     grid-area: profilePicWrapper;
@@ -118,9 +118,18 @@
     border-radius: 50px;
     background-color: white;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.profilePicEditBtnDiv {
+.profilePicImg {
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+}
+
+.profilePicEditBtnContainer {
     width: 30%;
     height: 100%;
     /* border: 1px solid blue; */
@@ -130,6 +139,9 @@
     box-sizing: border-box;
     padding-bottom: 15%;
 }
+
+
+/* _______________________________________________ */
 
 .joinedUpdateDateWrapper {
     position: relative;
@@ -184,15 +196,12 @@
     color: #7E8DA4;
 }
 
-
-
 .dateText {
     font-family: "Poppins", sans-serif;
     font-size: 13px;
     font-weight: 500;
     color: black;
 }
-
 
 .profileFromSection {
     grid-area: profileFromSection;
@@ -217,9 +226,6 @@
     padding-left: 5%;
 }
 
-
-
-
 .formWrapper {
     width: 70%;
     height: 80%;
@@ -227,7 +233,9 @@
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 40% 25% 35%;
+    grid-template-rows: 5% 40% 20% 35%;
     grid-template-areas:
+        "formMessageWrapper"
         "profileNameWrapper"
         "profilePassWrapper"
         "profileDeleteWrapper";
@@ -239,6 +247,71 @@
 
 /* ________________________________________________________________- */
 
+
+.formMessageWrapper {
+    grid: formMessageWrapper;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.messageDiv {
+    width: auto;
+    max-width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 6px;
+    padding: 1% 4% 1% 4%;
+    /* margin-top: 3%; */
+}
+
+.messageDivError {
+    background-color: #FCCED1;
+}
+
+.messageDivError p {
+    font-family: "Poppins", sans-serif;
+    font-size: 10px;
+    font-weight: 550;
+    color: #F3212D;
+    white-space: nowrap;
+}
+
+.messageDivSuccess {
+    background-color: #BAFFB4;
+}
+
+.messageDivSuccess p {
+    font-family: "Poppins", sans-serif;
+    font-size: 10.5px;
+    font-weight: 550;
+    color: #38c62b;
+}
+
+/* .messageDiv p {} */
+.errorMessageIconDiv {
+    width: 20px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+    margin-right: 5px;
+}
+
+.warningIcon {
+    font-size: 13px;
+    color: #F3212D;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* ----------------------------------------------------- */
 .profileNameWrapper {
     grid-area: profileNameWrapper;
     width: 100%;
@@ -254,7 +327,6 @@
         "profileEditBtnContainer profileEditBtnContainer";
     box-sizing: border-box;
     background-color: white;
-
 }
 
 .profileHeadingContainer {
@@ -265,58 +337,72 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-
 }
 
 /* ______________________________________________________________ */
 
-.formSectionHeadingDiv {
-    position: relative;
-    width: 80%;
-    height: 90%;
-    /* border: 1px solid blue; */
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.formSectionHeadingDiv p {
-    font-family: "Poppins", sans-serif;
-    font-size: 17px;
-    font-weight: 600;
-    color: black;
-}
-
-.formSectionHeadingDiv::after {
-    content: "";
-    position: absolute;
-    background-color: #002A9A;
-    width: 40px;
-    height: 3px;
-    bottom: 0px;
-    left: 0px;
-    border-radius: 10px;
-}
-
-.formBtns {
+.formBtnSave {
     width: auto;
-    height: 28px;
-    background-color: #002A9A;
-    border-radius: 6px;
+    height: auto;
+    background-color: #58BF6F;
+    border-radius: 5px;
     border: none;
     outline: none;
-    padding-left: 4%;
-    padding-right: 4%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
     margin: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+}
+
+.formBtnCancel {
+    width: auto;
+    height: auto;
+    background-color: #B4B3BA;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-right: 5%;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.formBtnEdit {
+    width: auto;
+    height: auto;
+    background-color: #002A9A;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
 }
 
 .btnText {
     font-family: "Poppins", sans-serif;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 400;
     color: white;
     letter-spacing: 0.5px;
@@ -340,7 +426,6 @@
     /* border: 1px solid black; */
     background-color: #F3F5F9;
     border-radius: 10px;
-
 }
 
 .labelDiv {
@@ -352,7 +437,6 @@
     align-items: center;
     box-sizing: border-box;
     padding-left: 5%;
-
 }
 
 .labelDiv p {
@@ -361,7 +445,6 @@
     font-weight: 500;
     color: #7E8DA4;
 }
-
 
 .inputDiv {
     width: 100%;
@@ -399,7 +482,6 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-
 }
 
 .profileLastNameDiv {
@@ -408,7 +490,6 @@
     /* border: 1px solid black; */
     background-color: #F3F5F9;
     border-radius: 10px;
-
 }
 
 .profileEmailNameContainer {
@@ -459,6 +540,8 @@
     background-color: white;
 }
 
+/* formSectionHeadingDiv */
+
 .passHeadingContainer {
     grid-area: passHeadingContainer;
     width: 100%;
@@ -470,6 +553,7 @@
     margin-bottom: 1%;
 
 }
+
 
 .passFieldWrapperClose {
     width: 100%;
@@ -505,7 +589,6 @@
     border-radius: 10px;
     /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
     margin-right: 2%;
-
 }
 
 .passNewInputContainer {
@@ -593,7 +676,6 @@
     letter-spacing: 0px;
 }
 
-
 .text2Container {
     width: 100%;
     height: 33%;
@@ -629,10 +711,7 @@
     font-weight: 500;
     color: black;
     letter-spacing: 0px;
-
 }
-
-
 
 .textIconDiv {
     width: auto;
@@ -652,7 +731,6 @@
     font-size: 20px;
 }
 
-
 .deleteBtnContainer {
     grid-area: deleteBtnContainer;
     width: 100%;
@@ -665,6 +743,35 @@
 
 .focusFieldStyle {
     border: 2px solid #00299a;
+}
+
+.formSectionHeadingDiv {
+    position: relative;
+    width: 80%;
+    width: auto;
+    height: 90%;
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.formSectionHeadingDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: black;
+}
+
+.formSectionHeadingDiv::after {
+    content: "";
+    position: absolute;
+    background-color: #002A9A;
+    width: 40px;
+    height: 3px;
+    bottom: 0px;
+    left: 0px;
+    border-radius: 10px;
 }
 
 /* -------------------------------------------------------------- */
@@ -775,46 +882,162 @@
     /* _________________________________________________ */
     .profilePicWrapper {
         grid-area: profilePicWrapper;
+        position: relative;
         width: 100%;
         height: 100%;
         /* border: 1px solid black; */
     }
 
-    .profileContainer {
-        width: 70%;
+
+    .profilePicformTag {
+        position: relative;
+        width: 80%;
         height: 100%;
-        /* border: 1px solid black; */
+        /* border: 1px solid red; */
         display: flex;
+        justify-content: space-evenly;
         align-items: center;
-        justify-content: flex-end;
     }
 
-    .profilePicDiv {
-        width: unset;
-        height: 65%;
+
+    .profilePicContainer {
         aspect-ratio: 1/1;
-        /* border: 1px solid red; */
-        border-radius: 50px;
+        height: 80%;
         background-color: white;
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border: 1px solid orange; */
     }
 
-    .profilePicEditBtnDiv {
-        width: 30%;
+    .profilePicContainer img {
+        position: relative;
+        width: 85%;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        object-fit: contain;
+        width: 90%;
+        height: 90%;
+    }
+
+    label {
+        position: relative;
+        position: relative;
+        height: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        object-fit: contain;
+        /* width: 90%; */
+        /* height: 90%; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        /* border: 1px solid #002A9A; */
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+
+    .imgFileInput {
+        outline: none;
+        background: none;
+        /* width: 100%; */
+        /* height: 100%; */
+        /* border: 1px solid black; */
+        display: none;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        margin: 0px 0px 0px 0px;
+        cursor: pointer;
+    }
+
+    .imgFileInput::-webkit-file-upload-button {
+        visibility: hidden;
+        width: 0px;
+        /* background: #071a52; */
+        font-family: "Poppins", sans-serif;
+        /* color: black; */
+        font-size: 13px;
+        border-radius: 5px;
+        background-color: #dae5eb;
+    }
+
+    .profilePicformTagEditMode {
+        border: 3px solid #00299a86;
+    }
+
+    .profilePicEditBtnContainer {
+        width: 20%;
         height: 100%;
         /* border: 1px solid blue; */
         display: flex;
-        justify-content: center;
-        align-items: flex-end;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
         box-sizing: border-box;
         padding-bottom: 15%;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
-    .editBtnIcon {
-        font-size: 25px;
-        color: slategray;
+    .iconDivEdit {
+        width: 70%;
+        aspect-ratio: 1/1;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #9DC1FA;
+        border-radius: 50%;
     }
 
+    .iconDivCancel {
+        width: 70%;
+        aspect-ratio: 1/1;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #B4B3BA;
+        border-radius: 50%;
+        margin-bottom: 50%;
+    }
+
+    .iconDivSave {
+        width: 70%;
+        aspect-ratio: 1/1;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #58BF6F;
+        border-radius: 50%;
+    }
+
+    .profilePicSaveIcon {
+        font-size: 13px;
+        color: white;
+    }
+
+    .profilePicCancelIcon {
+        font-size: 13px;
+        color: white;
+    }
+
+    .profilePicEditIcon {
+        font-size: 13px;
+        color: #002A9A;
+    }
 
     .joinedUpdateDateWrapper {
         grid-area: joinedUpdateDateWrapper;
@@ -911,13 +1134,85 @@
         /* border: 1px solid black; */
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: 40% 25% 35%;
+        /* grid-template-rows: 40% 25% 35%; */
+        grid-template-rows: 5% 40% 20% 35%;
         grid-template-areas:
+            "formMessageWrapper"
             "profileNameWrapper"
             "profilePassWrapper"
             "profileDeleteWrapper";
         box-sizing: border-box;
-        grid-gap: 2px;
+        grid-gap: unset;
+    }
+
+    .formMessageWrapper {
+        grid: formMessageWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .messageDiv {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        border-radius: 6px;
+        padding: 1% 4% 1% 4%;
+        /* margin-top: 3%; */
+        /* overflow-x: scroll; */
+        overflow: hidden;
+    }
+
+    .messageDivError {
+        background-color: #FCCED1;
+    }
+
+    .messageDivError p {
+        font-family: "Poppins", sans-serif;
+        width: 50%;
+        font-size: 10.5px;
+        font-weight: 550;
+        color: #F3212D;
+        width: 90%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .messageDivSuccess {
+        background-color: #BAFFB4;
+
+    }
+
+    .messageDivSuccess p {
+        font-family: "Poppins", sans-serif;
+        font-size: 10.5px;
+        font-weight: 550;
+        color: #38c62b;
+    }
+
+    /* .messageDiv p {} */
+    .errorMessageIconDiv {
+        width: 20px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border: 1px solid black; */
+        margin-right: 5px;
+    }
+
+    .warningIcon {
+        font-size: 15px !;
+        color: #F3212D;
+        padding: 0px;
+        margin: 0px;
     }
 
     /* ________________________________________________________________- */
@@ -954,11 +1249,13 @@
     .formSectionHeadingDiv {
         position: relative;
         width: 80%;
+        width: auto;
         height: 90%;
         /* border: 1px solid blue; */
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        padding-right: 2%;
     }
 
     .formSectionHeadingDiv p {
@@ -979,29 +1276,64 @@
         border-radius: 10px;
     }
 
-    .formBtns {
+    .formBtnSave {
         width: auto;
-        height: 28px;
+        height: auto;
+        background-color: #58BF6F;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        padding-left: 4%;
+        padding-right: 4%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        margin: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .formBtnCancel {
+        width: auto;
+        height: auto;
+        background-color: #B4B3BA;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        padding-left: 4%;
+        padding-right: 4%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        margin: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-right: 5%;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .formBtnEdit {
+        width: auto;
+        height: auto;
         background-color: #002A9A;
         border-radius: 6px;
         border: none;
         outline: none;
         padding-left: 4%;
         padding-right: 4%;
+        padding-top: 2%;
+        padding-bottom: 2%;
         margin: 0px;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
+        /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
     }
 
-    .btnText {
-        font-family: "Poppins", sans-serif;
-        font-size: 12px;
-        font-weight: 400;
-        color: white;
-        letter-spacing: 0.5px;
-    }
 
     /* ______________________________________________________________ */
 
@@ -1067,6 +1399,7 @@
         font-size: 13px;
         font-weight: 500;
         color: black;
+        background: none;
     }
 
     input::placeholder {

@@ -16,6 +16,10 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    profilePicUrl: {
+      type: String,
+      require: true,
+    },
     cardsMixedArray: [objectSchema],
 
     cardsData: {
@@ -54,6 +58,14 @@ const userSchema = new mongoose.Schema(
           isFavourite: {
             type: Boolean,
             default: false,
+            required: true,
+          },
+          joinedDate: {
+            type: String,
+            required: true,
+          },
+          updateDate: {
+            type: String,
             required: true,
           },
           time: { type: Date, default: Date.now }

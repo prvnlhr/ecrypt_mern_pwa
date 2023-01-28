@@ -351,11 +351,10 @@ label {
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    /* border: 1px solid black; */
+    border: 1px solid black;
     /* height: 30px !important; */
     margin: 0px 0px 0px 0px;
     font-family: "Poppins", sans-serif;
-
     color: black;
     font-weight: 650;
     letter-spacing: 0.2px;
@@ -367,7 +366,6 @@ label {
     width: 0px;
     background: #071a52;
     font-family: "Poppins", sans-serif;
-
     color: black;
     font-size: 13px;
     border-radius: 5px;

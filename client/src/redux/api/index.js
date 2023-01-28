@@ -305,7 +305,27 @@ export const resetPass = (token, password) =>
       headers: { Authorization: `Bearer ${token}` },
     }
   );
-  
+
+
+// > edit password____
+export const editProfile = (token, profileData) =>
+  API.post(
+    "/user/auth/updateProfile",
+    { profileData },
+    {
+      headers: { Authorization: `Bearer ${token}` },
+    }
+  );
+
+// > change password____
+export const changePass = (oldPassword, newPassword, token) =>
+  API.post(
+    "/user/auth/changePassword",
+    { oldPassword, newPassword },
+    {
+      headers: { Authorization: `Bearer ${token}` },
+    }
+  );
 // originalRequest.headers["Authorization"] = "Bearer " + res.data;
 
 

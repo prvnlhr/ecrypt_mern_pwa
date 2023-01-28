@@ -86,7 +86,7 @@ export const validateSignUpForm = ({ firstName, lastName, email, password, confi
     }
     else if (!confirmPassword) {
         errors.push("Confirm password is required.");
-        res.message = 'First name is required.';
+        res.message = 'Confirm password is required.';
         res.error = true;
     } else if (password !== confirmPassword) {
         errors.push("Passwords do not match.");
@@ -166,5 +166,33 @@ export const validateResetPassForm = ({ password, confirmPassword }) => {
         res.message = 'Passwords do not match.';
         res.error = true;
     }
+    return res;
+}
+
+export const validateChangePassForm = ({ password, newPassword }) => {
+
+    let errors = [];
+
+    let res = {
+        message: undefined,
+        error: false,
+    };
+
+    if (!password) {
+        errors.push("Old Password is required.");
+        res.message = 'Old Password is required.';
+        res.error = true;
+    }
+    else if (!newPassword) {
+        errors.push("New password is required.");
+        res.message = 'New password is required.';
+        res.error = true;
+    }
+    else if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/.test(newPassword)) {
+        errors.push("Password must contain at least one uppercase letter, one lowercase letter, one number and one special character");
+        res.message = 'Password must contain at least one uppercase letter, one lowercase letter, one number and one special character';
+        res.error = true;
+    }
+
     return res;
 }
