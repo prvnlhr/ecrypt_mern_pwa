@@ -1,4 +1,6 @@
 const { UserDatabase } = require("../models/userData");
+const cloudinary = require("../utils/cloudinaryConfig");
+
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 var cookieParser = require("cookie-parser");
@@ -222,8 +224,6 @@ const authController = {
   },
 
   updateProfile: async (req, res) => {
-
-
     const { firstName, lastName, email } = req.body.profileData;
     console.log(firstName, lastName, email)
     try {
@@ -254,6 +254,41 @@ const authController = {
     }
   },
 
+  updateProfilePic: async (req, res) => {
+    const id = req.user.id;
+    console.log('at profile pic change controller', id)
+
+    // console.log('cldnr res', avatarData)
+
+    try {
+      const filePath = req.file.path;
+
+      const cloudinaryResponse = await cloudinary.v2.uploader.upload(filePath, {
+        folder: "eCrypt",
+      });
+
+      const picData = {
+        profilePicUrl: cloudinaryResponse.secure_url,
+        cloudinary_id: cloudinaryResponse.public_id,
+      };
+
+      const response = await UserDatabase.findOneAndUpdate(
+        { _id: id },
+        {
+          $set: {
+            'profilePic.picUrl': picData.profilePicUrl,
+            'profilePic.cloudinary_id': picData.cloudinary_id
+          },
+        },
+        { returnOriginal: false }
+      );
+      console.log(picData);
+      res.json(picData);
+    } catch (error) {
+      console.log("error at edit profile controller", error);
+      return res.status(404).send(error);
+    }
+  },
   deleteAccountPermanently: async (req, res) => {
     try {
       console.log(req.body);

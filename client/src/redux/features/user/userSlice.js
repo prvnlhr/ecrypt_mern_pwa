@@ -12,27 +12,37 @@ const initialState = {
     lastName: undefined,
     email: undefined,
     _id: undefined,
-    profilePicUrl: undefined,
+    profilePic: {
+        picUrl: undefined,
+        picCloudId: undefined,
+    },
+
     joinedDate: undefined,
     updateDate: undefined,
     responseMessage: undefined,
     error: false,
     success: false,
+    pending: false,
 }
 
 export const getUserDetails = createAsyncThunk("user/getUser", async (token, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
         const res = await api.getUser(token);
         const userData = res.data.user;
+        const profilePicData = res.data.user.profilePic
+        console.log(profilePicData.picUrl)
         const nameString = userData.name.split(/[" "]+/);
-        const data = {
-            _id: userData._id,
+        const userRes = {
             firstName: nameString[0],
             lastName: nameString[1],
             email: userData.email,
-        };
-        const userId = data._id;
-        return fulfillWithValue(data);
+            _id: userData._id,
+            picUrl: profilePicData.picUrl,
+            picCloudId: profilePicData.cloudinary_id,
+            joinedDate: undefined,
+            updateDate: undefined,
+        }
+        return fulfillWithValue(userRes);
     } catch (error) {
         console.log('errror', error.response.data.msg)
         const errorMessage = 'Error in registration'
@@ -66,8 +76,25 @@ export const changeUserPass = createAsyncThunk("user/changeProfilePass", async (
     try {
         console.log(token, oldPassword, newPassword);
         const res = await api.changePass(oldPassword, newPassword, token);
-        console.log(res);
         return fulfillWithValue(res.data.msg);
+    }
+    catch (error) {
+        console.log(error.response.data.msg)
+        return rejectWithValue(error.response.data.msg);
+    }
+});
+export const changeProfilePicture = createAsyncThunk("user/changeProfilePic", async ({ data, token }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
+    try {
+        console.log(data);
+        const state = getState();
+        const res = await api.editProfilePic(data, state.auth.token);
+        // console.log(res);
+        console.log(res.data);
+        const profilePicData = {
+            picUrl: res.data.profilePicUrl,
+            picCloudId: res.data.cloudinary_id,
+        }
+        return fulfillWithValue(profilePicData);
     }
     catch (error) {
         console.log(error.response.data.msg)
@@ -91,9 +118,13 @@ const userSlice = createSlice({
                     firstName: action.payload.firstName,
                     lastName: action.payload.lastName,
                     email: action.payload.email,
+                    profilePic: {
+                        ...state.profilePic,
+                        picUrl: action.payload.picUrl,
+                        picCloudId: action.payload.picCloudId,
+                    }
                 };
             })
-
             .addCase(editUserProfile.fulfilled, (state, action) => {
                 console.log(action.payload)
                 return {
@@ -128,6 +159,23 @@ const userSlice = createSlice({
                     responseMessage: action.payload,
                     success: false,
                     error: true,
+                };
+            })
+            .addCase(changeProfilePicture.fulfilled, (state, action) => {
+                console.log(action.payload)
+                return {
+                    ...state,
+                    profilePic: action.payload,
+                    responseMessage: 'Profile Picture Updated Successfully',
+                    error: false,
+                    success: true,
+                    pending: false,
+                };
+            })
+            .addCase(changeProfilePicture.pending, (state, action) => {
+                return {
+                    ...state,
+                    pending: true
                 };
             })
 

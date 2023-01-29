@@ -18,6 +18,8 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
   const dispatch = useDispatch();
 
   const auth = useSelector((state) => state.auth);
+  const userState = useSelector((state) => state.user);
+
   const { token, } = auth;
 
   const [searchQuery, setQuery] = useState("");
@@ -130,13 +132,12 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
       <div className={headerStyles.avatarNameWrapper}>
         <div className={headerStyles.nameContainer}>
           <p className={headerStyles.grettingText}>Hello,</p>
-          <p className={headerStyles.nameText}>Andrew</p>
+          <p className={headerStyles.nameText}>{userState?.firstName}</p>
         </div>
         <div className={headerStyles.avatarContainer}>
           <div className={headerStyles.avatarDiv}>
-            <div className={headerStyles.avatarImgDiv}
-              onClick={btnClicked}
-            >
+            <div className={headerStyles.avatarImgDiv}>
+              <img src={userState?.profilePic.picUrl} />
             </div>
           </div>
         </div>

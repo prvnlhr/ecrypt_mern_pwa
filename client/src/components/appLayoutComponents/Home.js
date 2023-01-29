@@ -19,18 +19,13 @@ import FavDocFullScreen from "../favSectionComponent/docs/FavDocFullScreen"
 
 import { getUserDetails } from "../../redux/features/user/userSlice"
 const Home = () => {
-  const navigate = useNavigate();
   const location = useLocation();
-  const dispatch = useDispatch();
+
+  const node = useRef();
 
   const auth = useSelector((state) => state.auth);
   const { token } = auth;
 
-  // useEffect(() => {
-  //   dispatch(getUserDetails(token));
-
-  // }, [token])
-  const node = useRef();
 
   const [open, setOpen] = useState(false);
   const [logoComponentShow, setLogoComponentShow] = useState(false);

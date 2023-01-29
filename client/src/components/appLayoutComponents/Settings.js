@@ -8,6 +8,8 @@ import { validateChangePassForm } from "../authComponent/helperFunctions/formVal
 import { editUserProfile, changeUserPass } from "../../redux/features/user/userSlice"
 import axios from "axios";
 import avatarImg from "../../img/avatarImg.png"
+import { changeProfilePicture } from "../../redux/features/user/userSlice"
+import { Oval } from 'react-loader-spinner'
 const Settings = () => {
 
     const dispatch = useDispatch();
@@ -43,16 +45,20 @@ const Settings = () => {
     });
 
     useEffect(() => {
+
+        if (userState?.responseMessage === 'Profile Picture Updated Successfully') {
+            handleCancelBtnClicked();
+        }
+
         setProfileData({
             ...profileData,
             firstName: userState.firstName,
             lastName: userState.lastName,
             email: userState.email
-
-
         })
-        setProfilePicImg(avatarImg);
+        setProfilePicImg(userState?.profilePic.picUrl);
     }, [userState])
+
 
 
     const [passwordData, setPasswordData] = useState({
@@ -128,6 +134,7 @@ const Settings = () => {
     }
 
 
+    //> Handle Edit btn, change Pass btn clicked
     const handleEditChangeDeleteBtnClicked = (currSection) => {
         setEditMode({
             isEditMode: true,
@@ -145,11 +152,12 @@ const Settings = () => {
         }
     }
 
+    //> handle pass input change________________
     const handlePassInputChange = (e) => {
         const { name, value } = e.target;
         setPasswordData({ ...passwordData, [name]: value });
     };
-
+    //> handle cancel btn clicked_______________
     const handleCancelBtnClicked = () => {
         setEditMode({
             isEditMode: false,
@@ -157,20 +165,19 @@ const Settings = () => {
         })
 
         //> image SECTION == PROFILEPIC, reverting back old Profile Pic
-        if (editMode.section === 'PROFILEPIC') {
-            setProfilePicImg(oldProfilePic);
-        }
+        // if (editMode.section === 'PROFILEPIC') {
+        //     setProfilePicImg(oldProfilePic);
+        // }
         setCurrFocusField(undefined);
     }
 
-    const confirmDeleteBtnClicked = () => {
-    }
+
 
     //> Profile Pic _______________________________________________
     const [file, setFile] = useState();
 
     const previewFile = (file) => {
-        console.log(file)
+        // console.log(file)
         const reader = new FileReader();
         if (file) {
             reader.readAsDataURL(file);
@@ -178,25 +185,41 @@ const Settings = () => {
         reader.onloadend = () => {
             setProfilePicImg(reader.result);
         };
-        // console.log(reader.result);
     };
 
-    const editProfilePic = async () => {
+    const confirmEditProfilePic = async () => {
+        console.log("confirm pic change")
+
         const data = new FormData();
+        data.append("userId", userState?._id);
+        data.append("name", 'avatar');
+        data.append("file", file);
+
+        // for (var pair of data.entries()) {
+        //     console.log(pair[0] + ', ' + pair[1]);
+        // }
+
         axios
             .post("https://httpbin.org/anything", data)
             .then((res) => console.log(res))
             .catch((err) => console.log(err));
-        data.append("file", file);
+
+        await dispatch(changeProfilePicture({
+            data: data,
+            token: authState?.token,
+        }));
 
     }
 
     const handleProfilePicChange = (e) => {
-        console.log('ss')
         const file = e.target.files[0];
         setFile(file);
         previewFile(file);
     };
+
+    //> handle confirm Delete_________________________________
+    const confirmDeleteBtnClicked = () => {
+    }
 
     //> _______________________________________________
 
@@ -222,18 +245,25 @@ const Settings = () => {
                 </div>
                 <div className={styles.profilePicWrapper} >
                     <form className={styles.profilePicformTag}>
-                        <div className={`${styles.profilePicContainer} ${formFieldEditable('PROFILEPIC') && styles.profilePicformTagEditMode} `}>
+                        <div className={`${styles.profilePicContainer} ${(formFieldEditable('PROFILEPIC') && userState?.pending === false) && styles.profilePicformTagEditMode} `}>
                             <label htmlFor="file">
-                                {/* {previewImg ? (
-                                    <div className={styles.imgPreviewContainer}>
-                                        <img src={previewImg} alt="doc" />
-                                    </div>
-                                ) : (
-                                    <div className={styles.uploadContainer}>
-                                        <Icon icon="bi:folder-fill" className={styles.folderIcon} />
-                                        <p>Click to choose file</p>
-                                    </div>
-                                )} */}
+
+                                {userState?.pending === true &&
+                                    <Oval
+                                        height={101}
+                                        width={101}
+                                        color="#002A9A"
+                                        wrapperStyle={{}}
+                                        wrapperClass={styles.spinner}
+                                        visible={true}
+                                        ariaLabel='oval-loading'
+                                        secondaryColor="#00299a7b"
+                                        strokeWidth={1}
+                                        strokeWidthSecondary={1}
+                                        className={styles.spinner}
+                                    />
+                                }
+
                                 <img src={profilePicImg} />
                             </label>
                             <input
@@ -250,7 +280,7 @@ const Settings = () => {
                                     <div className={styles.iconDivCancel} onClick={handleCancelBtnClicked} >
                                         <Icon className={styles.profilePicSaveIcon} icon="ph:x-bold" />
                                     </div>
-                                    <div className={styles.iconDivSave} onClick={() => handleEditChangeDeleteBtnClicked('PROFILEPIC')} >
+                                    <div className={styles.iconDivSave} onClick={confirmEditProfilePic} >
                                         <Icon className={styles.profilePicCancelIcon} icon="charm:tick-double" />
                                     </div>
                                 </>
@@ -280,7 +310,6 @@ const Settings = () => {
 
                 </div>
             </div>
-
 
             <div className={styles.profileFromSection} >
                 <div className={styles.formWrapper}>

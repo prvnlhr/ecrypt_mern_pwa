@@ -316,6 +316,12 @@ export const editProfile = (token, profileData) =>
       headers: { Authorization: `Bearer ${token}` },
     }
   );
+// > edit profile Pic__
+export const editProfilePic = (data, token) => API.post("/user/auth/updateProfilePic", data, {
+  headers: {
+    "Authorization": `Bearer ${token}`
+  },
+});
 
 // > change password____
 export const changePass = (oldPassword, newPassword, token) =>

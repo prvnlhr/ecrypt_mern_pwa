@@ -1,13 +1,17 @@
 import React, { useState } from 'react'
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
 import { Icon } from '@iconify/react';
 import styles from "./styles/signInPage.module.css"
 import { validateSignInForm } from "./helperFunctions/formValidation"
 import { loginUser } from "../../redux/features/auth/authSlice"
+
 const SignInPage = () => {
 
   const authState = useSelector((state => state.auth));
+
+  const { isLogged } = authState;
+
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -24,6 +28,7 @@ const SignInPage = () => {
     setCurrFocusField(val)
   }
 
+
   const [formData, setFromData] = useState({
     email: 'prvnlhr522@gmail.com',
     password: 'Prvnpr@123',
@@ -32,8 +37,9 @@ const SignInPage = () => {
 
 
 
+
+  //> handle form submission
   const handleFormSubmit = async (e) => {
-    // console.log(formData);
 
     e.preventDefault();
 
@@ -47,7 +53,6 @@ const SignInPage = () => {
         message: res.message,
         error: res.error
       })
-      console.log('error');
       return;
     }
     else {
@@ -62,11 +67,12 @@ const SignInPage = () => {
           navigate: navigate
         }
       ));
-
-      console.log('confirm submit')
     }
 
   }
+
+
+  //> handle form data change
   const handleDataFormChange = (e) => {
     const { name, value } = e.target;
     setFromData({
@@ -74,6 +80,8 @@ const SignInPage = () => {
       [name]: value,
     })
   }
+
+
   return (
     <div className={styles.formPageWrapper} >
       <div className={styles.formWrapper} >
@@ -151,5 +159,6 @@ const SignInPage = () => {
     </div >
   )
 }
+
 
 export default SignInPage

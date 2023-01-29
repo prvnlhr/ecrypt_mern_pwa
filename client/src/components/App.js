@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
 import Home from "./appLayoutComponents/Home"
 import SignUpPage from './authComponent/SignUpPage';
@@ -13,6 +13,8 @@ import UnAuthenticatedRoutes from './authComponent/UnAuthenticatedRoutes';
 import { getUserDetails } from "../redux/features/user/userSlice"
 import ForgotPassword from './authComponent/ForgotPassword';
 import ResetPassword from './authComponent/ResetPassword';
+
+import RequireAuth from './authComponent/RequireAuth';
 
 const App = () => {
 
@@ -34,17 +36,54 @@ const App = () => {
     getToken();
   }, [])
 
+
   return (
     <div className={appStyles.app} >
       <Routes>
-        <Route
+
+        {/* <Route path="/*" element={
+          <RequireAuth>
+            <Home />
+          </RequireAuth>
+        } /> */}
+
+        {/* <Route path="user/login" element={
+          <RequireAuth>
+            <SignInPage />
+          </RequireAuth>
+        } /> */}
+
+        {/* <Route
           path='/*'
           element={
             <ProtectedRoute>
               <Home />
             </ProtectedRoute>
           }
+        /> */}
+
+        <Route
+          path='/*'
+          element={
+            <RequireAuth>
+              <Home />
+            </RequireAuth>
+          }
         />
+
+        {/* <Route path='/user/login' element={
+          <SignInPage />
+        } /> */}
+
+        {/* <Route
+          path='/user/login'
+          element={
+            <RequireAuth>
+              <SignInPage />
+            </RequireAuth>
+          }
+        /> */}
+
 
         <Route exact path='/user/login' element={
           <UnAuthenticatedRoutes>
@@ -72,6 +111,7 @@ const App = () => {
         } />
 
         <Route path='/user/auth/activate/:activation_token' element={<ActivateAccount />} />
+
       </Routes>
     </div>
   )

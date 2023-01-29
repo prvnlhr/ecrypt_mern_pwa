@@ -901,6 +901,7 @@
 
 
     .profilePicContainer {
+        position: relative;
         aspect-ratio: 1/1;
         height: 80%;
         background-color: white;
@@ -910,6 +911,11 @@
         justify-content: center;
         align-items: center;
         /* border: 1px solid orange; */
+    }
+
+    .spinner {
+        position: absolute;
+        /* border: 1px solid black; */
     }
 
     .profilePicContainer img {

@@ -20,6 +20,28 @@ const userSchema = new mongoose.Schema(
       type: String,
       require: true,
     },
+
+    profilePic: {
+      picUrl: {
+        type: String,
+        require: true,
+      },
+      cloudinary_id: {
+        type: String,
+        require: true,
+      },
+    },
+
+    joinedDate: {
+      type: String,
+      require: true,
+    },
+    updateDate: {
+      type: String,
+      require: true,
+    },
+
+
     cardsMixedArray: [objectSchema],
 
     cardsData: {

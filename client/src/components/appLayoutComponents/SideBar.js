@@ -93,7 +93,7 @@ const SideBar = () => {
                 <div className={styles.linkContainer}>
                     <div className={styles.linkIconDiv}></div>
                     <div className={styles.linkDiv}>
-                        <NavLink to="/user/favorites/*" className={styles.linkText}
+                        <NavLink to="/user/favorites/logins" className={styles.linkText}
                             style={({ isActive }) =>
                                 isActive
                                     ? {

@@ -9,25 +9,26 @@ const documentsController = {
       res.status(404).json({ message: error.message });
     }
   },
+
   addDoc: async (req, res) => {
     console.log("add doc cntrl", req.body);
     const id = req.body.userId;
     const fileName = req.body.name;
     const filePath = req.file.path;
-
-    // console.log(id, fileName, filePath)
-
+    console.log(id, fileName, filePath)
     try {
+
       const cloudinaryResponse = await cloudinary.v2.uploader.upload(filePath, {
         folder: "eCrypt",
       });
-      
+
       console.log("cldnr response", cloudinaryResponse);
       const docData = {
         imageName: fileName,
         imageUrl: cloudinaryResponse.secure_url,
         cloudinary_id: cloudinaryResponse.public_id,
       };
+
       // console.log("cloudinaryResponseAdd", cloudinaryResponse);
       const dBResponse = await UserDatabase.findOneAndUpdate(
         { _id: id },
