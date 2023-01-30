@@ -34,7 +34,7 @@
     grid-template-areas:
         "cardHolderIconDiv cardHolderLabelTextDiv"
         "cardHolderIconDiv cardHolderTextDiv";
-    background-color: #F3F5F9;
+        background-color: var(--fullCard-field-container-bg);
     border-radius: 10px;
 } */
 
@@ -48,7 +48,7 @@
     grid-template-areas:
         "cardHolderIconDiv cardHolderLabelTextDiv cardVenderIconContainer  "
         "cardHolderIconDiv cardHolderTextDiv cardVenderIconContainer";
-    background-color: #F3F5F9;
+    background-color: var(--fullCard-field-container-bg);
     border-radius: 10px;
 }
 
@@ -64,6 +64,7 @@
 
 .cardHolderIcon {
     font-size: 30px;
+    color: var(--fullCard-field-icon--color);
 }
 
 .cardHolderLabelTextDiv {
@@ -94,7 +95,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: black;
+    color: var(--fullCard-field-text-font-color);
 }
 
 
@@ -143,7 +144,7 @@
     grid-template-areas:
         "cardNumberIconDiv cardNumberLabelTextDiv cardVenderIconContainer  "
         "cardNumberIconDiv cardNumberTextDiv cardVenderIconContainer";
-    background-color: #F3F5F9;
+    background-color: var(--fullCard-field-container-bg);
     border-radius: 10px;
 }
 
@@ -160,6 +161,8 @@
 
 .cardNumIcon {
     font-size: 25px;
+    color: var(--fullCard-field-icon--color);
+
 }
 
 .cardNumberLabelTextDiv {
@@ -190,7 +193,8 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: black;
+    color: var(--fullCard-field-text-font-color);
+
 }
 
 
@@ -217,7 +221,7 @@
     grid-template-areas:
         "expiryIconDiv expiryLabelTextDiv"
         "expiryIconDiv expiryTextDiv";
-    background-color: #F3F5F9;
+    background-color: var(--fullCard-field-container-bg);
     border-radius: 10px;
 }
 
@@ -233,6 +237,8 @@
 
 .expiryDateIcon {
     font-size: 25px;
+    color: var(--fullCard-field-icon--color);
+
 }
 
 
@@ -267,7 +273,8 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: black;
+    color: var(--fullCard-field-text-font-color);
+
 }
 
 /* _____________________________________________ */
@@ -292,7 +299,7 @@
     grid-template-areas:
         "cvvNumberIconDiv cvvNumberLabelTextDiv"
         "cvvNumberIconDiv cvvNumberTextDiv";
-    background-color: #F3F5F9;
+    background-color: var(--fullCard-field-container-bg);
     border-radius: 10px;
 }
 
@@ -308,6 +315,8 @@
 
 .cvvIcon {
     font-size: 22px;
+    color: var(--fullCard-field-icon--color);
+
 }
 
 .cvvNumberLabelTextDiv {
@@ -341,7 +350,8 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: black;
+    color: var(--fullCard-field-text-font-color);
+
 }
 
 
@@ -385,7 +395,7 @@
         grid-template-areas:
             "cardHolderIconDiv cardHolderLabelTextDiv"
             "cardHolderIconDiv cardHolderTextDiv";
-        background-color: #F3F5F9;
+        background-color: var(--fullCard-field-container-bg);
         border-radius: 10px;
     }
 
@@ -399,7 +409,7 @@
         grid-template-areas:
             "cardHolderIconDiv cardHolderLabelTextDiv cardVenderIconContainer  "
             "cardHolderIconDiv cardHolderTextDiv cardVenderIconContainer";
-        background-color: #F3F5F9;
+        background-color: var(--fullCard-field-container-bg);
         border-radius: 10px;
     }
 
@@ -477,7 +487,7 @@
         grid-template-areas:
             "cardNumberIconDiv cardNumberLabelTextDiv cardVenderIconContainer  "
             "cardNumberIconDiv cardNumberTextDiv cardVenderIconContainer";
-        background-color: #F3F5F9;
+        background-color: var(--fullCard-field-container-bg);
         border-radius: 10px;
     }
 
@@ -571,7 +581,7 @@
         grid-template-areas:
             "expiryIconDiv expiryLabelTextDiv"
             "expiryIconDiv expiryTextDiv";
-        background-color: #F3F5F9;
+        background-color: var(--fullCard-field-container-bg);
         border-radius: 10px;
     }
 
@@ -660,7 +670,7 @@
         grid-template-areas:
             "cvvNumberIconDiv cvvNumberLabelTextDiv"
             "cvvNumberIconDiv cvvNumberTextDiv";
-        background-color: #F3F5F9;
+        background-color: var(--fullCard-field-container-bg);
         border-radius: 10px;
     }
 

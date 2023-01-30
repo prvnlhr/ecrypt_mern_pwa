@@ -1,12 +1,13 @@
+@import "../../../variable.modules.css";
+
 .fieldWrapper {
     position: relative;
     width: 78%;
     height: 60px;
-    background-color: white;
+    background-color: var(--recent-activities-field-box-bg);
     display: flex;
     justify-content: center;
     align-items: center;
-
 
     border-radius: 15px;
     margin-top: 8px;
@@ -68,7 +69,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 12px;
     font-weight: 500;
-    color: black;
+    color: var(--recent-activity-field-label-font-color);
     margin: 0px;
     padding: 0px;
 }
@@ -122,7 +123,7 @@
     position: absolute;
     left: 10%;
     content: "";
-    background-color: black;
+    background-color: var(--recent-activity-field--before-after-line-color);
     width: 10%;
     height: 0.7px;
 }
@@ -132,7 +133,7 @@
     top: 0px;
     left: 10%;
     content: "";
-    background-color: black;
+    background-color: var(--recent-activity-field--before-after-line-color);
     width: 1px;
     height: 50%;
 }
@@ -142,7 +143,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 12px;
     font-weight: 500;
-    color: black;
+    color: var(--recent-activity-field-changedTo-font-color);
     margin: 0px;
     padding: 0px;
 }
@@ -162,7 +163,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 12px;
     font-weight: 500;
-    color: #002A9A;
+    color: var(--recent-activity-field-new-val-font-color);
     margin: 0px;
     padding: 0px;
 }

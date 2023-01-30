@@ -1,3 +1,5 @@
+@import "../../variable.modules.css";
+
 .cardWrapper {
     /* display: flex; */
     display: none;
@@ -6,7 +8,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-color: white;
+    background-color: var(--fullCard-wrapper-bg);
     padding-left: 5%;
     webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
@@ -26,7 +28,8 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-color: white;
+    background-color: var(--fullCard-wrapper-bg);
+
     padding-left: 0%;
     webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
@@ -222,7 +225,7 @@
 .titleInputDiv input {
     width: 80%;
     height: 100%;
-    border-bottom: 1px solid #7E8DA4;
+    border-bottom: none;
     border-top: none;
     border-left: none;
     border-right: none;
@@ -231,7 +234,8 @@
     font-family: "Poppins", sans-serif;
     font-size: 20px;
     font-weight: 500;
-    color: black;
+    color: var(--fullCard-field-text-font-color);
+
 }
 
 /* .titleLabelText {
@@ -260,7 +264,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #F3F5F9;
+    background-color: var(--fullCard-field-container-bg);
     border-radius: 10px;
 
 }
@@ -279,7 +283,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 18px;
     font-weight: 600;
-    color: black;
+    color: var(--fullCard-category-label-font-color);
 }
 
 .catergoryInputDiv {
@@ -395,7 +399,7 @@
     grid-template-rows: 100%;
     grid-template-areas:
         "appWebSiteIconDiv appWebsiteLabelDiv appWebsiteInputDiv";
-    background-color: #F6F6F6;
+    background-color: var(--fullCard-field-container-bg);
     border-radius: 10px;
 
 }
@@ -412,7 +416,8 @@
 
 .websiteIcon {
     font-size: 25px;
-    color: #002A9A;
+    color: var(--fullCard-field-icon--color);
+
 }
 
 .appWebsiteLabelDiv {
@@ -429,7 +434,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: 500;
-    color: black;
+    color: var(--fullCard-field-label-font-color);
 }
 
 .appWebsiteInputDiv {
@@ -442,7 +447,7 @@
 .appWebsiteInputDiv input {
     width: 80%;
     height: 80%;
-    border-bottom: 1px solid #7E8DA4;
+    border-bottom: none;
     border-top: none;
     border-left: none;
     border-right: none;
@@ -451,7 +456,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: black;
+    color: var(--fullCard-field-text-font-color);
 }
 
 .usernameWrapper {
@@ -477,7 +482,7 @@
     grid-template-areas:
         "usernameIconDiv usernameLabelDiv"
         "usernameIconDiv usernameInputDiv";
-    background-color: #F3F5F9;
+    background-color: var(--fullCard-field-container-bg);
     border-radius: 10px;
 
 
@@ -496,6 +501,8 @@
 .usernameIcon {
     width: 50%;
     height: 50%;
+    color: var(--fullCard-field-icon--color);
+
 }
 
 .usernameLabelDiv {
@@ -528,7 +535,7 @@
 .usernameInputDiv input {
     width: 80%;
     height: 80%;
-    border-bottom: 1px solid #7E8DA4;
+    border-bottom: none;
     border-top: none;
     border-left: none;
     border-right: none;
@@ -537,14 +544,14 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: black;
+    color: var(--fullCard-field-text-font-color);
 }
 
 .usernameInputDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: black;
+
 }
 
 .passwordWrapper {
@@ -570,7 +577,7 @@
     grid-template-areas:
         "passwordIconDiv passwordLabelDiv"
         "passwordIconDiv passwordInputDiv";
-    background-color: #F3F5F9;
+    background-color: var(--fullCard-field-container-bg);
     border-radius: 10px;
 
 
@@ -589,6 +596,7 @@
 .passwordIcon {
     width: 55%;
     height: 55%;
+    color: var(--fullCard-field-icon--color);
 }
 
 .passwordLabelDiv {
@@ -621,7 +629,7 @@
 .passwordInputDiv input {
     width: 80%;
     height: 80%;
-    border-bottom: 1px solid #7E8DA4;
+    border-bottom: none;
     border-top: none;
     border-left: none;
     border-right: none;
@@ -630,14 +638,14 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: black;
+    color: var(--fullCard-field-text-font-color);
+
 }
 
 .passwordInputDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: black;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
@@ -651,7 +659,6 @@
         display: flex;
         justify-content: center;
         align-items: flex-end;
-        background-color: white;
         margin-top: 14%;
         /* border: 1px solid black; */
     }
@@ -663,7 +670,6 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        background-color: white;
         padding-left: 0%;
         webkit-tap-highlight-color: transparent;
         -webkit-touch-callout: none;
@@ -829,7 +835,6 @@
         font-family: "Poppins", sans-serif;
         font-size: 20px;
         font-weight: 600;
-        color: black;
     }
 
     .categoryWrapper {
@@ -851,7 +856,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #F3F5F9;
         border-radius: 10px;
 
     }
@@ -870,7 +874,6 @@
         font-family: "Poppins", sans-serif;
         font-size: 18px;
         font-weight: 600;
-        color: black;
         margin: 0px;
         padding: 0px;
     }
@@ -924,7 +927,6 @@
         position: absolute;
         width: 150px;
         height: 200px;
-        background-color: white;
         border: unset;
         display: flex;
         flex-direction: column;
@@ -942,7 +944,6 @@
         font-family: "Poppins", sans-serif;
         font-size: 15px;
         font-weight: 500;
-        color: black;
         margin: 5% 0px 0px 0px;
         display: flex;
         justify-content: flex-start;
@@ -977,7 +978,6 @@
         grid-template-rows: 100%;
         grid-template-areas:
             "appWebSiteIconDiv appWebsiteLabelDiv appWebsiteInputDiv";
-        background-color: #F3F5F9;
         border-radius: 10px;
 
     }
@@ -1010,7 +1010,6 @@
         font-family: "Poppins", sans-serif;
         font-size: 16px;
         font-weight: 500;
-        color: black;
     }
 
     .appWebsiteInputDiv {
@@ -1023,7 +1022,7 @@
     .appWebsiteInputDiv input {
         width: 80%;
         height: 100%;
-        border-bottom: 1px solid #7E8DA4;
+        border-bottom: none;
         border-top: none;
         border-left: none;
         border-right: none;
@@ -1032,7 +1031,6 @@
         font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 500;
-        color: black;
     }
 
     .usernameWrapper {
@@ -1058,7 +1056,6 @@
         grid-template-areas:
             "usernameIconDiv usernameLabelDiv"
             "usernameIconDiv usernameInputDiv";
-        background-color: #F3F5F9;
         border-radius: 10px;
 
 
@@ -1111,7 +1108,7 @@
     .usernameInputDiv input {
         width: 80%;
         height: 100%;
-        border-bottom: 1px solid #7E8DA4;
+        border-bottom: none;
         border-top: none;
         border-left: none;
         border-right: none;
@@ -1120,7 +1117,6 @@
         font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 500;
-        color: black;
     }
 
 
@@ -1147,7 +1143,7 @@
         grid-template-areas:
             "passwordIconDiv passwordLabelDiv"
             "passwordIconDiv passwordInputDiv";
-        background-color: #F3F5F9;
+        background-color: var(--fullCard-field-container-bg);
         border-radius: 10px;
 
 
@@ -1198,7 +1194,7 @@
     .passwordInputDiv input {
         width: 80%;
         height: 100%;
-        border-bottom: 1px solid #7E8DA4;
+        border-bottom: none;
         border-top: none;
         border-left: none;
         border-right: none;
@@ -1207,7 +1203,6 @@
         font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 500;
-        color: black;
     }
 
 

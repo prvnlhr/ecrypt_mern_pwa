@@ -1,3 +1,5 @@
+@import "../../variable.modules.css";
+
 .dashboardComponent {
   position: relative;
   width: 100%;
@@ -53,7 +55,8 @@
   height: 50%;
   /* border: 1px solid black; */
   border-radius: 15px;
-  background-color: white;
+  /* background-color: white; */
+  background-color: var(--overview-box-color);
   margin-left: 20px;
   margin-right: 20px;
   display: flex;
@@ -255,6 +258,18 @@
   padding-left: 5%;
 }
 
+/* .wrapperHeadingDiv::before {
+  content: "";
+  position: absolute;
+  background-color: #C7BAFD;
+  width: 13px;
+  height: 90%;
+  top: 0px;
+  left: 0px;
+  border-radius: 2px;
+  margin-left: 5%;
+} */
+
 .wrapperHeadingDiv p {
   position: relative;
   font-family: "Poppins", sans-serif;
@@ -262,13 +277,15 @@
   font-weight: 500;
   color: black;
   margin: 0px;
+  /* margin-left: 6% !important; */
+
   /* border: 1px solid black; */
 }
 
 .wrapperHeadingDiv p::after {
   content: "";
   position: absolute;
-  background-color: #002A9A;
+  background-color: var(--section-heading-underline);
   width: 40px;
   height: 3px;
   bottom: -8px;
@@ -357,7 +374,7 @@
     height: 40%;
     /* border: 1px solid black; */
     border-radius: 15px;
-    background-color: white;
+    background-color: var(--overview-box-color);
     margin-left: 8%;
     margin-right: 0px;
     display: flex;
@@ -450,7 +467,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 25px;
     font-weight: 600;
-    color: black;
+    color: var(--count-number-font-color);
     margin: 0px;
     padding: 0px;
   }
@@ -471,7 +488,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 12.5px;
     font-weight: 500;
-    color: black;
+    color: var(--count-label-font-color);
     margin: 0px;
   }
 
@@ -527,21 +544,12 @@
     font-family: "Poppins", sans-serif;
     font-size: 17px;
     font-weight: 500;
-    color: black;
+    color: var(--section-heading);
     margin: 0px;
     /* border: 1px solid black; */
   }
 
-  .wrapperHeadingDiv p::after {
-    content: "";
-    position: absolute;
-    background-color: #002A9A;
-    width: 40px;
-    height: 3px;
-    bottom: -8px;
-    left: 0px;
-    border-radius: 20px;
-  }
+
 
   /* __________________________________________________________ */
   .dashboardComponent::-webkit-scrollbar {

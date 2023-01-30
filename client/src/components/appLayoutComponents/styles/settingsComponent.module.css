@@ -424,7 +424,7 @@
     width: 90%;
     height: 80%;
     /* border: 1px solid black; */
-    background-color: #F3F5F9;
+    background-color: #E8EFFC;
     border-radius: 10px;
 }
 
@@ -488,7 +488,7 @@
     width: 90%;
     height: 80%;
     /* border: 1px solid black; */
-    background-color: #F3F5F9;
+    background-color: #E8EFFC;
     border-radius: 10px;
 }
 
@@ -506,7 +506,7 @@
     width: 95%;
     height: 80%;
     /* border: 1px solid black; */
-    background-color: #F3F5F9;
+    background-color: #E8EFFC;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -585,7 +585,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #F3F5F9;
+    background-color: #E8EFFC;
     border-radius: 10px;
     /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
     margin-right: 2%;
@@ -599,7 +599,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #F3F5F9;
+    background-color: #E8EFFC;
     border-radius: 10px;
     /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
 }
@@ -1356,8 +1356,7 @@
     .profileFirstNameDiv {
         width: 90%;
         height: 80%;
-        /* border: 1px solid black; */
-        background-color: #F3F5F9;
+        background-color: #E8EFFC;
         border-radius: 10px;
 
     }
@@ -1432,7 +1431,7 @@
         width: 90%;
         height: 80%;
         /* border: 1px solid black; */
-        background-color: #F3F5F9;
+        background-color: #E8EFFC;
         border-radius: 10px;
 
     }
@@ -1451,7 +1450,7 @@
         width: 95%;
         height: 80%;
         /* border: 1px solid black; */
-        background-color: #F3F5F9;
+        background-color: #E8EFFC;
         border-radius: 10px;
         display: flex;
         flex-direction: column;
@@ -1526,7 +1525,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #F3F5F9;
+        background-color: #E8EFFC;
         border-radius: 10px;
         /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
         margin-right: 2%;
@@ -1541,7 +1540,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #F3F5F9;
+        background-color: #E8EFFC;
         border-radius: 10px;
         /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
     }

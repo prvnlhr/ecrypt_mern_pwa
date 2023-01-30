@@ -11,8 +11,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
-
-
 }
 
 body::-webkit-scrollbar {
@@ -34,8 +32,6 @@ html {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  /* border: 5px solid red; */
-  /* background-color: white; */
 
   /* JUST FOR TESTING */
   /* top: 50px; */
@@ -45,8 +41,15 @@ html {
 
   /* background: linear-gradient(180deg, #F2F9ED 0%, #E2F1F3 49.77%, #D4EDF8 100%); */
 
-  background: linear-gradient(180deg, #F2F9ED 0%, #D3EDF8 100%);
-  background: linear-gradient(180deg, #DFEDF4 33.14%, #E8F0EC 51.89%, #F7F9F6 76.37%);
+  /* background: linear-gradient(180deg, #F2F9ED 0%, #D3EDF8 100%); */
+  /* background: linear-gradient(180deg, #DFEDF4 33.14%, #E8F0EC 51.89%, #F7F9F6 76.37%); */
+  background-color: var(--app-bg);
+
+  /* background: linear-gradient(179.99deg, #AEC3CE 6.97%, rgba(177, 197, 208, 0.972857) 14.87%, rgba(198, 212, 217, 0.81) 62.31%, #DDE3E4 122.93%); */
+
+
+
+
   /* background-color: #DFEDF4; */
 }
 

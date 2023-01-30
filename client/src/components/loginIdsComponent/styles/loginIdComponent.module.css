@@ -1,3 +1,5 @@
+@import "../../variable.modules.css";
+
 .loginInWrapper {
   position: relative;
   display: grid;
@@ -12,9 +14,9 @@
   aspect-ratio: 3.73/1 !important;
   border-radius: 12px;
   margin: 15px 15px 15px 15px;
-  background-color: var(--card-bg);
+  background-color: var(--list-wrapper-bg);
   /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.075), 0 5px 5px rgba(0, 0, 0, 0.048); */
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: var(--list-wrapper-box-shadow);
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -45,6 +47,7 @@
   height: 80%;
   border-radius: 10px;
   background-color: #F3F5F9;
+  background-color: var(--list-wrapper-logo-div-bg);
 }
 
 .titleWrapper {
@@ -64,7 +67,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: black;
+  color: var(--list-wrapper-title-font-color);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis
@@ -86,7 +89,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 12px;
   font-weight: 500;
-  color: #7E8DA4;
+  color: var(--list-wrapper-username-font-color);
 }
 
 .favBtnWrapper {
@@ -116,9 +119,8 @@
     height: auto;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: var(--list-wrapper-box-shadow);
   }
-
 }
 
 /* 

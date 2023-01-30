@@ -1,11 +1,13 @@
+@import "../../variable.modules.css";
+
 .formWrapper {
     position: absolute;
     aspect-ratio: 1/1.1;
     width: 30%;
     /* height: 60%; */
-    background-color: white;
+    background-color: var(--doc-inputform-wrapper-bg);
     z-index: 99;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    box-shadow: var(--doc-inputform-wrapper-box-shadow);
     border-radius: 20px;
     display: grid;
     grid-template-columns: 100%;
@@ -18,6 +20,7 @@
     left: 0;
     right: 0;
     top: 0px;
+    border: 2px solid rgb(71, 71, 71);
 }
 
 .headerWrapper {
@@ -85,7 +88,7 @@
     align-items: center;
     box-sizing: border-box;
     /* border: 1px solid red; */
-    /* background-color: #F6F6F6; */
+    /* background-color: var(--doc-inputform-feild-bg); */
     border-radius: 25px;
 
 }
@@ -102,7 +105,7 @@
         "titleIconWrapper labelWrapper"
         "titleIconWrapper inputWrapper";
     /* border: 1px solid black; */
-    background-color: #F6F6F6;
+    background-color: var(--doc-inputform-feild-bg);
     /* background-color: #3b87eb10; */
     border-radius: 15px;
 }
@@ -165,12 +168,14 @@
     padding: 0 0 0 10px;
     box-sizing: border-box;
     caret-color: #002A9A;
+    caret-color: var(--file-name-input-caret-color);
     outline: none;
     background: transparent;
+    color: var(--file-name-input-font-color);
 }
 
 .inputField:focus {
-    border: 2px solid #002A9A;
+    /* border: 2px solid #002A9A; */
 }
 
 .buttonWrapper {
@@ -272,7 +277,7 @@ label {
     -ms-user-select: none;
     user-select: none;
     /* border: 1px solid black; */
-    background-color: #F6F6F6;
+    background-color: var(--doc-inputform-feild-bg);
     border-radius: 35px;
 }
 
@@ -281,12 +286,13 @@ label {
     aspect-ratio: 1/1;
     /* border: 1px solid black; */
     margin-bottom: 20px;
+    color: var(--upload-icon-color);
 }
 
 .fileLabelText1 {
     margin: 0px 0px 5px 0px;
     font-family: "Poppins", sans-serif;
-    color: black;
+    color: var(--doc-inputform-choose-font-color);
     font-weight: 550;
     font-size: 15px;
     letter-spacing: 0.2px;
@@ -304,7 +310,7 @@ label {
 .spanText {
     margin: 0px 0px 0px 5px;
     font-family: "Poppins", sans-serif;
-    color: #002A9A;
+    color: var(--doc-inputform-feild-supported-spantext-font-color);
     font-weight: 550;
     font-size: 11px;
     /* letter-spacing: 0.2px; */
@@ -408,9 +414,7 @@ label {
         position: absolute;
         aspect-ratio: 1/1.1;
         width: 85%;
-        background-color: white;
         z-index: 99;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
         border-radius: 10px;
         display: grid;
         grid-template-columns: 100%;

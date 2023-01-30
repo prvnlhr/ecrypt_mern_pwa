@@ -96,7 +96,7 @@ const FullContentCard = ({ showFullFavCard, setShowFullFavCard, favFullCardData 
                         <div className={styles.appWebSiteIconDiv} >
                             <Icon
                                 className={styles.websiteIcon}
-                                icon="tabler:app-window" color="#002a9a" />
+                                icon="tabler:app-window" />
                         </div>
                         <div className={styles.appWebsiteLabelDiv} >
                             <p>App / Website</p>
@@ -113,7 +113,7 @@ const FullContentCard = ({ showFullFavCard, setShowFullFavCard, favFullCardData 
                         <div className={styles.usernameIconDiv} >
                             <Icon
                                 className={styles.usernameIcon}
-                                icon="prime:user" color="#002a9a"
+                                icon="prime:user"
                             />
                         </div>
                         <div className={styles.usernameLabelDiv} >
@@ -131,7 +131,7 @@ const FullContentCard = ({ showFullFavCard, setShowFullFavCard, favFullCardData 
                         <div className={styles.passwordIconDiv} >
                             <Icon
                                 className={styles.passwordIcon}
-                                icon="fluent:password-20-regular" color="#002a9a" />
+                                icon="fluent:password-20-regular" />
                         </div>
                         <div className={styles.passwordLabelDiv} >
                             <p>PASSWORD</p>

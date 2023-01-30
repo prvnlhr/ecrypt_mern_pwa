@@ -36,9 +36,10 @@ const App = () => {
     getToken();
   }, [])
 
+  const theme = "dark";
 
   return (
-    <div className={appStyles.app} >
+    <div data-theme={theme} className={appStyles.app} >
       <Routes>
 
         {/* <Route path="/*" element={

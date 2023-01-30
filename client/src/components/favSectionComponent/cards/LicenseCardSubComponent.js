@@ -17,7 +17,7 @@ const LicenseCardSubComponent = ({ favFullCardData, setFavFullCardData }) => {
           <div className={styles.cardHolderIconDiv}>
             <Icon
               className={styles.cardHolderIcon}
-              icon="prime:user" color="#002a9a"
+              icon="prime:user"
             />
           </div>
           <div className={styles.cardHolderLabelTextDiv}>
@@ -33,7 +33,7 @@ const LicenseCardSubComponent = ({ favFullCardData, setFavFullCardData }) => {
           <div className={styles.cardNumberIconDiv}>
             <Icon
               className={styles.cardNumIcon}
-              icon="vaadin:password" color="#002a9a" />
+              icon="vaadin:password" />
           </div>
           <div className={styles.cardNumberLabelTextDiv}>
             <p>LICENSE NUMBER</p>
@@ -49,7 +49,7 @@ const LicenseCardSubComponent = ({ favFullCardData, setFavFullCardData }) => {
           <div className={styles.dobIconDiv} >
             <Icon
               className={styles.doBIcon}
-              icon="uil:calender" color="#002a9a" />
+              icon="uil:calender" />
           </div>
           <div className={styles.dobLabelTextDiv} >
             <p>DOB</p>
@@ -65,7 +65,7 @@ const LicenseCardSubComponent = ({ favFullCardData, setFavFullCardData }) => {
           <div className={styles.expiryIconDiv} >
             <Icon
               className={styles.expiryIcon}
-              icon="prime:calendar-times" color="#002a9a" />
+              icon="prime:calendar-times" />
           </div>
           <div className={styles.expiryLabelTextDiv} >
             <p>EXPIRY</p>

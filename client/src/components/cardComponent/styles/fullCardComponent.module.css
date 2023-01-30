@@ -1,12 +1,13 @@
+@import "../../variable.modules.css";
+
 .cardWrapper {
-    /* display: flex; */
     display: none;
     width: 60%;
     height: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-color: white;
+    background-color: var(--fullCard-wrapper-bg);
     padding-left: 5%;
     webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
@@ -27,7 +28,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-color: white;
+    background-color: var(--fullCard-wrapper-bg);
     padding-left: 0%;
     webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
@@ -310,6 +311,8 @@
     align-items: flex-start;
     flex-direction: column;
     padding-left: 5%;
+    border-radius: 10px;
+    box-sizing: border-box;
 }
 
 .titleLabelDiv {
@@ -351,7 +354,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: 500;
-    color: black;
+    color: var(--fullCard-field-text-font-color);
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -367,7 +370,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: 500;
-    color: black;
+    color: var(--fullCard-field-text-font-color);
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -392,7 +395,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #F3F5F9;
+    background-color: var(--fullCard-field-container-bg);
     border-radius: 10px;
 
 }
@@ -411,7 +414,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 18px;
     font-weight: 600;
-    color: black;
+    color: var(--fullCard-category-label-font-color);
 }
 
 .catergoryInputDiv {
@@ -511,6 +514,9 @@
     /* border: 1px solid red; */
 }
 
+.focusFieldStyle {
+    border: 2px solid #00299a;
+}
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 
@@ -522,7 +528,6 @@
         display: flex;
         justify-content: center;
         align-items: flex-end;
-        background-color: white;
         margin-top: 14%;
         /* border: 1px solid orange; */
     }
@@ -534,7 +539,6 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        background-color: white;
         padding-left: 0%;
         webkit-tap-highlight-color: transparent;
         -webkit-touch-callout: none;
@@ -695,8 +699,6 @@
         font-family: "Poppins", sans-serif;
         font-size: 15px;
         font-weight: 500;
-        color: #7E8DA4;
-
     }
 
     .titleInputDiv {
@@ -712,7 +714,6 @@
         font-family: "Poppins", sans-serif;
         font-size: 20px;
         font-weight: 600;
-        color: black;
     }
 
     .categoryWrapper {
@@ -734,7 +735,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #F3F5F9;
         border-radius: 10px;
 
     }
@@ -753,7 +753,6 @@
         font-family: "Poppins", sans-serif;
         font-size: 18px;
         font-weight: 600;
-        color: black;
         margin: 0px;
         padding: 0px;
     }
@@ -825,7 +824,6 @@
         font-family: "Poppins", sans-serif;
         font-size: 15px;
         font-weight: 500;
-        color: black;
         margin: 5% 0px 0px 0px;
         display: flex;
         justify-content: flex-start;
@@ -833,7 +831,6 @@
     }
 
     .inputPopUpText:hover {
-        background-color: red;
         width: 80%;
     }
 

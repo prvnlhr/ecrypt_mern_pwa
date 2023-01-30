@@ -31,7 +31,7 @@ const BankCardSubComponent = ({ favFullCardData, setFavFullCardData, }) => {
                     <div className={styles.cardHolderIconDiv}>
                         <Icon
                             className={styles.cardHolderIcon}
-                            icon="prime:user" color="#002a9a"
+                            icon="prime:user"
                         />
                     </div>
                     <div className={styles.cardHolderLabelTextDiv}>
@@ -46,7 +46,7 @@ const BankCardSubComponent = ({ favFullCardData, setFavFullCardData, }) => {
             <div className={styles.cardNumberWrapper}>
                 <div className={styles.cardNumerContainer}>
                     <div className={styles.cardNumberIconDiv}>
-                        <Icon className={styles.cardNumIcon} icon="vaadin:password" color="#002a9a" />
+                        <Icon className={styles.cardNumIcon} icon="vaadin:password" />
                     </div>
                     <div className={styles.cardNumberLabelTextDiv}>
                         <p>CARD NUMBER</p>
@@ -66,7 +66,7 @@ const BankCardSubComponent = ({ favFullCardData, setFavFullCardData, }) => {
                     <div className={styles.expiryIconDiv} >
                         <Icon
                             className={styles.expiryDateIcon}
-                            icon="prime:calendar-times" color="#002a9a" />
+                            icon="prime:calendar-times" />
                     </div>
                     <div className={styles.expiryLabelTextDiv} >
                         <p>EXPIRY</p>
@@ -81,7 +81,7 @@ const BankCardSubComponent = ({ favFullCardData, setFavFullCardData, }) => {
                     <div className={styles.cvvNumberIconDiv} >
                         <Icon
                             className={styles.cvvIcon}
-                            icon="ph:password-bold" color="#002a9a" />
+                            icon="ph:password-bold" />
                     </div>
                     <div className={styles.cvvNumberLabelTextDiv} >
                         <p>CVV</p>

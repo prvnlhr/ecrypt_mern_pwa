@@ -42,7 +42,7 @@
 .dateWrapper::after {
   position: absolute;
   content: " ";
-  background-color: #002A9A;
+  background-color: var(--headerbar-date-wrapper-after-line);
   width: 3px;
   height: 60%;
   bottom: auto;
@@ -458,7 +458,7 @@
   .dateWrapper::after {
     position: absolute;
     content: " ";
-    background-color: #002A9A;
+    background-color: var(--headerbar-date-wrapper-after-line);
     width: 2px;
     height: 40%;
     bottom: auto;
@@ -495,7 +495,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 12px;
     font-weight: 500;
-    color: #002A9A;
+    color: var(--headerbar-month-font-color);
     margin: 0px;
     padding: 0px;
   }
@@ -504,7 +504,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 12px;
     font-weight: 600;
-    color: black;
+    color: var(--headerbar-date-font-color);
     margin: 0px;
     padding: 0px;
   }
@@ -535,7 +535,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 15px;
     font-weight: 600;
-    color: #002A9A;
+    color: var(--headerbar-username-font-color);
     margin: 0px;
     padding: 0px;
   }

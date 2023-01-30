@@ -1,3 +1,5 @@
+@import "../../variable.modules.css";
+
 .cardWrapper {
     /* border: 1px solid blue; */
     width: 100%;
@@ -34,7 +36,7 @@
     grid-template-areas:
         "cardHolderIconDiv cardHolderLabelTextDiv"
         "cardHolderIconDiv cardHolderInputDiv";
-    background-color: #F3F5F9;
+    background-color: var(--fullCard-field-container-bg);
     border-radius: 10px;
 }
 
@@ -50,6 +52,7 @@
 
 .cardHolderIcon {
     font-size: 30px;
+    color: var(--fullCard-field-icon--color);
 }
 
 .cardHolderLabelTextDiv {
@@ -80,7 +83,7 @@
 .cardHolderInputActive {
     width: 95%;
     height: auto;
-    border-bottom: 1px solid #7E8DA4;
+    border-bottom: none;
     border-top: none;
     border-left: none;
     border-right: none;
@@ -90,7 +93,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: 500;
-    color: black;
+    color: var(--fullCard-field-text-font-color);
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -106,7 +109,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: 500;
-    color: black;
+    color: var(--fullCard-field-text-font-color);
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -130,7 +133,7 @@
     grid-template-areas:
         "cardNumberIconDiv cardNumberLabelTextDiv"
         "cardNumberIconDiv cardNumberInputDiv";
-    background-color: #F3F5F9;
+    background-color: var(--fullCard-field-container-bg);
     border-radius: 10px;
 }
 
@@ -147,6 +150,7 @@
 
 .cardNumIcon {
     font-size: 25px;
+    color: var(--fullCard-field-icon--color);
 }
 
 .cardNumberLabelTextDiv {
@@ -197,7 +201,7 @@
     grid-template-areas:
         "dobIconDiv dobLabelTextDiv"
         "dobIconDiv dobDateInputDiv";
-    background-color: #F3F5F9;
+    background-color: var(--fullCard-field-container-bg);
     border-radius: 10px;
 }
 
@@ -213,6 +217,7 @@
 
 .doBIcon {
     font-size: 22px;
+    color: var(--fullCard-field-icon--color);
 }
 
 
@@ -267,7 +272,7 @@
     grid-template-areas:
         "issueIconDiv issueLabelTextDiv"
         "issueIconDiv issueDateInputDiv";
-    background-color: #F3F5F9;
+    background-color: var(--fullCard-field-container-bg);
     border-radius: 10px;
 }
 
@@ -283,6 +288,7 @@
 
 .issueDateIcon {
     font-size: 22px;
+    color: var(--fullCard-field-icon--color);
 }
 
 
@@ -316,7 +322,7 @@
 .inputActive {
     width: 80%;
     height: auto;
-    border-bottom: 1px solid #7E8DA4;
+    border-bottom: none;
     border-top: none;
     border-left: none;
     border-right: none;
@@ -326,7 +332,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: 500;
-    color: black;
+    color: var(--fullCard-field-text-font-color);
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -342,10 +348,14 @@
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: 500;
-    color: black;
+    color: var(--fullCard-field-text-font-color);
     display: flex;
     justify-content: flex-start;
     align-items: center;
+}
+
+.focusFieldStyle {
+    border: 2px solid #00299a;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
@@ -386,7 +396,7 @@
         grid-template-areas:
             "cardHolderIconDiv cardHolderLabelTextDiv"
             "cardHolderIconDiv cardHolderInputDiv";
-        background-color: #F3F5F9;
+        background-color: var(--fullCard-field-container-bg);
         border-radius: 10px;
     }
 
@@ -448,7 +458,7 @@
         grid-template-areas:
             "cardNumberIconDiv cardNumberLabelTextDiv"
             "cardNumberIconDiv cardNumberInputDiv";
-        background-color: #F3F5F9;
+        background-color: var(--fullCard-field-container-bg);
         border-radius: 10px;
     }
 
@@ -518,7 +528,7 @@
         grid-template-areas:
             "dobIconDiv dobLabelTextDiv"
             "dobIconDiv dobDateInputDiv";
-        background-color: #F3F5F9;
+        background-color: var(--fullCard-field-container-bg);
         border-radius: 10px;
     }
 
@@ -588,7 +598,7 @@
         grid-template-areas:
             "issueIconDiv issueLabelTextDiv"
             "issueIconDiv issueDateInputDiv";
-        background-color: #F3F5F9;
+        background-color: var(--fullCard-field-container-bg);
         border-radius: 10px;
     }
 

@@ -1,3 +1,5 @@
+@import "../../../variable.modules.css";
+
 .cardWrapper {
   /* display: flex; */
   display: none;
@@ -6,7 +8,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: white;
+  background-color: var(--fullCard-wrapper-bg);
   padding-left: 5%;
   webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -26,7 +28,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: white;
+  background-color: var(--fullCard-wrapper-bg);
   padding-left: 0%;
   webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -204,7 +206,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 17px;
   font-weight: 500;
-  color: black;
+  color: var(--fullCard-field-text-font-color);
 }
 
 
@@ -228,7 +230,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #F3F5F9;
+  background-color: var(--fullCard-field-container-bg);
   border-radius: 10px;
 
 }
@@ -247,7 +249,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 18px;
   font-weight: 600;
-  color: black;
+  color: var(--fullCard-category-label-font-color);
 }
 
 .categoryTextDiv {
@@ -317,7 +319,7 @@
 
 .websiteIcon {
   font-size: 25px;
-  color: #002A9A;
+  color: var(--fullCard-field-icon--color);
 }
 
 .appWebsiteLabelDiv {
@@ -334,7 +336,8 @@
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 500;
-  color: black;
+  color: var(--fullCard-field-label-font-color);
+
 }
 
 .appWebsiteTextDiv {
@@ -350,7 +353,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: black;
+  color: var(--fullCard-field-text-font-color);
 }
 
 .usernameWrapper {
@@ -376,7 +379,7 @@
   grid-template-areas:
     "usernameIconDiv usernameLabelDiv"
     "usernameIconDiv usernameTextDiv";
-  background-color: #F3F5F9;
+  background-color: var(--fullCard-field-container-bg);
   border-radius: 10px;
 }
 
@@ -393,6 +396,8 @@
 .usernameIcon {
   width: 50%;
   height: 50%;
+  color: var(--fullCard-field-icon--color);
+
 }
 
 .usernameLabelDiv {
@@ -427,7 +432,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: black;
+  color: var(--fullCard-field-text-font-color);
 }
 
 .passwordWrapper {
@@ -453,7 +458,7 @@
   grid-template-areas:
     "passwordIconDiv passwordLabelDiv"
     "passwordIconDiv passwordTextDiv";
-  background-color: #F3F5F9;
+  background-color: var(--fullCard-field-container-bg);
   border-radius: 10px;
 
 
@@ -472,6 +477,7 @@
 .passwordIcon {
   width: 55%;
   height: 55%;
+  color: var(--fullCard-field-icon--color);
 }
 
 .passwordLabelDiv {
@@ -505,7 +511,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: black;
+  color: var(--fullCard-field-text-font-color);
 }
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
@@ -527,7 +533,6 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    background-color: white;
     /* border: 1px solid red; */
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     margin-bottom: 2px;
@@ -542,7 +547,6 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-color: white;
     padding-left: 0%;
     webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
@@ -727,7 +731,6 @@
     font-family: "Poppins", sans-serif;
     font-size: 20px;
     font-weight: 600;
-    color: black;
   }
 
   .categoryWrapper {
@@ -745,11 +748,9 @@
   .categoryContainer {
     width: 90%;
     height: 60%;
-    /* border: 1px solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #F3F5F9;
     border-radius: 10px;
 
   }
@@ -768,7 +769,6 @@
     font-family: "Poppins", sans-serif;
     font-size: 18px;
     font-weight: 600;
-    color: black;
     margin: 0px;
     padding: 0px;
   }
@@ -841,7 +841,6 @@
     font-family: "Poppins", sans-serif;
     font-size: 15px;
     font-weight: 500;
-    color: black;
     margin: 5% 0px 0px 0px;
     display: flex;
     justify-content: flex-start;
@@ -876,7 +875,7 @@
     grid-template-rows: 100%;
     grid-template-areas:
       "appWebSiteIconDiv appWebsiteLabelDiv appWebsiteTextDiv";
-    background-color: #F3F5F9;
+    background-color: var(--fullCard-field-container-bg);
     border-radius: 10px;
 
   }
@@ -909,7 +908,6 @@
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: 500;
-    color: black;
   }
 
   .appWebsiteTextDiv {
@@ -943,7 +941,6 @@
     grid-template-areas:
       "usernameIconDiv usernameLabelDiv"
       "usernameIconDiv usernameTextDiv";
-    background-color: #F3F5F9;
     border-radius: 10px;
 
 
@@ -1032,7 +1029,6 @@
     grid-template-areas:
       "passwordIconDiv passwordLabelDiv"
       "passwordIconDiv passwordTextDiv";
-    background-color: #F3F5F9;
     border-radius: 10px;
 
 

@@ -21,7 +21,11 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
     const [popUpOpen, setPopUpOpen] = useState(false);
     const userId = useSelector((state) => state.user._id);
 
+    const [currFocusField, setCurrFocusField] = useState(undefined);
 
+    const onFocus = (val) => {
+        setCurrFocusField(val)
+    }
 
     const [oldCardData, setOldCardData] = useState('');
 
@@ -194,7 +198,7 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
 
 
                 <div className={styles.logoTitleWrapper} >
-                    <div className={styles.logoTitleContainer} >
+                    <div className={`${styles.logoTitleContainer}`} >
 
                         <div className={styles.logoContainer} onClick={logoclicked} >
                             <div className={
@@ -208,7 +212,7 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
                         </div>
 
 
-                        <div className={styles.titleContainer} >
+                        <div className={`${styles.titleContainer} ${(currFocusField === 1 && editMode) && styles.focusFieldStyle} `} >
                             <div className={styles.titleLabelDiv}>
                                 <p className={styles.titleTitleText}>TITLE</p>
                             </div>
@@ -217,6 +221,7 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
                                     className={editMode ? styles.titleInputActive : styles.titleInputNotActive}
                                     value={fullContentCardData.title}
                                     name={"title"}
+                                    onFocus={() => onFocus(1)}
                                     onChange={handleInputValueChange}
                                     readOnly={editMode ? false : true}
                                 />
@@ -228,7 +233,7 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
                 </div>
 
                 <div className={styles.categoryWrapper} >
-                    <div className={styles.categoryContainer} >
+                    <div className={`${styles.categoryContainer} ${(currFocusField === 2 && editMode) && styles.focusFieldStyle} `} >
                         <div className={styles.categoryLabelDiv} >
                             <p>Category</p>
                         </div>
@@ -237,6 +242,7 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
                                 className={styles.categoryInput}
                                 value={fullContentCardData.category}
                                 readOnly={true}
+                                onFocus={() => onFocus(2)}
 
                             />
                             <div className={styles.popUpBtnIconDiv}>
@@ -280,6 +286,8 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
                                 editMode={editMode}
                                 fullContentCardData={fullContentCardData}
                                 setFullContentCardData={setFullContentCardData}
+                                onFocus={onFocus}
+                                currFocusField={currFocusField}
                             />
 
 
@@ -289,6 +297,8 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
                                     editMode={editMode}
                                     fullContentCardData={fullContentCardData}
                                     setFullContentCardData={setFullContentCardData}
+                                    onFocus={onFocus}
+                                    currFocusField={currFocusField}
                                 />
 
 
@@ -298,6 +308,8 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
                                         editMode={editMode}
                                         fullContentCardData={fullContentCardData}
                                         setFullContentCardData={setFullContentCardData}
+                                        onFocus={onFocus}
+                                        currFocusField={currFocusField}
                                     /> :
 
                                     null

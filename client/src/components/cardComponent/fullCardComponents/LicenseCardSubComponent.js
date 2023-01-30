@@ -2,7 +2,7 @@ import React from 'react'
 import styles from "../styles/licenseCardSubComponent.module.css"
 import { Icon } from '@iconify/react';
 
-const LicenseCardSubComponent = ({ fullContentCardData, setFullContentCardData, editMode, setEditMode }) => {
+const LicenseCardSubComponent = ({ fullContentCardData, setFullContentCardData, editMode, setEditMode, onFocus, currFocusField }) => {
 
   const handleInputValueChange = (e) => {
     setFullContentCardData({
@@ -13,11 +13,11 @@ const LicenseCardSubComponent = ({ fullContentCardData, setFullContentCardData, 
   return (
     <div className={styles.cardWrapper} >
       <div className={styles.cardHolderWrapper}>
-        <div className={styles.cardHolderContainer}>
+        <div className={`${styles.cardHolderContainer}  ${(currFocusField === 3 && editMode) && styles.focusFieldStyle} `}>
           <div className={styles.cardHolderIconDiv}>
             <Icon
               className={styles.cardHolderIcon}
-              icon="prime:user" color="#002a9a"
+              icon="prime:user"
             />
           </div>
           <div className={styles.cardHolderLabelTextDiv}>
@@ -30,16 +30,18 @@ const LicenseCardSubComponent = ({ fullContentCardData, setFullContentCardData, 
               onChange={handleInputValueChange}
               name={"cardHolder"}
               value={fullContentCardData.cardHolder}
+              onFocus={() => onFocus(3)}
+
             />
           </div>
         </div>
       </div>
       <div className={styles.cardNumberWrapper}>
-        <div className={styles.cardNumerContainer}>
+        <div className={`${styles.cardNumerContainer} ${(currFocusField === 4 && editMode) && styles.focusFieldStyle} `}>
           <div className={styles.cardNumberIconDiv}>
             <Icon
               className={styles.cardNumIcon}
-              icon="vaadin:password" color="#002a9a" />
+              icon="vaadin:password" />
           </div>
           <div className={styles.cardNumberLabelTextDiv}>
             <p>LICENSE NUMBER</p>
@@ -51,17 +53,19 @@ const LicenseCardSubComponent = ({ fullContentCardData, setFullContentCardData, 
               onChange={handleInputValueChange}
               name={"licenseNumber"}
               value={fullContentCardData.licenseNumber}
+              onFocus={() => onFocus(4)}
+
 
             />
           </div>
         </div>
       </div>
       <div className={styles.dobDateWrapper}>
-        <div className={styles.dobDateContainer}>
+        <div className={`${styles.dobDateContainer} ${(currFocusField === 5 && editMode) && styles.focusFieldStyle} `}>
           <div className={styles.dobIconDiv} >
             <Icon
               className={styles.doBIcon}
-              icon="uil:calender" color="#002a9a" />
+              icon="uil:calender" />
           </div>
           <div className={styles.dobLabelTextDiv} >
             <p>DOB</p>
@@ -73,16 +77,18 @@ const LicenseCardSubComponent = ({ fullContentCardData, setFullContentCardData, 
               onChange={handleInputValueChange}
               name={"dob"}
               value={fullContentCardData.dob}
+              onFocus={() => onFocus(5)}
+
             />
           </div>
         </div>
       </div>
       <div className={styles.expiryDateWrapper}>
-        <div className={styles.expiryDateContainer}>
+        <div className={`${styles.expiryDateContainer} ${(currFocusField === 6 && editMode) && styles.focusFieldStyle} `}>
           <div className={styles.expiryIconDiv} >
             <Icon
               className={styles.expiryIcon}
-              icon="prime:calendar-times" color="#002a9a" />
+              icon="prime:calendar-times" />
           </div>
           <div className={styles.expiryLabelTextDiv} >
             <p>EXPIRY</p>
@@ -94,7 +100,7 @@ const LicenseCardSubComponent = ({ fullContentCardData, setFullContentCardData, 
               onChange={handleInputValueChange}
               name={"expiry"}
               value={fullContentCardData.expiry}
-
+              onFocus={() => onFocus(6)}
             />
           </div>
 

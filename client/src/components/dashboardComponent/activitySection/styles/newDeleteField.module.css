@@ -1,17 +1,17 @@
+@import "../../../variable.modules.css";
+
 .fieldWrapper {
     position: relative;
     width: 78%;
     height: 50px;
-    background-color: white;
+    background-color: var(--recent-activities-field-box-bg);
     display: flex;
     justify-content: center;
     align-items: center;
-
     border-radius: 12px;
     margin-top: 8px;
     margin-right: 5.5%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-
 }
 
 .fieldContainer {
@@ -44,7 +44,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 12px;
     font-weight: 500;
-    color: black;
+    color: var(--recent-activity-field-label-font-color);
     margin: 0px;
     padding: 0px;
 }
@@ -66,7 +66,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 12px;
     font-weight: 500;
-    color: #002A9A;
+    color: var(--recent-activity-field-val-font-color);
     margin: 0px;
     padding: 0px;
 }
@@ -75,7 +75,7 @@
     position: absolute;
     left: 0px;
     content: "";
-    background-color: #002A9A;
+    background-color: var(--recent-activity-field-before-color);
     width: 2.5px;
     height: 40%;
     border-radius: 10px;

@@ -63,10 +63,10 @@ const SearchSection = () => {
 
                 {!searchMode ?
                     <div className={styles.falseSearchContainer} onClick={() => searchIconClicked()}  >
-                        <Icon icon="clarity:search-line" color="#002a9a"
+                        <Icon icon="clarity:search-line"
                             className={styles.searchIcon}
                         />
-                        <p className={styles.searchIconText}>Search</p>
+                        <p className={styles.searchText}>Search</p>
                     </div>
 
                     : (
@@ -75,7 +75,7 @@ const SearchSection = () => {
                                 <input className={styles.searchInput} />
                             </div>
                             <div className={styles.searchCancelIconDiv}>
-                                <Icon className={styles.searchCancelIcon} icon="octicon:x-16" color="#002a9a" onClick={() => searchIconClicked()} />
+                                <Icon className={styles.searchCancelIcon} icon="octicon:x-16" onClick={() => searchIconClicked()} />
                             </div>
                         </div>
                     )

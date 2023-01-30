@@ -1,141 +1,184 @@
 .cardComponent {
-    position: relative;
-    display: grid;
-    grid-template-columns: 80px minmax(0, 1fr) minmax(0, 0.2fr);
-    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
-    grid-template-areas:
-      "logoWrapper titleWrapper favBtnWrapper "
-      "logoWrapper usernameWrapper favBtnWrapper";
-    align-items: center;
-    width: 280px;
-    height: 75px;
-    aspect-ratio: 3.73/1 !important;
-    border-radius: 12px;
-    margin: 15px 15px 15px 15px;
-    background-color: var(--card-bg);
-    /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.075), 0 5px 5px rgba(0, 0, 0, 0.048); */
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    box-sizing: border-box;
-    cursor: pointer;
+  position: relative;
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr) minmax(0, 0.2fr);
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas:
+    "logoWrapper titleWrapper favBtnWrapper "
+    "logoWrapper usernameWrapper favBtnWrapper";
+  align-items: center;
+  width: 280px;
+  height: 75px;
+  aspect-ratio: 3.73/1 !important;
+  border-radius: 12px;
+  margin: 15px 15px 15px 15px;
+  background-color: var(--list-wrapper-bg);
+  box-shadow: var(--list-wrapper-box-shadow);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.cardComponentBank {
+  position: relative;
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr) minmax(0, 0.4fr) minmax(0, 0.3fr);
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas:
+    "logoWrapper titleWrapper bankCardLogoWrapper  favBtnWrapper "
+    "logoWrapper usernameWrapper bankCardLogoWrapper favBtnWrapper";
+  align-items: center;
+  width: 280px;
+  height: 75px;
+  aspect-ratio: 3.73/1 !important;
+  border-radius: 12px;
+  margin: 15px 15px 15px 15px;
+  background-color: var(--list-wrapper-bg);
+  box-shadow: var(--list-wrapper-box-shadow);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.logoWrapper {
+  grid-area: logoWrapper;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid black; */
+  width: 100%;
+  height: 100%;
+}
+
+.logoDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid rgba(128, 128, 128, 0.543); */
+  width: 80%;
+  height: 80%;
+  border-radius: 10px;
+  background-color: var(--list-wrapper-logo-div-bg)
+}
+
+.titleWrapper {
+  grid-area: titleWrapper;
+  /* border: 1px solid black; */
+  width: 90%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding-left: 5%;
+  overflow: hidden;
+
+}
+
+.titleText {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--list-wrapper-title-font-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+.usernameWrapper {
+  grid-area: usernameWrapper;
+  /* border: 1px solid black; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 5%;
+
+}
+
+.userNameText {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #7E8DA4;
+}
+
+.bankCardLogoWrapperHide {
+  grid-area: bankCardLogoWrapper;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid black; */
+  display: none;
+  justify-content: center;
+}
+
+.bankCardLogoWrapperShow {
+  grid-area: bankCardLogoWrapper;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bankCardVenderLogoDiv {
+  width: 60%;
+  /* height: 80%; */
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.favBtnWrapper {
+  grid-area: favBtnWrapper;
+  /* border: 1px solid black; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.favBtnIconDiv {
+  width: 55%;
+  aspect-ratio: 1/1;
+  /* border: 1px solid black; */
+}
+
+
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
+
+  .cardComponent {
+    width: 83% !important;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
-  
+
   .cardComponentBank {
-    position: relative;
-    display: grid;
-    grid-template-columns: 80px minmax(0, 1fr) minmax(0, 0.4fr) minmax(0, 0.3fr);
-    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
-    grid-template-areas:
-      "logoWrapper titleWrapper bankCardLogoWrapper  favBtnWrapper "
-      "logoWrapper usernameWrapper bankCardLogoWrapper favBtnWrapper";
-    align-items: center;
-    width: 280px;
-    height: 75px;
-    aspect-ratio: 3.73/1 !important;
-    border-radius: 12px;
-    margin: 15px 15px 15px 15px;
-    background-color: var(--card-bg);
-    /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.075), 0 5px 5px rgba(0, 0, 0, 0.048); */
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    box-sizing: border-box;
-    cursor: pointer;
+    width: 83% !important;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
-  
-  .logoWrapper {
-    grid-area: logoWrapper;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* border: 1px solid black; */
-    width: 100%;
-    height: 100%;
-  }
-  
-  .logoDiv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* border: 1px solid rgba(128, 128, 128, 0.543); */
-    width: 80%;
-    height: 80%;
-    border-radius: 10px;
-    background-color: #F3F5F9;
-  }
-  
-  .titleWrapper {
-    grid-area: titleWrapper;
-    /* border: 1px solid black; */
-    width: 90%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    padding-left: 5%;
-    overflow: hidden;
-  
-  }
-  
-  .titleText {
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: black;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis
-  }
-  
-  .usernameWrapper {
-    grid-area: usernameWrapper;
-    /* border: 1px solid black; */
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-left: 5%;
-  
-  }
-  
-  .userNameText {
-    font-family: "Poppins", sans-serif;
-    font-size: 12px;
-    font-weight: 500;
-    color: #7E8DA4;
-  }
-  
-  .bankCardLogoWrapperHide {
-    grid-area: bankCardLogoWrapper;
-    width: 100%;
-    height: 100%;
-    border: 1px solid black;
-    display: none;
-    justify-content: center;
-  }
-  
-  .bankCardLogoWrapperShow {
-    grid-area: bankCardLogoWrapper;
-    width: 100%;
-    height: 100%;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
+
   .bankCardVenderLogoDiv {
     width: 60%;
     /* height: 80%; */
@@ -144,51 +187,4 @@
     justify-content: center;
     align-items: center;
   }
-  
-  
-  .favBtnWrapper {
-    grid-area: favBtnWrapper;
-    /* border: 1px solid black; */
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .favBtnIconDiv {
-    width: 55%;
-    aspect-ratio: 1/1;
-    /* border: 1px solid black; */
-  }
-  
-  
-  
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  
-  
-    .cardComponent {
-      width: 83% !important;
-      height: auto;
-      margin-left: auto;
-      margin-right: auto;
-      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    }
-  
-    .cardComponentBank {
-      width: 83% !important;
-      height: auto;
-      margin-left: auto;
-      margin-right: auto;
-      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    }
-  
-    .bankCardVenderLogoDiv {
-      width: 60%;
-      /* height: 80%; */
-      /* border: 1px solid red; */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  }
+}

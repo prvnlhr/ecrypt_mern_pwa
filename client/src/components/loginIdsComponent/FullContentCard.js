@@ -34,7 +34,10 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
 
     const dispatch = useDispatch();
     const userId = useSelector((state) => state.user._id);
-
+    const [currFocusField, setCurrFocusField] = useState(undefined);
+    const onFocus = (val) => {
+        setCurrFocusField(val)
+    }
 
 
     const [popUpOpen, setPopUpOpen] = useState(false);
@@ -94,6 +97,7 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
         //> setting back oldCardData
         setFullContentCardData(oldCardData);
         setEditMode(false);
+        setCurrFocusField(undefined);
     }
     //> Save Btn clicked_________
     const saveBtnClicked = () => {
@@ -192,7 +196,9 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
 
                 <div className={styles.logoTitleWrapper} >
 
-                    <div className={styles.logoTitleContainer} >
+                    <div
+                        onFocus={() => onFocus(1)}
+                        className={`${styles.logoTitleContainer} ${currFocusField === 0 && styles.focusFieldStyle} `} >
                         <div className={styles.logoContainer} onClick={logoclicked} >
                             <div className={styles.logoDiv}>
                                 <div className={
@@ -205,7 +211,7 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
                             </div>
                         </div>
 
-                        <div className={styles.titleContainer} >
+                        <div className={`${styles.titleContainer} ${(currFocusField === 1 && editMode) && styles.focusFieldStyle}`} >
                             <div className={styles.titleLabelDiv}>
                                 <p className={styles.titleTitleText}>TITLE</p>
                             </div>
@@ -215,6 +221,7 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
                                     value={fullContentCardData.title}
                                     name={"title"}
                                     onChange={handleInputValueChange}
+                                    onFocus={() => onFocus(1)}
                                     readOnly={editMode ? false : true} />
                             </div>
                         </div>
@@ -226,7 +233,7 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
 
 
                 <div className={styles.categoryWrapper} >
-                    <div className={styles.categoryContainer} >
+                    <div className={`${styles.categoryContainer} ${(currFocusField === 2 && editMode) && styles.focusFieldStyle} `} >
                         <div className={styles.categoryLabelDiv} >
                             <p>Category</p>
                         </div>
@@ -236,6 +243,7 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
                                 className={styles.categoryInput}
                                 value={fullContentCardData.category}
                                 readOnly={editMode ? false : true}
+                                onFocus={() => onFocus(2)}
 
                             />
                             <div className={styles.popUpBtnIconDiv}>
@@ -282,11 +290,11 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
                 </div>
 
                 <div className={styles.appWebSiteWrapper} >
-                    <div className={styles.appWebSiteContainer} >
+                    <div className={`${styles.appWebSiteContainer} ${(currFocusField === 3 && editMode) && styles.focusFieldStyle}`} >
                         <div className={styles.appWebSiteIconDiv} >
                             <Icon
                                 className={styles.websiteIcon}
-                                icon="tabler:app-window" color="#002a9a" />
+                                icon="tabler:app-window" />
                         </div>
                         <div className={styles.appWebsiteLabelDiv} >
                             <p>App / Website</p>
@@ -297,6 +305,7 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
                                 value={fullContentCardData.app} readOnly={editMode ? false : true}
                                 name={"app"}
                                 onChange={handleInputValueChange}
+                                onFocus={() => onFocus(3)}
                             />
                         </div>
                     </div>
@@ -304,11 +313,11 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
                 </div>
 
                 <div className={styles.usernameWrapper} >
-                    <div className={styles.usernameContainer} >
+                    <div className={`${styles.usernameContainer} ${(currFocusField === 4 && editMode) && styles.focusFieldStyle}`} >
                         <div className={styles.usernameIconDiv} >
                             <Icon
                                 className={styles.usernameIcon}
-                                icon="prime:user" color="#002a9a"
+                                icon="prime:user"
                             />
                         </div>
                         <div className={styles.usernameLabelDiv} >
@@ -320,6 +329,7 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
                                 value={fullContentCardData.username} readOnly={editMode ? false : true}
                                 name={"username"}
                                 onChange={handleInputValueChange}
+                                onFocus={() => onFocus(4)}
                             />
                         </div>
                     </div>
@@ -327,11 +337,11 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
 
 
                 <div className={styles.passwordWrapper} >
-                    <div className={styles.passwordContainer} >
+                    <div className={` ${styles.passwordContainer} ${(currFocusField === 5 && editMode) && styles.focusFieldStyle}`} >
                         <div className={styles.passwordIconDiv} >
                             <Icon
                                 className={styles.passwordIcon}
-                                icon="fluent:password-20-regular" color="#002a9a" />
+                                icon="fluent:password-20-regular" />
                         </div>
                         <div className={styles.passwordLabelDiv} >
                             <p>PASSWORD</p>
@@ -339,6 +349,7 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
                         <div className={styles.passwordInputDiv} >
                             <input className={editMode ? styles.passwordInputActive : styles.passwordInputNotActive}
                                 name={"password"}
+                                onFocus={() => onFocus(5)}
                                 onChange={handleInputValueChange}
                                 value={fullContentCardData.password} readOnly={editMode ? false : true} />
                         </div>

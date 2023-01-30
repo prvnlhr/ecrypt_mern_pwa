@@ -107,6 +107,7 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
 
   const handleFullContentBackBtnClicked = () => {
     setShowContentCard(false);
+    setEditMode(false);
   }
 
   const handleCardClicked = (cardData) => {

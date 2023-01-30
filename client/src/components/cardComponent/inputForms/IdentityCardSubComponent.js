@@ -11,7 +11,7 @@ const IdentityCardSubComponent = (
           <div className={styles.cardHolderIconDiv}>
             <Icon
               className={styles.cardHolderIcon}
-              icon="prime:user" color="#002a9a"
+              icon="prime:user"
             />
           </div>
           <div className={styles.cardHolderLabelTextDiv}>
@@ -29,7 +29,7 @@ const IdentityCardSubComponent = (
       <div className={styles.cardNumberWrapper}>
         <div className={styles.cardNumerContainer}>
           <div className={styles.cardNumberIconDiv}>
-            <Icon className={styles.cardNumIcon} icon="vaadin:password" color="#002a9a" />
+            <Icon className={styles.cardNumIcon} icon="vaadin:password" />
           </div>
           <div className={styles.cardNumberLabelTextDiv}>
             <p>CARD NUMBER</p>
@@ -47,7 +47,7 @@ const IdentityCardSubComponent = (
       <div className={styles.dobDateWrapper}>
         <div className={styles.dobDateContainer}>
           <div className={styles.dobIconDiv} >
-            <Icon className={styles.doBIcon} icon="uil:calender" color="#002a9a" />
+            <Icon className={styles.doBIcon} icon="uil:calender" />
 
           </div>
           <div className={styles.dobLabelTextDiv} >
@@ -65,7 +65,7 @@ const IdentityCardSubComponent = (
       <div className={styles.issueDateWrapper}>
         <div className={styles.issueDateContainer}>
           <div className={styles.issueIconDiv} >
-            <Icon className={styles.issueDateIcon} icon="fluent:notepad-16-regular" color="#002a9a" />
+            <Icon className={styles.issueDateIcon} icon="fluent:notepad-16-regular" />
           </div>
           <div className={styles.issueLabelTextDiv} >
             <p>ISSUE DATE</p>

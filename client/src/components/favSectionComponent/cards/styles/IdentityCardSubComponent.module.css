@@ -1,3 +1,6 @@
+@import "../../../variable.modules.css";
+
+
 .cardWrapper {
     /* border: 1px solid blue; */
     width: 100%;
@@ -34,7 +37,7 @@
     grid-template-areas:
         "cardHolderIconDiv cardHolderLabelTextDiv"
         "cardHolderIconDiv cardHolderTextDiv";
-    background-color: #F3F5F9;
+    background-color: var(--fullCard-field-container-bg);
     border-radius: 10px;
 }
 
@@ -50,6 +53,7 @@
 
 .cardHolderIcon {
     font-size: 30px;
+    color: var(--fullCard-field-icon--color);
 }
 
 .cardHolderLabelTextDiv {
@@ -80,7 +84,8 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: black;
+    color: var(--fullCard-field-text-font-color);
+
 }
 
 /* _____________________________________________ */
@@ -101,7 +106,7 @@
     grid-template-areas:
         "cardNumberIconDiv cardNumberLabelTextDiv"
         "cardNumberIconDiv cardNumberTextDiv";
-    background-color: #F3F5F9;
+    background-color: var(--fullCard-field-container-bg);
     border-radius: 10px;
 }
 
@@ -118,6 +123,8 @@
 
 .cardNumIcon {
     font-size: 25px;
+    color: var(--fullCard-field-icon--color);
+
 }
 
 .cardNumberLabelTextDiv {
@@ -148,7 +155,8 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: black;
+    color: var(--fullCard-field-text-font-color);
+
 }
 
 
@@ -174,7 +182,8 @@
     grid-template-areas:
         "dobIconDiv dobLabelTextDiv"
         "dobIconDiv dobDateTextDiv";
-    background-color: #F3F5F9;
+    background-color: var(--fullCard-field-container-bg);
+
     border-radius: 10px;
 }
 
@@ -190,6 +199,8 @@
 
 .doBIcon {
     font-size: 22px;
+    color: var(--fullCard-field-icon--color);
+
 }
 
 
@@ -224,7 +235,8 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: black;
+    color: var(--fullCard-field-text-font-color);
+
 }
 
 
@@ -250,7 +262,8 @@
     grid-template-areas:
         "issueIconDiv issueLabelTextDiv"
         "issueIconDiv issueDateTextDiv";
-    background-color: #F3F5F9;
+    background-color: var(--fullCard-field-container-bg);
+
     border-radius: 10px;
 }
 
@@ -266,6 +279,8 @@
 
 .issueDateIcon {
     font-size: 22px;
+    color: var(--fullCard-field-icon--color);
+
 }
 
 
@@ -300,7 +315,8 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: black;
+    color: var(--fullCard-field-text-font-color);
+
 }
 
 
@@ -342,7 +358,8 @@
         grid-template-areas:
             "cardHolderIconDiv cardHolderLabelTextDiv"
             "cardHolderIconDiv cardHolderTextDiv";
-        background-color: #F3F5F9;
+        background-color: var(--fullCard-field-container-bg);
+
         border-radius: 10px;
     }
 
@@ -404,7 +421,8 @@
         grid-template-areas:
             "cardNumberIconDiv cardNumberLabelTextDiv"
             "cardNumberIconDiv cardNumberTextDiv";
-        background-color: #F3F5F9;
+        background-color: var(--fullCard-field-container-bg);
+
         border-radius: 10px;
     }
 
@@ -474,7 +492,8 @@
         grid-template-areas:
             "dobIconDiv dobLabelTextDiv"
             "dobIconDiv dobDateTextDiv";
-        background-color: #F3F5F9;
+        background-color: var(--fullCard-field-container-bg);
+
         border-radius: 10px;
     }
 
@@ -544,7 +563,8 @@
         grid-template-areas:
             "issueIconDiv issueLabelTextDiv"
             "issueIconDiv issueDateTextDiv";
-        background-color: #F3F5F9;
+        background-color: var(--fullCard-field-container-bg);
+
         border-radius: 10px;
     }
 

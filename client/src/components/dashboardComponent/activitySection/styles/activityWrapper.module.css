@@ -1,3 +1,5 @@
+@import "../../../variable.modules.css";
+
 .activityWrapperOuter {
     position: relative;
     display: flex;
@@ -70,7 +72,7 @@
 .dateContainer {
     width: 68%;
     height: 100%;
-    background-color: white;
+    background-color: var(--activity-field-date-bg);
     border-radius: 15px;
     display: flex;
     justify-content: flex-start;
@@ -78,7 +80,6 @@
     flex-direction: column;
     /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-
 }
 
 .monthDiv {
@@ -94,7 +95,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: black;
+    color: var(--activity-field-month-font-color);
     margin: 0px;
     padding: 0px;
 }
@@ -107,14 +108,13 @@
     width: 100%;
     height: 50%;
     /* border: 1px solid black; */
-
 }
 
 .dateDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 22px;
     font-weight: 500;
-    color: #002A9A;
+    color: var(--activity-field-date-font-color);
     margin: 0px;
     padding: 0px;
 }
@@ -144,7 +144,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 12px;
     font-weight: 500;
-    color: black;
+    color: var(--activity-field-time-font-color);
     margin: 0px;
     padding: 0px;
 }
@@ -166,7 +166,7 @@
 .typeContainer {
     width: 80%;
     height: 70%;
-    background-color: white;
+    background-color: var(--activity-field-type-task-bg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -175,15 +175,13 @@
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     /* border: 1px solid black; */
 
-
-
 }
 
 .typeContainer p {
     font-family: "Poppins", sans-serif;
     font-size: 12px;
     font-weight: 500;
-    color: black;
+    color: var(--type-box-font-color);
     margin: 0px;
     padding: 0px;
 }
@@ -203,7 +201,7 @@
 .taskContainer {
     width: 80%;
     height: 70%;
-    background-color: white;
+    background-color: var(--activity-field-type-task-bg);
     display: flex;
     justify-content: center;
     align-items: center;

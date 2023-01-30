@@ -1,3 +1,5 @@
+@import "../../variable.modules.css";
+
 .tabBar {
   display: none;
 }
@@ -13,7 +15,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background-color: white;
+    background-color: var(--tabbar-wrapper-bg);
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
