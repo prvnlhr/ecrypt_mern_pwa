@@ -17,20 +17,10 @@ import { diff, generateActivityData } from "../utils/ActivityDataChangeFuction"
 //> Redux
 import { editLoginIdData, deleteLoginData, toggleIsFav } from "../../redux/features/loginsId/loginsIdSlice"
 
-
 const FullContentCard = ({ fullContentCardData, setFullContentCardData, showContentCard, setShowContentCard, handleFullContentBackBtnClicked, editMode, setEditMode, handleLoginIdClicked,
     setDeleteMode,
     deleteMode
 }) => {
-
-    // const currCardDataInStore = useSelector((state) =>
-    //     fullContentCardData._id ? state.loginIds.loginsIdData.find((l) => l._id === fullContentCardData._id) : null
-    // );
-
-    // useEffect(() => {
-    //     console.table(currCardDataInStore);
-    //     handleLoginIdClicked(currCardDataInStore);
-    // }, [currCardDataInStore])
 
     const dispatch = useDispatch();
     const userId = useSelector((state) => state.user._id);

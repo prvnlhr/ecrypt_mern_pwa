@@ -15,6 +15,7 @@ import ForgotPassword from './authComponent/ForgotPassword';
 import ResetPassword from './authComponent/ResetPassword';
 
 import RequireAuth from './authComponent/RequireAuth';
+import SearchList from './searchSection/SearchList';
 
 const App = () => {
 
@@ -36,7 +37,7 @@ const App = () => {
     getToken();
   }, [])
 
-  const theme = "dark";
+  const theme = "light";
 
   return (
     <div data-theme={theme} className={appStyles.app} >

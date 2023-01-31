@@ -16,6 +16,7 @@ import { fectchActivitiesData } from "../../redux/features/activity/activitiesSl
 import { fetchFavoritesData } from "../../redux/features/favorites/favoritesSlice";
 import { fetchRecentlyAddedData } from "../../redux/features/recentlyAdded/recentlyAddedSlice"
 import styles from "./styles/contentDisplay.module.css";
+import SearchList from "../searchSection/SearchList";
 
 
 
@@ -41,7 +42,9 @@ const ContentDisplay = ({
   setShowFavDocFullScreen,
   showFavDocFullScreen,
   setFavDocFullScreenData,
-  favDocFullScreenData
+  favDocFullScreenData,
+  searchMode,
+  setSearchMode
 }) => {
 
   const dispatch = useDispatch();
@@ -61,16 +64,29 @@ const ContentDisplay = ({
     }
   }, [dispatch, userId]);
 
+  const searchState = useSelector((state) => state.search.searchResults)
+
+  const [clickedSearchItem, setClickedSearchItem] = useState(undefined);
+
+
+
   return (
 
     <div className={styles.contentDisplay}>
+
+      {searchState.length > 0 &&
+        <SearchList
+          setClickedSearchItem={setClickedSearchItem}
+          clickedSearchItem={clickedSearchItem}
+          searchMode={searchMode}
+          setSearchMode={setSearchMode}
+        />
+      }
 
       <Routes>
         <Route path="/"
           element={
             <Dashboard
-              // setHeading={setHeading}
-              // activities={activitiesArray}
               recAddDocFullScreen={recAddDocFullScreen}
               setRecAddDocFullScreen={setRecAddDocFullScreen}
               recAddDocFullScreenData={recAddDocFullScreenData}
@@ -83,10 +99,9 @@ const ContentDisplay = ({
           element={
             <LoginIdsList
               setLogoComponentShow={setLogoComponentShow}
-            // loginIds={loginIdsArray}
-            // currentId={currentId}
-            // setCurrentId={setCurrentId}
-            // setHeading={setHeading}
+              setClickedSearchItem={setClickedSearchItem}
+              clickedSearchItem={clickedSearchItem}
+
             />
           }>
         </Route>
@@ -95,10 +110,9 @@ const ContentDisplay = ({
           element={
             <CardsList
               setLogoComponentShow={setLogoComponentShow}
-            // cards={cardsArray}
-            // currentId={currentId}
-            // setCurrentId={setCurrentId}
-            // setHeading={setHeading}
+              setClickedSearchItem={setClickedSearchItem}
+              clickedSearchItem={clickedSearchItem}
+
             />
           }
         >
@@ -109,16 +123,9 @@ const ContentDisplay = ({
             <DocsList
               setDocFullScreen={setDocFullScreen}
               setFullScreenDocData={setFullScreenDocData}
+              setClickedSearchItem={setClickedSearchItem}
+              clickedSearchItem={clickedSearchItem}
 
-            // docs={docsArray}
-            // setHeading={setHeading}
-            // imageData={imageData}
-            // setImageData={setImageData}
-            // maximizeOrNot={maximizeOrNot}
-            // setMaximizeOrNot={setMaximizeOrNot}
-            // showHeaderFooter={showHeaderFooter}
-            // setShowHeaderFooter={setShowHeaderFooter}
-            // currDeletingDocId={currDeletingDocId} 
             />
           } ></Route>
 
@@ -135,7 +142,6 @@ const ContentDisplay = ({
         <Route path="/user/settings"
           element={
             <Settings
-            // setHeading={setHeading} 
             />} >
         </Route>
 

@@ -27,6 +27,12 @@
   box-shadow: var(--list-wrapper-box-shadow);
 }
 
+.cardComponentFocus {
+  border: 2px solid #002A9A;
+  box-sizing: border-box;
+}
+
+
 .cardComponentBank {
   position: relative;
   display: grid;

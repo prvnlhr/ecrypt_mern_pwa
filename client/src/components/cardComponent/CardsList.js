@@ -16,12 +16,21 @@ import FullCardComponent from "./fullCardComponents/FullCardComponent";
 import AddBtn from "../buttons/AddBtn";
 import CardInputForm from "./inputForms/CardInputForm";
 
-const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponentShow }) => {
+const CardsList = ({ setLogoComponentShow,
+  setClickedSearchItem,
+  clickedSearchItem,
+
+}) => {
+
+  useEffect(() => {
+    if (clickedSearchItem  ) {
+      const element = document.getElementById(clickedSearchItem._id);
+      element?.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [clickedSearchItem])
+
+
   const cardsArray = useSelector((state => state.cards.cardsData));
-
-
-
-
   const [bankCardData, setBankCardData] = useState({
     title: "",
     category: "Bank",
@@ -101,6 +110,34 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
     },
 
   ]
+
+  // ____________________________________________
+  // SCROLLING BUTTON HIDE__
+  const node = useRef();
+  var timeOut = null;
+  const [isScrolling, setIsScrolling] = useState(false);
+
+
+  useEffect(() => {
+    if (node.current != null) {
+      node.current.addEventListener("scroll", handleScroll);
+    }
+    return () => {
+      if (node.current != null) {
+        node.current.removeEventListener("scroll", handleScroll);
+      }
+    };
+  }, []);
+
+  const handleScroll = (e) => {
+    setIsScrolling(true);
+    clearTimeout(timeOut);
+    timeOut = setTimeout(() => {
+      setIsScrolling(false);
+    }, 200);
+  };
+  //________________________________________________
+
   const [showContentCard, setShowContentCard] = useState(false);
 
   const [fullContentCardCategory, setFullContentCardCatergory] = useState("BankCard");
@@ -171,14 +208,15 @@ const CardsList = ({ cards, currentId, setCurrentId, setHeading, setLogoComponen
     <div className={`${styles.cardList} `}>
       {
         (!showInputForm && !showContentCard) &&
-        < AddBtn formToggle={formToggle} />
+        < AddBtn formToggle={formToggle} isScrolling={isScrolling} />
       }
-      <div className={(showContentCard || showInputForm) ? styles.contentContainerClose : styles.contentContainer}>
+      <div className={(showContentCard || showInputForm) ? styles.contentContainerClose : styles.contentContainer} ref={node}>
         {cardsArray.map((card, index) => (
           <Card
             key={index}
             index={index}
             cardData={card}
+            clickedSearchItem={clickedSearchItem}
             handleCardClicked={handleCardClicked}
             setFullCardData={card.category === 'Bank' ?
               setBankCardData : card.category === 'Identity' ?

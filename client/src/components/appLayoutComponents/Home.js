@@ -18,6 +18,7 @@ import DocFullScreenRecentAct from "../dashboardComponent/recentlyAddedSection/D
 import FavDocFullScreen from "../favSectionComponent/docs/FavDocFullScreen"
 
 import { getUserDetails } from "../../redux/features/user/userSlice"
+import SearchList from "../searchSection/SearchList";
 const Home = () => {
   const location = useLocation();
 
@@ -25,7 +26,6 @@ const Home = () => {
 
   const auth = useSelector((state) => state.auth);
   const { token } = auth;
-
 
   const [open, setOpen] = useState(false);
   const [logoComponentShow, setLogoComponentShow] = useState(false);
@@ -36,10 +36,16 @@ const Home = () => {
 
   const [showFavDocFullScreen, setShowFavDocFullScreen] = useState(false);
   const [favDocFullScreenData, setFavDocFullScreenData] = useState({});
+  const [searchMode, setSearchMode] = useState(false);
 
+  useEffect(() => {
+    console.log('cahndsjdbnj');
+  }, [searchMode])
 
   return (
-    <div className={location.pathname === "/user/settings" ? homeStyles.homeComponentForSettings : homeStyles.homeComponent}>
+
+    <div className={location.pathname === "/user/settings" ? homeStyles.homeComponentForSettings : homeStyles.homeComponent} >
+
 
       <DocFullScreenRecentAct
         recAddDocFullScreen={recAddDocFullScreen}
@@ -62,37 +68,45 @@ const Home = () => {
         setFullScreenDocData={setFullScreenDocData}
       />
 
-      {location.pathname === "/user/settings"
-        ?
-        <Settings />
-        :
-        <>
-          <div className={homeStyles.sideBarSection}>
-            <SideBar />
-          </div>
+      {
+        location.pathname === "/user/settings"
+          ?
+          <Settings />
+          :
+          <>
+            <div className={homeStyles.sideBarSection}>
+              <SideBar />
+            </div>
 
-          <HeaderBar
-            open={open}
-            setOpen={setOpen}
-            node={node} />
-          <SearchSection />
-          <ContentDisplay
-            setDocFullScreen={setDocFullScreen}
-            setFullScreenDocData={setFullScreenDocData}
-            setLogoComponentShow={setLogoComponentShow}
-            recAddDocFullScreen={recAddDocFullScreen}
-            setRecAddDocFullScreen={setRecAddDocFullScreen}
-            recAddDocFullScreenData={recAddDocFullScreenData}
-            setRecAddDocFullScreenData={setRecAddDocFullScreenData}
-            setShowFavDocFullScreen={setShowFavDocFullScreen}
-            showFavDocFullScreen={showFavDocFullScreen}
-            setFavDocFullScreenData={setFavDocFullScreenData}
-            favDocFullScreenData={favDocFullScreenData}
-          />
-          <TabBar />
-        </>
+            <HeaderBar
+              open={open}
+              setOpen={setOpen}
+              node={node}
+
+            />
+            <SearchSection
+              searchMode={searchMode}
+              setSearchMode={setSearchMode}
+            />
+            <ContentDisplay
+              setDocFullScreen={setDocFullScreen}
+              setFullScreenDocData={setFullScreenDocData}
+              setLogoComponentShow={setLogoComponentShow}
+              recAddDocFullScreen={recAddDocFullScreen}
+              setRecAddDocFullScreen={setRecAddDocFullScreen}
+              recAddDocFullScreenData={recAddDocFullScreenData}
+              setRecAddDocFullScreenData={setRecAddDocFullScreenData}
+              setShowFavDocFullScreen={setShowFavDocFullScreen}
+              showFavDocFullScreen={showFavDocFullScreen}
+              setFavDocFullScreenData={setFavDocFullScreenData}
+              favDocFullScreenData={favDocFullScreenData}
+              searchMode={searchMode}
+              setSearchMode={setSearchMode}
+            />
+            <TabBar />
+          </>
       }
-    </div>
+    </div >
   );
 };
 

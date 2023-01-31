@@ -28,12 +28,6 @@
   cursor: pointer;
 }
 
-.loginInWrapperFocus {
-  border: 3px solid #00299a5b;
-  box-sizing: content-box;
-  border-radius: 15px;
-}
-
 .logoWrapper {
   display: flex;
   justify-content: center;
@@ -43,7 +37,6 @@
   width: 100%;
   height: 100%;
 }
-
 
 .logoDiv {
   display: flex;

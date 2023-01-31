@@ -1,41 +1,53 @@
-import React from "react";
-import styles from "./styles/searchList.module.css";
-import { useState } from "react";
-import SearchItem from "./SearchItem";
-const SearchList = ({
-  searchResultArray,
-  setImageData,
-  setMaximizeOrNot,
-  setShowHeaderFooter,
-}) => {
-  const [showEditButton, setEditButton] = useState(true);
-  const [currEditId, setCurrEditId] = useState(null);
-  return (
-    <>
-      <div className={styles.searchList}>
-        {/* <div className={styles.appBgDiv1}>
-          <div className={styles.section1}></div>
-          <div className={styles.section2}></div>
-          <div className={styles.section3}></div>
-        </div> */}
+import React, { useState, useEffect, createRef, useRef } from 'react'
+import { useNavigate } from "react-router-dom"
+import styles from "./styles/searchList.module.css"
+import { useSelector, useDispatch } from 'react-redux'
+import SearchCard from './SearchCard'
+import SearchDoc from './SearchDoc'
+import SearchLoginId from './SearchLoginId'
+import { clearSearchData } from "../../redux/features/search/searchSlice"
 
-        {searchResultArray.map((item) => (
-          <>
-            <SearchItem
-              item={item}
-              setImageData={setImageData}
-              setMaximizeOrNot={setMaximizeOrNot}
-              currEditId={currEditId}
-              setCurrEditId={setCurrEditId}
-              showEditButton={showEditButton}
-              setEditButton={setEditButton}
-              setShowHeaderFooter={setShowHeaderFooter}
-            />
-          </>
+const SearchList = ({ setClickedSearchItem, clickedSearchItem, searchMode, setSearchMode }) => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const searchState = useSelector((state) => state.search.searchResults)
+
+
+  const redirectToList = (item, listPath) => {
+    console.log(listPath);
+    setClickedSearchItem(item);
+    dispatch(clearSearchData());
+    setSearchMode(false);
+    navigate(listPath);
+  }
+
+  const handleSearchItemClicked = (item) => {
+    if (item.hasOwnProperty('imageName')) {
+      redirectToList(item, '/user/diplay_documents')
+    }
+    else if (item.hasOwnProperty('username')) {
+      redirectToList(item, '/user/display_loginIds')
+    }
+    else {
+      redirectToList(item, '/user/display_cards')
+    }
+  }
+
+  return (
+    <div className={styles.searchListWrapper} >
+      <div className={styles.contentContainer} >
+        {searchState.map((item, index) => (
+          item.hasOwnProperty('imageName')
+            ?
+            <SearchDoc key={item._id} item={item} setClickedSearchItem={setClickedSearchItem} handleSearchItemClicked={handleSearchItemClicked} />
+            : item.hasOwnProperty('username') ?
+              < SearchLoginId key={item._id} item={item} setClickedSearchItem={setClickedSearchItem} handleSearchItemClicked={handleSearchItemClicked} />
+              :
+              <SearchCard key={item._id} item={item} setClickedSearchItem={setClickedSearchItem} handleSearchItemClicked={handleSearchItemClicked} />
         ))}
       </div>
-    </>
-  );
-};
+    </div>
+  )
+}
 
-export default SearchList;
+export default SearchList

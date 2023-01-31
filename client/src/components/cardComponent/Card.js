@@ -18,7 +18,7 @@ import BookmarksIconFill from "../icons/BookmarksIconFill"
 
 import { logosArray } from "../logoComponents/logosData"
 
-const Card = ({ cardData, handleCardClicked, setFullCardData }) => {
+const Card = ({ cardData, handleCardClicked, setFullCardData, clickedSearchItem }) => {
 
 
   const currCardDataInStore = useSelector((state) =>
@@ -43,7 +43,9 @@ const Card = ({ cardData, handleCardClicked, setFullCardData }) => {
 
 
   return (
-    <div className={cardData.category === "Bank" ? styles.cardComponentBank : styles.cardComponent}
+    <div
+      id={cardData._id}
+      className={`${cardData.category === "Bank" ? styles.cardComponentBank : styles.cardComponent} ${clickedSearchItem?._id === cardData._id && styles.documentComponentWrapperFocus} `}
       onClick={() => {
         handleCardClicked(cardData);
       }}

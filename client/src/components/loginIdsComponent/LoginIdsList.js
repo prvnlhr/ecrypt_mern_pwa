@@ -11,8 +11,44 @@ import DeleteModal from "../modal/DeleteModal"
 import { diff, generateActivityData } from "../utils/ActivityDataChangeFuction"
 import { editLoginIdData, deleteLoginData, toggleIsFav } from "../../redux/features/loginsId/loginsIdSlice"
 
-const LoginIdsList = ({ setLogoComponentShow }) => {
+const LoginIdsList = ({ setLogoComponentShow,
+  setClickedSearchItem,
+  clickedSearchItem,
+}) => {
 
+
+  // ____________________________________________
+  // SCROLLING BUTTON HIDE__
+  const node = useRef();
+  var timeOut = null;
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useEffect(() => {
+    if (node.current != null) {
+      node.current.addEventListener("scroll", handleScroll);
+    }
+    return () => {
+      if (node.current != null) {
+        node.current.removeEventListener("scroll", handleScroll);
+      }
+    };
+  }, []);
+
+  const handleScroll = (e) => {
+    setIsScrolling(true);
+    clearTimeout(timeOut);
+    timeOut = setTimeout(() => {
+      setIsScrolling(false);
+    }, 200);
+  };
+  //________________________________________________
+
+  useEffect(() => {
+    if (clickedSearchItem) {
+      const element = document.getElementById(clickedSearchItem._id);
+      element?.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [clickedSearchItem])
 
   const dispatch = useDispatch();
 
@@ -86,18 +122,13 @@ const LoginIdsList = ({ setLogoComponentShow }) => {
         deleteMode={deleteMode}
         confirmDeleteBtnClicked={confirmDeleteBtnClicked}
       />
-      {/* {deleteMode &&
-        <DeleteModal
-          setDeleteMode={setDeleteMode}
-          deleteMode={deleteMode}
-          confirmDeleteBtnClicked={confirmDeleteBtnClicked}
-        />
-      } */}
+
       {
-        (!showInputForm && !showContentCard) &&
-        < AddBtn formToggle={formToggle} />
+        ((!showInputForm && !showContentCard)) &&
+        < AddBtn formToggle={formToggle} isScrolling={isScrolling} />
       }
-      <div className={(showContentCard || showInputForm) ? styles.contentContainerClose : styles.contentContainer}>
+
+      <div className={(showContentCard || showInputForm) ? styles.contentContainerClose : styles.contentContainer} ref={node}>
         {loginIdsArray.map((loginId, index) => (
           <LoginId
             key={loginId._id}
@@ -105,6 +136,7 @@ const LoginIdsList = ({ setLogoComponentShow }) => {
             setFullContentCardData={setFullContentCardData}
             handleLoginIdClicked={handleLoginIdClicked}
             fullContentCardData={fullContentCardData}
+            clickedSearchItem={clickedSearchItem}
           />
         ))}
       </div>

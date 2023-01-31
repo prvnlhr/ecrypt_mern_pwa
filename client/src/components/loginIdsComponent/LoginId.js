@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { logosArray } from "../logoComponents/logosData"
 import BookmarksIcon from "../icons/BookmarksIcon"
 import BookmarksIconFill from "../icons/BookmarksIconFill"
-const LoginId = ({ loginId, handleLoginIdClicked, setFullContentCardData }) => {
+const LoginId = ({ loginId, handleLoginIdClicked, setFullContentCardData, clickedSearchItem }) => {
 
   const currCardDataInStore = useSelector((state) =>
     loginId._id ? state.loginIds.loginsIdData.find((l) => l._id === loginId._id) : null
@@ -16,7 +16,8 @@ const LoginId = ({ loginId, handleLoginIdClicked, setFullContentCardData }) => {
 
   return (
     <>
-      <div className={styles.loginInWrapper}
+      <div className={`${styles.loginInWrapper} ${clickedSearchItem?._id === loginId._id && styles.loginInWrapperFocus}`}
+        id={loginId._id}
         onClick={() => {
           handleLoginIdClicked(loginId);
         }}

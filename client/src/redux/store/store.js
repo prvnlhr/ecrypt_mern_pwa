@@ -7,6 +7,8 @@ import favoritesSlice from '../features/favorites/favoritesSlice'
 import recentlyAddedSlice from "../features/recentlyAdded/recentlyAddedSlice"
 import userSlice from '../features/user/userSlice'
 import authSlice from '../features/auth/authSlice'
+import searchSlice from '../features/search/searchSlice'
+
 const store = configureStore({
     reducer: {
         loginIds: loginsIdSlice,
@@ -16,7 +18,8 @@ const store = configureStore({
         favorites: favoritesSlice,
         recentlyAdded: recentlyAddedSlice,
         auth: authSlice,
-        user: userSlice
+        user: userSlice,
+        search: searchSlice,
     },
 })
 

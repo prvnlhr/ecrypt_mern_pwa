@@ -89,8 +89,11 @@
     padding-right: 5%;
     box-sizing: border-box;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-
-
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #002A9A;
+    margin: 0px;
 }
 
 .searchCancelIconDiv {
@@ -113,6 +116,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .listTitleTextDiv {
@@ -124,9 +128,11 @@
     align-items: center;
     box-sizing: border-box;
     margin-left: 5%;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
 }
 
-.listTitleTextDiv p {
+.listTitleText {
     position: relative;
     font-family: "Poppins", sans-serif;
     font-size: 23px;
@@ -134,7 +140,11 @@
     color: var(--app-list-heading-font-color);
 }
 
-.listTitleTextDiv p::after {
+.listTitleTextSearch {
+    font-size: 18px !important;
+}
+
+.listTitleText::after {
     position: absolute;
     content: " ";
     background-color: var(--app-list-heading-font-line);
@@ -154,6 +164,8 @@
     background-color: var(--app-list-count-div-bg);
     border-radius: 5px;
     margin-left: 10px;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
 }
 
 .listCountDiv p {
@@ -183,7 +195,7 @@
     .searchInputWrapper {
         width: 50%;
         height: 100%;
-        /* border: 1px solid red; */
+        /* border: 1px solid red;s */
         display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -221,6 +233,7 @@
 
     .trueSearchContainer {
         width: 70%;
+        width: 100%;
         height: 90%;
         /* border: 1px solid black; */
         border-radius: 10px;
@@ -274,6 +287,8 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
     }
 
     .listTitleTextDiv {
@@ -285,18 +300,22 @@
         align-items: center;
         box-sizing: border-box;
         padding-left: 10%;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
     }
 
-    .listTitleTextDiv p {
+    .listTitleText {
         position: relative;
         font-family: "Poppins", sans-serif;
         font-size: 23px;
         font-weight: 500;
         color: var(--app-list-heading-font-color);
         margin-left: unset;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
     }
 
-    .listTitleTextDiv p::after {
+    .listTitleText::after {
         position: absolute;
         content: " ";
         background-color: var(--app-list-heading-font-line);

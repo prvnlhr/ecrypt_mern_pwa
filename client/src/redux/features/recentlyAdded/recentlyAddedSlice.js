@@ -15,10 +15,10 @@ export const fetchRecentlyAddedData = createAsyncThunk("recentlyAdded/fetch", as
 export const addRecentlyAddedData = createAsyncThunk("recentlyAdded/add", async ({ recentlyAddedData, userId }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
 
-
         const res = await api.addRecentlyData(userId, recentlyAddedData);
         const data = res.data.recentlyAddedArray;
         return fulfillWithValue(data.reverse());
+
     } catch (error) {
         console.log(error)
         return rejectWithValue(error);

@@ -14,26 +14,54 @@ import DocForm from "./DocForm"
 import DocInputForm from "./DocInputForm";
 
 const DocsList = ({
-  docs,
-  setHeading,
-  imageData,
-  setImageData,
-  maximizeOrNot,
-  setMaximizeOrNot,
-  showHeaderFooter,
-  setShowHeaderFooter,
-  currDeletingDocId,
   setDocFullScreen,
-  setFullScreenDocData
+  setFullScreenDocData,
+  setClickedSearchItem,
+  clickedSearchItem,
+
 }) => {
+
+  // ____________________________________________
+  // SCROLLING BUTTON HIDE__
+  const node = useRef();
+  var timeOut = null;
+  const [isScrolling, setIsScrolling] = useState(false);
+
+
+  useEffect(() => {
+    if (node.current != null) {
+      node.current.addEventListener("scroll", handleScroll);
+    }
+    return () => {
+      if (node.current != null) {
+        node.current.removeEventListener("scroll", handleScroll);
+      }
+    };
+  }, []);
+
+  const handleScroll = (e) => {
+    setIsScrolling(true);
+    clearTimeout(timeOut);
+    timeOut = setTimeout(() => {
+      setIsScrolling(false);
+    }, 200);
+  };
+  //________________________________________________
+
+
+
   const [showEditButton, setEditButton] = useState(true);
 
   const [showDocInputForm, setShowDocInputForm] = useState(false);
   const docsArray = useSelector((state) => state.docs.docsData);
 
   useEffect(() => {
-    // console.log(docsArray);
-  }, [docsArray])
+    if (clickedSearchItem) {
+      const element = document.getElementById(clickedSearchItem._id);
+      element?.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [clickedSearchItem])
+
 
   const docsData = [
     {
@@ -69,10 +97,10 @@ const DocsList = ({
           setShowDocInputForm={setShowDocInputForm}
           showDocInputForm={showDocInputForm}
         /> :
-        <AddBtn formToggle={formToggle} />
+        <AddBtn formToggle={formToggle} isScrolling={isScrolling} />
       }
 
-      <div className={styles.contentContainer}>
+      <div className={styles.contentContainer} ref={node}>
         {
           docsArray.map((doc, index) => (
             <Document
@@ -80,6 +108,7 @@ const DocsList = ({
               key={index}
               setDocFullScreen={setDocFullScreen}
               setFullScreenDocData={setFullScreenDocData}
+              clickedSearchItem={clickedSearchItem}
 
             />
           ))
