@@ -19,7 +19,8 @@ const FavCardsList = () => {
 
             <div className={showFullFavCard ? styles.contentContainerClose : styles.contentContainer} >
 
-                {!showFullFavCard &&
+                {
+                    // !showFullFavCard &&
 
                     favCardsArray.map((item) => (
                         <FavCard

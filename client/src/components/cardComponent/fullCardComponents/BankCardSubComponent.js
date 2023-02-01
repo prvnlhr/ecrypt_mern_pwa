@@ -51,7 +51,7 @@ const BankCardSubComponent = ({ fullContentCardData, setFullContentCardData, edi
                 </div>
             </div>
             <div className={styles.cardNumberWrapper}>
-                <div className={`${styles.cardNumerContainer}  ${(currFocusField === 4 && editMode) && styles.focusFieldStyle} `}>
+                <div className={`${styles.cardNumerContainer}  ${(currFocusField === 4 && editMode) && styles.focusFieldStyle} ` }>
                     <div className={styles.cardNumberIconDiv}>
                         <Icon className={styles.cardNumIcon} icon="vaadin:password" />
                     </div>
@@ -75,7 +75,7 @@ const BankCardSubComponent = ({ fullContentCardData, setFullContentCardData, edi
                 </div>
             </div>
             <div className={styles.expiryDateWrapper}>
-                <div className={`${styles.expiryDateContainer}  ${(currFocusField === 5 && editMode) && styles.focusFieldStyle} `}>
+                <div className={`${styles.expiryDateContainer}  ${(currFocusField === 5 && editMode) && styles.focusFieldStyle} ` }>
                     <div className={styles.expiryIconDiv} >
                         <Icon
                             className={styles.expiryDateIcon}
@@ -97,7 +97,7 @@ const BankCardSubComponent = ({ fullContentCardData, setFullContentCardData, edi
                 </div>
             </div>
             <div className={styles.cvvNumberWrapper}>
-                <div className={`${styles.cvvNumberContainer} ${(currFocusField === 6 && editMode) && styles.focusFieldStyle} `}>
+                <div className={`${styles.cvvNumberContainer} ${(currFocusField === 6 && editMode) && styles.focusFieldStyle} ` }>
                     <div className={styles.cvvNumberIconDiv} >
                         <Icon
                             className={styles.cvvIcon}

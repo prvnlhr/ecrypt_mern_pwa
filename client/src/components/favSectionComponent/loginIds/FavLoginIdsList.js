@@ -20,7 +20,7 @@ const FavLoginIdsList = () => {
             <div
                 className={showFullFavCard ? styles.contentContainerClose : styles.contentContainer} >
                 {
-                    !showFullFavCard &&
+                    // !showFullFavCard &&
                     favLoginsArray.map((item, index) => (
                         <FavLoginId
                             key={item._id}

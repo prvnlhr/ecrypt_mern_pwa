@@ -21,7 +21,6 @@
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    width: 280px;
     width: 45%;
     height: 75px;
     min-height: 75px;
@@ -30,7 +29,7 @@
     scroll-behavior: smooth;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     /* border: 1px solid black; */
-    margin: 15px 15px 15px 15px;
+    margin: 2% 2% 2% 2%;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
 }
@@ -178,12 +177,13 @@
 }
 
 .titleTextDivShrink {
-    width: 100%;
+    width: 90%;
     height: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
     padding-left: 5%;
+    /* border: 1px solid black; */
 }
 
 
@@ -1161,5 +1161,47 @@
         font-size: 25px;
     }
 
+
+}
+
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+    .cardWrapperShrink {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        height: 75px;
+        min-height: 75px;
+        background-color: white;
+        border-radius: 15px;
+        scroll-behavior: smooth;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        margin: 2% 2% 2% 2%;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+    }
+
+    .cardWrapperExpand {
+        position: relative;
+        margin-top: 20px;
+        width: 90%;
+        height: 90%;
+        min-height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        background-color: white;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        padding: unset;
+    }
 
 }

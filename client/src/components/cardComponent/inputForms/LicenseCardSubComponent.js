@@ -4,12 +4,12 @@ import { Icon } from '@iconify/react';
 
 const LicenseCardSubComponent = (
 
-  { licenseCardData, setLicenseCardData, handleFormDataChange }
+  { licenseCardData, setLicenseCardData, handleFormDataChange, onFocus, currFocusField }
 ) => {
   return (
     <div className={styles.cardWrapper} >
       <div className={styles.cardHolderWrapper}>
-        <div className={styles.cardHolderContainer}>
+        <div className={`${styles.cardHolderContainer}  ${(currFocusField === 3) && styles.focusFieldStyle} `}>
           <div className={styles.cardHolderIconDiv}>
             <Icon
               className={styles.cardHolderIcon}
@@ -24,12 +24,14 @@ const LicenseCardSubComponent = (
               onChange={handleFormDataChange}
               className={styles.inputActive}
               name="cardHolder"
+              onFocus={() => onFocus(3)}
+
             />
           </div>
         </div>
       </div>
       <div className={styles.cardNumberWrapper}>
-        <div className={styles.cardNumerContainer}>
+        <div className={`${styles.cardNumerContainer} ${(currFocusField === 4) && styles.focusFieldStyle} `}>
           <div className={styles.cardNumberIconDiv}>
             <Icon
               className={styles.cardNumIcon}
@@ -43,12 +45,14 @@ const LicenseCardSubComponent = (
               name="licenseNumber"
               onChange={handleFormDataChange}
               className={styles.inputActive}
+              onFocus={() => onFocus(4)}
+
             />
           </div>
         </div>
       </div>
       <div className={styles.dobDateWrapper}>
-        <div className={styles.dobDateContainer}>
+        <div className={`${styles.dobDateContainer} ${(currFocusField === 5) && styles.focusFieldStyle} `}>
           <div className={styles.dobIconDiv} >
             <Icon
               className={styles.doBIcon}
@@ -62,12 +66,14 @@ const LicenseCardSubComponent = (
               name="dob"
               className={styles.inputActive}
               onChange={handleFormDataChange}
+              onFocus={() => onFocus(5)}
+
             />
           </div>
         </div>
       </div>
       <div className={styles.expiryDateWrapper}>
-        <div className={styles.expiryDateContainer}>
+        <div className={`${styles.expiryDateContainer} ${(currFocusField === 6) && styles.focusFieldStyle} `}>
           <div className={styles.expiryIconDiv} >
             <Icon
               className={styles.expiryIcon}
@@ -82,6 +88,8 @@ const LicenseCardSubComponent = (
               onChange={handleFormDataChange}
               className={styles.inputActive}
               name="expiry"
+              onFocus={() => onFocus(6)}
+
             />
           </div>
 

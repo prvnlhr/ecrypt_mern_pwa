@@ -10,7 +10,13 @@ import CardsIcon from "../icons/CardsIcon"
 import DashboardIcon from "../icons/DashboardIcon"
 import LoginIdsIcon from "../icons/LoginIdsIcon"
 import DocsIcon from "../icons/DocsIcon"
-const TabBar = () => {
+const TabBar = (
+
+  {
+    clickedSearchItem,
+    setClickedSearchItem
+  }
+) => {
 
   const refDash = useRef();
   const refLogins = useRef();
@@ -22,7 +28,6 @@ const TabBar = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // console.log(location.pathname)
     if (indicatorRef.current !== null) {
       switch (location.pathname) {
         case "/":
@@ -64,20 +69,24 @@ const TabBar = () => {
           break;
       }
     }
-
-  }, [indicatorRef.current])
+  }, [indicatorRef.current, location?.pathname])
 
 
 
   const linkedClicked = (val) => {
+
+
+    //> before changing route, check if search item is present, if yes then, clear it
+    //> to prevent scrolling to search item when revisting the page of search item
+    if (clickedSearchItem !== undefined) {
+      setClickedSearchItem(undefined);
+    }
+
     switch (val) {
       case 1:
-
         var pos = refDash.current.offsetLeft;
         var newPos = pos + "px";
         indicatorRef.current.style.left = newPos;
-        // console.log(indicatorRef, newPos)
-
         break;
       case 2:
         var pos = refLogins.current.offsetLeft;
@@ -110,7 +119,9 @@ const TabBar = () => {
       <div className={styles.tabBarIndicator} ref={indicatorRef} ></div>
 
       <div className={styles.tabIconWrapper} ref={refDash}  >
-        <Link className={styles.tabLinks} to="/" onClick={() => linkedClicked(1)} >
+        <Link className={styles.tabLinks} to="/" onClick={() => {
+          linkedClicked(1)
+        }} >
           <div className={styles.iconsDiv} >
             <DashboardIcon />
           </div>
@@ -118,7 +129,10 @@ const TabBar = () => {
       </div>
 
       <div className={styles.tabIconWrapper} ref={refLogins}   >
-        <Link className={styles.tabLinks} to="/user/display_loginIds" onClick={() => linkedClicked(2)}>
+        <Link className={styles.tabLinks} to="/user/display_loginIds" onClick={() => {
+          linkedClicked(2)
+        }
+        }>
           <div className={styles.iconsDiv} >
             <LoginIdsIcon />
           </div>
@@ -126,7 +140,11 @@ const TabBar = () => {
       </div>
 
       <div className={styles.tabIconWrapper} ref={refCards} >
-        <Link className={styles.tabLinks} to="/user/display_cards" onClick={() => linkedClicked(3)}  >
+        <Link className={styles.tabLinks} to="/user/display_cards" onClick={() => {
+          linkedClicked(3)
+        }
+
+        }  >
           <div className={styles.iconsDiv} >
             <CardsIcon />
           </div>
@@ -134,7 +152,10 @@ const TabBar = () => {
       </div>
 
       <div className={styles.tabIconWrapper} ref={refNotes} >
-        <Link className={styles.tabLinks} to="/user/diplay_documents" onClick={() => linkedClicked(4)}>
+        <Link className={styles.tabLinks} to="/user/diplay_documents" onClick={() => {
+          linkedClicked(4)
+        }
+        }>
           <div className={styles.iconsDiv} >
             <DocsIcon />
           </div>
@@ -142,7 +163,10 @@ const TabBar = () => {
       </div>
 
       <div className={styles.tabIconWrapper} ref={refFavs}  >
-        <Link className={styles.tabLinks} to="/user/favorites/logins" onClick={() => linkedClicked(5)} >
+        <Link className={styles.tabLinks} to="/user/favorites/logins" onClick={() => {
+          linkedClicked(5)
+        }
+        } >
           <div className={styles.iconsDiv} >
             <BookmarksFillIcon />
           </div>
@@ -150,7 +174,7 @@ const TabBar = () => {
       </div>
 
 
-    </div>
+    </div >
   );
 };
 

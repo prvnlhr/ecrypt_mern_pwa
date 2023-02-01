@@ -19,7 +19,11 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
     const userId = useSelector((state) => state.user._id);
 
+    const [currFocusField, setCurrFocusField] = useState(undefined);
 
+    const onFocus = (val) => {
+        setCurrFocusField(val)
+    }
 
     const [popUpOpen, setPopUpOpen] = useState(false);
 
@@ -279,7 +283,7 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                         </div>
 
 
-                        <div className={styles.titleContainer} >
+                        <div className={`${styles.titleContainer} ${(currFocusField === 1) && styles.focusFieldStyle}`} >
                             <div className={styles.titleLabelDiv}>
                                 <p className={styles.titleTitleText}>TITLE</p>
                             </div>
@@ -291,6 +295,7 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                                 }
                                     onChange={handleFormDataChange}
                                     name="title"
+                                    onFocus={() => onFocus(1)}
                                 />
                             </div>
                         </div>
@@ -301,7 +306,7 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                 </div>
 
                 <div className={styles.categoryWrapper} >
-                    <div className={styles.categoryContainer} >
+                    <div className={`${styles.categoryContainer} ${(currFocusField === 2) && styles.focusFieldStyle} `} >
                         <div className={styles.categoryLabelDiv} >
                             <p>Category</p>
                         </div>
@@ -310,7 +315,7 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                                 className={styles.categoryInput}
                                 value={formCategory}
                                 readOnly={true}
-
+                                onFocus={() => onFocus(2)}
                             />
                             <div className={styles.popUpBtnIconDiv} onClick={() => setPopUpOpen(true)}>
                                 <Icon
@@ -346,9 +351,9 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                 <div className={styles.subCardWrapper}>
 
                     {
-                        formCategory === "Bank" ? <BankCardSubComponent bankCardData={bankCardData} setBankCardData={setBankCardData} handleFormDataChange={handleFormDataChange} currCardVender={currCardVender} />
-                            : formCategory === "Identity" ? <IdentityCardSubComponent identityCardData={identityCardData} setIdentityCardData={setIdentityCardData} handleFormDataChange={handleFormDataChange} />
-                                : formCategory === "License" ? <LicenseCardSubComponent licenseCardData={licenseCardData} setLicenseCardData={licenseCardData} handleFormDataChange={handleFormDataChange} /> : null
+                        formCategory === "Bank" ? <BankCardSubComponent currFocusField={currFocusField} onFocus={onFocus} bankCardData={bankCardData} setBankCardData={setBankCardData} handleFormDataChange={handleFormDataChange} currCardVender={currCardVender} />
+                            : formCategory === "Identity" ? <IdentityCardSubComponent currFocusField={currFocusField} onFocus={onFocus} identityCardData={identityCardData} setIdentityCardData={setIdentityCardData} handleFormDataChange={handleFormDataChange} />
+                                : formCategory === "License" ? <LicenseCardSubComponent currFocusField={currFocusField} onFocus={onFocus} licenseCardData={licenseCardData} setLicenseCardData={licenseCardData} handleFormDataChange={handleFormDataChange} /> : null
                     }
 
                 </div>

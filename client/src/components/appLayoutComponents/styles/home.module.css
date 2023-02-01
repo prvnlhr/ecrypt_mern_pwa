@@ -96,3 +96,24 @@
     /* border: 1px solid black; */
   }
 }
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+
+  .homeComponent {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid orange; */
+    display: grid;
+    grid-template-columns: minmax(0, 0.25fr) minmax(0, 1fr);
+    grid-template-columns: 10% 90%;
+    grid-template-rows: 15% 10% 75%;
+    grid-template-areas:
+      "sideBarSection headerBar"
+      "sideBarSection searchTitleSection"
+      "sideBarSection contentDisplay";
+    align-items: center;
+    overflow: hidden;
+  }
+
+}

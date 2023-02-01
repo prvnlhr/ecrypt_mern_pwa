@@ -35,12 +35,12 @@ const Home = () => {
   const [fullScreenData, setFullScreenDocData] = useState({});
 
   const [showFavDocFullScreen, setShowFavDocFullScreen] = useState(false);
+  const [clickedSearchItem, setClickedSearchItem] = useState(undefined);
   const [favDocFullScreenData, setFavDocFullScreenData] = useState({});
   const [searchMode, setSearchMode] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
-  useEffect(() => {
-    console.log('cahndsjdbnj');
-  }, [searchMode])
+
 
   return (
 
@@ -75,7 +75,10 @@ const Home = () => {
           :
           <>
             <div className={homeStyles.sideBarSection}>
-              <SideBar />
+              <SideBar
+                clickedSearchItem={clickedSearchItem}
+                setClickedSearchItem={setClickedSearchItem}
+              />
             </div>
 
             <HeaderBar
@@ -87,6 +90,10 @@ const Home = () => {
             <SearchSection
               searchMode={searchMode}
               setSearchMode={setSearchMode}
+              searchQuery={searchQuery}
+              setSearchQuery={setSearchQuery}
+              clickedSearchItem={clickedSearchItem}
+              setClickedSearchItem={setClickedSearchItem}
             />
             <ContentDisplay
               setDocFullScreen={setDocFullScreen}
@@ -102,8 +109,15 @@ const Home = () => {
               favDocFullScreenData={favDocFullScreenData}
               searchMode={searchMode}
               setSearchMode={setSearchMode}
+              searchQuery={searchQuery}
+              setSearchQuery={setSearchQuery}
+              clickedSearchItem={clickedSearchItem}
+              setClickedSearchItem={setClickedSearchItem}
             />
-            <TabBar />
+            <TabBar
+              clickedSearchItem={clickedSearchItem}
+              setClickedSearchItem={setClickedSearchItem}
+            />
           </>
       }
     </div >

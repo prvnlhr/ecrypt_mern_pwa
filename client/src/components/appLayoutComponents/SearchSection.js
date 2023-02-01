@@ -6,7 +6,11 @@ import styles from "./styles/searchSection.module.css"
 import { searchUserData, clearSearchData } from "../../redux/features/search/searchSlice"
 import { Icon } from '@iconify/react'
 
-const SearchSection = ({ searchMode, setSearchMode }) => {
+const SearchSection = ({ searchMode, setSearchMode, searchQuery,
+    setSearchQuery,
+    clickedSearchItem,
+    setClickedSearchItem
+}) => {
     const location = useLocation();
     const searchState = useSelector((state) => state.search.searchResults)
     const loginIdsArray = useSelector((state => state.loginIds.loginsIdData));
@@ -17,16 +21,11 @@ const SearchSection = ({ searchMode, setSearchMode }) => {
     const favDocsArray = useSelector((state => state.favorites.favoriteDocs));
     const favCardsArray = useSelector((state => state.favorites.favoriteCards));
 
-    // console.log(searchState)
-
     const dispatch = useDispatch();
-    const [searchQuery, setSearchQuery] = useState('');
 
     const [listCount, setListCount] = useState(0);
 
     const [listTitle, setListTitle] = useState("");
-
-
 
     useEffect(() => {
         switch (location.pathname) {
@@ -61,7 +60,7 @@ const SearchSection = ({ searchMode, setSearchMode }) => {
             default:
                 break;
         }
-    }, [location.pathname])
+    }, [location?.pathname])
 
     const searchItem = (searckKey) => {
         dispatch(searchUserData({
@@ -85,6 +84,7 @@ const SearchSection = ({ searchMode, setSearchMode }) => {
         dispatch(clearSearchData());
         setSearchMode(false);
         setSearchQuery('');
+        setClickedSearchItem(undefined);
     }
 
     return (

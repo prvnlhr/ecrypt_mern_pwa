@@ -648,6 +648,11 @@
     font-weight: 500;
 }
 
+.focusFieldStyle {
+    border: 2px solid #00299a;
+    border-radius: 15px !important;
+}
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 
     .cardWrapper {
@@ -1247,4 +1252,73 @@
             opacity: 1;
         }
     }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+
+    .cardWrapper {
+        /* display: flex; */
+        display: none;
+        width: 60%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background-color: var(--fullCard-wrapper-bg);
+        /* background-color: transparent; */
+        padding-left: 5%;
+        webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        /* border: 1px solid black; */
+    }
+
+    .cardWrapperClose {
+        /* display: flex; */
+        display: none;
+        width: 0%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background-color: var(--fullCard-wrapper-bg);
+        padding-left: 0%;
+        webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        scroll-behavior: smooth;
+
+    }
+
+    .cardContainer {
+        width: 95%;
+        height: 50%;
+        /* border: 1px solid red; */
+        /* border: 1px solid black; */
+        display: grid;
+        grid-template-columns: 10% 90%;
+        grid-template-rows: 15% 20% 15% 10% 20% 20%;
+        grid-template-rows: 10% 20% 15% 15% 20% 20%;
+        grid-template-areas:
+            "cardHeader cardHeader"
+            "logoTitleWrapper logoTitleWrapper"
+            "categoryWrapper categoryWrapper"
+            "appWebSiteWrapper appWebSiteWrapper"
+            "usernameWrapper usernameWrapper"
+            "passwordWrapper passwordWrapper";
+        box-sizing: border-box;
+        margin-top: 5%;
+        /* background-color: white; */
+    }
+
 }

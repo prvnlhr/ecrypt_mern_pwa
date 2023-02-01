@@ -109,8 +109,6 @@ const FavList = ({
             favDocFullScreenData={favDocFullScreenData}
           />} />
         </Routes>
-
-
       </div>
     </div>
   );

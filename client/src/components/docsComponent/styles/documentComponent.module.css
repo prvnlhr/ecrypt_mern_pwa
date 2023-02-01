@@ -109,6 +109,8 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    cursor: pointer;
+
 }
 
 @media screen and (max-width: 650px) {

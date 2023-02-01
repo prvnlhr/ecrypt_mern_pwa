@@ -14,8 +14,10 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
     const dispatch = useDispatch();
     const userId = useSelector((state) => state.user._id);
 
-
-
+    const [currFocusField, setCurrFocusField] = useState(undefined);
+    const onFocus = (val) => {
+        setCurrFocusField(val)
+    }
 
 
     const [formData, setformData] = useState({
@@ -118,7 +120,7 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
                 <div className={styles.logoTitleWrapper} >
 
-                    <div className={styles.logoTitleContainer} >
+                    <div className={`${styles.logoTitleContainer}  ${currFocusField === 0 && styles.focusFieldStyle} `} >
                         <div className={styles.logoContainer} onClick={handleLogoClicked} >
                             <div className={styles.logoDiv}>
                                 {formData.logoIndex !== undefined &&
@@ -127,7 +129,7 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                             </div>
                         </div>
 
-                        <div className={styles.titleContainer} >
+                        <div className={`${styles.titleContainer} ${(currFocusField === 1) && styles.focusFieldStyle}`} >
                             <div className={styles.titleLabelDiv}>
                                 <p className={styles.titleLabelText}>TITLE</p>
                             </div>
@@ -135,6 +137,7 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                                 <input onChange={handleInputValueChange}
                                     value={formData.title}
                                     name={"title"}
+                                    onFocus={() => onFocus(1)}
                                 />
                             </div>
                         </div>
@@ -146,7 +149,7 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
 
                 <div className={styles.categoryWrapper} >
-                    <div className={styles.categoryContainer} >
+                    <div className={`${styles.categoryContainer} ${(currFocusField === 2) && styles.focusFieldStyle} `} >
                         <div className={styles.categoryLabelContainer} >
                             <p>Category</p>
                         </div>
@@ -157,6 +160,7 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                                 value={formData.category}
                                 onChange={handleInputValueChange}
                                 readOnly={true}
+                                onFocus={() => onFocus(2)}
 
                             />
                             <div className={styles.popUpBtnIconDiv}>
@@ -206,7 +210,7 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                 </div>
 
                 <div className={styles.appWebSiteWrapper} >
-                    <div className={styles.appWebSiteContainer} >
+                    <div className={`${styles.appWebSiteContainer} ${(currFocusField === 3) && styles.focusFieldStyle}`} >
                         <div className={styles.appWebSiteIconDiv} >
                             <Icon
                                 className={styles.websiteIcon}
@@ -220,6 +224,7 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                                 value={formData.app}
                                 onChange={handleInputValueChange}
                                 name={"app"}
+                                onFocus={() => onFocus(3)}
                             />
                         </div>
                     </div>
@@ -227,7 +232,7 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                 </div>
 
                 <div className={styles.usernameWrapper} >
-                    <div className={styles.usernameContainer} >
+                    <div className={`${styles.usernameContainer} ${(currFocusField === 4) && styles.focusFieldStyle}`} >
                         <div className={styles.usernameIconDiv} >
                             <Icon
                                 className={styles.usernameIcon}
@@ -243,6 +248,7 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                                 // onChange={(e) => handleInputValueChange(e)}
                                 value={formData.username}
                                 name={"username"}
+                                onFocus={() => onFocus(4)}
 
                             />
                         </div>
@@ -251,7 +257,7 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
 
                 <div className={styles.passwordWrapper} >
-                    <div className={styles.passwordContainer} >
+                    <div className={` ${styles.passwordContainer} ${(currFocusField === 5) && styles.focusFieldStyle}`} >
                         <div className={styles.passwordIconDiv} >
                             <Icon
                                 className={styles.passwordIcon}
@@ -264,7 +270,7 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                                 onChange={handleInputValueChange}
                                 value={formData.password}
                                 name={"password"}
-
+                                onFocus={() => onFocus(5)}
                             />
                         </div>
                     </div></div>

@@ -44,7 +44,11 @@ const ContentDisplay = ({
   setFavDocFullScreenData,
   favDocFullScreenData,
   searchMode,
-  setSearchMode
+  setSearchMode,
+  searchQuery,
+  setSearchQuery,
+  clickedSearchItem,
+  setClickedSearchItem
 }) => {
 
   const dispatch = useDispatch();
@@ -66,9 +70,6 @@ const ContentDisplay = ({
 
   const searchState = useSelector((state) => state.search.searchResults)
 
-  const [clickedSearchItem, setClickedSearchItem] = useState(undefined);
-
-
 
   return (
 
@@ -80,6 +81,9 @@ const ContentDisplay = ({
           clickedSearchItem={clickedSearchItem}
           searchMode={searchMode}
           setSearchMode={setSearchMode}
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+
         />
       }
 

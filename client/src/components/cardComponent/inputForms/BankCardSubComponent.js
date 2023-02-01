@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styles from "../styles/bankCardSubComponent.module.css"
 import { Icon } from '@iconify/react';
-const BankCardSubComponent = ({ bankCardData, setBankCardData, handleFormDataChange, currCardVender, handleCardNumberChanged }) => {
+const BankCardSubComponent = ({ bankCardData, setBankCardData, handleFormDataChange, currCardVender, handleCardNumberChanged, onFocus, currFocusField }) => {
 
 
 
@@ -11,7 +11,7 @@ const BankCardSubComponent = ({ bankCardData, setBankCardData, handleFormDataCha
     return (
         <div className={styles.subCardWrapper} >
             <div className={styles.cardHolderWrapper}>
-                <div className={styles.cardHolderContainer}>
+                <div className={`${styles.cardHolderContainer}  ${(currFocusField === 3) && styles.focusFieldStyle} `}>
                     <div className={styles.cardHolderIconDiv}>
                         <Icon
                             className={styles.cardHolderIcon}
@@ -27,13 +27,15 @@ const BankCardSubComponent = ({ bankCardData, setBankCardData, handleFormDataCha
                             value={bankCardData.cardHolder}
                             name="cardHolder"
                             onChange={handleFormDataChange}
+                            onFocus={() => onFocus(3)}
+
                         />
                     </div>
 
                 </div>
             </div>
             <div className={styles.cardNumberWrapper}>
-                <div className={styles.cardNumerContainer}>
+                <div className={`${styles.cardNumerContainer}  ${(currFocusField === 4) && styles.focusFieldStyle} `}>
                     <div className={styles.cardNumberIconDiv}>
                         <Icon className={styles.cardNumIcon} icon="vaadin:password" />
                     </div>
@@ -48,6 +50,8 @@ const BankCardSubComponent = ({ bankCardData, setBankCardData, handleFormDataCha
                                 handleFormDataChange
 
                             }
+                            onFocus={() => onFocus(4)}
+
                         />
                     </div>
                     <div className={styles.cardVenderIconContainer}>
@@ -58,7 +62,7 @@ const BankCardSubComponent = ({ bankCardData, setBankCardData, handleFormDataCha
                 </div>
             </div>
             <div className={styles.expiryDateWrapper}>
-                <div className={styles.expiryDateContainer}>
+                <div className={`${styles.expiryDateContainer}  ${(currFocusField === 5) && styles.focusFieldStyle} `}>
                     <div className={styles.expiryIconDiv} >
                         <Icon
                             className={styles.expiryDateIcon}
@@ -72,12 +76,14 @@ const BankCardSubComponent = ({ bankCardData, setBankCardData, handleFormDataCha
                             className={styles.inputActive}
                             name="expiry"
                             onChange={handleFormDataChange}
+                            onFocus={() => onFocus(5)}
+
                         />
                     </div>
                 </div>
             </div>
             <div className={styles.cvvNumberWrapper}>
-                <div className={styles.cvvNumberContainer}>
+                <div className={`${styles.cvvNumberContainer} ${(currFocusField === 6) && styles.focusFieldStyle} `}>
                     <div className={styles.cvvNumberIconDiv} >
                         <Icon
                             className={styles.cvvIcon}
@@ -91,6 +97,7 @@ const BankCardSubComponent = ({ bankCardData, setBankCardData, handleFormDataCha
                             className={styles.inputActive}
                             name="cvv"
                             onChange={handleFormDataChange}
+                            onFocus={() => onFocus(6)}
 
                         />
                     </div>

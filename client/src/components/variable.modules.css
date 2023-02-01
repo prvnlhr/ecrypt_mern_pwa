@@ -1,5 +1,6 @@
 :root {
 
+  --app-bg: linear-gradient(180deg, #DFEDF4 33.14%, #E8F0EC 51.89%, #F7F9F6 76.37%);
 
   --app-list-heading-font-color: black;
   --app-list-heading-font-line: #002A9A;
@@ -23,8 +24,20 @@
   --tabbar-wrapper-bg: white;
 
 
+  /* _DASHBOARD */
 
-  --app-bg: linear-gradient(180deg, #DFEDF4 33.14%, #E8F0EC 51.89%, #F7F9F6 76.37%);
+  --section-heading: #002A9A;
+  --section-heading-underline: #002A9A;
+
+
+
+  --overview-box-color: white;
+  --count-label-font-color: black;
+  --count-number-font-color: black;
+
+
+
+  --recent-activities-field-box-bg: white;
   --recent-activity-field-val-font-color: #002A9A;
   --recent-activity-field-before-color: #002A9A;
   --recent-activity-field-changedTo-font-color: black;
@@ -41,7 +54,7 @@
 
   --list-wrapper-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   --list-wrapper-bg: white;
-  --list-logo-div-bg: #F3F5F9;
+  --list-wrapper-logo-div-bg: #F3F5F9;
   --list-title-font-color: black;
   --list-wrapper-username-font-color: #7E8DA4;
 
@@ -101,8 +114,10 @@
 
 
   /* _DASHBOARD */
-  --section-heading: white;
+  --section-heading: #C7BAFD;
   --section-heading-underline: #C7BAFD;
+
+
   --overview-box-color: #1F1E21;
   --count-label-font-color: white;
   --count-number-font-color: white;

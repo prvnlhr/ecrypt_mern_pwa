@@ -39,14 +39,16 @@
 .appLogo {
     background-color: white;
     border-radius: 23px;
+    border-radius: 20px;
     width: auto;
     height: 75%;
-    border: 1px solid rgba(221, 221, 221, 0.959);
+    /* border: 1px solid rgba(221, 221, 221, 0.959); */
     box-sizing: border-box;
-    box-shadow: 0px 2.00614px 8.02457px rgba(0, 0, 0, 0.09);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 }
 
 .menuSection {
+    position: relative;
     grid-area: menuSection;
     width: 100%;
     height: 100%;
@@ -56,10 +58,10 @@
     justify-content: flex-start;
     align-items: center;
     padding-top: 20px;
-
+    z-index: 1;
 }
 
-.linkContainer {
+.linkWrapper {
     width: 80%;
     height: 30px;
     /* border: 1px solid black; */
@@ -67,15 +69,43 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
+    z-index: 2;
 }
 
-.linkIconDiv {
+.sidebarIndicator {
+    position: absolute;
+    width: 80%;
+    height: 30px;
+    background-color: #AED2FF;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    margin-left: auto;
+    border-radius: 8px;
+}
+
+.linkIconContainer {
     /* border: 1px solid black; */
     width: 20%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.linkDiv {
+.iconDiv {
+    width: 70%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+
+.linkTextDiv {
     /* border: 1px solid black; */
     width: 80%;
     height: 100%;
@@ -93,4 +123,119 @@
     justify-content: flex-start;
     align-items: center;
     text-decoration: none;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+
+    .sidebarComponent {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+        background-color: white;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 15% 80%;
+        grid-template-areas:
+            "logoContainer"
+            "menuSection";
+        align-items: center;
+    }
+
+    .logoSection {
+        grid-area: logoContainer;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+        padding-left: 10%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .appLogoContainer {
+        position: relative;
+        width: 92%;
+        height: unset;
+        aspect-ratio: 1/1;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .appLogo {
+        background-color: white;
+        border-radius: 15px;
+        width: 80%;
+        height: unset;
+        aspect-ratio: 1/1 !important;
+        border: 1px solid rgba(221, 221, 221, 0.959);
+        box-sizing: border-box;
+        box-shadow: 0px 2.00614px 8.02457px rgba(0, 0, 0, 0.09);
+        /* border: 1px solid black; */
+    }
+
+    .menuSection {
+        grid-area: menuSection;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 20px;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+    }
+
+    .linkWrapper {
+        width: 75%;
+        height: unset;
+        aspect-ratio: 1/1;
+        /* border: 1px solid black; */
+        margin: 20px 0px 0px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sidebarIndicator {
+        position: absolute;
+        width: 75%;
+        height: unset;
+        aspect-ratio: 1/1;
+        background-color: #AED2FF;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        margin-left: auto;
+        border-radius: 10px;
+    }
+
+    .linkIconContainer {
+        /* border: 1px solid black; */
+        width: 80%;
+        height: 100%;
+    }
+
+    .linkTextDiv {
+        width: 80%;
+        height: 100%;
+        display: none;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+
 }

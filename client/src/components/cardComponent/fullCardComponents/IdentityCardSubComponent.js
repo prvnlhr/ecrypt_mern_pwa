@@ -12,7 +12,7 @@ const IdentityCardSubComponent = ({ fullContentCardData, setFullContentCardData,
   return (
     <div className={styles.cardWrapper} >
       <div className={styles.cardHolderWrapper}>
-        <div className={`${styles.cardHolderContainer} ${(currFocusField === 3 && editMode) && styles.focusFieldStyle}`}>
+        <div className={`${styles.cardHolderContainer} ${(currFocusField === 3 && editMode) && styles.focusFieldStyle}` }>
           <div className={styles.cardHolderIconDiv}>
             <Icon
               className={styles.cardHolderIcon}
@@ -35,7 +35,7 @@ const IdentityCardSubComponent = ({ fullContentCardData, setFullContentCardData,
         </div>
       </div>
       <div className={styles.cardNumberWrapper}>
-        <div className={`${styles.cardNumerContainer} ${(currFocusField === 4 && editMode) && styles.focusFieldStyle}`}>
+        <div className={`${styles.cardNumerContainer} ${(currFocusField === 4 && editMode) && styles.focusFieldStyle}` }>
           <div className={styles.cardNumberIconDiv}>
             <Icon className={styles.cardNumIcon} icon="vaadin:password" />
           </div>
@@ -55,7 +55,7 @@ const IdentityCardSubComponent = ({ fullContentCardData, setFullContentCardData,
         </div>
       </div>
       <div className={styles.dobDateWrapper}>
-        <div className={`${styles.dobDateContainer}  ${(currFocusField === 5 && editMode) && styles.focusFieldStyle}`}>
+        <div className={`${styles.dobDateContainer}  ${(currFocusField === 5 && editMode) && styles.focusFieldStyle}` }>
           <div className={styles.dobIconDiv} >
             <Icon className={styles.doBIcon} icon="uil:calender" />
 
@@ -77,7 +77,7 @@ const IdentityCardSubComponent = ({ fullContentCardData, setFullContentCardData,
         </div>
       </div>
       <div className={styles.issueDateWrapper}>
-        <div className={`${styles.issueDateContainer} ${(currFocusField === 6 && editMode) && styles.focusFieldStyle}`}>
+        <div className={`${styles.issueDateContainer} ${(currFocusField === 6 && editMode) && styles.focusFieldStyle}` }>
           <div className={styles.issueIconDiv} >
             <Icon className={styles.issueDateIcon} icon="fluent:notepad-16-regular" />
           </div>

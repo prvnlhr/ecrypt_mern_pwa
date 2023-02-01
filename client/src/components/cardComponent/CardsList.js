@@ -23,9 +23,12 @@ const CardsList = ({ setLogoComponentShow,
 }) => {
 
   useEffect(() => {
-    if (clickedSearchItem  ) {
+    if (clickedSearchItem) {
       const element = document.getElementById(clickedSearchItem._id);
-      element?.scrollIntoView({ behavior: 'smooth' });
+      // console.log(element, clickedSearchItem._id);
+      //> block : Defines vertical alignment
+      //> inline: Defines horizontal alignment
+      element?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
     }
   }, [clickedSearchItem])
 

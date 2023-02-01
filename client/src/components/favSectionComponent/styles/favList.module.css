@@ -27,27 +27,29 @@
 
 .loginIdsLinkWrapper {
   width: 150px;
-  height: 100%;
+  height: 60%;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 2;
-
+  /* border: 1px solid black; */
 }
 
 .cardsLinkWrapper {
   width: 150px;
-  height: 100%;
+  height: 60%;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 2;
+  /* border: 1px solid black; */
+
 }
 
 .docsLinkWrapper {
   width: 100%;
   width: 150px;
-  height: 100%;
+  height: 60%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,7 +59,7 @@
 
 .linkStyles {
   width: 100%;
-  height: 80%;
+  height: 100%;
   border-radius: 8px;
   display: flex;
   justify-content: center;
@@ -88,7 +90,7 @@
 .indicatorDiv {
   position: absolute;
   width: 150px;
-  height: 80%;
+  height: 60%;
   background-color: white;
   border-radius: 8px;
   z-index: 1;

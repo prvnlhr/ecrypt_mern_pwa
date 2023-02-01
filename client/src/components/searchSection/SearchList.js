@@ -7,15 +7,15 @@ import SearchDoc from './SearchDoc'
 import SearchLoginId from './SearchLoginId'
 import { clearSearchData } from "../../redux/features/search/searchSlice"
 
-const SearchList = ({ setClickedSearchItem, clickedSearchItem, searchMode, setSearchMode }) => {
+const SearchList = ({ setClickedSearchItem, clickedSearchItem, searchMode, setSearchMode, searchQuery,
+  setSearchQuery }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const searchState = useSelector((state) => state.search.searchResults)
 
-
-  const redirectToList = (item, listPath) => {
-    console.log(listPath);
+  const redirectToList = async (item, listPath) => {
     setClickedSearchItem(item);
+    setSearchQuery('');
     dispatch(clearSearchData());
     setSearchMode(false);
     navigate(listPath);

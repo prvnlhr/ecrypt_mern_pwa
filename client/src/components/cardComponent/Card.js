@@ -45,7 +45,7 @@ const Card = ({ cardData, handleCardClicked, setFullCardData, clickedSearchItem 
   return (
     <div
       id={cardData._id}
-      className={`${cardData.category === "Bank" ? styles.cardComponentBank : styles.cardComponent} ${clickedSearchItem?._id === cardData._id && styles.documentComponentWrapperFocus} `}
+      className={`${cardData.category === "Bank" ? styles.cardComponentBank : styles.cardComponent} ${clickedSearchItem?._id === cardData._id && styles.cardComponentFocus} `}
       onClick={() => {
         handleCardClicked(cardData);
       }}

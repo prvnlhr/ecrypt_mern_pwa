@@ -2,12 +2,12 @@ import React from 'react'
 import styles from "../styles/IdentityCardSubComponent.module.css"
 import { Icon } from '@iconify/react';
 const IdentityCardSubComponent = (
-  { identityCardData, setIdentityCardData, handleFormDataChange }
+  { identityCardData, setIdentityCardData, handleFormDataChange, onFocus, currFocusField }
 ) => {
   return (
     <div className={styles.cardWrapper} >
       <div className={styles.cardHolderWrapper}>
-        <div className={styles.cardHolderContainer}>
+        <div className={`${styles.cardHolderContainer} ${(currFocusField === 3) && styles.focusFieldStyle}`}>
           <div className={styles.cardHolderIconDiv}>
             <Icon
               className={styles.cardHolderIcon}
@@ -22,12 +22,14 @@ const IdentityCardSubComponent = (
               className={styles.inputActive}
               name="cardHolder"
               onChange={handleFormDataChange}
+              onFocus={() => onFocus(3)}
+
             />
           </div>
         </div>
       </div>
       <div className={styles.cardNumberWrapper}>
-        <div className={styles.cardNumerContainer}>
+        <div className={`${styles.cardNumerContainer} ${(currFocusField === 4) && styles.focusFieldStyle}`}>
           <div className={styles.cardNumberIconDiv}>
             <Icon className={styles.cardNumIcon} icon="vaadin:password" />
           </div>
@@ -39,13 +41,15 @@ const IdentityCardSubComponent = (
               name="cardNumber"
               className={styles.inputActive}
               onChange={handleFormDataChange}
+              onFocus={() => onFocus(4)}
+
 
             />
           </div>
         </div>
       </div>
       <div className={styles.dobDateWrapper}>
-        <div className={styles.dobDateContainer}>
+        <div className={`${styles.dobDateContainer}  ${(currFocusField === 5) && styles.focusFieldStyle}`}>
           <div className={styles.dobIconDiv} >
             <Icon className={styles.doBIcon} icon="uil:calender" />
 
@@ -58,12 +62,14 @@ const IdentityCardSubComponent = (
               name="dob"
               className={styles.inputActive}
               onChange={handleFormDataChange}
+              onFocus={() => onFocus(5)}
+
             />
           </div>
         </div>
       </div>
       <div className={styles.issueDateWrapper}>
-        <div className={styles.issueDateContainer}>
+        <div className={`${styles.issueDateContainer} ${(currFocusField === 6) && styles.focusFieldStyle}`}>
           <div className={styles.issueIconDiv} >
             <Icon className={styles.issueDateIcon} icon="fluent:notepad-16-regular" />
           </div>
@@ -75,6 +81,7 @@ const IdentityCardSubComponent = (
               name="issueDate"
               className={styles.inputActive}
               onChange={handleFormDataChange}
+              onFocus={() => onFocus(6)}
             />
           </div>
 

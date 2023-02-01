@@ -347,3 +347,17 @@
         padding: 0px;
     }
 }
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+    .searchInputWrapper {
+        width: 50%;
+        height: 80%;
+        /* border: 1spx solid red; */
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        box-sizing: border-box;
+        padding-right: 5%;
+    }
+
+}

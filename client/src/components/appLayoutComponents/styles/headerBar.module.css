@@ -762,3 +762,29 @@
 
 
 }
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+
+  .avatarContainer {
+    height: unset;
+    width: 20%;
+    aspect-ratio: 1/1;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .avatarDiv {
+    background-color: white;
+    width: unset;
+    height: 40%;
+    aspect-ratio: 1/1;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 22px;
+    box-shadow: 0px 4.02118px 20.1059px rgba(0, 0, 0, 0.08);
+  }
+}

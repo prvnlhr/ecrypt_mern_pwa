@@ -25,6 +25,42 @@
 
 
 
+.contentContainer::-webkit-scrollbar {
+    /* background-color: rgba(255, 255, 255, 0); */
+    height: 4px;
+    width: 5px;
+    display: none;
+}
+
+.contentContainer::-webkit-scrollbar-track {
+    background-color: rgb(231, 228, 228);
+    background-color: rgba(231, 228, 228, 0.062);
+
+    width: 2px;
+}
+
+.contentContainer::-webkit-scrollbar-thumb {
+    background-color: #2f89fc;
+    border-radius: 4px;
+}
+
+.contentContainerClose::-webkit-scrollbar {
+    background-color: #fff;
+    background-color: rgba(231, 228, 228, 0.062);
+    display: none;
+    height: 4px;
+    width: 5px;
+}
+
+.contentContainerClose::-webkit-scrollbar-track {
+    background-color: rgb(231, 228, 228);
+}
+
+.contentContainerClose::-webkit-scrollbar-thumb {
+    background-color: #2f89fc;
+    border-radius: 4px;
+}
+
 @media screen and (max-width: 650px) {
     .favDocsList {
         position: relative;

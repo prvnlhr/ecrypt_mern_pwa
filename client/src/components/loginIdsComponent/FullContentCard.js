@@ -173,7 +173,7 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
                         }
                         <div className={styles.favBtnDiv} onClick={favBtnClicked} >
 
-                            {fullContentCardData.isFavourite === true ?
+                            {fullContentCardData?.isFavourite === true ?
                                 < BookmarksIconFill />
                                 :
                                 <BookmarksIcon />
@@ -194,7 +194,7 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
                                 <div className={
                                     editMode ? styles.logoDivActive : styles.logoDiv
                                 }>
-                                    {fullContentCardData.logoIndex != undefined &&
+                                    {fullContentCardData?.logoIndex != undefined &&
                                         logosArray[fullContentCardData.logoIndex].logo
                                     }
                                 </div>
@@ -208,7 +208,7 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
                             <div className={styles.titleInputDiv}>
                                 <input
                                     className={editMode ? styles.titleInputActive : styles.titleInputNotActive}
-                                    value={fullContentCardData.title}
+                                    value={fullContentCardData?.title}
                                     name={"title"}
                                     onChange={handleInputValueChange}
                                     onFocus={() => onFocus(1)}
@@ -231,7 +231,7 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
                             <input
                                 list="websites"
                                 className={styles.categoryInput}
-                                value={fullContentCardData.category}
+                                value={fullContentCardData?.category}
                                 readOnly={editMode ? false : true}
                                 onFocus={() => onFocus(2)}
 
@@ -292,7 +292,7 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
                         <div className={styles.appWebSiteInputDiv} >
                             <input
                                 className={editMode ? styles.appWebSiteInputActive : styles.appWebSiteInputNotActive}
-                                value={fullContentCardData.app} readOnly={editMode ? false : true}
+                                value={fullContentCardData?.app} readOnly={editMode ? false : true}
                                 name={"app"}
                                 onChange={handleInputValueChange}
                                 onFocus={() => onFocus(3)}
@@ -316,7 +316,7 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
                         <div className={styles.usernameInputDiv} >
                             <input
                                 className={editMode ? styles.userNameInputActive : styles.userNameInputNotActive}
-                                value={fullContentCardData.username} readOnly={editMode ? false : true}
+                                value={fullContentCardData?.username} readOnly={editMode ? false : true}
                                 name={"username"}
                                 onChange={handleInputValueChange}
                                 onFocus={() => onFocus(4)}
@@ -341,7 +341,7 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
                                 name={"password"}
                                 onFocus={() => onFocus(5)}
                                 onChange={handleInputValueChange}
-                                value={fullContentCardData.password} readOnly={editMode ? false : true} />
+                                value={fullContentCardData?.password} readOnly={editMode ? false : true} />
                         </div>
                     </div></div>
             </div>

@@ -46,9 +46,13 @@ const LoginIdsList = ({ setLogoComponentShow,
   useEffect(() => {
     if (clickedSearchItem) {
       const element = document.getElementById(clickedSearchItem._id);
-      element?.scrollIntoView({ behavior: 'smooth' });
+
+      //> block : Defines vertical alignment
+      //> inline: Defines horizontal alignment
+      element?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
     }
   }, [clickedSearchItem])
+
 
   const dispatch = useDispatch();
 
@@ -98,6 +102,11 @@ const LoginIdsList = ({ setLogoComponentShow,
   }
 
   const handleLoginIdClicked = (loginIData) => {
+    //> for clearing the highlighted search item, when clicking on item
+    if (clickedSearchItem != undefined) {
+      setClickedSearchItem(undefined);
+    }
+
     if (loginIData != undefined) {
       setFullContentCardData({
         _id: loginIData._id,
@@ -141,22 +150,22 @@ const LoginIdsList = ({ setLogoComponentShow,
         ))}
       </div>
 
-      {
-        fullContentCardData &&
-        <FullContentCard
-          setLogoComponentShow={setLogoComponentShow}
-          fullContentCardData={fullContentCardData}
-          setFullContentCardData={setFullContentCardData}
-          showContentCard={showContentCard}
-          setShowContentCard={setShowContentCard}
-          handleFullContentBackBtnClicked={handleFullContentBackBtnClicked}
-          setEditMode={setEditMode}
-          editMode={editMode}
-          handleLoginIdClicked={handleLoginIdClicked}
-          setDeleteMode={setDeleteMode}
-          deleteMode={deleteMode}
-        />
-      }
+      {/* { */}
+      {/* fullContentCardData && */}
+      <FullContentCard
+        setLogoComponentShow={setLogoComponentShow}
+        fullContentCardData={fullContentCardData}
+        setFullContentCardData={setFullContentCardData}
+        showContentCard={showContentCard}
+        setShowContentCard={setShowContentCard}
+        handleFullContentBackBtnClicked={handleFullContentBackBtnClicked}
+        setEditMode={setEditMode}
+        editMode={editMode}
+        handleLoginIdClicked={handleLoginIdClicked}
+        setDeleteMode={setDeleteMode}
+        deleteMode={deleteMode}
+      />
+      {/* } */}
       <LoginIdInputForm
         showInputForm={showInputForm}
         setShowInputForm={setShowInputForm}

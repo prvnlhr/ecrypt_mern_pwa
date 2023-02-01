@@ -103,42 +103,162 @@
     align-items: flex-end;
 }
 
-.profileContainer {
+.profilePicformTag {
+    position: relative;
     width: 80%;
-    height: 80%;
-    /* border: 1px solid black; */
-    display: flex;
-}
-
-.profilePicDiv {
-    width: unset;
-    height: 65%;
-    aspect-ratio: 1/1;
+    height: 100%;
     /* border: 1px solid red; */
-    border-radius: 50px;
-    background-color: white;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
-.profilePicImg {
-    width: 80%;
+
+.profilePicContainer {
+    position: relative;
+    aspect-ratio: 1/1;
     height: 80%;
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid orange; */
+}
+
+.spinner {
+    position: absolute;
+    /* border: 1px solid black; */
+}
+
+.profilePicContainer img {
+    position: relative;
+    width: 85%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    object-fit: contain;
+    width: 90%;
+    height: 90%;
+}
+
+label {
+    position: relative;
+    position: relative;
+    height: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    object-fit: contain;
+    /* width: 90%; */
+    /* height: 90%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /* border: 1px solid #002A9A; */
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+.imgFileInput {
+    outline: none;
+    background: none;
+    /* width: 100%; */
+    /* height: 100%; */
+    /* border: 1px solid black; */
+    display: none;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0px 0px 0px 0px;
+    cursor: pointer;
+}
+
+.imgFileInput::-webkit-file-upload-button {
+    visibility: hidden;
+    width: 0px;
+    /* background: #071a52; */
+    font-family: "Poppins", sans-serif;
+    /* color: black; */
+    font-size: 13px;
+    border-radius: 5px;
+    background-color: #dae5eb;
+}
+
+.profilePicformTagEditMode {
+    border: 3px solid #00299a86;
 }
 
 .profilePicEditBtnContainer {
-    width: 30%;
+    width: 20%;
     height: 100%;
     /* border: 1px solid blue; */
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
     box-sizing: border-box;
     padding-bottom: 15%;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
+
+.iconDivEdit {
+    width: 70%;
+    aspect-ratio: 1/1;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #9DC1FA;
+    border-radius: 50%;
+}
+
+.iconDivCancel {
+    width: 70%;
+    aspect-ratio: 1/1;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #B4B3BA;
+    border-radius: 50%;
+    margin-bottom: 50%;
+}
+
+.iconDivSave {
+    width: 70%;
+    aspect-ratio: 1/1;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #58BF6F;
+    border-radius: 50%;
+}
+
+.profilePicSaveIcon {
+    font-size: 13px;
+    color: white;
+}
+
+.profilePicCancelIcon {
+    font-size: 13px;
+    color: white;
+}
+
+.profilePicEditIcon {
+    font-size: 13px;
+    color: #002A9A;
+}
+
 
 
 /* _______________________________________________ */
@@ -1045,6 +1165,7 @@
         color: #002A9A;
     }
 
+    /* _____________________________________________________________________ */
     .joinedUpdateDateWrapper {
         grid-area: joinedUpdateDateWrapper;
         width: 100%;
@@ -1690,5 +1811,180 @@
 
 
     /* ________________________________________________________________- */
+
+}
+
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+
+    /* _________________________________________________ */
+    .profilePicWrapper {
+        grid-area: profilePicWrapper;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+    }
+
+
+    .profilePicformTag {
+        position: relative;
+        width: 80%;
+        height: 100%;
+        /* border: 1px solid red; */
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+
+    .profilePicContainer {
+        position: relative;
+        width: 70%;
+        aspect-ratio: 1/1;
+        height: unset;
+        background-color: white;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border: 1px solid orange; */
+    }
+
+    .spinner {
+        position: absolute;
+        /* border: 1px solid black; */
+    }
+
+    .profilePicContainer img {
+        position: relative;
+        width: 85%;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        object-fit: contain;
+        width: 90%;
+        height: 90%;
+    }
+
+    label {
+        position: relative;
+        position: relative;
+        height: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        object-fit: contain;
+        /* width: 90%; */
+        /* height: 90%; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        /* border: 1px solid #002A9A; */
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+
+    .imgFileInput {
+        outline: none;
+        background: none;
+        /* width: 100%; */
+        /* height: 100%; */
+        /* border: 1px solid black; */
+        display: none;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        margin: 0px 0px 0px 0px;
+        cursor: pointer;
+    }
+
+    .imgFileInput::-webkit-file-upload-button {
+        visibility: hidden;
+        width: 0px;
+        /* background: #071a52; */
+        font-family: "Poppins", sans-serif;
+        /* color: black; */
+        font-size: 13px;
+        border-radius: 5px;
+        background-color: #dae5eb;
+    }
+
+    .profilePicformTagEditMode {
+        border: 3px solid #00299a86;
+    }
+
+    .profilePicEditBtnContainer {
+        width: 20%;
+        height: 100%;
+        /* border: 1px solid blue; */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        box-sizing: border-box;
+        padding-bottom: 25%;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .iconDivEdit {
+        width: 70%;
+        aspect-ratio: 1/1;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #9DC1FA;
+        border-radius: 50%;
+    }
+
+    .iconDivCancel {
+        width: 70%;
+        aspect-ratio: 1/1;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #B4B3BA;
+        border-radius: 50%;
+        margin-bottom: 50%;
+    }
+
+    .iconDivSave {
+        width: 70%;
+        aspect-ratio: 1/1;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #58BF6F;
+        border-radius: 50%;
+    }
+
+    .profilePicSaveIcon {
+        font-size: 13px;
+        color: white;
+    }
+
+    .profilePicCancelIcon {
+        font-size: 13px;
+        color: white;
+    }
+
+    .profilePicEditIcon {
+        font-size: 13px;
+        color: #002A9A;
+    }
+
+    /* _____________________________________________________________________ */
+
 
 }

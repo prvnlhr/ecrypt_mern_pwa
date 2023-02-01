@@ -58,7 +58,10 @@ const DocsList = ({
   useEffect(() => {
     if (clickedSearchItem) {
       const element = document.getElementById(clickedSearchItem._id);
-      element?.scrollIntoView({ behavior: 'smooth' });
+
+      //> block : Defines vertical alignment
+      //> inline: Defines horizontal alignment
+      element?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
     }
   }, [clickedSearchItem])
 

@@ -107,6 +107,8 @@
     align-items: flex-start;
     padding-left: 0%;
     padding-top: 0%;
+    cursor: pointer;
+
 }
 
 
@@ -135,6 +137,7 @@
     margin-right: 10px;
     /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    cursor: pointer;
 
 }
 
@@ -162,6 +165,8 @@
     margin-right: 10px;
     /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    cursor: pointer;
+
 }
 
 .saveBtnDiv p {
@@ -188,6 +193,8 @@
     margin-right: 10px;
     /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    cursor: pointer;
+
 
 }
 
@@ -213,6 +220,8 @@
     margin-right: 10px;
     /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    cursor: pointer;
+
 
 }
 
@@ -230,6 +239,7 @@
     justify-content: center;
     align-items: center;
     /* border: 1px solid black; */
+    cursor: pointer;
 }
 
 .crudIcons {
@@ -295,6 +305,8 @@
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    cursor: pointer;
+
 }
 
 .logoIcon {
@@ -841,5 +853,78 @@
         height: 100%;
         /* border: 1px solid red; */
     }
+}
 
+
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+
+    .cardWrapper {
+        display: none;
+        width: 60%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background-color: var(--fullCard-wrapper-bg);
+        padding-left: 5%;
+        webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        overflow: hidden;
+        /* border: 1px solid red; */
+        padding-top: 5%;
+    }
+
+    .cardWrapperClose {
+        display: none;
+        width: 0%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: var(--fullCard-wrapper-bg);
+        padding-left: 0%;
+        webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        scroll-behavior: smooth;
+    }
+
+    .cardContainer {
+        width: 93%;
+        height: 50%;
+        display: grid;
+        grid-template-columns: 25% minmax(0, 1fr);
+        grid-template-rows: 10% 17% 14% 14% 22% 22%;
+        grid-template-rows: 10% 18% 14% 14% 22% 22%;
+        grid-template-rows: 10% 20% 15% 55%;
+        grid-template-areas:
+            "cardHeader cardHeader"
+            "logoTitleWrapper logoTitleWrapper"
+            "categoryWrapper categoryWrapper"
+            "subcardWrapper subcardWrapper";
+        padding-bottom: 0%;
+        padding-top: 0%;
+        box-sizing: border-box;
+        /* border: 1px solid blue; */
+
+
+
+
+
+
+
+
+    }
 }
