@@ -49,6 +49,7 @@ const ContentDisplay = ({
   setSearchQuery,
   clickedSearchItem,
   setClickedSearchItem
+  , searchBarRef
 }) => {
 
   const dispatch = useDispatch();
@@ -83,7 +84,7 @@ const ContentDisplay = ({
           setSearchMode={setSearchMode}
           searchQuery={searchQuery}
           setSearchQuery={setSearchQuery}
-
+          searchBarRef={searchBarRef}
         />
       }
 

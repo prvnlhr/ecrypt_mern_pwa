@@ -216,7 +216,7 @@
     text-overflow: ellipsis
 }
 
-.titleEditBtnIconContainer {
+.titleCrudBtnContainer {
     width: 30%;
     height: 100%;
     /* border: 1px solid black; */
@@ -226,7 +226,7 @@
     padding-right: 5%;
 }
 
-.titleCrudIconDiv {
+.titleSaveBtnDiv {
     height: 70%;
     aspect-ratio: 1/1;
     /* border: 1px solid black; */

@@ -40,6 +40,8 @@ const Home = () => {
   const [searchMode, setSearchMode] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
+  const searchBarRef = useRef();
+
 
 
   return (
@@ -94,6 +96,7 @@ const Home = () => {
               setSearchQuery={setSearchQuery}
               clickedSearchItem={clickedSearchItem}
               setClickedSearchItem={setClickedSearchItem}
+              searchBarRef={searchBarRef}
             />
             <ContentDisplay
               setDocFullScreen={setDocFullScreen}
@@ -113,6 +116,7 @@ const Home = () => {
               setSearchQuery={setSearchQuery}
               clickedSearchItem={clickedSearchItem}
               setClickedSearchItem={setClickedSearchItem}
+              searchBarRef={searchBarRef}
             />
             <TabBar
               clickedSearchItem={clickedSearchItem}

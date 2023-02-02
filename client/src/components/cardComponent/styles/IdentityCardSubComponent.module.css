@@ -411,7 +411,9 @@
     }
 
     .cardHolderIcon {
-        font-size: 30px;
+        /* font-size: 30px; */
+        font-size: 2rem;
+
     }
 
     .cardHolderLabelTextDiv {
@@ -424,12 +426,7 @@
         align-items: center;
     }
 
-    .cardHolderLabelTextDiv p {
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: #7E8DA4;
-    }
+
 
     .cardHolderInputDiv {
         grid-area: cardHolderInputDiv;
@@ -474,7 +471,9 @@
     }
 
     .cardNumIcon {
-        font-size: 25px;
+        /* font-size: 25px; */
+        font-size: 1.8rem;
+
     }
 
     .cardNumberLabelTextDiv {
@@ -487,12 +486,6 @@
         align-items: center;
     }
 
-    .cardNumberLabelTextDiv p {
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: #7E8DA4;
-    }
 
     .cardNumberInputDiv {
         grid-area: cardNumberInputDiv;
@@ -543,7 +536,8 @@
     }
 
     .doBIcon {
-        font-size: 22px;
+        /* font-size: 22px; */
+        font-size: 1.55rem;
     }
 
 
@@ -557,12 +551,7 @@
         align-items: center;
     }
 
-    .dobLabelTextDiv p {
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: #7E8DA4;
-    }
+
 
     .dobDateInputDiv {
         grid-area: dobDateInputDiv;
@@ -613,7 +602,9 @@
     }
 
     .issueDateIcon {
-        font-size: 22px;
+        /* font-size: 22px; */
+        font-size: 1.8rem;
+
     }
 
 
@@ -644,5 +635,46 @@
         align-items: center;
     }
 
+
+    /* FONTS STYLES */
+    .cardHolderLabelTextDiv p {
+        font-size: 0.9rem;
+        font-weight: 450;
+    }
+
+    .cardHolderInputActive {
+        font-size: 0.9rem;
+        font-weight: 450;
+    }
+
+    .cardHolderInputNotActive {
+        font-size: 0.9rem;
+        font-weight: 450;
+    }
+
+    .cardNumberLabelTextDiv p {
+        font-size: 0.9rem;
+        font-weight: 450;
+    }
+
+    .dobLabelTextDiv p {
+        font-size: 0.9rem;
+        font-weight: 450;
+    }
+
+    .issueLabelTextDiv p {
+        font-size: 0.9rem;
+        font-weight: 450;
+    }
+
+    .inputActive {
+        font-size: 0.9rem;
+        font-weight: 450;
+    }
+
+    .inputNotActive {
+        font-size: 0.9rem;
+        font-weight: 450;
+    }
 
 }

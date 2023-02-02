@@ -523,7 +523,9 @@
     }
 
     .cardHolderIcon {
-        font-size: 30px;
+        /* font-size: 30px; */
+        font-size: 2rem;
+
     }
 
     .cardHolderLabelTextDiv {
@@ -537,10 +539,8 @@
     }
 
     .cardHolderLabelTextDiv p {
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: #7E8DA4;
+        font-size: 0.9rem;
+        font-weight: 450;
     }
 
     .cardHolderInputDiv {
@@ -601,7 +601,9 @@
     }
 
     .cardNumIcon {
-        font-size: 25px;
+        /* font-size: 25px; */
+        font-size: 1.8rem;
+
     }
 
     .cardNumberLabelTextDiv {
@@ -615,10 +617,8 @@
     }
 
     .cardNumberLabelTextDiv p {
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: #7E8DA4;
+        font-size: 0.9rem;
+        font-weight: 450;
     }
 
     .cardNumberInputDiv {
@@ -693,7 +693,8 @@
     }
 
     .expiryDateIcon {
-        font-size: 25px;
+        /* font-size: 25px; */
+        font-size: 1.8rem;
     }
 
 
@@ -708,10 +709,8 @@
     }
 
     .expiryLabelTextDiv p {
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: #7E8DA4;
+        font-size: 0.9rem;
+        font-weight: 450;
     }
 
     .expiryInputDiv {
@@ -781,7 +780,8 @@
     }
 
     .cvvIcon {
-        font-size: 22px;
+        /* font-size: 22px; */
+        font-size: 1.8rem;
     }
 
     .cvvNumberLabelTextDiv {
@@ -795,10 +795,8 @@
     }
 
     .cvvNumberLabelTextDiv p {
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: #7E8DA4;
+        font-size: 0.9rem;
+        font-weight: 450;
     }
 
     .cvvNumberInputDiv {
@@ -811,24 +809,25 @@
         align-items: center;
     }
 
-    /* .cvvNumberInputDiv input {
-        width: 80%;
-        height: 100%;
-        outline: none;
-        background: transparent;
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: black;
-        border-bottom:none;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        text-align: start;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    } */
+    .cardHolderInputActive {
+        font-size: 0.9rem;
+        font-weight: 450;
+    }
+
+    .cardHolderInputNotActive {
+        font-size: 0.9rem;
+        font-weight: 450;
+    }
+
+    .inputActive {
+        font-size: 0.9rem;
+        font-weight: 450;
+    }
+
+    .inputNotActive {
+        font-size: 0.9rem;
+        font-weight: 450;
+    }
 
 
 }

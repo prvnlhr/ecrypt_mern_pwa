@@ -205,7 +205,8 @@
 }
 
 .titleInputDiv input {
-    width: 70%;
+    width: 90%;
+    /* width: 100%; */
     height: 70%;
     border-bottom: 1px solid #7E8DA4;
     border-top: none;
@@ -217,7 +218,9 @@
     font-size: 14px;
     font-weight: 500;
     color: #002A9A;
-    padding-left: 10%;
+    /* padding-left: 5%; */
+    padding-left: 2%;
+    border: 1px solid red;
 }
 
 .titleInputDiv p {
@@ -233,7 +236,7 @@
     text-overflow: ellipsis
 }
 
-.titleEditBtnIconContainer {
+.titleCrudBtnContainer {
     width: 30%;
     height: 100%;
     /* border: 1px solid black; */
@@ -241,12 +244,18 @@
     justify-content: flex-end;
     align-items: center;
     padding-right: 5%;
-    cursor: pointer;
-
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-.titleCrudIconDiv {
-    height: 70%;
+.titleEditBtnDiv {
+    height: 60%;
+
     aspect-ratio: 1/1;
     /* border: 1px solid black; */
     display: flex;
@@ -254,28 +263,184 @@
     align-items: center;
     margin-right: 10%;
     cursor: pointer;
+    border-radius: 50%;
+    background-color: #9DC1FA;
+    cursor: pointer;
+
 
 }
+
+.titleSaveBtnDiv {
+    height: 60%;
+    aspect-ratio: 1/1;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10%;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #58BF6F;
+    cursor: pointer;
+
+
+}
+
+.titleCancelBtnDiv {
+    height: 60%;
+    aspect-ratio: 1/1;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10%;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #B4B3BA;
+    cursor: pointer;
+
+}
+
+
 
 .titleCrudIcon {
     font-size: 20px;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
+
+    .headerContainer {
+        position: absolute;
+        top: 0px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        /* border: 1px solid red; */
+    }
+
+
+
     .backBtnContainer {
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        /* width: 25%; */
+        width: 45%;
         height: 100%;
-        /* border: 1px solid red; */
+        /* border: 1px solid blue; */
+        padding-left: 5%;
     }
 
     .backBtnDiv {
-        /* width: 80%; */
+        width: auto;
         height: 50%;
-        aspect-ratio: 2/1;
+        /* border: 1px solid black; */
+        cursor: pointer;
+
+    }
+
+    .deleteBtnContainer {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 35%;
+        height: 100%;
+        /* border: 1px solid green; */
+    }
+
+    .deleteBtnDiv {
+        width: auto;
+        height: 25px;
+        /* border: 1px solid black; */
+        background-color: #D64339;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 5%;
+        padding-right: 5%;
+        border-radius: 5px;
+        margin-right: 10px;
+        /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
+        cursor: pointer;
+    }
+
+    .deleteBtnDiv p {
+        font-size: 11px;
+        font-weight: 400;
+    }
+
+    .crudIcons {
+        margin-right: 5px;
+    }
+
+    .favBtnContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+        height: 100%;
         /* border: 1px solid black; */
     }
 
+    .favBtnDiv {
+        height: 55%;
+        aspect-ratio: 1/1;
+        display: flex;
+        /* border: 1px solid black; */
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+    }
+
+
+    .titleInputDiv {
+        width: 70%;
+        height: 100%;
+        /* border: 1px solid red; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        overflow: hidden;
+        padding-left: 2%;
+    }
+
+    .titleInputDiv input {
+        width: 90%;
+        width: 100%;
+        height: 70%;
+        border-bottom: 1px solid #7E8DA4;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        outline: none;
+        background: transparent;
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: #002A9A;
+        /* padding-left: 5%; */
+        padding-left: 2%;
+        /* border: 1px solid blue; */
+    }
+
+
+
+    .titleInputDiv p {
+        position: relative;
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: black;
+        margin-left: 2%;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        /* border: 1px solid blue; */
+
+    }
 }

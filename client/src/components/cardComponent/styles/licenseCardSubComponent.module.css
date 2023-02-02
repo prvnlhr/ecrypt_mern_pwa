@@ -424,7 +424,9 @@ input.form-control:focus {
     }
 
     .cardHolderIcon {
-        font-size: 30px;
+        /* font-size: 30px; */
+        font-size: 2rem;
+
     }
 
 
@@ -438,12 +440,7 @@ input.form-control:focus {
         align-items: center;
     }
 
-    .cardHolderLabelTextDiv p {
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: #7E8DA4;
-    }
+
 
     .cardHolderInputDiv {
         grid-area: cardHolderInputDiv;
@@ -501,7 +498,9 @@ input.form-control:focus {
     }
 
     .cardNumIcon {
-        font-size: 25px;
+        /* font-size: 25px; */
+        font-size: 1.8rem;
+
     }
 
     .cardNumberLabelTextDiv {
@@ -512,13 +511,6 @@ input.form-control:focus {
         display: flex;
         justify-items: center;
         align-items: center;
-    }
-
-    .cardNumberLabelTextDiv p {
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: #7E8DA4;
     }
 
     .cardNumberInputDiv {
@@ -583,7 +575,9 @@ input.form-control:focus {
     }
 
     .doBIcon {
-        font-size: 22px;
+        /* font-size: 22px; */
+        font-size: 1.55rem;
+
     }
 
     .dobLabelTextDiv {
@@ -596,12 +590,7 @@ input.form-control:focus {
         align-items: center;
     }
 
-    .dobLabelTextDiv p {
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: #7E8DA4;
-    }
+
 
     .dobDateInputDiv {
         grid-area: dobDateInputDiv;
@@ -670,7 +659,8 @@ input.form-control:focus {
     }
 
     .expiryIcon {
-        font-size: 25px;
+        /* font-size: 35px; */
+        font-size: 1.8rem;
     }
 
     .expiryLabelTextDiv {
@@ -683,12 +673,7 @@ input.form-control:focus {
         align-items: center;
     }
 
-    .expiryLabelTextDiv p {
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: #7E8DA4;
-    }
+
 
     .expiryDateInputDiv {
         grid-area: expiryDateInputDiv;
@@ -700,23 +685,47 @@ input.form-control:focus {
         align-items: center;
     }
 
-    /* .expiryDateInputDiv input {
-        width: 80%;
-        height: 100%;
-        outline: none;
-        background: transparent;
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: black;
-        border-bottom: none;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        text-align: start;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    } */
+
+
+    /* FONT STYLES */
+    .cardHolderLabelTextDiv p {
+        font-size: 0.9rem;
+        font-weight: 450;
+    }
+
+    .cardHolderInputActive {
+        font-size: 0.9rem;
+        font-weight: 450;
+    }
+
+    .cardHolderInputNotActive {
+        font-size: 0.9rem;
+        font-weight: 450;
+    }
+
+    .cardNumberLabelTextDiv p {
+        font-size: 0.9rem;
+        font-weight: 450;
+    }
+
+    .dobLabelTextDiv p {
+        font-size: 0.9rem;
+        font-weight: 450;
+    }
+
+    .expiryLabelTextDiv p {
+        font-size: 0.9rem;
+        font-weight: 450;
+    }
+
+    .inputActive {
+        font-size: 0.9rem;
+        font-weight: 450;
+    }
+
+    .inputNotActive {
+        font-size: 0.9rem;
+        font-weight: 450;
+    }
 
 }

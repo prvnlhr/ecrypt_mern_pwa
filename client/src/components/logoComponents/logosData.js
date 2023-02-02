@@ -1,6 +1,6 @@
 
 import styles from "./styles/logosStyles.module.css";
-
+// Paytm
 import AadharCard from "./logos/AadharCard"
 import Adobe from "./logos/Adobe"
 import AdobePhotoshop from "./logos/AdobePhotoshop"
@@ -105,6 +105,8 @@ import CodingNinjas from "./logos/CodingNinjas";
 import Pycharm from "./logos/Pycharm";
 import DrivingLicense from "./logos/DrivingLicense";
 import StackOverflow from "./logos/StackOverflow";
+import EA from "./logos/EA"
+import Paytm from "./logos/Paytm";
 export const logosArray = [
 
     {
@@ -351,10 +353,10 @@ export const logosArray = [
         label: "Google Play"
     },
     {
-        logo: <div className={styles.logoDiv} ><GooglePay /></div>,
+        logo: <div className={styles.logoDiv} ><EA /></div>,
 
         logoIndex: 42,
-        label: "Google Pay"
+        label: "EA"
     },
     {
         logo: <div className={styles.logoDiv}  ><Hackerrank /></div>,
@@ -728,6 +730,11 @@ export const logosArray = [
         logo: <div className={styles.logoDiv}  ><StackOverflow /></div>,
         logoIndex: 104,
         label: "Stack Overflow"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><Paytm /></div>,
+        logoIndex: 105,
+        label: "Paytm"
     },
 
     // < div className = { styles.logoDiv } > <AdobePhotoshop /></ >,

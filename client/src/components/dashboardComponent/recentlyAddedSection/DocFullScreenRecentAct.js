@@ -31,7 +31,7 @@ const DocFullScreenRecentAct = ({ setRecAddDocFullScreen, recAddDocFullScreen,
         setRecAddDocFullScreen(false);
     }
 
-  
+
     return (
         <div className={recAddDocFullScreen ? styles.documentFullScreenWrapper : styles.documentFullScreenWrapperClose} >
 
@@ -52,16 +52,16 @@ const DocFullScreenRecentAct = ({ setRecAddDocFullScreen, recAddDocFullScreen,
                 <div className={styles.titleInputDiv} >
                     <p>{recAddDocFullScreenData.imageName}</p>
                 </div>
-                {/* <div className={styles.titleEditBtnIconContainer} >
+                {/* <div className={styles.titleCrudBtnContainer} >
                     {!editMode ?
-                        <div className={styles.titleCrudIconDiv} onClick={editBtnClicked} >
+                        <div className={styles.titleSaveBtnDiv} onClick={editBtnClicked} >
                             <Icon className={styles.titleCrudIcon} icon="ph:pencil-simple-line" color="#002A9A" />
                         </div> :
                         <>
-                            <div className={styles.titleCrudIconDiv} onClick={cancelBtnClicked} >
+                            <div className={styles.titleSaveBtnDiv} onClick={cancelBtnClicked} >
                                 <Icon className={styles.titleCrudIcon} icon="ph:x-bold" color="#5B5966" />
                             </div>
-                            <div className={styles.titleCrudIconDiv} onClick={saveBtnClicked} >
+                            <div className={styles.titleSaveBtnDiv} onClick={saveBtnClicked} >
                                 <Icon className={styles.titleCrudIcon} icon="charm:tick-double" color="#58BF6F" />
                             </div>
                         </>

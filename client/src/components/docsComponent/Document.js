@@ -39,7 +39,6 @@ const Document = ({ doc, setDocFullScreen, setFullScreenDocData, clickedSearchIt
                 <BookmarksIcon />
               }
             </div>
-            {/* <Icon className={styles.favBtnIcon} icon="ion:bookmark-outline" color="#002A9A" /> */}
           </div>
         </div>
       </div>

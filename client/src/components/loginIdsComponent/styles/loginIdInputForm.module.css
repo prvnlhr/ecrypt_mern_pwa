@@ -344,7 +344,6 @@
     width: 150px;
     height: 200px;
     background-color: white;
-    border: 1px solid rgba(128, 128, 128, 0.363);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -668,7 +667,6 @@
         /* border: 1px solid black; */
     }
 
-
     .cardWrapperClose {
         width: 100%;
         height: 0%;
@@ -688,7 +686,6 @@
         margin: 0px;
         transition: none;
     }
-
 
 
     .cardContainer {
@@ -899,9 +896,8 @@
         font-weight: 600;
         color: #0073ff;
         background-color: #a8ccf9b5;
-        border: 1px solid rgba(142, 138, 138, 0.13);
         outline: none !important;
-        height: 65%;
+        height: 80%;
         width: 85%;
         border-radius: 8px;
         display: flex;

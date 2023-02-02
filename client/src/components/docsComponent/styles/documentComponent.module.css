@@ -113,7 +113,8 @@
 
 }
 
-@media screen and (max-width: 650px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
     .documentComponentWrapper {
         position: relative;
         width: 100%;
@@ -176,15 +177,15 @@
     }
 
     .titleText {
-        font-family: "Poppins", sans-serif;
-        font-size: 12px;
-        font-weight: 450;
         width: 80%;
         margin-left: 5%;
         white-space: nowrap;
         overflow: hidden;
-        text-overflow: ellipsis
+        text-overflow: ellipsis;
+        font-size: 0.9rem;
+        font-weight: 500;
     }
+
 
     .favBtnContainer {
         position: relative;
@@ -197,10 +198,4 @@
         /* background-color: blueviolet; */
     }
 
-    .favBtnIcon {
-        font-size: 16px;
-        margin: 0px;
-        padding: 0px;
-        /* border: 1px solid black; */
-    }
 }

@@ -9,7 +9,8 @@ import { Icon } from '@iconify/react'
 const SearchSection = ({ searchMode, setSearchMode, searchQuery,
     setSearchQuery,
     clickedSearchItem,
-    setClickedSearchItem
+    setClickedSearchItem,
+    searchBarRef
 }) => {
     const location = useLocation();
     const searchState = useSelector((state) => state.search.searchResults)
@@ -119,7 +120,7 @@ const SearchSection = ({ searchMode, setSearchMode, searchQuery,
                     : (
                         <div className={styles.trueSearchContainer}>
                             <div className={styles.searchInputDiv}  >
-                                <input onChange={(e) => setSearchQuery(e.target.value)} className={styles.searchInput} />
+                                <input ref={searchBarRef} onChange={(e) => setSearchQuery(e.target.value)} className={styles.searchInput} />
                             </div>
                             <div className={styles.searchCancelIconDiv}>
                                 <Icon className={styles.searchCancelIcon} icon="octicon:x-16" onClick={() => searchCancelIconClicked()} />

@@ -376,6 +376,9 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
 }
 
 .categoryWrapper {
@@ -850,7 +853,6 @@
 
 .focusFieldStyle {
   border: 2px solid #00299a;
-  border-radius: 15px !important;
 }
 
 
@@ -865,7 +867,6 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    background-color: var(--fullCard-wrapper-bg);
     margin-top: 14%;
     /* border: 1px solid black; */
   }
@@ -878,7 +879,6 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-color: var(--fullCard-wrapper-bg);
     padding-left: 0%;
     webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
@@ -892,8 +892,6 @@
     margin: 0px;
     transition: none;
   }
-
-
 
   .cardContainer {
     /* border: 1px solid black; */
@@ -917,171 +915,102 @@
 
   }
 
-  .cardHeader {
-    grid-area: cardHeader;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* border: 1px solid orange; */
-  }
+
 
   .backBtnContainer {
     width: 30%;
     height: 100%;
     /* border: 1px solid black; */
+    padding-left: 5%;
+    padding-top: 0%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding-left: 5%;
-    padding-top: 0%;
   }
 
   .backBtnDiv {
     width: 80%;
-    height: 80%;
+    height: 55%;
     /* border: 1px solid black; */
     display: flex;
     justify-content: flex-start;
     align-items: center;
+
   }
 
 
   .curdBtnContainer {
     width: 70%;
     height: 100%;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
     padding-right: 5%;
+    /* border: 1px solid black; */
   }
 
   .editBtnDiv {
     width: auto;
     height: 22px;
     height: 25px;
-    /* border: 1px solid black; */
-    background-color: #9DC1FA;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding-left: 3%;
     padding-right: 3%;
     border-radius: 5px;
     margin-right: 10px;
-    /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-
   }
 
   .editBtnDiv p {
-    font-family: "Poppins", sans-serif;
-    font-size: 12px;
-    font-weight: 400;
-    color: #002A9A;
+    font-size: 0.75rem;
+    font-weight: 450;
   }
 
   .saveBtnDiv {
     width: auto;
     height: 22px;
     height: 25px;
-
-    /* border: 1px solid black; */
-    background-color: #58BF6F;
-    /* background-color: white; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding-left: 3%;
     padding-right: 3%;
     border-radius: 5px;
     margin-right: 10px;
-    /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
   }
 
   .saveBtnDiv p {
-    font-family: "Poppins", sans-serif;
-    font-size: 11px;
+    font-size: 0.75rem;
     font-weight: 400;
-    color: white;
   }
 
   .cancelBtnDiv {
     width: auto;
     height: 22px;
     height: 25px;
-
-    /* border: 1px solid black; */
-    background-color: #E2E1E4;
-    background-color: #B4B3BA;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding-left: 3%;
     padding-right: 3%;
     border-radius: 5px;
     margin-right: 10px;
-    /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
 
   }
 
   .cancelBtnDiv p {
-    font-family: "Poppins", sans-serif;
-    font-size: 11px;
+    font-size: 0.75rem;
     font-weight: 450 !important;
-    /* color: #5B5A68; */
-    color: white;
   }
 
   .deleteBtnDiv {
     width: auto;
     height: 25px;
-    /* border: 1px solid black; */
-    background-color: #D64339;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding-left: 3%;
     padding-right: 3%;
     border-radius: 5px;
     margin-right: 10px;
-    /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
 
   }
 
   .deleteBtnDiv p {
-    font-family: "Poppins", sans-serif;
-    font-size: 11px;
+    font-size: 0.75rem;
     font-weight: 400;
-    color: white;
   }
-
-  /* .favBtnDiv {
-    width: 150px;
-    height: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-  } */
 
   .crudIcons {
     margin-right: 5px;
   }
 
-  .favBtnDiv {
-    height: 60%;
-    aspect-ratio: 1/1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* border: 1px solid black; */
-  }
 
   .logoTitleWrapper {
     grid-area: logoTitleWrapper;
@@ -1090,7 +1019,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: 1px solid blue; */
     padding-left: 0%;
   }
 
@@ -1117,7 +1045,7 @@
   .logoDiv {
     /* width: 80%; */
     aspect-ratio: 1/1;
-    height: 80%;
+    height: 90%;
     /* border: 1px solid black; */
     border-radius: 20px;
     display: flex;
@@ -1151,11 +1079,9 @@
   }
 
   .titleLabelDiv p {
-    font-family: "Poppins", sans-serif;
     font-size: 15px;
+    font-size: 0.85rem;
     font-weight: 500;
-    color: #7E8DA4;
-
   }
 
   .titleInputDiv {
@@ -1167,13 +1093,17 @@
     align-items: flex-start;
   }
 
-  .titleInputDiv p {
-    font-family: "Poppins", sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    color: black;
-    color: var(--fullCard-field-text-font-color);
 
+
+
+  .titleInputActive {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  .titleInputNotActive {
+    font-size: 1.5rem;
+    font-weight: 500;
   }
 
   .categoryWrapper {
@@ -1196,10 +1126,7 @@
     justify-content: center;
     align-items: center;
     background-color: var(--fullCard-field-container-bg);
-
-
     border-radius: 10px;
-
   }
 
   .categoryLabelDiv {
@@ -1213,10 +1140,8 @@
   }
 
   .categoryLabelDiv p {
-    font-family: "Poppins", sans-serif;
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--fullCard-category-label-font-color);
+    font-size: 1.2rem;
+    font-weight: 550;
     margin: 0px;
     padding: 0px;
   }
@@ -1232,20 +1157,17 @@
   }
 
   .categoryInput {
-    font-family: "Poppins", sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    color: #0073ff;
-    background-color: #a8ccf9b5;
-    border: 1px solid rgba(142, 138, 138, 0.13);
     outline: none !important;
-    height: 65%;
+    height: 80%;
     width: 85%;
     border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+
+    font-size: 1.1rem;
+    font-weight: 500;
   }
 
   .popUpBtnIconDiv {
@@ -1258,7 +1180,7 @@
   }
 
   .popUpIcon {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .categoryInput:focus {
@@ -1267,9 +1189,13 @@
 
   .inputPopUpDiv {
     top: 105%;
+    right: 2%;
     position: absolute;
-    width: 150px;
-    height: 200px;
+    /* width: 150px; */
+    /* height: 200px; */
+    height: unset;
+    width: 70%;
+    aspect-ratio: 2/1;
     background-color: white;
     border: unset;
     display: flex;
@@ -1277,21 +1203,22 @@
     justify-content: flex-start;
     align-items: flex-start;
     padding-top: 5%;
-    padding-bottom: 5%;
-    padding-left: 10%;
+    padding-bottom: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
     border-radius: 5px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    border: 2px solid rgba(57, 83, 212, 0.365);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border: unset;
 
   }
 
   .inputPopUpText {
     font-family: "Poppins", sans-serif;
-    font-size: 15px;
+    font-size: 0.95rem;
     font-weight: 500;
     color: black;
     color: var(--fullCard-field-text-font-color);
-
     margin: 5% 0px 0px 0px;
     display: flex;
     justify-content: flex-start;
@@ -1358,10 +1285,8 @@
   }
 
   .appWebsiteLabelDiv p {
-    font-family: "Poppins", sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--fullCard-field-label-font-color);
+    font-size: 1rem;
+    font-weight: 450;
   }
 
   .appWebSiteInputDiv {
@@ -1371,6 +1296,16 @@
     /* border: 1px solid black; */
   }
 
+  .appWebSiteInputActive {
+    font-size: 1rem;
+    font-weight: 500;
+
+  }
+
+  .appWebSiteInputNotActive {
+    font-size: 1rem;
+    font-weight: 500;
+  }
 
   .usernameWrapper {
     grid-area: usernameWrapper;
@@ -1395,11 +1330,7 @@
     grid-template-areas:
       "usernameIconDiv usernameLabelDiv"
       "usernameIconDiv usernameInputDiv";
-    background-color: var(--fullCard-field-container-bg);
-
     border-radius: 10px;
-
-
   }
 
   .usernameIconDiv {
@@ -1415,7 +1346,6 @@
   .usernameIcon {
     width: 50%;
     height: 50%;
-    color: var(--fullCard-field-icon--color);
   }
 
   .usernameLabelDiv {
@@ -1429,11 +1359,8 @@
   }
 
   .usernameLabelDiv p {
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--fullCard-field-label-font-color);
-
+    font-size: 0.9rem;
+    font-weight: 450;
   }
 
   .usernameInputDiv {
@@ -1446,6 +1373,16 @@
     align-items: center;
   }
 
+
+  .userNameInputActive {
+    font-size: 0.9rem;
+    font-weight: 450;
+  }
+
+  .userNameInputNotActive {
+    font-size: 0.9rem;
+    font-weight: 450;
+  }
 
 
   /* .usernameInputDiv input {
@@ -1520,10 +1457,9 @@
   }
 
   .passwordLabelDiv p {
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--fullCard-field-label-font-color);
+    font-size: 0.85;
+    font-size: 0.9rem;
+    font-weight: 450;
   }
 
   .passwordInputDiv {
