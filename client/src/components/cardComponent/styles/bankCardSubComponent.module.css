@@ -37,7 +37,7 @@
     grid-template-areas:
         "cardHolderIconDiv cardHolderLabelTextDiv"
         "cardHolderIconDiv cardHolderInputDiv";
-      background-color: var(--fullCard-field-container-bg);
+      background-color: var(--box-bg-tertiary);
 
     border-radius: 10px;
 } */
@@ -52,7 +52,7 @@
     grid-template-areas:
         "cardHolderIconDiv cardHolderLabelTextDiv cardVenderIconContainer  "
         "cardHolderIconDiv cardHolderInputDiv cardVenderIconContainer";
-    background-color: var(--fullCard-field-container-bg);
+    background-color: var(--box-bg-tertiary);
 
 
     border-radius: 10px;
@@ -70,7 +70,7 @@
 
 .cardHolderIcon {
     font-size: 30px;
-    color: var(--fullCard-field-icon--color);
+    color: var(--field-icon-color);
 }
 
 .cardHolderLabelTextDiv {
@@ -87,7 +87,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: #7E8DA4;
+    color: var(--secondary-font-color);
 }
 
 .cardHolderInputDiv {
@@ -110,7 +110,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: 500;
-    color: var(--fullCard-field-text-font-color);
+    color: var(--primary-font-color);
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -126,7 +126,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: 500;
-    color: var(--fullCard-field-text-font-color);
+    color: var(--primary-font-color);
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -192,7 +192,7 @@
     grid-template-areas:
         "cardNumberIconDiv cardNumberLabelTextDiv cardVenderIconContainer  "
         "cardNumberIconDiv cardNumberInputDiv cardVenderIconContainer";
-    background-color: var(--fullCard-field-container-bg);
+    background-color: var(--box-bg-tertiary);
 
     border-radius: 10px;
 }
@@ -210,7 +210,7 @@
 
 .cardNumIcon {
     font-size: 25px;
-    color: var(--fullCard-field-icon--color);
+    color: var(--field-icon-color);
 }
 
 .cardNumberLabelTextDiv {
@@ -227,7 +227,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: #7E8DA4;
+    color: var(--secondary-font-color);
 }
 
 .cardNumberInputDiv {
@@ -262,7 +262,7 @@
     grid-template-areas:
         "expiryIconDiv expiryLabelTextDiv"
         "expiryIconDiv expiryInputDiv";
-    background-color: var(--fullCard-field-container-bg);
+    background-color: var(--box-bg-tertiary);
 
     border-radius: 10px;
 }
@@ -279,7 +279,7 @@
 
 .expiryDateIcon {
     font-size: 25px;
-    color: var(--fullCard-field-icon--color);
+    color: var(--field-icon-color);
 }
 
 
@@ -297,7 +297,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: #7E8DA4;
+    color: var(--secondary-font-color);
 }
 
 .expiryInputDiv {
@@ -310,24 +310,7 @@
     align-items: center;
 }
 
-/* .expiryInputDiv input {
-    width: 80%;
-    height: 100%;
-    outline: none;
-    background: transparent;
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: black;
-    border-bottom:none;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    text-align: start;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-} */
+
 
 /* _____________________________________________ */
 
@@ -351,7 +334,7 @@
     grid-template-areas:
         "cvvNumberIconDiv cvvNumberLabelTextDiv"
         "cvvNumberIconDiv cvvNumberInputDiv";
-    background-color: var(--fullCard-field-container-bg);
+    background-color: var(--box-bg-tertiary);
 
     border-radius: 10px;
 }
@@ -368,7 +351,7 @@
 
 .cvvIcon {
     font-size: 22px;
-    color: var(--fullCard-field-icon--color);
+    color: var(--field-icon-color);
 }
 
 .cvvNumberLabelTextDiv {
@@ -385,7 +368,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: #7E8DA4;
+    color: var(--secondary-font-color);
 }
 
 .cvvNumberInputDiv {
@@ -398,24 +381,7 @@
     align-items: center;
 }
 
-/* .cvvNumberInputDiv input {
-    width: 80%;
-    height: 100%;
-    outline: none;
-    background: transparent;
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: black;
-    border-bottom:none;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    text-align: start;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-} */
+
 
 .inputActive {
     width: 80%;
@@ -430,7 +396,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: 500;
-    color: var(--fullCard-field-text-font-color);
+    color: var(--primary-font-color);
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -446,14 +412,15 @@
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: 500;
-    color: var(--fullCard-field-text-font-color);
+    color: var(--primary-font-color);
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 
 .focusFieldStyle {
-    border: 2px solid #00299a;
+    border: 2px solid var(--ui-scheme-font-color);
+
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
@@ -550,20 +517,7 @@
         /* border: 1px solid black; */
     }
 
-    /* .cardHolderInputDiv input {
-        width: 80%;
-        height: 100%;
-        border-bottom:none;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        outline: none;
-        background: transparent;
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: black;
-    } */
+
 
     /* _____________________________________________________ */
 
@@ -639,20 +593,6 @@
     }
 
 
-    /* .cardNumberInputDiv input {
-        width: 80%;
-        height: 100%;
-        outline: none;
-        background: transparent;
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: black;
-        border-bottom:none;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-    } */
 
 
     /* _____________________________________________ */
@@ -723,25 +663,6 @@
         align-items: center;
     }
 
-    /* 
-    .expiryInputDiv input {
-        width: 80%;
-        height: 100%;
-        outline: none;
-        background: transparent;
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: black;
-        border-bottom:none;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        text-align: start;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    } */
 
     /* _____________________________________________ */
 
@@ -828,6 +749,13 @@
         font-size: 0.9rem;
         font-weight: 450;
     }
+
+
+
+
+
+
+
 
 
 }

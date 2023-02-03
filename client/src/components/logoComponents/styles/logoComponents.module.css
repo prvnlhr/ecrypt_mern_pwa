@@ -3,7 +3,7 @@
     width: 300px;
     height: 70%;
     min-height: 70%;
-    background-color: #F3F5F9;
+    background-color: var(--box-bg-primary);
     display: grid;
     grid-template-areas:
         "closeWrapper"
@@ -56,12 +56,12 @@ transform: translateX(-50%); */
     aspect-ratio: 1/1;
     height: 70%;
     border-radius: 50%;
-    background-color: #34a8537f;
+    background-color: #58BF6F;
     display: flex;
     justify-content: center;
     align-items: center;
     right: 0px;
-    margin-right: 10px;
+    margin-right: 1rem;
 }
 
 .closeIcon {
@@ -75,7 +75,7 @@ transform: translateX(-50%); */
     position: relative;
     font-size: 13px;
     /* border: 1px solid black; */
-    color: #2aa54b;
+    color: white;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
@@ -85,7 +85,6 @@ transform: translateX(-50%); */
         width: 80%;
         height: 85%;
         min-height: 85%;
-        background-color: #f7f7f7;
         display: grid;
         grid-template-areas:
             "closeWrapper"
@@ -95,7 +94,6 @@ transform: translateX(-50%); */
         grid-template-rows: 8% 10% 82%;
         z-index: 999;
         border-radius: 10px;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         /* border: 1px solid #00000031; */
         left: 0;
         right: 0;

@@ -8,11 +8,9 @@
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    background-color: white;
+    background-color: var(--box-bg-primary);
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     /* border: 1px solid black; */
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-
 }
 
 .cardWrapperShrink {
@@ -24,14 +22,12 @@
     width: 45%;
     height: 75px;
     min-height: 75px;
-    background-color: white;
+    background-color: var(--box-bg-primary);
     border-radius: 15px;
     scroll-behavior: smooth;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     /* border: 1px solid black; */
     margin: 2% 2% 2% 2%;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-
 }
 
 .cardContainerShrink {
@@ -96,7 +92,7 @@
     align-items: center;
     height: 82%;
     width: 82%;
-    background-color: #F3F5F9;
+    background-color: var(--box-bg-secondary);
     border-radius: 8px;
     /* border: 1px solid black; */
 }
@@ -156,7 +152,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: #7E8DA4;
+    color: var(--secondary-font-color);
 }
 
 .titleTextWrapper {
@@ -191,7 +187,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: black;
+    color: var(--primary-font-color);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis
@@ -201,7 +197,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: black;
+    color: var(--primary-font-color);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis
@@ -219,7 +215,7 @@
     /* border: 1px solid black; */
     display: flex;
     flex-direction: row;
-    background-color: #F3F5F9;
+    background-color: var(--box-bg-tertiary);
     border-radius: 8px;
 }
 
@@ -236,7 +232,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 15px;
     font-weight: 600;
-    color: black;
+    color: var(--primary-font-color);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -259,7 +255,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #a8ccf9b5;
+    background-color: var(--box-bg-secondary);
     border-radius: 8px;
     border-radius: 8px;
 }
@@ -268,7 +264,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: 500;
-    color: #002A9A;
+    color: var(--ui-scheme-font-color);
 }
 
 
@@ -288,7 +284,7 @@
     grid-template-areas:
         "cardHolderIconWrapper cardHolderLabelWrapper"
         "cardHolderIconWrapper cardHolderTextWrapper";
-    background-color: #F3F5F9;
+    background-color: var(--box-bg-tertiary);
     border-radius: 8px;
 }
 
@@ -317,7 +313,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: #7E8DA4;
+    color: var(--secondary-font-color);
 }
 
 .cardHolderTextWrapper {
@@ -335,7 +331,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: black;
+    color: var(--primary-font-color);
 }
 
 /* _______________________________________________________ */
@@ -369,7 +365,7 @@
     grid-template-areas:
         "cardNoIconWrapper cardNoLabelWrapper"
         "cardNoIconWrapper cardNoTextWrapper";
-    background-color: #F3F5F9;
+    background-color: var(--box-bg-tertiary);
     border-radius: 8px;
 }
 
@@ -398,7 +394,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: #7E8DA4;
+    color: var(--secondary-font-color);
 }
 
 .cardNoTextWrapper {
@@ -427,14 +423,14 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: black;
+    color: var(--primary-font-color);
 }
 
 .cardNoTextWrapperShrink p {
     font-family: "Poppins", sans-serif;
     font-size: 13px;
     font-weight: 450;
-    color: #7E8DA4;
+    color: var(--secondary-font-color);
 }
 
 /* ____________________________________________________ */
@@ -452,7 +448,7 @@
     grid-template-areas:
         "cardExpiryIconWrapper cardExpiryLabelWrapper"
         "cardExpiryIconWrapper cardExpiryTextWrapper";
-    background-color: #F3F5F9;
+    background-color: var(--box-bg-tertiary);
     border-radius: 8px;
 }
 
@@ -481,7 +477,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: #7E8DA4;
+    color: var(--secondary-font-color);
 }
 
 .cardExpiryTextWrapper {
@@ -498,7 +494,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: black;
+    color: var(--primary-font-color);
 }
 
 /* ________________________________________ */
@@ -516,7 +512,7 @@
     grid-template-areas:
         "cardCvvIconWrapper cardCvvLabelWrapper"
         "cardCvvIconWrapper cardCvvTextWrapper";
-    background-color: #F3F5F9;
+    background-color: var(--box-bg-tertiary);
     border-radius: 8px;
 }
 
@@ -544,7 +540,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: #7E8DA4;
+    color: var(--secondary-font-color);
 }
 
 .cardCvvTextWrapper {
@@ -561,23 +557,30 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: black;
+    color: var(--primary-font-color);
 }
 
 .cardHolderIcon {
     font-size: 28px;
+    color: var(--field-icon-color);
 }
 
 .cardNumIcon {
     font-size: 25px;
+    color: var(--field-icon-color);
+
 }
 
 .expiryDateIcon {
     font-size: 25px;
+    color: var(--field-icon-color);
+
 }
 
 .cvvIcon {
     font-size: 25px;
+    color: var(--field-icon-color);
+
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
@@ -591,10 +594,8 @@
         justify-content: center;
         align-items: center;
         border-radius: 20px;
-        background-color: white;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
         /* border: 1px solid black; */
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
     }
 
@@ -607,14 +608,11 @@
         width: 83%;
         height: 75px;
         min-height: 75px;
-        background-color: white;
         border-radius: 15px;
         scroll-behavior: smooth;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
         /* border: 1px solid black; */
         margin: 15px 15px 15px 15px;
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-
     }
 
     .cardContainerShrink {
@@ -679,7 +677,6 @@
         align-items: center;
         height: 82%;
         width: 82%;
-        background-color: #F3F5F9;
         border-radius: 8px;
     }
 
@@ -738,7 +735,7 @@
         font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 500;
-        color: #7E8DA4;
+        color: var(--secondary-font-color);
     }
 
     .titleTextWrapper {
@@ -769,20 +766,16 @@
 
 
     .titleTextDivExpand p {
-        font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 500;
-        color: black;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis
     }
 
     .titleTextDivShrink p {
-        font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 500;
-        color: black;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis
@@ -800,7 +793,6 @@
         /* border: 1px solid black; */
         display: flex;
         flex-direction: row;
-        background-color: #F3F5F9;
         border-radius: 8px;
     }
 
@@ -817,7 +809,6 @@
         font-family: "Poppins", sans-serif;
         font-size: 15px;
         font-weight: 600;
-        color: black;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -840,16 +831,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #a8ccf9b5;
         border-radius: 8px;
         border-radius: 8px;
     }
 
     .categoryTextDiv p {
-        font-family: "Poppins", sans-serif;
         font-size: 16px;
         font-weight: 500;
-        color: #002A9A;
     }
 
 
@@ -869,7 +857,6 @@
         grid-template-areas:
             "cardHolderIconWrapper cardHolderLabelWrapper"
             "cardHolderIconWrapper cardHolderTextWrapper";
-        background-color: #F3F5F9;
         border-radius: 8px;
     }
 
@@ -895,10 +882,8 @@
     }
 
     .cardHolderLabelWrapper p {
-        font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 500;
-        color: #7E8DA4;
     }
 
     .cardHolderTextWrapper {
@@ -913,10 +898,8 @@
     }
 
     .cardHolderTextWrapper p {
-        font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 500;
-        color: black;
     }
 
     /* _______________________________________________________ */
@@ -950,7 +933,6 @@
         grid-template-areas:
             "cardNoIconWrapper cardNoLabelWrapper"
             "cardNoIconWrapper cardNoTextWrapper";
-        background-color: #F3F5F9;
         border-radius: 8px;
     }
 
@@ -976,10 +958,8 @@
     }
 
     .cardNoLabelWrapper p {
-        font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 500;
-        color: #7E8DA4;
     }
 
     .cardNoTextWrapper {
@@ -1005,17 +985,13 @@
     }
 
     .cardNoTextWrapper p {
-        font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 500;
-        color: black;
     }
 
     .cardNoTextWrapperShrink p {
-        font-family: "Poppins", sans-serif;
         font-size: 13px;
         font-weight: 450;
-        color: #7E8DA4;
     }
 
     /* ____________________________________________________ */
@@ -1033,7 +1009,6 @@
         grid-template-areas:
             "cardExpiryIconWrapper cardExpiryLabelWrapper"
             "cardExpiryIconWrapper cardExpiryTextWrapper";
-        background-color: #F3F5F9;
         border-radius: 8px;
     }
 
@@ -1059,10 +1034,8 @@
     }
 
     .cardExpiryLabelWrapper p {
-        font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 500;
-        color: #7E8DA4;
     }
 
     .cardExpiryTextWrapper {
@@ -1076,10 +1049,8 @@
     }
 
     .cardExpiryTextWrapper p {
-        font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 500;
-        color: black;
     }
 
     /* ________________________________________ */
@@ -1097,7 +1068,6 @@
         grid-template-areas:
             "cardCvvIconWrapper cardCvvLabelWrapper"
             "cardCvvIconWrapper cardCvvTextWrapper";
-        background-color: #F3F5F9;
         border-radius: 8px;
     }
 
@@ -1122,10 +1092,8 @@
     }
 
     .cardCvvLabelWrapper p {
-        font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 500;
-        color: #7E8DA4;
     }
 
     .cardCvvTextWrapper {
@@ -1139,10 +1107,8 @@
     }
 
     .cardCvvTextWrapper p {
-        font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 500;
-        color: black;
     }
 
     .cardHolderIcon {
@@ -1174,12 +1140,10 @@
         width: 90%;
         height: 75px;
         min-height: 75px;
-        background-color: white;
         border-radius: 15px;
         scroll-behavior: smooth;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
         margin: 2% 2% 2% 2%;
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         margin-left: auto;
         margin-right: auto;
         margin-top: 20px;
@@ -1195,9 +1159,7 @@
         justify-content: center;
         align-items: center;
         border-radius: 15px;
-        background-color: white;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         margin-left: auto;
         margin-right: auto;
         margin-top: 20px;

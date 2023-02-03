@@ -8,13 +8,12 @@
     width: 45%;
     height: 75px;
     min-height: 75px;
-    background-color: white;
+    background-color: var(--box-bg-primary);
     border-radius: 15px;
     scroll-behavior: smooth;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     margin: 15px 15px 15px 15px;
     margin: 2% 2% 2% 2%;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .cardContainer {
@@ -45,7 +44,7 @@
     height: 80%;
     /* border: 1px solid red; */
     border-radius: 8px;
-    background-color: #F3F5F9;
+    background-color: var(--box-bg-secondary);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,7 +70,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 12px;
     font-weight: 500;
-    color: black;
+    color: var(--primary-font-color);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -88,12 +87,10 @@
         width: 83%;
         height: 75px;
         min-height: 75px;
-        background-color: white;
         border-radius: 15px;
         scroll-behavior: smooth;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
         margin: 15px 15px 15px 15px;
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     }
 
 }
@@ -108,12 +105,10 @@
         width: 90%;
         height: 75px;
         min-height: 75px;
-        background-color: white;
         border-radius: 15px;
         scroll-behavior: smooth;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
         margin: 2% 2% 2% 2%;
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         margin-left: auto;
         margin-right: auto;
         margin-top: 20px;

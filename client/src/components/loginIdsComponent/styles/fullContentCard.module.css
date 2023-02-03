@@ -8,7 +8,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: var(--fullCard-wrapper-bg);
+  background-color: var(--box-bg-primary);
   padding-left: 5%;
   webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -27,7 +27,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: var(--fullCard-wrapper-bg);
+  background-color: var(--box-bg-primary);
   padding-left: 0%;
   webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -179,8 +179,6 @@
   /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
   cursor: pointer;
-
-
 }
 
 .cancelBtnDiv p {
@@ -206,8 +204,6 @@
   /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
   cursor: pointer;
-
-
 }
 
 .deleteBtnDiv p {
@@ -260,7 +256,6 @@
   justify-content: flex-start;
   align-items: center;
   padding-left: 2%;
-
 }
 
 .logoContainer {
@@ -329,7 +324,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: #7E8DA4;
+  color: var(--secondary-font-color);
 }
 
 .titleInputDiv {
@@ -355,7 +350,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 500;
-  color: var(--fullCard-field-text-font-color);
+  color: var(--primary-font-color);
 
   display: flex;
   justify-content: flex-start;
@@ -372,7 +367,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 500;
-  color: var(--fullCard-field-text-font-color);
+  color: var(--primary-font-color);
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -400,8 +395,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--fullCard-field-container-bg);
-
+  background-color: var(--box-bg-tertiary);
   border-radius: 10px;
 
 }
@@ -420,8 +414,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 18px;
   font-weight: 600;
-  color: var(--fullCard-category-label-font-color);
-
+  color: var(--primary-font-color);
 }
 
 .catergoryInputDiv {
@@ -439,7 +432,9 @@
   font-size: 15px;
   font-weight: 500;
   color: #002A9A;
-  background-color: #a8ccf9b5;
+  color: var(--ui-scheme-font-color);
+  background-color: #A6CBFB;
+  background-color: var(--box-bg-secondary);
   border: none;
   outline: none !important;
   height: 75%;
@@ -540,7 +535,7 @@
   grid-template-rows: 100%;
   grid-template-areas:
     "appWebSiteIconDiv appWebsiteLabelDiv appWebSiteInputDiv";
-  background-color: var(--fullCard-field-container-bg);
+  background-color: var(--box-bg-tertiary);
   border-radius: 10px;
 
 }
@@ -557,7 +552,7 @@
 
 .websiteIcon {
   font-size: 25px;
-  color: var(--fullCard-field-icon--color);
+  color: var(--field-icon-color);
 
 }
 
@@ -575,7 +570,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 500;
-  color: var(--fullCard-field-label-font-color);
+  color: var(--secondary-font-color);
 }
 
 .appWebSiteInputDiv {
@@ -601,7 +596,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: var(--fullCard-field-text-font-color);
+  color: var(--primary-font-color);
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -617,7 +612,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: var(--fullCard-field-text-font-color);
+  color: var(--primary-font-color);
 
   display: flex;
   justify-content: flex-start;
@@ -647,7 +642,7 @@
   grid-template-areas:
     "usernameIconDiv usernameLabelDiv"
     "usernameIconDiv usernameInputDiv";
-  background-color: var(--fullCard-field-container-bg);
+  background-color: var(--box-bg-tertiary);
   border-radius: 10px;
 
 
@@ -666,7 +661,7 @@
 .usernameIcon {
   width: 50%;
   height: 50%;
-  color: var(--fullCard-field-icon--color);
+  color: var(--field-icon-color);
 
 
 }
@@ -685,7 +680,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: #7E8DA4;
+  color: var(--secondary-font-color);
 }
 
 .usernameInputDiv {
@@ -711,7 +706,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: var(--fullCard-field-text-font-color);
+  color: var(--primary-font-color);
 
   display: flex;
   justify-content: flex-start;
@@ -728,7 +723,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: var(--fullCard-field-text-font-color);
+  color: var(--primary-font-color);
 
   display: flex;
   justify-content: flex-start;
@@ -736,12 +731,6 @@
 }
 
 
-.usernameInputDiv p {
-  font-family: "Poppins", sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  color: black;
-}
 
 .passwordWrapper {
   grid-area: passwordWrapper;
@@ -766,7 +755,7 @@
   grid-template-areas:
     "passwordIconDiv passwordLabelDiv"
     "passwordIconDiv passwordInputDiv";
-  background-color: var(--fullCard-field-container-bg);
+  background-color: var(--box-bg-tertiary);
   border-radius: 10px;
 }
 
@@ -783,8 +772,7 @@
 .passwordIcon {
   width: 55%;
   height: 55%;
-  color: var(--fullCard-field-icon--color);
-
+  color: var(--field-icon-color);
 }
 
 .passwordLabelDiv {
@@ -801,7 +789,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: #7E8DA4;
+  color: var(--secondary-font-color);
 }
 
 .passwordInputDiv {
@@ -827,7 +815,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: var(--fullCard-field-text-font-color);
+  color: var(--primary-font-color);
 
   display: flex;
   justify-content: flex-start;
@@ -844,7 +832,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: var(--fullCard-field-text-font-color);
+  color: var(--primary-font-color);
 
   display: flex;
   justify-content: flex-start;
@@ -852,7 +840,7 @@
 }
 
 .focusFieldStyle {
-  border: 2px solid #00299a;
+  border: 2px solid var(--ui-scheme-font-color);
 }
 
 
@@ -869,6 +857,7 @@
     align-items: flex-end;
     margin-top: 14%;
     /* border: 1px solid black; */
+    margin-bottom: 0.2%;
   }
 
 
@@ -1125,7 +1114,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--fullCard-field-container-bg);
+    background-color: var(--box-bg-tertiary);
     border-radius: 10px;
   }
 
@@ -1218,7 +1207,7 @@
     font-size: 0.95rem;
     font-weight: 500;
     color: black;
-    color: var(--fullCard-field-text-font-color);
+    color: var(--primary-font-color);
     margin: 5% 0px 0px 0px;
     display: flex;
     justify-content: flex-start;
@@ -1253,7 +1242,7 @@
     grid-template-rows: 100%;
     grid-template-areas:
       "appWebSiteIconDiv appWebsiteLabelDiv appWebSiteInputDiv";
-    background-color: var(--fullCard-field-container-bg);
+    background-color: var(--box-bg-tertiary);
     border-radius: 10px;
 
   }
@@ -1270,7 +1259,7 @@
 
   .websiteIcon {
     height: 50%;
-    color: var(--fullCard-field-icon--color);
+    color: var(--field-icon-color);
 
   }
 
@@ -1424,7 +1413,7 @@
     grid-template-areas:
       "passwordIconDiv passwordLabelDiv"
       "passwordIconDiv passwordInputDiv";
-    background-color: var(--fullCard-field-container-bg);
+    background-color: var(--box-bg-tertiary);
 
     border-radius: 10px;
 
@@ -1542,7 +1531,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    background-color: var(--fullCard-wrapper-bg);
+    background-color: var(--box-bg-primary);
     /* background-color: transparent; */
     padding-left: 5%;
     webkit-tap-highlight-color: transparent;
@@ -1563,7 +1552,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    background-color: var(--fullCard-wrapper-bg);
+    background-color: var(--box-bg-primary);
     padding-left: 0%;
     webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;

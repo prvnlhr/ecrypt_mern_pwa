@@ -81,6 +81,21 @@
   --file-name-input-font-color: black;
   --doc-inputform-wrapper-border: none;
 
+
+
+  /* -> All ui fonts divide in two types */
+  --primary-font-color: white;
+  --secondary-font-color: white;
+  --ui-scheme-font-color: white;
+
+  /*-> All ui div-bg divided into three types */
+  --box-bg-primary: white;
+  --box-bg-secondary: white;
+  --box-bg-tertiary: white;
+
+  /* -> App ui bg */
+  --app-main-bg: #151B3B;
+
 }
 
 [data-theme="dark"] {
@@ -175,4 +190,31 @@
   --file-name-input-font-color: white;
 
 
+
+  /* -> All ui fonts divide in two types */
+  --primary-font-color: white;
+  --secondary-font-color: #8B98A5;
+  --tertiary-font-color: #837FA2;
+  --tertiary-font-color-li: #A8A4C5;
+
+
+  --ui-scheme-font-color: #C7BAFD;
+
+  /*-> All ui div-bg divided into three types */
+  --box-bg-primary: #313B54;
+  --box-bg-secondary: #414C68;
+  --box-bg-secondary-li: #5C6886;
+  --box-bg-tertiary: #1E2336;
+
+  /* -> App ui bg */
+  --app-main-bg: #151B3B;
+
+  /* -> form icons color */
+  --field-icon-color: #5294E2;
+
+  --favbtn-icon-color: white;
+
+
+  /* for btn */
+  --submit-btn-color: #5C8ED5;
 }

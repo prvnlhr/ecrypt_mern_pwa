@@ -8,7 +8,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-color: var(--fullCard-wrapper-bg);
+    background-color: var(--box-bg-primary);
     padding-left: 5%;
     webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
@@ -28,7 +28,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-color: var(--fullCard-wrapper-bg);
+    background-color: var(--box-bg-primary);
     padding-left: 0%;
     webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
@@ -222,7 +222,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: #7E8DA4;
+    color: var(--secondary-font-color);
 
 }
 
@@ -238,7 +238,7 @@
 .titleInputDiv input {
     width: 80%;
     height: 100%;
-    border-bottom: 1px solid #7E8DA4;
+    border-bottom: none;
     border-top: none;
     border-left: none;
     border-right: none;
@@ -247,7 +247,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 20px;
     font-weight: 500;
-    color: var(--fullCard-field-text-font-color);
+    color: var(--primary-font-color);
 }
 
 .titleInputDiv p {
@@ -275,7 +275,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--fullCard-field-container-bg);
+    background-color: var(--box-bg-tertiary);
     border-radius: 10px;
 
 }
@@ -294,7 +294,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 18px;
     font-weight: 600;
-    color: var(--fullCard-category-label-font-color);
+    color: var(--primary-font-color);
 }
 
 .catergoryInputDiv {
@@ -311,8 +311,8 @@
     font-family: "Poppins", sans-serif;
     font-size: 15px;
     font-weight: 500;
-    color: #002A9A;
-    background-color: #a8ccf9b5;
+    color: var(--ui-scheme-font-color);
+    background-color: var(--box-bg-secondary);
     border: none;
     outline: none !important;
     height: 75%;
@@ -401,7 +401,7 @@
 
 
 .focusFieldStyle {
-    border: 2px solid #00299a;
+    border: 2px solid var(--ui-scheme-font-color);
     border-radius: 15px !important;
 }
 
@@ -417,8 +417,10 @@
         display: flex;
         justify-content: center;
         align-items: flex-end;
-        margin-top: 14%;
+        margin-top: 13.75%;
         /* border: 1px solid orange; */
+        /* margin-bottom: 1%; */
+
     }
 
     .cardWrapperClose {
@@ -572,7 +574,7 @@
         font-family: "Poppins", sans-serif;
         font-size: 15px;
         font-weight: 500;
-        color: #7E8DA4;
+        color: var(--secondary-font-color);
 
     }
 
@@ -646,8 +648,6 @@
         font-family: "Poppins", sans-serif;
         font-size: 15px;
         font-weight: 600;
-        color: #0073ff;
-        background-color: #a8ccf9b5;
         border: 1px solid rgba(142, 138, 138, 0.13);
         outline: none !important;
         height: 65%;
@@ -681,7 +681,6 @@
         position: absolute;
         width: 150px;
         height: 200px;
-        background-color: white;
         border: unset;
         display: flex;
         flex-direction: column;
@@ -708,7 +707,6 @@
     }
 
     .inputPopUpText:hover {
-        background-color: red;
         width: 80%;
     }
 
@@ -732,7 +730,7 @@
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
-        background-color: var(--fullCard-wrapper-bg);
+        background-color: var(--box-bg-primary);
         padding-left: 5%;
         webkit-tap-highlight-color: transparent;
         -webkit-touch-callout: none;
@@ -753,7 +751,7 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        background-color: var(--fullCard-wrapper-bg);
+        background-color: var(--box-bg-primary);
         padding-left: 0%;
         webkit-tap-highlight-color: transparent;
         -webkit-touch-callout: none;

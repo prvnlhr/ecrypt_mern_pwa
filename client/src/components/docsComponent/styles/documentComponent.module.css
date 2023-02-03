@@ -7,7 +7,7 @@
     align-items: center;
     width: 150px;
     height: 200px;
-    background-color: var(--doc-wrapper-minimise-bg);
+    background-color: var(--box-bg-primary);
     border-radius: 15px;
     margin-left: 20px;
     /* border: 1px solid black; */
@@ -44,7 +44,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--image-container-bg);
+    background-color: var(--box-bg-tertiary);
     border-radius: 15px;
 }
 
@@ -83,7 +83,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 12px;
     font-weight: 500;
-    color: var(--doc-list-image-title-font-color);
+    color: var(--primary-font-color);
     width: 80%;
     white-space: nowrap;
     overflow: hidden;
@@ -110,7 +110,6 @@
     justify-content: center;
     align-items: flex-end;
     cursor: pointer;
-
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
@@ -124,6 +123,7 @@
         justify-content: center;
         align-items: center;
         overflow: hidden;
+        border-radius: 19px;
     }
 
     .documenComponentContainer {
@@ -139,7 +139,6 @@
         justify-content: center;
         align-items: center;
         /* border: 1px solid black; */
-
     }
 
     .imageContainer {
@@ -151,7 +150,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: 12px;
+        /* border-radius: 20px; */
     }
 
     .footerContainer {

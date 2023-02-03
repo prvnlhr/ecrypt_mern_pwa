@@ -7,7 +7,7 @@ import DashboardIcon from '../icons/DashboardIcon';
 import LoginIdsIcon from '../icons/LoginIdsIcon';
 import CardsIcon from '../icons/CardsIcon';
 import DocsIcon from '../icons/DocsIcon';
-import BookmarksFillIcon from '../icons/BookmarksFillIcon';
+import FavtabIcon from '../icons/FavtabIcon';
 const SideBar = (
     { clickedSearchItem,
         setClickedSearchItem }
@@ -161,7 +161,7 @@ const SideBar = (
                 <Link className={styles.linkWrapper} to='/user/favorites/logins' ref={refFavs} onClick={() => linkedClicked(5)}>
                     <div className={styles.linkIconContainer}>
                         <div className={styles.iconDiv} >
-                            <BookmarksFillIcon />
+                            <FavtabIcon />
                         </div>
 
                     </div>

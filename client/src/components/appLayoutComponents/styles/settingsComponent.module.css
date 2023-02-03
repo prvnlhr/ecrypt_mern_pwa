@@ -62,7 +62,7 @@
 .headingDiv::after {
     content: "";
     position: absolute;
-    background-color: #002A9A;
+    background-color: var(--section-heading-underline);
     width: 40px;
     height: 3px;
     bottom: -8px;
@@ -88,7 +88,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 20px;
     font-weight: 500;
-    color: black;
+    color: var(--primary-font-color);
 }
 
 /* _______________________________________________ */
@@ -118,13 +118,13 @@
     position: relative;
     aspect-ratio: 1/1;
     height: 80%;
-    background-color: white;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    color: var(--box-bg-primary);
+    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: 1px solid orange; */
+    border: 2px solid rgb(94, 118, 184);
 }
 
 .spinner {
@@ -187,7 +187,7 @@ label {
     width: 0px;
     /* background: #071a52; */
     font-family: "Poppins", sans-serif;
-    /* color: black; */
+    /* color: var(--primary-font-color); */
     font-size: 13px;
     border-radius: 5px;
     background-color: #dae5eb;
@@ -289,7 +289,7 @@ label {
 .joinedUpadateDateContainer::after {
     content: "";
     position: absolute;
-    background-color: #002A9A;
+    background-color: var(--section-heading-underline);
     width: 3px;
     height: 90%;
     left: -4%;
@@ -311,16 +311,16 @@ label {
 
 .labelText {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
-    color: #7E8DA4;
+    color: var(--secondary-font-color);
 }
 
 .dateText {
     font-family: "Poppins", sans-serif;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 500;
-    color: black;
+    color: var(--primary-font-color);
 }
 
 .profileFromSection {
@@ -341,7 +341,7 @@ label {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-color: white;
+    background-color: var(--box-bg-primary);
     box-sizing: border-box;
     padding-left: 5%;
 }
@@ -402,6 +402,13 @@ label {
     white-space: nowrap;
 }
 
+.warningIcon {
+    font-size: 13px;
+    color: #C5565D;
+    padding: 0px;
+    margin: 0px;
+}
+
 .messageDivSuccess {
     background-color: #BAFFB4;
 }
@@ -424,12 +431,7 @@ label {
     margin-right: 5px;
 }
 
-.warningIcon {
-    font-size: 13px;
-    color: #F3212D;
-    padding: 0px;
-    margin: 0px;
-}
+
 
 /* ----------------------------------------------------- */
 .profileNameWrapper {
@@ -446,7 +448,7 @@ label {
         "profileEmailNameContainer profileEmailNameContainer"
         "profileEditBtnContainer profileEditBtnContainer";
     box-sizing: border-box;
-    background-color: white;
+    color: var(--box-bg-primary);
 }
 
 .profileHeadingContainer {
@@ -504,7 +506,7 @@ label {
 .formBtnEdit {
     width: auto;
     height: auto;
-    background-color: #002A9A;
+    background-color: var(--submit-btn-color);
     border-radius: 6px;
     border: none;
     outline: none;
@@ -524,7 +526,6 @@ label {
     font-family: "Poppins", sans-serif;
     font-size: 11px;
     font-weight: 400;
-    color: white;
     letter-spacing: 0.5px;
 }
 
@@ -544,7 +545,7 @@ label {
     width: 90%;
     height: 80%;
     /* border: 1px solid black; */
-    background-color: #E8EFFC;
+    background-color: var(--box-bg-tertiary);
     border-radius: 10px;
 }
 
@@ -563,7 +564,7 @@ label {
     font-family: "Poppins", sans-serif;
     font-size: 12px;
     font-weight: 500;
-    color: #7E8DA4;
+    color: var(--secondary-font-color);
 }
 
 .inputDiv {
@@ -588,7 +589,7 @@ label {
     font-family: "Poppins", sans-serif;
     font-size: 13px;
     font-weight: 500;
-    color: black;
+    color: var(--primary-font-color);
     outline: none;
 }
 
@@ -608,7 +609,7 @@ label {
     width: 90%;
     height: 80%;
     /* border: 1px solid black; */
-    background-color: #E8EFFC;
+    background-color: var(--box-bg-tertiary);
     border-radius: 10px;
 }
 
@@ -626,7 +627,7 @@ label {
     width: 95%;
     height: 80%;
     /* border: 1px solid black; */
-    background-color: #E8EFFC;
+    background-color: var(--box-bg-tertiary);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -657,7 +658,7 @@ label {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    background-color: white;
+    color: var(--box-bg-primary);
 }
 
 /* formSectionHeadingDiv */
@@ -705,7 +706,7 @@ label {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #E8EFFC;
+    background-color: var(--box-bg-tertiary);
     border-radius: 10px;
     /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
     margin-right: 2%;
@@ -719,7 +720,7 @@ label {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #E8EFFC;
+    background-color: var(--box-bg-tertiary);
     border-radius: 10px;
     /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
 }
@@ -752,7 +753,7 @@ label {
         "deleteMsgContainer"
         "deleteBtnContainer";
     box-sizing: border-box;
-    background-color: white;
+    color: var(--box-bg-primary);
 
 }
 
@@ -792,9 +793,12 @@ label {
     font-family: "Poppins", sans-serif;
     font-size: 15px;
     font-weight: 500;
-    color: #F3212D;
+    color: #C5565D;
+    /* color: var(--red--color); */
     letter-spacing: 0px;
 }
+
+
 
 .text2Container {
     width: 100%;
@@ -811,7 +815,7 @@ label {
     font-family: "Poppins", sans-serif;
     font-size: 12px;
     font-weight: 500;
-    color: black;
+    color: var(--primary-font-color);
     letter-spacing: 0px;
 }
 
@@ -829,7 +833,7 @@ label {
     font-family: "Poppins", sans-serif;
     font-size: 12px;
     font-weight: 500;
-    color: black;
+    color: var(--primary-font-color);
     letter-spacing: 0px;
 }
 
@@ -845,10 +849,13 @@ label {
 
 .text1Icon {
     font-size: 20px;
+    color: #C5565D;
 }
 
 .dotIcon {
     font-size: 20px;
+    color: var(--tertiary-font-color);
+
 }
 
 .deleteBtnContainer {
@@ -862,7 +869,7 @@ label {
 }
 
 .focusFieldStyle {
-    border: 2px solid #00299a;
+    border: 2px solid var(--section-heading-underline);
 }
 
 .formSectionHeadingDiv {
@@ -880,13 +887,13 @@ label {
     font-family: "Poppins", sans-serif;
     font-size: 17px;
     font-weight: 600;
-    color: black;
+    color: var(--primary-font-color);
 }
 
 .formSectionHeadingDiv::after {
     content: "";
     position: absolute;
-    background-color: #002A9A;
+    background-color: var(--section-heading-underline);
     width: 40px;
     height: 3px;
     bottom: 0px;
@@ -978,7 +985,6 @@ label {
     .headingDiv::after {
         content: "";
         position: absolute;
-        background-color: #002A9A;
         width: 40px;
         height: 3px;
         bottom: 0px;
@@ -992,10 +998,8 @@ label {
     }
 
     .headingDiv p {
-        font-family: "Poppins", sans-serif;
         font-size: 22px;
         font-weight: 500;
-        color: black;
         margin: 0px;
     }
 
@@ -1024,8 +1028,7 @@ label {
         position: relative;
         aspect-ratio: 1/1;
         height: 80%;
-        background-color: white;
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
         border-radius: 50%;
         display: flex;
         justify-content: center;
@@ -1092,11 +1095,9 @@ label {
         visibility: hidden;
         width: 0px;
         /* background: #071a52; */
-        font-family: "Poppins", sans-serif;
-        /* color: black; */
+        /* color: var(--primary-font-color); */
         font-size: 13px;
         border-radius: 5px;
-        background-color: #dae5eb;
     }
 
     .profilePicformTagEditMode {
@@ -1123,7 +1124,6 @@ label {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #9DC1FA;
         border-radius: 50%;
     }
 
@@ -1134,7 +1134,6 @@ label {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #B4B3BA;
         border-radius: 50%;
         margin-bottom: 50%;
     }
@@ -1146,23 +1145,19 @@ label {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #58BF6F;
         border-radius: 50%;
     }
 
     .profilePicSaveIcon {
         font-size: 13px;
-        color: white;
     }
 
     .profilePicCancelIcon {
         font-size: 13px;
-        color: white;
     }
 
     .profilePicEditIcon {
         font-size: 13px;
-        color: #002A9A;
     }
 
     /* _____________________________________________________________________ */
@@ -1190,7 +1185,6 @@ label {
     .joinedUpadateDateContainer::after {
         content: "";
         position: absolute;
-        background-color: #002A9A;
         width: 2px;
         height: 100%;
         left: -5%;
@@ -1210,10 +1204,8 @@ label {
     }
 
     .labelText {
-        font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 500;
-        color: #7E8DA4;
     }
 
     .updatedDateDiv {
@@ -1228,10 +1220,8 @@ label {
     }
 
     .dateText {
-        font-family: "Poppins", sans-serif;
         font-size: 13px;
         font-weight: 500;
-        color: black;
     }
 
     .profileFromSection {
@@ -1252,7 +1242,6 @@ label {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: white;
     }
 
     .formWrapper {
@@ -1296,32 +1285,22 @@ label {
         overflow: hidden;
     }
 
-    .messageDivError {
-        background-color: #FCCED1;
-    }
 
     .messageDivError p {
-        font-family: "Poppins", sans-serif;
         width: 50%;
         font-size: 10.5px;
         font-weight: 550;
-        color: #F3212D;
         width: 90%;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
     }
 
-    .messageDivSuccess {
-        background-color: #BAFFB4;
 
-    }
 
     .messageDivSuccess p {
-        font-family: "Poppins", sans-serif;
         font-size: 10.5px;
         font-weight: 550;
-        color: #38c62b;
     }
 
     /* .messageDiv p {} */
@@ -1337,7 +1316,6 @@ label {
 
     .warningIcon {
         font-size: 15px !;
-        color: #F3212D;
         padding: 0px;
         margin: 0px;
     }
@@ -1358,7 +1336,6 @@ label {
             "profileEmailNameContainer profileEmailNameContainer"
             "profileEditBtnContainer profileEditBtnContainer";
         box-sizing: border-box;
-        background-color: white;
     }
 
     .profileHeadingContainer {
@@ -1386,16 +1363,13 @@ label {
     }
 
     .formSectionHeadingDiv p {
-        font-family: "Poppins", sans-serif;
         font-size: 17px;
         font-weight: 600;
-        color: black;
     }
 
     .formSectionHeadingDiv::after {
         content: "";
         position: absolute;
-        background-color: #002A9A;
         width: 40px;
         height: 3px;
         bottom: 0px;
@@ -1406,7 +1380,6 @@ label {
     .formBtnSave {
         width: auto;
         height: auto;
-        background-color: #58BF6F;
         border-radius: 5px;
         border: none;
         outline: none;
@@ -1425,7 +1398,6 @@ label {
     .formBtnCancel {
         width: auto;
         height: auto;
-        background-color: #B4B3BA;
         border-radius: 5px;
         border: none;
         outline: none;
@@ -1445,7 +1417,6 @@ label {
     .formBtnEdit {
         width: auto;
         height: auto;
-        background-color: #002A9A;
         border-radius: 6px;
         border: none;
         outline: none;
@@ -1477,7 +1448,6 @@ label {
     .profileFirstNameDiv {
         width: 90%;
         height: 80%;
-        background-color: #E8EFFC;
         border-radius: 10px;
 
     }
@@ -1491,14 +1461,12 @@ label {
         align-items: center;
         box-sizing: border-box;
         padding-left: 5%;
-
     }
 
     .labelDiv p {
-        font-family: "Poppins", sans-serif;
         font-size: 13px;
         font-weight: 500;
-        color: #7E8DA4;
+        color: var(--secondary-font-color);
     }
 
 
@@ -1521,18 +1489,16 @@ label {
         /* border-bottom: 1px solid rgba(0, 0, 0, 0.16); */
         border-bottom: none;
         background: none;
-        font-family: "Poppins", sans-serif;
         font-size: 13px;
         font-weight: 500;
-        color: black;
+        color: var(--primary-font-color);
         background: none;
     }
 
     input::placeholder {
-        font-family: "Poppins", sans-serif;
         font-size: 11px;
         font-weight: 450;
-        color: rgb(189, 189, 189);
+        color: var(--box-bg-secondary-li);
         text-align: center;
     }
 
@@ -1552,7 +1518,6 @@ label {
         width: 90%;
         height: 80%;
         /* border: 1px solid black; */
-        background-color: #E8EFFC;
         border-radius: 10px;
 
     }
@@ -1571,7 +1536,6 @@ label {
         width: 95%;
         height: 80%;
         /* border: 1px solid black; */
-        background-color: #E8EFFC;
         border-radius: 10px;
         display: flex;
         flex-direction: column;
@@ -1589,8 +1553,6 @@ label {
         align-items: center;
     }
 
-
-
     /* ________________________________________________________________- */
 
     .profilePassWrapper {
@@ -1601,7 +1563,6 @@ label {
         display: flex;
         flex-direction: column;
         box-sizing: border-box;
-        background-color: white;
     }
 
     .passHeadingContainer {
@@ -1646,7 +1607,6 @@ label {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #E8EFFC;
         border-radius: 10px;
         /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
         margin-right: 2%;
@@ -1661,7 +1621,6 @@ label {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #E8EFFC;
         border-radius: 10px;
         /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
     }
@@ -1694,7 +1653,6 @@ label {
             "deleteMsgContainer"
             "deleteBtnContainer";
         box-sizing: border-box;
-        background-color: white;
 
     }
 
@@ -1731,10 +1689,8 @@ label {
     }
 
     .text1Container p {
-        font-family: "Poppins", sans-serif;
         font-size: 15px;
         font-weight: 500;
-        color: #F3212D;
         letter-spacing: 0px;
     }
 
@@ -1751,10 +1707,8 @@ label {
 
     .text2Container p {
         width: 85%;
-        font-family: "Poppins", sans-serif;
         font-size: 12px;
         font-weight: 500;
-        color: black;
         letter-spacing: 0px;
     }
 
@@ -1769,10 +1723,8 @@ label {
 
     .text3Container p {
         width: 85%;
-        font-family: "Poppins", sans-serif;
         font-size: 12px;
         font-weight: 500;
-        color: black;
         letter-spacing: 0px;
 
     }
@@ -1843,8 +1795,8 @@ label {
         width: 70%;
         aspect-ratio: 1/1;
         height: unset;
-        background-color: white;
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        color: var(--box-bg-primary);
+        /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
         border-radius: 50%;
         display: flex;
         justify-content: center;
@@ -1912,10 +1864,9 @@ label {
         width: 0px;
         /* background: #071a52; */
         font-family: "Poppins", sans-serif;
-        /* color: black; */
+        /* color: var(--primary-font-color); */
         font-size: 13px;
         border-radius: 5px;
-        background-color: #dae5eb;
     }
 
     .profilePicformTagEditMode {
@@ -1942,7 +1893,6 @@ label {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #9DC1FA;
         border-radius: 50%;
     }
 
@@ -1953,7 +1903,6 @@ label {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #B4B3BA;
         border-radius: 50%;
         margin-bottom: 50%;
     }
@@ -1965,23 +1914,19 @@ label {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #58BF6F;
         border-radius: 50%;
     }
 
     .profilePicSaveIcon {
         font-size: 13px;
-        color: white;
     }
 
     .profilePicCancelIcon {
         font-size: 13px;
-        color: white;
     }
 
     .profilePicEditIcon {
         font-size: 13px;
-        color: #002A9A;
     }
 
     /* _____________________________________________________________________ */

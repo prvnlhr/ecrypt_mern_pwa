@@ -7,7 +7,7 @@
     align-items: center;
     width: 150px;
     height: 200px;
-    background-color: var(--doc-wrapper-minimise-bg);
+    background-color: var(--box-bg-primary);
     border-radius: 15px;
     margin-left: 20px;
     /* border: 1px solid black; */
@@ -39,7 +39,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--image-container-bg);
+    background-color: var(--box-bg-tertiary);
     border-radius: 15px;
 }
 
@@ -78,7 +78,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 12px;
     font-weight: 500;
-    color: var(--doc-list-image-title-font-color);
+    color: var(--primary-font-color);
     width: 80%;
     white-space: nowrap;
     overflow: hidden;
@@ -106,7 +106,8 @@
     align-items: flex-end;
 }
 
-@media screen and (max-width: 650px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
     .documentComponentWrapper {
         position: relative;
         width: 100%;
@@ -169,15 +170,15 @@
     }
 
     .titleText {
-        font-family: "Poppins", sans-serif;
-        font-size: 12px;
-        font-weight: 450;
         width: 80%;
         margin-left: 5%;
         white-space: nowrap;
         overflow: hidden;
-        text-overflow: ellipsis
+        text-overflow: ellipsis;
+        font-size: 0.9rem;
+        font-weight: 500;
     }
+
 
     .favBtnContainer {
         position: relative;
@@ -190,10 +191,4 @@
         /* background-color: blueviolet; */
     }
 
-    .favBtnIcon {
-        font-size: 16px;
-        margin: 0px;
-        padding: 0px;
-        /* border: 1px solid black; */
-    }
 }

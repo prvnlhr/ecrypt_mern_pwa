@@ -101,11 +101,12 @@ const SearchSection = ({ searchMode, setSearchMode, searchQuery,
                     </p>
                 </div>
 
-                {location.pathname !== "/" &&
-                    <div className={styles.listCountDiv} >
-                        <p>{listCount}</p>
-                    </div>
-                }
+                {/* {
+                    location.pathname === "/" && searchQuery.length !== 0 ?
+                        <div className={styles.listCountDiv}>
+                            scscs
+                        </div> : null
+                } */}
             </div>
             <div className={styles.searchInputWrapper}>
 
@@ -131,7 +132,7 @@ const SearchSection = ({ searchMode, setSearchMode, searchQuery,
 
 
             </div>
-        </div>
+        </div >
     )
 }
 

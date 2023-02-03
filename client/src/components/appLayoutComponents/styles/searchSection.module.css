@@ -28,12 +28,12 @@
     width: 70%;
     height: 50%;
     /* border: 1px solid black; */
+    background-color: var(--box-bg-primary);
     border-radius: 10px;
-    background-color: var(--searchbar-input-false-bg);
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 
 }
@@ -48,7 +48,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: #002A9A;
+    color: var(--ui-scheme-font-color);
     margin: 0px;
     margin-left: 10px;
 
@@ -59,7 +59,7 @@
     height: 50%;
     /* border: 1px solid black; */
     border-radius: 10px;
-    background-color: white;
+    background-color: var(--box-bg-secondary-li);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -92,9 +92,16 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: #002A9A;
+    color: var(--primary-font-color);
     margin: 0px;
 }
+
+.searchIcon {
+    font-size: 20px;
+    margin-right: 10px;
+    color: var(--ui-scheme-font-color);
+}
+
 
 .searchCancelIconDiv {
     width: 10%;
@@ -107,6 +114,8 @@
 
 .searchCancelIcon {
     font-size: 15px;
+    color: var(--primary-font-color);
+
 }
 
 .listTitleWrapper {
@@ -137,7 +146,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 23px;
     font-weight: 500;
-    color: var(--app-list-heading-font-color);
+    color: var(--primary-font-color);
 }
 
 .listTitleTextSearch {
@@ -147,7 +156,7 @@
 .listTitleText::after {
     position: absolute;
     content: " ";
-    background-color: var(--app-list-heading-font-line);
+    background-color: var(--ui-scheme-font-color);
     width: 45px;
     height: 2.5px;
     bottom: -8px;
@@ -208,26 +217,20 @@
         height: 90%;
         /* border: 1px solid black; */
         border-radius: 10px;
-        background-color: var(--searchbar-input-false-bg);
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-        box-shadow: var(--searchbar-input-box-shadow);
     }
 
     .searchIcon {
         font-size: 20px;
         margin: 0px;
-        color: var(--search-input-icons);
     }
 
     .searchText {
         position: relative;
-        font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 500;
-        color: var(--search-input-font-color);
         margin: 0px;
     }
 
@@ -237,7 +240,6 @@
         height: 90%;
         /* border: 1px solid black; */
         border-radius: 10px;
-        background-color: var(--search_input-true-bg);
         display: flex;
         justify-content: space-evenly;
         align-items: center;
@@ -277,7 +279,6 @@
 
     .searchCancelIcon {
         font-size: 15px;
-        color: var(--search-input-icons);
     }
 
     .listTitleWrapper {
@@ -306,10 +307,8 @@
 
     .listTitleText {
         position: relative;
-        font-family: "Poppins", sans-serif;
         font-size: 23px;
         font-weight: 500;
-        color: var(--app-list-heading-font-color);
         margin-left: unset;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 
@@ -318,7 +317,6 @@
     .listTitleText::after {
         position: absolute;
         content: " ";
-        background-color: var(--app-list-heading-font-line);
         width: 45px;
         height: 2.5px;
         bottom: -8px;
@@ -332,17 +330,14 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: var(--app-list-count-div-bg);
         border-radius: 5px;
         margin-left: 10px;
     }
 
     .listCountDiv p {
         position: relative;
-        font-family: "Poppins", sans-serif;
         font-size: 10px;
         font-weight: 400;
-        color: var(--list-count-font-color);
         margin-top: 2px;
         padding: 0px;
     }

@@ -15,7 +15,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background-color: var(--tabbar-wrapper-bg);
+    background-color: var(--box-bg-primary);
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -68,6 +68,7 @@
     width: 15%;
     aspect-ratio: 1/1;
     background-color: #AED2FF;
+    background-color: var(--box-bg-secondary-li);
     border-radius: 14px;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;

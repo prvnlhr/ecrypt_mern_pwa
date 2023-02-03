@@ -1,19 +1,5 @@
 @import "../../variable.modules.css";
 
-/* 
-.headerbar {
-  position: relative;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  width: 100% !important;
-  height: 100%;
-  display: grid;
-  grid-template-columns: 30% 65% 5%;
-  grid-template-rows: 100%;
-  grid-template-areas: "dateWrapper avatarNameWrapper popUpWrapper";
-  align-items: center;
-  overflow: hidden;
-} */
 .headerBar {
   position: relative;
   grid-area: headerBar;
@@ -22,7 +8,6 @@
   width: 100% !important;
   height: 100%;
   display: grid;
-  /* grid-template-columns: minmax(0, 0.25fr) minmax(0, 0.50fr) minmax(0, 0.2fr); */
   grid-template-columns: 30% 65% 5%;
   grid-template-rows: 100%;
   grid-template-areas: "dateWrapper avatarNameWrapper popUpWrapper";
@@ -42,7 +27,7 @@
 .dateWrapper::after {
   position: absolute;
   content: " ";
-  background-color: var(--headerbar-date-wrapper-after-line);
+  background-color: var(--ui-scheme-font-color);
   width: 3px;
   height: 60%;
   bottom: auto;
@@ -75,14 +60,14 @@
   font-family: "Poppins", sans-serif;
   font-size: 12px;
   font-weight: 500;
-  color: #0473FF;
+  color: var(--ui-scheme-font-color);
 }
 
 .dateText {
   font-family: "Poppins", sans-serif;
   font-size: 13px;
   font-weight: 500;
-  color: black;
+  color: var(--primary-font-color);
 }
 
 
@@ -109,14 +94,14 @@
   font-family: "Poppins", sans-serif;
   font-size: 13px;
   font-weight: 600;
-  color: #0473FF;
+  color: var(--ui-scheme-font-color);
 }
 
 .grettingText {
   font-family: "Poppins", sans-serif;
   font-size: 13px;
   font-weight: 500;
-  color: #7E8DA4;
+  color: var(--secondary-font-color);
 }
 
 .avatarContainer {
@@ -130,7 +115,7 @@
 }
 
 .avatarDiv {
-  background-color: white;
+  background-color: var(--box-bg-secondary-li);
   width: 60%;
   height: 60%;
   /* border: 1px solid #7e8da423; */
@@ -138,7 +123,6 @@
   justify-content: center;
   align-items: center;
   border-radius: 22px;
-  box-shadow: 0px 4.02118px 20.1059px rgba(0, 0, 0, 0.08);
 }
 
 .avatarImgDiv {
@@ -191,8 +175,6 @@
   top: 90% !important;
   width: 150px;
   height: 170px;
-  /* background-color: white; */
-
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 70% 30%;
@@ -216,7 +198,6 @@
 
 .topSection {
   position: relative;
-
   grid-area: topSection;
   width: 100%;
   height: 100%;
@@ -225,7 +206,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  background-color: white;
+  background-color: var(--box-bg-primary);
 
 }
 
@@ -248,38 +229,53 @@
   /* border: 1px solid black; */
   display: flex;
   align-items: center;
+  justify-content: center;
   background-color: #F3F5F9;
+  background-color: var(--box-bg-secondary);
   border-radius: 10px;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  padding: 0;
+}
+
+.toggleDiv {
+  position: absolute;
+  width: 97%;
+  height: 88%;
+  /* border: 1px solid black; */
+  display: flex;
+  align-items: center;
+  /* background-color: #F3F5F9; */
+  /* background-color: var(--box-bg-secondary); */
+  /* border-radius: 10px; */
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .toggleBtnDivLeft {
   position: absolute;
   width: 50%;
-  height: 90%;
+  height: 100%;
   display: flex;
-  background-color: white;
-  border-radius: 10px;
+  background-color: var(--box-bg-primary);
+  border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  left: 0px;
-  margin-right: 50%;
+  /* left: 0px; */
   margin-left: 0%;
+  margin-right: 50%;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-
 }
 
 .toggleBtnDivRight {
   position: absolute;
   width: 50%;
-  height: 90%;
+  height: 100%;
   display: flex;
   background-color: white;
-  border-radius: 10px;
+  background-color: var(--box-bg-tertiary);
+  border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  margin-right: 0%;
   margin-left: 50%;
+  margin-right: 0%;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-
 }
 
 
@@ -314,12 +310,13 @@
   box-sizing: border-box;
 }
 
-.toggleTextDiv p {
+
+.toggleBtnText {
   font-family: "Poppins", sans-serif;
-  font-size: 10px;
   font-weight: 500;
-  color: black;
+  font-size: 10px;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  color: var(--primary-font-color);
 }
 
 .settingsLinkContainer {
@@ -330,7 +327,6 @@
   justify-content: flex-start;
   align-items: center;
   text-decoration: none;
-  color: black;
 }
 
 .iconDiv {
@@ -340,16 +336,13 @@
   margin-right: 8%;
 }
 
-
-
 .settingsText {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
   font-weight: 500;
-  color: black;
+  color: var(--primary-font-color);
   text-decoration: none;
 }
-
 
 .bottomSection {
   grid-area: bottomSection;
@@ -359,7 +352,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: var(--box-bg-primary);
 }
 
 .logOutDiv {
@@ -378,12 +371,11 @@
   margin-right: 5%;
 }
 
-
 .logoutText {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
   font-weight: 500;
-  color: #f3212d;
+  color: #D64339;
 }
 
 /* _____________________________________________________________ */
@@ -458,7 +450,6 @@
   .dateWrapper::after {
     position: absolute;
     content: " ";
-    background-color: var(--headerbar-date-wrapper-after-line);
     width: 2px;
     height: 40%;
     bottom: auto;
@@ -492,19 +483,15 @@
   }
 
   .dayText {
-    font-family: "Poppins", sans-serif;
     font-size: 12px;
     font-weight: 500;
-    color: var(--headerbar-month-font-color);
     margin: 0px;
     padding: 0px;
   }
 
   .dateText {
-    font-family: "Poppins", sans-serif;
     font-size: 12px;
     font-weight: 600;
-    color: var(--headerbar-date-font-color);
     margin: 0px;
     padding: 0px;
   }
@@ -532,19 +519,15 @@
   }
 
   .nameText {
-    font-family: "Poppins", sans-serif;
     font-size: 15px;
     font-weight: 600;
-    color: var(--headerbar-username-font-color);
     margin: 0px;
     padding: 0px;
   }
 
   .grettingText {
-    font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: #7E8DA4;
     margin: 0px;
     padding: 0px;
   }
@@ -560,7 +543,6 @@
   }
 
   .avatarDiv {
-    background-color: white;
     aspect-ratio: 1/1;
     width: 65%;
     height: unset;
@@ -570,14 +552,12 @@
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    box-shadow: 0px 4.02118px 20.1059px rgba(0, 0, 0, 0.08);
   }
 
   .avatarImgDiv {
     position: relative;
     width: 88%;
     height: 88%;
-    border: 1px solid #7e8da453;
     /* border: 1px solid red; */
     display: flex;
     justify-content: center;
@@ -630,7 +610,6 @@
     border-radius: 5px;
     overflow: hidden;
     grid-gap: 2%;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -652,7 +631,6 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    background-color: white;
 
   }
 
@@ -694,10 +672,8 @@
   }
 
   .toggleTextDiv p {
-    font-family: "Poppins", sans-serif;
     font-size: 10px;
     font-weight: 500;
-    color: black;
   }
 
   .settingsLinkContainer {
@@ -717,10 +693,8 @@
   }
 
   .settingsText {
-    font-family: "Poppins", sans-serif;
     font-size: 15px;
     font-weight: 500;
-    color: black;
   }
 
   .bottomSection {
@@ -731,7 +705,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
   }
 
   .logOutDiv {
@@ -751,10 +724,8 @@
   }
 
   .logoutText {
-    font-family: "Poppins", sans-serif;
     font-size: 15px;
     font-weight: 500;
-    color: #f3212d;
   }
 
 
@@ -776,7 +747,6 @@
   }
 
   .avatarDiv {
-    background-color: white;
     width: unset;
     height: 40%;
     aspect-ratio: 1/1;
@@ -785,6 +755,5 @@
     justify-content: center;
     align-items: center;
     border-radius: 22px;
-    box-shadow: 0px 4.02118px 20.1059px rgba(0, 0, 0, 0.08);
   }
 }

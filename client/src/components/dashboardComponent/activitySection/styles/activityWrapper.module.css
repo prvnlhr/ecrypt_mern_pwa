@@ -18,7 +18,7 @@
     padding-top: 0%;
     padding-bottom: 5%;
     border-bottom: 1px solid rgba(0, 0, 0, 0.248);
-
+    scroll-snap-align: start;
 }
 
 .activityWrapperOuter::before {
@@ -63,7 +63,7 @@
     position: absolute;
     right: 15%;
     content: "";
-    background-color: #002A9A;
+    background-color: var(--ui-scheme-font-color);
     width: 2.5px;
     height: 80%;
     border-radius: 10px;
@@ -72,14 +72,14 @@
 .dateContainer {
     width: 68%;
     height: 100%;
-    background-color: var(--activity-field-date-bg);
+    background-color: var(--box-bg-primary);
     border-radius: 15px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
 }
 
 .monthDiv {
@@ -95,7 +95,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: var(--activity-field-month-font-color);
+    color: var(--primary-font-color);
     margin: 0px;
     padding: 0px;
 }
@@ -114,7 +114,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 22px;
     font-weight: 500;
-    color: var(--activity-field-date-font-color);
+    color: var(--ui-scheme-font-color);
     margin: 0px;
     padding: 0px;
 }
@@ -144,7 +144,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 12px;
     font-weight: 500;
-    color: var(--activity-field-time-font-color);
+    color: var(--primary-font-color);
     margin: 0px;
     padding: 0px;
 }
@@ -166,15 +166,11 @@
 .typeContainer {
     width: 80%;
     height: 70%;
-    background-color: var(--activity-field-type-task-bg);
+    background-color: var(--box-bg-primary);
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 9px;
-    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    /* border: 1px solid black; */
-
 }
 
 .typeContainer p {
@@ -201,13 +197,13 @@
 .taskContainer {
     width: 80%;
     height: 70%;
-    background-color: var(--activity-field-type-task-bg);
+    background-color: var(--box-bg-primary);
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 9px;
     /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
     /* border: 2px solid #D64339; */
     box-sizing: border-box;
 }
@@ -242,7 +238,7 @@
     position: relative;
     width: 78%;
     height: 60px;
-    background-color: white;
+    background-color: red;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -251,9 +247,7 @@
     margin-top: 8px;
     margin-right: 5.5%;
     /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-
-
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
 }
 
 .innerBox::before {

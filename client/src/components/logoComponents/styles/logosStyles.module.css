@@ -23,6 +23,8 @@
     align-items: center;
     padding: 0px;
     background-color: #A6CBFB;
+    background-color: var(--box-bg-secondary-li);
+    background-color: var(--box-bg-tertiary);
     border-radius: 15px;
     padding-top: 10%;
 
@@ -40,7 +42,8 @@
     justify-content: center;
     align-items: center;
     background-color: white;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: var(--box-bg-secondary-li);
+    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
 }
 
 .logoContainerActive {
@@ -91,5 +94,5 @@
     font-family: "Poppins", sans-serif;
     font-size: 11px;
     font-weight: 450;
-    color: black;
+    color: var(--primary-font-color);
 }

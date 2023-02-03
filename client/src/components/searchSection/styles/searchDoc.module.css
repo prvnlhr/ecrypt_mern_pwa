@@ -7,7 +7,7 @@
     align-items: center;
     width: 150px;
     height: 200px;
-    background-color: var(--doc-wrapper-minimise-bg);
+    background-color: var(--box-bg-primary);
     border-radius: 15px;
     margin-left: 20px;
     /* border: 1px solid black; */
@@ -39,7 +39,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--image-container-bg);
+    background-color: var(--box-bg-tertiary);
     border-radius: 15px;
 }
 

@@ -14,7 +14,7 @@
   aspect-ratio: 3.73/1 !important;
   border-radius: 12px;
   margin: 15px 15px 15px 15px;
-  background-color: var(--list-wrapper-bg);
+  background-color: var(--box-bg-primary);
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -47,7 +47,7 @@
   aspect-ratio: 3.73/1 !important;
   border-radius: 12px;
   margin: 15px 15px 15px 15px;
-  background-color: var(--list-wrapper-bg);
+  background-color: var(--box-bg-primary);
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -78,7 +78,7 @@
   width: 80%;
   height: 80%;
   border-radius: 10px;
-  background-color: var(--list-wrapper-logo-div-bg);
+  background-color: var(--box-bg-secondary);
 }
 
 .titleWrapper {
@@ -98,7 +98,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: var(--list-wrapper-title-font-color);
+  color: var(--primary-font-color);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis
@@ -120,14 +120,14 @@
   font-family: "Poppins", sans-serif;
   font-size: 12px;
   font-weight: 500;
-  color: var(--list-wrapper-username-font-color);
+  color: var(--secondary-font-color);
 }
 
 .bankCardLogoWrapperHide {
   grid-area: bankCardLogoWrapper;
   width: 100%;
   height: 100%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: none;
   justify-content: center;
 }
@@ -191,6 +191,10 @@
     margin-right: auto;
     /* border: 1px solid red; */
     padding: 0%;
+    margin: 0.80rem auto 0.80rem auto;
+    border-radius: 15px;
+
+
   }
 
   .cardComponentBank {
@@ -207,6 +211,10 @@
     grid-template-areas:
       "logoWrapper titleWrapper bankCardLogoWrapper  favBtnWrapper "
       "logoWrapper usernameWrapper bankCardLogoWrapper favBtnWrapper";
+    margin: 0.80rem auto 0.80rem auto;
+    border-radius: 18px;
+
+
   }
 
   .logoWrapper {
@@ -226,7 +234,8 @@
     /* border: 1px solid rgba(128, 128, 128, 0.543); */
     width: 85%;
     height: 85%;
-    border-radius: 10px;
+    /* border-radius: 10px; */
+    border-radius: 13px;
   }
 
   .bankCardVenderLogoDiv {

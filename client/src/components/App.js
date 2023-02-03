@@ -37,7 +37,7 @@ const App = () => {
     getToken();
   }, [])
 
-  const theme = "light";
+  const theme = "dark";
 
   return (
     <div data-theme={theme} className={appStyles.app} >

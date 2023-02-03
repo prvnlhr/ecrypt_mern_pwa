@@ -8,7 +8,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: var(--fullCard-wrapper-bg);
+  background-color: var(--box-bg-primary);
   padding-left: 5%;
   webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -28,7 +28,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: var(--fullCard-wrapper-bg);
+  background-color: var(--box-bg-primary);
   padding-left: 0%;
   webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -190,7 +190,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: #7E8DA4;
+  color: var(--secondary-font-color);
 }
 
 .titleTextDiv {
@@ -206,7 +206,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 17px;
   font-weight: 500;
-  color: var(--fullCard-field-text-font-color);
+  color: var(--primary-font-color);
 }
 
 
@@ -230,7 +230,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--fullCard-field-container-bg);
+  background-color: var(--box-bg-tertiary);
   border-radius: 10px;
 
 }
@@ -270,14 +270,14 @@
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-  background-color: #A6CBFB;
+  background-color: var(--box-bg-secondary);
 }
 
 .categoryTextBox p {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: black;
+  color: var(--ui-scheme-font-color);
 }
 
 .appWebSiteWrapper {
@@ -302,7 +302,7 @@
   grid-template-rows: 100%;
   grid-template-areas:
     "appWebSiteIconDiv appWebsiteLabelDiv appWebsiteTextDiv";
-  background-color: #F6F6F6;
+  background-color: var(--box-bg-tertiary);
   border-radius: 10px;
 
 }
@@ -319,7 +319,7 @@
 
 .websiteIcon {
   font-size: 25px;
-  color: var(--fullCard-field-icon--color);
+  color: var(--field-icon-color);
 }
 
 .appWebsiteLabelDiv {
@@ -336,7 +336,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 500;
-  color: var(--fullCard-field-label-font-color);
+  color: var(--secondary-font-color);
 
 }
 
@@ -353,7 +353,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: var(--fullCard-field-text-font-color);
+  color: var(--primary-font-color);
 }
 
 .usernameWrapper {
@@ -379,7 +379,7 @@
   grid-template-areas:
     "usernameIconDiv usernameLabelDiv"
     "usernameIconDiv usernameTextDiv";
-  background-color: var(--fullCard-field-container-bg);
+  background-color: var(--box-bg-tertiary);
   border-radius: 10px;
 }
 
@@ -396,7 +396,7 @@
 .usernameIcon {
   width: 50%;
   height: 50%;
-  color: var(--fullCard-field-icon--color);
+  color: var(--field-icon-color);
 
 }
 
@@ -414,7 +414,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: #7E8DA4;
+  color: var(--secondary-font-color);
 }
 
 .usernameTextDiv {
@@ -432,7 +432,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: var(--fullCard-field-text-font-color);
+  color: var(--primary-font-color);
 }
 
 .passwordWrapper {
@@ -458,7 +458,7 @@
   grid-template-areas:
     "passwordIconDiv passwordLabelDiv"
     "passwordIconDiv passwordTextDiv";
-  background-color: var(--fullCard-field-container-bg);
+  background-color: var(--box-bg-tertiary);
   border-radius: 10px;
 
 
@@ -477,7 +477,7 @@
 .passwordIcon {
   width: 55%;
   height: 55%;
-  color: var(--fullCard-field-icon--color);
+  color: var(--field-icon-color);
 }
 
 .passwordLabelDiv {
@@ -494,7 +494,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: #7E8DA4;
+  color: var(--secondary-font-color);
 }
 
 .passwordTextDiv {
@@ -511,7 +511,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: var(--fullCard-field-text-font-color);
+  color: var(--primary-font-color);
 }
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
@@ -708,10 +708,8 @@
   }
 
   .titleLabelDiv p {
-    font-family: "Poppins", sans-serif;
     font-size: 15px;
     font-weight: 500;
-    color: #7E8DA4;
 
   }
 
@@ -725,7 +723,6 @@
   }
 
   .titleTextDiv p {
-    font-family: "Poppins", sans-serif;
     font-size: 20px;
     font-weight: 600;
   }
@@ -814,7 +811,6 @@
     position: absolute;
     width: 150px;
     height: 200px;
-    background-color: white;
     border: unset;
     display: flex;
     flex-direction: column;
@@ -824,8 +820,6 @@
     padding-bottom: 5%;
     padding-left: 10%;
     border-radius: 5px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    border: 2px solid rgba(57, 83, 212, 0.365);
 
   }
 
@@ -867,7 +861,6 @@
     grid-template-rows: 100%;
     grid-template-areas:
       "appWebSiteIconDiv appWebsiteLabelDiv appWebsiteTextDiv";
-    background-color: var(--fullCard-field-container-bg);
     border-radius: 10px;
 
   }
@@ -1171,7 +1164,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    background-color: var(--fullCard-wrapper-bg);
+    background-color: var(--box-bg-primary);
     /* background-color: transparent; */
     padding-left: 5%;
     webkit-tap-highlight-color: transparent;
@@ -1194,7 +1187,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    background-color: var(--fullCard-wrapper-bg);
+    background-color: var(--box-bg-primary);
     padding-left: 0%;
     webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;

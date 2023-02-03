@@ -54,7 +54,7 @@ const Card = ({ item }) => {
                             <div className={styles.cardHolderIconWrapper} >
                                 <Icon
                                     className={styles.cardHolderIcon}
-                                    icon="prime:user" color="#002a9a"
+                                    icon="prime:user"
                                 />
                             </div>
                             <div className={styles.cardHolderLabelWrapper} >
@@ -72,7 +72,7 @@ const Card = ({ item }) => {
                             <div className={styles.cardExpiryIconWrapper}>
                                 <Icon
                                     className={styles.expiryDateIcon}
-                                    icon="prime:calendar-times" color="#002a9a" />
+                                    icon="prime:calendar-times" />
                             </div>
                             <div className={styles.cardExpiryLabelWrapper} >
                                 <p>
@@ -96,7 +96,7 @@ const Card = ({ item }) => {
                             <div className={styles.cardCvvIconWrapper} >
                                 <Icon
                                     className={styles.cvvIcon}
-                                    icon="ph:password-bold" color="#002a9a" />
+                                    icon="ph:password-bold" />
                             </div>
                             <div className={styles.cardCvvLabelWrapper} >
                                 <p>
@@ -119,7 +119,7 @@ const Card = ({ item }) => {
                     {cardExpand &&
                         <>
                             <div className={styles.cardNoIconWrapper} >
-                                <Icon className={styles.cardNumIcon} icon="vaadin:password" color="#002a9a" />
+                                <Icon className={styles.cardNumIcon} icon="vaadin:password" />
                             </div>
                             <div className={styles.cardNoLabelWrapper} >
                                 <p>

@@ -8,13 +8,11 @@
     width: 45%;
     height: 75px;
     min-height: 75px;
-    background-color: white;
     border-radius: 15px;
     scroll-behavior: smooth;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background-color: var(--box-bg-primary);
     margin: 2% 2% 2% 2%;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-
 }
 
 .cardWrapperExpand {
@@ -27,9 +25,8 @@
     justify-content: center;
     align-items: center;
     border-radius: 15px;
-    background-color: white;
+    background-color: var(--box-bg-primary);
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
 }
 
@@ -95,7 +92,7 @@
     width: 100%;
     /* height: 100%; */
     border-radius: 10px;
-    /* background-color: #F3F5F9; */
+    /* background-color: var(--box-bg-tertiary); */
 }
 
 .logoDivShrink {
@@ -103,7 +100,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    background-color: #F3F5F9;
+    background-color: var(--box-bg-secondary);
     height: 82%;
     width: 82%;
 }
@@ -136,7 +133,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: #7E8DA4;
+    color: var(--secondary-font-color);
 }
 
 .titleTextDiv {
@@ -153,7 +150,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: black;
+    color: var(--primary-font-color);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis
@@ -175,7 +172,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: black;
+    color: var(--primary-font-color);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis
@@ -192,7 +189,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-color: #F3F5F9;
+    background-color: var(--box-bg-tertiary);
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
 }
@@ -211,7 +208,8 @@
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: 600;
-    color: black;
+    font-weight: 500;
+    color: var(--primary-font-color);
 }
 
 .categroryTextWrapper {
@@ -222,7 +220,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #F3F5F9;
+    background-color: var(--box-bg-tertiary);
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
 
@@ -236,7 +234,7 @@
     justify-content: center;
     align-items: center;
     /* border: 1px solid black; */
-    background-color: #a8ccf9b5;
+    background-color: var(--box-bg-secondary);
     border-radius: 5px;
 
 }
@@ -245,7 +243,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: 500;
-    color: #002A9A;
+    color: var(--ui-scheme-font-color);
 }
 
 /* ____________________________________ */
@@ -255,7 +253,7 @@
     width: 100%;
     height: 80%;
     /* border: 1px solid black; */
-    background-color: #F3F5F9;
+    background-color: var(--box-bg-tertiary);
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
 }
@@ -274,7 +272,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: 500;
-    color: black;
+    color: var(--secondary-font-color);
 }
 
 .appWebsiteTextWrapper {
@@ -285,7 +283,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #F3F5F9;
+    background-color: var(--box-bg-tertiary);
 
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
@@ -305,7 +303,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: 500;
-    color: black;
+    color: var(--primary-font-color);
 }
 
 /* ___________________________________________ */
@@ -321,7 +319,7 @@
         "usernameIconWrapper usernameTextWrapper";
     /* border: 1px solid green; */
     /* background-color: forestgreen; */
-    background-color: #F3F5F9;
+    background-color: var(--box-bg-tertiary);
     border-radius: 8px;
 
 }
@@ -361,7 +359,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: #7E8DA4;
+    color: var(--secondary-font-color);
 }
 
 
@@ -379,14 +377,14 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: black;
+    color: var(--primary-font-color);
 }
 
 .usernameTextShrink {
     font-family: "Poppins", sans-serif;
     font-size: 11px;
     font-weight: 500;
-    color: #7E8DA4;
+    color: var(--secondary-font-color);
     margin-left: 5%;
 }
 
@@ -403,7 +401,7 @@
     grid-template-areas:
         "passwordIconWrapper passwordLabelWrapper"
         "passwordIconWrapper passwordTextWrapper";
-    background-color: #F3F5F9;
+    background-color: var(--box-bg-tertiary);
     border-radius: 8px;
 }
 
@@ -431,7 +429,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: #7E8DA4;
+    color: var(--secondary-font-color);
 }
 
 
@@ -446,7 +444,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: black;
+    color: var(--primary-font-color);
 }
 
 .iconsStyles {
@@ -463,7 +461,6 @@
         width: 83%;
         height: 80px !important;
         min-height: 80px;
-        background-color: white;
         border-radius: 15px;
         scroll-behavior: smooth;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -495,7 +492,6 @@
         justify-content: center;
         align-items: center;
         border-radius: 15px;
-        background-color: white;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 
     }
@@ -545,7 +541,7 @@
         width: 100%;
         /* height: 100%; */
         border-radius: 10px;
-        /* background-color: #F3F5F9; */
+        /* background-color: var(--box-bg-tertiary); */
     }
 
     .logoDivShrink {
@@ -555,7 +551,6 @@
         height: 82%;
         width: 82%;
         border-radius: 10px;
-        background-color: #F3F5F9;
     }
 
     /* ____________________________________ */
@@ -583,10 +578,8 @@
     }
 
     .titleLabelDiv p {
-        font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 500;
-        color: #7E8DA4;
     }
 
     .titleTextDiv {
@@ -600,10 +593,8 @@
     }
 
     .titleTextDiv p {
-        font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 500;
-        color: black;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis
@@ -621,10 +612,8 @@
     }
 
     .titleTextDivShrink p {
-        font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 500;
-        color: black;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis
@@ -641,7 +630,6 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        background-color: #F3F5F9;
         border-top-left-radius: 8px;
         border-bottom-left-radius: 8px;
     }
@@ -657,10 +645,8 @@
     }
 
     .categoryLabelDiv p {
-        font-family: "Poppins", sans-serif;
         font-size: 16px;
         font-weight: 600;
-        color: black;
     }
 
     .categroryTextWrapper {
@@ -671,7 +657,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #F3F5F9;
         border-top-right-radius: 8px;
         border-bottom-right-radius: 8px;
 
@@ -685,16 +670,13 @@
         justify-content: center;
         align-items: center;
         /* border: 1px solid black; */
-        background-color: #a8ccf9b5;
         border-radius: 5px;
 
     }
 
     .categoryTextDiv p {
-        font-family: "Poppins", sans-serif;
         font-size: 16px;
         font-weight: 500;
-        color: #002A9A;
     }
 
     /* ____________________________________ */
@@ -704,7 +686,6 @@
         width: 100%;
         height: 80%;
         /* border: 1px solid black; */
-        background-color: #F3F5F9;
         border-top-left-radius: 8px;
         border-bottom-left-radius: 8px;
     }
@@ -720,10 +701,8 @@
     }
 
     .appWebsiteLabelDiv p {
-        font-family: "Poppins", sans-serif;
         font-size: 16px;
         font-weight: 500;
-        color: black;
     }
 
     .appWebsiteTextWrapper {
@@ -734,7 +713,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #F3F5F9;
 
         border-top-right-radius: 8px;
         border-bottom-right-radius: 8px;
@@ -751,10 +729,8 @@
     }
 
     .appWebsiteTextDiv p {
-        font-family: "Poppins", sans-serif;
         font-size: 16px;
         font-weight: 500;
-        color: black;
     }
 
     /* ___________________________________________ */
@@ -770,7 +746,6 @@
             "usernameIconWrapper usernameTextWrapper";
         /* border: 1px solid green; */
         /* background-color: forestgreen; */
-        background-color: #F3F5F9;
         border-radius: 8px;
 
     }
@@ -807,10 +782,8 @@
     }
 
     .usernameLabelWrapper p {
-        font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 500;
-        color: #7E8DA4;
     }
 
 
@@ -825,17 +798,13 @@
     }
 
     .usernameText {
-        font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 500;
-        color: black;
     }
 
     .usernameTextShrink {
-        font-family: "Poppins", sans-serif;
         font-size: 13px;
         font-weight: 500;
-        color: #7E8DA4;
         margin-left: 5%;
     }
 
@@ -852,7 +821,6 @@
         grid-template-areas:
             "passwordIconWrapper passwordLabelWrapper"
             "passwordIconWrapper passwordTextWrapper";
-        background-color: #F3F5F9;
         border-radius: 8px;
     }
 
@@ -877,10 +845,8 @@
     }
 
     .passwordLabelWrapper p {
-        font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 500;
-        color: #7E8DA4;
     }
 
 
@@ -892,10 +858,8 @@
     }
 
     .passwordTextWrapper p {
-        font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 500;
-        color: black;
     }
 
     .iconsStyles {
@@ -913,12 +877,10 @@
         width: 90%;
         height: 75px;
         min-height: 75px;
-        background-color: white;
         border-radius: 15px;
         scroll-behavior: smooth;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
         margin: 2% 2% 2% 2%;
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         margin-left: auto;
         margin-right: auto;
         margin-top: 20px;
@@ -934,9 +896,7 @@
         justify-content: center;
         align-items: center;
         border-radius: 15px;
-        background-color: white;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         margin-left: auto;
         margin-right: auto;
         margin-top: 20px;

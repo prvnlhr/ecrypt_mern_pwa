@@ -8,7 +8,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-color: var(--fullCard-wrapper-bg);
+    background-color: var(--box-bg-primary);
     padding-left: 5%;
     webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
@@ -28,7 +28,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-color: var(--fullCard-wrapper-bg);
+    background-color: var(--box-bg-primary);
 
     padding-left: 0%;
     webkit-tap-highlight-color: transparent;
@@ -234,7 +234,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 20px;
     font-weight: 500;
-    color: var(--fullCard-field-text-font-color);
+    color: var(--primary-font-color);
 
 }
 
@@ -264,7 +264,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--fullCard-field-container-bg);
+    background-color: var(--box-bg-tertiary);
     border-radius: 10px;
 
 }
@@ -300,8 +300,8 @@
     font-family: "Poppins", sans-serif;
     font-size: 15px;
     font-weight: 500;
-    color: #002A9A;
-    background-color: #a8ccf9b5;
+    color: var(--ui-scheme-font-color);
+    background-color: var(--box-bg-secondary);
     border: none;
     outline: none !important;
     height: 75%;
@@ -398,7 +398,7 @@
     grid-template-rows: 100%;
     grid-template-areas:
         "appWebSiteIconDiv appWebsiteLabelDiv appWebsiteInputDiv";
-    background-color: var(--fullCard-field-container-bg);
+    background-color: var(--box-bg-tertiary);
     border-radius: 10px;
 
 }
@@ -415,7 +415,7 @@
 
 .websiteIcon {
     font-size: 25px;
-    color: var(--fullCard-field-icon--color);
+    color: var(--field-icon-color);
 
 }
 
@@ -433,7 +433,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: 500;
-    color: var(--fullCard-field-label-font-color);
+    color: var(--secondary-font-color);
 }
 
 .appWebsiteInputDiv {
@@ -455,7 +455,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: var(--fullCard-field-text-font-color);
+    color: var(--primary-font-color);
 }
 
 .usernameWrapper {
@@ -481,7 +481,7 @@
     grid-template-areas:
         "usernameIconDiv usernameLabelDiv"
         "usernameIconDiv usernameInputDiv";
-    background-color: var(--fullCard-field-container-bg);
+    background-color: var(--box-bg-tertiary);
     border-radius: 10px;
 
 
@@ -500,7 +500,7 @@
 .usernameIcon {
     width: 50%;
     height: 50%;
-    color: var(--fullCard-field-icon--color);
+    color: var(--field-icon-color);
 
 }
 
@@ -543,7 +543,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: var(--fullCard-field-text-font-color);
+    color: var(--primary-font-color);
 }
 
 .usernameInputDiv p {
@@ -576,7 +576,7 @@
     grid-template-areas:
         "passwordIconDiv passwordLabelDiv"
         "passwordIconDiv passwordInputDiv";
-    background-color: var(--fullCard-field-container-bg);
+    background-color: var(--box-bg-tertiary);
     border-radius: 10px;
 
 
@@ -595,7 +595,7 @@
 .passwordIcon {
     width: 55%;
     height: 55%;
-    color: var(--fullCard-field-icon--color);
+    color: var(--field-icon-color);
 }
 
 .passwordLabelDiv {
@@ -637,7 +637,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: var(--fullCard-field-text-font-color);
+    color: var(--primary-font-color);
 
 }
 
@@ -648,7 +648,7 @@
 }
 
 .focusFieldStyle {
-    border: 2px solid #00299a;
+    border: 2px solid var(--ui-scheme-font-color);
     border-radius: 15px !important;
 }
 
@@ -665,6 +665,8 @@
         align-items: flex-end;
         margin-top: 14%;
         /* border: 1px solid black; */
+        margin-top: 13.75%;
+
     }
 
     .cardWrapperClose {
@@ -894,8 +896,6 @@
         font-family: "Poppins", sans-serif;
         font-size: 15px;
         font-weight: 600;
-        color: #0073ff;
-        background-color: #a8ccf9b5;
         outline: none !important;
         height: 80%;
         width: 85%;
@@ -1144,7 +1144,7 @@
         grid-template-areas:
             "passwordIconDiv passwordLabelDiv"
             "passwordIconDiv passwordInputDiv";
-        background-color: var(--fullCard-field-container-bg);
+        background-color: var(--box-bg-tertiary);
         border-radius: 10px;
 
 
@@ -1260,7 +1260,7 @@
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
-        background-color: var(--fullCard-wrapper-bg);
+        background-color: var(--box-bg-primary);
         /* background-color: transparent; */
         padding-left: 5%;
         webkit-tap-highlight-color: transparent;
@@ -1281,7 +1281,7 @@
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
-        background-color: var(--fullCard-wrapper-bg);
+        background-color: var(--box-bg-primary);
         padding-left: 0%;
         webkit-tap-highlight-color: transparent;
         -webkit-touch-callout: none;

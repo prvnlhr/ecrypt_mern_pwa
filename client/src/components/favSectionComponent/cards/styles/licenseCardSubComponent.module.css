@@ -36,7 +36,7 @@
     grid-template-areas:
         "cardHolderIconDiv cardHolderLabelTextDiv"
         "cardHolderIconDiv cardHolderTextDiv";
-    background-color: var(--fullCard-field-container-bg);
+    background-color: var(--box-bg-tertiary);
     border-radius: 10px;
 }
 
@@ -52,7 +52,7 @@
 
 .cardHolderIcon {
     font-size: 30px;
-    color: var(--fullCard-field-icon--color);
+    color: var(--field-icon-color);
 }
 
 
@@ -70,7 +70,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: #7E8DA4;
+    color: var(--secondary-font-color);
 }
 
 .cardHolderTextDiv {
@@ -84,7 +84,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: var(--fullCard-field-text-font-color);
+    color: var(--primary-font-color);
 }
 
 
@@ -107,7 +107,7 @@
     grid-template-areas:
         "cardNumberIconDiv cardNumberLabelTextDiv"
         "cardNumberIconDiv cardNumberTextDiv";
-    background-color: var(--fullCard-field-container-bg);
+    background-color: var(--box-bg-tertiary);
     border-radius: 10px;
 }
 
@@ -124,7 +124,7 @@
 
 .cardNumIcon {
     font-size: 25px;
-    color: var(--fullCard-field-icon--color);
+    color: var(--field-icon-color);
 }
 
 .cardNumberLabelTextDiv {
@@ -141,7 +141,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: #7E8DA4;
+    color: var(--secondary-font-color);
 }
 
 .cardNumberTextDiv {
@@ -155,7 +155,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: var(--fullCard-field-text-font-color);
+    color: var(--primary-font-color);
 }
 
 
@@ -181,7 +181,7 @@
     grid-template-areas:
         "dobIconDiv dobLabelTextDiv"
         "dobIconDiv dobDateTextDiv";
-    background-color: var(--fullCard-field-container-bg);
+    background-color: var(--box-bg-tertiary);
     border-radius: 10px;
 }
 
@@ -197,7 +197,7 @@
 
 .doBIcon {
     font-size: 22px;
-    color: var(--fullCard-field-icon--color);
+    color: var(--field-icon-color);
 }
 
 .dobLabelTextDiv {
@@ -214,7 +214,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: #7E8DA4;
+    color: var(--secondary-font-color);
 }
 
 .dobDateTextDiv {
@@ -231,7 +231,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: var(--fullCard-field-text-font-color);
+    color: var(--primary-font-color);
 }
 
 
@@ -257,7 +257,7 @@
     grid-template-areas:
         "expiryIconDiv expiryLabelTextDiv"
         "expiryIconDiv expiryDateTextDiv";
-    background-color: var(--fullCard-field-container-bg);
+    background-color: var(--box-bg-tertiary);
     border-radius: 10px;
 }
 
@@ -273,7 +273,7 @@
 
 .expiryIcon {
     font-size: 25px;
-    color: var(--fullCard-field-icon--color);
+    color: var(--field-icon-color);
 }
 
 .expiryLabelTextDiv {
@@ -290,7 +290,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: #7E8DA4;
+    color: var(--secondary-font-color);
 }
 
 .expiryDateTextDiv {
@@ -307,43 +307,10 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: var(--fullCard-field-text-font-color);
+    color: var(--primary-font-color);
 }
 
-.inputActive {
-    width: 80%;
-    height: auto;
-    border-bottom: 1px solid #7E8DA4;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    /* border: 1px solid #7E8DA4; */
-    outline: none;
-    background: transparent;
-    font-family: "Poppins", sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    color: black;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
 
-.inputNotActive {
-    width: 80%;
-    height: auto;
-    border: none;
-    /* border: 1px solid #7E8DA4; */
-    outline: none;
-    background: transparent;
-    font-family: "Poppins", sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    color: black;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 
@@ -384,7 +351,7 @@
         grid-template-areas:
             "cardHolderIconDiv cardHolderLabelTextDiv"
             "cardHolderIconDiv cardHolderTextDiv";
-        background-color: var(--fullCard-field-container-bg);
+        background-color: var(--box-bg-tertiary);
         border-radius: 10px;
     }
 
@@ -399,9 +366,8 @@
     }
 
     .cardHolderIcon {
-        font-size: 30px;
+        font-size: 2rem;
     }
-
 
     .cardHolderLabelTextDiv {
         grid-area: cardHolderLabelTextDiv;
@@ -414,10 +380,8 @@
     }
 
     .cardHolderLabelTextDiv p {
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: #7E8DA4;
+        font-size: 0.9rem;
+        font-weight: 450;
     }
 
     .cardHolderTextDiv {
@@ -427,20 +391,10 @@
         /* border: 1px solid black; */
     }
 
-    /* .cardHolderTextDiv input {
-        width: 80%;
-        height: 100%;
-        border-bottom: 1px solid #7E8DA4;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        outline: none;
-        background: transparent;
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: black;
-    } */
+    .cardHolderTextDiv p {
+        font-size: 0.9rem;
+        font-weight: 450;
+    }
 
     /* _____________________________________________ */
     .cardNumberWrapper {
@@ -460,7 +414,6 @@
         grid-template-areas:
             "cardNumberIconDiv cardNumberLabelTextDiv"
             "cardNumberIconDiv cardNumberTextDiv";
-        background-color: var(--fullCard-field-container-bg);
         border-radius: 10px;
     }
 
@@ -476,7 +429,9 @@
     }
 
     .cardNumIcon {
-        font-size: 25px;
+        /* font-size: 25px; */
+        font-size: 1.8rem;
+
     }
 
     .cardNumberLabelTextDiv {
@@ -490,10 +445,8 @@
     }
 
     .cardNumberLabelTextDiv p {
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: #7E8DA4;
+        font-size: 0.9rem;
+        font-weight: 450;
     }
 
     .cardNumberTextDiv {
@@ -503,20 +456,12 @@
         /* border: 1px solid black; */
     }
 
-    /* .cardNumberTextDiv input {
-        width: 80%;
-        height: 100%;
-        outline: none;
-        background: transparent;
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: black;
-        border-bottom: 1px solid #7E8DA4;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-    } */
+    .cardNumberTextDiv p {
+        font-size: 0.9rem;
+        font-weight: 450;
+    }
+
+
 
 
     /* _____________________________________________ */
@@ -543,7 +488,6 @@
         grid-template-areas:
             "dobIconDiv dobLabelTextDiv"
             "dobIconDiv dobDateTextDiv";
-        background-color: var(--fullCard-field-container-bg);
         border-radius: 10px;
     }
 
@@ -558,7 +502,7 @@
     }
 
     .doBIcon {
-        font-size: 22px;
+        font-size: 1.55rem;
     }
 
     .dobLabelTextDiv {
@@ -572,10 +516,8 @@
     }
 
     .dobLabelTextDiv p {
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: #7E8DA4;
+        font-size: 0.9rem;
+        font-weight: 450;
     }
 
     .dobDateTextDiv {
@@ -588,24 +530,12 @@
         align-items: center;
     }
 
-    /* .dobDateTextDiv input {
-        width: 80%;
-        height: 100%;
-        outline: none;
-        background: transparent;
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: black;
-        border-bottom: 1px solid #7E8DA4;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        text-align: start;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    } */
+    .dobDateTextDiv p {
+        font-size: 0.9rem;
+        font-weight: 450;
+    }
+
+
 
     /* _____________________________________________ */
 
@@ -630,7 +560,6 @@
         grid-template-areas:
             "expiryIconDiv expiryLabelTextDiv"
             "expiryIconDiv expiryDateTextDiv";
-        background-color: var(--fullCard-field-container-bg);
         border-radius: 10px;
     }
 
@@ -645,7 +574,7 @@
     }
 
     .expiryIcon {
-        font-size: 25px;
+        font-size: 1.8rem;
     }
 
     .expiryLabelTextDiv {
@@ -659,10 +588,8 @@
     }
 
     .expiryLabelTextDiv p {
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: #7E8DA4;
+        font-size: 0.9rem;
+        font-weight: 450;
     }
 
     .expiryDateTextDiv {
@@ -675,23 +602,12 @@
         align-items: center;
     }
 
-    /* .expiryDateTextDiv input {
-        width: 80%;
-        height: 100%;
-        outline: none;
-        background: transparent;
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        color: black;
-        border-bottom: 1px solid #7E8DA4;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        text-align: start;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    } */
+    .expiryDateTextDiv p {
+        font-size: 0.9rem;
+        font-weight: 450;
+    }
+
+
+
 
 }

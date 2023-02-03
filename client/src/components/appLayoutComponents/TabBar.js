@@ -5,7 +5,7 @@ import { useLocation, Link } from "react-router-dom";
 import { Icon } from '@iconify/react';
 import styles from "./styles/tabBar.module.css"
 
-import BookmarksFillIcon from "../icons/BookmarksFillIcon"
+import FavtabIcon from "../icons/FavtabIcon"
 import CardsIcon from "../icons/CardsIcon"
 import DashboardIcon from "../icons/DashboardIcon"
 import LoginIdsIcon from "../icons/LoginIdsIcon"
@@ -168,7 +168,7 @@ const TabBar = (
         }
         } >
           <div className={styles.iconsDiv} >
-            <BookmarksFillIcon />
+            <FavtabIcon />
           </div>
         </Link>
       </div>

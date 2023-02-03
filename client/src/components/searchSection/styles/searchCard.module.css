@@ -14,7 +14,7 @@
   aspect-ratio: 3.73/1 !important;
   border-radius: 12px;
   margin: 15px 15px 15px 15px;
-  background-color: var(--list-wrapper-bg);
+  background-color: var(--box-bg-primary);
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -42,7 +42,7 @@
   aspect-ratio: 3.73/1 !important;
   border-radius: 12px;
   margin: 15px 15px 15px 15px;
-  background-color: var(--list-wrapper-bg);
+  background-color: var(--box-bg-primary);
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -75,7 +75,7 @@
   width: 80%;
   height: 80%;
   border-radius: 10px;
-  background-color: var(--list-wrapper-logo-div-bg);
+  background-color: var(--box-bg-secondary);
 }
 
 .titleWrapper {
@@ -95,7 +95,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: var(--list-wrapper-title-font-color);
+  color: var(--primary-font-color);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis
@@ -117,14 +117,14 @@
   font-family: "Poppins", sans-serif;
   font-size: 12px;
   font-weight: 500;
-  color: var(--list-wrapper-username-font-color);
+  color: var(--secondary-font-color);
 }
 
 .bankCardLogoWrapperHide {
   grid-area: bankCardLogoWrapper;
   width: 100%;
   height: 100%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: none;
   justify-content: center;
 }

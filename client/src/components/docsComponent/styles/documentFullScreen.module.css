@@ -7,7 +7,6 @@
     align-items: center;
     z-index: 999;
     background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-radius: 10px;
@@ -74,7 +73,7 @@
     align-items: center;
     width: 100%;
     height: 50px;
-    background-color: white;
+    background-color: var(--box-bg-primary);
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     /* border: 1px solid red; */
 }
@@ -87,7 +86,8 @@
     align-items: center;
     width: 100%;
     height: 50px;
-    background-color: white;
+    background-color: var(--box-bg-primary);
+
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 
 }
@@ -176,7 +176,8 @@
     align-items: center;
     width: 100%;
     height: 50px;
-    background-color: white;
+    background-color: var(--box-bg-primary);
+
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 
 }
@@ -189,7 +190,8 @@
     align-items: center;
     width: 100%;
     height: 50px;
-    background-color: white;
+    background-color: var(--box-bg-primary);
+
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 
 }
@@ -217,7 +219,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: #002A9A;
+    color: var(--primary-font-color);
     /* padding-left: 5%; */
     padding-left: 2%;
     border: 1px solid red;
@@ -228,7 +230,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: 500;
-    color: black;
+    color: var(--primary-font-color);
     margin-left: 10%;
     width: 80%;
     white-space: nowrap;
@@ -255,7 +257,6 @@
 
 .titleEditBtnDiv {
     height: 60%;
-
     aspect-ratio: 1/1;
     /* border: 1px solid black; */
     display: flex;
@@ -266,8 +267,6 @@
     border-radius: 50%;
     background-color: #9DC1FA;
     cursor: pointer;
-
-
 }
 
 .titleSaveBtnDiv {
@@ -283,7 +282,6 @@
     background-color: #58BF6F;
     cursor: pointer;
 
-
 }
 
 .titleCancelBtnDiv {
@@ -296,9 +294,8 @@
     margin-right: 10%;
     cursor: pointer;
     border-radius: 50%;
-    background-color: #B4B3BA;
+    background-color: #CFD2D9;
     cursor: pointer;
-
 }
 
 
@@ -355,7 +352,7 @@
         width: auto;
         height: 25px;
         /* border: 1px solid black; */
-        background-color: #D64339;
+
         display: flex;
         justify-content: center;
         align-items: center;
@@ -418,10 +415,8 @@
         border-right: none;
         outline: none;
         background: transparent;
-        font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 500;
-        color: #002A9A;
         /* padding-left: 5%; */
         padding-left: 2%;
         /* border: 1px solid blue; */
@@ -431,10 +426,8 @@
 
     .titleInputDiv p {
         position: relative;
-        font-family: "Poppins", sans-serif;
         font-size: 14px;
         font-weight: 500;
-        color: black;
         margin-left: 2%;
         width: 100%;
         white-space: nowrap;

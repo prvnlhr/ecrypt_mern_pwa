@@ -14,7 +14,7 @@
   aspect-ratio: 3.73/1 !important;
   border-radius: 12px;
   margin: 15px 15px 15px 15px;
-  background-color: var(--list-wrapper-bg);
+  background-color: var(--box-bg-primary);
   /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.075), 0 5px 5px rgba(0, 0, 0, 0.048); */
   box-shadow: var(--list-wrapper-box-shadow);
   -webkit-tap-highlight-color: transparent;
@@ -47,7 +47,7 @@
   height: 80%;
   border-radius: 10px;
   background-color: #F3F5F9;
-  background-color: var(--list-wrapper-logo-div-bg);
+  background-color: var(--box-bg-secondary);
 }
 
 .titleWrapper {
@@ -67,7 +67,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: var(--list-wrapper-title-font-color);
+  color: var(--primary-font-color);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis
@@ -89,7 +89,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 12px;
   font-weight: 500;
-  color: var(--list-wrapper-username-font-color);
+  color: var(--secondary-font-color);
 }
 
 .favBtnWrapper {

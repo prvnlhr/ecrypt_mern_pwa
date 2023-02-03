@@ -467,7 +467,7 @@ const Settings = () => {
 
                             <div className={styles.text1Container} >
                                 <div className={styles.textIconDiv} >
-                                    <Icon className={styles.text1Icon} icon="icon-park-outline:caution" color="#f3212d" />
+                                    <Icon className={styles.text1Icon} icon="icon-park-outline:caution" />
                                 </div>
                                 <p>Delete account permanently</p>
                             </div>
