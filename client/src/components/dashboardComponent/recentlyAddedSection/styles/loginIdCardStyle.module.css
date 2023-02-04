@@ -132,7 +132,7 @@
 .titleLabelDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
 
@@ -149,7 +149,7 @@
 .titleTextDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--primary-font-color);
     white-space: nowrap;
     overflow: hidden;
@@ -171,7 +171,7 @@
 .titleTextDivShrink p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--primary-font-color);
     white-space: nowrap;
     overflow: hidden;
@@ -207,8 +207,8 @@
 .categoryLabelDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 16px;
-    font-weight: 600;
-    font-weight: 500;
+    font-weight: var(--boldest-font);
+    font-weight: var(--bolder-font);
     color: var(--primary-font-color);
 }
 
@@ -242,7 +242,7 @@
 .categoryTextDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--ui-scheme-font-color);
 }
 
@@ -271,7 +271,7 @@
 .appWebsiteLabelDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
 
@@ -302,7 +302,7 @@
 .appWebsiteTextDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--primary-font-color);
 }
 
@@ -358,7 +358,7 @@
 .usernameLabelWrapper p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
 
@@ -376,14 +376,14 @@
 .usernameText {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--primary-font-color);
 }
 
 .usernameTextShrink {
     font-family: "Poppins", sans-serif;
     font-size: 11px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
     margin-left: 5%;
 }
@@ -428,7 +428,7 @@
 .passwordLabelWrapper p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
 
@@ -443,7 +443,7 @@
 .passwordTextWrapper p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--primary-font-color);
 }
 
@@ -579,7 +579,7 @@
 
     .titleLabelDiv p {
         font-size: 14px;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
     }
 
     .titleTextDiv {
@@ -594,7 +594,7 @@
 
     .titleTextDiv p {
         font-size: 14px;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis
@@ -613,7 +613,7 @@
 
     .titleTextDivShrink p {
         font-size: 14px;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis
@@ -646,7 +646,7 @@
 
     .categoryLabelDiv p {
         font-size: 16px;
-        font-weight: 600;
+        font-weight: var(--boldest-font);
     }
 
     .categroryTextWrapper {
@@ -676,7 +676,7 @@
 
     .categoryTextDiv p {
         font-size: 16px;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
     }
 
     /* ____________________________________ */
@@ -702,7 +702,7 @@
 
     .appWebsiteLabelDiv p {
         font-size: 16px;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
     }
 
     .appWebsiteTextWrapper {
@@ -730,7 +730,7 @@
 
     .appWebsiteTextDiv p {
         font-size: 16px;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
     }
 
     /* ___________________________________________ */
@@ -783,7 +783,7 @@
 
     .usernameLabelWrapper p {
         font-size: 14px;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
     }
 
 
@@ -799,12 +799,12 @@
 
     .usernameText {
         font-size: 14px;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
     }
 
     .usernameTextShrink {
         font-size: 13px;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
         margin-left: 5%;
     }
 
@@ -846,7 +846,7 @@
 
     .passwordLabelWrapper p {
         font-size: 14px;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
     }
 
 
@@ -859,7 +859,7 @@
 
     .passwordTextWrapper p {
         font-size: 14px;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
     }
 
     .iconsStyles {

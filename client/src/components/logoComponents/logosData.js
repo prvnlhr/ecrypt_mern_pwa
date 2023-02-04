@@ -107,6 +107,10 @@ import DrivingLicense from "./logos/DrivingLicense";
 import StackOverflow from "./logos/StackOverflow";
 import EA from "./logos/EA"
 import Paytm from "./logos/Paytm";
+import Gitlab from "./logos/Gitlab";
+import Tesla from "./logos/Tesla";
+import AdobeXD from "./logos/AdobeXD";
+import Salesforce from "./logos/Salesforce";
 export const logosArray = [
 
     {
@@ -460,14 +464,14 @@ export const logosArray = [
         logo: <div className={styles.logoDiv}  ><MSDrive /></div>,
 
         logoIndex: 59,
-        label: "MS Drive"
+        label: "Microsoft One Drive"
 
     },
     {
         logo: <div className={styles.logoDiv}  ><MSoffice /></div>,
 
         logoIndex: 60,
-        label: "MS Office"
+        label: "Microsoft Office"
     },
     {
         logo: <div className={styles.logoDiv}  ><Netflix /></div>,
@@ -735,6 +739,26 @@ export const logosArray = [
         logo: <div className={styles.logoDiv}  ><Paytm /></div>,
         logoIndex: 105,
         label: "Paytm"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><Gitlab /></div>,
+        logoIndex: 106,
+        label: "GitLab"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><Tesla /></div>,
+        logoIndex: 107,
+        label: "Tesla"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><AdobeXD /></div>,
+        logoIndex: 108,
+        label: "Adobe XD"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><Salesforce /></div>,
+        logoIndex: 109,
+        label: "Salesforces"
     },
 
     // < div className = { styles.logoDiv } > <AdobePhotoshop /></ >,

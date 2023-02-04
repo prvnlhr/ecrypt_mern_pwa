@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
 import Home from "./appLayoutComponents/Home"
@@ -13,15 +13,30 @@ import UnAuthenticatedRoutes from './authComponent/UnAuthenticatedRoutes';
 import { getUserDetails } from "../redux/features/user/userSlice"
 import ForgotPassword from './authComponent/ForgotPassword';
 import ResetPassword from './authComponent/ResetPassword';
+import { toggleUiTheme } from "../redux/features/ui/uiSlice"
 
 import RequireAuth from './authComponent/RequireAuth';
 import SearchList from './searchSection/SearchList';
+import LoginIdsList from './loginIdsComponent/LoginIdsList';
 
 const App = () => {
 
+  const location = useLocation();
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth);
   const { token } = auth;
+
+  const isDarkMode = useSelector((state) => state.ui.darkMode);
+
+  useEffect(() => {
+    const theme = JSON.parse(localStorage.getItem("theme"));
+    console.log(theme);
+    if (theme !== null) {
+      dispatch(toggleUiTheme(theme));
+    } else {
+      dispatch(toggleUiTheme(false));
+    }
+  }, [isDarkMode]);
 
   const getToken = async () => {
     await dispatch(getAuthToken({}))
@@ -40,58 +55,15 @@ const App = () => {
   const theme = "dark";
 
   return (
-    <div data-theme={theme} className={appStyles.app} >
+    <div data-theme={isDarkMode === true ? 'dark' : 'light'} className={appStyles.app} >
       <Routes>
-
-        {/* <Route path="/*" element={
-          <RequireAuth>
-            <Home />
-          </RequireAuth>
-        } /> */}
-
-        {/* <Route path="user/login" element={
-          <RequireAuth>
-            <SignInPage />
-          </RequireAuth>
-        } /> */}
-
-        {/* <Route
-          path='/*'
-          element={
-            <ProtectedRoute>
-              <Home />
-            </ProtectedRoute>
-          }
-        /> */}
-
-        <Route
-          path='/*'
-          element={
-            <RequireAuth>
-              <Home />
-            </RequireAuth>
-          }
-        />
-
-        {/* <Route path='/user/login' element={
-          <SignInPage />
-        } /> */}
-
-        {/* <Route
+        <Route exact
           path='/user/login'
           element={
-            <RequireAuth>
+            <UnAuthenticatedRoutes >
               <SignInPage />
-            </RequireAuth>
-          }
-        /> */}
-
-
-        <Route exact path='/user/login' element={
-          <UnAuthenticatedRoutes>
-            <SignInPage />
-          </UnAuthenticatedRoutes>
-        } />
+            </UnAuthenticatedRoutes>
+          } />
 
 
         <Route exact path='/user/forgotPassword' element={
@@ -114,8 +86,16 @@ const App = () => {
 
         <Route path='/user/auth/activate/:activation_token' element={<ActivateAccount />} />
 
+        <Route
+          path='/*'
+          element={
+            <RequireAuth >
+              <Home />
+            </RequireAuth>
+          }
+        />
       </Routes>
-    </div>
+    </div >
   )
 }
 

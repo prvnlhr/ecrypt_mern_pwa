@@ -23,8 +23,8 @@
     align-items: center;
     padding: 0px;
     background-color: #A6CBFB;
-    background-color: var(--box-bg-secondary-li);
-    background-color: var(--box-bg-tertiary);
+    background-color: var(--box-bg-secondary);
+    /* background-color: var(--box-bg-tertiary-drk); */
     border-radius: 15px;
     padding-top: 10%;
 
@@ -42,8 +42,16 @@
     justify-content: center;
     align-items: center;
     background-color: white;
-    background-color: var(--box-bg-secondary-li);
+    /* background-color: var(--box-bg-secondary-li); */
     /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+    webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow: hidden;
 }
 
 .logoContainerActive {

@@ -292,6 +292,14 @@
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow: hidden;
 
 }
 
@@ -340,7 +348,7 @@
 .titleLabelDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
 
@@ -366,7 +374,7 @@
     background: transparent;
     font-family: "Poppins", sans-serif;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--primary-font-color);
     display: flex;
     justify-content: flex-start;
@@ -385,7 +393,7 @@
     background: transparent;
     font-family: "Poppins", sans-serif;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--primary-font-color);
     display: flex;
     justify-content: flex-start;
@@ -432,7 +440,7 @@
 .categoryLabelDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: var(--boldest-font);
     color: var(--primary-font-color);
 }
 
@@ -449,10 +457,10 @@
 .categoryInput {
     font-family: "Poppins", sans-serif;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: #002A9A;
     color: var(--ui-scheme-font-color);
-    background-color: var(--box-bg-secondary);
+    background-color: var(--box-bg-secondary-drk);
     border: none;
     outline: none !important;
     height: 75%;
@@ -823,7 +831,7 @@
     .inputPopUpText {
         font-family: "Poppins", sans-serif;
         font-size: 15px;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
         margin: 5% 0px 0px 0px;
         display: flex;
         justify-content: flex-start;
@@ -868,19 +876,19 @@
     .titleLabelDiv p {
         font-size: 15px;
         font-size: 0.85rem;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
     }
 
 
     .titleInputActive {
         font-size: 1.5rem;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
 
     }
 
     .titleInputNotActive {
         font-size: 1.5rem;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
     }
 
 
@@ -891,7 +899,7 @@
 
     .categoryInput {
         font-size: 1.1rem;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
 
     }
 

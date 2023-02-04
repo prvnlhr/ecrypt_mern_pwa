@@ -151,7 +151,7 @@
 .titleLabelDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
 
@@ -186,7 +186,7 @@
 .titleTextDivExpand p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--primary-font-color);
     white-space: nowrap;
     overflow: hidden;
@@ -196,7 +196,7 @@
 .titleTextDivShrink p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--primary-font-color);
     white-space: nowrap;
     overflow: hidden;
@@ -231,7 +231,7 @@
 .categoryLabelWrapper p {
     font-family: "Poppins", sans-serif;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: var(--boldest-font);
     color: var(--primary-font-color);
     white-space: nowrap;
     overflow: hidden;
@@ -263,7 +263,7 @@
 .categoryTextDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--ui-scheme-font-color);
 }
 
@@ -312,7 +312,7 @@
 .cardHolderLabelWrapper p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
 
@@ -330,7 +330,7 @@
 .cardHolderTextWrapper p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--primary-font-color);
 }
 
@@ -393,7 +393,7 @@
 .cardNoLabelWrapper p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
 
@@ -422,7 +422,7 @@
 .cardNoTextWrapper p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--primary-font-color);
 }
 
@@ -476,7 +476,7 @@
 .cardExpiryLabelWrapper p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
 
@@ -493,7 +493,7 @@
 .cardExpiryTextWrapper p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--primary-font-color);
 }
 
@@ -539,7 +539,7 @@
 .cardCvvLabelWrapper p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
 
@@ -556,7 +556,7 @@
 .cardCvvTextWrapper p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--primary-font-color);
 }
 
@@ -734,7 +734,7 @@
     .titleLabelDiv p {
         font-family: "Poppins", sans-serif;
         font-size: 14px;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
         color: var(--secondary-font-color);
     }
 
@@ -767,7 +767,7 @@
 
     .titleTextDivExpand p {
         font-size: 14px;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis
@@ -775,7 +775,7 @@
 
     .titleTextDivShrink p {
         font-size: 14px;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis
@@ -808,7 +808,7 @@
     .categoryLabelWrapper p {
         font-family: "Poppins", sans-serif;
         font-size: 15px;
-        font-weight: 600;
+        font-weight: var(--boldest-font);
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -837,7 +837,7 @@
 
     .categoryTextDiv p {
         font-size: 16px;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
     }
 
 
@@ -883,7 +883,7 @@
 
     .cardHolderLabelWrapper p {
         font-size: 14px;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
     }
 
     .cardHolderTextWrapper {
@@ -899,7 +899,7 @@
 
     .cardHolderTextWrapper p {
         font-size: 14px;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
     }
 
     /* _______________________________________________________ */
@@ -959,7 +959,7 @@
 
     .cardNoLabelWrapper p {
         font-size: 14px;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
     }
 
     .cardNoTextWrapper {
@@ -986,7 +986,7 @@
 
     .cardNoTextWrapper p {
         font-size: 14px;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
     }
 
     .cardNoTextWrapperShrink p {
@@ -1035,7 +1035,7 @@
 
     .cardExpiryLabelWrapper p {
         font-size: 14px;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
     }
 
     .cardExpiryTextWrapper {
@@ -1050,7 +1050,7 @@
 
     .cardExpiryTextWrapper p {
         font-size: 14px;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
     }
 
     /* ________________________________________ */
@@ -1093,7 +1093,7 @@
 
     .cardCvvLabelWrapper p {
         font-size: 14px;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
     }
 
     .cardCvvTextWrapper {
@@ -1108,7 +1108,7 @@
 
     .cardCvvTextWrapper p {
         font-size: 14px;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
     }
 
     .cardHolderIcon {

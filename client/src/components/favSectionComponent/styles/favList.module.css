@@ -80,7 +80,7 @@
 .linkStyles p {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--bolder-font);
   color: var(--primary-font-color);
   white-space: nowrap;
   overflow: hidden;
@@ -91,7 +91,7 @@
   position: absolute;
   width: 150px;
   height: 60%;
-  background-color: var(--box-bg-secondary-li);
+  background-color: var(--box-bg-secondary-drk);
   border-radius: 8px;
   z-index: 1;
   -webkit-tap-highlight-color: transparent;
@@ -218,7 +218,7 @@
 
   .linkStyles p {
     font-size: 14px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis

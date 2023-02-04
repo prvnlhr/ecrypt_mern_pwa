@@ -82,30 +82,49 @@
   --doc-inputform-wrapper-border: none;
 
 
-
   /* -> All ui fonts divide in two types */
-  --primary-font-color: white;
-  --secondary-font-color: white;
-  --ui-scheme-font-color: white;
+  --ui-scheme-font-color: #002A9A;
+  /* --ui-scheme-font-color: #9F7EE9; */
+
+
+  --primary-font-color: black;
+  --secondary-font-color: #8B98A5;
+  --tertiary-font-color: #837FA2;
+  --tertiary-font-color-li: #A8A4C5;
+
 
   /*-> All ui div-bg divided into three types */
   --box-bg-primary: white;
-  --box-bg-secondary: white;
-  --box-bg-tertiary: white;
+  --box-bg-secondary: #F3F5F9;
+  --box-bg-secondary-drk: #ADD2FF;
+  --box-bg-tertiary: #E7EFFC;
+  --box-bg-tertiary-drk: #1C1F2C;
 
   /* -> App ui bg */
   --app-main-bg: #151B3B;
+  --app-main-bg: #2F3141;
+  --app-main-bg: linear-gradient(180deg, #DFEDF4 33.14%, #E8F0EC 51.89%, #F7F9F6 76.37%);
+
+  /* -> form icons color */
+  --field-icon-color: #002A9A;
+
+  /* for btn */
+  --submit-btn-color: #002A9A;
+
+
+  /* -> font-weight */
+  --bold-font: 400;
+  --bolder-font: 500;
+  --boldest-font: 600;
 
 }
 
 [data-theme="dark"] {
-
   --app-bg: #27282B;
   --app-list-heading-font-color: white;
   --app-list-heading-font-line: #C7BAFD;
   --app-list-count-div-bg: #C7BAFD;
   --list-count-font-color: black;
-
 
   --headerbar-month-font-color: #C7BAFD;
   --headerbar-date-font-color: white;
@@ -120,13 +139,6 @@
   --search-input-icons: #C7BAFD;
   --search-input-font-color: #C7BAFD;
   --tabbar-wrapper-bg: #1F1E21;
-
-
-
-
-
-
-
 
   /* _DASHBOARD */
   --section-heading: #C7BAFD;
@@ -192,29 +204,38 @@
 
 
   /* -> All ui fonts divide in two types */
+  --ui-scheme-font-color: #C7BAFD;
+  /* --ui-scheme-font-color: #9F7EE9; */
+
+
   --primary-font-color: white;
   --secondary-font-color: #8B98A5;
   --tertiary-font-color: #837FA2;
   --tertiary-font-color-li: #A8A4C5;
 
 
-  --ui-scheme-font-color: #C7BAFD;
-
   /*-> All ui div-bg divided into three types */
-  --box-bg-primary: #313B54;
+
+  --box-bg-primary: #333A4D;
   --box-bg-secondary: #414C68;
-  --box-bg-secondary-li: #5C6886;
+  --box-bg-secondary-drk: #4d6090;
   --box-bg-tertiary: #1E2336;
+  --box-bg-tertiary-drk: #010619;
 
   /* -> App ui bg */
   --app-main-bg: #151B3B;
+  --app-main-bg: #2F3141;
+  --app-main-bg: #1C1F2C;
 
   /* -> form icons color */
   --field-icon-color: #5294E2;
 
-  --favbtn-icon-color: white;
-
-
   /* for btn */
   --submit-btn-color: #5C8ED5;
+
+
+  /* -> font-weight */
+  --bold-font: 400;
+  --bolder-font: 500;
+  --boldest-font: 600;
 }

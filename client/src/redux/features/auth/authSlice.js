@@ -66,7 +66,6 @@ export const getAuthToken = createAsyncThunk("auth/getAuthToken", async ({ }, { 
         const res = await api.getToken();
         console.log('getToken Slice', res.data);
         const accessToken = res.data;
-        // dispatch(getUserDetails(accessToken))
         return fulfillWithValue(accessToken);
     } catch (error) {
         console.log(error.response.data.msg)
@@ -166,7 +165,6 @@ const authSlice = createSlice({
                 };
             })
             .addCase(loginUser.fulfilled, (state, action) => {
-                console.log(action.payload);
                 return {
                     ...state,
                     authResponseMessage: undefined,
@@ -174,6 +172,16 @@ const authSlice = createSlice({
                     error: false,
                     success: true,
                     isLogged: true,
+                };
+            })
+            .addCase(loginUser.pending, (state, action) => {
+                return {
+                    ...state,
+                    authResponseMessage: undefined,
+                    token: undefined,
+                    error: false,
+                    success: false,
+                    isLogged: undefined,
                 };
             })
             .addCase(loginUser.rejected, (state, action) => {
@@ -197,8 +205,11 @@ const authSlice = createSlice({
             .addCase(getAuthToken.pending, (state, action) => {
                 return {
                     ...state,
+                    token: undefined,
+                    authResponseMessage: undefined,
                     isLogged: undefined,
-
+                    error: false,
+                    success: false,
                 };
             })
             .addCase(getAuthToken.rejected, (state, action) => {

@@ -68,7 +68,7 @@
 .cardHolderLabelTextDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
 
@@ -92,7 +92,7 @@
     background: transparent;
     font-family: "Poppins", sans-serif;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--primary-font-color);
     display: flex;
     justify-content: flex-start;
@@ -108,7 +108,7 @@
     background: transparent;
     font-family: "Poppins", sans-serif;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--primary-font-color);
     display: flex;
     justify-content: flex-start;
@@ -166,7 +166,7 @@
 .cardNumberLabelTextDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
 
@@ -234,7 +234,7 @@
 .dobLabelTextDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
 
@@ -305,7 +305,7 @@
 .issueLabelTextDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
 
@@ -331,7 +331,7 @@
     background: transparent;
     font-family: "Poppins", sans-serif;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--primary-font-color);
     display: flex;
     justify-content: flex-start;
@@ -347,7 +347,7 @@
     background: transparent;
     font-family: "Poppins", sans-serif;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--primary-font-color);
     display: flex;
     justify-content: flex-start;
@@ -622,7 +622,7 @@
     .issueLabelTextDiv p {
         font-family: "Poppins", sans-serif;
         font-size: 14px;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
         color: var(--secondary-font-color);
     }
 

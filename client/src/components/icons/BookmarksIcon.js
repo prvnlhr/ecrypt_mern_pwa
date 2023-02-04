@@ -1,8 +1,12 @@
 import React from 'react'
 import styles from "./styles/bookmarkIcon.module.css"
+import { useSelector, useDispatch } from 'react-redux'
 
 const theme = 'dark';
 const BookmarksIcon = () => {
+
+  const isDarkMode = useSelector((state) => state.ui.darkMode);
+
 
     return (
 

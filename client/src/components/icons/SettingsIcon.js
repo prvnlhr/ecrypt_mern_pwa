@@ -1,12 +1,16 @@
 import React from 'react'
 import styles from "./styles/iconStyles.module.css"
+import { useSelector, useDispatch } from 'react-redux'
+
 const theme = 'dark';
 const SettingsIcon = () => {
+    const isDarkMode = useSelector((state) => state.ui.darkMode);
+
     return (
 
         <>
 
-            {theme === 'dark' ?
+            {isDarkMode === true ?
 
                 <svg
                     className={styles.IconStyles}

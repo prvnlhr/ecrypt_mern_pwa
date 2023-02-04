@@ -39,7 +39,7 @@
 }
 
 .searchIcon {
-    font-size: 20px;
+    font-size: 300px;
     margin-right: 10px;
 }
 
@@ -47,7 +47,8 @@
     position: relative;
     font-family: "Poppins", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-size: 0.95rem;
+    font-weight: 450;
     color: var(--ui-scheme-font-color);
     margin: 0px;
     margin-left: 10px;
@@ -90,14 +91,14 @@
     box-sizing: border-box;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 0.9rem;
+    font-weight: 450;
     color: var(--primary-font-color);
     margin: 0px;
 }
 
 .searchIcon {
-    font-size: 20px;
+    font-size: 1.2rem;
     margin-right: 10px;
     color: var(--ui-scheme-font-color);
 }
@@ -144,8 +145,10 @@
 .listTitleText {
     position: relative;
     font-family: "Poppins", sans-serif;
-    font-size: 23px;
-    font-weight: 500;
+    font-size: 1.5rem;
+    font-weight: 400;
+    /* font-weight:var(--bold-font); */
+    /* font-weight:var(--boldest-font); */
     color: var(--primary-font-color);
 }
 
@@ -200,7 +203,6 @@
         /* border: 1px solid orange; */
     }
 
-
     .searchInputWrapper {
         width: 50%;
         height: 100%;
@@ -230,7 +232,7 @@
     .searchText {
         position: relative;
         font-size: 14px;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
         margin: 0px;
     }
 
@@ -308,7 +310,7 @@
     .listTitleText {
         position: relative;
         font-size: 23px;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
         margin-left: unset;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 
@@ -354,5 +356,4 @@
         box-sizing: border-box;
         padding-right: 5%;
     }
-
 }

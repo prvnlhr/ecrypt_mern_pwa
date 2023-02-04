@@ -327,7 +327,7 @@
 .titleLabelDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 
 }
@@ -344,7 +344,7 @@
 .titleInputDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 20px;
-    font-weight: 600;
+    font-weight: var(--boldest-font);
     color: var(--primary-font-color);
 
 }
@@ -386,7 +386,7 @@
 .categoryLabelDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: var(--boldest-font);
     color: var(--primary-font-color);
 }
 
@@ -409,13 +409,13 @@
     justify-content: center;
     align-items: center;
     border-radius: 8px;
-    background-color: var(--box-bg-secondary);
+    background-color: var(--box-bg-secondary-drk);
 }
 
 .categoryTextBox p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--ui-scheme-font-color);
 
 }
@@ -448,7 +448,7 @@
         /* border: 1px solid red; */
         transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         margin-bottom: 2px;
-       
+
 
     }
 
@@ -629,7 +629,7 @@
 
     .titleLabelDiv p {
         font-size: 15px;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
     }
 
     .titleInputDiv {
@@ -687,12 +687,12 @@
     .titleLabelDiv p {
         font-size: 15px;
         font-size: 0.85rem;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
     }
 
     .titleInputDiv p {
         font-size: 1.5rem;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
     }
 
     .categoryLabelDiv p {
@@ -702,7 +702,7 @@
 
     .categoryInput {
         font-size: 1.1rem;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
 
     }
 

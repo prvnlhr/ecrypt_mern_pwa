@@ -100,7 +100,9 @@ const ContentDisplay = ({
         >
         </Route>
 
-        <Route path="user/display_loginIds"
+        <Route
+          //  path="/user/display_loginIds"
+          path="/user/display_loginIds"
           element={
             <LoginIdsList
               setLogoComponentShow={setLogoComponentShow}

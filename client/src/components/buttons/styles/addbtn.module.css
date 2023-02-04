@@ -22,7 +22,7 @@
 .addBtnWrapper p {
     font-family: "Poppins", sans-serif;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: #002A9A;
 }
 

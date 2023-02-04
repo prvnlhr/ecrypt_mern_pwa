@@ -189,7 +189,7 @@
 .titleLabelDiv p {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--bolder-font);
   color: var(--secondary-font-color);
 }
 
@@ -205,7 +205,7 @@
 .titleTextDiv p {
   font-family: "Poppins", sans-serif;
   font-size: 17px;
-  font-weight: 500;
+  font-weight: var(--bolder-font);
   color: var(--primary-font-color);
 }
 
@@ -248,7 +248,7 @@
 .categoryLabelDiv p {
   font-family: "Poppins", sans-serif;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: var(--boldest-font);
   color: var(--fullCard-category-label-font-color);
 }
 
@@ -270,13 +270,13 @@
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-  background-color: var(--box-bg-secondary);
+  background-color: var(--box-bg-secondary-drk);
 }
 
 .categoryTextBox p {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--bolder-font);
   color: var(--ui-scheme-font-color);
 }
 
@@ -335,7 +335,7 @@
 .appWebsiteLabelDiv p {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: var(--bolder-font);
   color: var(--secondary-font-color);
 
 }
@@ -352,7 +352,7 @@
 .appWebsiteTextDiv p {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--bolder-font);
   color: var(--primary-font-color);
 }
 
@@ -413,7 +413,7 @@
 .usernameLabelDiv p {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--bolder-font);
   color: var(--secondary-font-color);
 }
 
@@ -431,7 +431,7 @@
 .usernameTextDiv p {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--bolder-font);
   color: var(--primary-font-color);
 }
 
@@ -493,7 +493,7 @@
 .passwordLabelDiv p {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--bolder-font);
   color: var(--secondary-font-color);
 }
 
@@ -510,7 +510,7 @@
 .passwordTextDiv p {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--bolder-font);
   color: var(--primary-font-color);
 }
 
@@ -709,7 +709,7 @@
 
   .titleLabelDiv p {
     font-size: 15px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
 
   }
 
@@ -724,7 +724,7 @@
 
   .titleTextDiv p {
     font-size: 20px;
-    font-weight: 600;
+    font-weight: var(--boldest-font);
   }
 
   .categoryWrapper {
@@ -826,7 +826,7 @@
   .inputPopUpText {
     font-family: "Poppins", sans-serif;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     margin: 5% 0px 0px 0px;
     display: flex;
     justify-content: flex-start;
@@ -983,7 +983,7 @@
         background: transparent;
         font-family: "Poppins", sans-serif;
         font-size: 14px;
-        font-weight: 500;
+        font-weight:var(--bold-font);
         color: black;
     } */
 
@@ -1068,7 +1068,7 @@
         background: transparent;
         font-family: "Poppins", sans-serif;
         font-size: 14px;
-        font-weight: 500;
+        font-weight:var(--bold-font);
         color: black;
     } */
 
@@ -1081,7 +1081,7 @@
 
   .titleTextDiv p {
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
   }
 
 
@@ -1089,12 +1089,12 @@
 
   .categoryTextBox p {
     font-size: 1.1rem;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
   }
 
   .appWebsiteTextDiv p {
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
   }
 
 

@@ -43,7 +43,7 @@
 .fieldNameLabelWrapper p {
     font-family: "Poppins", sans-serif;
     font-size: 12px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--recent-activity-field-label-font-color);
     margin: 0px;
     padding: 0px;
@@ -65,7 +65,7 @@
 .valWrapper p {
     font-family: "Poppins", sans-serif;
     font-size: 12px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--recent-activity-field-val-font-color);
     margin: 0px;
     padding: 0px;

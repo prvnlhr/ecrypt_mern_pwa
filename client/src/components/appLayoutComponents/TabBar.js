@@ -36,6 +36,7 @@ const TabBar = (
           indicatorRef.current.style.left = newPos;
           break;
         case "/user/display_loginIds":
+          // case "/display_loginIds":
           var pos = refLogins.current.offsetLeft;
           var newPos = pos + "px";
           indicatorRef.current.style.left = newPos;
@@ -129,10 +130,13 @@ const TabBar = (
       </div>
 
       <div className={styles.tabIconWrapper} ref={refLogins}   >
-        <Link className={styles.tabLinks} to="/user/display_loginIds" onClick={() => {
-          linkedClicked(2)
-        }
-        }>
+        <Link className={styles.tabLinks}
+          to="/user/display_loginIds"
+          // to="/display_loginIds"
+          onClick={() => {
+            linkedClicked(2)
+          }
+          }>
           <div className={styles.iconsDiv} >
             <LoginIdsIcon />
           </div>

@@ -63,7 +63,7 @@
 .titleText {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--primary-font-color);
     white-space: nowrap;
     overflow: hidden;
@@ -85,7 +85,7 @@
 .userNameText {
     font-family: "Poppins", sans-serif;
     font-size: 12px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
 
@@ -157,7 +157,7 @@
     .titleText {
         /* font-size: clamp(0.85rem, 0.15rem + 3.5vw, 1.2rem) !important; */
         font-size: 1rem;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
     }
 
     .userNameText {

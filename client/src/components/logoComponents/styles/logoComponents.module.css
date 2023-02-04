@@ -3,7 +3,8 @@
     width: 300px;
     height: 70%;
     min-height: 70%;
-    background-color: var(--box-bg-primary);
+    /* background-color: var(--box-bg-primary); */
+    background-color: var(--box-bg-tertiary-drk);
     display: grid;
     grid-template-areas:
         "closeWrapper"
@@ -13,7 +14,7 @@
     grid-template-rows: 8% 10% 82%;
     z-index: 999;
     border-radius: 10px;
-    border: 1px solid #00000031;
+    /* border: 1px solid #00000031; */
     bottom: 30px;
     left: 0;
     right: 0;

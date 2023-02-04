@@ -59,14 +59,14 @@
 .dayText {
   font-family: "Poppins", sans-serif;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: var(--bolder-font);
   color: var(--ui-scheme-font-color);
 }
 
 .dateText {
   font-family: "Poppins", sans-serif;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--bolder-font);
   color: var(--primary-font-color);
 }
 
@@ -93,14 +93,14 @@
 .nameText {
   font-family: "Poppins", sans-serif;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: var(--boldest-font);
   color: var(--ui-scheme-font-color);
 }
 
 .grettingText {
   font-family: "Poppins", sans-serif;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: var(--bolder-font);
   color: var(--secondary-font-color);
 }
 
@@ -313,7 +313,7 @@
 
 .toggleBtnText {
   font-family: "Poppins", sans-serif;
-  font-weight: 500;
+  font-weight: var(--bolder-font);
   font-size: 10px;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   color: var(--primary-font-color);
@@ -339,7 +339,7 @@
 .settingsText {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: var(--bolder-font);
   color: var(--primary-font-color);
   text-decoration: none;
 }
@@ -374,7 +374,7 @@
 .logoutText {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: var(--bolder-font);
   color: #D64339;
 }
 
@@ -484,14 +484,14 @@
 
   .dayText {
     font-size: 12px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     margin: 0px;
     padding: 0px;
   }
 
   .dateText {
     font-size: 12px;
-    font-weight: 600;
+    font-weight: var(--boldest-font);
     margin: 0px;
     padding: 0px;
   }
@@ -520,14 +520,14 @@
 
   .nameText {
     font-size: 15px;
-    font-weight: 600;
+    font-weight: var(--boldest-font);
     margin: 0px;
     padding: 0px;
   }
 
   .grettingText {
     font-size: 14px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     margin: 0px;
     padding: 0px;
   }
@@ -576,6 +576,7 @@
   }
 
   .popUpWrapper {
+    position: relative;
     grid-area: popUpWrapper;
     /* border: 1px solid red; */
     width: 100%;
@@ -596,10 +597,9 @@
     position: absolute;
     right: 50%;
     top: 80% !important;
-    width: 150px;
-    height: 170px;
-    /* background-color: white; */
-
+    width: 170px;
+    height: unset;
+    aspect-ratio: 1/1;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 70% 30%;
@@ -673,7 +673,7 @@
 
   .toggleTextDiv p {
     font-size: 10px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
   }
 
   .settingsLinkContainer {
@@ -694,7 +694,7 @@
 
   .settingsText {
     font-size: 15px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
   }
 
   .bottomSection {
@@ -725,7 +725,7 @@
 
   .logoutText {
     font-size: 15px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
   }
 
 

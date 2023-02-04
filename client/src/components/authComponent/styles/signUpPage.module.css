@@ -64,7 +64,7 @@
 .formLabelDiv p {
   font-family: "Poppins", sans-serif;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: var(--boldest-font);
   color: black;
 }
 
@@ -488,7 +488,7 @@ span:hover {
   .formLabelDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: var(--boldest-font);
     color: black;
   }
 

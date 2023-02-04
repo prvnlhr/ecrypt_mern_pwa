@@ -30,7 +30,7 @@ export const getUserDetails = createAsyncThunk("user/getUser", async (token, { g
         const res = await api.getUser(token);
         const userData = res.data.user;
         const profilePicData = res.data.user.profilePic
-        console.log(profilePicData.picUrl)
+        // console.log(profilePicData.picUrl)
         const nameString = userData.name.split(/[" "]+/);
         const userRes = {
             firstName: nameString[0],
@@ -55,7 +55,7 @@ export const editUserProfile = createAsyncThunk("user/editProfile", async ({ tok
 
         // console.log(token, profileData);
         const res = await api.editProfile(token, profileData);
-        console.log(res.data.newData)
+        // console.log(res.data.newData)
         const userData = res.data.newData;
         const nameString = userData.name.split(/[" "]+/);
         const resData =
@@ -89,7 +89,7 @@ export const changeProfilePicture = createAsyncThunk("user/changeProfilePic", as
         const state = getState();
         const res = await api.editProfilePic(data, state.auth.token);
         // console.log(res);
-        console.log(res.data);
+        // console.log(res.data);
         const profilePicData = {
             picUrl: res.data.profilePicUrl,
             picCloudId: res.data.cloudinary_id,
@@ -111,7 +111,7 @@ const userSlice = createSlice({
         builder
 
             .addCase(getUserDetails.fulfilled, (state, action) => {
-                console.log(action.payload)
+                // console.log(action.payload)
                 return {
                     ...state,
                     _id: action.payload._id,
@@ -126,7 +126,7 @@ const userSlice = createSlice({
                 };
             })
             .addCase(editUserProfile.fulfilled, (state, action) => {
-                console.log(action.payload)
+                // console.log(action.payload)
                 return {
                     ...state,
                     firstName: action.payload.firstName,
@@ -136,7 +136,7 @@ const userSlice = createSlice({
                 };
             })
             .addCase(editUserProfile.rejected, (state, action) => {
-                console.log(action.payload)
+                // console.log(action.payload)
                 return {
                     ...state,
                     responseMessage: action.payload,
@@ -144,7 +144,7 @@ const userSlice = createSlice({
                 };
             })
             .addCase(changeUserPass.fulfilled, (state, action) => {
-                console.log(action.payload)
+                // console.log(action.payload)
                 return {
                     ...state,
                     responseMessage: action.payload,
@@ -153,7 +153,7 @@ const userSlice = createSlice({
                 };
             })
             .addCase(changeUserPass.rejected, (state, action) => {
-                console.log(action.payload)
+                // console.log(action.payload)
                 return {
                     ...state,
                     responseMessage: action.payload,
@@ -162,7 +162,7 @@ const userSlice = createSlice({
                 };
             })
             .addCase(changeProfilePicture.fulfilled, (state, action) => {
-                console.log(action.payload)
+                // console.log(action.payload)
                 return {
                     ...state,
                     profilePic: action.payload,
@@ -178,7 +178,6 @@ const userSlice = createSlice({
                     pending: true
                 };
             })
-
     }
 })
 

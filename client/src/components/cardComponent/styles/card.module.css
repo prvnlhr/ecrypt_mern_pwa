@@ -36,11 +36,9 @@
   -ms-user-select: none;
   user-select: none;
   /* font-size: 16px; */
-  background: linear-gradient(
-    108.55deg,
-    rgba(45, 87, 162, 0.8) 1.65%,
-    rgba(255, 255, 255, 0) 103.23%
-  );
+  background: linear-gradient(108.55deg,
+      rgba(45, 87, 162, 0.8) 1.65%,
+      rgba(255, 255, 255, 0) 103.23%);
   backdrop-filter: blur(12px);
 }
 
@@ -61,6 +59,7 @@
   -ms-user-select: none;
   user-select: none;
 }
+
 .overlayDiv {
   /* display: none; */
   position: absolute;
@@ -74,6 +73,7 @@
   padding: 0px;
   border-radius: 8px;
 }
+
 .ring {
   position: absolute;
   width: 100px;
@@ -92,6 +92,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .ring::after {
   position: absolute;
   content: "";
@@ -103,12 +104,14 @@
 
   transform: rotate(-185deg);
 }
+
 .ring div {
   width: 60%;
   height: 60%;
   background-color: var(--card-ring-div-color);
   border-radius: 50%;
 }
+
 .square {
   position: absolute;
   display: none;
@@ -121,24 +124,18 @@
 
   background: hsla(198, 53%, 87%, 1);
 
-  background: linear-gradient(
-    135deg,
-    hsla(198, 53%, 87%, 0.5) 0%,
-    hsla(0, 0%, 100%, 1) 65%
-  );
+  background: linear-gradient(135deg,
+      hsla(198, 53%, 87%, 0.5) 0%,
+      hsla(0, 0%, 100%, 1) 65%);
 
-  background: -moz-linear-gradient(
-    135deg,
-    hsla(198, 53%, 87%, 0.5) 0%,
-    hsla(0, 0%, 100%, 1) 65%
-  );
+  background: -moz-linear-gradient(135deg,
+      hsla(198, 53%, 87%, 0.5) 0%,
+      hsla(0, 0%, 100%, 1) 65%);
 
-  background: -webkit-linear-gradient(
-    135deg,
-    hsla(198, 53%, 87%, 0.5) 0%,
-    hsla(0, 0%, 100%, 1) 65%
-  );
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#CEE6F0", endColorstr="#FFFFFF", GradientType=1 );
+  background: -webkit-linear-gradient(135deg,
+      hsla(198, 53%, 87%, 0.5) 0%,
+      hsla(0, 0%, 100%, 1) 65%);
+  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#CEE6F0", endColorstr="#FFFFFF", GradientType=1);
 }
 
 .overlayFont {
@@ -187,6 +184,7 @@
   /* font-size: clamp(0.7rem, 1.25vw, 1.5rem); */
   font-size: 1rem;
 }
+
 .cardNo {
   grid-area: cardNo;
   width: 100%;
@@ -215,6 +213,7 @@
   white-space: nowrap;
   font-size: 0.9rem;
 }
+
 .cardUser {
   grid-area: user;
   width: 100%;
@@ -225,6 +224,7 @@
   z-index: 3;
   box-sizing: border-box;
 }
+
 .cardUserText {
   margin: 0px 0px 0px 5%;
   font-weight: bolder;
@@ -235,6 +235,7 @@
   /* text-shadow: 0.5px 0.5px rgb(219, 215, 215); */
   font-size: 1rem;
 }
+
 .cardLogo {
   /* border: 1px solid blue; */
   position: relative;
@@ -265,6 +266,7 @@
   z-index: 3;
   box-sizing: border-box;
 }
+
 .cvvLabel {
   display: flex;
   justify-content: center;
@@ -278,6 +280,7 @@
   font-family: "Quicksand", sans-serif;
   font-size: 0.7rem;
 }
+
 .cvvText {
   display: flex;
   justify-content: center;
@@ -288,11 +291,12 @@
   color: var(--card-other-text-color);
 
   font-family: "Share Tech Mono", monospace;
-  font-weight: 600;
+  font-weight: var(--boldest-font);
   /* text-shadow: 0.5px 0.5px #dadada; */
   box-sizing: border-box;
   font-size: 0.8rem;
 }
+
 .cardExpiry {
   /* border: 1px solid red; */
   grid-area: cardExpiry;
@@ -306,6 +310,7 @@
   box-sizing: border-box;
   /* font-size: 0.7rem; */
 }
+
 .expiryLabel {
   font-family: "Quicksand", sans-serif;
   font-weight: 550;
@@ -418,6 +423,7 @@
   height: 100%;
   box-sizing: border-box;
 }
+
 .editIconDiv button {
   position: relative;
 }
@@ -452,6 +458,7 @@
   cursor: pointer;
   height: 1.2rem;
 }
+
 .favIcon {
   cursor: pointer;
   height: 1.2rem;
@@ -461,6 +468,7 @@
   cursor: pointer;
   height: 1.2rem;
 }
+
 .cancelIcon {
   cursor: pointer;
   height: 1.2rem;
@@ -487,9 +495,11 @@
   font-weight: 700;
   font-size: 0.9rem;
 }
+
 .editInput:focus {
   border: 2px solid #1072f1;
 }
+
 .expiryInput {
   outline: none;
   width: 90%;
@@ -510,6 +520,7 @@
   font-weight: 700;
   font-size: 0.8rem;
 }
+
 .expiryInput:focus {
   border: 2px solid #1072f1;
 }
@@ -534,81 +545,71 @@
     margin-bottom: 5px;
     /* font-size: clamp(0.6em, 0.6em, 1.1em) !important; */
   }
+
   .editInput {
     font-size: 0.7rem;
-    font-size: clamp(
-      0.7rem,
-      0.19999999999999984rem + 4.000000000000001vw,
-      1rem
-    ) !important;
+    font-size: clamp(0.7rem,
+        0.19999999999999984rem + 4.000000000000001vw,
+        1rem) !important;
   }
+
   .expiryInput {
     font-size: 0.6rem;
-    font-size: clamp(
-      0.6rem,
-      0.26666666666666655rem + 2.6666666666666674vw,
-      0.8rem
-    ) !important;
+    font-size: clamp(0.6rem,
+        0.26666666666666655rem + 2.6666666666666674vw,
+        0.8rem) !important;
   }
+
   .cardNoText {
     /* font-size: 0.6rem; */
-    font-size: clamp(
-      0.6rem,
-      -0.06666666666666676rem + 5.333333333333334vw,
-      1rem
-    ) !important;
+    font-size: clamp(0.6rem,
+        -0.06666666666666676rem + 5.333333333333334vw,
+        1rem) !important;
   }
 
   .cardBankText {
     font-size: 0.7rem;
-    font-size: clamp(
-      0.7rem,
-      0.19999999999999984rem + 4.000000000000001vw,
-      1rem
-    ) !important;
+    font-size: clamp(0.7rem,
+        0.19999999999999984rem + 4.000000000000001vw,
+        1rem) !important;
   }
+
   .cardUserText {
     font-size: 0.7rem;
-    font-size: clamp(
-      0.7rem,
-      0.19999999999999984rem + 4.000000000000001vw,
-      1rem
-    ) !important;
+    font-size: clamp(0.7rem,
+        0.19999999999999984rem + 4.000000000000001vw,
+        1rem) !important;
   }
 
   .cvvLabel {
     font-size: 0.5rem;
-    font-size: clamp(
-      0.5rem,
-      0.33333333333333337rem + 1.333333333333333vw,
-      0.6rem
-    ) !important;
+    font-size: clamp(0.5rem,
+        0.33333333333333337rem + 1.333333333333333vw,
+        0.6rem) !important;
   }
+
   .cvvText {
     font-size: 0.6rem;
-    font-size: clamp(
-      0.6rem,
-      0.26666666666666655rem + 2.6666666666666674vw,
-      0.8rem
-    ) !important;
+    font-size: clamp(0.6rem,
+        0.26666666666666655rem + 2.6666666666666674vw,
+        0.8rem) !important;
   }
+
   .expiryLabel {
     /* font-size: clamp(0.6rem, 0.2rem + 2vw, 0.8rem) !important; */
     font-size: 0.5rem;
-    font-size: clamp(
-      0.5rem,
-      0.33333333333333337rem + 1.333333333333333vw,
-      0.6rem
-    ) !important;
+    font-size: clamp(0.5rem,
+        0.33333333333333337rem + 1.333333333333333vw,
+        0.6rem) !important;
   }
+
   .expiryText {
     font-size: 0.6rem;
-    font-size: clamp(
-      0.6rem,
-      0.26666666666666655rem + 2.6666666666666674vw,
-      0.8rem
-    ) !important;
+    font-size: clamp(0.6rem,
+        0.26666666666666655rem + 2.6666666666666674vw,
+        0.8rem) !important;
   }
+
   .favIcon {
     /* font-size: clamp(1.4rem, 0.6rem + 4vw, 1.8rem) !important; */
     /* font-size: 1.1rem;
@@ -619,12 +620,11 @@
       1.1rem
     ) !important; */
     height: 0.8rem;
-    height: clamp(
-      0.8rem,
-      0.13333333333333353rem + 5.333333333333332vw,
-      1.2rem
-    ) !important;
+    height: clamp(0.8rem,
+        0.13333333333333353rem + 5.333333333333332vw,
+        1.2rem) !important;
   }
+
   .pencilIcon {
     /* font-size: clamp(1.1rem, 0.5rem + 3vw, 1.4rem) !important; */
     /* font-size: 0.8rem;
@@ -635,12 +635,11 @@
     ) !important; */
     /* height: clamp(1.2rem, -0.40000000000000013rem + 8vw, 2rem) !important; */
     height: 0.8rem;
-    height: clamp(
-      0.8rem,
-      0.13333333333333353rem + 5.333333333333332vw,
-      1.2rem
-    ) !important;
+    height: clamp(0.8rem,
+        0.13333333333333353rem + 5.333333333333332vw,
+        1.2rem) !important;
   }
+
   .trashIcon {
     /* font-size: clamp(1.1rem, 0.5rem + 3vw, 1.4rem) !important; */
     /* font-size: 1.1rem;
@@ -652,30 +651,26 @@
     ) !important; */
 
     /* height: 0.8rem; */
-    height: clamp(
-      0.8rem,
-      0.13333333333333353rem + 5.333333333333332vw,
-      1.2rem
-    ) !important;
+    height: clamp(0.8rem,
+        0.13333333333333353rem + 5.333333333333332vw,
+        1.2rem) !important;
   }
+
   .checkIcon {
     /* font-size: clamp(1.1rem, 0.5rem + 3vw, 1.4rem) !important; */
     font-size: 1.1rem;
     font-size: 0.8rem;
-    font-size: clamp(
-      0.8rem,
-      0.29999999999999993rem + 4.000000000000001vw,
-      1.1rem
-    ) !important;
+    font-size: clamp(0.8rem,
+        0.29999999999999993rem + 4.000000000000001vw,
+        1.1rem) !important;
   }
+
   .cancelIcon {
     font-size: 1.1rem;
     font-size: 0.8rem;
-    font-size: clamp(
-      0.8rem,
-      0.29999999999999993rem + 4.000000000000001vw,
-      1.1rem
-    ) !important;
+    font-size: clamp(0.8rem,
+        0.29999999999999993rem + 4.000000000000001vw,
+        1.1rem) !important;
   }
 }
 
@@ -690,12 +685,15 @@
     margin-top: 20px;
     margin-bottom: 5px;
   }
+
   .editInput {
     font-size: clamp(1rem, 0.4rem + 3vw, 1.3rem) !important;
   }
+
   .expiryInput {
     font-size: clamp(0.8rem, 0.4rem + 2vw, 1rem) !important;
   }
+
   .cardNoText {
     font-size: clamp(1rem, 0.4rem + 3vw, 1.3rem) !important;
   }
@@ -703,6 +701,7 @@
   .cardBankText {
     font-size: clamp(1rem, 0.4rem + 3vw, 1.3rem) !important;
   }
+
   .cardUserText {
     font-size: clamp(1rem, 0.4rem + 3vw, 1.3rem) !important;
   }
@@ -710,89 +709,80 @@
   .cvvLabel {
     font-size: clamp(0.6rem, 0.2rem + 2vw, 0.8rem) !important;
   }
+
   .cvvText {
     font-size: clamp(0.8rem, 0.4rem + 2vw, 1rem) !important;
   }
+
   .expiryLabel {
     font-size: clamp(0.6rem, 0.2rem + 2vw, 0.8rem) !important;
   }
+
   .expiryText {
     font-size: clamp(0.8rem, 0.4rem + 2vw, 1rem) !important;
   }
+
   .favIcon {
-    height: clamp(
-      1.1rem,
-      0.30000000000000027rem + 3.9999999999999996vw,
-      1.5rem
-    ) !important;
+    height: clamp(1.1rem,
+        0.30000000000000027rem + 3.9999999999999996vw,
+        1.5rem) !important;
   }
+
   .pencilIcon {
-    height: clamp(
-      1.1rem,
-      0.30000000000000027rem + 3.9999999999999996vw,
-      1.5rem
-    ) !important;
+    height: clamp(1.1rem,
+        0.30000000000000027rem + 3.9999999999999996vw,
+        1.5rem) !important;
   }
+
   .trashIcon {
-    height: clamp(
-      1.1rem,
-      0.30000000000000027rem + 3.9999999999999996vw,
-      1.5rem
-    ) !important;
+    height: clamp(1.1rem,
+        0.30000000000000027rem + 3.9999999999999996vw,
+        1.5rem) !important;
   }
+
   .checkIcon {
-    height: clamp(
-      1.1rem,
-      0.30000000000000027rem + 3.9999999999999996vw,
-      1.5rem
-    ) !important;
+    height: clamp(1.1rem,
+        0.30000000000000027rem + 3.9999999999999996vw,
+        1.5rem) !important;
   }
+
   .cancelIcon {
-    height: clamp(
-      1.1rem,
-      0.30000000000000027rem + 3.9999999999999996vw,
-      1.5rem
-    ) !important;
+    height: clamp(1.1rem,
+        0.30000000000000027rem + 3.9999999999999996vw,
+        1.5rem) !important;
   }
 }
 
 /* iPads (portrait and landscape) ----------- */
 /* 768--1024 */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {}
 
 /* iPads (landscape) ----------- */
 /* 768--1024 landscape */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {}
 
 /* iPads (portrait) ----------- */
 /* 768--1024 portrait */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {}
+
 /* iPhone 5 (portrait & landscape)----------- */
 /* 320--568 */
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
-}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {}
 
 /* iPhone 5 (landscape)----------- */
 /* 320-568  landscape*/
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
-}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {}
 
 /* iPhone 5 (portrait)----------- */
 /* 320-568 portrait */
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
-}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {}
 
 /* Desktops and laptops ----------- */
 /* <-1224 */
-@media only screen and (min-width: 1224px) {
-}
+@media only screen and (min-width: 1224px) {}
 
 /* Large screens ----------- */
-@media only screen and (min-width: 1824px) {
-}
+@media only screen and (min-width: 1824px) {}
 
 /* ____________________________________________________ */
 /* _____________________________________________________ */

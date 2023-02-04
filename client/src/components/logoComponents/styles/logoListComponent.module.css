@@ -33,6 +33,6 @@
 }
 
 .logoListWrapper::-webkit-scrollbar-thumb {
-    background-color: #002A9A;
+    background-color: var(--ui-scheme-font-color);
     border-radius: 10px;
 }

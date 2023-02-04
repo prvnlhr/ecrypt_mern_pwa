@@ -68,7 +68,8 @@
     width: 15%;
     aspect-ratio: 1/1;
     background-color: #AED2FF;
-    background-color: var(--box-bg-secondary-li);
+    background-color: var(--box-bg-tertiary);
+    background-color: var(--box-bg-secondary-drk);
     border-radius: 14px;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;

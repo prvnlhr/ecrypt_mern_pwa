@@ -1,12 +1,16 @@
 import React from 'react'
 import styles from "./styles/bookmarkIcon.module.css"
+import { useSelector, useDispatch } from 'react-redux'
+
 const theme = 'dark';
 const BookmarksIconFill = () => {
+    const isDarkMode = useSelector((state) => state.ui.darkMode);
+
     return (
 
 
         <>
-            {theme === 'dark' ?
+            {isDarkMode === true ?
                 <svg
                     // width="24" height="24" 
                     className={styles.iconStyle}

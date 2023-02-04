@@ -6,6 +6,8 @@ import LogoutIcon from "../icons/LogoutIcon"
 import SettingsIcon from "../icons/SettingsIcon"
 import { getUserDetails } from "../../redux/features/user/userSlice"
 
+import { toggleUiTheme } from "../../redux/features/ui/uiSlice"
+
 
 import moment from "moment";
 import headerStyles from "./styles/headerBar.module.css";
@@ -19,6 +21,9 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
 
   const auth = useSelector((state) => state.auth);
   const userState = useSelector((state) => state.user);
+  const uiState = useSelector((state) => state.ui);
+  const isDarkMode = useSelector((state) => state.ui.darkMode);
+
 
   const { token, } = auth;
 
@@ -43,13 +48,14 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
     };
   }, []);
 
-
   const [lightTheme, setTheme] = useState(true);
 
   const toggleTheme = () => {
     setTheme(!lightTheme);
-  }
+    localStorage.setItem("theme", !isDarkMode);
+    dispatch(toggleUiTheme(!isDarkMode));
 
+  }
 
   const togglePopup = () => {
     if (open === true) {
@@ -65,10 +71,8 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
 
 
   const logOutBtnClicked = () => {
-    console.log('logvnks')
     dispatch(logOutUser({}))
   }
-
 
   const day = moment().format("dddd");
   const date = moment().format('DD MMM YYYY');
@@ -158,16 +162,16 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
               <div className={headerStyles.themeToggleWrapper}>
                 <div className={headerStyles.toggleContainer} onClick={toggleTheme}>
                   <div className={headerStyles.toggleDiv}>
-                    <div className={lightTheme ? headerStyles.toggleBtnDivLeft : headerStyles.toggleBtnDivRight}  >
+                    <div className={!isDarkMode ? headerStyles.toggleBtnDivLeft : headerStyles.toggleBtnDivRight}  >
                       <div className={headerStyles.toggleIconDiv} >
-                        {lightTheme ?
+                        {!isDarkMode ?
                           <Icon className={headerStyles.toggleIconLight} icon="mingcute:sun-line" color="#f3b821" /> :
                           <Icon className={headerStyles.toggleIconDark} icon="akar-icons:moon" color="white" />
                         }
                       </div>
                       <div className={headerStyles.toggleTextDiv} >
                         <p className={headerStyles.toggleBtnText} >
-                          {lightTheme ? "Light" : "Dark"}
+                          {!isDarkMode ? "Light" : "Dark"}
                         </p>
                       </div>
                     </div>

@@ -221,7 +221,7 @@
 .titleLabelDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 
 }
@@ -246,14 +246,14 @@
     background: transparent;
     font-family: "Poppins", sans-serif;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--primary-font-color);
 }
 
 .titleInputDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
 }
 
 .categoryWrapper {
@@ -293,7 +293,7 @@
 .categoryLabelDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: var(--boldest-font);
     color: var(--primary-font-color);
 }
 
@@ -310,12 +310,12 @@
 .categoryInput {
     font-family: "Poppins", sans-serif;
     font-size: 15px;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: var(--ui-scheme-font-color);
-    background-color: var(--box-bg-secondary);
+    background-color: var(--box-bg-secondary-drk);
     border: none;
     outline: none !important;
-    height: 75%;
+    height: 80%;
     width: 70%;
     border-radius: 8px;
     display: flex;
@@ -573,7 +573,7 @@
     .titleLabelDiv p {
         font-family: "Poppins", sans-serif;
         font-size: 15px;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
         color: var(--secondary-font-color);
 
     }
@@ -590,7 +590,7 @@
     .titleInputDiv p {
         font-family: "Poppins", sans-serif;
         font-size: 20px;
-        font-weight: 600;
+        font-weight: var(--boldest-font);
     }
 
     .categoryWrapper {
@@ -629,7 +629,7 @@
     .categoryLabelDiv p {
         font-family: "Poppins", sans-serif;
         font-size: 18px;
-        font-weight: 600;
+        font-weight: var(--boldest-font);
         margin: 0px;
         padding: 0px;
     }
@@ -647,10 +647,10 @@
     .categoryInput {
         font-family: "Poppins", sans-serif;
         font-size: 15px;
-        font-weight: 600;
+        font-weight: var(--boldest-font);
         border: 1px solid rgba(142, 138, 138, 0.13);
         outline: none !important;
-        height: 65%;
+        height: 80%;
         width: 85%;
         border-radius: 8px;
         display: flex;
@@ -699,7 +699,7 @@
     .inputPopUpText {
         font-family: "Poppins", sans-serif;
         font-size: 15px;
-        font-weight: 500;
+        font-weight: var(--bolder-font);
         margin: 5% 0px 0px 0px;
         display: flex;
         justify-content: flex-start;

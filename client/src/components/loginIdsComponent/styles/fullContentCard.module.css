@@ -256,6 +256,14 @@
   justify-content: flex-start;
   align-items: center;
   padding-left: 2%;
+  webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
 }
 
 .logoContainer {
@@ -265,6 +273,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
 }
 
 
@@ -277,6 +293,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
 
 }
 
@@ -323,7 +347,7 @@
 .titleLabelDiv p {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--bolder-font);
   color: var(--secondary-font-color);
 }
 
@@ -349,7 +373,7 @@
   background: transparent;
   font-family: "Poppins", sans-serif;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: var(--bolder-font);
   color: var(--primary-font-color);
 
   display: flex;
@@ -366,7 +390,7 @@
   background: transparent;
   font-family: "Poppins", sans-serif;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: var(--bolder-font);
   color: var(--primary-font-color);
   display: flex;
   justify-content: flex-start;
@@ -413,7 +437,7 @@
 .categoryLabelDiv p {
   font-family: "Poppins", sans-serif;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: var(--boldest-font);
   color: var(--primary-font-color);
 }
 
@@ -430,11 +454,11 @@
 .categoryInput {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: var(--bolder-font);
   color: #002A9A;
   color: var(--ui-scheme-font-color);
   background-color: #A6CBFB;
-  background-color: var(--box-bg-secondary);
+  background-color: var(--box-bg-secondary-drk);
   border: none;
   outline: none !important;
   height: 75%;
@@ -536,6 +560,7 @@
   grid-template-areas:
     "appWebSiteIconDiv appWebsiteLabelDiv appWebSiteInputDiv";
   background-color: var(--box-bg-tertiary);
+  /* background-color: var(--box-bg-tertiary); */
   border-radius: 10px;
 
 }
@@ -569,7 +594,7 @@
 .appWebsiteLabelDiv p {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: var(--bolder-font);
   color: var(--secondary-font-color);
 }
 
@@ -595,7 +620,7 @@
   background: transparent;
   font-family: "Poppins", sans-serif;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--bolder-font);
   color: var(--primary-font-color);
   display: flex;
   justify-content: flex-start;
@@ -611,7 +636,7 @@
   background: transparent;
   font-family: "Poppins", sans-serif;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--bolder-font);
   color: var(--primary-font-color);
 
   display: flex;
@@ -679,7 +704,7 @@
 .usernameLabelDiv p {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--bolder-font);
   color: var(--secondary-font-color);
 }
 
@@ -705,7 +730,7 @@
   background: transparent;
   font-family: "Poppins", sans-serif;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--bolder-font);
   color: var(--primary-font-color);
 
   display: flex;
@@ -722,7 +747,7 @@
   background: transparent;
   font-family: "Poppins", sans-serif;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--bolder-font);
   color: var(--primary-font-color);
 
   display: flex;
@@ -788,7 +813,7 @@
 .passwordLabelDiv p {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--bolder-font);
   color: var(--secondary-font-color);
 }
 
@@ -814,7 +839,7 @@
   background: transparent;
   font-family: "Poppins", sans-serif;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--bolder-font);
   color: var(--primary-font-color);
 
   display: flex;
@@ -831,7 +856,7 @@
   background: transparent;
   font-family: "Poppins", sans-serif;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: var(--bolder-font);
   color: var(--primary-font-color);
 
   display: flex;
@@ -1070,7 +1095,7 @@
   .titleLabelDiv p {
     font-size: 15px;
     font-size: 0.85rem;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
   }
 
   .titleInputDiv {
@@ -1087,12 +1112,12 @@
 
   .titleInputActive {
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
   }
 
   .titleInputNotActive {
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
   }
 
   .categoryWrapper {
@@ -1156,7 +1181,7 @@
     text-align: center;
 
     font-size: 1.1rem;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
   }
 
   .popUpBtnIconDiv {
@@ -1205,7 +1230,7 @@
   .inputPopUpText {
     font-family: "Poppins", sans-serif;
     font-size: 0.95rem;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
     color: black;
     color: var(--primary-font-color);
     margin: 5% 0px 0px 0px;
@@ -1287,13 +1312,13 @@
 
   .appWebSiteInputActive {
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
 
   }
 
   .appWebSiteInputNotActive {
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: var(--bolder-font);
   }
 
   .usernameWrapper {
@@ -1385,7 +1410,7 @@
         background: transparent;
         font-family: "Poppins", sans-serif;
         font-size: 14px;
-        font-weight: 500;
+        font-weight:var(--bold-font);
         color: black;
     } */
 
@@ -1473,7 +1498,7 @@
         background: transparent;
         font-family: "Poppins", sans-serif;
         font-size: 14px;
-        font-weight: 500;
+        font-weight:var(--bold-font);
         color: black;
     } */
 

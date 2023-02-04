@@ -8,6 +8,7 @@ import recentlyAddedSlice from "../features/recentlyAdded/recentlyAddedSlice"
 import userSlice from '../features/user/userSlice'
 import authSlice from '../features/auth/authSlice'
 import searchSlice from '../features/search/searchSlice'
+import uiSlice from '../features/ui/uiSlice'
 
 const store = configureStore({
     reducer: {
@@ -20,6 +21,7 @@ const store = configureStore({
         auth: authSlice,
         user: userSlice,
         search: searchSlice,
+        ui: uiSlice,
     },
 })
 

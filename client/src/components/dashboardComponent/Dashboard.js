@@ -52,14 +52,13 @@ const Dashboard = ({ setHeading,
             </div>
             <div className={styles.count_and_Label_Container}>
               <div className={styles.countDiv}>
-                <p>{dataCount.loginsCount}</p>
+                <p className={styles.listCountText}>{dataCount.loginsCount}</p>
               </div>
               <div className={styles.labelDiv}>
-                <p>Logins</p>
+                <p className={styles.countLabelText} >Logins</p>
               </div>
             </div>
           </div>
-
 
           <div className={styles.boxContainer} >
             <div className={styles.iconContainer}>
@@ -69,10 +68,10 @@ const Dashboard = ({ setHeading,
             </div>
             <div className={styles.count_and_Label_Container}>
               <div className={styles.countDiv}>
-                <p>{dataCount.cardsCount}</p>
+                <p className={styles.listCountText} >{dataCount.cardsCount}</p>
               </div>
               <div className={styles.labelDiv}>
-                <p>Cards</p>
+                <p className={styles.countLabelText}>Cards</p>
               </div>
             </div>
           </div>
@@ -86,10 +85,10 @@ const Dashboard = ({ setHeading,
             </div>
             <div className={styles.count_and_Label_Container}>
               <div className={styles.countDiv}>
-                <p>{dataCount.docsCount}</p>
+                <p className={styles.listCountText} >{dataCount.docsCount}</p>
               </div>
               <div className={styles.labelDiv}>
-                <p>Docs</p>
+                <p className={styles.countLabelText}>Docs</p>
               </div>
             </div>
           </div>
