@@ -70,7 +70,8 @@
   width: 85%;
   height: 85%;
   border-radius: 10px;
-  background-color: var(--box-bg-secondary);
+  background-color: var(--logo-div-bg);
+
 }
 
 .titleWrapper {

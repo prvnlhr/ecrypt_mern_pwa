@@ -5,9 +5,8 @@
     aspect-ratio: 1/1.1;
     width: 30%;
     /* height: 60%; */
-    background-color: var(--box-bg-primary);
+    background-color: var(--box-bg-tertiary-drk);
     z-index: 99;
-    box-shadow: var(--doc-inputform-wrapper-box-shadow);
     border-radius: 20px;
     display: grid;
     grid-template-columns: 100%;
@@ -20,7 +19,6 @@
     left: 0;
     right: 0;
     top: 0px;
-    border: 2px solid var(--box-bg-secondary);
 }
 
 .headerWrapper {
@@ -88,7 +86,6 @@
     align-items: center;
     box-sizing: border-box;
     /* border: 1px solid red; */
-    /* background-color: var(--doc-inputform-feild-bg); */
     border-radius: 25px;
 
 }
@@ -106,8 +103,11 @@
         "titleIconWrapper inputWrapper";
     /* border: 1px solid black; */
     background-color: var(--box-bg-tertiary);
-    /* background-color: #3b87eb10; */
     border-radius: 15px;
+}
+
+.focusFieldStyle {
+    border: 2px solid var(--ui-scheme-color);
 }
 
 .titleIconWrapper {
@@ -155,10 +155,6 @@
     text-align: start;
     width: 90%;
     height: 90%;
-    border-bottom: 2px solid #A6CBFB;
-    border-top: none;
-    border-left: none;
-    border-right: none;
     border: none;
     font-family: "Poppins", sans-serif;
     font-size: 13px;
@@ -167,8 +163,7 @@
     margin: 0px 0px 0px 0px;
     padding: 0 0 0 10px;
     box-sizing: border-box;
-    caret-color: #002A9A;
-    caret-color: var(--file-name-input-caret-color);
+    caret-color: var(--ui-scheme-color);
     outline: none;
     background: transparent;
     color: var(--primary-font-color);
@@ -292,7 +287,7 @@ label {
 .fileLabelText1 {
     margin: 0px 0px 5px 0px;
     font-family: "Poppins", sans-serif;
-    color: var(--doc-inputform-choose-font-color);
+    color: var(--primary-font-color);
     font-weight: 550;
     font-size: 15px;
     letter-spacing: 0.2px;
@@ -310,7 +305,7 @@ label {
 .spanText {
     margin: 0px 0px 0px 5px;
     font-family: "Poppins", sans-serif;
-    color: var(--doc-inputform-feild-supported-spantext-font-color);
+    color: var(--ui-scheme-color);
     font-weight: 550;
     font-size: 11px;
     /* letter-spacing: 0.2px; */

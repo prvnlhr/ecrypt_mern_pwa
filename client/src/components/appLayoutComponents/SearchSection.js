@@ -121,7 +121,7 @@ const SearchSection = ({ searchMode, setSearchMode, searchQuery,
                     : (
                         <div className={styles.trueSearchContainer}>
                             <div className={styles.searchInputDiv}  >
-                                <input ref={searchBarRef} onChange={(e) => setSearchQuery(e.target.value)} className={styles.searchInput} />
+                                <input autoFocus={true} ref={searchBarRef} onChange={(e) => setSearchQuery(e.target.value)} className={styles.searchInput} />
                             </div>
                             <div className={styles.searchCancelIconDiv}>
                                 <Icon className={styles.searchCancelIcon} icon="octicon:x-16" onClick={() => searchCancelIconClicked()} />

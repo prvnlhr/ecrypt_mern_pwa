@@ -12,11 +12,9 @@
     width: 80%;
     height: 80%;
     /* border: 1px solid black; */
-    background-color: #ebebeb;
+    /* background-color: #ebebeb; */
     background-color: var(--box-bg-tertiary);
-    background-color: var(--box-bg-primary);
     border-radius: 10px;
-
     display: flex;
     justify-content: center;
     align-items: center;

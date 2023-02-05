@@ -11,6 +11,11 @@ import axios from "axios";
 const DocInputForm = ({ setShowDocInputForm, showDocInputForm, formToggle }) => {
     const userId = useSelector((state) => state.user._id);
 
+    const [currFocusField, setCurrFocusField] = useState(undefined);
+    const onFocus = (val) => {
+        setCurrFocusField(val)
+    }
+
     const dispatch = useDispatch();
     const [name, setName] = useState();
     const [file, setFile] = useState();
@@ -40,7 +45,7 @@ const DocInputForm = ({ setShowDocInputForm, showDocInputForm, formToggle }) => 
             .post("https://httpbin.org/anything", data)
             .then((res) => console.log(res))
             .catch((err) => console.log(err));
-            
+
         const toMakeActvityData = {
             title: name,
         }
@@ -100,10 +105,11 @@ const DocInputForm = ({ setShowDocInputForm, showDocInputForm, formToggle }) => 
                             id="file"
                             className={styles.imgFileInput}
                             onChange={handleChange}
+
                         />
                     </div>
 
-                    <div className={styles.titleWrapper}>
+                    <div className={`${styles.titleWrapper} ${(currFocusField === 1) && styles.focusFieldStyle} `}>
                         <div className={styles.titleIconWrapper} >
                             <Icon icon="tabler:file-invoice" color="#0473ff" />
                         </div>
@@ -117,6 +123,7 @@ const DocInputForm = ({ setShowDocInputForm, showDocInputForm, formToggle }) => 
                                 type="text"
                                 id="name"
                                 onChange={(e) => setName(e.target.value)}
+                                onFocus={() => onFocus(1)}
                             />
                         </div>
 

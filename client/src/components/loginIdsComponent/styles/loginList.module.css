@@ -39,6 +39,8 @@
   /* firefox hide scrollbar  */
 }
 
+
+
 .contentContainerClose {
   position: relative;
   height: 100%;
@@ -79,106 +81,24 @@
 
 /*_____________________*/
 
-
-
-.contentContainerCollapse {
-  position: relative;
-  border-radius: 0px 0px 0px 0px;
-  width: 100%;
-  height: 100%;
-  /* width: 70% !important; */
-  /* border: 1px solid green; */
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  overflow-y: scroll !important;
-  /* align-items: center; */
-  scroll-behavior: smooth;
-
-  /* background-color: rgb(255, 255, 255); */
-  /* background-color: #482ff7; */
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  /* border-radius: 0px 0px 0px 0px; */
-}
-
 .contentContainer::-webkit-scrollbar {
-  /* background-color: rgba(255, 255, 255, 0); */
+  background-color: rgba(176, 32, 32, 0);
   height: 4px;
-  width: 5px;
-  display: none;
+  width: 3px;
 }
 
 .contentContainer::-webkit-scrollbar-track {
   background-color: rgb(231, 228, 228);
   background-color: rgba(231, 228, 228, 0.062);
-
   width: 2px;
 }
 
 .contentContainer::-webkit-scrollbar-thumb {
-  background-color: #2f89fc;
-  border-radius: 4px;
+  background-color: var(--ui-scheme-color);
+  border-radius: 10px;
 }
 
-.contentContainerClose::-webkit-scrollbar {
-  background-color: #fff;
-  background-color: rgba(231, 228, 228, 0.062);
-  display: none;
-  height: 4px;
-  width: 5px;
-}
 
-.contentContainerClose::-webkit-scrollbar-track {
-  background-color: rgb(231, 228, 228);
-}
-
-.contentContainerClose::-webkit-scrollbar-thumb {
-  background-color: #2f89fc;
-  border-radius: 4px;
-}
-
-.lds-ring {
-  display: inline-block;
-  position: relative;
-  width: 80px;
-  height: 80px;
-}
-
-.ldsRing div {
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
-  width: 64px;
-  height: 64px;
-  margin: 8px;
-  border: 8px solid #fff;
-  border-radius: 50%;
-  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #fff transparent transparent transparent;
-}
-
-.lds-ring div:nth-child(1) {
-  animation-delay: -0.45s;
-}
-
-.lds-ring div:nth-child(2) {
-  animation-delay: -0.3s;
-}
-
-.lds-ring div:nth-child(3) {
-  animation-delay: -0.15s;
-}
-
-@keyframes lds-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
 @media screen and (max-width: 650px) {
 

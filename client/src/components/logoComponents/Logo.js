@@ -15,12 +15,8 @@ const Logo = ({ logo, logoIndx, setLogoIndx, selectedLogoIndex, setSelectedLogoI
 
     return (
         <div className={
-            selectedLogoIndex === logo.logoIndex ? logoStyles.logoWrapperActive :
-                logoStyles.logoWrapper
-        } onClick={handleLogoClicked} >
-            <div className={
-                // selectedLogoIndex === logo.logoIndex ? logoStyles.logoContainerActive :
-                logoStyles.logoContainer}>
+            selectedLogoIndex === logo.logoIndex ? logoStyles.logoWrapperActive : logoStyles.logoWrapper} onClick={handleLogoClicked} >
+            <div className={logoStyles.logoContainer}>
                 {logo.logo}
             </div>
             <div className={logoStyles.logoLabelContainer}>

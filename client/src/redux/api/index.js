@@ -238,10 +238,14 @@ export const cardFavouriteToggle = (card_id, isFav, category, token) =>
   });
 
 
-export const docsFavouriteToggle = (doc_id, isFav) =>
-  API.patch(`/user/docs/toggleFavourite/${doc_id}`, {
-    data: isFav,
+
+export const docsFavouriteToggle = (doc_id, isFav, token) =>
+  API.patch(`/user/docs/toggleFavourite/${doc_id}`, { data: isFav }, {
+    headers: {
+      "Authorization": `Bearer ${token}`
+    },
   });
+
 export const fetchFavorites = (user_id) =>
   API.get("/user/loginIds/getFavorites", {
     params: {

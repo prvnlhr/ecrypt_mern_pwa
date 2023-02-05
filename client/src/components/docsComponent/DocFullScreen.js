@@ -91,6 +91,8 @@ const DocFullScreen = ({ setDocFullScreen, setFullScreenDocData, docFullScreen, 
     }
     //> fav btn Clicked
     const handleFavBtnClicked = () => {
+        console.log(fullScreenData.isFavourite, !fullScreenData.isFavourite)
+
         dispatch(toggleIsFav({
             doc_id: fullScreenData._id,
             isFav: !fullScreenData.isFavourite

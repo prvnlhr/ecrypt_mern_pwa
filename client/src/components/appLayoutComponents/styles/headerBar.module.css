@@ -27,7 +27,7 @@
 .dateWrapper::after {
   position: absolute;
   content: " ";
-  background-color: var(--ui-scheme-font-color);
+  background-color: var(--ui-scheme-color);
   width: 3px;
   height: 60%;
   bottom: auto;
@@ -60,7 +60,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 12px;
   font-weight: var(--bolder-font);
-  color: var(--ui-scheme-font-color);
+  color: var(--ui-scheme-color);
 }
 
 .dateText {
@@ -94,7 +94,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 13px;
   font-weight: var(--boldest-font);
-  color: var(--ui-scheme-font-color);
+  color: var(--ui-scheme-color);
 }
 
 .grettingText {

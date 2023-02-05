@@ -17,9 +17,6 @@
   user-select: none;
 }
 
-.opacity {
-  opacity: 0;
-}
 
 .contentContainer {
   height: 100%;
@@ -43,6 +40,8 @@
   -ms-overflow-style: none;
   /* firefox hide scrollbar  */
 }
+
+
 
 .contentContainerClose {
   height: 100%;
@@ -76,7 +75,7 @@
   /* background-color: rgba(255, 255, 255, 0); */
   height: 4px;
   width: 5px;
-  display: none;
+
 }
 
 .contentContainer::-webkit-scrollbar-track {
@@ -87,7 +86,7 @@
 }
 
 .contentContainer::-webkit-scrollbar-thumb {
-  background-color: #2f89fc;
+  background-color: var(--ui-scheme-color);
   border-radius: 4px;
 }
 
@@ -104,7 +103,7 @@
 }
 
 .contentContainerClose::-webkit-scrollbar-thumb {
-  background-color: #2f89fc;
+  background-color: var(--ui-scheme-color);
   border-radius: 4px;
 }
 

@@ -14,6 +14,8 @@
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     margin: 15px 15px 15px 15px;
     margin: 2% 2% 2% 2%;
+    box-shadow: var(--list-wrapper-box-shadow);
+
 }
 
 .cardContainer {
@@ -44,7 +46,8 @@
     height: 80%;
     /* border: 1px solid red; */
     border-radius: 8px;
-    background-color: var(--box-bg-secondary);
+    background-color: var(--logo-div-bg);
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,7 +71,7 @@
 
 .titleWrapper p {
     font-family: "Poppins", sans-serif;
-    font-size: 12px;
+    font-size: 0.88rem;
     font-weight: var(--bolder-font);
     color: var(--primary-font-color);
     white-space: nowrap;
@@ -85,12 +88,44 @@
         align-items: center;
         margin-top: 20px;
         width: 83%;
-        height: 75px;
-        min-height: 75px;
-        border-radius: 15px;
+        height: 85px !important;
+        min-height: 85px;
+        border-radius: 18px;
         scroll-behavior: smooth;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
         margin: 15px 15px 15px 15px;
+    }
+
+    .cardContainer {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid red; */
+        display: grid;
+        grid-template-columns: 85px minmax(0, 1fr);
+        grid-template-rows: 100%;
+        grid-template-areas:
+            "logoWrapper titleWrapper";
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .logoWrapper {
+        grid: logoWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logoDiv {
+        height: 88%;
+        width: 88%;
+        border-radius: 13px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
 }

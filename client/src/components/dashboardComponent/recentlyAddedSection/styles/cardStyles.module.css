@@ -11,6 +11,7 @@
     background-color: var(--box-bg-primary);
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     /* border: 1px solid black; */
+    box-shadow: var(--list-wrapper-box-shadow);
 }
 
 .cardWrapperShrink {
@@ -28,6 +29,7 @@
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     /* border: 1px solid black; */
     margin: 2% 2% 2% 2%;
+    box-shadow: var(--list-wrapper-box-shadow);
 }
 
 .cardContainerShrink {
@@ -92,7 +94,8 @@
     align-items: center;
     height: 82%;
     width: 82%;
-    background-color: var(--box-bg-secondary);
+    background-color: var(--logo-div-bg);
+
     border-radius: 8px;
     /* border: 1px solid black; */
 }
@@ -255,7 +258,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--box-bg-secondary);
+    background-color: var(--category-box-bg);
+
     border-radius: 8px;
     border-radius: 8px;
 }
@@ -264,7 +268,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: var(--bolder-font);
-    color: var(--ui-scheme-font-color);
+    color: var(--ui-scheme-color);
 }
 
 
@@ -606,9 +610,10 @@
         align-items: center;
         margin-top: 20px;
         width: 83%;
-        height: 75px;
-        min-height: 75px;
-        border-radius: 15px;
+        height: 85px !important;
+        min-height: 85px;
+        border-radius: 18px;
+
         scroll-behavior: smooth;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
         /* border: 1px solid black; */
@@ -621,7 +626,7 @@
         height: 100%;
         /* border: 1px solid red; */
         display: grid;
-        grid-template-columns: 80px minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-columns: 85px minmax(0, 1fr) minmax(0, 1fr);
         grid-template-rows: 50% 50%;
         grid-template-areas:
             "logoWrapper titleWrapper titleWrapper"
@@ -663,11 +668,11 @@
         grid-area: logoWrapper;
         width: 100%;
         height: 100%;
+        min-height: 100%;
         /* border: 1px solid greenyellow; */
         display: flex;
         justify-content: center;
         align-items: center;
-        max-height: 80px;
         overflow: hidden;
     }
 
@@ -675,9 +680,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 82%;
-        width: 82%;
-        border-radius: 8px;
+        height: 88%;
+        width: 88%;
+        border-radius: 10px;
+        border-radius: 13px;
     }
 
     .logoDivExpand {

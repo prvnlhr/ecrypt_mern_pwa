@@ -82,6 +82,7 @@
 
 .backBtnIcon {
     font-size: 30px;
+    color: var(--primary-font-color);
 }
 
 .headingDiv p {
@@ -519,6 +520,7 @@ label {
     justify-content: center;
     align-items: center;
     text-align: center;
+    /* border: 1px solid red; */
     /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
 }
 
@@ -1252,6 +1254,8 @@ label {
         grid-template-columns: 100%;
         /* grid-template-rows: 40% 25% 35%; */
         grid-template-rows: 5% 40% 20% 35%;
+        /* grid-template-rows: 5% 35% 25% 35%; */
+        grid-template-rows: 5% 37% 25% 32%;
         grid-template-areas:
             "formMessageWrapper"
             "profileNameWrapper"
@@ -1380,6 +1384,7 @@ label {
     .formBtnSave {
         width: auto;
         height: auto;
+        height: 30px;
         border-radius: 5px;
         border: none;
         outline: none;
@@ -1387,6 +1392,8 @@ label {
         padding-right: 4%;
         padding-top: 1%;
         padding-bottom: 1%;
+        padding-top: 2%;
+        padding-bottom: 2%;
         margin: 0px;
         display: flex;
         justify-content: center;
@@ -1405,6 +1412,8 @@ label {
         padding-right: 4%;
         padding-top: 1%;
         padding-bottom: 1%;
+        padding-top: 2%;
+        padding-bottom: 2%;
         margin: 0px;
         display: flex;
         justify-content: center;
@@ -1586,6 +1595,7 @@ label {
         /* border: 1px solid red; */
         overflow: hidden;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        opacity: 0;
     }
 
     .passFieldWrapperOpen {

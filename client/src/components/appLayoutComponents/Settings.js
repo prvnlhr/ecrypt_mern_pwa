@@ -157,8 +157,21 @@ const Settings = () => {
         const { name, value } = e.target;
         setPasswordData({ ...passwordData, [name]: value });
     };
+
     //> handle cancel btn clicked_______________
     const handleCancelBtnClicked = () => {
+
+        if (editMode.section == 'PASS') {
+
+            console.log(editMode.section);
+
+            setPasswordData({
+                ...passwordData,
+                oldPassword: undefined,
+            })
+            // setPasswordData(undefined);
+        }
+
         setEditMode({
             isEditMode: false,
             section: undefined,
@@ -168,6 +181,7 @@ const Settings = () => {
         // if (editMode.section === 'PROFILEPIC') {
         //     setProfilePicImg(oldProfilePic);
         // }
+
         setCurrFocusField(undefined);
     }
 

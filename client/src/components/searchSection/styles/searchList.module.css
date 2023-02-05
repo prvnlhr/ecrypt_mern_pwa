@@ -32,5 +32,30 @@
   -ms-overflow-style: none;
   /* firefox hide scrollbar  */
 
+}
+
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .contentContainer {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    padding-top: 10px;
+    padding-left: unset;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+    scrollbar-width: none;
+    /* firefox hide scrollbar  */
+    -ms-overflow-style: none;
+    /* firefox hide scrollbar  */
+
+  }
 
 }

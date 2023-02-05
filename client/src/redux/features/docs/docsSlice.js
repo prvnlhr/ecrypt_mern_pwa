@@ -88,13 +88,11 @@ export const deleteDocData = createAsyncThunk("docs/delete", async ({ docId, clo
         console.log(error);
         throw rejectWithValue(error);
     }
-
 });
 
 export const toggleIsFav = createAsyncThunk("docs/toggleFav", async ({ doc_id, isFav }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
         const state = getState();
-
         // console.log(doc_id, isFav)
         const res = await api.docsFavouriteToggle(doc_id, isFav, state.auth.token)
         // console.log(res.data)

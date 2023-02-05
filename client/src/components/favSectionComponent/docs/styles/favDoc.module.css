@@ -12,6 +12,7 @@
     margin-left: 20px;
     /* border: 1px solid black; */
     margin-top: 20px;
+    box-shadow: var(--list-wrapper-box-shadow);
 }
 
 .documenComponentContainer {
@@ -39,7 +40,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--box-bg-tertiary);
+    border: 1px solid var(--box-bg-tertiary-drk);
+    /* background-color: var(--box-bg-tertiary); */
     border-radius: 15px;
 }
 
@@ -47,7 +49,7 @@
     position: relative;
     height: 100%;
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
     cursor: pointer;
     border-radius: 10px 10px 10px 10px;
 }

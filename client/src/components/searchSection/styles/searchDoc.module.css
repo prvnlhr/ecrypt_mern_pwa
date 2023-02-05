@@ -106,11 +106,13 @@
     align-items: flex-end;
 }
 
-@media screen and (max-width: 650px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
     .documentComponentWrapper {
         position: relative;
         width: 43%;
-        height: 200px;
+        height: unset;
+        aspect-ratio: 2/2.5;
         margin: unset;
         display: flex;
         justify-content: center;
@@ -119,6 +121,8 @@
         margin-left: auto;
         margin-right: auto;
         margin-top: 15px;
+        border-radius: 19px;
+
     }
 
     .documenComponentContainer {

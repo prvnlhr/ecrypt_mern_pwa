@@ -12,7 +12,7 @@
     border-radius: 15px;
     margin-top: 8px;
     margin-right: 5.5%;
-    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+    box-shadow: var(--dashboard-activity-field-shadow);
 }
 
 .fieldContainer {
@@ -50,6 +50,8 @@
     align-items: center;
     padding-left: 2px;
     padding-right: 0px;
+    white-space: nowrap;
+
 }
 
 /* .fieldNameLabelWrapper::after {
@@ -81,6 +83,8 @@
     align-items: center;
     box-sizing: border-box;
     padding-left: 5px;
+    white-space: nowrap;
+
 }
 
 .oldValWrapper p {
@@ -118,6 +122,8 @@
     padding-left: 2px;
     padding-right: 5px;
     /* padding-top: 2px; */
+    white-space: nowrap;
+
 }
 
 .changeToLabelWrapper::after {
@@ -158,13 +164,15 @@
     justify-content: flex-start;
     align-items: center;
     /* padding-top: 2px; */
+    white-space: nowrap;
+
 }
 
 .newValWrapper p {
     font-family: "Poppins", sans-serif;
     font-size: 12px;
     font-weight: var(--bolder-font);
-    color: var(--ui-scheme-font-color);
+    color: var(--ui-scheme-color);
     margin: 0px;
     padding: 0px;
     white-space: nowrap;
@@ -176,7 +184,7 @@
     position: absolute;
     left: 0px;
     content: "";
-    background-color: var(--ui-scheme-font-color);
+    background-color: var(--ui-scheme-color);
     width: 2.5px;
     height: 40%;
     border-radius: 10px;

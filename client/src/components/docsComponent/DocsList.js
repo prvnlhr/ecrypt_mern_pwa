@@ -103,7 +103,7 @@ const DocsList = ({
         <AddBtn formToggle={formToggle} isScrolling={isScrolling} />
       }
 
-      <div className={styles.contentContainer} ref={node}>
+      <div className={`${styles.contentContainer} ${showDocInputForm && styles.blurContainer} `} ref={node}>
         {
           docsArray.map((doc, index) => (
             <Document
@@ -116,6 +116,7 @@ const DocsList = ({
             />
           ))
         }
+
       </div>
 
 

@@ -270,14 +270,15 @@
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-  background-color: var(--box-bg-secondary-drk);
+  background-color: var(--category-box-bg);
+
 }
 
 .categoryTextBox p {
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: var(--bolder-font);
-  color: var(--ui-scheme-font-color);
+  color: var(--ui-scheme-color);
 }
 
 .appWebSiteWrapper {

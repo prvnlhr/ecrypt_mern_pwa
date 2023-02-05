@@ -1,8 +1,6 @@
 .logoWrapper {
     position: relative;
     aspect-ratio: 1/1.5;
-    /* border: 1px solid #000000; */
-    /* background-color: white; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -15,16 +13,13 @@
 .logoWrapperActive {
     position: relative;
     aspect-ratio: 1/1.5;
-    /* border: 1px solid #000000; */
-    /* background-color: white; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     padding: 0px;
     background-color: #A6CBFB;
-    background-color: var(--box-bg-secondary);
-    /* background-color: var(--box-bg-tertiary-drk); */
+    background-color: var(--box-bg-secondary-drk);
     border-radius: 15px;
     padding-top: 10%;
 
@@ -34,16 +29,11 @@
     position: relative;
     aspect-ratio: 1/1;
     width: 85%;
-    /* height: 70%; */
-    /* border: 1px solid red; */
     border-radius: 15px;
-    /* border: 1px solid rgba(0, 0, 0, 0.109); */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
-    /* background-color: var(--box-bg-secondary-li); */
-    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+    background-color: var(--logo-div-bg);
     webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -52,32 +42,22 @@
     -ms-user-select: none;
     user-select: none;
     overflow: hidden;
+    /* border: 1px solid black; */
+    box-shadow: var(--logoComp-box-shadow);
 }
 
-.logoContainerActive {
-    position: relative;
-    aspect-ratio: 1/1;
-    width: 100%;
-    /* height: 70%; */
-    /* border: 1px solid red; */
-    border-radius: 15px;
-    border: 4px solid #00299a91;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
 
 
 
 .logoDiv {
+    /* border: 1px solid black; */
     position: relative;
     width: 100%;
     height: 100%;
-    /* border: 1px solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
+    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
 }
 
 

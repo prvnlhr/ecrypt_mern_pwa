@@ -28,7 +28,7 @@
 }
 
 .cardComponentFocus {
-  border: 2px solid #002A9A;
+  border: 3px solid var(--ui-scheme-color);
   box-sizing: border-box;
 }
 
@@ -78,7 +78,8 @@
   width: 80%;
   height: 80%;
   border-radius: 10px;
-  background-color: var(--box-bg-secondary);
+  background-color: var(--logo-div-bg);
+
 }
 
 .titleWrapper {
@@ -192,7 +193,7 @@
     /* border: 1px solid red; */
     padding: 0%;
     margin: 0.80rem auto 0.80rem auto;
-    border-radius: 15px;
+    border-radius: 18px;
 
 
   }

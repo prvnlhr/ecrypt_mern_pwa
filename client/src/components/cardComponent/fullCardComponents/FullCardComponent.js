@@ -233,7 +233,7 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
                 </div>
 
                 <div className={styles.categoryWrapper} >
-                    <div className={`${styles.categoryContainer} ${(currFocusField === 2 && editMode) && styles.focusFieldStyle} ` } >
+                    <div className={`${styles.categoryContainer} ${(currFocusField === 2 && editMode) && styles.focusFieldStyle} `} >
                         <div className={styles.categoryLabelDiv} >
                             <p>Category</p>
                         </div>

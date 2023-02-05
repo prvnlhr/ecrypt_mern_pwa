@@ -62,7 +62,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+  box-shadow: var(--dashboard-countDiv-box-shadow);
 }
 
 .iconContainer {
@@ -312,7 +312,7 @@
 }
 
 .dashboardComponent::-webkit-scrollbar-thumb {
-  background-color: #2f89fc;
+  background-color: var(--ui-scheme-color);
   border-radius: 4px;
 }
 
@@ -551,6 +551,7 @@
     background-color: rgba(176, 32, 32, 0);
     height: 4px;
     width: 3px;
+    display: none;
   }
 
   .dashboardComponent::-webkit-scrollbar-track {
@@ -560,8 +561,11 @@
   }
 
   .dashboardComponent::-webkit-scrollbar-thumb {
-    background-color: #002A9A;
+    background-color: var(--ui-scheme-color);
     border-radius: 10px;
+    display: none;
+
+
   }
 }
 
@@ -867,7 +871,7 @@
   }
 
   .dashboardComponent::-webkit-scrollbar-thumb {
-    background-color: #2f89fc;
+    background-color: var(--ui-scheme-color);
     border-radius: 4px;
   }
 

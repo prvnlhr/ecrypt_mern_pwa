@@ -52,7 +52,8 @@
   --type-box-font-color: black;
 
 
-  --list-wrapper-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+
   --list-wrapper-bg: white;
   --list-wrapper-logo-div-bg: #F3F5F9;
   --list-title-font-color: black;
@@ -83,8 +84,8 @@
 
 
   /* -> All ui fonts divide in two types */
-  --ui-scheme-font-color: #002A9A;
-  /* --ui-scheme-font-color: #9F7EE9; */
+  --ui-scheme-color: #002A9A;
+  /* --ui-scheme-color: #9F7EE9; */
 
 
   --primary-font-color: black;
@@ -98,13 +99,20 @@
   --box-bg-secondary: #F3F5F9;
   --box-bg-secondary-drk: #ADD2FF;
   --box-bg-tertiary: #E7EFFC;
-  --box-bg-tertiary-drk: #1C1F2C;
+  --box-bg-tertiary-drk: white;
+
+
+
+
+  --logo-div-bg: #F3F5F9;
+  --category-box-bg: #A6CBFB;
 
   /* -> App ui bg */
   --app-main-bg: #151B3B;
   --app-main-bg: #2F3141;
   --app-main-bg: linear-gradient(180deg, #DFEDF4 33.14%, #E8F0EC 51.89%, #F7F9F6 76.37%);
-
+  /* 
+background: linear-gradient(179.99deg, #AEC3CE 8.01%, rgba(177, 197, 208, 0.972857) 44.72%, #DDE3E4 141.46%); */
   /* -> form icons color */
   --field-icon-color: #002A9A;
 
@@ -116,6 +124,16 @@
   --bold-font: 400;
   --bolder-font: 500;
   --boldest-font: 600;
+
+
+  /* -> box shadows */
+  --list-wrapper-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  --dashboard-countDiv-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  --dashboard-activity-field-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  --dashboard-activity-date-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  --dashboard-activity-task-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  --dashboard-activity-type-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  --logoComp-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 
 }
 
@@ -204,8 +222,8 @@
 
 
   /* -> All ui fonts divide in two types */
-  --ui-scheme-font-color: #C7BAFD;
-  /* --ui-scheme-font-color: #9F7EE9; */
+  --ui-scheme-color: #C7BAFD;
+  /* --ui-scheme-color: #9F7EE9; */
 
 
   --primary-font-color: white;
@@ -214,18 +232,30 @@
   --tertiary-font-color-li: #A8A4C5;
 
 
+
+
   /*-> All ui div-bg divided into three types */
 
-  --box-bg-primary: #333A4D;
+  /* --box-bg-primary: #333A4D; */
+  --box-bg-primary: #23262F;
+
   --box-bg-secondary: #414C68;
   --box-bg-secondary-drk: #4d6090;
-  --box-bg-tertiary: #1E2336;
-  --box-bg-tertiary-drk: #010619;
+
+  --box-bg-tertiary: #2F343E;
+  --box-bg-tertiary-drk: #1C1F2C;
+
+
+  --logo-div-bg: #D6D6D6;
+  --category-box-bg: #1C1F2C;
+
+
 
   /* -> App ui bg */
   --app-main-bg: #151B3B;
   --app-main-bg: #2F3141;
   --app-main-bg: #1C1F2C;
+  --app-main-bg: #141416;
 
   /* -> form icons color */
   --field-icon-color: #5294E2;
@@ -238,4 +268,14 @@
   --bold-font: 400;
   --bolder-font: 500;
   --boldest-font: 600;
+
+  /* -> box shadows */
+  --list-wrapper-box-shadow: none;
+  --dashboard-countDiv-box-shadow: none;
+  --dashboard-activity-field-shadow: none;
+  --dashboard-activity-date-shadow: none;
+  --dashboard-activity-task-shadow: none;
+  --dashboard-activity-type-shadow: none;
+  --logoComp-box-shadow: none;
+
 }

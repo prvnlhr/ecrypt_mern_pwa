@@ -456,9 +456,9 @@
   font-size: 15px;
   font-weight: var(--bolder-font);
   color: #002A9A;
-  color: var(--ui-scheme-font-color);
+  color: var(--ui-scheme-color);
   background-color: #A6CBFB;
-  background-color: var(--box-bg-secondary-drk);
+  background-color: var(--category-box-bg);
   border: none;
   outline: none !important;
   height: 75%;
@@ -865,7 +865,7 @@
 }
 
 .focusFieldStyle {
-  border: 2px solid var(--ui-scheme-font-color);
+  border: 2px solid var(--ui-scheme-color);
 }
 
 
@@ -957,13 +957,12 @@
     width: 70%;
     height: 100%;
     padding-right: 5%;
-    /* border: 1px solid black; */
+    /* border: 1px solid red; */
   }
 
   .editBtnDiv {
     width: auto;
-    height: 22px;
-    height: 25px;
+    height: 55%;
     padding-left: 3%;
     padding-right: 3%;
     border-radius: 5px;
@@ -977,12 +976,12 @@
 
   .saveBtnDiv {
     width: auto;
-    height: 22px;
-    height: 25px;
+    height: 55%;
     padding-left: 3%;
     padding-right: 3%;
     border-radius: 5px;
     margin-right: 10px;
+    /* border: 1px solid red; */
   }
 
   .saveBtnDiv p {
@@ -992,12 +991,12 @@
 
   .cancelBtnDiv {
     width: auto;
-    height: 22px;
-    height: 25px;
+    height: 55%;
     padding-left: 3%;
     padding-right: 3%;
     border-radius: 5px;
     margin-right: 10px;
+    /* border: 1px solid red; */
 
   }
 
@@ -1008,7 +1007,7 @@
 
   .deleteBtnDiv {
     width: auto;
-    height: 25px;
+    height: 55%;
     padding-left: 3%;
     padding-right: 3%;
     border-radius: 5px;

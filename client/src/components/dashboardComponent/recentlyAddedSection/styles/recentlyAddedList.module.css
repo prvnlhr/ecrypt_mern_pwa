@@ -15,11 +15,10 @@
     padding-left: 0px;
     padding-bottom: 20px;
     box-sizing: border-box;
-    
+
 }
 
 .recentAddedList::-webkit-scrollbar {
-    display: none;
     background-color: rgba(255, 255, 255, 0);
     height: 4px;
     width: 5px;
@@ -33,7 +32,7 @@
 }
 
 .recentAddedList::-webkit-scrollbar-thumb {
-    background-color: #002A9A;
+    background-color: var(--ui-scheme-color);
     border-radius: 4px;
 }
 

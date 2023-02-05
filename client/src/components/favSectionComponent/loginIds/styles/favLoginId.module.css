@@ -45,7 +45,8 @@
     width: 80%;
     height: 80%;
     border-radius: 10px;
-    background-color: var(--box-bg-secondary);
+    background-color: var(--logo-div-bg);
+
 }
 
 .titleWrapper {
