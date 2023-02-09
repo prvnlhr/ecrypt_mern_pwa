@@ -9,7 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 12px;
+    border-radius: 0.9rem;
     margin-top: 8px;
     margin-right: 5.5%;
     /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */

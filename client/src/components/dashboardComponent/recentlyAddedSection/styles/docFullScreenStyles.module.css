@@ -75,7 +75,6 @@
     width: 100%;
     height: 50px;
     background-color: var(--box-bg-primary);
-
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 
 }
@@ -89,9 +88,7 @@
     width: 100%;
     height: 50px;
     background-color: var(--box-bg-primary);
-
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-
 }
 
 .backBtnContainer {
@@ -151,6 +148,15 @@
     width: 25%;
     height: 100%;
     /* border: 1px solid black; */
+}
+
+.favBtnDiv {
+    height: 65%;
+    aspect-ratio: 1/1;
+    display: flex;
+    /* border: 1px solid black; */
+    justify-content: center;
+    align-items: center;
 }
 
 .footerContainer {

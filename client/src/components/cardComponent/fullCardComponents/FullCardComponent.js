@@ -13,19 +13,29 @@ import { editCardData, deleteCardData, toggleIsFav } from "../../../redux/featur
 import { generateActivityData } from "../../utils/ActivityDataChangeFuction"
 import BookmarksIcon from "../../icons/BookmarksIcon"
 import BookmarksIconFill from "../../icons/BookmarksIconFill"
+import { Oval } from 'react-loader-spinner'
+const spinnerWrapper = {
+    height: `100%`,
+    with: `100%`,
+}
 const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullContentBackBtnClicked,
-    fullContentCardData, setFullContentCardData, editMode, setEditMode
+    fullContentCardData, setFullContentCardData, editMode, setEditMode,
+    confirmDeleteBtnClicked,
+    setDeleteMode,
+    deleteMode
 
 }) => {
-    // console.log(fullContentCardData)
-    const [popUpOpen, setPopUpOpen] = useState(false);
+
     const userId = useSelector((state) => state.user._id);
+    const cardState = useSelector((state => state.cards));
+    const { isLoading, action } = cardState;
 
     const [currFocusField, setCurrFocusField] = useState(undefined);
-
     const onFocus = (val) => {
         setCurrFocusField(val)
     }
+
+    const [popUpOpen, setPopUpOpen] = useState(false);
 
     const [oldCardData, setOldCardData] = useState('');
 
@@ -34,6 +44,7 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
     const [logoComponentShow, setLogoComponentShow] = useState(false);
 
     const dispatch = useDispatch();
+
 
     const handleOpClick = (op) => {
 
@@ -99,7 +110,7 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
     const saveBtnClicked = () => {
         // console.table(fullContentCardData)
         const activity_data = generateActivityData(3, 'Card', fullContentCardData, oldCardData)
-        console.log(activity_data);
+        // console.log(activity_data);
         dispatch(editCardData({
             updatedData: fullContentCardData,
             card_id: fullContentCardData._id,
@@ -112,17 +123,18 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
     }
 
     const deleteBtnClicked = () => {
-        // console.table(fullContentCardData._id, _id)
-        const activity_data = generateActivityData(2, 'Card', fullContentCardData, '')
-        // console.log(activity_data);
-        dispatch(deleteCardData({
-            card_id: fullContentCardData._id,
-            user_id: userId,
-            cardData: fullContentCardData,
-            activityData: activity_data
-        }))
-        setShowContentCard(false);
+        // const activity_data = generateActivityData(2, 'Card', fullContentCardData, '')
+        // dispatch(deleteCardData({
+        //     card_id: fullContentCardData._id,
+        //     user_id: userId,
+        //     cardData: fullContentCardData,
+        //     activityData: activity_data
+        // }))
+        // setShowContentCard(false);
+        setDeleteMode(true);
+        // confirmDeleteBtnClicked(fullContentCardData, activity_data);
     }
+
     const handleInputValueChange = (e) => {
         setFullContentCardData({
             ...fullContentCardData,
@@ -138,6 +150,7 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
             category: fullContentCardData.category
         }))
     }
+
     return (
         <div className={showContentCard ? styles.cardWrapper : styles.cardWrapperClose}>
             {logoComponentShow &&
@@ -176,8 +189,28 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
                             :
                             <>
                                 <div className={styles.deleteBtnDiv} onClick={deleteBtnClicked}  >
-                                    <Icon className={styles.crudIcons} icon="gg:trash-empty" color="white" />
-                                    <p>Delete</p>
+                                    {
+                                        isLoading && action === 'delete' ?
+                                            <Oval
+                                                height={`90%`}
+                                                width={`90%`}
+                                                color="white"
+                                                wrapperStyle={spinnerWrapper}
+                                                wrapperClass={styles.spinner}
+                                                visible={true}
+                                                ariaLabel='oval-loading'
+                                                secondaryColor="#E6E6E6"
+                                                strokeWidth={5}
+                                                strokeWidthSecondary={5}
+                                                className={styles.spinner}
+                                            />
+                                            :
+                                            <>
+                                                <Icon className={styles.crudIcons} icon="gg:trash-empty" color="white" />
+                                                <p>Delete</p>
+                                            </>
+                                    }
+
                                 </div>
                                 <div className={styles.editBtnDiv} onClick={editBtnClicked}  >
                                     <Icon className={styles.crudIcons} icon="ph:pencil-simple-line" color="#002A9A" />

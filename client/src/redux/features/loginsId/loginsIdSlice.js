@@ -6,8 +6,9 @@ import * as api from "../../api"
 
 const initialState = {
     loginsIdData: [],
+    isLoading: false,
+    action: undefined,
 }
-
 
 export const fecthLoginIdsData = createAsyncThunk("loginIds/fetch", async ({ user_id }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
@@ -80,6 +81,7 @@ export const deleteLoginData = createAsyncThunk("loginIds/delete", async ({ logi
         }))
         const { data } = res;
         return fulfillWithValue(data.reverse());
+        // return fulfillWithValue({});
 
     } catch (error) {
         console.log(error);
@@ -119,13 +121,15 @@ const loginsIdSlice = createSlice({
             addCase(fecthLoginIdsData.fulfilled, (state, action) => {
                 return {
                     ...state,
-                    loginsIdData: action.payload
+                    loginsIdData: action.payload,
                 };
             }).
             addCase(addNewLoginIdData.fulfilled, (state, action) => {
                 return {
                     ...state,
-                    loginsIdData: [action.payload, ...state.loginsIdData]
+                    loginsIdData: [action.payload, ...state.loginsIdData],
+                    // isLoading: false,
+                    // action: 'add',
                 };
             }).
             addCase(editLoginIdData.fulfilled, (state, action) => {
@@ -140,14 +144,35 @@ const loginsIdSlice = createSlice({
                 return {
                     ...state,
                     loginsIdData: newArray,
+                    // isLoading: false,
+                    // action: 'edit',
                 };
             }).addCase(editLoginIdData.rejected, (state, action) => {
-                // console.log(action.payload)
+                return {
+                    ...state
+                }
             }).
             addCase(deleteLoginData.fulfilled, (state, action) => {
                 return {
                     ...state,
-                    loginsIdData: action.payload
+                    loginsIdData: action.payload,
+                    isLoading: false,
+                    action: undefined,
+                };
+            })
+            .
+            addCase(deleteLoginData.pending, (state, action) => {
+                return {
+                    ...state,
+                    isLoading: true,
+                    action: 'delete',
+                };
+            }).
+            addCase(deleteLoginData.rejected, (state, action) => {
+                return {
+                    ...state,
+                    isLoading: false,
+                    action: undefined,
                 };
             }).
             addCase(toggleIsFav.fulfilled, (state, action) => {

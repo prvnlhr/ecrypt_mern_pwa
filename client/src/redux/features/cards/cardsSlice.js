@@ -5,6 +5,9 @@ import { addToFavCardsData, removeFromFavCardsData } from "../favorites/favorite
 import { addRecentlyAddedData } from "../recentlyAdded/recentlyAddedSlice"
 const initialState = {
     cardsData: [],
+    isLoading: false,
+    action: undefined,
+    success: undefined,
 }
 
 export const fecthCardsData = createAsyncThunk("cards/fetch", async ({ user_id }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
@@ -68,7 +71,8 @@ export const deleteCardData = createAsyncThunk("cards/delete", async ({ cardData
         const state = getState();
 
         // console.table(user_id, card_id, cardData);
-        const res = await api.deleteCard(card_id, user_id, cardData, state.auth.token);
+        const res = await api.deleteCard(card_id, user_id, cardData, state.auth.token
+        );
         dispatch(addActivityData({
             activityData: activityData,
             userId: user_id
@@ -134,7 +138,18 @@ const cardsSlice = createSlice({
             .addCase(addNewCardData.fulfilled, (state, action) => {
                 return {
                     ...state,
-                    cardsData: [action.payload, ...state.cardsData]
+                    cardsData: [action.payload, ...state.cardsData],
+                    isLoading: false,
+                    success: true,
+                    action: 'add',
+                };
+            })
+            .addCase(addNewCardData.pending, (state, action) => {
+                return {
+                    ...state,
+                    isLoading: true,
+                    success: undefined,
+                    action: 'add'
                 };
             })
             .addCase(editCardData.fulfilled, (state, action) => {
@@ -145,7 +160,7 @@ const cardsSlice = createSlice({
                         return card;
                     }
                 });
-                console.log(newArray);
+                // console.log(newArray);
                 return {
                     ...state,
                     cardsData: newArray,
@@ -154,13 +169,26 @@ const cardsSlice = createSlice({
             .addCase(deleteCardData.fulfilled, (state, action) => {
                 return {
                     ...state,
-                    cardsData: state.cardsData.filter(card => card._id != action.payload._id)
+                    cardsData: state.cardsData.filter(card => card._id != action.payload._id),
+                    isLoading: false,
+                    action: 'delete',
+                    success: true,
+                };
+            })
+            .addCase(deleteCardData.pending, (state, action) => {
+                return {
+                    ...state,
+                    isLoading: true,
+                    action: 'delete',
+                    success: undefined
                 };
             })
             .addCase(deleteCardData.rejected, (state, action) => {
                 return {
                     ...state,
-                    cardsData: state.cardsData,
+                    isLoading: false,
+                    action: 'delete',
+                    success: false,
                 };
             }).
             addCase(toggleIsFav.fulfilled, (state, action) => {

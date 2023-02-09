@@ -3,7 +3,7 @@ import styles from "./styles/modal.module.css"
 import { Icon } from '@iconify/react';
 import { motion, AnimatePresence } from "framer-motion"
 
-const DeleteModal = ({ setDeleteMode, deleteMode, confirmDeleteBtnClicked }) => {
+const DeleteModal = ({ setDeleteMode, deleteMode, confirmDeleteBtnClicked, modalStyles }) => {
 
     const deleteBtnClicked = () => {
         confirmDeleteBtnClicked();
@@ -11,13 +11,16 @@ const DeleteModal = ({ setDeleteMode, deleteMode, confirmDeleteBtnClicked }) => 
     const cancelBtnClicked = () => {
         setDeleteMode(false);
     }
+
     const stylesS = styles.wapper
     return (
         <AnimatePresence>
             {deleteMode &&
-                <motion.div className={
-                    styles.modalWrapperOpen
-                }
+                <motion.div
+                    className={
+                        `${styles.modalWrapperOpen} ${modalStyles.modalWrapper}`
+
+                    }
                     initial={{
                         scaleX: 0,
                         scaleY: 0,

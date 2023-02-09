@@ -12,7 +12,7 @@
   width: 280px;
   height: 75px;
   aspect-ratio: 3.73/1 !important;
-  border-radius: 12px;
+  border-radius: 0.9rem;
   margin: 15px 15px 15px 15px;
   background-color: var(--box-bg-primary);
   /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.075), 0 5px 5px rgba(0, 0, 0, 0.048); */

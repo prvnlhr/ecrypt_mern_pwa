@@ -1,27 +1,24 @@
 import React from "react";
-import { useState, useEffect, useRef, lazy, Suspense } from "react";
-import { useSelector } from 'react-redux';
+import { useState, useEffect, useRef } from "react";
+import { useSelector, useDispatch } from 'react-redux';
 
 import Card from "./Card";
-// import CardForm from "./CardForm";
-import { FiPlusCircle } from "react-icons/fi";
-import { HiPlus } from "react-icons/hi";
-import CardSkeleton from "../skelotons/CardSkeleton";
 
 import styles from "./styles/cardsList.module.css";
-import noContentStyles from "../docsComponent/styles/noContentMessage.module.css";
-import btnStyles from "../add_button/buttons.module.css";
-import { CircleSpinner } from "react-spinners-kit";
+
 import FullCardComponent from "./fullCardComponents/FullCardComponent";
 import AddBtn from "../buttons/AddBtn";
 import CardInputForm from "./inputForms/CardInputForm";
-
+import DeleteModal from "../modal/DeleteModal";
+import { generateActivityData } from "../utils/ActivityDataChangeFuction"
+import { deleteCardData } from "../../redux/features/cards/cardsSlice"
 const CardsList = ({ setLogoComponentShow,
   setClickedSearchItem,
   clickedSearchItem,
 
 }) => {
 
+  const dispatch = useDispatch();
   useEffect(() => {
     if (clickedSearchItem) {
       const element = document.getElementById(clickedSearchItem._id);
@@ -32,8 +29,14 @@ const CardsList = ({ setLogoComponentShow,
     }
   }, [clickedSearchItem])
 
+  const cardState = useSelector((state => state.cards));
+  const { isLoading, action, success } = cardState;
+  const [deleteMode, setDeleteMode] = useState(false);
+
+  const userId = useSelector((state) => state.user._id);
 
   const cardsArray = useSelector((state => state.cards.cardsData));
+
   const [bankCardData, setBankCardData] = useState({
     title: "",
     category: "Bank",
@@ -151,6 +154,7 @@ const CardsList = ({ setLogoComponentShow,
   }
 
   const handleCardClicked = (cardData) => {
+
     switch (cardData.category) {
       case "Identity":
         setFullContentCardCatergory("Identity")
@@ -207,8 +211,50 @@ const CardsList = ({ setLogoComponentShow,
 
   }
 
+  const confirmDeleteBtnClicked = async () => {
+
+    setDeleteMode(false);
+    let cardDataToDelete = {};
+
+    switch (fullContentCardCategory) {
+      case 'Bank': {
+        Object.assign(cardDataToDelete, bankCardData);
+      }
+        break;
+      case 'Identity': {
+        Object.assign(cardDataToDelete, identityCardData);
+      }
+        break;
+      case 'License': {
+        Object.assign(cardDataToDelete, licenseCardData);
+      }
+        break;
+      default:
+        break;
+    }
+
+    const activity_data = await generateActivityData(2, 'Card', cardDataToDelete, '')
+    await dispatch(deleteCardData({
+      card_id: cardDataToDelete._id,
+      user_id: userId,
+      cardData: cardDataToDelete,
+      activityData: activity_data
+    }))
+
+    if (action === 'delete' && success === true) {
+      setShowContentCard(false);
+    }
+  }
   return (
     <div className={`${styles.cardList} `}>
+
+      <DeleteModal
+        setDeleteMode={setDeleteMode}
+        deleteMode={deleteMode}
+        confirmDeleteBtnClicked={confirmDeleteBtnClicked}
+        modalStyles={styles}
+      />
+
       {
         (!showInputForm && !showContentCard) &&
         < AddBtn formToggle={formToggle} isScrolling={isScrolling} />
@@ -245,6 +291,9 @@ const CardsList = ({ setLogoComponentShow,
           }
           setEditMode={setEditMode}
           editMode={editMode}
+          confirmDeleteBtnClicked={confirmDeleteBtnClicked}
+          setDeleteMode={setDeleteMode}
+          deleteMode={deleteMode}
         />
         : null}
       {showInputForm &&

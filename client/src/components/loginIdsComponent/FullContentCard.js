@@ -1,22 +1,22 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import styles from "./styles/fullContentCard.module.css"
 import BackBtnIcon from "../icons/BackBtnIcon"
 import BookmarksIcon from "../icons/BookmarksIcon"
 import BookmarksIconFill from "../icons/BookmarksIconFill"
 import { Icon } from '@iconify/react';
-import moment from "moment";
-
 import { logosArray } from "../logoComponents/logosData"
 import LogoComponentWrapper from "../logoComponents/LogoComponentWrapper"
-import { useSelector } from 'react-redux';
-
+import { Oval } from 'react-loader-spinner'
 import { diff, generateActivityData } from "../utils/ActivityDataChangeFuction"
 
 //> Redux
 import { editLoginIdData, deleteLoginData, toggleIsFav } from "../../redux/features/loginsId/loginsIdSlice"
-
+const spinnerWrapper = {
+    height: `100%`,
+    with: `100%`,
+}
 const FullContentCard = ({ fullContentCardData, setFullContentCardData, showContentCard, setShowContentCard, handleFullContentBackBtnClicked, editMode, setEditMode, handleLoginIdClicked,
     setDeleteMode,
     deleteMode
@@ -29,6 +29,9 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
         setCurrFocusField(val)
     }
 
+    const loginsIdState = useSelector((state => state.loginIds));
+    const { isLoading, action } = loginsIdState;
+    // console.log(isLoading, action);
 
     const [popUpOpen, setPopUpOpen] = useState(false);
 
@@ -112,7 +115,6 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
 
     //> Handle fav btn Clicked
     const favBtnClicked = () => {
-        // console.log(fullContentCardData.isFavourite)
         dispatch(toggleIsFav({
             loginId_id: fullContentCardData._id,
             isFav: !fullContentCardData.isFavourite
@@ -161,8 +163,28 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
                                 {
                                     !deleteMode &&
                                     <div className={styles.deleteBtnDiv} onClick={deleteBtnClicked}  >
-                                        <Icon className={styles.crudIcons} icon="gg:trash-empty" color="white" />
-                                        <p>Delete</p>
+                                        {
+                                            isLoading && action === 'delete' ?
+                                                <Oval
+                                                    height={`90%`}
+                                                    width={`90%`}
+                                                    color="white"
+                                                    wrapperStyle={spinnerWrapper}
+                                                    wrapperClass={styles.spinner}
+                                                    visible={true}
+                                                    ariaLabel='oval-loading'
+                                                    secondaryColor="#E6E6E6"
+                                                    strokeWidth={5}
+                                                    strokeWidthSecondary={5}
+                                                    className={styles.spinner}
+                                                />
+                                                :
+                                                <>
+                                                    <Icon className={styles.crudIcons} icon="gg:trash-empty" color="white" />
+                                                    <p>Delete</p>
+                                                </>
+                                        }
+
                                     </div>
                                 }
                                 <div className={styles.editBtnDiv} onClick={editBtnClicked}  >

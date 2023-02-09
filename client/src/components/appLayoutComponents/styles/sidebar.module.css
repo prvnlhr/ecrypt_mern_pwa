@@ -27,25 +27,24 @@
 
 .appLogoContainer {
     position: relative;
-    width: auto;
     height: 80%;
     /* aspect-ratio: 1/1; */
-    /* border: 1px solid black; */
+    width: 80%;
+    /* border: 1px solid blueviolet; */
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 
-.appLogo {
-    background-color: white;
-    border-radius: 23px;
-    border-radius: 20px;
-    width: auto;
-    height: 75%;
-    /* border: 1px solid rgba(221, 221, 221, 0.959); */
-    box-sizing: border-box;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+.applogoDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    aspect-ratio: 1/1;
+    /* border: 1px solid red; */
 }
+
 
 .menuSection {
     position: relative;
@@ -78,7 +77,7 @@
     width: 80%;
     height: 30px;
     background-color: #AED2FF;
-    background-color: var(--box-bg-secondary-li);
+    background-color: var(--box-bg-secondary-drk);
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;

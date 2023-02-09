@@ -51,10 +51,10 @@
     width: 90%;
     height: 90%;
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-columns: 24% 24% 24% 24%;
     grid-template-rows: 25% 15% 20% 20% 20%;
     /* grid-row-gap: 3%; */
-    grid-column-gap: 0%;
+    grid-column-gap: 1%;
     grid-template-areas:
         "logoWrapper titleWrapper titleWrapper titleWrapper"
         "categoryWrapper categoryWrapper categoryWrapper categoryWrapper"
@@ -639,10 +639,10 @@
         width: 90%;
         height: 90%;
         display: grid;
-        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-columns: 24% 24% 24% 24%;
         grid-template-rows: 25% 15% 20% 20% 20%;
         /* grid-row-gap: 3%; */
-        grid-column-gap: 0%;
+        grid-column-gap: 1%;
         grid-template-areas:
             "logoWrapper titleWrapper titleWrapper titleWrapper"
             "categoryWrapper categoryWrapper categoryWrapper categoryWrapper"

@@ -64,7 +64,12 @@
 }
 
 
-
+.contentContainerClose::-webkit-scrollbar {
+    display: none;
+    background-color: rgba(176, 32, 32, 0);
+    height: 4px;
+    width: 3px;
+}
 
 .contentContainer::-webkit-scrollbar {
     background-color: rgba(176, 32, 32, 0);

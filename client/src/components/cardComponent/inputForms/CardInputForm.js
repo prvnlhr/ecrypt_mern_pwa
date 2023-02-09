@@ -13,11 +13,19 @@ import bankCardFormstyles from "../styles/bankCardSubComponent.module.css"
 import CardLogo, { getCardType } from "../CardLogo"
 import { generateActivityData } from "../../utils/ActivityDataChangeFuction"
 import { addNewCardData } from "../../../redux/features/cards/cardsSlice"
+import { Oval } from "react-loader-spinner"
+const spinnerWrapper = {
+    height: `100%`,
+    with: `100%`,
+}
 const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
     const dispatch = useDispatch();
 
     const userId = useSelector((state) => state.user._id);
+    const cardsState = useSelector((state) => state.cards);
+
+    const { isLoading, action, success } = cardsState;
 
     const [currFocusField, setCurrFocusField] = useState(undefined);
 
@@ -26,7 +34,6 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
     }
 
     const [popUpOpen, setPopUpOpen] = useState(false);
-
 
     const [logoIndx, setLogoIndx] = useState(undefined);
 
@@ -187,14 +194,14 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
 
     //>Save Btn clicked
-    const saveBtnClicked = () => {
+    const saveBtnClicked = async () => {
         let activity_data;
         switch (formCategory) {
             case "Identity":
-                console.table(identityCardData);
-                activity_data = generateActivityData(1, 'Card', identityCardData, '');
+                // console.table(identityCardData);
+                activity_data = await generateActivityData(1, 'Card', identityCardData, '');
                 console.log(activity_data);
-                dispatch(addNewCardData({
+                await dispatch(addNewCardData({
                     data: identityCardData,
                     user_id: userId,
                     activityData: activity_data
@@ -203,9 +210,9 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                 break;
 
             case "License":
-                console.table(licenseCardData);
-                activity_data = generateActivityData(1, 'Card', licenseCardData, '');
-                dispatch(addNewCardData({
+                // console.table(licenseCardData);
+                activity_data = await generateActivityData(1, 'Card', licenseCardData, '');
+                await dispatch(addNewCardData({
                     data: licenseCardData,
                     user_id: userId,
                     activityData: activity_data
@@ -214,9 +221,9 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                 break;
 
             case "Bank":
-                console.table(bankCardData);
-                activity_data = generateActivityData(1, 'Card', bankCardData, '');
-                dispatch(addNewCardData({
+                // console.table(bankCardData);
+                activity_data = await generateActivityData(1, 'Card', bankCardData, '');
+                await dispatch(addNewCardData({
                     data: bankCardData,
                     user_id: userId,
                     activityData: activity_data
@@ -226,10 +233,11 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
             default:
                 break;
         }
-        console.log(activity_data)
-        formToggle();
 
-
+        console.log(isLoading, success, action);
+        if (isLoading === false && success === true && action === 'add') {
+            formToggle();
+        }
     }
 
     //> For setting cardVender logo Dynamically
@@ -262,8 +270,29 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                     </div>
                     <div className={styles.crudBtnContainer} >
                         <div className={styles.saveBtnDiv} onClick={saveBtnClicked}>
-                            <Icon className={styles.crudIcons} icon="charm:tick-double" color="white" />
-                            <p>Save</p>
+
+                            {
+                                isLoading && action === 'add' ?
+                                    <Oval
+                                        height={`90%`}
+                                        width={`90%`}
+                                        color="white"
+                                        wrapperStyle={spinnerWrapper}
+                                        wrapperClass={styles.spinner}
+                                        visible={true}
+                                        ariaLabel='oval-loading'
+                                        secondaryColor="#E6E6E6"
+                                        strokeWidth={5}
+                                        strokeWidthSecondary={5}
+                                        className={styles.spinner}
+                                    />
+                                    :
+                                    <>
+                                        <Icon className={styles.crudIcons} icon="charm:tick-double" color="white" />
+                                        <p>Save</p>
+                                    </>
+                            }
+
                         </div>
                     </div>
                 </div>

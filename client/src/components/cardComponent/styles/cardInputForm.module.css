@@ -138,6 +138,15 @@
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
 }
 
+.spinner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+    width: 100%;
+}
+
 .saveBtnDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 11px;

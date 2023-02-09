@@ -98,10 +98,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 10%;
     height: 100%;
     /* border: 1px solid red; */
 }
+
 
 .backBtnDiv {
     width: 70%;
@@ -114,19 +115,19 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 50%;
+    width: 90%;
     height: 100%;
-    /* border: 1px solid black; */
-    padding-right: 5%;
+    /* border: 1px solid red; */
 }
 
 .favBtnDiv {
-    height: 65%;
+    height: 55%;
     aspect-ratio: 1/1;
     display: flex;
-    /* border: 1px solid black; */
+    /* border: 1px solid blue; */
     justify-content: center;
     align-items: center;
+    margin-right: 2%;
 }
 
 .footerContainer {
@@ -227,16 +228,25 @@
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        /* width: 25%; */
+        width: 30%;
         height: 100%;
         /* border: 1px solid red; */
+        padding-left: 2%;
     }
 
     .backBtnDiv {
-        /* width: 80%; */
-        height: 50%;
+        width: 60%;
+        height: 70%;
         aspect-ratio: 2/1;
         /* border: 1px solid black; */
     }
 
+    .favBtnContainer {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 70%;
+        height: 100%;
+        /* border: 1px solid red; */
+    }
 }

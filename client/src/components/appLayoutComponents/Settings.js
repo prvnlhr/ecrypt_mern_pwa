@@ -245,6 +245,7 @@ const Settings = () => {
                 setDeleteMode={setDeleteMode}
                 deleteMode={deleteMode}
                 confirmDeleteBtnClicked={confirmDeleteBtnClicked}
+                modalStyles={styles}
             />
             <div className={styles.profilePicSection} >
                 <div className={styles.headingWrapper} >

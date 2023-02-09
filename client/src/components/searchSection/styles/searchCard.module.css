@@ -12,7 +12,7 @@
   width: 280px;
   height: 75px;
   aspect-ratio: 3.73/1 !important;
-  border-radius: 12px;
+  border-radius: 0.9rem;
   margin: 15px 15px 15px 15px;
   background-color: var(--box-bg-primary);
   -webkit-tap-highlight-color: transparent;
@@ -42,7 +42,7 @@
   width: 280px;
   height: 75px;
   aspect-ratio: 3.73/1 !important;
-  border-radius: 12px;
+  border-radius: 0.9rem;
   margin: 15px 15px 15px 15px;
   background-color: var(--box-bg-primary);
   -webkit-tap-highlight-color: transparent;

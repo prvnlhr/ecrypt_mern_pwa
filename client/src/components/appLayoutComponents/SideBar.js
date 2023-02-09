@@ -8,10 +8,15 @@ import LoginIdsIcon from '../icons/LoginIdsIcon';
 import CardsIcon from '../icons/CardsIcon';
 import DocsIcon from '../icons/DocsIcon';
 import FavtabIcon from '../icons/FavtabIcon';
+import { useSelector, useDispatch } from 'react-redux'
+import AppLogoHeaderBar from './AppLogoHeaderBar';
 const SideBar = (
     { clickedSearchItem,
         setClickedSearchItem }
 ) => {
+
+    const isDarkMode = useSelector((state) => state.ui.darkMode);
+
     const refDash = useRef();
     const refLogins = useRef();
     const refCards = useRef();
@@ -111,7 +116,9 @@ const SideBar = (
         <div className={styles.sidebarComponent}>
             <div className={styles.logoSection} >
                 <div className={styles.appLogoContainer}>
-                    <AppLogo />
+                    <div className={styles.applogoDiv}>
+                        <AppLogo unique_id={'acsetcxvjh'} />
+                    </div>
                 </div>
             </div>
             <div className={styles.menuSection} >

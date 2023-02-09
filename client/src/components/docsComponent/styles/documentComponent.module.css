@@ -10,7 +10,6 @@
     background-color: var(--box-bg-primary);
     border-radius: 15px;
     margin-left: 20px;
-    /* border: 1px solid black; */
     margin-top: 20px;
     box-shadow: var(--list-wrapper-box-shadow);
 }

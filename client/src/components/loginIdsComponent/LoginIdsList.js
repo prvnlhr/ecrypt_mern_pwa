@@ -87,17 +87,18 @@ const LoginIdsList = ({ setLogoComponentShow,
   const currCardDataInStore = useSelector((state) =>
     fullContentCardData !== undefined ? state.loginIds.loginsIdData.find((l) => l._id === fullContentCardData._id) : null
   );
+
   //> Delete Btn clicked________
-  const confirmDeleteBtnClicked = () => {
-    console.log('confirm delete')
-    const activity_data = generateActivityData(2, 'Login', fullContentCardData, '');
-    dispatch(deleteLoginData({
+  const confirmDeleteBtnClicked = async () => {
+    setDeleteMode(false);
+    console.log('confirm delete', 'delete modal close')
+    const activity_data = await generateActivityData(2, 'Login', fullContentCardData, '');
+    await dispatch(deleteLoginData({
       login_id: fullContentCardData._id,
       user_id: userId,
       activityData: activity_data,
     }))
-
-    setDeleteMode(false);
+    
     setShowContentCard(false);
   }
 
@@ -126,10 +127,12 @@ const LoginIdsList = ({ setLogoComponentShow,
 
   return (
     <div className={styles.loginsList}>
+
       <DeleteModal
         setDeleteMode={setDeleteMode}
         deleteMode={deleteMode}
         confirmDeleteBtnClicked={confirmDeleteBtnClicked}
+        modalStyles={styles}
       />
 
       {

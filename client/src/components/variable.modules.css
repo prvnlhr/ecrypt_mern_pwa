@@ -52,8 +52,6 @@
   --type-box-font-color: black;
 
 
-
-
   --list-wrapper-bg: white;
   --list-wrapper-logo-div-bg: #F3F5F9;
   --list-title-font-color: black;
@@ -134,6 +132,7 @@ background: linear-gradient(179.99deg, #AEC3CE 8.01%, rgba(177, 197, 208, 0.9728
   --dashboard-activity-task-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   --dashboard-activity-type-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   --logoComp-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  --applogo-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 
 }
 
@@ -245,7 +244,6 @@ background: linear-gradient(179.99deg, #AEC3CE 8.01%, rgba(177, 197, 208, 0.9728
   --box-bg-tertiary: #2F343E;
   --box-bg-tertiary-drk: #1C1F2C;
 
-
   --logo-div-bg: #D6D6D6;
   --category-box-bg: #1C1F2C;
 
@@ -277,5 +275,5 @@ background: linear-gradient(179.99deg, #AEC3CE 8.01%, rgba(177, 197, 208, 0.9728
   --dashboard-activity-task-shadow: none;
   --dashboard-activity-type-shadow: none;
   --logoComp-box-shadow: none;
-
+  --applogo-box-shadow: none;
 }

@@ -12,7 +12,7 @@
   width: 280px;
   height: 75px;
   aspect-ratio: 3.73/1 !important;
-  border-radius: 12px;
+  border-radius: 0.9rem;
   margin: 15px 15px 15px 15px;
   background-color: var(--box-bg-primary);
   -webkit-tap-highlight-color: transparent;
@@ -25,6 +25,7 @@
   box-sizing: border-box;
   cursor: pointer;
   box-shadow: var(--list-wrapper-box-shadow);
+  /* border: 1px solid red; */
 }
 
 .cardComponentFocus {
@@ -45,7 +46,7 @@
   width: 280px;
   height: 75px;
   aspect-ratio: 3.73/1 !important;
-  border-radius: 12px;
+  border-radius: 0.9rem;
   margin: 15px 15px 15px 15px;
   background-color: var(--box-bg-primary);
   -webkit-tap-highlight-color: transparent;
@@ -79,7 +80,6 @@
   height: 80%;
   border-radius: 10px;
   background-color: var(--logo-div-bg);
-
 }
 
 .titleWrapper {
@@ -107,7 +107,7 @@
 
 .usernameWrapper {
   grid-area: usernameWrapper;
-  /* border: 1px solid black; */
+  /* border: 1px solid orange; */
   width: 100%;
   height: 100%;
   display: flex;
@@ -122,6 +122,9 @@
   font-size: 12px;
   font-weight: var(--bolder-font);
   color: var(--secondary-font-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
 }
 
 .bankCardLogoWrapperHide {
@@ -137,7 +140,7 @@
   grid-area: bankCardLogoWrapper;
   width: 100%;
   height: 100%;
-  /* border: 1px solid black; */
+  /* border: 1px solid red; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -155,7 +158,7 @@
 
 .favBtnWrapper {
   grid-area: favBtnWrapper;
-  /* border: 1px solid black; */
+  /* border: 1px solid blue; */
   width: 100%;
   height: 100%;
   display: flex;
