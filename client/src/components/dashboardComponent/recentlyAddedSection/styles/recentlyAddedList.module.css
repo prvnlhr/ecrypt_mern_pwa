@@ -2,8 +2,8 @@
     position: relative;
     width: 100%;
     width: 90%;
-    height: 100%;
-    min-height: 100%;
+    height: 93%;
+    min-height: 93%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -15,19 +15,19 @@
     padding-left: 0px;
     padding-bottom: 20px;
     box-sizing: border-box;
-
+    /* border: 1px solid red; */
+    margin-top: 2%;
 }
 
 .recentAddedList::-webkit-scrollbar {
     background-color: rgba(255, 255, 255, 0);
     height: 4px;
-    width: 5px;
+    width: 3px;
 }
 
 .recentAddedList::-webkit-scrollbar-track {
     background-color: rgb(231, 228, 228);
     background-color: rgba(231, 228, 228, 0.062);
-
     width: 2px;
 }
 
@@ -40,8 +40,8 @@
     .recentAddedList {
         position: relative;
         width: 100%;
-        height: 100%;
-        min-height: 100%;
+        height: 95%;
+        min-height: 95%;
         display: flex;
         flex-wrap: unset;
         flex-direction: column;
@@ -51,9 +51,8 @@
         box-sizing: border-box;
         padding: 0px 0px 20px 0px;
         scrollbar-width: none;
+        /* border: 1px solid red; */
     }
-
-
 
 }
 
@@ -79,7 +78,7 @@
         /* firefox hide scrollbar  */
         -ms-overflow-style: none;
         /* firefox hide scrollbar  */
-        /* border: 1px solid black; */
+        /* border: 1px solid rebeccapurple; */
     }
 
 

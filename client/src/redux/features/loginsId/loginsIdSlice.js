@@ -128,8 +128,22 @@ const loginsIdSlice = createSlice({
                 return {
                     ...state,
                     loginsIdData: [action.payload, ...state.loginsIdData],
-                    // isLoading: false,
-                    // action: 'add',
+                    isLoading: false,
+                    action: 'add',
+                };
+            }).
+            addCase(addNewLoginIdData.pending, (state, action) => {
+                return {
+                    ...state,
+                    isLoading: true,
+                    action: 'add',
+                };
+            }).
+            addCase(addNewLoginIdData.rejected, (state, action) => {
+                return {
+                    ...state,
+                    isLoading: false,
+                    action: 'add',
                 };
             }).
             addCase(editLoginIdData.fulfilled, (state, action) => {
@@ -144,20 +158,28 @@ const loginsIdSlice = createSlice({
                 return {
                     ...state,
                     loginsIdData: newArray,
-                    // isLoading: false,
-                    // action: 'edit',
+                    isLoading: false,
+                    action: 'edit',
                 };
-            }).addCase(editLoginIdData.rejected, (state, action) => {
+            }).addCase(editLoginIdData.pending, (state, action) => {
                 return {
-                    ...state
+                    ...state,
+                    isLoading: true,
+                    action: 'edit',
                 }
-            }).
-            addCase(deleteLoginData.fulfilled, (state, action) => {
+            })
+            .addCase(editLoginIdData.rejected, (state, action) => {
+                return {
+                    ...state,
+                    isLoading: false,
+                    action: 'edit',
+                }
+            }).addCase(deleteLoginData.fulfilled, (state, action) => {
                 return {
                     ...state,
                     loginsIdData: action.payload,
                     isLoading: false,
-                    action: undefined,
+                    action: 'delete',
                 };
             })
             .
@@ -172,7 +194,7 @@ const loginsIdSlice = createSlice({
                 return {
                     ...state,
                     isLoading: false,
-                    action: undefined,
+                    action: 'delete',
                 };
             }).
             addCase(toggleIsFav.fulfilled, (state, action) => {

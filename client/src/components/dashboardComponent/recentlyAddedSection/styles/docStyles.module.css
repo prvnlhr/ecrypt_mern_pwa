@@ -15,7 +15,13 @@
     margin: 15px 15px 15px 15px;
     margin: 2% 2% 2% 2%;
     box-shadow: var(--list-wrapper-box-shadow);
-
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .cardContainer {

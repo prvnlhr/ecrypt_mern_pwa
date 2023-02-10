@@ -6,6 +6,8 @@ import { addRecentlyAddedData } from "../recentlyAdded/recentlyAddedSlice"
 import { addToFavDocsData } from "../favorites/favoritesSlice"
 const initialState = {
     docsData: [],
+    isLoading: false,
+    action: undefined,
 }
 
 
@@ -130,7 +132,24 @@ const docsSlice = createSlice({
             .addCase(addNewDocData.fulfilled, (state, action) => {
                 return {
                     ...state,
-                    docsData: [action.payload, ...state.docsData]
+                    docsData: [action.payload, ...state.docsData],
+                    isLoading: false,
+                    action: undefined,
+                };
+            })
+            .addCase(addNewDocData.pending, (state, action) => {
+                return {
+                    ...state,
+                    isLoading: true,
+                    action: 'add',
+                };
+
+            })
+            .addCase(addNewDocData.rejected, (state, action) => {
+                return {
+                    ...state,
+                    isLoading: false,
+                    action: 'add',
                 };
             })
             .addCase(editDocData.fulfilled, (state, action) => {
@@ -144,18 +163,43 @@ const docsSlice = createSlice({
                 return {
                     ...state,
                     docsData: newArray,
+                    isLoading: false,
+                    action: 'edit'
+                };
+            })
+            .addCase(editDocData.pending, (state, action) => {
+                return {
+                    ...state,
+                    isLoading: true,
+                    action: 'edit'
+                };
+            })
+            .addCase(editDocData.rejected, (state, action) => {
+                return {
+                    ...state,
+                    isLoading: false,
+                    action: 'edit'
                 };
             })
             .addCase(deleteDocData.fulfilled, (state, action) => {
                 return {
                     ...state,
-                    docsData: action.payload
+                    docsData: action.payload,
+                    isLoading: false,
+                    action: 'delete'
+                };
+            }).addCase(deleteDocData.pending, (state, action) => {
+                return {
+                    ...state,
+                    isLoading: true,
+                    action: 'delete'
                 };
             })
             .addCase(deleteDocData.rejected, (state, action) => {
                 return {
                     ...state,
-                    docsData: state.docsData,
+                    isLoading: false,
+                    action: 'delete'
                 };
             })
             .addCase(toggleIsFav.fulfilled, (state, action) => {

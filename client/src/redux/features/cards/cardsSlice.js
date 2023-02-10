@@ -10,6 +10,7 @@ const initialState = {
     success: undefined,
 }
 
+
 export const fecthCardsData = createAsyncThunk("cards/fetch", async ({ user_id }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
 
     try {
@@ -152,6 +153,14 @@ const cardsSlice = createSlice({
                     action: 'add'
                 };
             })
+            .addCase(addNewCardData.rejected, (state, action) => {
+                return {
+                    ...state,
+                    isLoading: false,
+                    success: false,
+                    action: 'add'
+                };
+            })
             .addCase(editCardData.fulfilled, (state, action) => {
                 const newArray = state.cardsData.map((card) => {
                     if (card._id === action.payload._id) {
@@ -160,10 +169,29 @@ const cardsSlice = createSlice({
                         return card;
                     }
                 });
-                // console.log(newArray);
                 return {
                     ...state,
                     cardsData: newArray,
+                    isLoading: false,
+                    action: 'edit',
+                    success: true,
+                };
+            })
+            .addCase(editCardData.pending, (state, action) => {
+                return {
+                    ...state,
+                    isLoading: true,
+                    action: 'edit',
+                    success: undefined,
+                };
+            })
+            .addCase(editCardData.rejected, (state, action) => {
+
+                return {
+                    ...state,
+                    isLoading: false,
+                    action: 'edit',
+                    success: false,
                 };
             })
             .addCase(deleteCardData.fulfilled, (state, action) => {

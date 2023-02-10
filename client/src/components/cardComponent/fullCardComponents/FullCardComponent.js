@@ -107,32 +107,26 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
         setEditMode(false);
     }
 
+
+    //> Handle save btn Clicked_______________
     const saveBtnClicked = () => {
-        // console.table(fullContentCardData)
         const activity_data = generateActivityData(3, 'Card', fullContentCardData, oldCardData)
-        // console.log(activity_data);
         dispatch(editCardData({
             updatedData: fullContentCardData,
             card_id: fullContentCardData._id,
             activityData: activity_data,
             userId: userId
-        }))
-        setEditMode(false);
-        setShowContentCard(false);
+        })).then(res => {
+            console.log(res.type);
+            if (res.type === 'cards/edit/fulfilled') {
+                setEditMode(false);
+            }
+        })
 
     }
 
     const deleteBtnClicked = () => {
-        // const activity_data = generateActivityData(2, 'Card', fullContentCardData, '')
-        // dispatch(deleteCardData({
-        //     card_id: fullContentCardData._id,
-        //     user_id: userId,
-        //     cardData: fullContentCardData,
-        //     activityData: activity_data
-        // }))
-        // setShowContentCard(false);
         setDeleteMode(true);
-        // confirmDeleteBtnClicked(fullContentCardData, activity_data);
     }
 
     const handleInputValueChange = (e) => {
@@ -143,7 +137,6 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
     }
     //> Handle fav btn Clicked
     const favBtnClicked = () => {
-        // console.log(fullContentCardData)
         dispatch(toggleIsFav({
             card_id: fullContentCardData._id,
             isFav: !fullContentCardData.isFavourite,
@@ -175,12 +168,31 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
                         {editMode ?
                             <>
                                 <div className={styles.saveBtnDiv} onClick={saveBtnClicked}  >
-                                    <Icon className={styles.crudIcons} icon="charm:tick-double" color="white" />
-                                    <p>Save</p>
+                                    {
+                                        isLoading && action === 'edit' ?
+                                            <Oval
+                                                height={`90%`}
+                                                width={`90%`}
+                                                color="white"
+                                                wrapperStyle={spinnerWrapper}
+                                                wrapperClass={styles.spinner}
+                                                visible={true}
+                                                ariaLabel='oval-loading'
+                                                secondaryColor="#E6E6E6"
+                                                strokeWidth={5}
+                                                strokeWidthSecondary={5}
+                                                className={styles.spinner}
+                                            />
+                                            :
+                                            <>
+                                                <Icon className={styles.crudIcons} icon="charm:tick-double" color="white" />
+                                                <p>Save</p>
+                                            </>
+                                    }
+
                                 </div>
 
                                 <div className={styles.cancelBtnDiv} onClick={cancelBtnClicked}>
-                                    {/* <Icon className={styles.crudIcons} icon="tabler:x" color="#7E8DA4" /> */}
                                     <Icon className={styles.crudIcons} icon="tabler:x" color="white" />
                                     <p>Cancel</p>
                                 </div>
@@ -235,7 +247,7 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
 
                         <div className={styles.logoContainer} onClick={logoclicked} >
                             <div className={
-                                editMode ? styles.logoDivActive : styles.logoDiv
+                                `${styles.logoDiv} ${editMode && styles.logoDivActive}`
                             }>
                                 {fullContentCardData.logoIndex != undefined &&
                                     logosArray[fullContentCardData.logoIndex].logo

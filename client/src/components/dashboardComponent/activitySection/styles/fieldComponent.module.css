@@ -8,7 +8,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     border-radius: 15px;
     margin-top: 8px;
     margin-right: 5.5%;
@@ -66,7 +65,7 @@
 
 .fieldNameLabelWrapper p {
     font-family: "Poppins", sans-serif;
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: var(--bolder-font);
     color: var(--primary-font-color);
     margin: 0px;
@@ -89,15 +88,15 @@
 
 .oldValWrapper p {
     font-family: "Poppins", sans-serif;
-    font-size: 12px;
+    font-size: 0.8rem;
     font-weight: var(--bolder-font);
-    color: #7E8DA4;
     color: var(--secondary-font-color);
     margin: 0px;
     padding: 0px;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis
+    text-overflow: ellipsis;
+    font-weight: var(--bolder-font);
 }
 
 .lowerPartition {
@@ -148,11 +147,12 @@
 
 .changeToLabelWrapper p {
     font-family: "Poppins", sans-serif;
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: var(--bolder-font);
     color: var(--primary-font-color);
     margin: 0px;
     padding: 0px;
+    font-weight: var(--bolder-font);
 }
 
 .newValWrapper {
@@ -170,14 +170,15 @@
 
 .newValWrapper p {
     font-family: "Poppins", sans-serif;
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: var(--bolder-font);
     color: var(--ui-scheme-color);
     margin: 0px;
     padding: 0px;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis
+    text-overflow: ellipsis;
+    font-weight: var(--bolder-font);
 }
 
 .fieldWrapper::before {

@@ -8,6 +8,7 @@
     padding: 0px;
     border-radius: 15px;
     padding-top: 10%;
+    /* border: 1px solid red; */
 }
 
 .logoWrapperActive {
@@ -21,15 +22,17 @@
     background-color: #A6CBFB;
     background-color: var(--box-bg-secondary-drk);
     border-radius: 15px;
+    border-radius: 0.85rem;
     padding-top: 10%;
-
+    /* padding-top: 5%; */
+    /* border: 1px solid red; */
 }
 
 .logoContainer {
     position: relative;
     aspect-ratio: 1/1;
-    width: 85%;
-    border-radius: 15px;
+    width: 83%;
+    border-radius: 0.65rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,12 +45,9 @@
     -ms-user-select: none;
     user-select: none;
     overflow: hidden;
-    /* border: 1px solid black; */
+    /* border: 1px solid red; */
     box-shadow: var(--logoComp-box-shadow);
 }
-
-
-
 
 .logoDiv {
     /* border: 1px solid black; */
@@ -68,7 +68,7 @@
 }
 
 .logoLabelContainer {
-    width: 85%;
+    width: 80%;
     /* height: 30%; */
     /* border: 1px solid black; */
     display: flex;
@@ -80,7 +80,7 @@
 
 .logoLabelContainer p {
     font-family: "Poppins", sans-serif;
-    font-size: 11px;
-    font-weight: 450;
+    font-size: 0.60rem;
+    font-weight: var(--bold-font);
     color: var(--primary-font-color);
 }

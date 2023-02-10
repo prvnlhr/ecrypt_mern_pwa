@@ -12,6 +12,13 @@
     margin-left: 20px;
     margin-top: 20px;
     box-shadow: var(--list-wrapper-box-shadow);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .documentComponentWrapperFocus {

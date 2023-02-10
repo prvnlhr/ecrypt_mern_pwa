@@ -44,6 +44,8 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
     const [currCardVender, setCurrCardVender] = useState(undefined);
 
 
+
+    //> Initial Form States________________________________________
     const [bankCardData, setBankCardData] = useState({
         title: "",
         category: "Bank",
@@ -75,7 +77,20 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
         logoIndex: "",
         isFavourite: false
     })
+    //> _______________________________________________________________
 
+
+    //> For setting cardVender logo Dynamically________
+    useEffect(() => {
+        if (bankCardData.cardNumber.length >= 16) {
+            let cardVenderLogo = <CardLogo className={bankCardFormstyles.cardVenderLogo} cardNo={bankCardData.cardNumber} />
+            setCurrCardVender(cardVenderLogo)
+        }
+
+    }, [bankCardData.cardNumber])
+
+
+    //>  handle form logo Index change______________
     useEffect(() => {
         setLogoIndx(logoIndx)
         switch (formCategory) {
@@ -108,6 +123,8 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
         }
     }, [logoIndx])
 
+
+    //> Handle category input value change_______________
     const handleOpClick = (op) => {
         setIdentityCardData({
             ...identityCardData,
@@ -155,20 +172,19 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
         setPopUpOpen(!popUpOpen)
     }
 
-    const formLogoClicked = () => {
-        setLogoComponentShow(true);
-    }
 
+
+    //> Handle input form Data change_____________________________
     const handleFormDataChange = (e) => {
 
         switch (formCategory) {
+
             case "Identity":
 
                 setIdentityCardData({
                     ...identityCardData,
                     [e.target.name]: e.target.value,
                 })
-
                 break;
 
             case "License":
@@ -176,7 +192,6 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                     ...licenseCardData,
                     [e.target.name]: e.target.value,
                 })
-
                 break;
 
             case "Bank":
@@ -193,61 +208,50 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
     }
 
 
-    //>Save Btn clicked
-    const saveBtnClicked = async () => {
-        let activity_data;
-        switch (formCategory) {
-            case "Identity":
-                // console.table(identityCardData);
-                activity_data = await generateActivityData(1, 'Card', identityCardData, '');
-                console.log(activity_data);
-                await dispatch(addNewCardData({
-                    data: identityCardData,
-                    user_id: userId,
-                    activityData: activity_data
-                }))
+    //> form logo clicked_____
+    const formLogoClicked = () => {
+        setLogoComponentShow(true);
+    }
 
+    //> Save Btn clicked_______
+    const saveBtnClicked = async () => {
+
+        let cardDataToEdit = {};
+        switch (formCategory) {
+
+            case "Bank":
+                Object.assign(cardDataToEdit, bankCardData);
+                break;
+
+            case "Identity":
+                Object.assign(cardDataToEdit, identityCardData);
                 break;
 
             case "License":
-                // console.table(licenseCardData);
-                activity_data = await generateActivityData(1, 'Card', licenseCardData, '');
-                await dispatch(addNewCardData({
-                    data: licenseCardData,
-                    user_id: userId,
-                    activityData: activity_data
-
-                }))
-                break;
-
-            case "Bank":
-                // console.table(bankCardData);
-                activity_data = await generateActivityData(1, 'Card', bankCardData, '');
-                await dispatch(addNewCardData({
-                    data: bankCardData,
-                    user_id: userId,
-                    activityData: activity_data
-                }))
+                Object.assign(cardDataToEdit, licenseCardData);
                 break;
 
             default:
                 break;
         }
 
-        console.log(isLoading, success, action);
-        if (isLoading === false && success === true && action === 'add') {
-            formToggle();
-        }
+
+
+        let activity_data = await generateActivityData(1, 'Card', bankCardData, '');
+
+        await dispatch(addNewCardData({
+            data: cardDataToEdit,
+            user_id: userId,
+            activityData: activity_data
+        })).then(res => {
+            if (res.type === 'cards/add/fulfilled') {
+                console.log('card added', res.type);
+                setShowInputForm(false);
+            }
+        })
+
     }
 
-    //> For setting cardVender logo Dynamically
-    useEffect(() => {
-        if (bankCardData.cardNumber.length >= 16) {
-            let cardVenderLogo = <CardLogo className={bankCardFormstyles.cardVenderLogo} cardNo={bankCardData.cardNumber} />
-            setCurrCardVender(cardVenderLogo)
-        }
-
-    }, [bankCardData.cardNumber])
 
 
     return (

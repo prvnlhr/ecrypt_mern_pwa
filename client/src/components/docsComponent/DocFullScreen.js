@@ -8,6 +8,13 @@ import { deleteDocData, editDocData, toggleIsFav } from "../../redux/features/do
 import { generateActivityData } from ".././utils/ActivityDataChangeFuction"
 import BookmarksIcon from "../icons/BookmarksIcon"
 import BookmarksIconFill from "../icons/BookmarksIconFill"
+import DeleteModal from '../modal/DeleteModal';
+import { Oval } from 'react-loader-spinner'
+
+const spinnerWrapper = {
+    height: `100%`,
+    with: `100%`,
+}
 const DocFullScreen = ({ setDocFullScreen, setFullScreenDocData, docFullScreen, fullScreenData }) => {
 
     const currDocDataInStore = useSelector((state) =>
@@ -15,10 +22,13 @@ const DocFullScreen = ({ setDocFullScreen, setFullScreenDocData, docFullScreen, 
     );
 
     const userId = useSelector((state) => state.user._id);
+    const docsState = useSelector((state) => state.docs);
+
+    const { isLoading, action } = docsState;
+
 
     useEffect(() => {
         if (currDocDataInStore) {
-            // console.log(currDocDataInStore);
             setFullScreenDocData({
                 ...fullScreenData,
                 isFavourite: currDocDataInStore.isFavourite
@@ -30,7 +40,9 @@ const DocFullScreen = ({ setDocFullScreen, setFullScreenDocData, docFullScreen, 
     const [headerFooterShow, setHeaderFooterShow] = useState(true);
 
     const [imageName, setImageName] = useState("");
+
     const [editMode, setEditMode] = useState(false);
+    const [deleteMode, setDeleteMode] = useState(false);
 
     const [oldTitle, setOldTitle] = useState('');
 
@@ -44,10 +56,10 @@ const DocFullScreen = ({ setDocFullScreen, setFullScreenDocData, docFullScreen, 
     }
 
     const editBtnClicked = () => {
-        // console.log(fullScreenData.imageName);
         setOldTitle(fullScreenData.imageName)
         setEditMode(true);
     }
+
     const cancelBtnClicked = () => {
         setFullScreenDocData({
             ...fullScreenData,
@@ -56,39 +68,56 @@ const DocFullScreen = ({ setDocFullScreen, setFullScreenDocData, docFullScreen, 
         setEditMode(false);
     }
     const saveBtnClicked = () => {
-        console.log(fullScreenData.imageName)
+        // console.log(fullScreenData.imageName)
         const oldData = {
             title: oldTitle
         }
         const newData = {
             title: fullScreenData.imageName
         }
-        console.log(oldData, newData);
         const activity_data = generateActivityData(3, 'Doc', newData, oldData);
-        console.log(activity_data);
         dispatch(editDocData({
             docId: fullScreenData._id,
             docData: fullScreenData,
             activityData: activity_data,
             userId: userId
-        }))
-        setEditMode(false);
+        })).then(res => {
+            if (res.type === 'docs/edit/fulfilled') {
+                setEditMode(false);
+            }
+        })
     }
 
-    const handleDeleteBtnClicked = () => {
+
+    //> Confirm Doc delete_______
+    const confirmDeleteBtnClicked = () => {
+        setDeleteMode(false);
         const newData = {
             title: fullScreenData.imageName
         }
         const activity_data = generateActivityData(2, 'Doc', newData, '');
-        console.log(activity_data);
         dispatch(deleteDocData({
             docId: fullScreenData._id,
             cloudId: fullScreenData.cloudinary_id,
             userId: userId,
             activityData: activity_data,
-        }))
-        setDocFullScreen(false)
+        })).then(res => {
+            // console.log(res.type);
+            if (res.type === 'docs/delete/fulfilled') {
+                setDocFullScreen(false)
+            }
+        })
+
     }
+
+    //> Doc delete btn clicked_______
+    const handleDeleteBtnClicked = () => {
+        // confirmDeleteBtnClicked();
+        setDeleteMode(true);
+        // setDocFullScreen(false)
+    }
+
+
     //> fav btn Clicked
     const handleFavBtnClicked = () => {
         console.log(fullScreenData.isFavourite, !fullScreenData.isFavourite)
@@ -99,33 +128,64 @@ const DocFullScreen = ({ setDocFullScreen, setFullScreenDocData, docFullScreen, 
         }))
     }
     return (
-        <div className={docFullScreen ? styles.documentFullScreenWrapper : styles.documentFullScreenWrapperClose} >
-
+        <div className={`${docFullScreen ? styles.documentFullScreenWrapper : styles.documentFullScreenWrapperClose}`} >
+            <DeleteModal
+                setDeleteMode={setDeleteMode}
+                deleteMode={deleteMode}
+                confirmDeleteBtnClicked={confirmDeleteBtnClicked}
+                modalStyles={styles}
+            />
             <div className={styles.imageContainer} onClick={handleHeaderFooterShowHide}>
                 <img src={fullScreenData.imageUrl} />
             </div>
 
             <div className={headerFooterShow ? styles.headerContainer : styles.headerContainerClose} >
                 <div className={styles.backBtnContainer} >
-                    <div className={styles.backBtnDiv} onClick={docMinimises}>
-                        <BackBtnIcon />
-                    </div>
+
+                    {!deleteMode &&
+                        <div className={styles.backBtnDiv} onClick={docMinimises}>
+                            <BackBtnIcon />
+                        </div>
+                    }
                 </div>
                 <div className={styles.deleteBtnContainer} >
-                    <div className={styles.deleteBtnDiv} onClick={handleDeleteBtnClicked} >
-                        <Icon className={styles.crudIcons} icon="gg:trash-empty" color="white" />
-                        <p>Delete</p>
-                    </div>
+                    {
+                        !deleteMode &&
+                        <div className={styles.deleteBtnDiv} onClick={handleDeleteBtnClicked} >
+                            {
+                                isLoading && action === 'delete' ?
+                                    <Oval
+                                        height={`90%`}
+                                        width={`90%`}
+                                        color="white"
+                                        wrapperStyle={spinnerWrapper}
+                                        wrapperClass={styles.spinner}
+                                        visible={true}
+                                        ariaLabel='oval-loading'
+                                        secondaryColor="#E6E6E6"
+                                        strokeWidth={5}
+                                        strokeWidthSecondary={5}
+                                        className={styles.spinner}
+                                    />
+                                    :
+                                    <>
+                                        <Icon className={styles.crudIcons} icon="gg:trash-empty" color="white" />
+                                        <p>Delete</p>
+                                    </>
+                            }
+                        </div>
+                    }
                 </div>
                 <div className={styles.favBtnContainer} >
-                    <div className={styles.favBtnDiv} onClick={handleFavBtnClicked}  >
-                        {
-                            fullScreenData.isFavourite === true ?
-                                <BookmarksIconFill /> :
-                                <BookmarksIcon />
-                        }
-                    </div>
-
+                    {!deleteMode &&
+                        <div className={styles.favBtnDiv} onClick={handleFavBtnClicked}  >
+                            {
+                                fullScreenData.isFavourite === true ?
+                                    <BookmarksIconFill /> :
+                                    <BookmarksIcon />
+                            }
+                        </div>
+                    }
                 </div>
             </div>
 
@@ -146,12 +206,34 @@ const DocFullScreen = ({ setDocFullScreen, setFullScreenDocData, docFullScreen, 
                 </div>
                 <div className={styles.titleCrudBtnContainer} >
                     {!editMode ?
-                        <div className={styles.titleEditBtnDiv} onClick={editBtnClicked} >
-                            <Icon className={styles.titleCrudIcon} icon="ph:pencil-simple-line" color="#002A9A" />
-                        </div> :
+                        !deleteMode && (
+                            <div className={styles.titleEditBtnDiv} onClick={editBtnClicked} >
+                                <Icon className={styles.titleCrudIcon} icon="ph:pencil-simple-line" color="#002A9A" />
+                            </div>
+                        )
+                        :
                         <>
                             <div className={styles.titleSaveBtnDiv} onClick={saveBtnClicked} >
-                                <Icon className={styles.titleCrudIcon} icon="charm:tick-double" color="white" />
+                                {
+                                    isLoading && action === 'edit' ?
+                                        <Oval
+                                            height={`100%`}
+                                            width={`100%`}
+                                            color="white"
+                                            wrapperStyle={spinnerWrapper}
+                                            wrapperClass={styles.spinner}
+                                            visible={true}
+                                            ariaLabel='oval-loading'
+                                            secondaryColor="#E6E6E6"
+                                            strokeWidth={5}
+                                            strokeWidthSecondary={5}
+                                            className={styles.spinner}
+                                        />
+                                        :
+                                        <>
+                                            <Icon className={styles.titleCrudIcon} icon="charm:tick-double" color="white" />
+                                        </>
+                                }
                             </div>
 
                             <div className={styles.titleCancelBtnDiv} onClick={cancelBtnClicked} >

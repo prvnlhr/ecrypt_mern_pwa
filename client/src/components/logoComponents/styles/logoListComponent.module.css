@@ -8,6 +8,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     /* gap: 20px; */
     gap: 5%;
+    gap: 8%;
     list-style-type: none;
     padding-top: 2%;
     padding-bottom: 20%;
@@ -15,9 +16,7 @@
     padding-right: 8%;
     overflow-y: scroll !important;
     margin-top: 5%;
-
 }
-
 
 
 .logoListWrapper::-webkit-scrollbar {

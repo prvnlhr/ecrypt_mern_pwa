@@ -19,6 +19,7 @@ const CardsList = ({ setLogoComponentShow,
 }) => {
 
   const dispatch = useDispatch();
+
   useEffect(() => {
     if (clickedSearchItem) {
       const element = document.getElementById(clickedSearchItem._id);
@@ -211,24 +212,32 @@ const CardsList = ({ setLogoComponentShow,
 
   }
 
+
+
+  //> Confirm card delete________________
   const confirmDeleteBtnClicked = async () => {
 
     setDeleteMode(false);
+
     let cardDataToDelete = {};
 
     switch (fullContentCardCategory) {
+
       case 'Bank': {
         Object.assign(cardDataToDelete, bankCardData);
       }
         break;
+
       case 'Identity': {
         Object.assign(cardDataToDelete, identityCardData);
       }
         break;
+
       case 'License': {
         Object.assign(cardDataToDelete, licenseCardData);
       }
         break;
+
       default:
         break;
     }
@@ -239,12 +248,14 @@ const CardsList = ({ setLogoComponentShow,
       user_id: userId,
       cardData: cardDataToDelete,
       activityData: activity_data
-    }))
+    })).then(res => {
+      if (res.type === 'cards/delete/fulfilled') {
+        setShowContentCard(false);
+      }
+    })
 
-    if (action === 'delete' && success === true) {
-      setShowContentCard(false);
-    }
   }
+
   return (
     <div className={`${styles.cardList} `}>
 
@@ -300,7 +311,7 @@ const CardsList = ({ setLogoComponentShow,
         <CardInputForm
           formToggle={formToggle}
           showInputForm={showInputForm}
-          setShowInputForm={showInputForm}
+          setShowInputForm={setShowInputForm}
         />
       }
     </div>

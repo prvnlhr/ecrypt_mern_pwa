@@ -91,15 +91,17 @@ const LoginIdsList = ({ setLogoComponentShow,
   //> Delete Btn clicked________
   const confirmDeleteBtnClicked = async () => {
     setDeleteMode(false);
-    console.log('confirm delete', 'delete modal close')
     const activity_data = await generateActivityData(2, 'Login', fullContentCardData, '');
     await dispatch(deleteLoginData({
       login_id: fullContentCardData._id,
       user_id: userId,
       activityData: activity_data,
-    }))
-    
-    setShowContentCard(false);
+    })).then(res => {
+      if (res.type === 'loginIds/delete/fulfilled') {
+        setShowContentCard(false);
+      }
+    })
+
   }
 
   const handleLoginIdClicked = (loginIData) => {

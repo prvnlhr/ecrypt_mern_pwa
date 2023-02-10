@@ -6,10 +6,18 @@ import { HiX } from "react-icons/hi";
 import { motion, AnimatePresence } from "framer-motion";
 import { addNewDocData } from "../../redux/features/docs/docsSlice"
 import { generateActivityData } from "../utils/ActivityDataChangeFuction"
+import { Oval } from 'react-loader-spinner';
 import axios from "axios";
-
+const spinnerWrapper = {
+    height: `100%`,
+    with: `100%`,
+}
 const DocInputForm = ({ setShowDocInputForm, showDocInputForm, formToggle }) => {
     const userId = useSelector((state) => state.user._id);
+    const docsState = useSelector((state) => state.docs);
+
+    const { isLoading, action } = docsState;
+
 
     const [currFocusField, setCurrFocusField] = useState(undefined);
     const onFocus = (val) => {
@@ -35,7 +43,7 @@ const DocInputForm = ({ setShowDocInputForm, showDocInputForm, formToggle }) => 
     }
 
     const uploadDoc = () => {
-        formToggle();
+        // formToggle();
         const data = new FormData();
         data.append("userId", userId);
         data.append("name", name);
@@ -50,15 +58,20 @@ const DocInputForm = ({ setShowDocInputForm, showDocInputForm, formToggle }) => 
             title: name,
         }
         const activity_data = generateActivityData(1, 'Doc', toMakeActvityData, '');
-        console.log(activity_data);
-        console.log(data, name, userId)
+        // console.log(activity_data);
+        // console.log(data, name, userId)
         dispatch(addNewDocData({
             data: data,
             name: name,
             userId: userId,
             activityData: activity_data,
         }
-        ));
+        )).then(res => {
+            // console.log(res.type);
+            if (res.type === 'docs/add/fulfilled') {
+                formToggle();
+            }
+        })
     };
     const handleChange = (e) => {
         const file = e.target.files[0];
@@ -74,9 +87,12 @@ const DocInputForm = ({ setShowDocInputForm, showDocInputForm, formToggle }) => 
     return (
         <div className={styles.formWrapper}>
             <div className={styles.headerWrapper}>
-                <div className={styles.closeIconDiv} onClick={closeBtnClicked}>
-                    <Icon className={styles.closeIcon} icon="ph:x-bold" />
-                </div>
+
+                {(isLoading === false && action !== 'add') &&
+                    <div className={styles.closeIconDiv} onClick={closeBtnClicked}>
+                        <Icon className={styles.closeIcon} icon="ph:x-bold" />
+                    </div>
+                }
             </div>
 
 
@@ -131,13 +147,35 @@ const DocInputForm = ({ setShowDocInputForm, showDocInputForm, formToggle }) => 
                     <div className={styles.buttonWrapper}>
                         <motion.button whileTap={{ scale: 0.95 }} type="submit">
                             <div className={styles.btnTextDiv} >
-                                <p>Upload</p>
+                                {isLoading === true && action === 'add' ?
+                                    <p>Uploading ...</p> :
+                                    <p>Upload</p>
+                                }
                             </div>
 
                             <div className={styles.btnIconDiv}>
-                                <Icon icon="fluent:arrow-sort-up-24-filled" color='white'
-                                    className={styles.btnIcon}
-                                />
+
+                                {isLoading === true && action === 'add' ?
+                                    <Oval
+                                        height={`100%`}
+                                        width={`100%`}
+                                        color="white"
+                                        wrapperStyle={spinnerWrapper}
+                                        wrapperClass={styles.spinner}
+                                        visible={true}
+                                        ariaLabel='oval-loading'
+                                        secondaryColor="#4067F0"
+                                        strokeWidth={5}
+                                        strokeWidthSecondary={5}
+                                        className={styles.spinner}
+                                    /> :
+                                    <>
+                                        <Icon icon="fluent:arrow-sort-up-24-filled" color='white'
+                                            className={styles.btnIcon}
+                                        />
+                                    </>
+                                }
+
                             </div>
 
                         </motion.button>

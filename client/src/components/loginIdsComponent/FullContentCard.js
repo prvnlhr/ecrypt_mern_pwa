@@ -31,7 +31,6 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
 
     const loginsIdState = useSelector((state => state.loginIds));
     const { isLoading, action } = loginsIdState;
-    // console.log(isLoading, action);
 
     const [popUpOpen, setPopUpOpen] = useState(false);
 
@@ -95,16 +94,16 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
     //> Save Btn clicked_________
     const saveBtnClicked = () => {
         const activity_data = generateActivityData(3, 'Login', fullContentCardData, oldCardData);
-
-        console.log(activity_data)
         dispatch(editLoginIdData({
             updatedData: fullContentCardData,
             login_id: fullContentCardData._id,
             activityData: activity_data,
             userId: userId
-        }))
-        // setShowContentCard(false);
-        setEditMode(false);
+        })).then(res => {
+            if (res.type === 'loginIds/edit/fulfilled') {
+                setEditMode(false);
+            }
+        })
 
     }
     //> Delete Btn clicked________
@@ -147,8 +146,28 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
                         {editMode ?
                             <>
                                 <div className={styles.saveBtnDiv} onClick={saveBtnClicked}  >
-                                    <Icon className={styles.crudIcons} icon="charm:tick-double" color="white" />
-                                    <p>Save</p>
+                                    {
+                                        isLoading && action === 'edit' ?
+                                            <Oval
+                                                height={`90%`}
+                                                width={`90%`}
+                                                color="white"
+                                                wrapperStyle={spinnerWrapper}
+                                                wrapperClass={styles.spinner}
+                                                visible={true}
+                                                ariaLabel='oval-loading'
+                                                secondaryColor="#E6E6E6"
+                                                strokeWidth={5}
+                                                strokeWidthSecondary={5}
+                                                className={styles.spinner}
+                                            />
+                                            :
+                                            <>
+                                                <Icon className={styles.crudIcons} icon="charm:tick-double" color="white" />
+                                                <p>Save</p>
+                                            </>
+                                    }
+
                                 </div>
 
                                 <div className={styles.cancelBtnDiv} onClick={cancelBtnClicked}>
@@ -212,15 +231,14 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
                         onFocus={() => onFocus(1)}
                         className={`${styles.logoTitleContainer} ${currFocusField === 0 && styles.focusFieldStyle} `} >
                         <div className={styles.logoContainer} onClick={logoclicked} >
-                            <div className={styles.logoDiv}>
-                                <div className={
-                                    editMode ? styles.logoDivActive : styles.logoDiv
-                                }>
-                                    {fullContentCardData?.logoIndex != undefined &&
-                                        logosArray[fullContentCardData.logoIndex].logo
-                                    }
-                                </div>
+                            <div className={
+                                `${styles.logoDiv} ${editMode && styles.logoDivActive}`
+                            }>
+                                {fullContentCardData?.logoIndex != undefined &&
+                                    logosArray[fullContentCardData.logoIndex].logo
+                                }
                             </div>
+                            {/* </div> */}
                         </div>
 
                         <div className={`${styles.titleContainer} ${(currFocusField === 1 && editMode) && styles.focusFieldStyle}`} >

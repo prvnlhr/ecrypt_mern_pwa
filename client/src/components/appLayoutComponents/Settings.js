@@ -16,6 +16,7 @@ const Settings = () => {
 
     const authState = useSelector((state => state.auth));
     const userState = useSelector((state => state.user));
+    const isDarkMode = useSelector((state) => state.ui.darkMode);
 
 
 
@@ -45,19 +46,23 @@ const Settings = () => {
     });
 
     useEffect(() => {
-
-        if (userState?.responseMessage === 'Profile Picture Updated Successfully') {
-            handleCancelBtnClicked();
-        }
-
         setProfileData({
             ...profileData,
             firstName: userState.firstName,
             lastName: userState.lastName,
             email: userState.email
         })
+    }, [userState.firstName, userState.lastName, userState.email])
+
+    useEffect(() => {
+        if (userState.responseMessage === 'Profile Picture Updated Successfully') {
+            setEditMode({
+                isEditMode: false,
+                section: undefined,
+            })
+        }
         setProfilePicImg(userState?.profilePic.picUrl);
-    }, [userState])
+    }, [userState.profilePic])
 
 
 
@@ -148,7 +153,7 @@ const Settings = () => {
             setCurrFocusField(4);
         }
         else if (currSection === 'PROFILEPIC') {
-            setOldProfilePic(avatarImg);
+            setOldProfilePic(userState.profilePic.picUrl)
         }
     }
 
@@ -169,7 +174,6 @@ const Settings = () => {
                 ...passwordData,
                 oldPassword: undefined,
             })
-            // setPasswordData(undefined);
         }
 
         setEditMode({
@@ -178,9 +182,9 @@ const Settings = () => {
         })
 
         //> image SECTION == PROFILEPIC, reverting back old Profile Pic
-        // if (editMode.section === 'PROFILEPIC') {
-        //     setProfilePicImg(oldProfilePic);
-        // }
+        if (editMode.section === 'PROFILEPIC') {
+            setProfilePicImg(oldProfilePic);
+        }
 
         setCurrFocusField(undefined);
     }
@@ -261,24 +265,23 @@ const Settings = () => {
                 <div className={styles.profilePicWrapper} >
                     <form className={styles.profilePicformTag}>
                         <div className={`${styles.profilePicContainer} ${(formFieldEditable('PROFILEPIC') && userState?.pending === false) && styles.profilePicformTagEditMode} `}>
-                            <label htmlFor="file">
 
+                            <label htmlFor="file">
                                 {userState?.pending === true &&
                                     <Oval
-                                        height={101}
-                                        width={101}
-                                        color="#002A9A"
+                                        height={95}
+                                        width={95}
+                                        color={isDarkMode === true ? "#C7BAFD" : "#002A9A"}
                                         wrapperStyle={{}}
                                         wrapperClass={styles.spinner}
                                         visible={true}
                                         ariaLabel='oval-loading'
-                                        secondaryColor="#00299a7b"
+                                        secondaryColor={isDarkMode === true ? "#2F343E" : "#D6D6D6"}
                                         strokeWidth={1}
                                         strokeWidthSecondary={1}
                                         className={styles.spinner}
                                     />
                                 }
-
                                 <img src={profilePicImg} />
                             </label>
                             <input
@@ -302,7 +305,6 @@ const Settings = () => {
                                 :
                                 <div className={styles.iconDivEdit} onClick={() => handleEditChangeDeleteBtnClicked('PROFILEPIC')} >
                                     <Icon className={styles.profilePicEditIcon} icon="ph:pencil-simple-line-light" />
-
                                 </div>
                             }
 

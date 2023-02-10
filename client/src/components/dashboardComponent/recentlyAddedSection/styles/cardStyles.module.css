@@ -7,11 +7,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 20px;
+    border-radius: 0.95rem;
     background-color: var(--box-bg-primary);
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     /* border: 1px solid black; */
     box-shadow: var(--list-wrapper-box-shadow);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
 }
 
 .cardWrapperShrink {
@@ -24,12 +33,20 @@
     height: 75px;
     min-height: 75px;
     background-color: var(--box-bg-primary);
-    border-radius: 15px;
     scroll-behavior: smooth;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     /* border: 1px solid black; */
     margin: 2% 2% 2% 2%;
     box-shadow: var(--list-wrapper-box-shadow);
+    cursor: pointer;
+    border-radius: 0.95rem;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .cardContainerShrink {
@@ -95,8 +112,7 @@
     height: 82%;
     width: 82%;
     background-color: var(--logo-div-bg);
-
-    border-radius: 8px;
+    border-radius: 0.85rem;
     /* border: 1px solid black; */
 }
 
@@ -106,7 +122,7 @@
     align-items: center;
     height: 85%;
     width: 85%;
-    border-radius: 8px;
+    border-radius: 0.85rem;
 }
 
 .titleWrapperExpand {
@@ -597,7 +613,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: 20px;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
         /* border: 1px solid black; */
 
@@ -612,8 +627,6 @@
         width: 83%;
         height: 85px !important;
         min-height: 85px;
-        border-radius: 18px;
-
         scroll-behavior: smooth;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
         /* border: 1px solid black; */
@@ -682,8 +695,7 @@
         align-items: center;
         height: 88%;
         width: 88%;
-        border-radius: 10px;
-        border-radius: 13px;
+
     }
 
     .logoDivExpand {
@@ -692,7 +704,7 @@
         align-items: center;
         height: 85%;
         width: 85%;
-        border-radius: 8px;
+
     }
 
     .titleWrapperExpand {

@@ -102,7 +102,9 @@
   color: var(--primary-font-color);
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis
+  text-overflow: ellipsis;
+  font-size: 1rem;
+  font-weight: var(--bolder-font);
 }
 
 .usernameWrapper {
@@ -122,6 +124,12 @@
   font-size: 12px;
   font-weight: var(--bolder-font);
   color: var(--secondary-font-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.88rem;
+  font-weight: 450;
+
 }
 
 .bankCardLogoWrapperHide {

@@ -116,6 +116,10 @@
     align-items: center;
 }
 
+.profilePicformTagEditMode {
+    border: 3px solid #9DC1FA;
+    box-sizing: border-box;
+}
 
 .profilePicContainer {
     position: relative;
@@ -127,7 +131,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid rgb(94, 118, 184);
+    /* border: 2px solid rgb(94, 118, 184); */
+    /* border: 2px solid var(--ui-scheme-color); */
+    /* border: 1px solid red; */
 }
 
 .spinner {
@@ -196,9 +202,7 @@ label {
     background-color: #dae5eb;
 }
 
-.profilePicformTagEditMode {
-    border: 3px solid #00299a86;
-}
+
 
 .profilePicEditBtnContainer {
     width: 20%;
@@ -390,7 +394,6 @@ label {
     align-items: center;
     border-radius: 6px;
     padding: 1% 4% 1% 4%;
-    /* margin-top: 3%; */
 }
 
 .messageDivError {
@@ -413,14 +416,15 @@ label {
 }
 
 .messageDivSuccess {
-    background-color: #BAFFB4;
+    background-color: #58bf6eb1;
 }
 
 .messageDivSuccess p {
     font-family: "Poppins", sans-serif;
     font-size: 10.5px;
-    font-weight: 550;
-    color: #38c62b;
+    font-weight: 400;
+    color: white;
+    letter-spacing: 0.55px;
 }
 
 /* .messageDiv p {} */
@@ -944,7 +948,6 @@ label {
         width: 80% !important;
         height: unset !important;
         aspect-ratio: 3/2;
-        background-color: white;
         border-radius: 10px;
         top: 30% !important;
         left: 0;
@@ -1148,9 +1151,6 @@ label {
         border-radius: 5px;
     }
 
-    .profilePicformTagEditMode {
-        border: 3px solid #00299a86;
-    }
 
     .profilePicEditBtnContainer {
         width: 20%;
@@ -1323,6 +1323,7 @@ label {
 
     .messageDiv {
         width: 100%;
+        width: auto;
         max-width: 100%;
         height: auto;
         display: flex;
@@ -1335,11 +1336,9 @@ label {
         overflow: hidden;
     }
 
-
     .messageDivError p {
         width: 50%;
-        font-size: 10.5px;
-        font-weight: 550;
+        font-size: 0.65rem;
         width: 90%;
         white-space: nowrap;
         overflow: hidden;
@@ -1349,11 +1348,9 @@ label {
 
 
     .messageDivSuccess p {
-        font-size: 10.5px;
-        font-weight: 550;
+        font-size: 0.65rem;
     }
 
-    /* .messageDiv p {} */
     .errorMessageIconDiv {
         width: 20px;
         height: 100%;

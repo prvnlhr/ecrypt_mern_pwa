@@ -8,11 +8,19 @@ import LogoComponentWrapper from "../logoComponents/LogoComponentWrapper"
 import styles from "./styles/loginIdInputForm.module.css"
 import { addNewLoginIdData } from "../../redux/features/loginsId/loginsIdSlice"
 import { generateActivityData } from "../utils/ActivityDataChangeFuction"
+import { Oval } from "react-loader-spinner"
+const spinnerWrapper = {
+    height: `100%`,
+    with: `100%`,
+}
 const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
 
     const dispatch = useDispatch();
     const userId = useSelector((state) => state.user._id);
+
+    const loginIdsState = useSelector((state) => state.loginIds)
+    const { isLoading, action } = loginIdsState;
 
     const [currFocusField, setCurrFocusField] = useState(undefined);
     const onFocus = (val) => {
@@ -65,9 +73,13 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
             data: formData,
             user_id: userId,
             activityData: activity_data
-        }))
-        setShowInputForm(false);
-        clearForm();
+        })).then(res => {
+            console.log(res.type);
+            if (res.type === 'loginIds/add/fulfilled') {
+                clearForm();
+                setShowInputForm(false);
+            }
+        })
     }
     useEffect(() => {
         setLogoIndx(logoIndx)
@@ -112,8 +124,29 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                     </div>
                     <div className={styles.crudBtnContainer}   >
                         <div className={styles.saveBtnDiv} onClick={saveBtnClicked}>
-                            <Icon className={styles.crudIcons} icon="charm:tick-double" color="white" />
-                            <p>Save</p>
+
+                            {
+                                isLoading && action === 'add' ?
+                                    <Oval
+                                        height={`90%`}
+                                        width={`90%`}
+                                        color="white"
+                                        wrapperStyle={spinnerWrapper}
+                                        wrapperClass={styles.spinner}
+                                        visible={true}
+                                        ariaLabel='oval-loading'
+                                        secondaryColor="#E6E6E6"
+                                        strokeWidth={5}
+                                        strokeWidthSecondary={5}
+                                        className={styles.spinner}
+                                    />
+                                    :
+                                    <>
+                                        <Icon className={styles.crudIcons} icon="charm:tick-double" color="white" />
+                                        <p>Save</p>
+                                    </>
+                            }
+
                         </div>
                     </div>
                 </div>

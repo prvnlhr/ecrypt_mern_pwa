@@ -48,8 +48,8 @@ const DocInputForm = ({ setShowDocInputForm, showDocInputForm, formToggle }) => 
             title: name,
         }
         const activity_data = generateActivityData(1, 'Doc', toMakeActvityData, '');
-        console.log(activity_data);
-        console.log(data, name, userId)
+        // console.log(activity_data);
+        // console.log(data, name, userId)
         dispatch(addNewDocData({
             data: data,
             name: name,
