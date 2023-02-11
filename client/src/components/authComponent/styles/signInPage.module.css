@@ -13,12 +13,16 @@
   display: none;
 }
 
+
+
 .formWrapper {
+
   position: relative;
   width: 300px;
   aspect-ratio: 2/2.5;
   border-radius: 30px;
-  background-color: white;
+  background-color: var(--box-bg-primary);
+
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 20% 10% minmax(0, 1fr) 8%;
@@ -28,9 +32,10 @@
     "formMessageWrapper formMessageWrapper "
     "formTagContainer formTagContainer"
     "formFooterWrapper formFooterWrapper";
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
   justify-content: center;
   align-items: center;
+
   webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -38,8 +43,9 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  /* border: 1px solid springgreen; */
+
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: var(--dashboard-countDiv-box-shadow);
 
 }
 
@@ -68,13 +74,13 @@
   font-family: "Poppins", sans-serif;
   font-size: 20px;
   font-weight: var(--boldest-font);
-  color: black;
+  color: var(--primary-font-color);
 }
 
 .formLabelDiv::after {
   position: absolute;
   content: '';
-  background-color: #002A9A;
+  background-color: var(--ui-scheme-color);
   width: 15%;
   height: 3px;
   border-radius: 20px;
@@ -109,32 +115,32 @@
 }
 
 .messageDivError {
-  background-color: #FCCED1;
+  background-color: #D64339;
 }
 
 .messageDivError p {
   font-family: "Poppins", sans-serif;
   font-size: 10.5px;
-  font-weight: 550;
-  color: #F3212D;
+  font-weight: var(--bolder-font);
+  color: white;
 }
 
 .messageDivSuccess {
-  background-color: #BAFFB4;
+  background-color: #58BF6F;
 
 }
 
 .messageDivSuccess p {
   font-family: "Poppins", sans-serif;
   font-size: 10.5px;
-  font-weight: 550;
-  color: #38c62b;
+  font-weight: var(--bold-font);
+  color: white;
 }
 
 /* .messageDiv p {} */
 .errorMessageIconDiv {
-  width: 20px;
   height: 100%;
+  aspect-ratio: 1/1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -143,8 +149,8 @@
 }
 
 .warningIcon {
-  font-size: 15px !;
-  color: #F3212D;
+  font-size: 25px;
+  color: white;
   padding: 0px;
   margin: 0px;
 }
@@ -186,7 +192,7 @@
 .emailAddressContainer {
   width: 100%;
   height: 80%;
-  background-color: #E8EFFC;
+  background-color: var(--box-bg-tertiary);
   border-radius: 15px;
   display: grid;
   grid-template-columns: 20% 80%;
@@ -208,7 +214,7 @@
 .passwordContainer {
   width: 100%;
   height: 80%;
-  background-color: #E8EFFC;
+  background-color: var(--box-bg-tertiary);
   border-radius: 15px;
   display: grid;
   grid-template-columns: 20% 80%;
@@ -232,8 +238,8 @@
 .passForgetWrapper p {
   font-family: "Poppins", sans-serif;
   font-size: 11px;
-  font-weight: 550;
-  color: #002A9A;
+  font-weight: var(--bold-font);
+  color: var(--ui-scheme-color);
   margin-right: 2%;
 }
 
@@ -249,7 +255,7 @@
 }
 
 .fieldIcon {
-  color: #002A9A;
+  color: var(--field-icon-color);
   font-size: 28px;
 }
 
@@ -266,8 +272,8 @@
 .labelDiv p {
   font-family: "Poppins", sans-serif;
   font-size: 11px;
-  font-weight: 450;
-  color: #AAAAAA;
+  font-weight: var(--bold-font);
+  color: var(--secondary-font-color);
   margin-top: 5%;
 }
 
@@ -289,20 +295,19 @@
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: 1px solid rgba(91, 87, 87, 0.383);
   border-bottom: none;
   background: none;
   outline: none;
   font-family: "Poppins", sans-serif;
   font-size: 12px;
-  font-weight: 450;
-  color: black;
+  font-weight: var(--bold-font);
+  color: var(--primary-font-color);
   letter-spacing: 0.3px;
 
 }
 
 .focusFieldStyle {
-  border: 2px solid #00299a;
+  border: 2px solid var(--ui-scheme-color);
 }
 
 input:focus {
@@ -324,11 +329,11 @@ input:focus {
   width: 55%;
   height: 40%;
   border: none;
-  background-color: #002A9A;
+  background-color: var(--submit-btn-color);
   border-radius: 15px;
   font-family: "Poppins", sans-serif;
   font-size: 12px;
-  font-weight: 450;
+  font-weight: var(--bold-font);
   color: white;
   letter-spacing: 0.5px;
   /* outline: #AED2FF; */
@@ -350,16 +355,17 @@ input:focus {
 .formFooterWrapper p {
   font-family: "Poppins", sans-serif;
   font-size: 11px;
-  font-weight: 450;
-  color: black;
+  font-weight: var(--bold-font);
+  color: var(--primary-font-color);
 }
 
-span {
+.spanText {
   font-family: "Poppins", sans-serif;
   font-size: 11px;
-  font-weight: 550;
-  color: #002A9A;
+  font-weight: var(--bolder-font);
+  color: var(--ui-scheme-color);
   margin-left: 2px;
+  text-decoration: none;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
@@ -383,8 +389,7 @@ span {
     position: relative;
     width: 85%;
     aspect-ratio: 2/2.5;
-    border-radius: 30px;
-    background-color: white;
+    border-radius: 2.5rem;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 20% 10% minmax(0, 1fr) 8%;
@@ -394,7 +399,7 @@ span {
       "formMessageWrapper formMessageWrapper "
       "formTagContainer formTagContainer"
       "formFooterWrapper formFooterWrapper";
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
     justify-content: center;
     align-items: center;
     webkit-tap-highlight-color: transparent;
@@ -431,16 +436,12 @@ span {
   }
 
   .formLabelDiv p {
-    font-family: "Poppins", sans-serif;
-    font-size: 20px;
-    font-weight: var(--boldest-font);
-    color: black;
+    font-size: 1.5rem;
   }
 
   .formLabelDiv::after {
     position: absolute;
     content: '';
-    background-color: #002A9A;
     width: 15%;
     height: 3px;
     border-radius: 20px;
@@ -474,32 +475,19 @@ span {
 
   }
 
-  .messageDivError {
-    background-color: #FCCED1;
-  }
+
 
   .messageDivError p {
-    font-family: "Poppins", sans-serif;
-    font-size: 10.5px;
-    font-weight: 550;
-    color: #F3212D;
+    font-size: 0.7rem;
   }
 
-  .messageDivSuccess {
-    background-color: #BAFFB4;
-
-  }
 
   .messageDivSuccess p {
-    font-family: "Poppins", sans-serif;
-    font-size: 10.5px;
-    font-weight: 550;
-    color: #38c62b;
+    font-size: 0.7rem;
   }
 
   /* .messageDiv p {} */
   .errorMessageIconDiv {
-    width: 20px;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -509,8 +497,7 @@ span {
   }
 
   .warningIcon {
-    font-size: 15px !;
-    color: #F3212D;
+    font-size: 0.8rem;
     padding: 0px;
     margin: 0px;
   }
@@ -552,7 +539,6 @@ span {
   .emailAddressContainer {
     width: 100%;
     height: 80%;
-    background-color: #E8EFFC;
     border-radius: 15px;
     display: grid;
     grid-template-columns: 20% 80%;
@@ -574,7 +560,6 @@ span {
   .passwordContainer {
     width: 100%;
     height: 80%;
-    background-color: #E8EFFC;
     border-radius: 15px;
     display: grid;
     grid-template-columns: 20% 80%;
@@ -596,10 +581,7 @@ span {
   }
 
   .passForgetWrapper p {
-    font-family: "Poppins", sans-serif;
-    font-size: 11px;
-    font-weight: 550;
-    color: #002A9A;
+    font-size: 0.8rem;
     margin-right: 2%;
     white-space: nowrap;
   }
@@ -616,8 +598,7 @@ span {
   }
 
   .fieldIcon {
-    color: #002A9A;
-    font-size: 28px;
+    font-size: 1.9rem;
   }
 
   .labelDiv {
@@ -631,10 +612,7 @@ span {
   }
 
   .labelDiv p {
-    font-family: "Poppins", sans-serif;
-    font-size: 11px;
-    font-weight: 450;
-    color: #AAAAAA;
+    font-size: 0.82rem;
     margin-top: 5%;
   }
 
@@ -660,16 +638,9 @@ span {
     border-bottom: none;
     background: none;
     outline: none;
-    font-family: "Poppins", sans-serif;
-    font-size: 12px;
-    font-weight: 450;
-    color: black;
+    font-size: 0.8rem;
     letter-spacing: 0.3px;
 
-  }
-
-  .focusFieldStyle {
-    border: 2px solid #00299a;
   }
 
   input:focus {
@@ -691,12 +662,8 @@ span {
     width: 55%;
     height: 40%;
     border: none;
-    background-color: #002A9A;
     border-radius: 15px;
-    font-family: "Poppins", sans-serif;
-    font-size: 12px;
-    font-weight: 450;
-    color: white;
+    font-size: 0.8rem;
     letter-spacing: 0.5px;
     /* outline: #AED2FF; */
   }
@@ -715,18 +682,13 @@ span {
   }
 
   .formFooterWrapper p {
-    font-family: "Poppins", sans-serif;
-    font-size: 11px;
-    font-weight: 450;
-    color: black;
+    font-size: 0.8rem;
+    white-space: nowrap;
   }
 
-  span {
-    font-family: "Poppins", sans-serif;
-    font-size: 11px;
-    font-weight: 550;
-    color: #002A9A;
-    margin-left: 2px;
+  .spanText {
+    font-size: 0.8rem;
+    margin-left: 1%;
   }
 
 }

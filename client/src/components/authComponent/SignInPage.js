@@ -60,7 +60,7 @@ const SignInPage = () => {
         message: undefined,
         error: false
       })
-      console.log(formData);
+      // console.log(formData);
 
       dispatch(loginUser(
         {
@@ -152,12 +152,16 @@ const SignInPage = () => {
         <div className={styles.formFooterWrapper} >
           <p>Don't have an account ?
             <Link to="/user/register">
-              <span>Sign Up </span>
+              <span className={styles.spanText} >Sign Up </span>
             </Link>
           </p>
         </div>
       </div >
+
     </div >
+
+
+
   )
 }
 

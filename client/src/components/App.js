@@ -30,13 +30,13 @@ const App = () => {
 
   useEffect(() => {
     const theme = JSON.parse(localStorage.getItem("theme"));
-    console.log(theme);
     if (theme !== null) {
       dispatch(toggleUiTheme(theme));
     } else {
       dispatch(toggleUiTheme(false));
     }
   }, [isDarkMode]);
+
 
   const getToken = async () => {
     await dispatch(getAuthToken({}))
@@ -46,11 +46,13 @@ const App = () => {
     if (token != undefined) {
       dispatch(getUserDetails(token));
     }
+
   }, [token])
 
   useEffect(() => {
     getToken();
   }, [])
+
 
   const theme = "dark";
 

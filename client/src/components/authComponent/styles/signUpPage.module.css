@@ -2,11 +2,9 @@
   position: relative;
   width: 100%;
   height: 100%;
-  border: 1px solid orange;
   display: flex;
   justify-content: center;
   align-items: center;
-
   overflow-y: scroll;
 }
 
@@ -19,7 +17,7 @@
   width: 350px;
   aspect-ratio: 2/3;
   border-radius: 20px;
-  background-color: white;
+  background-color: var(--box-bg-primary);
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 12% 12% minmax(0, 1fr) 5%;
@@ -28,7 +26,7 @@
     "formMessageWrapper formMessageWrapper "
     "formTagContainer formTagContainer"
     "formFooterWrapper formFooterWrapper";
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
   justify-content: center;
   align-items: center;
   webkit-tap-highlight-color: transparent;
@@ -65,13 +63,13 @@
   font-family: "Poppins", sans-serif;
   font-size: 18px;
   font-weight: var(--boldest-font);
-  color: black;
+  color: var(--primary-font-color);
 }
 
 .formLabelDiv::after {
   position: absolute;
   content: '';
-  background-color: #002A9A;
+  background-color: var(--ui-scheme-color);
   width: 15%;
   height: 3px;
   border-radius: 20px;
@@ -104,18 +102,18 @@
 }
 
 .messageDivError {
-  background-color: #FCCED1;
+  background-color: #D64339;
 }
 
 .messageDivError p {
   font-family: "Poppins", sans-serif;
   font-size: 10.5px;
   font-weight: 550;
-  color: #F3212D;
+  color: white;
 }
 
 .messageDivSuccess {
-  background-color: #BAFFB4;
+  background-color: #58BF6F;
 
 }
 
@@ -123,7 +121,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 10.5px;
   font-weight: 550;
-  color: #38c62b;
+  color: white;
 }
 
 /* .messageDiv p {} */
@@ -139,7 +137,7 @@
 
 .warningIcon {
   font-size: 15px !;
-  color: #F3212D;
+  color: white;
   padding: 0px;
   margin: 0px;
 }
@@ -182,7 +180,7 @@
 .firstNameContainer {
   width: 95%;
   height: 80%;
-  background-color: #E8EFFC;
+  background-color: var(--box-bg-tertiary);
   border-radius: 15px;
   display: grid;
   grid-template-columns: 30% 70%;
@@ -206,7 +204,7 @@
   width: 95%;
   height: 80%;
 
-  background-color: #E8EFFC;
+  background-color: var(--box-bg-tertiary);
   border-radius: 15px;
   margin-left: 5%;
   display: grid;
@@ -230,7 +228,7 @@
   width: 100%;
   height: 80%;
 
-  background-color: #E8EFFC;
+  background-color: var(--box-bg-tertiary);
   border-radius: 15px;
   display: grid;
   grid-template-columns: 20% 80%;
@@ -254,7 +252,7 @@
   width: 100%;
   height: 80%;
 
-  background-color: #E8EFFC;
+  background-color: var(--box-bg-tertiary);
   border-radius: 15px;
   display: grid;
   grid-template-columns: 20% 80%;
@@ -279,7 +277,7 @@
 .confirmPassContainer {
   width: 100%;
   height: 80%;
-  background-color: #E8EFFC;
+  background-color: var(--box-bg-tertiary);
   border-radius: 15px;
   display: grid;
   grid-template-columns: 20% 80%;
@@ -302,7 +300,8 @@
 }
 
 .fieldIcon {
-  color: #002A9A;
+  color: var(--field-icon-color);
+
   font-size: 28px;
 }
 
@@ -320,7 +319,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 11px;
   font-weight: 450;
-  color: #AAAAAA;
+  color: var(--secondary-font-color);
   margin-top: 5%;
 }
 
@@ -342,20 +341,19 @@
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: 1px solid rgba(91, 87, 87, 0.383);
   border-bottom: none;
   background: none;
   outline: none;
   font-family: "Poppins", sans-serif;
   font-size: 12px;
   font-weight: 450;
-  color: black;
+  color: var(--primary-font-color);
   letter-spacing: 0.3px;
 
 }
 
 .focusFieldStyle {
-  border: 2px solid #00299a;
+  border: 2px solid var(--ui-scheme-color);
 }
 
 input:focus {
@@ -377,7 +375,7 @@ input:focus {
   width: 55%;
   height: 40%;
   border: none;
-  background-color: #002A9A;
+  background-color: var(--submit-btn-color);
   border-radius: 15px;
   font-family: "Poppins", sans-serif;
   font-size: 12px;
@@ -404,19 +402,19 @@ input:focus {
   font-family: "Poppins", sans-serif;
   font-size: 11px;
   font-weight: 450;
-  color: black;
+  color: var(--primary-font-color);
 }
 
-span {
+.spanText {
   font-family: "Poppins", sans-serif;
   font-size: 11px;
   font-weight: 550;
-  color: #002A9A;
+  color: var(--ui-scheme-color);
   margin-left: 2px;
   cursor: pointer;
 }
 
-span:hover {
+.spanText:hover {
   text-decoration: underline;
 }
 
@@ -426,11 +424,10 @@ span:hover {
     position: relative;
     width: 100%;
     height: 100%;
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
     display: flex;
     justify-content: center;
     align-items: center;
-
     overflow-y: scroll;
   }
 
@@ -443,7 +440,6 @@ span:hover {
     width: 85%;
     aspect-ratio: 2/3;
     border-radius: 20px;
-    background-color: white;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 12% 12% minmax(0, 1fr) 5%;
@@ -452,7 +448,6 @@ span:hover {
       "formMessageWrapper formMessageWrapper "
       "formTagContainer formTagContainer"
       "formFooterWrapper formFooterWrapper";
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     justify-content: center;
     align-items: center;
     webkit-tap-highlight-color: transparent;
@@ -462,6 +457,7 @@ span:hover {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    /* border: 1px solid orange; */
   }
 
   /* ________________________________________________ */
@@ -486,16 +482,12 @@ span:hover {
   }
 
   .formLabelDiv p {
-    font-family: "Poppins", sans-serif;
-    font-size: 18px;
-    font-weight: var(--boldest-font);
-    color: black;
+    font-size: 1.5rem;
   }
 
   .formLabelDiv::after {
     position: absolute;
     content: '';
-    background-color: #002A9A;
     width: 15%;
     height: 3px;
     border-radius: 20px;
@@ -517,7 +509,7 @@ span:hover {
 
   .messageDiv {
     width: auto;
-    max-width: 85%;
+    max-width: 90%;
     height: auto;
     display: flex;
     justify-content: space-evenly;
@@ -525,45 +517,31 @@ span:hover {
     border-radius: 6px;
     padding: 1% 4% 1% 4%;
     /* margin-top: 3%; */
+    border: 1px solid green;
+
   }
 
-  .messageDivError {
-    background-color: #FCCED1;
-  }
 
   .messageDivError p {
-    font-family: "Poppins", sans-serif;
-    font-size: 10.5px;
-    font-weight: 550;
-    color: #F3212D;
-  }
-
-  .messageDivSuccess {
-    background-color: #BAFFB4;
-
+    font-size: 0.7rem;
   }
 
   .messageDivSuccess p {
-    font-family: "Poppins", sans-serif;
-    font-size: 10.5px;
-    font-weight: 550;
-    color: #38c62b;
+    font-size: 0.7rem;
   }
 
-  /* .messageDiv p {} */
   .errorMessageIconDiv {
-    width: 20px;
     height: 100%;
+    aspect-ratio: 1/1;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: 1px solid black; */
+    /* border: 1px solid red; */
     margin-right: 5px;
   }
 
   .warningIcon {
-    font-size: 15px !;
-    color: #F3212D;
+    font-size: 1rem;
     padding: 0px;
     margin: 0px;
   }
@@ -606,7 +584,6 @@ span:hover {
   .firstNameContainer {
     width: 95%;
     height: 80%;
-    background-color: #E8EFFC;
     border-radius: 15px;
     display: grid;
     grid-template-columns: 30% 70%;
@@ -629,8 +606,6 @@ span:hover {
   .lastNameContainer {
     width: 95%;
     height: 80%;
-
-    background-color: #E8EFFC;
     border-radius: 15px;
     margin-left: 5%;
     display: grid;
@@ -653,8 +628,6 @@ span:hover {
   .emailAddressContainer {
     width: 100%;
     height: 80%;
-
-    background-color: #E8EFFC;
     border-radius: 15px;
     display: grid;
     grid-template-columns: 20% 80%;
@@ -677,8 +650,6 @@ span:hover {
   .passwordContainer {
     width: 100%;
     height: 80%;
-
-    background-color: #E8EFFC;
     border-radius: 15px;
     display: grid;
     grid-template-columns: 20% 80%;
@@ -703,7 +674,6 @@ span:hover {
   .confirmPassContainer {
     width: 100%;
     height: 80%;
-    background-color: #E8EFFC;
     border-radius: 15px;
     display: grid;
     grid-template-columns: 20% 80%;
@@ -726,8 +696,7 @@ span:hover {
   }
 
   .fieldIcon {
-    color: #002A9A;
-    font-size: 28px;
+    font-size: 1.9rem;
   }
 
   .labelDiv {
@@ -741,10 +710,7 @@ span:hover {
   }
 
   .labelDiv p {
-    font-family: "Poppins", sans-serif;
-    font-size: 11px;
-    font-weight: 450;
-    color: #AAAAAA;
+    font-size: 0.82rem;
     margin-top: 5%;
   }
 
@@ -766,21 +732,14 @@ span:hover {
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: 1px solid rgba(91, 87, 87, 0.383);
     border-bottom: none;
     background: none;
     outline: none;
-    font-family: "Poppins", sans-serif;
-    font-size: 12px;
-    font-weight: 450;
-    color: black;
+    font-size: 0.8rem;
     letter-spacing: 0.3px;
 
   }
 
-  .focusFieldStyle {
-    border: 2px solid #00299a;
-  }
 
   input:focus {
     /* border-bottom: 1px solid #002A9A; */
@@ -801,12 +760,8 @@ span:hover {
     width: 55%;
     height: 40%;
     border: none;
-    background-color: #002A9A;
     border-radius: 15px;
-    font-family: "Poppins", sans-serif;
-    font-size: 12px;
-    font-weight: 450;
-    color: white;
+    font-size: 0.8rem;
     letter-spacing: 0.5px;
     /* outline: #AED2FF; */
   }
@@ -825,18 +780,14 @@ span:hover {
   }
 
   .formFooterWrapper p {
-    font-family: "Poppins", sans-serif;
-    font-size: 11px;
-    font-weight: 450;
-    color: black;
+    font-size: 0.8rem;
+    white-space: nowrap;
+
   }
 
-  span {
-    font-family: "Poppins", sans-serif;
-    font-size: 11px;
-    font-weight: 550;
-    color: #002A9A;
-    margin-left: 2px;
+  .spanText {
+    font-size: 0.8rem;
+    margin-left: 1%;
   }
 
 }

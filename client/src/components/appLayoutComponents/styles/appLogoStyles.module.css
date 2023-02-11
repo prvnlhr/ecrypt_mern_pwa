@@ -6,6 +6,8 @@
     box-sizing: border-box;
     box-shadow: var(--applogo-box-shadow);
     border-radius: 1.3rem;
+    background-color: var(--appLogo-bg-desktop);
+    /* background-color: #141416; */
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
@@ -14,7 +16,18 @@
         aspect-ratio: 1/1;
         box-sizing: border-box;
         box-shadow: var(--applogo-box-shadow);
-        border-radius: 1.3rem;
+        border-radius: 1.1rem;
+        background-color: var(--appLogo-bg-mobile);
     }
+}
 
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+    .appLogo {
+        width: 90%;
+        aspect-ratio: 1/1;
+        box-sizing: border-box;
+        box-shadow: var(--applogo-box-shadow);
+        border-radius: 1.2rem;
+        background-color: var(--appLogo-bg-desktop);
+    }
 }

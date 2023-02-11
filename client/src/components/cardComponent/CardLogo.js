@@ -48,7 +48,7 @@ const CardLogo = ({ className, cardNo }) => {
   const cNo = cardNumber.toString();
   // console.log(cardNo, cardNumber, cNo);
   const cardType = getCardType(cNo);
-  console.log(cardType);
+  // console.log(cardType);
 
   let logo;
   // className={className}

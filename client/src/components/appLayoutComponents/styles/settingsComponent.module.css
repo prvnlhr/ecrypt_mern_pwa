@@ -7,7 +7,7 @@
     grid-template-columns: 20% 80%;
     grid-template-rows: 100%;
     grid-template-areas:
-        "profilePicSection profileFromSection";
+        "profilePicSection profileFormSection";
     box-sizing: border-box;
 }
 
@@ -64,7 +64,7 @@
 .headingDiv::after {
     content: "";
     position: absolute;
-    background-color: var(--section-heading-underline);
+    background-color: var(--ui-scheme-color);
     width: 40px;
     height: 3px;
     bottom: -8px;
@@ -237,7 +237,6 @@ label {
     align-items: center;
     background-color: #B4B3BA;
     border-radius: 50%;
-    margin-bottom: 50%;
 }
 
 .iconDivSave {
@@ -249,6 +248,7 @@ label {
     align-items: center;
     background-color: #58BF6F;
     border-radius: 50%;
+    margin-bottom: 50%;
 }
 
 .profilePicSaveIcon {
@@ -296,7 +296,7 @@ label {
 .joinedUpadateDateContainer::after {
     content: "";
     position: absolute;
-    background-color: var(--section-heading-underline);
+    background-color: var(--ui-scheme-color);
     width: 3px;
     height: 90%;
     left: -4%;
@@ -330,8 +330,8 @@ label {
     color: var(--primary-font-color);
 }
 
-.profileFromSection {
-    grid-area: profileFromSection;
+.profileFormSection {
+    grid-area: profileFormSection;
     width: 100%;
     height: 100%;
     /* border: 1px solid blue; */
@@ -340,8 +340,8 @@ label {
 
 /* ___________________________________________________________ */
 
-.profileFromSection {
-    grid-area: profileFromSection;
+.profileFormSection {
+    grid-area: profileFormSection;
     width: 100%;
     height: 100%;
     /* border: 1px solid blue; */
@@ -355,19 +355,20 @@ label {
 
 .formWrapper {
     width: 70%;
-    height: 80%;
-    /* border: 1px solid black; */
+    height: 90%;
+    /* border: 1px solid white; */
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 40% 25% 35%;
     grid-template-rows: 5% 40% 20% 35%;
+    grid-template-rows: 5% 40% 25% 28%;
     grid-template-areas:
         "formMessageWrapper"
         "profileNameWrapper"
         "profilePassWrapper"
         "profileDeleteWrapper";
     box-sizing: border-box;
-    grid-gap: 2px;
+    grid-gap: 0.5%;
 }
 
 
@@ -379,7 +380,7 @@ label {
     grid: formMessageWrapper;
     width: 100%;
     height: 100%;
-    /* border: 1px solid black; */
+    /* border: 1px solid green; */
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -397,14 +398,14 @@ label {
 }
 
 .messageDivError {
-    background-color: #FCCED1;
+    background-color: #D64339;
 }
 
 .messageDivError p {
     font-family: "Poppins", sans-serif;
     font-size: 10px;
     font-weight: 550;
-    color: #F3212D;
+    color: white;
     white-space: nowrap;
 }
 
@@ -755,37 +756,36 @@ label {
     /* border: 1px solid red; */
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 20% 60% 20%;
+    grid-template-rows: 30% 50% 20%;
     grid-template-areas:
         "deleteHeadingContainer"
         "deleteMsgContainer"
         "deleteBtnContainer";
     box-sizing: border-box;
     color: var(--box-bg-primary);
-
 }
 
 .deleteHeadingContainer {
     grid-area: deleteHeadingContainer;
     width: 100%;
     height: 100%;
-    /* border: 1px solid black; */
+    /* border: 1px solid red; */
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    padding-bottom: 1%;
+    padding-bottom: 0%;
 }
 
 .deleteMsgContainer {
     grid-area: deleteMsgContainer;
     width: 100%;
     height: 90%;
-    /* border: 1px solid black; */
+    /* border: 1px solid green; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 2%;
+    margin-top: 1%;
 }
 
 .text1Container {
@@ -855,7 +855,7 @@ label {
     padding-right: 3%;
 }
 
-.text1Icon {
+.warningIcon {
     font-size: 20px;
     color: #C5565D;
 }
@@ -870,21 +870,21 @@ label {
     grid-area: deleteBtnContainer;
     width: 100%;
     height: 100%;
-    /* border: 1px solid black; */
+    /* border: 1px solid green; */
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: flex-end;
 }
 
 .focusFieldStyle {
-    border: 2px solid var(--section-heading-underline);
+    border: 2px solid var(--ui-scheme-color);
 }
 
 .formSectionHeadingDiv {
     position: relative;
     width: 80%;
     width: auto;
-    height: 90%;
+    height: 100%;
     /* border: 1px solid blue; */
     display: flex;
     justify-content: flex-start;
@@ -893,15 +893,15 @@ label {
 
 .formSectionHeadingDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 17px;
-    font-weight: var(--boldest-font);
+    font-size: 1.1rem;
+    font-weight: var(--bolder-font);
     color: var(--primary-font-color);
 }
 
 .formSectionHeadingDiv::after {
     content: "";
     position: absolute;
-    background-color: var(--section-heading-underline);
+    background-color: var(--ui-scheme-color);
     width: 40px;
     height: 3px;
     bottom: 0px;
@@ -970,7 +970,7 @@ label {
         grid-template-rows: 20% 80%;
         grid-template-areas:
             "profilePicSection"
-            "profileFromSection";
+            "profileFormSection";
         box-sizing: border-box;
 
     }
@@ -1045,11 +1045,11 @@ label {
 
 
     .backBtnIcon {
-        font-size: 32px;
+        font-size: 2rem;
     }
 
     .headingDiv p {
-        font-size: 22px;
+        font-size: 1.2rem;
         font-weight: var(--bolder-font);
         margin: 0px;
     }
@@ -1183,7 +1183,6 @@ label {
         justify-content: center;
         align-items: center;
         border-radius: 50%;
-        margin-bottom: 50%;
     }
 
     .iconDivSave {
@@ -1194,18 +1193,19 @@ label {
         justify-content: center;
         align-items: center;
         border-radius: 50%;
+        margin-bottom: 50%;
     }
 
     .profilePicSaveIcon {
-        font-size: 13px;
+        font-size: 0.8rem;
     }
 
     .profilePicCancelIcon {
-        font-size: 13px;
+        font-size: 0.8rem;
     }
 
     .profilePicEditIcon {
-        font-size: 13px;
+        font-size: 0.8rem;
     }
 
     /* _____________________________________________________________________ */
@@ -1252,7 +1252,7 @@ label {
     }
 
     .labelText {
-        font-size: 14px;
+        font-size: 0.8rem;
         font-weight: var(--bolder-font);
     }
 
@@ -1268,12 +1268,12 @@ label {
     }
 
     .dateText {
-        font-size: 13px;
+        font-size: 0.7rem;
         font-weight: var(--bolder-font);
     }
 
-    .profileFromSection {
-        grid-area: profileFromSection;
+    .profileFormSection {
+        grid-area: profileFormSection;
         width: 100%;
         height: 100%;
         /* border: 1px solid blue; */
@@ -1282,8 +1282,8 @@ label {
 
     /* ___________________________________ */
 
-    .profileFromSection {
-        grid-area: profileFromSection;
+    .profileFormSection {
+        grid-area: profileFormSection;
         width: 100%;
         height: 100%;
         /* border: 1px solid blue; */
@@ -1345,8 +1345,6 @@ label {
         text-overflow: ellipsis;
     }
 
-
-
     .messageDivSuccess p {
         font-size: 0.65rem;
     }
@@ -1362,7 +1360,7 @@ label {
     }
 
     .warningIcon {
-        font-size: 15px !;
+        font-size: 0.9rem;
         padding: 0px;
         margin: 0px;
     }
@@ -1410,8 +1408,8 @@ label {
     }
 
     .formSectionHeadingDiv p {
-        font-size: 17px;
-        font-weight: var(--boldest-font);
+        font-size: 1.1rem;
+        font-weight: var(--bolder-font);
     }
 
     .formSectionHeadingDiv::after {
@@ -1427,7 +1425,6 @@ label {
     .formBtnSave {
         width: auto;
         height: auto;
-        height: 30px;
         border-radius: 5px;
         border: none;
         outline: none;
@@ -1484,6 +1481,12 @@ label {
         /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
     }
 
+    .btnText {
+        font-family: "Poppins", sans-serif;
+        font-size: 0.65rem;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+    }
 
     /* ______________________________________________________________ */
 
@@ -1516,7 +1519,7 @@ label {
     }
 
     .labelDiv p {
-        font-size: 13px;
+        font-size: 0.75rem;
         font-weight: var(--bolder-font);
         color: var(--secondary-font-color);
     }
@@ -1541,7 +1544,7 @@ label {
         /* border-bottom: 1px solid rgba(0, 0, 0, 0.16); */
         border-bottom: none;
         background: none;
-        font-size: 13px;
+        font-size: 0.7rem;
         font-weight: var(--bolder-font);
         color: var(--primary-font-color);
         background: none;
@@ -1571,7 +1574,6 @@ label {
         height: 80%;
         /* border: 1px solid black; */
         border-radius: 10px;
-
     }
 
     .profileEmailNameContainer {
@@ -1742,7 +1744,7 @@ label {
     }
 
     .text1Container p {
-        font-size: 15px;
+        font-size: 1rem;
         font-weight: var(--bolder-font);
         letter-spacing: 0px;
     }
@@ -1760,8 +1762,8 @@ label {
 
     .text2Container p {
         width: 85%;
-        font-size: 12px;
-        font-weight: var(--bolder-font);
+        font-size: 0.75rem;
+        font-weight: var(--bold-font);
         letter-spacing: 0px;
     }
 
@@ -1776,8 +1778,8 @@ label {
 
     .text3Container p {
         width: 85%;
-        font-size: 12px;
-        font-weight: var(--bolder-font);
+        font-size: 0.75rem;
+        font-weight: var(--bold-font);
         letter-spacing: 0px;
 
     }
@@ -1794,14 +1796,13 @@ label {
         padding-right: 3%;
     }
 
-    .text1Icon {
-        font-size: 20px;
+    .warningIcon {
+        font-size: 1.1rem;
     }
 
     .dotIcon {
-        font-size: 20px;
+        font-size: 1rem;
     }
-
 
     .deleteBtnContainer {
         grid-area: deleteBtnContainer;
@@ -1821,6 +1822,101 @@ label {
 
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+    .backBtnIcon {
+        font-size: 2.5rem;
+        color: var(--primary-font-color);
+    }
+
+    .headingDiv p {
+        font-family: "Poppins", sans-serif;
+        font-size: 1.5rem;
+        font-weight: var(--bolder-font);
+        color: var(--primary-font-color);
+    }
+
+    .profileFirstNameDiv {
+        border-radius: 1rem;
+    }
+
+    .profileLastNameDiv {
+        border-radius: 1rem;
+    }
+
+    .profileEmailNameDiv {
+        border-radius: 1rem;
+    }
+
+    .passOldInputContainer {
+        border-radius: 0.8rem;
+    }
+
+    .passNewInputContainer {
+        border-radius: 0.8rem;
+    }
+
+    /* _______________________________________________ */
+
+    .joinedUpdateDateWrapper {
+        position: relative;
+        grid-area: joinedUpdateDateWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid red; */
+        display: flex;
+        justify-content: flex-end;
+        /* justify-content: center; */
+        align-items: flex-start;
+    }
+
+    .joinedUpadateDateContainer {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 12%;
+        /* border: 1px solid red; */
+        padding: 0px;
+    }
+
+    .joinedUpadateDateContainer::after {
+        content: "";
+        position: absolute;
+        width: 2.5px;
+        height: 90%;
+        left: -4%;
+        top: 0px;
+        border-radius: 10px;
+    }
+
+    .joinedDateDiv {
+        width: 100%;
+        height: 50%;
+        /* border: 1px solid black; */
+        padding-left: 5%;
+    }
+
+    .updatedDateDiv {
+        width: 100%;
+        height: 50%;
+        padding-left: 5%;
+        /* border: 1px solid black; */
+    }
+
+    .labelText {
+        font-family: "Poppins", sans-serif;
+        font-size: 1rem;
+        font-weight: var(--bolder-font);
+        color: var(--secondary-font-color);
+    }
+
+    .dateText {
+        font-family: "Poppins", sans-serif;
+        font-size: 0.9rem;
+        font-weight: var(--bolder-font);
+        color: var(--primary-font-color);
+    }
 
     /* _________________________________________________ */
     .profilePicWrapper {
@@ -1828,9 +1924,8 @@ label {
         position: relative;
         width: 100%;
         height: 100%;
-        /* border: 1px solid black; */
+        /* border: 1px solid red; */
     }
-
 
     .profilePicformTag {
         position: relative;
@@ -1916,31 +2011,30 @@ label {
         visibility: hidden;
         width: 0px;
         /* background: #071a52; */
-        font-family: "Poppins", sans-serif;
         /* color: var(--primary-font-color); */
-        font-size: 13px;
         border-radius: 5px;
     }
 
     .profilePicformTagEditMode {
-        border: 3px solid #00299a86;
+        border: 3px solid #9DC1FA;
+        box-sizing: border-box;
     }
 
     .profilePicEditBtnContainer {
         width: 20%;
         height: 100%;
-        /* border: 1px solid blue; */
+        /* border: 1px solid red; */
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         align-items: center;
         box-sizing: border-box;
-        padding-bottom: 25%;
+        padding-bottom: 30%;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
     .iconDivEdit {
-        width: 70%;
+        width: 85%;
         aspect-ratio: 1/1;
         /* border: 1px solid black; */
         display: flex;
@@ -1950,7 +2044,17 @@ label {
     }
 
     .iconDivCancel {
-        width: 70%;
+        width: 85%;
+        aspect-ratio: 1/1;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+    }
+
+    .iconDivSave {
+        width: 85%;
         aspect-ratio: 1/1;
         /* border: 1px solid black; */
         display: flex;
@@ -1958,16 +2062,6 @@ label {
         align-items: center;
         border-radius: 50%;
         margin-bottom: 50%;
-    }
-
-    .iconDivSave {
-        width: 70%;
-        aspect-ratio: 1/1;
-        /* border: 1px solid black; */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50%;
     }
 
     .profilePicSaveIcon {
@@ -1980,6 +2074,147 @@ label {
 
     .profilePicEditIcon {
         font-size: 13px;
+    }
+
+    .formSectionHeadingDiv p {
+        font-size: 1.5rem;
+        font-weight: var(--bolder-font);
+    }
+
+    .labelDiv p {
+        font-size: 1.1rem;
+        font-weight: var(--bolder-font);
+        color: var(--secondary-font-color);
+    }
+
+    .inputDiv input {
+        width: 80%;
+        height: 100%;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        /* border-bottom: 1px solid rgba(0, 0, 0, 0.16); */
+        border-bottom: none;
+        background: none;
+        font-size: 1.1rem;
+        font-weight: var(--bolder-font);
+        color: var(--primary-font-color);
+        background: none;
+    }
+
+    .formBtnSave {
+        width: auto;
+        height: auto;
+        border-radius: 0.6rem;
+        border: none;
+        outline: none;
+        padding-left: 4%;
+        padding-right: 4%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        margin: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .formBtnCancel {
+        width: auto;
+        height: auto;
+        border-radius: 0.6rem;
+        border: none;
+        outline: none;
+        padding-left: 4%;
+        padding-right: 4%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        margin: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-right: 5%;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .formBtnEdit {
+        width: auto;
+        height: auto;
+        border-radius: 0.6rem;
+        border: none;
+        outline: none;
+        padding-left: 4%;
+        padding-right: 4%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        margin: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
+    }
+
+    .btnText {
+        font-family: "Poppins", sans-serif;
+        font-size: 0.95rem;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+    }
+
+    .text1Container {
+        width: 100%;
+        height: 33%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .text1Container p {
+        font-size: 1.2rem;
+        font-weight: var(--bolder-font);
+        letter-spacing: 0px;
+    }
+
+    .text2Container {
+        width: 100%;
+        height: 33%;
+        /* border: 1px solid black; */
+        word-wrap: break-word;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .text2Container p {
+        width: 85%;
+        font-size: 1rem;
+        font-weight: var(--bold-font);
+        letter-spacing: 0px;
+    }
+
+    .text3Container {
+        width: 100%;
+        height: 33%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .text3Container p {
+        width: 85%;
+        font-size: 1rem;
+        font-weight: var(--bold-font);
+        letter-spacing: 0px;
+
     }
 
     /* _____________________________________________________________________ */

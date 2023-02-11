@@ -16,6 +16,7 @@
     padding-right: 8%;
     overflow-y: scroll !important;
     margin-top: 5%;
+    /* display: none; */
 }
 
 
@@ -35,3 +36,5 @@
     background-color: var(--ui-scheme-color);
     border-radius: 10px;
 }
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {}

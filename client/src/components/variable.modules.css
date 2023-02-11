@@ -21,6 +21,9 @@
   --logo-div-bg: #F3F5F9;
   --category-box-bg: #A6CBFB;
 
+  --appLogo-bg-desktop: white;
+  --appLogo-bg-mobile: white;
+
   /* -> App ui bg */
   --app-main-bg: #151B3B;
   --app-main-bg: #2F3141;
@@ -47,7 +50,8 @@ background: linear-gradient(179.99deg, #AEC3CE 8.01%, rgba(177, 197, 208, 0.9728
   --dashboard-activity-date-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   --dashboard-activity-task-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   --dashboard-activity-type-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  --logoComp-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  --logoComp-logo-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  --logoComp-wrapper-box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   --applogo-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 
 }
@@ -83,6 +87,9 @@ background: linear-gradient(179.99deg, #AEC3CE 8.01%, rgba(177, 197, 208, 0.9728
   --logo-div-bg: #D6D6D6;
   --category-box-bg: #1C1F2C;
 
+  --appLogo-bg-desktop: #141416;
+  --appLogo-bg-mobile: #23262F;
+
 
 
   /* -> App ui bg */
@@ -110,6 +117,7 @@ background: linear-gradient(179.99deg, #AEC3CE 8.01%, rgba(177, 197, 208, 0.9728
   --dashboard-activity-date-shadow: none;
   --dashboard-activity-task-shadow: none;
   --dashboard-activity-type-shadow: none;
-  --logoComp-box-shadow: none;
+  --logoComp-logo-box-shadow: none;
+  --logoComp-wrapper-box-shadow: none;
   --applogo-box-shadow: none;
 }

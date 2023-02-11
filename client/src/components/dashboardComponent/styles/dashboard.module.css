@@ -579,8 +579,8 @@
   .dashboardComponent {
     position: relative;
     width: 100%;
-    height: 95%;
-    /* border: 1px solid black; */
+    height: 98%;
+    /* border: 1px solid greenyellow; */
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-columns: 45% 55%;
@@ -588,7 +588,7 @@
     grid-template-areas:
       "overviewWrapper overviewWrapper"
       "recentlyAddedWrapper recentActivitesWrapper";
-    margin-top: 2%;
+    margin-top: 1%;
   }
 
   /* _________________________________________________________ */
@@ -596,7 +596,7 @@
   .overviewWrapper {
     position: relative;
     grid-area: overviewWrapper;
-    width: 99%;
+    width: 100%;
     height: 100%;
     /* border: 1px solid orange; */
   }
@@ -750,7 +750,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
   }
 
   .recentActivitesHeadingContianer {
@@ -759,23 +758,25 @@
     height: 10%;
     /* border: 1px solid blue; */
     /* background-color: grey; */
+    /* border: 1px solid yellow; */
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
   }
-
 
   .recentActivitesContentContianer {
     position: relative;
     width: 100%;
     height: 90%;
     min-height: 90%;
-    /* border: 1px solid orangered; */
+    /* border: 1px solid green; */
     /* background-color: green; */
     display: flex;
     justify-content: center;
     align-items: flex-start;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0px;
   }
 
 
@@ -784,41 +785,41 @@
     grid-area: recentlyAddedWrapper;
     width: 100%;
     height: 100%;
-    /* border: 1px solid black; */
+    /* border: 1px solid red; */
   }
 
   .recentlyAddedHeadingContainer {
     position: relative;
     width: 100%;
     height: 10%;
-    /* border: 1px solid blue; */
+    /* border: 1px solid yellow; */
     /* background-color: orange; */
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    margin: 0px;
   }
 
   .recentlyAddedContentContainer {
     position: relative;
-    /* width: 100%;
-    height: 90%;
-    min-height: 90%; */
     width: 100%;
     height: 90%;
     min-height: 90%;
     /* border: 1px solid orange !important; */
+    /* border: 1px solid green; */
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-
+    margin: 0;
+    padding: 0px;
   }
 
   .wrapperHeadingDiv {
     position: relative;
     width: 100%;
     height: auto;
-    /* border: 1px solid black; */
+    /* border: 1px solid red; */
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -849,7 +850,7 @@
   .wrapperHeadingDiv p::after {
     content: "";
     position: absolute;
-    background-color: var(--section-heading-underline);
+    background-color: var(--ui-scheme-color);
     width: 40px;
     height: 3px;
     bottom: -8px;
@@ -861,13 +862,12 @@
   .dashboardComponent::-webkit-scrollbar {
     background-color: rgba(255, 255, 255, 0);
     height: 4px;
-    width: 5px;
+    width: 2px;
   }
 
   .dashboardComponent::-webkit-scrollbar-track {
     background-color: rgb(231, 228, 228);
     background-color: rgba(231, 228, 228, 0.062);
-
     width: 2px;
   }
 

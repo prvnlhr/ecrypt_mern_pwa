@@ -90,7 +90,6 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
     <div className={headerStyles.headerBar}>
       <div className={headerStyles.logoWrapper} >
         <div className={headerStyles.logoDiv}>
-
           <AppLogo
             unique_id={'79kk09as1q'}
           />

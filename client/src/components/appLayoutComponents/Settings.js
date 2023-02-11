@@ -295,11 +295,11 @@ const Settings = () => {
                         <div className={styles.profilePicEditBtnContainer} >
                             {formFieldEditable('PROFILEPIC') ?
                                 <>
-                                    <div className={styles.iconDivCancel} onClick={handleCancelBtnClicked} >
-                                        <Icon className={styles.profilePicSaveIcon} icon="ph:x-bold" />
-                                    </div>
                                     <div className={styles.iconDivSave} onClick={confirmEditProfilePic} >
                                         <Icon className={styles.profilePicCancelIcon} icon="charm:tick-double" />
+                                    </div>
+                                    <div className={styles.iconDivCancel} onClick={handleCancelBtnClicked} >
+                                        <Icon className={styles.profilePicSaveIcon} icon="ph:x-bold" />
                                     </div>
                                 </>
                                 :
@@ -328,7 +328,7 @@ const Settings = () => {
                 </div>
             </div>
 
-            <div className={styles.profileFromSection} >
+            <div className={styles.profileFormSection} >
                 <div className={styles.formWrapper}>
                     <div className={styles.formMessageWrapper} >
                         {(userState.responseMessage || message) &&
@@ -484,7 +484,9 @@ const Settings = () => {
 
                             <div className={styles.text1Container} >
                                 <div className={styles.textIconDiv} >
-                                    <Icon className={styles.text1Icon} icon="icon-park-outline:caution" />
+                                    {/* <Icon className={styles.text1Icon} icon="icon-park-outline:caution" /> */}
+                                    <Icon className={styles.warningIcon} icon="ph:warning" />
+
                                 </div>
                                 <p>Delete account permanently</p>
                             </div>

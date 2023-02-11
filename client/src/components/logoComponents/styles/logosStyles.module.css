@@ -46,7 +46,7 @@
     user-select: none;
     overflow: hidden;
     /* border: 1px solid red; */
-    box-shadow: var(--logoComp-box-shadow);
+    box-shadow: var(--logoComp-logo-box-shadow);
 }
 
 .logoDiv {
@@ -83,4 +83,20 @@
     font-size: 0.60rem;
     font-weight: var(--bold-font);
     color: var(--primary-font-color);
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+    .logoLabelContainer p {
+        font-size: 0.8rem;
+        font-weight: var(--bold-font);
+        color: var(--primary-font-color);
+    }
+
+    .logoWrapperActive {
+        border-radius: 1rem;
+    }
+
+    .logoContainer {
+        border-radius: 1rem;
+    }
 }

@@ -164,13 +164,13 @@
         align-items: center;
     }
 
-    .appLogo {
+    .applogoDiv {
         border-radius: 15px;
-        width: 80%;
+        width: 100%;
         height: unset;
         aspect-ratio: 1/1 !important;
         box-sizing: border-box;
-        /* border: 1px solid black; */
+        /* border: 1px solid red; */
     }
 
     .menuSection {
