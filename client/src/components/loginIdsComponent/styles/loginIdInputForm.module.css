@@ -86,14 +86,19 @@
 }
 
 .backBtnDiv {
-    /* width: 40%; */
-    height: 50%;
+    width: auto;
+    height: 22px;
+    height: 25px;
     /* border: 1px solid black; */
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     padding-left: 0%;
-    padding-top: 0%;
+    padding-right: 5%;
+    border-radius: 5px;
+    margin-right: 10px;
+    /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
+    cursor: pointer;
 }
 
 .crudBtnContainer {
@@ -102,14 +107,14 @@
     /* border: 1px solid black; */
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    align-items: flex-start;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .saveBtnDiv {
     width: auto;
     height: 22px;
     height: 25px;
-
     /* border: 1px solid black; */
     background-color: #58BF6F;
     /* background-color: white; */
@@ -149,25 +154,27 @@
 
 .logoTitleContainer {
     width: 100%;
-    height: 70%;
-    /* border: 1px solid black; */
+    height: 85%;
+    /* border: 1px solid red; */
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    padding-left: 2%;
-
+    padding-left: 0%;
 }
 
 .logoContainer {
-    /* width: 10%; */
+    /* width: auto; */
+    /* width: 30%; */
     height: 100%;
-    /* border: 1px solid black; */
+    aspect-ratio: 1/1;
+    /* border: 1px solid orange; */
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    /* border: 1px solid green; */
+    margin-right: 2%;
 }
-
 
 .logoDiv {
     /* width: 80%; */
@@ -186,7 +193,7 @@
 }
 
 .titleContainer {
-    width: 70%;
+    width: 100%;
     height: 100%;
     /* border: 1px solid red; */
     display: flex;
@@ -194,6 +201,7 @@
     align-items: flex-start;
     flex-direction: column;
     padding-left: 5%;
+    /* border: 1px solid red; */
 }
 
 .titleLabelDiv {
@@ -207,23 +215,22 @@
 
 .titleLabelDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
+    font-size: 0.85rem;
     font-weight: var(--bolder-font);
-    color: #7E8DA4;
-
+    color: var(--secondary-font-color);
 }
 
 .titleInputDiv {
-    width: 80%;
+    width: 100%;
     height: 80%;
-    /* border: 1px solid black; */
+    /* border: 1px solid blue; */
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
 }
 
 .titleInputDiv input {
-    width: 80%;
+    width: 90%;
     height: 100%;
     border-bottom: none;
     border-top: none;
@@ -232,10 +239,9 @@
     outline: none;
     background: transparent;
     font-family: "Poppins", sans-serif;
-    font-size: 20px;
-    font-weight: var(--bolder-font);
+    font-size: 1.2rem;
+    font-weight: var(--bold-font);
     color: var(--primary-font-color);
-
 }
 
 /* .titleLabelText {
@@ -254,7 +260,6 @@
     align-items: center;
     /* border: 1px solid rgb(182, 69, 88); */
     padding-left: 0%;
-
 }
 
 .categoryContainer {
@@ -281,8 +286,8 @@
 
 .categoryLabelContainer p {
     font-family: "Poppins", sans-serif;
-    font-size: 18px;
-    font-weight: var(--boldest-font);
+    font-size: 1.2rem;
+    font-weight: var(--bolder-font);
     color: var(--primary-font-color);
 }
 
@@ -298,11 +303,10 @@
 
 .categoryInput {
     font-family: "Poppins", sans-serif;
-    font-size: 15px;
-    font-weight: var(--bolder-font);
+    font-size: 0.9rem;
+    font-weight: var(--bold-font);
     color: var(--ui-scheme-color);
     background-color: var(--category-box-bg);
-
     border: none;
     outline: none !important;
     height: 75%;
@@ -332,7 +336,7 @@
 
 .popUpIcon {
     font-size: 20px;
-
+    color: var(--primary-font-color);
 }
 
 .categoryInput:focus {
@@ -340,11 +344,12 @@
 }
 
 .categoryInputPopDiv {
-    top: 105%;
+    top: 115%;
     position: absolute;
     width: 150px;
-    height: 200px;
-    background-color: white;
+    right: 10%;
+    height: auto;
+    background-color: var(--box-bg-tertiary-drk);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -353,22 +358,24 @@
     padding-bottom: 5%;
     padding-left: 10%;
     border-radius: 5px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-
+    box-shadow: var(--applogo-box-shadow);
 }
+
 
 .inputPopUpText {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    color: black;
+    font-size: 0.75rem;
+    font-weight: var(--bold-font);
+    color: var(--primary-font-color);
     margin: 5px 0px 0px 0px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    /* border: 1px solid black; */
-    padding-left: 5%;
+    border-bottom: 1px solid var(--box-bg-tertiary);
+    padding-left: 8%;
     padding-right: 5%;
+    width: 90%;
+    letter-spacing: 0.3px;
 }
 
 .inputPopUpText:hover {
@@ -387,7 +394,6 @@
     /* border: 1px solid purple; */
     padding-left: 0%;
 }
-
 
 .appWebSiteContainer {
     width: 100%;
@@ -432,7 +438,7 @@
 
 .appWebsiteLabelDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 16px;
+    font-size: 0.85rem;
     font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
@@ -442,6 +448,9 @@
     width: 100%;
     height: 100%;
     /* border: 1px solid black; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .appWebsiteInputDiv input {
@@ -454,8 +463,8 @@
     outline: none;
     background: transparent;
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: var(--bolder-font);
+    font-size: 0.8rem;
+    font-weight: var(--bold-font);
     color: var(--primary-font-color);
 }
 
@@ -517,9 +526,9 @@
 
 .usernameLabelDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
+    font-size: 0.8rem;
     font-weight: var(--bolder-font);
-    color: #7E8DA4;
+    color: var(--secondary-font-color);
 }
 
 .usernameInputDiv {
@@ -542,17 +551,11 @@
     outline: none;
     background: transparent;
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: var(--bolder-font);
+    font-size: 0.8rem;
+    font-weight: var(--bold-font);
     color: var(--primary-font-color);
 }
 
-.usernameInputDiv p {
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: var(--bolder-font);
-
-}
 
 .passwordWrapper {
     grid-area: passwordWrapper;
@@ -611,9 +614,9 @@
 
 .passwordLabelDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
+    font-size: 0.8rem;
     font-weight: var(--bolder-font);
-    color: #7E8DA4;
+    color: var(--secondary-font-color);
 }
 
 .passwordInputDiv {
@@ -636,16 +639,9 @@
     outline: none;
     background: transparent;
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: var(--bolder-font);
+    font-size: 0.8rem;
+    font-weight: var(--bold-font);
     color: var(--primary-font-color);
-
-}
-
-.passwordInputDiv p {
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: var(--bolder-font);
 }
 
 .focusFieldStyle {
@@ -724,33 +720,32 @@
     }
 
     .backBtnContainer {
-        width: 50%;
-        height: 100%;
-        /* border: 1px solid black; */
         display: flex;
         justify-content: flex-start;
         align-items: center;
         padding-left: 5%;
         padding-top: 0%;
+        /* border: 1px solid black; */
     }
 
     .backBtnDiv {
-        width: 50%;
-        height: 50%;
-        /* border: 1px solid black; */
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
+        height: 55%;
+
     }
-
-
 
     .crudBtnContainer {
         width: 50%;
         height: 100%;
         /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
     }
 
+    .saveBtnDiv {
+        width: auto;
+        height: 55%;
+    }
 
     .logoTitleWrapper {
         grid-area: logoTitleWrapper;
@@ -766,7 +761,7 @@
     .logoTitleContainer {
         width: 90%;
         height: 100%;
-        /* border: 1px solid black; */
+        /* border: 1px solid red; */
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -774,24 +769,28 @@
     }
 
     .logoContainer {
-        width: 30%;
+        /* width: auto; */
+        /* width: 30%; */
         height: 100%;
-        /* border: 1px solid black; */
+        aspect-ratio: 1/1;
+        /* border: 1px solid orange; */
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
-    }
+        /* border: 1px solid green; */
+        margin-right: 2%;
 
+    }
 
     .logoDiv {
         /* width: 80%; */
         aspect-ratio: 1/1;
-        height: 80%;
-        /* border: 1px solid black; */
+        height: 90%;
         border-radius: 20px;
         display: flex;
         justify-content: center;
         align-items: center;
+        border: 3px solid #a8ccf9b5;
     }
 
     .logoIcon {
@@ -800,7 +799,7 @@
     }
 
     .titleContainer {
-        width: 70%;
+        width: 100%;
         height: 100%;
         /* border: 1px solid red; */
         display: flex;
@@ -820,26 +819,20 @@
     }
 
     .titleLabelDiv p {
-        font-family: "Poppins", sans-serif;
-        font-size: 15px;
-        font-weight: var(--bolder-font);
-        color: #7E8DA4;
-
+        font-size: 1rem;
     }
 
     .titleInputDiv {
-        width: 80%;
-        height: 80%;
-        /* border: 1px solid black; */
+        width: 90%;
+        height: 100%;
+        /* border: 1px solid blue; */
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
     }
 
     .titleInputDiv p {
-        font-family: "Poppins", sans-serif;
-        font-size: 20px;
-        font-weight: var(--boldest-font);
+        font-size: 1.5rem;
     }
 
     .categoryWrapper {
@@ -876,9 +869,7 @@
     }
 
     .categoryLabelContainer p {
-        font-family: "Poppins", sans-serif;
-        font-size: 18px;
-        font-weight: var(--boldest-font);
+        font-size: 1.2rem;
         margin: 0px;
         padding: 0px;
     }
@@ -894,9 +885,7 @@
     }
 
     .categoryInput {
-        font-family: "Poppins", sans-serif;
-        font-size: 15px;
-        font-weight: var(--boldest-font);
+        font-size: 1.1rem;
         outline: none !important;
         height: 80%;
         width: 85%;
@@ -927,25 +916,22 @@
     .categoryInputPopDiv {
         top: 105%;
         position: absolute;
-        width: 150px;
-        height: 200px;
-        border: unset;
+        width: 170px;
+        height: auto;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
         padding-top: 5%;
-        padding-bottom: 5%;
+        padding-bottom: 8%;
         padding-left: 10%;
         border-radius: 5px;
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-
     }
 
     .inputPopUpText {
         font-family: "Poppins", sans-serif;
-        font-size: 15px;
-        font-weight: var(--bolder-font);
+        font-size: 1rem;
+        /* font-weight: var(--bolder-font); */
         margin: 5% 0px 0px 0px;
         display: flex;
         justify-content: flex-start;
@@ -953,7 +939,7 @@
     }
 
     .inputPopUpText:hover {
-        background-color: red;
+        /* background-color: red; */
         width: 80%;
     }
 
@@ -1009,9 +995,7 @@
     }
 
     .appWebsiteLabelDiv p {
-        font-family: "Poppins", sans-serif;
-        font-size: 16px;
-        font-weight: var(--bolder-font);
+        font-size: 1rem;
     }
 
     .appWebsiteInputDiv {
@@ -1030,9 +1014,8 @@
         border-right: none;
         outline: none;
         background: transparent;
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: var(--bolder-font);
+        font-size: 1rem;
+
     }
 
     .usernameWrapper {
@@ -1089,10 +1072,7 @@
     }
 
     .usernameLabelDiv p {
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: var(--bolder-font);
-        color: #7E8DA4;
+        font-size: 0.9rem;
     }
 
     .usernameInputDiv {
@@ -1108,17 +1088,8 @@
 
 
     .usernameInputDiv input {
-        width: 80%;
-        height: 100%;
-        border-bottom: none;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        outline: none;
-        background: transparent;
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: var(--bolder-font);
+        font-size: 0.9rem;
+
     }
 
 
@@ -1177,10 +1148,7 @@
     }
 
     .passwordLabelDiv p {
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: var(--bolder-font);
-        color: #7E8DA4;
+        font-size: 0.9rem;
     }
 
     .passwordInputDiv {
@@ -1194,17 +1162,7 @@
     }
 
     .passwordInputDiv input {
-        width: 80%;
-        height: 100%;
-        border-bottom: none;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        outline: none;
-        background: transparent;
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
-        font-weight: var(--bolder-font);
+        font-size: 0.9rem;
     }
 
 

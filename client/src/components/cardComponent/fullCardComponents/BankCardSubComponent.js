@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styles from "../styles/bankCardSubComponent.module.css"
+import bankCardstyles from "../styles/bankCardSubComponent.module.css"
 
 import CardLogo from "../CardLogo"
 import { Icon } from '@iconify/react';
@@ -11,7 +12,7 @@ const BankCardSubComponent = ({ fullContentCardData, setFullContentCardData, edi
     useEffect(() => {
         if (fullContentCardData.category === 'Bank') {
             setVenderLogo(
-                < CardLogo cardNo={fullContentCardData.cardNumber} />
+                <CardLogo className={bankCardstyles.cardVenderLogo} cardNo={fullContentCardData.cardNumber} />
             )
         }
     }, [fullContentCardData])
@@ -51,7 +52,7 @@ const BankCardSubComponent = ({ fullContentCardData, setFullContentCardData, edi
                 </div>
             </div>
             <div className={styles.cardNumberWrapper}>
-                <div className={`${styles.cardNumerContainer}  ${(currFocusField === 4 && editMode) && styles.focusFieldStyle} ` }>
+                <div className={`${styles.cardNumerContainer}  ${(currFocusField === 4 && editMode) && styles.focusFieldStyle} `}>
                     <div className={styles.cardNumberIconDiv}>
                         <Icon className={styles.cardNumIcon} icon="vaadin:password" />
                     </div>
@@ -75,7 +76,7 @@ const BankCardSubComponent = ({ fullContentCardData, setFullContentCardData, edi
                 </div>
             </div>
             <div className={styles.expiryDateWrapper}>
-                <div className={`${styles.expiryDateContainer}  ${(currFocusField === 5 && editMode) && styles.focusFieldStyle} ` }>
+                <div className={`${styles.expiryDateContainer}  ${(currFocusField === 5 && editMode) && styles.focusFieldStyle} `}>
                     <div className={styles.expiryIconDiv} >
                         <Icon
                             className={styles.expiryDateIcon}
@@ -91,13 +92,12 @@ const BankCardSubComponent = ({ fullContentCardData, setFullContentCardData, edi
                             onChange={handleInputValueChange}
                             name={"expiry"}
                             onFocus={() => onFocus(5)}
-
                             value={fullContentCardData.expiry} />
                     </div>
                 </div>
             </div>
             <div className={styles.cvvNumberWrapper}>
-                <div className={`${styles.cvvNumberContainer} ${(currFocusField === 6 && editMode) && styles.focusFieldStyle} ` }>
+                <div className={`${styles.cvvNumberContainer} ${(currFocusField === 6 && editMode) && styles.focusFieldStyle} `}>
                     <div className={styles.cvvNumberIconDiv} >
                         <Icon
                             className={styles.cvvIcon}

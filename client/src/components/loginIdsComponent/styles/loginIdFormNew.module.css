@@ -99,6 +99,7 @@
   border-bottom: 1px solid #1072f1;
   /* border: 1px solid #1072f1; */
 }
+
 .HeadingText {
   font-family: "Quicksand", sans-serif;
   /* text-transform: uppercase; */
@@ -134,6 +135,7 @@
   /* align-items: center; */
   border-radius: 5px;
 }
+
 .passwordWrapper {
   grid-area: passwordWrapper;
   width: 100%;
@@ -157,6 +159,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .buttonWrapper button {
   width: 80%;
   height: 32px;
@@ -170,6 +173,7 @@
   cursor: pointer;
   /* outline: 2px double slategray; */
 }
+
 button p {
   font-family: "Quicksand", sans-serif;
   /* text-transform: uppercase; */
@@ -179,6 +183,7 @@ button p {
   margin: 0px 0px 0px 0px;
   letter-spacing: 0.3px;
 }
+
 .labelDiv {
   height: 40%;
   width: 100%;
@@ -192,6 +197,7 @@ button p {
   box-sizing: border-box;
   /* padding-left: 5%; */
 }
+
 .labelText {
   font-family: "Quicksand", sans-serif;
   text-transform: capitalize;
@@ -202,6 +208,7 @@ button p {
   margin: 0px 0px 0px 2px;
   letter-spacing: 0.3px;
 }
+
 .inputDiv {
   width: 100%;
   height: 60%;
@@ -214,6 +221,7 @@ button p {
   box-sizing: border-box;
   /* padding-left: 5%; */
 }
+
 .inputField {
   display: flex;
   /* flex-direction: row; */
@@ -238,10 +246,12 @@ button p {
   outline: none;
   background: transparent;
 }
+
 .inputField::placeholder {
   font-family: "Quicksand", sans-serif;
   color: var(--form-input-placeholder-color);
 }
+
 .inputField:focus {
   /* outline: 1px solid red; */
   border: 2px solid #1072f1;
@@ -253,18 +263,21 @@ button p {
     transform: scale(0);
     opacity: 1;
   }
+
   100% {
     -webkit-transform: scale(1);
     transform: scale(1);
     opacity: 1;
   }
 }
+
 @keyframes scale-in-center {
   0% {
     -webkit-transform: scale(0);
     transform: scale(0);
     opacity: 1;
   }
+
   100% {
     -webkit-transform: scale(1);
     transform: scale(1);
@@ -278,24 +291,28 @@ button p {
     transform: scale(1);
     opacity: 1;
   }
+
   100% {
     -webkit-transform: scale(0);
     transform: scale(0);
     opacity: 1;
   }
 }
+
 @keyframes scale-out-center {
   0% {
     -webkit-transform: scale(1);
     transform: scale(1);
     opacity: 1;
   }
+
   100% {
     -webkit-transform: scale(0);
     transform: scale(0);
     opacity: 1;
   }
 }
+
 @media screen and (max-width: 550px) {
   .formComponent {
     /* width: 280px; */

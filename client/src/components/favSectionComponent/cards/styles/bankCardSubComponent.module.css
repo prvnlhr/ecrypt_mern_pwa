@@ -63,7 +63,7 @@
 }
 
 .cardHolderIcon {
-    font-size: 30px;
+    font-size: 1.8rem;
     color: var(--field-icon-color);
 }
 
@@ -79,7 +79,7 @@
 
 .cardHolderLabelTextDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
+    font-size: 0.8rem;
     font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
@@ -93,8 +93,8 @@
 
 .cardHolderTextDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: var(--bolder-font);
+    font-size: 0.8rem;
+    font-weight: var(--bold-font);
     color: var(--primary-font-color);
 }
 
@@ -121,7 +121,7 @@
 
 .cardVenderLogo {
     /* height: 70%; */
-    width: 50%;
+    width: 80%;
     /* border: 1px solid black; */
 }
 
@@ -160,7 +160,7 @@
 }
 
 .cardNumIcon {
-    font-size: 25px;
+    font-size: 1.5rem;
     color: var(--field-icon-color);
 
 }
@@ -177,7 +177,7 @@
 
 .cardNumberLabelTextDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
+    font-size: 0.8rem;
     font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
@@ -191,7 +191,7 @@
 
 .cardNumberTextDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
+    font-size: 0.8rem;
     font-weight: var(--bolder-font);
     color: var(--primary-font-color);
 }
@@ -235,7 +235,8 @@
 }
 
 .expiryDateIcon {
-    font-size: 25px;
+    font-size: 1.5rem;
+
     color: var(--field-icon-color);
 
 }
@@ -253,7 +254,7 @@
 
 .expiryLabelTextDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
+    font-size: 0.8rem;
     font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
@@ -270,7 +271,7 @@
 
 .expiryTextDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
+    font-size: 0.8rem;
     font-weight: var(--bolder-font);
     color: var(--primary-font-color);
 
@@ -313,9 +314,8 @@
 }
 
 .cvvIcon {
-    font-size: 22px;
+    font-size: 1.5rem;
     color: var(--field-icon-color);
-
 }
 
 .cvvNumberLabelTextDiv {
@@ -330,7 +330,7 @@
 
 .cvvNumberLabelTextDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
+    font-size: 0.8rem;
     font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
@@ -347,7 +347,7 @@
 
 .cvvNumberTextDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
+    font-size: 0.8rem;
     font-weight: var(--bolder-font);
     color: var(--primary-font-color);
 }
@@ -423,7 +423,6 @@
 
     .cardHolderIcon {
         font-size: 2rem;
-
     }
 
     .cardHolderLabelTextDiv {
@@ -437,7 +436,6 @@
 
     .cardHolderLabelTextDiv p {
         font-size: 0.9rem;
-        font-weight: 450;
     }
 
     .cardHolderTextDiv {
@@ -448,7 +446,6 @@
 
     .cardHolderTextDiv p {
         font-size: 0.9rem;
-        font-weight: 450;
     }
 
     /* _____________________________________________________ */
@@ -587,7 +584,6 @@
 
     .expiryLabelTextDiv p {
         font-size: 0.9rem;
-        font-weight: 450;
     }
 
     .expiryTextDiv {
@@ -602,7 +598,6 @@
 
     .expiryTextDiv p {
         font-size: 0.9rem;
-        font-weight: 450;
     }
 
     /* _____________________________________________ */
@@ -643,7 +638,7 @@
     }
 
     .cvvIcon {
-        /* font-size: 22px; */
+        /* font-size: 1.2rem; */
         font-size: 1.8rem;
     }
 
@@ -674,7 +669,6 @@
 
     .cvvNumberTextDiv p {
         font-size: 0.9rem;
-        font-weight: 450;
     }
 
 

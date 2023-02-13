@@ -202,7 +202,7 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                                         setPopUpOpen(!popUpOpen)
                                     }
                                     className={styles.popUpIcon}
-                                    icon="tabler:chevron-down" color="black" />
+                                    icon="tabler:chevron-down" />
                             </div>
 
                             {

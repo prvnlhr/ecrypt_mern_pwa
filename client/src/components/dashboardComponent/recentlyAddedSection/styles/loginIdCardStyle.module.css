@@ -121,7 +121,6 @@
     justify-content: center;
     align-items: center;
     border-radius: 0.85rem;
-
     background-color: var(--logo-div-bg);
     height: 82%;
     width: 82%;
@@ -154,7 +153,7 @@
 
 .titleLabelDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
+    font-size: 0.8rem;
     font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
@@ -171,8 +170,8 @@
 
 .titleTextDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: var(--bolder-font);
+    font-size: 0.75rem;
+    font-weight: var(--bold-font);
     color: var(--primary-font-color);
     white-space: nowrap;
     overflow: hidden;
@@ -193,8 +192,8 @@
 
 .titleTextDivShrink p {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: var(--bolder-font);
+    font-size: 0.8rem;
+    font-weight: var(--bold-font);
     color: var(--primary-font-color);
     white-space: nowrap;
     overflow: hidden;
@@ -229,8 +228,7 @@
 
 .categoryLabelDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 16px;
-    font-weight: var(--boldest-font);
+    font-size: 0.9rem;
     font-weight: var(--bolder-font);
     color: var(--primary-font-color);
 }
@@ -258,15 +256,14 @@
     align-items: center;
     /* border: 1px solid black; */
     background-color: var(--category-box-bg);
-
     border-radius: 5px;
 
 }
 
 .categoryTextDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 16px;
-    font-weight: var(--bolder-font);
+    font-size: 0.75rem;
+    font-weight: var(--bold-font);
     color: var(--ui-scheme-color);
 }
 
@@ -294,7 +291,7 @@
 
 .appWebsiteLabelDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 16px;
+    font-size: 0.8rem;
     font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
@@ -308,7 +305,6 @@
     justify-content: center;
     align-items: center;
     background-color: var(--box-bg-tertiary);
-
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
 }
@@ -325,8 +321,8 @@
 
 .appWebsiteTextDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 16px;
-    font-weight: var(--bolder-font);
+    font-size: 0.65rem;
+    font-weight: var(--bold-font);
     color: var(--primary-font-color);
 }
 
@@ -381,7 +377,7 @@
 
 .usernameLabelWrapper p {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
+    font-size: 0.65rem;
     font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
@@ -399,17 +395,21 @@
 
 .usernameText {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: var(--bolder-font);
+    font-size: 0.65rem;
+    font-weight: var(--bold-font);
     color: var(--primary-font-color);
 }
 
 .usernameTextShrink {
     font-family: "Poppins", sans-serif;
-    font-size: 11px;
+    font-size: 0.7rem;
     font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
     margin-left: 5%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 80%;
 }
 
 /* ____________________________________ */
@@ -451,7 +451,7 @@
 
 .passwordLabelWrapper p {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
+    font-size: 0.65rem;
     font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
@@ -466,13 +466,15 @@
 
 .passwordTextWrapper p {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: var(--bolder-font);
+    font-size: 0.65rem;
+
+    font-weight: var(--bold-font);
     color: var(--primary-font-color);
 }
 
-.iconsStyles {
-    font-size: 28px !important;
+.fieldIcons {
+    font-size: 1.5rem;
+    color: var(--field-icon-color);
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
@@ -600,7 +602,7 @@
     }
 
     .titleLabelDiv p {
-        font-size: 14px;
+        font-size: 1rem;
         font-weight: var(--bolder-font);
     }
 
@@ -615,8 +617,8 @@
     }
 
     .titleTextDiv p {
-        font-size: 14px;
-        font-weight: var(--bolder-font);
+        font-size: 0.9rem;
+        font-weight: var(--bold-font);
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis
@@ -634,7 +636,7 @@
     }
 
     .titleTextDivShrink p {
-        font-size: 14px;
+        font-size: 0.9rem;
         font-weight: var(--bolder-font);
         white-space: nowrap;
         overflow: hidden;
@@ -667,8 +669,8 @@
     }
 
     .categoryLabelDiv p {
-        font-size: 16px;
-        font-weight: var(--boldest-font);
+        font-size: 1rem;
+        font-weight: var(--bolder-font);
     }
 
     .categroryTextWrapper {
@@ -697,8 +699,8 @@
     }
 
     .categoryTextDiv p {
-        font-size: 16px;
-        font-weight: var(--bolder-font);
+        font-size: 1rem;
+        font-weight: var(--bold-font);
     }
 
     /* ____________________________________ */
@@ -723,7 +725,7 @@
     }
 
     .appWebsiteLabelDiv p {
-        font-size: 16px;
+        font-size: 1rem;
         font-weight: var(--bolder-font);
     }
 
@@ -751,8 +753,8 @@
     }
 
     .appWebsiteTextDiv p {
-        font-size: 16px;
-        font-weight: var(--bolder-font);
+        font-size: 0.9rem;
+        font-weight: var(--bold-font);
     }
 
     /* ___________________________________________ */
@@ -804,7 +806,7 @@
     }
 
     .usernameLabelWrapper p {
-        font-size: 14px;
+        font-size: 0.85rem;
         font-weight: var(--bolder-font);
     }
 
@@ -820,8 +822,8 @@
     }
 
     .usernameText {
-        font-size: 14px;
-        font-weight: var(--bolder-font);
+        font-size: 0.85rem;
+        font-weight: var(--bold-font);
     }
 
     .usernameTextShrink {
@@ -867,7 +869,7 @@
     }
 
     .passwordLabelWrapper p {
-        font-size: 14px;
+        font-size: 0.85rem;
         font-weight: var(--bolder-font);
     }
 
@@ -880,11 +882,11 @@
     }
 
     .passwordTextWrapper p {
-        font-size: 14px;
-        font-weight: var(--bolder-font);
+        font-size: 0.85rem;
+        font-weight: var(--bold-font);
     }
 
-    .iconsStyles {
+    .fieldIcons {
         font-size: 28px !important;
     }
 

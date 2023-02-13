@@ -187,7 +187,7 @@
   overflow: hidden;
   grid-gap: 2%;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;

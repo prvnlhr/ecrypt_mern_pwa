@@ -31,20 +31,22 @@ export const getUserDetails = createAsyncThunk("user/getUser", async (token, { g
         const userData = res.data.user;
         const profilePicData = res.data.user.profilePic
         // console.log(profilePicData.picUrl)
+        console.log(userData);
         const nameString = userData.name.split(/[" "]+/);
         const userRes = {
             firstName: nameString[0],
             lastName: nameString[1],
             email: userData.email,
             _id: userData._id,
-            picUrl: profilePicData.picUrl,
-            picCloudId: profilePicData.cloudinary_id,
+            picUrl: profilePicData?.picUrl,
+            picCloudId: profilePicData?.cloudinary_id,
             joinedDate: undefined,
             updateDate: undefined,
         }
+        console.log(userRes);
         return fulfillWithValue(userRes);
     } catch (error) {
-        console.log('errror', error.response.data.msg)
+        console.log('errror', error)
         const errorMessage = 'Error in registration'
         return rejectWithValue({ errorMessage });
     }
@@ -53,7 +55,6 @@ export const getUserDetails = createAsyncThunk("user/getUser", async (token, { g
 export const editUserProfile = createAsyncThunk("user/editProfile", async ({ token, profileData }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
 
-        // console.log(token, profileData);
         const res = await api.editProfile(token, profileData);
         // console.log(res.data.newData)
         const userData = res.data.newData;
@@ -111,7 +112,7 @@ const userSlice = createSlice({
         builder
 
             .addCase(getUserDetails.fulfilled, (state, action) => {
-                // console.log(action.payload)
+                console.log(action.payload)
                 return {
                     ...state,
                     _id: action.payload._id,
@@ -123,6 +124,12 @@ const userSlice = createSlice({
                         picUrl: action.payload.picUrl,
                         picCloudId: action.payload.picCloudId,
                     }
+                };
+            })
+            .addCase(getUserDetails.rejected, (state, action) => {
+                console.log(action.payload)
+                return {
+                    ...state,
                 };
             })
             .addCase(editUserProfile.fulfilled, (state, action) => {

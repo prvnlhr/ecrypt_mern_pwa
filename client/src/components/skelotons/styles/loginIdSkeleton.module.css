@@ -29,6 +29,7 @@
   overflow: hidden;
   background-color: #f5f3f6;
 }
+
 .logoWrapper {
   grid-area: logoWrapper;
   position: relative;
@@ -43,6 +44,7 @@
   overflow: hidden;
 
 }
+
 .logoDiv {
   position: relative;
   width: 90%;
@@ -62,6 +64,7 @@
 
   /* border: 1px solid royalblue; */
 }
+
 .passwordWrapper {
   grid-area: passwordWrapper;
   position: relative;
@@ -78,6 +81,7 @@
   overflow: hidden;
 
 }
+
 .userNameWrapper {
   grid-area: userNameWrapper;
   position: relative;
@@ -94,6 +98,7 @@
   overflow: hidden;
 
 }
+
 .websiteWrapper {
   grid-area: websiteWrapper;
   position: relative;
@@ -111,6 +116,7 @@
   overflow: hidden;
 
 }
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .loginIdContainer {
     position: relative;
@@ -127,5 +133,5 @@
     /* grid-template-columns: 70px minmax(0, 1fr) minmax(0, 1fr) !important; */
     grid-template-rows: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
   }
-  
+
 }

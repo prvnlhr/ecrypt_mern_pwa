@@ -171,25 +171,27 @@
 
 .logoTitleContainer {
     width: 100%;
-    height: 70%;
-    /* border: 1px solid black; */
+    height: 85%;
+    /* border: 1px solid red; */
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    padding-left: 2%;
-
+    padding-left: 0%;
 }
 
 .logoContainer {
-    /* width: 10%; */
+    /* width: auto; */
+    /* width: 30%; */
     height: 100%;
-    /* border: 1px solid black; */
+    aspect-ratio: 1/1;
+    /* border: 1px solid orange; */
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    /* border: 1px solid green; */
+    margin-right: 2%;
 }
-
 
 .logoDiv {
     /* width: 80%; */
@@ -208,7 +210,7 @@
 }
 
 .titleContainer {
-    width: 70%;
+    width: 100%;
     height: 100%;
     /* border: 1px solid red; */
     display: flex;
@@ -216,6 +218,7 @@
     align-items: flex-start;
     flex-direction: column;
     padding-left: 5%;
+    /* border: 1px solid red; */
 }
 
 .titleLabelDiv {
@@ -229,23 +232,22 @@
 
 .titleLabelDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
+    font-size: 0.85rem;
     font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
-
 }
 
 .titleInputDiv {
-    width: 80%;
+    width: 100%;
     height: 80%;
-    /* border: 1px solid black; */
+    /* border: 1px solid blue; */
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
 }
 
 .titleInputDiv input {
-    width: 80%;
+    width: 90%;
     height: 100%;
     border-bottom: none;
     border-top: none;
@@ -254,15 +256,9 @@
     outline: none;
     background: transparent;
     font-family: "Poppins", sans-serif;
-    font-size: 20px;
-    font-weight: var(--bolder-font);
+    font-size: 1.2rem;
+    font-weight: var(--bold-font);
     color: var(--primary-font-color);
-}
-
-.titleInputDiv p {
-    font-family: "Poppins", sans-serif;
-    font-size: 20px;
-    font-weight: var(--bolder-font);
 }
 
 .categoryWrapper {
@@ -274,7 +270,6 @@
     align-items: center;
     /* border: 1px solid rgb(182, 69, 88); */
     padding-left: 0%;
-
 }
 
 .categoryContainer {
@@ -301,8 +296,8 @@
 
 .categoryLabelDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 18px;
-    font-weight: var(--boldest-font);
+    font-size: 1.2rem;
+    font-weight: var(--bold-font);
     color: var(--primary-font-color);
 }
 
@@ -318,14 +313,14 @@
 
 .categoryInput {
     font-family: "Poppins", sans-serif;
-    font-size: 15px;
-    font-weight: var(--bolder-font);
+    font-size: 0.9rem;
+    font-weight: var(--bold-font);
     color: var(--ui-scheme-color);
     background-color: var(--category-box-bg);
     border: none;
     outline: none !important;
-    height: 80%;
-    width: 70%;
+    height: 75%;
+    width: 80%;
     border-radius: 8px;
     display: flex;
     justify-content: center;
@@ -350,8 +345,8 @@
 }
 
 .popUpIcon {
-    font-size: 20px;
-
+    font-size: 1.1rem;
+    color: var(--primary-font-color);
 }
 
 .categoryInput:focus {
@@ -359,36 +354,38 @@
 }
 
 .inputPopUpDiv {
-    top: 105%;
+    top: 115%;
     position: absolute;
-    width: 150px;
+    width: 120px;
+    right: 20%;
     height: auto;
-    background-color: white;
-    border: 1px solid rgba(128, 128, 128, 0.363);
+    background-color: var(--box-bg-tertiary-drk);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding-top: 10%;
-    padding-bottom: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
     padding-left: 10%;
     border-radius: 5px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: var(--applogo-box-shadow);
     z-index: 100;
-
 }
 
 .inputPopUpText {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    color: black;
+    font-size: 0.75rem;
+    font-weight: var(--bold-font);
+    color: var(--primary-font-color);
     margin: 5px 0px 0px 0px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding-left: 5%;
+    border-bottom: 1px solid var(--box-bg-tertiary);
+    padding-left: 8%;
     padding-right: 5%;
+    width: 90%;
+    letter-spacing: 0.3px;
 }
 
 .inputPopUpText:hover {

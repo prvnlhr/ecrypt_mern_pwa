@@ -31,7 +31,7 @@
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   justify-content: center;
   align-items: center;
-  webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -166,7 +166,7 @@
   justify-content: center;
   align-items: center;
   margin: auto;
-  webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;

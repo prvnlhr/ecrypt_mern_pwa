@@ -339,7 +339,7 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                 </div>
 
                 <div className={styles.categoryWrapper} >
-                    <div className={`${styles.categoryContainer} ${(currFocusField === 2) && styles.focusFieldStyle} `} >
+                    <div className={`${styles.categoryContainer} ${(currFocusField === 2) && styles.focusFieldStyle}`} >
                         <div className={styles.categoryLabelDiv} >
                             <p>Category</p>
                         </div>
@@ -350,10 +350,11 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                                 readOnly={true}
                                 onFocus={() => onFocus(2)}
                             />
-                            <div className={styles.popUpBtnIconDiv} onClick={() => setPopUpOpen(true)}>
+
+                            <div className={styles.popUpBtnIconDiv} onClick={() => setPopUpOpen(!popUpOpen)}>
                                 <Icon
                                     className={styles.popUpIcon}
-                                    icon="tabler:chevron-down" color="black" />
+                                    icon="tabler:chevron-down" />
                             </div>
 
                             {

@@ -68,7 +68,7 @@
 
 .cardHolderLabelTextDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
+    font-size: 0.8rem;
     font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
@@ -91,8 +91,8 @@
     outline: none;
     background: transparent;
     font-family: "Poppins", sans-serif;
-    font-size: 16px;
-    font-weight: var(--bolder-font);
+    font-size: 0.8rem;
+    font-weight: var(--bold-font);
     color: var(--primary-font-color);
     display: flex;
     justify-content: flex-start;
@@ -118,8 +118,8 @@ input.form-control:focus {
     outline: none;
     background: transparent;
     font-family: "Poppins", sans-serif;
-    font-size: 16px;
-    font-weight: var(--bolder-font);
+    font-size: 0.8rem;
+    font-weight: var(--bold-font);
     color: var(--primary-font-color);
     display: flex;
     justify-content: flex-start;
@@ -176,7 +176,7 @@ input.form-control:focus {
 
 .cardNumberLabelTextDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
+    font-size: 0.8rem;
     font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
@@ -244,7 +244,7 @@ input.form-control:focus {
 
 .dobLabelTextDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
+    font-size: 0.8rem;
     font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
@@ -314,7 +314,7 @@ input.form-control:focus {
 
 .expiryLabelTextDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
+    font-size: 0.8rem;
     font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
@@ -342,8 +342,8 @@ input.form-control:focus {
     outline: none;
     background: transparent;
     font-family: "Poppins", sans-serif;
-    font-size: 16px;
-    font-weight: var(--bolder-font);
+    font-size: 0.8rem;
+    font-weight: var(--bold-font);
     color: var(--primary-font-color);
     display: flex;
     justify-content: flex-start;
@@ -358,8 +358,8 @@ input.form-control:focus {
     outline: none;
     background: transparent;
     font-family: "Poppins", sans-serif;
-    font-size: 16px;
-    font-weight: var(--bolder-font);
+    font-size: 0.8rem;
+    font-weight: var(--bold-font);
     color: var(--primary-font-color);
     display: flex;
     justify-content: flex-start;

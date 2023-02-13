@@ -55,8 +55,9 @@ const BankCardSubComponent = ({ bankCardData, setBankCardData, handleFormDataCha
                         />
                     </div>
                     <div className={styles.cardVenderIconContainer}>
-
-                        {currCardVender}
+                        <div className={styles.cardVenderIconDiv} >
+                            {currCardVender}
+                        </div>
 
                     </div>
                 </div>

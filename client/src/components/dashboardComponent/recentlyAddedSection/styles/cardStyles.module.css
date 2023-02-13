@@ -169,7 +169,7 @@
 
 .titleLabelDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
+    font-size: 0.8rem;
     font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
@@ -204,8 +204,8 @@
 
 .titleTextDivExpand p {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: var(--bolder-font);
+    font-size: 0.75rem;
+    font-weight: var(--bold-font);
     color: var(--primary-font-color);
     white-space: nowrap;
     overflow: hidden;
@@ -214,8 +214,8 @@
 
 .titleTextDivShrink p {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: var(--bolder-font);
+    font-size: 0.8rem;
+    font-weight: var(--bold-font);
     color: var(--primary-font-color);
     white-space: nowrap;
     overflow: hidden;
@@ -249,8 +249,8 @@
 
 .categoryLabelWrapper p {
     font-family: "Poppins", sans-serif;
-    font-size: 15px;
-    font-weight: var(--boldest-font);
+    font-size: 0.9rem;
+    font-weight: var(--bolder-font);
     color: var(--primary-font-color);
     white-space: nowrap;
     overflow: hidden;
@@ -282,8 +282,8 @@
 
 .categoryTextDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 16px;
-    font-weight: var(--bolder-font);
+    font-size: 0.75rem;
+    font-weight: var(--bold-font);
     color: var(--ui-scheme-color);
 }
 
@@ -331,7 +331,7 @@
 
 .cardHolderLabelWrapper p {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
+    font-size: 0.65rem;
     font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
@@ -349,8 +349,8 @@
 
 .cardHolderTextWrapper p {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: var(--bolder-font);
+    font-size: 0.65rem;
+    font-weight: var(--bold-font);
     color: var(--primary-font-color);
 }
 
@@ -412,7 +412,7 @@
 
 .cardNoLabelWrapper p {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
+    font-size: 0.65rem;
     font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
@@ -441,15 +441,16 @@
 
 .cardNoTextWrapper p {
     font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: var(--bolder-font);
+    font-size: 0.65rem;
+
+    font-weight: var(--bold-font);
     color: var(--primary-font-color);
 }
 
 .cardNoTextWrapperShrink p {
     font-family: "Poppins", sans-serif;
-    font-size: 13px;
-    font-weight: 450;
+    font-size: 0.7rem;
+    font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
 
@@ -586,19 +587,19 @@
 }
 
 .cardNumIcon {
-    font-size: 25px;
+    font-size: 1.5rem;
     color: var(--field-icon-color);
 
 }
 
 .expiryDateIcon {
-    font-size: 25px;
+    font-size: 1.5rem;
     color: var(--field-icon-color);
 
 }
 
 .cvvIcon {
-    font-size: 25px;
+    font-size: 1.5rem;
     color: var(--field-icon-color);
 
 }
@@ -750,10 +751,8 @@
     }
 
     .titleLabelDiv p {
-        font-family: "Poppins", sans-serif;
-        font-size: 14px;
+        font-size: 1rem;
         font-weight: var(--bolder-font);
-        color: var(--secondary-font-color);
     }
 
     .titleTextWrapper {
@@ -784,15 +783,15 @@
 
 
     .titleTextDivExpand p {
-        font-size: 14px;
-        font-weight: var(--bolder-font);
+        font-size: 0.9rem;
+        font-weight: var(--bold-font);
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis
     }
 
     .titleTextDivShrink p {
-        font-size: 14px;
+        font-size: 0.9rem;
         font-weight: var(--bolder-font);
         white-space: nowrap;
         overflow: hidden;
@@ -824,13 +823,8 @@
     }
 
     .categoryLabelWrapper p {
-        font-family: "Poppins", sans-serif;
-        font-size: 15px;
-        font-weight: var(--boldest-font);
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        margin-left: 8%;
+        font-size: 1rem;
+        font-weight: var(--bolder-font);
     }
 
     .categoryTextWrapper {
@@ -854,8 +848,8 @@
     }
 
     .categoryTextDiv p {
-        font-size: 16px;
-        font-weight: var(--bolder-font);
+        font-size: 1rem;
+        font-weight: var(--bold-font);
     }
 
 
@@ -900,7 +894,7 @@
     }
 
     .cardHolderLabelWrapper p {
-        font-size: 14px;
+        font-size: 0.85rem;
         font-weight: var(--bolder-font);
     }
 
@@ -916,8 +910,8 @@
     }
 
     .cardHolderTextWrapper p {
-        font-size: 14px;
-        font-weight: var(--bolder-font);
+        font-size: 0.85rem;
+        font-weight: var(--bold-font);
     }
 
     /* _______________________________________________________ */
@@ -976,7 +970,7 @@
     }
 
     .cardNoLabelWrapper p {
-        font-size: 14px;
+        font-size: 0.85rem;
         font-weight: var(--bolder-font);
     }
 
@@ -1003,8 +997,8 @@
     }
 
     .cardNoTextWrapper p {
-        font-size: 14px;
-        font-weight: var(--bolder-font);
+        font-size: 0.85rem;
+        font-weight: var(--bold-font);
     }
 
     .cardNoTextWrapperShrink p {
@@ -1052,7 +1046,7 @@
     }
 
     .cardExpiryLabelWrapper p {
-        font-size: 14px;
+        font-size: 0.85rem;
         font-weight: var(--bolder-font);
     }
 
@@ -1067,8 +1061,8 @@
     }
 
     .cardExpiryTextWrapper p {
-        font-size: 14px;
-        font-weight: var(--bolder-font);
+        font-size: 0.85rem;
+        font-weight: var(--bold-font);
     }
 
     /* ________________________________________ */
@@ -1110,7 +1104,7 @@
     }
 
     .cardCvvLabelWrapper p {
-        font-size: 14px;
+        font-size: 0.85rem;
         font-weight: var(--bolder-font);
     }
 
@@ -1125,24 +1119,24 @@
     }
 
     .cardCvvTextWrapper p {
-        font-size: 14px;
-        font-weight: var(--bolder-font);
+        font-size: 0.85rem;
+        font-weight: var(--bold-font);
     }
 
     .cardHolderIcon {
-        font-size: 28px;
+        font-size: 1.8rem;
     }
 
     .cardNumIcon {
-        font-size: 25px;
+        font-size: 1.5rem;
     }
 
     .expiryDateIcon {
-        font-size: 25px;
+        font-size: 1.5rem;
     }
 
     .cvvIcon {
-        font-size: 25px;
+        font-size: 1.5rem;
     }
 
 

@@ -24,8 +24,8 @@ app.use(cookiesParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// const CONNECTION_URL = process.env.MONGODB_URL;
-const CONNECTION_URL = process.env.MONGODB_LOCAL_URL;
+const CONNECTION_URL = process.env.MONGODB_URL;
+// const CONNECTION_URL = process.env.MONGODB_LOCAL_URL;
 
 const PORT = process.env.PORT || 9000;
 

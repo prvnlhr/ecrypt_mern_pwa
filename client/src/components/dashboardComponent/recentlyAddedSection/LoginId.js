@@ -88,8 +88,8 @@ const LoginId = ({ item }) => {
                             <div className={styles.passwordWrapper} >
                                 <div className={styles.passwordIconWrapper} >
                                     <Icon
-                                        className={styles.iconsStyles}
-                                        icon="fluent:password-20-regular" color="#002a9a" />
+                                        className={styles.fieldIcons}
+                                        icon="fluent:password-20-regular"  />
                                 </div>
                                 <div className={styles.passwordLabelWrapper} >
                                     <p>PASSWORD</p>
@@ -105,8 +105,8 @@ const LoginId = ({ item }) => {
                             cardExpand &&
                             <>
                                 <div className={styles.usernameIconWrapper} >
-                                    <Icon className={styles.iconsStyles}
-                                        icon="prime:user" color="#002a9a"
+                                    <Icon className={styles.fieldIcons}
+                                        icon="prime:user" 
                                     />
                                 </div>
                                 <div className={styles.usernameLabelWrapper} >

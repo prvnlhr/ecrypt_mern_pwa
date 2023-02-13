@@ -77,8 +77,8 @@
 
 .titleWrapper p {
     font-family: "Poppins", sans-serif;
-    font-size: 0.88rem;
-    font-weight: var(--bolder-font);
+    font-size: 0.75rem;
+    font-weight: var(--bold-font);
     color: var(--primary-font-color);
     white-space: nowrap;
     overflow: hidden;

@@ -132,10 +132,11 @@ const authController = {
   },
 
   getUserInfo: async (req, res) => {
-    console.log('getUser');
+    console.log('getUser', req.user.id);
     try {
       const user = await UserDatabase.findById(req.user.id).select("-password");
-      res.json({ user });
+      console.log(user)
+      return res.status(200).json({ user });
     } catch (error) {
       console.log("error at getUserinfo controller", error);
       return res.status(404).send(error);

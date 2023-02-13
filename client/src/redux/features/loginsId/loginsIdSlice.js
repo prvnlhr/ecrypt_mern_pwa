@@ -22,11 +22,10 @@ export const fecthLoginIdsData = createAsyncThunk("loginIds/fetch", async ({ use
     }
 });
 
-
 export const addNewLoginIdData = createAsyncThunk("loginIds/add", async ({ data, user_id, activityData }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
         const state = getState();
-
+        console.log(data, user_id, state.auth.token)
         const res = await api.addNewLoginId(data, user_id, state.auth.token)
         console.log(res.data)
         dispatch(addActivityData({
