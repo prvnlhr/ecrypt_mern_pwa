@@ -1,3 +1,238 @@
+.signInPage {
+  position: relative;
+  /* border: 1px solid red; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.spinner {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.appBioSection {
+  position: relative;
+  width: 60%;
+  height: 100%;
+  /* border: 1px solid orangered; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* ______________ */
+.svgWrapper {
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid green; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ------------------------------------- */
+.svgContainer {
+  width: 80%;
+  height: 80%;
+  /* border: 1px solid green; */
+  display: grid;
+  grid-template-columns: 33.3% 33.3% 33.3%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+  grid-template-areas:
+    " pdfSvgWrapper  docSvgWrapper cardSvgWrapper"
+    " pdfSvgWrapper  docSvgWrapper cardSvgWrapper"
+    " pdfSvgWrapper  phoneSvgWrapper cardSvgWrapper"
+    " passSvgWrapper  phoneSvgWrapper cardSvgWrapper"
+    " passSvgWrapper  phoneSvgWrapper cardSvgWrapper";
+}
+
+
+.docSvgWrapper {
+  grid-area: docSvgWrapper;
+  width: 100%;
+  height: 100%;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pdfSvgWrapper {
+  grid-area: pdfSvgWrapper;
+  width: 100%;
+  height: 100%;
+  /* background-color: blue; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardSvgWrapper {
+  grid-area: cardSvgWrapper;
+  width: 100%;
+  height: 100%;
+  /* background-color: green; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.passSvgWrapper {
+  grid-area: passSvgWrapper;
+  width: 100%;
+  height: 100%;
+  /* background-color: rosybrown; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.phoneSvgWrapper {
+  grid-area: phoneSvgWrapper;
+  width: 100%;
+  height: 100%;
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pdfSvg {
+  width: 80%;
+  height: 80%;
+}
+
+.docsSvg {
+  width: 100%;
+  height: 100%;
+}
+
+.passSvg {
+  width: 80%;
+  height: 80%;
+}
+
+.cardSvg {
+  width: 80%;
+  height: 80%;
+}
+
+.phoneSvg {
+  width: 80%;
+  height: 80%;
+}
+
+/* ------------------------------------- */
+
+
+
+.bioTextWrapper {
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid orange; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.textDiv1 {
+  width: 70%;
+  height: 25%;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.textDiv1 p {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  font-weight: var(--boldest-font);
+  color: var(--primary-font-color);
+}
+
+.textDiv2 {
+  width: 50%;
+  height: 25%;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.textDiv2 p {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  font-weight: var(--bolder-font);
+  color: #6A82A7;
+
+}
+
+.textDiv3 {
+  width: 50%;
+  height: 25%;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.textDiv3 p {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  color: #6A82A7;
+  font-weight: var(--bolder-font);
+}
+
+.textDiv4 {
+  width: 70%;
+  height: 25%;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+}
+
+.bioSpanText {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  font-weight: var(--bolder-font);
+  color: var(--ui-scheme-color);
+}
+
+.textDiv4 p {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  font-weight: var(--bolder-font);
+  color: #6A82A7;
+
+}
+
+
+/* -------------------------------------------------- */
+
+.signInformSection {
+  position: relative;
+  width: 40%;
+  height: 100%;
+  /* border: 1px solid blue; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border-left: 1px solid gray; */
+}
+
 .formPageWrapper {
   position: relative;
   width: 100%;
@@ -22,7 +257,6 @@
   aspect-ratio: 2/2.5;
   border-radius: 30px;
   background-color: var(--box-bg-primary);
-
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 20% 10% minmax(0, 1fr) 8%;
@@ -46,7 +280,6 @@
 
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   box-shadow: var(--dashboard-countDiv-box-shadow);
-
 }
 
 /* ________________________________________________ */
@@ -72,7 +305,7 @@
 
 .formLabelDiv p {
   font-family: "Poppins", sans-serif;
-  font-size: 20px;
+  font-size: 1.2rem;
   font-weight: var(--boldest-font);
   color: var(--primary-font-color);
 }
@@ -120,7 +353,7 @@
 
 .messageDivError p {
   font-family: "Poppins", sans-serif;
-  font-size: 10.5px;
+  font-size: 0.55rem;
   font-weight: var(--bolder-font);
   color: white;
 }
@@ -149,7 +382,7 @@
 }
 
 .warningIcon {
-  font-size: 25px;
+  font-size: 0.8rem;
   color: white;
   padding: 0px;
   margin: 0px;
@@ -232,17 +465,19 @@
   /* border: 1px solid black; */
   display: flex;
   justify-content: flex-end;
-  align-items: center;
+  align-items: flex-start;
 }
 
-.passForgetWrapper p {
+
+.linkText {
+  text-decoration: none;
   font-family: "Poppins", sans-serif;
-  font-size: 11px;
-  font-weight: var(--bold-font);
+  font-size: 0.6rem;
+  font-weight: var(--boldest-font);
   color: var(--ui-scheme-color);
   margin-right: 2%;
+  white-space: nowrap;
 }
-
 
 .iconDiv {
   grid-area: iconDiv;
@@ -256,7 +491,7 @@
 
 .fieldIcon {
   color: var(--field-icon-color);
-  font-size: 28px;
+  font-size: 1.5rem;
 }
 
 .labelDiv {
@@ -271,8 +506,8 @@
 
 .labelDiv p {
   font-family: "Poppins", sans-serif;
-  font-size: 11px;
-  font-weight: var(--bold-font);
+  font-size: 0.65rem;
+  font-weight: var(--bolder-font);
   color: var(--secondary-font-color);
   margin-top: 5%;
 }
@@ -299,8 +534,8 @@
   background: none;
   outline: none;
   font-family: "Poppins", sans-serif;
-  font-size: 12px;
-  font-weight: var(--bold-font);
+  font-size: 0.65rem;
+  font-weight: var(--bolder-font);
   color: var(--primary-font-color);
   letter-spacing: 0.3px;
 
@@ -326,17 +561,18 @@ input:focus {
 }
 
 .submitBtn {
-  width: 55%;
+  width: 50%;
   height: 40%;
   border: none;
   background-color: var(--submit-btn-color);
-  border-radius: 15px;
+  border-radius: 0.8rem;
   font-family: "Poppins", sans-serif;
-  font-size: 12px;
+  font-size: 0.7rem;
   font-weight: var(--bold-font);
   color: white;
   letter-spacing: 0.5px;
   /* outline: #AED2FF; */
+  cursor: pointer;
 }
 
 
@@ -354,21 +590,263 @@ input:focus {
 
 .formFooterWrapper p {
   font-family: "Poppins", sans-serif;
-  font-size: 11px;
-  font-weight: var(--bold-font);
+  font-size: 0.6rem;
+  font-weight: var(--bolder-font);
   color: var(--primary-font-color);
 }
 
 .spanText {
   font-family: "Poppins", sans-serif;
-  font-size: 11px;
+  font-size: 0.6rem;
   font-weight: var(--bolder-font);
   color: var(--ui-scheme-color);
   margin-left: 2px;
   text-decoration: none;
 }
 
+
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .signInPage {
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+
+  .appBioSection {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* ____________________________________________________ */
+
+  /* ______________ */
+  .svgWrapper {
+    width: 100%;
+    height: 70%;
+    /* border: 1px solid green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* ------------------------------------- */
+  .svgContainer {
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid green; */
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    grid-template-areas:
+      " pdfSvgWrapper  docSvgWrapper cardSvgWrapper"
+      " pdfSvgWrapper  docSvgWrapper cardSvgWrapper"
+      " pdfSvgWrapper  phoneSvgWrapper cardSvgWrapper"
+      " passSvgWrapper  phoneSvgWrapper cardSvgWrapper"
+      " passSvgWrapper  phoneSvgWrapper cardSvgWrapper";
+  }
+
+  .pdfSvg {
+    position: absolute;
+    width: 80%;
+    height: unset;
+    aspect-ratio: 1/1;
+    top: 20%;
+    left: 0%;
+  }
+
+  .docsSvg {
+    position: absolute;
+    width: 80%;
+    height: unset;
+    aspect-ratio: 1/1;
+    top: 0%;
+  }
+
+  .passSvg {
+    position: absolute;
+    width: 80%;
+    height: unset;
+    aspect-ratio: 1/1;
+    bottom: 0%;
+  }
+
+  .cardSvg {
+    position: absolute;
+    width: 120%;
+    aspect-ratio: 1/1;
+    top: 2%;
+    right: -20%;
+  }
+
+  .phoneSvg {
+    position: absolute;
+    width: 100%;
+    height: unset;
+    aspect-ratio: 1/1;
+    bottom: -5%;
+  }
+
+  .docSvgWrapper {
+    position: relative;
+    grid-area: docSvgWrapper;
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .pdfSvgWrapper {
+    position: relative;
+    grid-area: pdfSvgWrapper;
+    width: 100%;
+    height: 100%;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 25%;
+  }
+
+  .cardSvgWrapper {
+    position: relative;
+    grid-area: cardSvgWrapper;
+    width: 100%;
+    height: 100%;
+    /* background-color: green; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+  }
+
+
+
+  .passSvgWrapper {
+    position: relative;
+    grid-area: passSvgWrapper;
+    width: 100%;
+    height: 100%;
+    /* background-color: rosybrown; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+  .phoneSvgWrapper {
+    position: relative;
+    grid-area: phoneSvgWrapper;
+    width: 100%;
+    height: 100%;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  /* ------------------------------------- */
+
+
+
+  .bioTextWrapper {
+    width: 100%;
+    height: 30%;
+    /* border: 1px solid orange; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .textDiv1 {
+    width: 100%;
+    height: 25%;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .textDiv1 p {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2rem;
+    font-weight: var(--boldest-font);
+    color: var(--primary-font-color);
+  }
+
+  .textDiv2 {
+    width: 90%;
+    height: 25%;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .textDiv2 p {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.8rem;
+    font-weight: var(--bolder-font);
+    color: #6A82A7;
+
+  }
+
+  .textDiv3 {
+    width: 90%;
+    height: 25%;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .textDiv3 p {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.8rem;
+    color: #6A82A7;
+    font-weight: var(--bolder-font);
+  }
+
+  .textDiv4 {
+    width: 100%;
+    height: 25%;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+  }
+
+  .bioSpanText {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.8rem;
+    font-weight: var(--bolder-font);
+    color: var(--ui-scheme-color);
+  }
+
+  .textDiv4 p {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.9rem;
+    font-weight: var(--bolder-font);
+    color: #6A82A7;
+
+  }
+
+  /* _________________________________________________ */
+
+  .signInformSection {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* display: none; */
+  }
 
   .formPageWrapper {
     position: relative;
@@ -377,7 +855,7 @@ input:focus {
     /* border: 1px solid orange; */
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     overflow-y: scroll;
   }
 
@@ -386,6 +864,7 @@ input:focus {
   }
 
   .formWrapper {
+    margin-top: 20%;
     position: relative;
     width: 85%;
     aspect-ratio: 2/2.5;
@@ -580,10 +1059,12 @@ input:focus {
     align-items: center;
   }
 
-  .passForgetWrapper p {
+
+  .linkText {
     font-size: 0.8rem;
     margin-right: 2%;
     white-space: nowrap;
+
   }
 
 
@@ -612,7 +1093,7 @@ input:focus {
   }
 
   .labelDiv p {
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     margin-top: 5%;
   }
 
@@ -634,7 +1115,6 @@ input:focus {
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: 1px solid rgba(91, 87, 87, 0.383);
     border-bottom: none;
     background: none;
     outline: none;

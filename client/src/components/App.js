@@ -37,7 +37,6 @@ const App = () => {
     }
   }, [isDarkMode]);
 
-
   const getToken = async () => {
     await dispatch(getAuthToken({}))
   };
@@ -46,15 +45,11 @@ const App = () => {
     if (token != undefined) {
       dispatch(getUserDetails(token));
     }
-
   }, [token])
 
   useEffect(() => {
     getToken();
   }, [])
-
-
-  const theme = "dark";
 
   return (
     <div data-theme={isDarkMode === true ? 'dark' : 'light'} className={appStyles.app} >

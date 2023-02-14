@@ -25,7 +25,14 @@ const authController = {
   register: async (req, res) => {
     const { email, password, confirmPassword, firstName, lastName } = req.body;
     console.log(email, password, confirmPassword, firstName, lastName)
+
     try {
+
+      const check = await UserDatabase.findOne({ email });
+      if (check) {
+        return res.status(400).json({ msg: "This email already exists." });
+      }
+
       const passwordHash = await bcrypt.hash(password, 12);
       const newUser = {
         name: `${firstName} ${lastName}`,
@@ -36,7 +43,6 @@ const authController = {
       const activation_token = createActivationToken(newUser);
       const txt = "Account Activation Link";
       const url = `${CLIENT_URL}/user/auth/activate/${activation_token}`;
-
       const response = sendMail(email, url, txt);
       res.status(200).json({ msg: "Check your email for activation link" });
     } catch (error) {

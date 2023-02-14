@@ -5,6 +5,7 @@ import { getUserDetails } from "../user/userSlice"
 const initialState = {
     token: undefined,
     authResponseMessage: undefined,
+    isLoading: true,
     isLogged: false,
     error: false,
     success: false,
@@ -18,7 +19,7 @@ export const registerUser = createAsyncThunk("auth/register", async (formData, {
         return fulfillWithValue(msg);
     } catch (error) {
         console.log(error.response.data.msg)
-        const errorMessage = 'Error in registration'
+        const errorMessage = error?.response.data.msg
         return rejectWithValue({ errorMessage });
     }
 });
@@ -108,7 +109,7 @@ const authSlice = createSlice({
 
     reducers: {
         setAuthToken(state, action) {
-            console.log(action.payload)
+            // console.log(action.payload)
             return {
                 ...state,
                 isLogged: true,
@@ -116,7 +117,7 @@ const authSlice = createSlice({
             }
         },
         forceLogout(state, action) {
-            console.log(action.payload.msg)
+            // console.log(action.payload.msg)
             return {
                 ...state,
                 token: undefined,
@@ -126,6 +127,12 @@ const authSlice = createSlice({
                 success: false,
             }
         },
+        clearAuthResponseMessage(state, action) {
+            return {
+                ...state,
+                authResponseMessage: undefined,
+            }
+        }
 
     },
 
@@ -136,15 +143,28 @@ const authSlice = createSlice({
                     ...state,
                     authResponseMessage: action.payload,
                     success: true,
-                    error: false
+                    error: false,
+                    isLoading: false,
+
+                };
+            })
+            .addCase(registerUser.pending, (state, action) => {
+                // console.log(action.payload);
+                return {
+                    ...state,
+                    authResponseMessage: undefined,
+                    isLoading: true,
                 };
             })
             .addCase(registerUser.rejected, (state, action) => {
+                console.log(action.payload);
                 return {
                     ...state,
-                    authResponseMessage: 'Error in registration',
+                    authResponseMessage: action.payload.errorMessage,
                     error: true,
-                    success: false
+                    success: false,
+                    isLoading: false,
+
                 };
             })
             .addCase(activateUserAccount.fulfilled, (state, action) => {
@@ -172,6 +192,8 @@ const authSlice = createSlice({
                     error: false,
                     success: true,
                     isLogged: true,
+                    isLoading: false,
+
                 };
             })
             .addCase(loginUser.pending, (state, action) => {
@@ -181,7 +203,8 @@ const authSlice = createSlice({
                     token: undefined,
                     error: false,
                     success: false,
-                    isLogged: undefined,
+                    isLogged: false,
+                    isLoading: true
                 };
             })
             .addCase(loginUser.rejected, (state, action) => {
@@ -191,6 +214,7 @@ const authSlice = createSlice({
                     error: true,
                     success: false,
                     isLogged: false,
+                    isLoading: false,
                 };
             })
             .addCase(getAuthToken.fulfilled, (state, action) => {
@@ -200,6 +224,8 @@ const authSlice = createSlice({
                     error: false,
                     success: true,
                     isLogged: true,
+                    isLoading: false,
+
                 };
             })
             .addCase(getAuthToken.pending, (state, action) => {
@@ -210,17 +236,20 @@ const authSlice = createSlice({
                     isLogged: undefined,
                     error: false,
                     success: false,
+
                 };
             })
             .addCase(getAuthToken.rejected, (state, action) => {
-                console.log(action.payload);
+                // console.log(action.payload);
                 return {
                     ...state,
                     isLogged: false,
                     token: undefined,
                     error: true,
                     authResponseMessage: action.payload,
-                    success: false
+                    success: false,
+                    isLoading: false,
+
                 };
             })
             .addCase(logOutUser.fulfilled, (state, action) => {
@@ -231,6 +260,7 @@ const authSlice = createSlice({
                     error: false,
                     success: true,
                     isLogged: false,
+                    isLoading: false,
                 };
             })
             .addCase(logOutUser.rejected, (state, action) => {
@@ -238,6 +268,14 @@ const authSlice = createSlice({
                     ...state,
                     error: true,
                     success: false,
+                    isLoading: false,
+                };
+            })
+            .addCase(logOutUser.pending, (state, action) => {
+                return {
+                    ...state,
+                    isLoading: true,
+
                 };
             })
             .addCase(forgotAccountPass.fulfilled, (state, action) => {
@@ -248,6 +286,8 @@ const authSlice = createSlice({
                     error: false,
                     success: true,
                     isLogged: false,
+                    isLoading: false,
+
                 };
             })
             .addCase(resetUserPass.fulfilled, (state, action) => {
@@ -274,6 +314,6 @@ const authSlice = createSlice({
     }
 })
 
-export const { setAuthToken, forceLogout } = authSlice.actions;
+export const { setAuthToken, forceLogout, clearAuthResponseMessage } = authSlice.actions;
 
 export default authSlice.reducer;

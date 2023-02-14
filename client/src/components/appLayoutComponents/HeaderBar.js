@@ -15,6 +15,11 @@ import logoStyles from "./styles/appLogoStyles.module.css"
 import { logOutUser } from "../../redux/features/auth/authSlice"
 import AppLogo from "./AppLogo";
 import AppLogoHeaderBar from "./AppLogoHeaderBar";
+import { Oval } from 'react-loader-spinner';
+const spinnerWrapper = {
+  height: `80%`,
+  width: `100%`,
+}
 
 const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
 
@@ -78,6 +83,8 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
 
   const day = moment().format("dddd");
   const date = moment().format('DD MMM YYYY');
+
+  const spinShow = true;
 
 
 
@@ -159,12 +166,33 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
                 <p className={headerStyles.settingsText}>Settings</p>
               </Link>
             </div>
+
             <div className={headerStyles.bottomSection} >
               <div className={headerStyles.logOutDiv} >
-                <div className={headerStyles.logOutIconDiv} >
-                  < LogoutIcon />
-                </div>
-                <p className={headerStyles.logoutText} onClick={logOutBtnClicked} >Logout</p>
+
+                {auth?.isLoading === true ?
+                  <Oval
+                    height={`100%`}
+                    width={`100%`}
+                    color="white"
+                    wrapperStyle={spinnerWrapper}
+                    wrapperClass={headerStyles.spinner}
+                    visible={true}
+                    ariaLabel='oval-loading'
+                    secondaryColor="transparent"
+                    strokeWidth={5}
+                    strokeWidthSecondary={5}
+                  /> :
+
+                  <>
+                    <div className={headerStyles.logOutIconDiv} >
+                      < LogoutIcon />
+                    </div>
+                    <p className={headerStyles.logoutText} onClick={logOutBtnClicked} >
+                      Log Out
+                    </p>
+                  </>
+                }
               </div>
             </div>
           </div>

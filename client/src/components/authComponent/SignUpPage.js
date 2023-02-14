@@ -1,10 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Routes, Route, Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
 import { Icon } from '@iconify/react';
 import styles from "./styles/signUpPage.module.css"
 import { formValidation, validateSignUpForm } from "./helperFunctions/formValidation"
-import { registerUser } from "../../redux/features/auth/authSlice"
+import { registerUser, clearAuthResponseMessage } from "../../redux/features/auth/authSlice"
+
+import { Oval } from 'react-loader-spinner';
+const spinnerWrapper = {
+  height: `80%`,
+  with: `100%`,
+}
 const SignUpPage = () => {
   const dispatch = useDispatch();
   const isDarkMode = useSelector((state) => state.ui.darkMode);
@@ -14,6 +20,13 @@ const SignUpPage = () => {
     message: undefined,
     error: false
   });
+
+  useEffect(() => {
+    return () => {
+      // console.log("Component unMount")
+      dispatch(clearAuthResponseMessage());
+    }
+  }, [])
 
   const { message, error } = formMessage;
   const [currFocusField, setCurrFocusField] = useState(undefined);
@@ -188,7 +201,24 @@ const SignUpPage = () => {
           </div>
           <div className={styles.submitBtnWrapper}>
 
-            <button className={styles.submitBtn}>Login</button>
+            <button className={styles.submitBtn}>
+              {authState?.isLoading === true ?
+                <Oval
+                  height={`100%`}
+                  width={`100%`}
+                  color="white"
+                  wrapperStyle={spinnerWrapper}
+                  wrapperClass={styles.spinner}
+                  visible={true}
+                  ariaLabel='oval-loading'
+                  secondaryColor="transparent"
+                  strokeWidth={5}
+                  strokeWidthSecondary={5}
+                  className={styles.spinner}
+                /> :
+                'Sign Up'
+              }
+            </button>
           </div>
 
         </form>

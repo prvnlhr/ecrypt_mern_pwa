@@ -14,6 +14,7 @@
   align-items: center;
 }
 
+
 .dateWrapper {
   position: relative;
   grid-area: dateWrapper;
@@ -365,6 +366,7 @@
 }
 
 .logOutDiv {
+  position: relative;
   width: 80%;
   height: 70%;
   /* border: 1px solid orange; */
@@ -382,6 +384,7 @@
 }
 
 .logOutIconDiv {
+  position: relative;
   height: 80%;
   aspect-ratio: 1/1;
   margin-right: 5%;
