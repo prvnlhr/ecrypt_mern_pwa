@@ -125,6 +125,117 @@
     text-decoration: none;
 }
 
+@media only screen and (min-device-width: 481px) and (max-device-width: 1020px) {
+
+    .sidebarComponent {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 15% 80%;
+        grid-template-areas:
+            "logoContainer"
+            "menuSection";
+        align-items: center;
+    }
+
+    .logoSection {
+        grid-area: logoContainer;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+        padding-left: 10%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .appLogoContainer {
+        position: relative;
+        width: 92%;
+        height: unset;
+        aspect-ratio: 1/1;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .applogoDiv {
+        border-radius: 15px;
+        width: 100%;
+        height: unset;
+        aspect-ratio: 1/1 !important;
+        box-sizing: border-box;
+        /* border: 1px solid red; */
+    }
+
+    .menuSection {
+        grid-area: menuSection;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid black; */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 20px;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+    }
+
+    .linkWrapper {
+        width: 75%;
+        height: unset;
+        aspect-ratio: 1/1;
+        /* border: 1px solid black; */
+        margin: 20px 0px 0px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sidebarIndicator {
+        position: absolute;
+        width: 75%;
+        height: unset;
+        aspect-ratio: 1/1;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        margin-left: auto;
+        border-radius: 10px;
+    }
+
+    .linkIconContainer {
+        /* border: 1px solid black; */
+        width: 80%;
+        height: 100%;
+    }
+
+    .linkTextDiv {
+        width: 80%;
+        height: 100%;
+        display: none;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+
+
+}
+
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
 
     .sidebarComponent {

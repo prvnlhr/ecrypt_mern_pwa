@@ -15,6 +15,7 @@ body {
 
 body::-webkit-scrollbar {
   display: none;
+  overflow: hidden;
 }
 
 html {
@@ -53,9 +54,6 @@ html {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-
-
-
   /* background-color: #DFEDF4; */
 }
 

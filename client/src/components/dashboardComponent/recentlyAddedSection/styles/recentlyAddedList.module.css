@@ -56,6 +56,35 @@
 
 }
 
+@media only screen and (min-device-width: 480px) and (max-device-width: 1020px) {
+    .recentAddedList {
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        position: relative;
+        height: 95%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        scroll-behavior: smooth;
+        overflow-y: scroll;
+        padding-top: unset;
+        padding-left: unset;
+        padding-bottom: unset;
+        box-sizing: border-box;
+        scrollbar-width: none;
+        /* firefox hide scrollbar  */
+        -ms-overflow-style: none;
+        /* firefox hide scrollbar  */
+        /* border: 1px solid rebeccapurple; */
+        margin-bottom: 0px;
+        margin: 0px;
+        padding: 0px;
+        margin-top: 5%;
+        margin-bottom: 0px;
+    }
+}
+
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
 
 

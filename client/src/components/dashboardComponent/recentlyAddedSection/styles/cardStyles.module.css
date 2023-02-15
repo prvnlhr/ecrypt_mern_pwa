@@ -430,7 +430,7 @@
 
 .cardNoTextWrapperShrink {
     grid-area: cardNoTextWrapperShrink;
-    width: 100%;
+    width: 95%;
     height: 100%;
     /* border: 1px solid blue; */
     display: flex;
@@ -442,7 +442,6 @@
 .cardNoTextWrapper p {
     font-family: "Poppins", sans-serif;
     font-size: 0.65rem;
-
     font-weight: var(--bold-font);
     color: var(--primary-font-color);
 }
@@ -452,6 +451,9 @@
     font-size: 0.7rem;
     font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
 }
 
 /* ____________________________________________________ */
@@ -1142,6 +1144,41 @@
 
 }
 
+@media only screen and (min-device-width: 480px) and (max-device-width: 1020px) {
+    .cardWrapperShrink {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        height: 75px;
+        min-height: 75px;
+        border-radius: 15px;
+        scroll-behavior: smooth;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        margin: 2% 2% 2% 2%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+    }
+
+    .cardWrapperExpand {
+        position: relative;
+        margin-top: 20px;
+        width: 90%;
+        height: 90%;
+        min-height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        padding: unset;
+    }
+}
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
     .cardWrapperShrink {

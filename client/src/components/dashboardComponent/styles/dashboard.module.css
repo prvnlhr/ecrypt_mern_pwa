@@ -54,7 +54,7 @@
   width: 25%;
   height: 50%;
   /* border: 1px solid black; */
-  border-radius: 15px;
+  border-radius: 1rem;
   /* background-color: white; */
   background-color: var(--box-bg-primary);
   margin-left: 20px;
@@ -67,8 +67,9 @@
 
 .iconContainer {
   position: relative;
-  width: 50%;
+  /* width: 50%; */
   height: 80%;
+  aspect-ratio: 1/1;
   /* border: 1px solid red; */
   display: flex;
   justify-content: center;
@@ -77,10 +78,10 @@
 
 .iconDiv1 {
   position: relative;
-  /* width: 70%; */
-  height: 95%;
+  width: 90%;
+  /* height: 95%; */
   aspect-ratio: 1/1;
-  /* border: 1px solid black; */
+  /* border: 1px solid red; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -90,8 +91,8 @@
 
 .iconDiv2 {
   position: relative;
-  /* width: 70%; */
-  height: 95%;
+  width: 90%;
+  /* height: 95%; */
   aspect-ratio: 1/1;
   /* border: 1px solid black; */
   display: flex;
@@ -103,8 +104,8 @@
 
 .iconDiv3 {
   position: relative;
-  /* width: 70%; */
-  height: 95%;
+  width: 90%;
+  /* height: 95%; */
   aspect-ratio: 1/1;
   /* border: 1px solid black; */
   display: flex;
@@ -115,7 +116,9 @@
 }
 
 .countIcon {
-  font-size: 32px;
+  /* font-size: 1.4rem; */
+  /* font-size: 3.5rem; */
+  /* font-size: clamp(1.4rem, 1.091743119266055rem + 1.5412844036697249vw, 3.5rem) !important; */
   color: black;
 }
 
@@ -144,9 +147,12 @@
 .listCountText {
   position: relative;
   font-family: "Poppins", sans-serif;
-  font-size: 2rem;
-  font-size: 2rem;
-  font-weight: 450;
+  /* font-size: 2rem; */
+  /* font-size: 4rem; */
+  /* font-size: 4rem; */
+  /* font-size: clamp(2.0rem, 1.8238532110091743rem + 0.8807339449541285vw, 3.2rem) !important; */
+  /* font-size: clamp(1.6rem, 1.2477064220183487rem + 1.7614678899082568vw, 4.0rem) !important; */
+  font-weight: var(--bold-font);
   color: var(--primary-font-color);
   margin: 0px !important;
   padding: 0px !important;
@@ -167,8 +173,12 @@
 .countLabelText {
   position: relative;
   font-family: "Poppins", sans-serif;
-  font-size: 0.85rem;
-  font-weight: 450;
+  /* font-size: 0.85rem; */
+  /* font-size: 1.9rem; */
+  /* font-size: clamp(0.75rem, 0.5811926605504587rem + 0.8440366972477064vw, 1.9rem) !important; */
+  /* font-size: clamp(0.85rem, 0.7105504587155963rem + 0.6972477064220184vw, 1.8rem) !important; */
+  /* font-size: clamp(0.85rem, 0.7545871559633027rem + 0.47706422018348627vw, 1.5rem) !important; */
+  font-weight: var(--bold-font);
   color: var(--secondary-font-color);
   margin: 0px;
   white-space: nowrap;
@@ -344,15 +354,12 @@
     grid-area: overviewWrapper;
     width: 100%;
     height: 100%;
-    /* border: 1px solid red; */
   }
 
   .overviewHeadingContainer {
     position: relative;
     width: 100%;
     height: 20%;
-    /* border: 1px solid blue; */
-    /* background-color: grey; */
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -362,133 +369,47 @@
     position: relative;
     width: 100%;
     height: 80%;
-    /* border: 1px solid orange; */
-    /* background-color: blue; */
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
     flex-wrap: wrap;
     margin-top: 0%;
     padding-left: 0%;
-    /* display: none; */
+    /* border: 1px solid red; */
   }
 
   .boxContainer {
-    /* width: 35%; */
-    /* height: 40%; */
-
     width: 32%;
     height: 40%;
-    /* border: 1px solid black; */
     border-radius: 15px;
     margin-left: 8%;
     margin-right: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
-  }
-
-  .iconContainer {
-    width: 50%;
-    height: 100%;
-    /* border: 1px solid red; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .iconDiv1 {
-    position: relative;
-    width: 80%;
-    width: 70%;
-    height: unset;
-    aspect-ratio: 1/1;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-  }
-
-  .iconDiv2 {
-    position: relative;
-    width: 80%;
-    width: 70%;
-
-    height: unset;
-    aspect-ratio: 1/1;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-  }
-
-  .iconDiv3 {
-    position: relative;
-    width: 80%;
-    width: 70%;
-    height: unset;
-    aspect-ratio: 1/1;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
   }
 
   .countIcon {
-    font-size: 30px;
-    font-size: 25px;
-  }
-
-  .count_and_Label_Container {
-    position: relative;
-    width: 40%;
-    height: 75%;
-    /* border: 1px solid black; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .countDiv {
-    position: relative;
-    width: 100%;
-    height: 70%;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    padding: 0px;
+    margin: 0px;
+    font-size: 1.3rem !important;
   }
 
   .listCountText {
     position: relative;
-    font-size: 25px;
-    font-weight: var(--boldest-font);
+    font-size: 1.6rem !important;
     margin: 0px;
-    padding: 0px;
-  }
-
-  .labelDiv {
-    position: relative;
-    width: 100%;
-    height: 30%;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 0px;
   }
 
   .countLabelText {
     position: relative;
-    font-size: 12.5px;
-    font-weight: var(--bolder-font);
+    font-size: 0.75rem !important;
     margin: 0px;
+    padding: 0px;
+    font-weight: var(--bolder-font);
   }
+
 
   /* ___________________________________________________________*/
   .recentActivitesWrapper {
@@ -570,7 +491,229 @@
   }
 }
 
+@media only screen and (min-device-width: 481px) and (max-device-width: 1020px) {
 
+  .dashboardComponent {
+    position: relative;
+    width: 100%;
+    height: 98%;
+    /* border: 1px solid greenyellow; */
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-columns: 45% 55%;
+    grid-template-rows: 40% 60%;
+    grid-template-areas:
+      "overviewWrapper overviewWrapper"
+      "recentlyAddedWrapper recentActivitesWrapper";
+    margin-top: 1%;
+  }
+
+  /* _________________________________________________________ */
+
+  .overviewWrapper {
+    position: relative;
+    grid-area: overviewWrapper;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid orange; */
+  }
+
+  .overviewHeadingContainer {
+    position: relative;
+    width: 100%;
+    height: 30%;
+    /* border: 1px solid blue; */
+    /* background-color: grey; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .overviewContentContainer {
+    position: relative;
+    width: 70%;
+    height: 70%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-left: 2%;
+    margin-top: 0%;
+    /* border: 1px solid red; */
+  }
+
+  .boxContainer {
+    width: 32%;
+    height: 40%;
+    border-radius: 15px;
+    margin-left: 8%;
+    margin-right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+  }
+
+  .countIcon {
+    padding: 0px;
+    margin: 0px;
+    font-size: 1.3rem !important;
+  }
+
+  .listCountText {
+    position: relative;
+    font-size: 1.6rem !important;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .countLabelText {
+    position: relative;
+    font-size: 0.75rem !important;
+    margin: 0px;
+    padding: 0px;
+    font-weight: var(--bolder-font);
+  }
+
+  /* _________________________________________________________ */
+
+  .recentActivitesWrapper {
+    position: relative;
+    grid-area: recentActivitesWrapper;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .recentActivitesHeadingContianer {
+    position: relative;
+    width: 100%;
+    height: 10%;
+    /* border: 1px solid blue; */
+    /* background-color: grey; */
+    /* border: 1px solid yellow; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .recentActivitesContentContianer {
+    position: relative;
+    width: 100%;
+    height: 90%;
+    min-height: 90%;
+    /* border: 1px solid green; */
+    /* background-color: green; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0px;
+  }
+
+
+  .recentlyAddedWrapper {
+    position: relative;
+    grid-area: recentlyAddedWrapper;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid red; */
+  }
+
+  .recentlyAddedHeadingContainer {
+    position: relative;
+    width: 100%;
+    height: 10%;
+    /* border: 1px solid yellow; */
+    /* background-color: orange; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0px;
+  }
+
+  .recentlyAddedContentContainer {
+    position: relative;
+    width: 100%;
+    height: 90%;
+    min-height: 90%;
+    /* border: 1px solid orange !important; */
+    /* border: 1px solid green; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 0px;
+  }
+
+  .wrapperHeadingDiv {
+    position: relative;
+    width: 100%;
+    height: auto;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 5%;
+  }
+
+  /* .wrapperHeadingDiv::before {
+    content: "";
+    position: absolute;
+    background-color: #C7BAFD;
+    width: 13px;
+    height: 90%;
+    top: 0px;
+    left: 0px;
+    border-radius: 2px;
+    margin-left: 5%;
+  } */
+
+  .wrapperHeadingDiv p {
+    position: relative;
+    font-size: 23px;
+    font-weight: var(--bolder-font);
+    margin: 0px;
+    /* margin-left: 6% !important; */
+    /* border: 1px solid black; */
+  }
+
+  .wrapperHeadingDiv p::after {
+    content: "";
+    position: absolute;
+    background-color: var(--ui-scheme-color);
+    width: 40px;
+    height: 3px;
+    bottom: -8px;
+    left: 0px;
+    border-radius: 20px;
+  }
+
+  /* __________________________________________________________ */
+  .dashboardComponent::-webkit-scrollbar {
+    background-color: rgba(255, 255, 255, 0);
+    height: 4px;
+    width: 2px;
+  }
+
+  .dashboardComponent::-webkit-scrollbar-track {
+    background-color: rgb(231, 228, 228);
+    background-color: rgba(231, 228, 228, 0.062);
+    width: 2px;
+  }
+
+  .dashboardComponent::-webkit-scrollbar-thumb {
+    background-color: var(--ui-scheme-color);
+    border-radius: 4px;
+  }
+}
 
 /* > Ipad potrait */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
@@ -616,7 +759,7 @@
     position: relative;
     width: 70%;
     height: 70%;
-    /* border: 1px solid blsue; */
+    /* border: 1px solid blue; */
     /* background-color: blue; */
     display: flex;
     justify-content: flex-start;
@@ -627,114 +770,36 @@
   }
 
   .boxContainer {
-    width: 35%;
-    height: 40%;
-    /* border: 1px solid black; */
-    border-radius: 20px;
-    /* background-color: white; */
-    margin-left: 20px;
-    margin-right: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
-  }
-
-  .iconContainer {
-    position: relative;
-    width: 50%;
-    height: 80%;
+    /* width: 32%; */
+    /* height: 40%; */
+    border-radius: 1.3rem;
+    /* margin-left: 8%; */
+    /* margin-right: 0px; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
     /* border: 1px solid red; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .iconDiv1 {
-    position: relative;
-    /* width: 70%; */
-    height: 95%;
-    aspect-ratio: 1/1;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-  }
-
-  .iconDiv2 {
-    position: relative;
-    /* width: 70%; */
-    height: 95%;
-    aspect-ratio: 1/1;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-  }
-
-  .iconDiv3 {
-    position: relative;
-    /* width: 70%; */
-    height: 95%;
-    aspect-ratio: 1/1;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
   }
 
   .countIcon {
-    font-size: 32px;
-  }
-
-  .count_and_Label_Container {
-    position: relative;
-    width: 40%;
-    height: 75%;
-    /* border: 1px solid black; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .countDiv {
-    position: relative;
-    width: 100%;
-    height: 70%;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    padding: 0px;
+    margin: 0px;
+    font-size: 2.2rem !important;
   }
 
   .listCountText {
     position: relative;
-    font-size: 35px;
-    font-weight: var(--boldest-font);
+    font-size: 2.5rem !important;
     margin: 0px;
-    padding: 0px;
-  }
-
-  .labelDiv {
-    position: relative;
-    width: 100%;
-    height: 30%;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
     padding: 0px;
   }
 
   .countLabelText {
     position: relative;
-    font-size: 15px;
-    font-weight: var(--bolder-font);
+    font-size: 1rem !important;
     margin: 0px;
+    padding: 0px;
+    font-weight: var(--bolder-font);
   }
 
   /* _________________________________________________________ */
