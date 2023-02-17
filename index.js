@@ -42,6 +42,7 @@ const allowedOrigins = [
   "https://ecrypt.herokuapp.com",
   "http://localhost:3000",
 ];
+
 const corsOptions = {
   origin: (origin, callback) => {
     if (allowedOrigins.includes(origin) || !origin) {
@@ -50,13 +51,10 @@ const corsOptions = {
       callback(new Error("Origin not allowed by CORS"));
     }
   },
-  // methods: ["POST", "GET", "DELETE", "PUT", "OPTIONS"],
-  // maxAge: 3600,
-  // credentials: true,
+
   credentials: true,
-  // allowedHeaders: ["Content-Type", "Authorization"],
 };
-// Enable preflight requests for all routes
+
 app.use(
   cors({
     origin: [

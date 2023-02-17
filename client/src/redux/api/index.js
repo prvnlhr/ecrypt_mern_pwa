@@ -5,8 +5,12 @@ let url = process.env.REACT_APP_BASE_URL;
 
 
 // //for production server
+// const API = axios.create({
+//   baseURL: url,
+// });
+
 const API = axios.create({
-  baseURL: url,
+  baseURL: "https://ecrypt-api.onrender.com"
 });
 
 // for development server
