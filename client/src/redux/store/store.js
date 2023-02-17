@@ -23,6 +23,7 @@ const store = configureStore({
         search: searchSlice,
         ui: uiSlice,
     },
+    devTools: process.env.NODE_ENV !== 'production',
 })
 
 export default store
