@@ -36,11 +36,11 @@ const SignUpPage = () => {
   }
 
   const [formData, setFromData] = useState({
-    firstName: 'Praveen',
-    lastName: 'Lohar',
-    email: 'prvnlhr522@gmail.com',
-    password: 'Prvnpr@123',
-    confirmPassword: 'Prvnpr@123',
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
   });
 
 

@@ -34,8 +34,8 @@ const SignInPage = () => {
 
 
   const [formData, setFromData] = useState({
-    email: 'prvnlhr522@gmail.com',
-    password: 'Prvnpr@123',
+    email: '',
+    password: '',
   });
 
   useEffect(() => {
