@@ -47,7 +47,7 @@ export const getUserDetails = createAsyncThunk("user/getUser", async (token, { g
         return fulfillWithValue(userRes);
     } catch (error) {
         console.log('errror', error)
-        const errorMessage = 'Error in registration'
+        const errorMessage = error?.response.data.msg;
         return rejectWithValue({ errorMessage });
     }
 });
@@ -68,7 +68,7 @@ export const editUserProfile = createAsyncThunk("user/editProfile", async ({ tok
         return fulfillWithValue(resData);
     } catch (error) {
         console.log('errror', error.response.data.msg)
-        const errorMessage = 'Error in registration'
+        const errorMessage = error?.response.data.msg;
         return rejectWithValue({ errorMessage });
     }
 });
