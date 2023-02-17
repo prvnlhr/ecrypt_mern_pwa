@@ -38,27 +38,26 @@ mongoose
   .then(() => console.log("Connected to Database :: MongoDB Cloud"))
   .catch((err) => console.log(err.message));
 
-const allowedOrigins = [
-  "https://ecrypt.herokuapp.com",
-  "http://localhost:3000",
-];
+// const allowedOrigins = [
+//   "https://ecrypt.herokuapp.com",
+//   "http://localhost:3000",
+// ];
 
-const corsOptions = {
-  origin: (origin, callback) => {
-    if (allowedOrigins.includes(origin) || !origin) {
-      callback(null, true);
-    } else {
-      callback(new Error("Origin not allowed by CORS"));
-    }
-  },
-
-  credentials: true,
-};
+// const corsOptions = {
+//   origin: (origin, callback) => {
+//     if (allowedOrigins.includes(origin) || !origin) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error("Origin not allowed by CORS"));
+//     }
+//   },
+//   credentials: true,
+// };
 
 app.use(
   cors({
     origin: [
-      "https://ecrypt.herokuapp.com", "http://localhost:3000", "https://ecrypt.onrender.com"],
+      "http://localhost:3000", "https://ecrypt.onrender.com"],
     credentials: true,
   })
 );
@@ -71,11 +70,12 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.join(__dirname, "./client/build/index.html", "client", "build", "index.html"));
   });
 }
+
 //SERVER LISTENING
 app.listen(PORT, (err) => {
   if (err) {
     console.log(err.message);
   } else {
-    console.log(`Listening on localhost:${PORT}`);
+    console.log(`server running on:${PORT}`);
   }
 });

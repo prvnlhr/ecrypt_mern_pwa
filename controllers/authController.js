@@ -90,22 +90,27 @@ const authController = {
       const { email, password } = req.body;
       const user = await UserDatabase.findOne({ email });
 
-      if (!user)
+      if (!user) {
         return res.status(400).json({ msg: "This email does not exist." });
+      }
 
       const isMatch = await bcrypt.compare(password, user.password);
-      if (!isMatch)
+
+      if (!isMatch) {
         return res.status(400).json({ msg: "Password is incorrect." });
+      }
       const refresh_token = createRefreshToken({ id: user._id });
       res.cookie("refreshtoken", refresh_token, {
         httpOnly: true,
         secure: true,
-        samSite: "none",
+        sameSite: 'None',
         path: "/user/auth/access_token",
         maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
       });
+
+
       const access_token = createAccessToken({ id: user._id });
-      console.log('login cont', access_token);
+      // console.log('login controller', access_token);
       res.status(200).json(access_token);
     } catch (err) {
       console.log("error at Login controller", err);
@@ -116,8 +121,7 @@ const authController = {
   getAccessToken: async (req, res) => {
     try {
       const rf_token = req.cookies.refreshtoken;
-      console.log('getToken controller', rf_token)
-      // console.log("access_token from cookies::", req.cookies.refreshtoken);
+      console.log('getToken controller', rf_token, req)
       if (!rf_token) {
         return res.status(401).json({ msg: "Please Login to continue !" });
       }
@@ -138,10 +142,10 @@ const authController = {
   },
 
   getUserInfo: async (req, res) => {
-    console.log('getUser', req.user.id);
+    // console.log('getUser', req.user.id);
     try {
       const user = await UserDatabase.findById(req.user.id).select("-password");
-      console.log(user)
+      // console.log(user)
       return res.status(200).json({ user });
     } catch (error) {
       console.log("error at getUserinfo controller", error);
