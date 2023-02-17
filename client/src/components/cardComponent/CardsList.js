@@ -141,7 +141,7 @@ const CardsList = ({ setLogoComponentShow,
     clearTimeout(timeOut);
     timeOut = setTimeout(() => {
       setIsScrolling(false);
-    }, 200);
+    }, 900);
   };
   //________________________________________________
 
@@ -257,7 +257,7 @@ const CardsList = ({ setLogoComponentShow,
   }
 
   return (
-    <div className={`${styles.cardList} `}>
+    <div className={`${styles.cardList} `} >
 
       <DeleteModal
         setDeleteMode={setDeleteMode}
@@ -270,7 +270,7 @@ const CardsList = ({ setLogoComponentShow,
         (!showInputForm && !showContentCard) &&
         < AddBtn formToggle={formToggle} isScrolling={isScrolling} />
       }
-      <div className={(showContentCard || showInputForm) ? styles.contentContainerClose : styles.contentContainer} ref={node}>
+      <div ref={node} className={(showContentCard || showInputForm) ? styles.contentContainerClose : styles.contentContainer} >
         {cardsArray.map((card, index) => (
           <Card
             key={index}

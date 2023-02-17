@@ -39,8 +39,9 @@ const LoginIdsList = ({ setLogoComponentShow,
     clearTimeout(timeOut);
     timeOut = setTimeout(() => {
       setIsScrolling(false);
-    }, 200);
+    }, 800);
   };
+
   //________________________________________________
 
   useEffect(() => {

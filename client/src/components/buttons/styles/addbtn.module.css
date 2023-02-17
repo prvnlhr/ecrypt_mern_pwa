@@ -1,31 +1,65 @@
 .addBtnWrapper {
     width: 100px;
     height: 50px;
-    /* border: 1px solid black; */
+    /* border: 1px solid red; */
     position: absolute;
-    bottom: 10px;
-    right: 10px;
+    bottom: 20px;
+    right: 20px;
     z-index: 65;
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     background-color: white;
-    border-radius: 18px;
+    border-radius: 0.95rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 1%;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    scroll-behavior: smooth;
 }
 
-.addBtnWrapperHide {
-    /* display: none !important; */
-    border: 1px solid black;
+.addBtnWrapperShrink {
+    width: 50px;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    scroll-behavior: smooth;
 }
 
-.addBtnWrapper p {
+.iconDiv {
+    /* width: 40%; */
+    height: 100%;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+    background-color: #ADD2FF;
+    border-radius: 0.75rem;
+}
+
+.plusIcon {
+    font-size: 1.8rem;
+}
+
+.addTextDiv {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addTextDivHide {
+    display: none;
+}
+
+.addTextDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 18px;
     font-weight: var(--bolder-font);
     color: #002A9A;
-}
-
-.plusIcon {
-    font-size: 22px;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    scroll-behavior: smooth;
 }

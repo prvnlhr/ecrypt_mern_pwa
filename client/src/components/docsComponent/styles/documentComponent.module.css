@@ -184,12 +184,12 @@
     }
 
     .titleText {
-        width: 80%;
+        width: 90%;
         margin-left: 5%;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         font-weight: var(--bolder-font);
     }
 

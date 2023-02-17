@@ -117,7 +117,7 @@
 
 .countIcon {
   /* font-size: 1.4rem; */
-  /* font-size: 3.5rem; */
+  font-size: 2rem;
   /* font-size: clamp(1.4rem, 1.091743119266055rem + 1.5412844036697249vw, 3.5rem) !important; */
   color: black;
 }
@@ -147,12 +147,12 @@
 .listCountText {
   position: relative;
   font-family: "Poppins", sans-serif;
-  /* font-size: 2rem; */
+  font-size: 2rem;
   /* font-size: 4rem; */
   /* font-size: 4rem; */
   /* font-size: clamp(2.0rem, 1.8238532110091743rem + 0.8807339449541285vw, 3.2rem) !important; */
   /* font-size: clamp(1.6rem, 1.2477064220183487rem + 1.7614678899082568vw, 4.0rem) !important; */
-  font-weight: var(--bold-font);
+  font-weight: var(--bolder-font);
   color: var(--primary-font-color);
   margin: 0px !important;
   padding: 0px !important;
@@ -173,12 +173,12 @@
 .countLabelText {
   position: relative;
   font-family: "Poppins", sans-serif;
-  /* font-size: 0.85rem; */
+  font-size: 1rem;
   /* font-size: 1.9rem; */
   /* font-size: clamp(0.75rem, 0.5811926605504587rem + 0.8440366972477064vw, 1.9rem) !important; */
   /* font-size: clamp(0.85rem, 0.7105504587155963rem + 0.6972477064220184vw, 1.8rem) !important; */
   /* font-size: clamp(0.85rem, 0.7545871559633027rem + 0.47706422018348627vw, 1.5rem) !important; */
-  font-weight: var(--bold-font);
+  font-weight: var(--bolder-font);
   color: var(--secondary-font-color);
   margin: 0px;
   white-space: nowrap;
@@ -407,7 +407,6 @@
     font-size: 0.75rem !important;
     margin: 0px;
     padding: 0px;
-    font-weight: var(--bolder-font);
   }
 
 

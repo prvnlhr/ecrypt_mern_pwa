@@ -936,10 +936,6 @@
   .editBtnDiv {
     width: auto;
     height: 55%;
-    padding-left: 3%;
-    padding-right: 3%;
-    border-radius: 5px;
-    margin-right: 10px;
   }
 
   .editBtnDiv p {

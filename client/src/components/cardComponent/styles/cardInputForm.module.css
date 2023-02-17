@@ -101,7 +101,7 @@
 
 .backBtnDiv {
     /* width: 40%; */
-    height: 50%;
+    height: 55%;
     /* border: 1px solid black; */
     display: flex;
     justify-content: flex-start;
@@ -116,14 +116,13 @@
     /* border: 1px solid black; */
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .saveBtnDiv {
     width: auto;
     height: 22px;
     height: 25px;
-
     /* border: 1px solid black; */
     background-color: #58BF6F;
     /* background-color: white; */
@@ -493,7 +492,7 @@
 
     .backBtnDiv {
         width: 50%;
-        height: 50%;
+        height: 52%;
         /* border: 1px solid black; */
         display: flex;
         justify-content: flex-start;
@@ -506,6 +505,9 @@
         width: 50%;
         height: 100%;
         /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
     }
 
 
@@ -531,20 +533,23 @@
     }
 
     .logoContainer {
-        width: 30%;
+        /* width: auto; */
+        /* width: 30%; */
         height: 100%;
-        /* border: 1px solid black; */
+        aspect-ratio: 1/1;
+        /* border: 1px solid orange; */
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
+        /* border: 1px solid green; */
+        margin-right: 2%;
     }
 
 
     .logoDiv {
         /* width: 80%; */
         aspect-ratio: 1/1;
-        height: 80%;
-
+        height: 90%;
         border-radius: 20px;
         display: flex;
         justify-content: center;
@@ -577,8 +582,7 @@
     }
 
     .titleLabelDiv p {
-        font-family: "Poppins", sans-serif;
-        font-size: 15px;
+        font-size: 0.85rem;
         font-weight: var(--bolder-font);
         color: var(--secondary-font-color);
 
@@ -595,7 +599,7 @@
 
     .titleInputDiv p {
         font-family: "Poppins", sans-serif;
-        font-size: 20px;
+        font-size: 1.5rem;
         font-weight: var(--boldest-font);
     }
 
@@ -634,8 +638,7 @@
 
     .categoryLabelDiv p {
         font-family: "Poppins", sans-serif;
-        font-size: 18px;
-        font-weight: var(--boldest-font);
+        font-size: 1.2rem;
         margin: 0px;
         padding: 0px;
     }
@@ -652,8 +655,7 @@
 
     .categoryInput {
         font-family: "Poppins", sans-serif;
-        font-size: 15px;
-        font-weight: var(--boldest-font);
+        font-size: 1.1rem;
         border: 1px solid rgba(142, 138, 138, 0.13);
         outline: none !important;
         height: 80%;
@@ -685,27 +687,23 @@
     .inputPopUpDiv {
         top: 105%;
         position: absolute;
-        width: 150px;
-        height: 200px;
-        border: unset;
+        width: 170px;
+        height: auto;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
         padding-top: 5%;
-        padding-bottom: 5%;
+        padding-bottom: 8%;
         padding-left: 10%;
         border-radius: 5px;
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-        /* border: 1px solid #0475ff84; */
-        z-index: 999;
 
     }
 
     .inputPopUpText {
         font-family: "Poppins", sans-serif;
-        font-size: 15px;
-        font-weight: var(--bolder-font);
+        font-size: 1rem;
+        /* font-weight: var(--bolder-font); */
         margin: 5% 0px 0px 0px;
         display: flex;
         justify-content: flex-start;
@@ -790,4 +788,8 @@
         /* border: 1px solid blue; */
 
     }
+
+
+
+
 }

@@ -5,8 +5,8 @@ import { getUserDetails } from "../user/userSlice"
 const initialState = {
     token: undefined,
     authResponseMessage: undefined,
-    isLoading: true,
-    isLogged: false,
+    isLoading: false,
+    isLogged: undefined,
     error: false,
     success: false,
 }
