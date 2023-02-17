@@ -1,18 +1,18 @@
 import axios from "axios";
 import { setAuthToken, forceLogout, logOutUser } from "../features/auth/authSlice"
 let url = process.env.REACT_APP_BASE_URL;
-console.log(process.env.REACT_APP_BASE_URL);
+// console.log(process.env.REACT_APP_BASE_URL);
 
 
 // //for production server
-// const API = axios.create({
-//   baseURL: url,
-// });
+const API = axios.create({
+  baseURL: url,
+});
 
 // for development server
-const API = axios.create({
-  baseURL: "http://localhost:9000"
-});
+// const API = axios.create({
+//   baseURL: "http://localhost:9000"
+// });
 
 // ->______________________________________________________________________________
 const reqHandler = (request) => {
