@@ -59,7 +59,7 @@ const corsOptions = {
 // Enable preflight requests for all routes
 app.use(
   cors({
-    origin: ["https://ecrypt.herokuapp.com", "http://localhost:3000"],
+    origin: ["https://ecrypt.herokuapp.com", "http://localhost:3000", "https://ecrypt.onrender.com"],
     credentials: true,
   })
 );
