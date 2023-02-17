@@ -116,7 +116,7 @@ const authController = {
   getAccessToken: async (req, res) => {
     try {
       const rf_token = req.cookies.refreshtoken;
-      console.log('getToken controller')
+      console.log('getToken controller', rf_token)
       // console.log("access_token from cookies::", req.cookies.refreshtoken);
       if (!rf_token) {
         return res.status(401).json({ msg: "Please Login to continue !" });
@@ -126,7 +126,7 @@ const authController = {
       const access_token = createAccessToken({ id: userId });
       res.status(200).json(access_token);
     } catch (error) {
-      // console.log("error at get token controller", error.name);
+      console.log("error at get token controller", error.name);
       if (
         error.name === "TokenExpiredError" ||
         error.name === "JsonWebTokenError"
