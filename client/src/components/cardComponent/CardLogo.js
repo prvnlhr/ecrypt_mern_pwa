@@ -1,19 +1,5 @@
 import React from "react";
-// import styles from "../../css/card/card.module.css";
-// import mastercard from "../../img/mastercard.png";
-// import visa from "../../img/visa.svg";
-// import maestro from "../../img/maestro.png";
-// import rupay from "../../img/rupay.svg";
-// import amex from "../../img/amex.png";
-// import jcb from "../../img/jcb.png";
-// import discover from "../../img/discover.svg";
-// import diners from "../../img/diners.svg";
-// import hipercard from "../../img/hipercard.png";
-// import unionpay from "../../img/unionpay.png";
-// import solo from "../../img/solo.svg";
-// import switchLogo from "../../img/switch.svg";
-// import cardLogoStyles from "../../css/card/logos.module.css";
-// import { Icon, InlineIcon } from "@iconify/react";
+
 
 const getCardType = (number) => {
   // console.log(typeof number)

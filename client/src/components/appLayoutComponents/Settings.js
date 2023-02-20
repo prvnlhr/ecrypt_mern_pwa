@@ -7,7 +7,6 @@ import DeleteModal from "../modal/DeleteModal"
 import { validateChangePassForm } from "../authComponent/helperFunctions/formValidation"
 import { editUserProfile, changeUserPass } from "../../redux/features/user/userSlice"
 import axios from "axios";
-import avatarImg from "../../img/avatarImg.png"
 import { changeProfilePicture } from "../../redux/features/user/userSlice"
 import { Oval } from 'react-loader-spinner'
 const Settings = () => {
