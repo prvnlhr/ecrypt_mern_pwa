@@ -47,7 +47,7 @@ export const addNewDocData = createAsyncThunk("docs/add", async ({ data, name, u
         return fulfillWithValue(res.data[res.data.length - 1]);
 
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         throw rejectWithValue(error);
     }
 
@@ -58,7 +58,7 @@ export const editDocData = createAsyncThunk("docs/edit", async ({ docId, docData
     try {
         const state = getState();
 
-        console.log(docId, docData);
+        // console.log(docId, docData);
         const res = await api.editDoc(docId, docData, state.auth.token);
         dispatch(addActivityData({
             activityData: activityData,
@@ -67,7 +67,7 @@ export const editDocData = createAsyncThunk("docs/edit", async ({ docId, docData
         return fulfillWithValue(docData);
 
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         throw rejectWithValue(error);
     }
 
@@ -76,18 +76,18 @@ export const deleteDocData = createAsyncThunk("docs/delete", async ({ docId, clo
 
     try {
         const state = getState();
-        console.table(userId, docId, cloudId);
+        // console.table(userId, docId, cloudId);
         const res = await api.deleteDoc(docId, userId, cloudId, state.auth.token);
         dispatch(addActivityData({
             activityData: activityData,
             userId: userId
         }))
         // console.log(res);
-        console.log(res.data)
+        // console.log(res.data)
         return fulfillWithValue(res.data.data.reverse());
 
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         throw rejectWithValue(error);
     }
 });

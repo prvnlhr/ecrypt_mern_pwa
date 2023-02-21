@@ -25,7 +25,7 @@ sgMail.setApiKey(SEND_GRID_API_KEY);
 const userController = {
   register: async (req, res) => {
     const { email, password, confirmPassword, firstName, lastName } = req.body;
-    console.log("At register controller", req.body);
+    // console.log("At register controller", req.body);
     try {
       //checking all field fill or not.
       if (!firstName || !lastName || !email || !password || !confirmPassword) {
@@ -40,12 +40,12 @@ const userController = {
         return res.status(400).json({ msg: " Passwords does not match" });
       }
       //checking email address already exist or not.
-      console.log("check 1");
+      // console.log("check 1");
 
       const existingUser = await UserDatabase.findOne({ email });
-      console.log(existingUser);
+      // console.log(existingUser);
       if (existingUser) {
-        console.log("user exists");
+        // console.log("user exists");
         return res.status(400).json({ msg: "Email address already exist" });
       }
       //checking password length for minimum password length.
@@ -61,7 +61,7 @@ const userController = {
         password: passwordHash,
       };
       //creating jwt Token.
-      console.log("check 2");
+      // console.log("check 2");
 
       const activation_token = createActivationToken(newUser);
 
@@ -84,7 +84,7 @@ const userController = {
       //   .catch((err) => {
       //     return res.status(400).json({ error: err });
       //   });
-      console.log("check 3");
+      // console.log("check 3");
       const txt = "Account Activation Link";
       const url = `${CLIENT_URL}/user/activate/${activation_token}`;
 
@@ -95,7 +95,7 @@ const userController = {
     }
   },
   activateEmail: async (req, res) => {
-    console.log("At activate email controller", req.body.data.activation_token);
+    // console.log("At activate email controller", req.body.data.activation_token);
     try {
       // const {activation_token} = req.body,data
       const user = jwt.verify(
@@ -121,7 +121,7 @@ const userController = {
     }
   },
   login: async (req, res) => {
-    console.log("login controller", req.body);
+    // console.log("login controller", req.body);
     try {
       const { email, password } = req.body;
       const user = await UserDatabase.findOne({ email });
@@ -140,7 +140,7 @@ const userController = {
         path: "/user/access_token",
         maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
       });
-      console.log("new rftoken at login cntrl", access_token);
+      // console.log("new rftoken at login cntrl", access_token);
 
       res.json({ msg: "Login success!" });
     } catch (err) {
@@ -149,9 +149,9 @@ const userController = {
   },
   getAccessToken: async (req, res) => {
     try {
-      console.log("getToken controller");
+      // console.log("getToken controller");
       const rf_token = req.cookies.refreshtoken;
-      console.log("At get token controller", rf_token);
+      // console.log("At get token controller", rf_token);
       if (!rf_token) {
         return res.status(401).json({ msg: "Please Login to continue !" });
       }
@@ -186,7 +186,7 @@ const userController = {
     try {
       const { password } = req.body;
       const passwordHash = await bcrypt.hash(password, 12);
-      console.log(req.user);
+      // console.log(req.user);
       const newPassword = await UserDatabase.findOneAndUpdate(
         { _id: req.user.id },
         { password: passwordHash }
@@ -199,19 +199,19 @@ const userController = {
     }
   },
   changePassword: async (req, res) => {
-    console.log("Att change pass cntrl", req.body);
+    // console.log("Att change pass cntrl", req.body);
     try {
       const { oldPassword, newPassword } = req.body;
       const id = req.user.id;
       const user = await UserDatabase.findById(id);
       if (!user) {
-        console.log("User does not exist");
+        // console.log("User does not exist");
 
         return res.status(400).send({ msg: "Email Id does not exist." });
       }
       const isMatch = await bcrypt.compare(oldPassword, user.password);
       if (!isMatch) {
-        console.log("Pass does not match");
+        // console.log("Pass does not match");
 
         return res.status(400).send({ msg: "Old Password does not matched !" });
       }

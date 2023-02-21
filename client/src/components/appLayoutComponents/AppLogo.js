@@ -3,11 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import styles from "./styles/appLogoStyles.module.css"
 
 const AppLogo = ({ unique_id }) => {
-    {/* fill="url(#paint0_linear_1006_1964)" */ }
-    {/* fill={`url(#paint0_linear_1006_1964${unique_id})`} */ }
-    {/* fill="url(#paint0_linear_1006_1964)" */ }
-    {/* fill="url(#paint1_linear_1006_1964)"  */ }
-    // fill={`url(#paint1_linear_1006_1965_${unique_id})`}
+
     const isDarkMode = useSelector((state) => state.ui.darkMode);
 
     return (

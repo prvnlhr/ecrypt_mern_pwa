@@ -20,7 +20,7 @@ export const addRecentlyAddedData = createAsyncThunk("recentlyAdded/add", async 
         return fulfillWithValue(data.reverse());
 
     } catch (error) {
-        console.log(error)
+        // console.log(error)
         return rejectWithValue(error);
     }
 })

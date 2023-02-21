@@ -202,7 +202,7 @@ const cardsController = {
   editCard: async (req, res) => {
     const id = req.params.id;
     const CATEGORY = req.body.category;
-    console.log(CATEGORY);
+    // console.log(CATEGORY);
 
     try {
       let response;
@@ -278,11 +278,11 @@ const cardsController = {
   },
 
   toggleFav: async (req, res) => {
-    console.log(req.body)
+    // console.log(req.body)
     const id = req.params.id;
     const isFav = req.body.isFav;
     const CATEGORY = req.body.category
-    console.log(CATEGORY, isFav, id)
+    // console.log(CATEGORY, isFav, id)
     try {
 
       // const response = await UserDatabase.findOneAndUpdate(

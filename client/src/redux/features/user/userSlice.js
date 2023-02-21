@@ -31,7 +31,7 @@ export const getUserDetails = createAsyncThunk("user/getUser", async (token, { g
         const userData = res.data.user;
         const profilePicData = res.data.user.profilePic
         // console.log(profilePicData.picUrl)
-        console.log(userData);
+        // console.log(userData);
         const nameString = userData.name.split(/[" "]+/);
         const userRes = {
             firstName: nameString[0],
@@ -43,10 +43,10 @@ export const getUserDetails = createAsyncThunk("user/getUser", async (token, { g
             joinedDate: undefined,
             updateDate: undefined,
         }
-        console.log(userRes);
+        // console.log(userRes);
         return fulfillWithValue(userRes);
     } catch (error) {
-        console.log('errror', error)
+        // console.log('error', error)
         const errorMessage = error?.response.data.msg;
         return rejectWithValue({ errorMessage });
     }
@@ -67,7 +67,7 @@ export const editUserProfile = createAsyncThunk("user/editProfile", async ({ tok
         }
         return fulfillWithValue(resData);
     } catch (error) {
-        console.log('errror', error.response.data.msg)
+        // console.log('error', error.response.data.msg)
         const errorMessage = error?.response.data.msg;
         return rejectWithValue({ errorMessage });
     }
@@ -75,18 +75,18 @@ export const editUserProfile = createAsyncThunk("user/editProfile", async ({ tok
 
 export const changeUserPass = createAsyncThunk("user/changeProfilePass", async ({ oldPassword, newPassword, token }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
-        console.log(token, oldPassword, newPassword);
+        // console.log(token, oldPassword, newPassword);
         const res = await api.changePass(oldPassword, newPassword, token);
         return fulfillWithValue(res.data.msg);
     }
     catch (error) {
-        console.log(error.response.data.msg)
+        // console.log(error.response.data.msg)
         return rejectWithValue(error.response.data.msg);
     }
 });
 export const changeProfilePicture = createAsyncThunk("user/changeProfilePic", async ({ data, token }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
-        console.log(data);
+        // console.log(data);
         const state = getState();
         const res = await api.editProfilePic(data, state.auth.token);
         // console.log(res);
@@ -98,7 +98,7 @@ export const changeProfilePicture = createAsyncThunk("user/changeProfilePic", as
         return fulfillWithValue(profilePicData);
     }
     catch (error) {
-        console.log(error.response.data.msg)
+        // console.log(error.response.data.msg)
         return rejectWithValue(error.response.data.msg);
     }
 });
@@ -112,7 +112,7 @@ const userSlice = createSlice({
         builder
 
             .addCase(getUserDetails.fulfilled, (state, action) => {
-                console.log(action.payload)
+                // console.log(action.payload)
                 return {
                     ...state,
                     _id: action.payload._id,
@@ -127,7 +127,7 @@ const userSlice = createSlice({
                 };
             })
             .addCase(getUserDetails.rejected, (state, action) => {
-                console.log(action.payload)
+                // console.log(action.payload)
                 return {
                     ...state,
                 };

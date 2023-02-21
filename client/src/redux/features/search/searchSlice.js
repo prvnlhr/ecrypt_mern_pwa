@@ -15,7 +15,7 @@ export const searchUserData = createAsyncThunk("search/query", async ({ query },
             data: data,
         });
     } catch (error) {
-        console.log(error)
+        // console.log(error)
         return rejectWithValue(error);
     }
 })

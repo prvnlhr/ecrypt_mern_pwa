@@ -13,7 +13,7 @@ const loginsController = {
     }
   },
   addLoginId: async (req, res) => {
-    console.log("at loginId controller", req.body.newLoginData, req.body.user_id);
+    // console.log("at loginId controller", req.body.newLoginData, req.body.user_id);
     try {
       const response = await UserDatabase.findOneAndUpdate(
         { _id: req.body.user_id },
@@ -31,7 +31,7 @@ const loginsController = {
   editLoginId: async (req, res) => {
     const id = req.params.id;
     const { title, category, app, username, password, logoIndex } = req.body;
-    console.log("at edit loginId", title)
+    // console.log("at edit loginId", title)
     try {
       const response = await UserDatabase.findOneAndUpdate(
         { "loginIdsArray._id": id },
@@ -78,7 +78,7 @@ const loginsController = {
   toggleFav: async (req, res) => {
     const id = req.params.id;
     const isFav = req.body.data;
-    console.log(id, isFav);
+    // console.log(id, isFav);
 
     try {
       const response = await UserDatabase.findOneAndUpdate(

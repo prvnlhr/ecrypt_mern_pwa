@@ -24,8 +24,7 @@ sgMail.setApiKey(SEND_GRID_API_KEY);
 const authController = {
   register: async (req, res) => {
     const { email, password, confirmPassword, firstName, lastName } = req.body;
-    console.log(email, password, confirmPassword, firstName, lastName)
-
+    // console.log(email, password, confirmPassword, firstName, lastName)
     try {
 
       const check = await UserDatabase.findOne({ email });
@@ -53,7 +52,7 @@ const authController = {
   activateEmail: async (req, res) => {
     try {
       // const { activation_token } = req.body.data;
-      console.log("activation token controller", req.body.data);
+      // console.log("activation token controller", req.body.data);
       const user = jwt.verify(
         req.body.data.activation_token,
         ACTIVATION_TOKEN_SECRET
@@ -121,7 +120,7 @@ const authController = {
   getAccessToken: async (req, res) => {
     try {
       const rf_token = req.cookies.refreshtoken;
-      console.log('getToken controller', rf_token, req)
+      // console.log('getToken controller', rf_token, req)
       if (!rf_token) {
         return res.status(401).json({ msg: "Please Login to continue !" });
       }
@@ -155,7 +154,7 @@ const authController = {
 
   logout: async (req, res) => {
     try {
-      console.log('at logout controller')
+      // console.log('at logout controller')
       res.clearCookie("refreshtoken", { path: "/user/auth/access_token" });
       return res.status(200).json({ msg: "Successfully Logged out" });
     } catch (error) {
@@ -168,7 +167,7 @@ const authController = {
 
     try {
       const { email } = req.body;
-      console.log(email);
+      // console.log(email);
       const user = await UserDatabase.findOne({ email });
       if (!user) {
         return res.status(400).json({ msg: "Email Id doest not exist" });
@@ -194,10 +193,10 @@ const authController = {
 
   resetPassword: async (req, res) => {
     try {
-      console.log("reset password cntrl", req.body);
+      // console.log("reset password cntrl", req.body);
       const { password } = req.body;
       const passwordHash = await bcrypt.hash(password, 12);
-      console.log(req.user);
+      // console.log(req.user);
       const newPassword = await UserDatabase.findOneAndUpdate(
         { _id: req.user.id },
         { password: passwordHash }
@@ -212,7 +211,7 @@ const authController = {
   changePassword: async (req, res) => {
     try {
       const { oldPassword, newPassword } = req.body;
-      console.log(oldPassword, newPassword)
+      // console.log(oldPassword, newPassword)
       const id = req.user.id;
       const user = await UserDatabase.findById(id);
       if (!user) {
@@ -236,7 +235,7 @@ const authController = {
 
   updateProfile: async (req, res) => {
     const { firstName, lastName, email } = req.body.profileData;
-    console.log(firstName, lastName, email)
+    // console.log(firstName, lastName, email)
     try {
       const id = req.user.id;
       const user = await UserDatabase.findById(id);
@@ -267,7 +266,7 @@ const authController = {
 
   updateProfilePic: async (req, res) => {
     const id = req.user.id;
-    console.log('at profile pic change controller', id)
+    // console.log('at profile pic change controller', id)
 
     // console.log('cldnr res', avatarData)
 
@@ -293,7 +292,7 @@ const authController = {
         },
         { returnOriginal: false }
       );
-      console.log(picData);
+      // console.log(picData);
       res.json(picData);
     } catch (error) {
       console.log("error at edit profile controller", error);
@@ -302,7 +301,7 @@ const authController = {
   },
   deleteAccountPermanently: async (req, res) => {
     try {
-      console.log(req.body);
+      // console.log(req.body);
       const { oldPassword } = req.body;
       const id = req.user.id;
       const user = await UserDatabase.findById(id);

@@ -21,7 +21,7 @@ export const fecthCardsData = createAsyncThunk("cards/fetch", async ({ user_id }
             (c1, c2) => (c1.time < c2.time) ? 1 : (c1.time > c2.time) ? -1 : 0);
         return fulfillWithValue(SortedData);
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         return rejectWithValue(error);
     }
 });
@@ -42,7 +42,7 @@ export const addNewCardData = createAsyncThunk("cards/add", async ({ data, user_
         return fulfillWithValue(res.data);
 
     } catch (error) {
-        console.Console.log(error);
+        // console.log(error);
         return rejectWithValue(error);
     }
 });
@@ -61,7 +61,7 @@ export const editCardData = createAsyncThunk("cards/edit", async ({ updatedData,
         }))
         return fulfillWithValue(updatedData);
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         return rejectWithValue(error);
     }
 });
@@ -84,7 +84,7 @@ export const deleteCardData = createAsyncThunk("cards/delete", async ({ cardData
         // console.log(data);
         return fulfillWithValue(cardData);
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         return rejectWithValue(error);
     }
 

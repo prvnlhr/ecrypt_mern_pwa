@@ -11,7 +11,7 @@ const documentsController = {
   },
 
   addDoc: async (req, res) => {
-    console.log("add doc cntrl", req.body);
+    // console.log("add doc cntrl", req.body);
     const id = req.body.userId;
     const fileName = req.body.name;
     const filePath = req.file.path;
@@ -22,7 +22,7 @@ const documentsController = {
         folder: "eCrypt",
       });
 
-      console.log("cldnr response", cloudinaryResponse);
+      // console.log("cldnr response", cloudinaryResponse);
       const docData = {
         imageName: fileName,
         imageUrl: cloudinaryResponse.secure_url,
@@ -51,7 +51,7 @@ const documentsController = {
     const cloudId = req.body.cloudId;
     const userId = req.body.userId;
     const docId = req.params.id;
-    console.log("deleteDoc controller", cloudId, userId, docId);
+    // console.log("deleteDoc controller", cloudId, userId, docId);
     try {
       const result = await cloudinary.v2.uploader.destroy(cloudId);
       const response = await UserDatabase.findOneAndUpdate(
@@ -65,7 +65,7 @@ const documentsController = {
         },
         { returnOriginal: false }
       );
-      console.log(response);
+      // console.log(response);
       res.status(200).send({
         data: response.docsArray,
         msg: "docDeleted",
@@ -77,7 +77,7 @@ const documentsController = {
   },
   editDoc: async (req, res) => {
     const id = req.params.id;
-    console.log("at edit doc controller", req.body);
+    // console.log("at edit doc controller", req.body);
     const { imageName } = req.body;
     try {
       const response = await UserDatabase.findOneAndUpdate(
@@ -98,7 +98,7 @@ const documentsController = {
   toggleFav: async (req, res) => {
     const id = req.params.id;
     const isFav = req.body.data;
-    console.log(id, isFav)
+    // console.log(id, isFav)
     try {
       const response = await UserDatabase.findOneAndUpdate(
         { "docsArray._id": id },

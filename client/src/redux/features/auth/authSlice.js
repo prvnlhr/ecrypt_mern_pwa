@@ -14,11 +14,11 @@ const initialState = {
 export const registerUser = createAsyncThunk("auth/register", async (formData, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
         const res = await api.registerNewUser(formData);
-        console.log(res.data);
+        // console.log(res.data);
         const { msg } = res.data;
         return fulfillWithValue(msg);
     } catch (error) {
-        console.log(error.response.data.msg)
+        // console.log(error.response.data.msg)
         const errorMessage = error?.response.data.msg
         return rejectWithValue({ errorMessage });
     }
@@ -28,7 +28,7 @@ export const activateUserAccount = createAsyncThunk("auth/activateAccount", asyn
     console.log(activation_token);
     try {
         const res = await api.accountActivation(activation_token);
-        console.log(res);
+        // console.log(res);
         return fulfillWithValue(res.data.msg);
     } catch (error) {
         console.log(error.response.data.msg)
@@ -51,13 +51,13 @@ export const loginUser = createAsyncThunk("auth/login", async ({ formData, navig
 });
 
 export const logOutUser = createAsyncThunk("auth/logout", async ({ }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
-    console.log('logout slice')
+    // console.log('logout slice')
     try {
         const res = await api.logout();
-        console.log(res.data.msg);
+        // console.log(res.data.msg);
         return fulfillWithValue(res.data.msg);
     } catch (error) {
-        console.log(error.response.data.msg)
+        // console.log(error.response.data.msg)
         return rejectWithValue(error.response.data.msg);
     }
 })
@@ -65,11 +65,11 @@ export const logOutUser = createAsyncThunk("auth/logout", async ({ }, { getState
 export const getAuthToken = createAsyncThunk("auth/getAuthToken", async ({ }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
         const res = await api.getToken();
-        console.log('getToken Slice', res.data);
+        // console.log('getToken Slice', res.data);
         const accessToken = res.data;
         return fulfillWithValue(accessToken);
     } catch (error) {
-        console.log(error.response.data.msg)
+        // console.log(error.response.data.msg)
         return rejectWithValue(error.response.data.msg);
     }
 });
@@ -78,25 +78,25 @@ export const forgotAccountPass = createAsyncThunk("auth/forgotPass", async (emai
 
     try {
         const res = await api.forgotPass(email);
-        console.log(res.data.msg)
+        // console.log(res.data.msg)
         return fulfillWithValue(res.data.msg);
     }
 
     catch (error) {
-        console.log(error.response.data.msg)
+        // console.log(error.response.data.msg)
         return rejectWithValue(error.response.data.msg);
     }
 });
 
 export const resetUserPass = createAsyncThunk("auth/resetPassword", async ({ password, token }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
-        console.log(token, password);
+        // console.log(token, password);
         const res = await api.resetPass(token, password);
-        console.log(res);
+        // console.log(res);
         return fulfillWithValue(res.data.msg);
     }
     catch (error) {
-        console.log(error.response.data.msg)
+        // console.log(error.response.data.msg)
         return rejectWithValue(error.response.data.msg);
     }
 });
@@ -157,7 +157,7 @@ const authSlice = createSlice({
                 };
             })
             .addCase(registerUser.rejected, (state, action) => {
-                console.log(action.payload);
+                // console.log(action.payload);
                 return {
                     ...state,
                     authResponseMessage: action.payload.errorMessage,
@@ -168,7 +168,7 @@ const authSlice = createSlice({
                 };
             })
             .addCase(activateUserAccount.fulfilled, (state, action) => {
-                console.log(action.payload)
+                // console.log(action.payload)
                 return {
                     ...state,
                     authResponseMessage: action.payload,

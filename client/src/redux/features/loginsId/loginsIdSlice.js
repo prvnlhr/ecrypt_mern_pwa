@@ -25,9 +25,9 @@ export const fecthLoginIdsData = createAsyncThunk("loginIds/fetch", async ({ use
 export const addNewLoginIdData = createAsyncThunk("loginIds/add", async ({ data, user_id, activityData }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
         const state = getState();
-        console.log(data, user_id, state.auth.token)
+        // console.log(data, user_id, state.auth.token)
         const res = await api.addNewLoginId(data, user_id, state.auth.token)
-        console.log(res.data)
+        // console.log(res.data)
         dispatch(addActivityData({
             activityData: activityData,
             userId: user_id
@@ -51,9 +51,9 @@ export const addNewLoginIdData = createAsyncThunk("loginIds/add", async ({ data,
 export const editLoginIdData = createAsyncThunk("loginIds/edit", async ({ updatedData, login_id, activityData, userId }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
         const state = getState();
-        console.log(state.auth)
+        // console.log(state.auth)
         const res = await api.editLoginId(login_id, updatedData, state.auth.token);
-        console.log(res)
+        // console.log(res)
 
         dispatch(addActivityData({
             activityData: activityData,
@@ -63,7 +63,7 @@ export const editLoginIdData = createAsyncThunk("loginIds/edit", async ({ update
         return fulfillWithValue(updatedData);
 
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         throw rejectWithValue(updatedData);
     }
 });
@@ -83,7 +83,7 @@ export const deleteLoginData = createAsyncThunk("loginIds/delete", async ({ logi
         // return fulfillWithValue({});
 
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         throw rejectWithValue(error);
     }
 });
@@ -146,7 +146,7 @@ const loginsIdSlice = createSlice({
                 };
             }).
             addCase(editLoginIdData.fulfilled, (state, action) => {
-                console.log(action.payload)
+                // console.log(action.payload)
                 const newArray = state.loginsIdData.map((loginId) => {
                     if (loginId._id === action.payload._id) {
                         return action.payload;
