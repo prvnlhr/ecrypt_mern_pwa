@@ -1,16 +1,11 @@
 import React from "react";
-import { useState, useEffect, useRef, lazy, Suspense } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import Document from "./Document";
 import styles from "./styles/docsList.module.css";
-import noContentStyles from "./styles/noContentMessage.module.css";
-import btnStyles from "../add_button/buttons.module.css";
-import DocSkeleton from "../skelotons/DocSkeleton";
-import { FiPlusCircle } from "react-icons/fi";
-import { HiPlus } from "react-icons/hi";
-import { CircleSpinner } from "react-spinners-kit";
+import DocsSkeleton from "../skelotons/DocsSkeleton"
+
 import AddBtn from "../buttons/AddBtn";
-import DocForm from "./DocForm"
 import DocInputForm from "./DocInputForm";
 
 const DocsList = ({
@@ -54,6 +49,8 @@ const DocsList = ({
 
   const [showDocInputForm, setShowDocInputForm] = useState(false);
   const docsArray = useSelector((state) => state.docs.docsData);
+  const docsState = useSelector((state) => state.docs);
+  const { isLoading, action } = docsState;
 
   useEffect(() => {
     if (clickedSearchItem) {
@@ -104,15 +101,20 @@ const DocsList = ({
       }
 
       <div className={`${styles.contentContainer} ${showDocInputForm && styles.blurContainer} `} ref={node}>
-        {
-          docsArray.map((doc, index) => (
+
+        {isLoading === true && action === 'fetch' ?
+          <>
+            <DocsSkeleton />
+            <DocsSkeleton />
+            <DocsSkeleton />
+          </> :
+          docsArray?.map((doc, index) => (
             <Document
               doc={doc}
               key={index}
               setDocFullScreen={setDocFullScreen}
               setFullScreenDocData={setFullScreenDocData}
               clickedSearchItem={clickedSearchItem}
-
             />
           ))
         }

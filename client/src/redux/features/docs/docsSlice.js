@@ -126,7 +126,16 @@ const docsSlice = createSlice({
             .addCase(fetchDocsData.fulfilled, (state, action) => {
                 return {
                     ...state,
-                    docsData: action.payload
+                    docsData: action.payload,
+                    isLoading: false,
+                    action: undefined
+                };
+            })
+            .addCase(fetchDocsData.pending, (state, action) => {
+                return {
+                    ...state,
+                    isLoading: true,
+                    action: 'fetch'
                 };
             })
             .addCase(addNewDocData.fulfilled, (state, action) => {

@@ -25,6 +25,8 @@ export const addActivityData = createAsyncThunk("activity/add", async ({ activit
 
 const initialState = {
     activitiesData: [],
+    isLoading: false,
+    action: undefined
 }
 
 const activitiesSlice = createSlice({
@@ -40,10 +42,21 @@ const activitiesSlice = createSlice({
                     ...state,
                     activitiesData: action.payload
                 };
-            }).addCase(fectchActivitiesData.fulfilled, (state, action) => {
+            })
+            .addCase(fectchActivitiesData.fulfilled, (state, action) => {
                 return {
                     ...state,
-                    activitiesData: action.payload
+                    activitiesData: action.payload,
+                    isLoading: false,
+                    action: undefined
+                }
+            })
+            .addCase(fectchActivitiesData.pending, (state, action) => {
+                return {
+                    ...state,
+                    activitiesData: action.payload,
+                    isLoading: true,
+                    action: 'fetch'
                 }
             })
 

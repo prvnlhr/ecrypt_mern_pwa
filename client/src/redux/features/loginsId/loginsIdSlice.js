@@ -68,8 +68,6 @@ export const editLoginIdData = createAsyncThunk("loginIds/edit", async ({ update
     }
 });
 
-
-
 export const deleteLoginData = createAsyncThunk("loginIds/delete", async ({ login_id, user_id, activityData }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
         const state = getState();
@@ -121,6 +119,15 @@ const loginsIdSlice = createSlice({
                 return {
                     ...state,
                     loginsIdData: action.payload,
+                    isLoading: false,
+                    action: undefined,
+                };
+            }).
+            addCase(fecthLoginIdsData.pending, (state, action) => {
+                return {
+                    ...state,
+                    isLoading: true,
+                    action: 'fetch',
                 };
             }).
             addCase(addNewLoginIdData.fulfilled, (state, action) => {

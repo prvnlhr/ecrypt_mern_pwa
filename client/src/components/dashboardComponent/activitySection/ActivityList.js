@@ -2,11 +2,14 @@ import React from 'react'
 import styles from "./styles/activityList.module.css"
 import ActivityComponentOuter from './ActivityComponentOuter'
 import { useSelector } from 'react-redux';
+import ActivityListSkeleton from "../../skelotons/ActivityListSkeleton"
 const ActivityList = () => {
 
 
   const activitiesArray = useSelector((state => state.activities.activitiesData));
-  // console.log(activitiesArray)
+  const activityState = useSelector((state => state.activities));
+  const { isLoading, action } = activityState;
+
   const oldData = {
     category: "bankCard",
     title: "State Bank of India",
@@ -19,8 +22,6 @@ const ActivityList = () => {
     cardNumber: 5242720011391908,
     cardHolder: "Praveen Lohar",
   }
-
-
 
   // subType for conditional rendering of activity field
   // subType -> 1 for newly added or deleted
@@ -173,23 +174,30 @@ const ActivityList = () => {
 
   const diff = (x = {}, y = {}) =>
     merge(diff1(x, y, "oldVal"), diff1(y, x, "newVal"))
-
-
-
   const data = diff(oldData, newData);
-  // data.type = "bankcard";
-  // data.task = "edit";
-  // console.log(data);
 
 
   return (
     <div className={styles.activityList} >
-      {activitiesArray.map((activity, index) => (
-        <ActivityComponentOuter
-          key={index}
-          activity={activity}
-        />
-      ))}
+
+      {
+        isLoading === true && action === 'fetch' ?
+          <>
+            <ActivityListSkeleton />
+            <ActivityListSkeleton />
+            <ActivityListSkeleton />
+          </>
+          :
+          activitiesArray.map((activity, index) => (
+            <ActivityComponentOuter
+              key={index}
+              activity={activity}
+            />
+          ))
+      }
+
+
+
 
     </div>
   )

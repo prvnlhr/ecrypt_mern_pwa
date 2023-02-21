@@ -5,9 +5,6 @@ import NewAddedDeletedField from './NewAddedDeletedField';
 
 const ActivityComponentOuter = ({ activity }) => {
 
-
-    // console.log(activity.type);
-
     return (
         <div className={styles.activityWrapperOuter}>
 

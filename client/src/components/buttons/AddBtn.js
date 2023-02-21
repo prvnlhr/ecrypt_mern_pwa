@@ -8,9 +8,11 @@ const AddBtn = ({ formToggle, isScrolling }) => {
             <div className={styles.iconDiv} >
                 <Icon className={styles.plusIcon} icon="ic:round-plus" color="#002a9a" />
             </div>
+
             <div className={`${styles.addTextDiv} ${isScrolling && styles.addTextDivHide}`} >
                 <p>Add</p>
             </div>
+
         </div>
     )
 }

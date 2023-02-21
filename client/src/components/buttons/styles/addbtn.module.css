@@ -16,7 +16,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    padding: 1%;
+    padding: 0.3rem;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     scroll-behavior: smooth;
 }
@@ -44,11 +44,12 @@
 }
 
 .addTextDiv {
-    width: 60%;
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* border: 1px solid red; */
 }
 
 .addTextDivHide {
@@ -57,7 +58,7 @@
 
 .addTextDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 18px;
+    font-size: 1.1rem;
     font-weight: var(--bolder-font);
     color: #002A9A;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);

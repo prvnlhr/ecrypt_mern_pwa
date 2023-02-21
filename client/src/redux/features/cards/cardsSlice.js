@@ -133,7 +133,17 @@ const cardsSlice = createSlice({
                 // console.log(action.payload)
                 return {
                     ...state,
-                    cardsData: action.payload
+                    cardsData: action.payload,
+                    isLoading: false,
+                    action: undefined,
+                };
+            })
+            .addCase(fecthCardsData.pending, (state, action) => {
+                return {
+                    ...state,
+                    cardsData: action.payload,
+                    isLoading: true,
+                    action: 'fetch',
                 };
             })
             .addCase(addNewCardData.fulfilled, (state, action) => {

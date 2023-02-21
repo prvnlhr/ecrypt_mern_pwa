@@ -25,9 +25,9 @@ const Dashboard = ({ setHeading,
   useEffect(() => {
     setDataCount({
       ...dataCount,
-      loginsCount: loginIdsArray.length,
-      cardsCount: cardsArray.length,
-      docsCount: docsArray.length
+      loginsCount: loginIdsArray?.length,
+      cardsCount: cardsArray?.length,
+      docsCount: docsArray?.length
     })
 
   }, [loginIdsArray, cardsArray, docsArray])

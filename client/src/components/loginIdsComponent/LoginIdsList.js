@@ -10,7 +10,7 @@ import LoginIdInputForm from "./LoginIdInputForm";
 import DeleteModal from "../modal/DeleteModal"
 import { diff, generateActivityData } from "../utils/ActivityDataChangeFuction"
 import { editLoginIdData, deleteLoginData, toggleIsFav } from "../../redux/features/loginsId/loginsIdSlice"
-
+import ListSkeleton from "../skelotons/ListSkeleton"
 const LoginIdsList = ({ setLogoComponentShow,
   setClickedSearchItem,
   clickedSearchItem,
@@ -22,6 +22,7 @@ const LoginIdsList = ({ setLogoComponentShow,
   const node = useRef();
   var timeOut = null;
   const [isScrolling, setIsScrolling] = useState(false);
+
 
   useEffect(() => {
     if (node.current != null) {
@@ -59,6 +60,11 @@ const LoginIdsList = ({ setLogoComponentShow,
 
   const loginIdsArray = useSelector((state => state.loginIds.loginsIdData));
   const userId = useSelector((state) => state.user._id);
+
+  const loginIdsState = useSelector((state => state.loginIds));
+  const { isLoading, action } = loginIdsState;
+
+
 
 
   const [formMode, setFormMode] = useState(false);
@@ -144,20 +150,29 @@ const LoginIdsList = ({ setLogoComponentShow,
       }
 
       <div className={(showContentCard || showInputForm) ? styles.contentContainerClose : styles.contentContainer} ref={node}>
-        {loginIdsArray.map((loginId, index) => (
-          <LoginId
-            key={loginId._id}
-            loginId={loginId}
-            setFullContentCardData={setFullContentCardData}
-            handleLoginIdClicked={handleLoginIdClicked}
-            fullContentCardData={fullContentCardData}
-            clickedSearchItem={clickedSearchItem}
-          />
-        ))}
-      </div>
 
-      {/* { */}
-      {/* fullContentCardData && */}
+
+
+        {
+          isLoading === true && action === 'fetch' ?
+            <>
+              <ListSkeleton />
+              <ListSkeleton />
+              <ListSkeleton />
+            </>
+            :
+            loginIdsArray.map((loginId, index) => (
+              <LoginId
+                key={loginId._id}
+                loginId={loginId}
+                setFullContentCardData={setFullContentCardData}
+                handleLoginIdClicked={handleLoginIdClicked}
+                fullContentCardData={fullContentCardData}
+                clickedSearchItem={clickedSearchItem}
+              />
+            ))
+        }
+      </div>
       <FullContentCard
         setLogoComponentShow={setLogoComponentShow}
         fullContentCardData={fullContentCardData}

@@ -26,6 +26,7 @@ const Home = () => {
 
   const auth = useSelector((state) => state.auth);
   const { token } = auth;
+  const userState = useSelector((state) => state.user);
 
   const [open, setOpen] = useState(false);
   const [logoComponentShow, setLogoComponentShow] = useState(false);
@@ -42,88 +43,96 @@ const Home = () => {
 
   const searchBarRef = useRef();
 
+  const isLoading = false;
+
 
 
   return (
 
     <div className={location.pathname === "/user/settings" ? homeStyles.homeComponentForSettings : homeStyles.homeComponent} >
-
-
-      <DocFullScreenRecentAct
-        recAddDocFullScreen={recAddDocFullScreen}
-        setRecAddDocFullScreen={setRecAddDocFullScreen}
-        recAddDocFullScreenData={recAddDocFullScreenData}
-        setRecAddDocFullScreenData={setRecAddDocFullScreenData}
-      />
-
-      <FavDocFullScreen
-        setShowFavDocFullScreen={setShowFavDocFullScreen}
-        showFavDocFullScreen={showFavDocFullScreen}
-        setFavDocFullScreenData={setFavDocFullScreenData}
-        favDocFullScreenData={favDocFullScreenData}
-      />
-
-      <DocFullScreen
-        setDocFullScreen={setDocFullScreen}
-        docFullScreen={docFullScreen}
-        fullScreenData={fullScreenData}
-        setFullScreenDocData={setFullScreenDocData}
-      />
-
       {
-        location.pathname === "/user/settings"
-          ?
-          <Settings />
-          :
-          <>
-            <div className={homeStyles.sideBarSection}>
-              <SideBar
-                clickedSearchItem={clickedSearchItem}
-                setClickedSearchItem={setClickedSearchItem}
-              />
-            </div>
+        <>
+          <DocFullScreenRecentAct
+            recAddDocFullScreen={recAddDocFullScreen}
+            setRecAddDocFullScreen={setRecAddDocFullScreen}
+            recAddDocFullScreenData={recAddDocFullScreenData}
+            setRecAddDocFullScreenData={setRecAddDocFullScreenData}
+          />
 
-            <HeaderBar
-              open={open}
-              setOpen={setOpen}
-              node={node}
+          <FavDocFullScreen
+            setShowFavDocFullScreen={setShowFavDocFullScreen}
+            showFavDocFullScreen={showFavDocFullScreen}
+            setFavDocFullScreenData={setFavDocFullScreenData}
+            favDocFullScreenData={favDocFullScreenData}
+          />
 
-            />
-            <SearchSection
-              searchMode={searchMode}
-              setSearchMode={setSearchMode}
-              searchQuery={searchQuery}
-              setSearchQuery={setSearchQuery}
-              clickedSearchItem={clickedSearchItem}
-              setClickedSearchItem={setClickedSearchItem}
-              searchBarRef={searchBarRef}
-            />
-            <ContentDisplay
-              setDocFullScreen={setDocFullScreen}
-              setFullScreenDocData={setFullScreenDocData}
-              setLogoComponentShow={setLogoComponentShow}
-              recAddDocFullScreen={recAddDocFullScreen}
-              setRecAddDocFullScreen={setRecAddDocFullScreen}
-              recAddDocFullScreenData={recAddDocFullScreenData}
-              setRecAddDocFullScreenData={setRecAddDocFullScreenData}
-              setShowFavDocFullScreen={setShowFavDocFullScreen}
-              showFavDocFullScreen={showFavDocFullScreen}
-              setFavDocFullScreenData={setFavDocFullScreenData}
-              favDocFullScreenData={favDocFullScreenData}
-              searchMode={searchMode}
-              setSearchMode={setSearchMode}
-              searchQuery={searchQuery}
-              setSearchQuery={setSearchQuery}
-              clickedSearchItem={clickedSearchItem}
-              setClickedSearchItem={setClickedSearchItem}
-              searchBarRef={searchBarRef}
-            />
-            <TabBar
-              clickedSearchItem={clickedSearchItem}
-              setClickedSearchItem={setClickedSearchItem}
-            />
-          </>
+          <DocFullScreen
+            setDocFullScreen={setDocFullScreen}
+            docFullScreen={docFullScreen}
+            fullScreenData={fullScreenData}
+            setFullScreenDocData={setFullScreenDocData}
+          />
+
+          {
+            location.pathname === "/user/settings"
+              ?
+              <Settings />
+              :
+              <>
+                <div className={homeStyles.sideBarSection}>
+                  <SideBar
+                    clickedSearchItem={clickedSearchItem}
+                    setClickedSearchItem={setClickedSearchItem}
+                  />
+                </div>
+
+                <HeaderBar
+                  open={open}
+                  setOpen={setOpen}
+                  node={node}
+
+                />
+                <SearchSection
+                  searchMode={searchMode}
+                  setSearchMode={setSearchMode}
+                  searchQuery={searchQuery}
+                  setSearchQuery={setSearchQuery}
+                  clickedSearchItem={clickedSearchItem}
+                  setClickedSearchItem={setClickedSearchItem}
+                  searchBarRef={searchBarRef}
+                />
+                <ContentDisplay
+                  setDocFullScreen={setDocFullScreen}
+                  setFullScreenDocData={setFullScreenDocData}
+                  setLogoComponentShow={setLogoComponentShow}
+                  recAddDocFullScreen={recAddDocFullScreen}
+                  setRecAddDocFullScreen={setRecAddDocFullScreen}
+                  recAddDocFullScreenData={recAddDocFullScreenData}
+                  setRecAddDocFullScreenData={setRecAddDocFullScreenData}
+                  setShowFavDocFullScreen={setShowFavDocFullScreen}
+                  showFavDocFullScreen={showFavDocFullScreen}
+                  setFavDocFullScreenData={setFavDocFullScreenData}
+                  favDocFullScreenData={favDocFullScreenData}
+                  searchMode={searchMode}
+                  setSearchMode={setSearchMode}
+                  searchQuery={searchQuery}
+                  setSearchQuery={setSearchQuery}
+                  clickedSearchItem={clickedSearchItem}
+                  setClickedSearchItem={setClickedSearchItem}
+                  searchBarRef={searchBarRef}
+                />
+                <TabBar
+                  clickedSearchItem={clickedSearchItem}
+                  setClickedSearchItem={setClickedSearchItem}
+                />
+              </>
+          }
+        </>
       }
+
+
+
+
     </div >
   );
 };

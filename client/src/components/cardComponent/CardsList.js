@@ -12,6 +12,7 @@ import CardInputForm from "./inputForms/CardInputForm";
 import DeleteModal from "../modal/DeleteModal";
 import { generateActivityData } from "../utils/ActivityDataChangeFuction"
 import { deleteCardData } from "../../redux/features/cards/cardsSlice"
+import ListSkeleton from "../skelotons/ListSkeleton"
 const CardsList = ({ setLogoComponentShow,
   setClickedSearchItem,
   clickedSearchItem,
@@ -37,6 +38,9 @@ const CardsList = ({ setLogoComponentShow,
   const userId = useSelector((state) => state.user._id);
 
   const cardsArray = useSelector((state => state.cards.cardsData));
+
+
+
 
   const [bankCardData, setBankCardData] = useState({
     title: "",
@@ -271,20 +275,32 @@ const CardsList = ({ setLogoComponentShow,
         < AddBtn formToggle={formToggle} isScrolling={isScrolling} />
       }
       <div ref={node} className={(showContentCard || showInputForm) ? styles.contentContainerClose : styles.contentContainer} >
-        {cardsArray.map((card, index) => (
-          <Card
-            key={index}
-            index={index}
-            cardData={card}
-            clickedSearchItem={clickedSearchItem}
-            handleCardClicked={handleCardClicked}
-            setFullCardData={card.category === 'Bank' ?
-              setBankCardData : card.category === 'Identity' ?
-                setIdentityCardData : card.category === 'License' &&
-                setLicenseCardData
-            }
-          />
-        ))}
+        {
+
+          isLoading === true && action === 'fetch' ?
+            <>
+              <ListSkeleton />
+              <ListSkeleton />
+              <ListSkeleton />
+            </> :
+
+            cardsArray.map((card, index) => (
+              <Card
+                key={index}
+                index={index}
+                cardData={card}
+                clickedSearchItem={clickedSearchItem}
+                handleCardClicked={handleCardClicked}
+                setFullCardData={card.category === 'Bank' ?
+                  setBankCardData : card.category === 'Identity' ?
+                    setIdentityCardData : card.category === 'License' &&
+                    setLicenseCardData
+                }
+              />
+            ))
+
+
+        }
 
       </div>
       {showContentCard ?
