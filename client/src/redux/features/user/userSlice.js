@@ -23,6 +23,7 @@ const initialState = {
     error: false,
     success: false,
     pending: false,
+    // pending: true,
 }
 
 export const getUserDetails = createAsyncThunk("user/getUser", async (token, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
@@ -86,7 +87,6 @@ export const changeUserPass = createAsyncThunk("user/changeProfilePass", async (
 });
 export const changeProfilePicture = createAsyncThunk("user/changeProfilePic", async ({ data, token }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
-        // console.log(data);
         const state = getState();
         const res = await api.editProfilePic(data, state.auth.token);
         // console.log(res);

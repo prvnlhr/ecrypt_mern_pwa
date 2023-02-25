@@ -9,6 +9,16 @@ import { editUserProfile, changeUserPass } from "../../redux/features/user/userS
 import axios from "axios";
 import { changeProfilePicture } from "../../redux/features/user/userSlice"
 import { Oval } from 'react-loader-spinner'
+import { SpinnerCircular } from 'spinners-react';
+
+
+const spinnerStyle = {
+    position: `absolute`,
+    width: `112%`,
+    height: `112%`,
+    // border: `1px solid red`,
+}
+
 const Settings = () => {
 
     const dispatch = useDispatch();
@@ -205,7 +215,7 @@ const Settings = () => {
     };
 
     const confirmEditProfilePic = async () => {
-        console.log("confirm pic change")
+        // console.log("confirm pic change")
 
         const data = new FormData();
         data.append("userId", userState?._id);
@@ -263,26 +273,20 @@ const Settings = () => {
                 </div>
                 <div className={styles.profilePicWrapper} >
                     <form className={styles.profilePicformTag}>
-                        <div className={`${styles.profilePicContainer} ${(formFieldEditable('PROFILEPIC') && userState?.pending === false) && styles.profilePicformTagEditMode} `}>
+                        <div className={`${styles.profilePicContainer}
+                         ${(formFieldEditable('PROFILEPIC')
+                                && userState?.pending === false
+                            )
+                            && styles.profilePicformTagEditMode} `
+                        }>
 
+                            {userState?.pending === true &&
+                                <SpinnerCircular style={spinnerStyle} thickness={50} speed={100} color="rgba(199, 186, 253, 1)" secondaryColor={isDarkMode === true ? "#2F343E" : "#D6D6D6"} />
+                            }
                             <label htmlFor="file">
-                                {userState?.pending === true &&
-                                    <Oval
-                                        height={95}
-                                        width={95}
-                                        color={isDarkMode === true ? "#C7BAFD" : "#002A9A"}
-                                        wrapperStyle={{}}
-                                        wrapperClass={styles.spinner}
-                                        visible={true}
-                                        ariaLabel='oval-loading'
-                                        secondaryColor={isDarkMode === true ? "#2F343E" : "#D6D6D6"}
-                                        strokeWidth={1}
-                                        strokeWidthSecondary={1}
-                                        className={styles.spinner}
-                                    />
-                                }
                                 <img src={profilePicImg} />
                             </label>
+
                             <input
                                 type="file"
                                 id="file"
@@ -291,8 +295,9 @@ const Settings = () => {
                                 disabled={!formFieldEditable('PROFILEPIC')}
                             />
                         </div>
+
                         <div className={styles.profilePicEditBtnContainer} >
-                            {formFieldEditable('PROFILEPIC') ?
+                            {formFieldEditable('PROFILEPIC')  ?
                                 <>
                                     <div className={styles.iconDivSave} onClick={confirmEditProfilePic} >
                                         <Icon className={styles.profilePicCancelIcon} icon="charm:tick-double" />
