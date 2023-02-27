@@ -34,6 +34,28 @@ const recentlyAddedController = {
             res.status(404).json({ message: error.message });
         }
     },
+
+    deleteRecentlyAdded: async (req, res) => {
+        const item_id = req.params.id;
+        const userId = req.body.user_id;
+        console.log('delete recently Added controller', item_id, userId);
+        try {
+            const response = await UserDatabase.findOneAndUpdate(
+                { _id: userId },
+                {
+                    $pull: {
+                        recentlyAddedArray: {
+                            itemId: item_id,
+                        },
+                    },
+                },
+                { returnOriginal: false }
+            );
+            res.status(200).send(response);
+        } catch (error) {
+            res.status(404).json({ message: error.message });
+        }
+    },
 };
 
 module.exports = recentlyAddedController;

@@ -348,6 +348,8 @@ const CardLogo = ({ className, cardNo }) => {
     );
   }
 
+  console.log(logo, cardNo);
+
   return <>{logo}</>;
 };
 

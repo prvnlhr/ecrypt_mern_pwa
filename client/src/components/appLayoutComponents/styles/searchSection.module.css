@@ -173,11 +173,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--app-list-count-div-bg);
+    background-color: var(--ui-scheme-color);
     border-radius: 5px;
     margin-left: 10px;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-
 }
 
 .listCountDiv p {
@@ -185,8 +184,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 9px;
     font-weight: 400;
-    color: var(--list-count-font-color);
-
+    color: var(--primary-font-color);
     margin-top: 2px;
     padding: 0px;
 }

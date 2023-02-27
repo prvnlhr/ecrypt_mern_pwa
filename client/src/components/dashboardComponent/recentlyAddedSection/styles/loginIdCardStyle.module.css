@@ -316,7 +316,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding-right: 50%;
+    padding-right: 5%;
 }
 
 .appWebsiteTextDiv p {
@@ -324,6 +324,7 @@
     font-size: 0.65rem;
     font-weight: var(--bold-font);
     color: var(--primary-font-color);
+    white-space: nowrap;
 }
 
 /* ___________________________________________ */
@@ -747,9 +748,9 @@
         height: 100%;
         /* border: 1px solid red; */
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
         align-items: center;
-        padding-right: 50%;
+        padding-right: 5%;
     }
 
     .appWebsiteTextDiv p {

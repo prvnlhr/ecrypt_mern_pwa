@@ -14,7 +14,6 @@ export const fetchRecentlyAddedData = createAsyncThunk("recentlyAdded/fetch", as
 
 export const addRecentlyAddedData = createAsyncThunk("recentlyAdded/add", async ({ recentlyAddedData, userId }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
-
         const res = await api.addRecentlyData(userId, recentlyAddedData);
         const data = res.data.recentlyAddedArray;
         return fulfillWithValue(data.reverse());
@@ -24,6 +23,17 @@ export const addRecentlyAddedData = createAsyncThunk("recentlyAdded/add", async 
         return rejectWithValue(error);
     }
 })
+
+export const deleteRecentlyAddedData = createAsyncThunk("recentlyAdded/delete", async ({ item_id, user_id }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
+    try {
+        const state = getState();
+        const res = await api.deleteRecentlyAdded(item_id, user_id, state.auth.token);
+        const updateList = res.data.recentlyAddedArray;
+        return fulfillWithValue(updateList);
+    } catch (error) {
+        throw rejectWithValue(error);
+    }
+});
 
 const initialState = {
     recentlyAddedData: [],
@@ -42,10 +52,22 @@ const recentlyAddedSlice = createSlice({
                     ...state,
                     recentlyAddedData: action.payload
                 };
-            }).addCase(fetchRecentlyAddedData.fulfilled, (state, action) => {
+            })
+            .addCase(fetchRecentlyAddedData.fulfilled, (state, action) => {
                 return {
                     ...state,
                     recentlyAddedData: action.payload
+                }
+            })
+            .addCase(deleteRecentlyAddedData.fulfilled, (state, action) => {
+                return {
+                    ...state,
+                    recentlyAddedData: action.payload
+                }
+            })
+            .addCase(deleteRecentlyAddedData.rejected, (state, action) => {
+                return {
+                    ...state,
                 }
             })
 

@@ -24,7 +24,7 @@ const LoginId = ({ loginId, handleLoginIdClicked, setFullContentCardData, clicke
       >
         <div className={styles.logoWrapper} >
           <div className={styles.logoDiv}>
-            {logosArray[loginId.logoIndex].logo}
+            {loginId.logoIndex && logosArray[loginId.logoIndex].logo}
           </div>
         </div>
         <div className={styles.titleWrapper} >

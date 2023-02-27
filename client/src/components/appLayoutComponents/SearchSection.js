@@ -26,6 +26,8 @@ const SearchSection = ({ searchMode, setSearchMode, searchQuery,
 
     const [listCount, setListCount] = useState(0);
 
+    const [searchResultCount, setsearchResultCount] = useState(0);
+
     const [listTitle, setListTitle] = useState("");
 
     useEffect(() => {
@@ -74,6 +76,12 @@ const SearchSection = ({ searchMode, setSearchMode, searchQuery,
             dispatch(clearSearchData());
         } else if (searchQuery.length > 2) {
             searchItem(searchQuery);
+            if (searchState.length > 0) {
+
+                setsearchResultCount(searchState.length);
+            } else {
+                setsearchResultCount(0);
+            }
         }
     }, [searchQuery]);
 
@@ -86,6 +94,7 @@ const SearchSection = ({ searchMode, setSearchMode, searchQuery,
         setSearchMode(false);
         setSearchQuery('');
         setClickedSearchItem(undefined);
+        setsearchResultCount(0);
     }
 
     return (
@@ -100,13 +109,17 @@ const SearchSection = ({ searchMode, setSearchMode, searchQuery,
                         }
                     </p>
                 </div>
-
-                {/* {
-                    location.pathname === "/" && searchQuery.length !== 0 ?
+                {
+                    (location.pathname !== "/" && searchQuery.length === 0 && searchState.length === 0) ?
                         <div className={styles.listCountDiv}>
-                            scscs
-                        </div> : null
-                } */}
+                            <p>{listCount}</p>
+                        </div>
+                        :
+                        <div className={styles.listCountDiv}>
+                            <p>{searchState.length}</p>
+                        </div>
+
+                }
             </div>
             <div className={styles.searchInputWrapper}>
 

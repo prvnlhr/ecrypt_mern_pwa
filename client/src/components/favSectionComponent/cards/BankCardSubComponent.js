@@ -14,6 +14,7 @@ const BankCardSubComponent = ({ favFullCardData, setFavFullCardData, }) => {
                 < CardLogo cardNo={favFullCardData.cardNumber} />
             )
         }
+        console.log(favFullCardData)
     }, [favFullCardData])
 
     const handleInputValueChange = (e) => {

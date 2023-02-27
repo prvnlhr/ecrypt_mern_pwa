@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import * as api from "../../api"
 import { addActivityData } from "../activity/activitiesSlice"
 import { addToFavCardsData, removeFromFavCardsData } from "../favorites/favoritesSlice";
-import { addRecentlyAddedData } from "../recentlyAdded/recentlyAddedSlice"
+import { addRecentlyAddedData, deleteRecentlyAddedData } from "../recentlyAdded/recentlyAddedSlice"
 const initialState = {
     cardsData: [],
     isLoading: false,
@@ -21,13 +21,13 @@ export const fecthCardsData = createAsyncThunk("cards/fetch", async ({ user_id }
             (c1, c2) => (c1.time < c2.time) ? 1 : (c1.time > c2.time) ? -1 : 0);
         return fulfillWithValue(SortedData);
     } catch (error) {
-        // console.log(error);
         return rejectWithValue(error);
     }
 });
 
 export const addNewCardData = createAsyncThunk("cards/add", async ({ data, user_id, activityData }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
+
         const state = getState();
 
         const res = await api.addNewCard(data, user_id, state.auth.token)
@@ -35,14 +35,17 @@ export const addNewCardData = createAsyncThunk("cards/add", async ({ data, user_
             activityData: activityData,
             userId: user_id
         }))
+
+        data.itemId = res.data._id;
+
         dispatch(addRecentlyAddedData({
             recentlyAddedData: data,
             userId: user_id
         }));
+
         return fulfillWithValue(res.data);
 
     } catch (error) {
-        // console.log(error);
         return rejectWithValue(error);
     }
 });
@@ -79,7 +82,11 @@ export const deleteCardData = createAsyncThunk("cards/delete", async ({ cardData
             userId: user_id
         }))
 
-        // console.log(res);
+        dispatch(deleteRecentlyAddedData({
+            item_id: card_id,
+            user_id: user_id
+        }))
+
         const { data } = res;
         // console.log(data);
         return fulfillWithValue(cardData);

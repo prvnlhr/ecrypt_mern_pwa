@@ -159,6 +159,10 @@ const LoginIdsList = ({ setLogoComponentShow,
               <ListSkeleton />
               <ListSkeleton />
               <ListSkeleton />
+              <ListSkeleton />
+              <ListSkeleton />
+              <ListSkeleton />
+              <ListSkeleton />
             </>
             :
             loginIdsArray.map((loginId, index) => (

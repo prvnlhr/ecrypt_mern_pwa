@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "./styles/favCard.module.css"
 import BookmarksIconFill from "../../icons/BookmarksIconFill"
 import { logosArray } from '../../logoComponents/logosData'
+import CardLogo from "../../cardComponent/CardLogo"
 const FavCard = ({ favItem, handleFavCardClick }) => {
-   
+
+    const [venderLogo, setVenderLogo] = useState();
+    useEffect(() => {
+        if (favItem.category === 'Bank') {
+            setVenderLogo(
+                < CardLogo cardNo={favItem.cardNumber} />
+            )
+        }
+
+    }, [favItem])
     return (
         <div className={
             // styles.cardComponentBank
@@ -35,7 +45,7 @@ const FavCard = ({ favItem, handleFavCardClick }) => {
                 // favItem.category === "Bank" ? styles.bankCardLogoWrapperShow : styles.bankCardLogoWrapperHide
             } >
                 <div className={styles.bankCardVenderLogoDiv}>
-                    {/* {venderLogo} */}
+                    {venderLogo}
                 </div>
             </div>
             <div className={styles.favBtnWrapper} >

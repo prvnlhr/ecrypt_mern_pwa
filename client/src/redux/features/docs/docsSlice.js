@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import * as api from "../../api"
 import { addActivityData } from "../activity/activitiesSlice"
-import { addRecentlyAddedData } from "../recentlyAdded/recentlyAddedSlice"
+import { addRecentlyAddedData, deleteRecentlyAddedData } from "../recentlyAdded/recentlyAddedSlice"
 
 import { addToFavDocsData } from "../favorites/favoritesSlice"
 const initialState = {
@@ -39,15 +39,23 @@ export const addNewDocData = createAsyncThunk("docs/add", async ({ data, name, u
             userId: userId
         }))
 
+        const newAddedItem = res.data[res.data.length - 1];
+
+        const dataForRecentltyAdded = {
+            imageName: newAddedItem?.imageName,
+            imageUrl: newAddedItem?.imageUrl,
+            cloudinary_id: newAddedItem?.cloudinary_id,
+            isFavourite: newAddedItem?.isFavourite,
+            itemId: newAddedItem?._id
+        }
         dispatch(addRecentlyAddedData({
-            recentlyAddedData: res.data[res.data.length - 1],
+            recentlyAddedData: dataForRecentltyAdded,
             userId: userId
         }))
 
         return fulfillWithValue(res.data[res.data.length - 1]);
 
     } catch (error) {
-        // console.log(error);
         throw rejectWithValue(error);
     }
 
@@ -82,8 +90,12 @@ export const deleteDocData = createAsyncThunk("docs/delete", async ({ docId, clo
             activityData: activityData,
             userId: userId
         }))
-        // console.log(res);
-        // console.log(res.data)
+
+        dispatch(deleteRecentlyAddedData({
+            item_id: docId,
+            user_id: userId
+        }))
+
         return fulfillWithValue(res.data.data.reverse());
 
     } catch (error) {

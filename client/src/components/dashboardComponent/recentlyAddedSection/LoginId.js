@@ -30,6 +30,7 @@ const LoginId = ({ item }) => {
                             exit={{ opacity: 0 }}
                             className={cardExpand ? styles.logoDiv : styles.logoDivShrink} >
                             {
+                                item.logoIndex &&
                                 logosArray[item.logoIndex].logo
                             }
                         </div>
@@ -89,7 +90,7 @@ const LoginId = ({ item }) => {
                                 <div className={styles.passwordIconWrapper} >
                                     <Icon
                                         className={styles.fieldIcons}
-                                        icon="fluent:password-20-regular"  />
+                                        icon="fluent:password-20-regular" />
                                 </div>
                                 <div className={styles.passwordLabelWrapper} >
                                     <p>PASSWORD</p>
@@ -106,7 +107,7 @@ const LoginId = ({ item }) => {
                             <>
                                 <div className={styles.usernameIconWrapper} >
                                     <Icon className={styles.fieldIcons}
-                                        icon="prime:user" 
+                                        icon="prime:user"
                                     />
                                 </div>
                                 <div className={styles.usernameLabelWrapper} >

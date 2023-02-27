@@ -257,7 +257,6 @@ const CardsList = ({ setLogoComponentShow,
         setShowContentCard(false);
       }
     })
-
   }
 
   return (
@@ -298,8 +297,6 @@ const CardsList = ({ setLogoComponentShow,
                 }
               />
             ))
-
-
         }
 
       </div>

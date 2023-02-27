@@ -219,11 +219,20 @@ export const fetchUserRecentlyAddedData = (user_id) =>
     },
   });
 
-//>add activity___
+//>add recentlyAdded___
 export const addRecentlyData = (user_id, activityData) =>
   API.post("/user/recentlyAdded/addRecentlyAdded", {
     data: activityData,
     user_id: user_id,
+  });
+
+//> delete recently added
+export const deleteRecentlyAdded = (item_id, user_id, token) =>
+  API.delete(`/user/recentlyAdded/deleteRecentlyAdded/${item_id}`, {
+    headers: {
+      "Authorization": `Bearer ${token}`
+    },
+    data: { user_id: user_id },
   });
 
 //>FAVOURITE TOGGLE URL_____________________________________________________________________

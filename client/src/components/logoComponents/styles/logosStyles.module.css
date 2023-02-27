@@ -81,8 +81,15 @@
 .logoLabelContainer p {
     font-family: "Poppins", sans-serif;
     font-size: 0.60rem;
-    font-weight: var(--bold-font);
+    font-weight: var(--bolder-font);
     color: var(--primary-font-color);
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .logoLabelContainer p {
+        font-size: 0.70rem;
+        font-weight: var(--bolder-font);
+    }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {

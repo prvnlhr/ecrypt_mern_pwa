@@ -9,6 +9,8 @@ import styles from "./styles/loginIdInputForm.module.css"
 import { addNewLoginIdData } from "../../redux/features/loginsId/loginsIdSlice"
 import { generateActivityData } from "../utils/ActivityDataChangeFuction"
 import { Oval } from "react-loader-spinner"
+import { motion } from "framer-motion"
+
 const spinnerWrapper = {
     height: `100%`,
     with: `100%`,
@@ -43,6 +45,25 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
     const [logoComponentShow, setLogoComponentShow] = useState(false);
 
+    const [passVisible, setPassVisible] = useState(false);
+    const togglePassVisibility = () => {
+        setPassVisible(!passVisible);
+    }
+
+
+    const generatePassword = async () => {
+        let chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let passwordLength = 12;
+        let password = "";
+        for (var i = 0; i <= passwordLength; i++) {
+            var randomNumber = Math.floor(Math.random() * chars.length);
+            password += chars.substring(randomNumber, randomNumber + 1);
+        }
+        await setformData({
+            ...formData,
+            password: password,
+        })
+    }
 
 
 
@@ -63,12 +84,13 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
             password: "",
             logoIndex: undefined,
         })
+        setCurrFocusField(undefined);
     }
 
     const saveBtnClicked = () => {
         const activity_data = generateActivityData(1, 'Login', formData, '')
-        console.log(activity_data)
-        console.table(formData);
+        // console.log(activity_data)
+        // console.table(formData);
         dispatch(addNewLoginIdData({
             data: formData,
             user_id: userId,
@@ -305,6 +327,31 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                                 name={"password"}
                                 onFocus={() => onFocus(5)}
                             />
+                            <motion.div
+                                className={`${styles.passwordGeneratorIconContainer}`}>
+                                <motion.div
+                                    className={styles.passwordGeneratorIconDiv}
+                                    whileTap={{
+                                        rotate: 360,
+                                        transition: {
+                                            ease: "easeInOut",
+                                        }
+                                    }}
+                                    onClick={generatePassword}
+                                >
+                                    <svg
+                                        className={styles.passGeneratorIcon}
+                                        viewBox="0 0 24 24"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" stroke="#2B3F6C" stroke-width="1.5" />
+                                        <circle opacity="0.3" cx="7.25" cy="16.75" r="1.25" fill="#2B3F6C" />
+                                        <circle opacity="0.3" cx="7.25" cy="7.25" r="1.25" fill="#2B3F6C" />
+                                        <circle opacity="0.3" cx="16.75" cy="16.75" r="1.25" fill="#2B3F6C" />
+                                        <circle opacity="0.3" cx="12" cy="12" r="1.25" fill="#2B3F6C" />
+                                        <circle opacity="0.3" cx="16.75" cy="7.25" r="1.25" fill="#2B3F6C" />
+                                    </svg>
+                                </motion.div>
+                            </motion.div>
                         </div>
                     </div></div>
             </div>

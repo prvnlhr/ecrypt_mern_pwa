@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { addActivityData } from "../activity/activitiesSlice"
 import { addToFavLoginsData } from "../favorites/favoritesSlice";
-import { addRecentlyAddedData } from "../recentlyAdded/recentlyAddedSlice"
+import { addRecentlyAddedData, deleteRecentlyAddedData } from "../recentlyAdded/recentlyAddedSlice"
 import * as api from "../../api"
 
 const initialState = {
@@ -33,12 +33,13 @@ export const addNewLoginIdData = createAsyncThunk("loginIds/add", async ({ data,
             userId: user_id
         }))
 
+        const { loginIdsArray } = res.data;
+        const newAddedItem = loginIdsArray[loginIdsArray.length - 1];
+        data.itemId = newAddedItem._id;
         dispatch(addRecentlyAddedData({
             recentlyAddedData: data,
             userId: user_id
         }))
-
-        const { loginIdsArray } = res.data;
         return fulfillWithValue(loginIdsArray[loginIdsArray.length - 1]);
     } catch (error) {
         throw rejectWithValue(error);
@@ -72,11 +73,18 @@ export const deleteLoginData = createAsyncThunk("loginIds/delete", async ({ logi
     try {
         const state = getState();
         const res = await api.deleteLoginId(login_id, user_id, state.auth.token);
+
         dispatch(addActivityData({
             activityData: activityData,
             userId: user_id
         }))
+        dispatch(deleteRecentlyAddedData({
+            item_id: login_id,
+            user_id: user_id
+        }))
+
         const { data } = res;
+        // console.log('delete loginId', login_id)
         return fulfillWithValue(data.reverse());
         // return fulfillWithValue({});
 

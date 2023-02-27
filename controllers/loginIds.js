@@ -52,6 +52,7 @@ const loginsController = {
       res.status(404).json({ message: error.message });
     }
   },
+
   deleteLoginId: async (req, res) => {
     const loginIdID = req.params.id;
     const userId = req.body.user_id;
