@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { Icon } from '@iconify/react';
 import styles from "./styles/dashboard.module.css";
 import ActivityList from "./activitySection/ActivityList";
-import ActivityComponentOuter from "./activitySection/ActivityComponentOuter";
+// import ActivityComponentWrapper from "./activitySection/ActivityComponentWrapper";
 import RecentlyAddedList from "./recentlyAddedSection/RecentlyAddedList"
 const Dashboard = ({ setHeading,
   recAddDocFullScreen,

@@ -355,7 +355,6 @@
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 
-
     .subCardWrapper {
         position: relative;
         /* border: 1px solid blue; */
@@ -409,6 +408,8 @@
             "cardHolderIconDiv cardHolderTextDiv cardVenderIconContainer";
         background-color: var(--box-bg-tertiary);
         border-radius: 10px;
+        border-radius: clamp(0.7rem, -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
+
     }
 
     .cardHolderIconDiv {
@@ -423,6 +424,7 @@
 
     .cardHolderIcon {
         font-size: 2rem;
+        font-size: clamp(1.6rem, 4.440892098500626e-16rem + 7.999999999999999vw, 2.4rem) !important;
     }
 
     .cardHolderLabelTextDiv {
@@ -436,6 +438,7 @@
 
     .cardHolderLabelTextDiv p {
         font-size: 0.9rem;
+        font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
     }
 
     .cardHolderTextDiv {
@@ -446,6 +449,7 @@
 
     .cardHolderTextDiv p {
         font-size: 0.9rem;
+        font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
     }
 
     /* _____________________________________________________ */
@@ -471,6 +475,8 @@
             "cardNumberIconDiv cardNumberTextDiv cardVenderIconContainer";
         background-color: var(--box-bg-tertiary);
         border-radius: 10px;
+        border-radius: clamp(0.7rem, -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
+
     }
 
 
@@ -486,6 +492,7 @@
 
     .cardNumIcon {
         font-size: 1.8rem;
+        font-size: clamp(1.3rem, 0.10000000000000031rem + 5.999999999999998vw, 1.9rem) !important;
     }
 
     .cardNumberLabelTextDiv {
@@ -501,6 +508,7 @@
     .cardNumberLabelTextDiv p {
         font-size: 0.9rem;
         font-weight: 450;
+        font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
     }
 
 
@@ -514,6 +522,7 @@
     .cardNumberTextDiv p {
         font-size: 0.9rem;
         font-weight: 450;
+        font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
     }
 
     .cardVenderIconContainer {
@@ -555,6 +564,8 @@
             "expiryIconDiv expiryTextDiv";
         background-color: var(--box-bg-tertiary);
         border-radius: 10px;
+        border-radius: clamp(0.7rem, -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
+
     }
 
     .expiryIconDiv {
@@ -570,6 +581,8 @@
     .expiryDateIcon {
         /* font-size: 25px; */
         font-size: 1.8rem;
+        font-size: clamp(1.3rem, 0.10000000000000031rem + 5.999999999999998vw, 1.9rem) !important;
+
     }
 
     .expiryLabelTextDiv {
@@ -584,6 +597,8 @@
 
     .expiryLabelTextDiv p {
         font-size: 0.9rem;
+        font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
+
     }
 
     .expiryTextDiv {
@@ -598,6 +613,8 @@
 
     .expiryTextDiv p {
         font-size: 0.9rem;
+        font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
+
     }
 
     /* _____________________________________________ */
@@ -625,6 +642,8 @@
             "cvvNumberIconDiv cvvNumberTextDiv";
         background-color: var(--box-bg-tertiary);
         border-radius: 10px;
+        border-radius: clamp(0.7rem, -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
+
     }
 
     .cvvNumberIconDiv {
@@ -640,6 +659,7 @@
     .cvvIcon {
         /* font-size: 1.2rem; */
         font-size: 1.8rem;
+        font-size: clamp(1.3rem, 0.10000000000000031rem + 5.999999999999998vw, 1.9rem) !important;
     }
 
     .cvvNumberLabelTextDiv {
@@ -655,6 +675,8 @@
     .cvvNumberLabelTextDiv p {
         font-size: 0.9rem;
         font-weight: 450;
+        font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
+
     }
 
     .cvvNumberTextDiv {
@@ -669,6 +691,8 @@
 
     .cvvNumberTextDiv p {
         font-size: 0.9rem;
+        font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
+
     }
 
 

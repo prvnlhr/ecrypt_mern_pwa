@@ -10,7 +10,6 @@
     align-items: center;
     border-radius: 15px;
     margin-top: 8px;
-    margin-right: 5.5%;
     box-shadow: var(--dashboard-activity-field-shadow);
 }
 
@@ -180,14 +179,15 @@
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 
+    .fieldWrapper {
+        border-radius: clamp(0.8rem, 0.40000000000000013rem + 1.9999999999999998vw, 1.0rem) !important;
+    }
 
     .fieldNameLabelWrapper p {
         /* font-size: 0.65rem; */
         /* font-size: 0.85rem; */
         font-size: clamp(0.65rem, 0.2500000000000001rem + 1.9999999999999998vw, 0.85rem) !important;
     }
-
-
 
     .oldValueWrapper p {
         /* font-size: 0.65rem; */

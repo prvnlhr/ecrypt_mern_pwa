@@ -139,8 +139,6 @@
     padding: 0%;
     margin: 0.80rem auto 0.80rem auto;
     border-radius: 18px;
-
-
   }
 
   .logoWrapper {
@@ -169,15 +167,19 @@
   /* > clamping for all font sizes */
 
   .titleText {
-    /* font-size: clamp(0.85rem, 0.15rem + 3.5vw, 1.2rem) !important; */
-    font-size: 1rem;
+    font-size: clamp(0.78rem, -0.05999999999999983rem + 4.199999999999999vw, 1.2rem) !important;
     font-weight: var(--bolder-font);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .userNameText {
-    /* font-size: clamp(0.81rem, 0.23rem + 2.9vw, 1.1rem) !important; */
-    font-size: 0.88rem;
-    font-weight: 450;
+    font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
+    font-weight: var(--bolder-font);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
 

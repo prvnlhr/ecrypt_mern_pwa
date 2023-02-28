@@ -610,15 +610,16 @@
     .cardWrapperExpand {
         position: relative;
         margin-top: 20px;
-        width: 90%;
+        width: 83% !important;
+        max-width: 83%;
         height: 90%;
         min-height: 90%;
         display: flex;
         justify-content: center;
         align-items: center;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-        /* border: 1px solid black; */
-
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .cardWrapperShrink {
@@ -627,13 +628,15 @@
         justify-content: center;
         align-items: center;
         margin-top: 20px;
-        width: 83%;
+        width: 83% !important;
         height: 85px !important;
         min-height: 85px;
         scroll-behavior: smooth;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-        /* border: 1px solid black; */
+        /* border: 1px solid white; */
         margin: 15px 15px 15px 15px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .cardContainerShrink {
@@ -753,7 +756,7 @@
     }
 
     .titleLabelDiv p {
-        font-size: 1rem;
+        font-size: clamp(0.65rem, 0.050000000000000155rem + 2.999999999999999vw, 0.95rem) !important;
         font-weight: var(--bolder-font);
     }
 
@@ -768,6 +771,7 @@
 
     .titleTextDivExpand {
         width: 100%;
+        max-width: 100%;
         height: 100%;
         display: flex;
         justify-content: flex-start;
@@ -776,6 +780,7 @@
 
     .titleTextDivShrink {
         width: 100%;
+        max-width: 100%;
         height: 100%;
         display: flex;
         justify-content: flex-start;
@@ -785,7 +790,7 @@
 
 
     .titleTextDivExpand p {
-        font-size: 0.9rem;
+        font-size: clamp(0.9rem, -1.1102230246251565e-16rem + 4.500000000000001vw, 1.35rem) !important;
         font-weight: var(--bold-font);
         white-space: nowrap;
         overflow: hidden;
@@ -793,7 +798,7 @@
     }
 
     .titleTextDivShrink p {
-        font-size: 0.9rem;
+        font-size: clamp(0.8rem, 0.5000000000000002rem + 1.4999999999999991vw, 0.95rem) !important;
         font-weight: var(--bolder-font);
         white-space: nowrap;
         overflow: hidden;
@@ -825,7 +830,7 @@
     }
 
     .categoryLabelWrapper p {
-        font-size: 1rem;
+        font-size: clamp(0.85rem, 0.15000000000000002rem + 3.4999999999999996vw, 1.2rem) !important;
         font-weight: var(--bolder-font);
     }
 
@@ -850,7 +855,7 @@
     }
 
     .categoryTextDiv p {
-        font-size: 1rem;
+        font-size: clamp(0.65rem, -0.04999999999999993rem + 3.4999999999999996vw, 1.0rem) !important;
         font-weight: var(--bold-font);
     }
 
@@ -896,7 +901,7 @@
     }
 
     .cardHolderLabelWrapper p {
-        font-size: 0.85rem;
+        font-size: clamp(0.65rem, 0.050000000000000155rem + 2.999999999999999vw, 0.95rem) !important;
         font-weight: var(--bolder-font);
     }
 
@@ -912,7 +917,7 @@
     }
 
     .cardHolderTextWrapper p {
-        font-size: 0.85rem;
+        font-size: clamp(0.65rem, 0.050000000000000155rem + 2.999999999999999vw, 0.95rem) !important;
         font-weight: var(--bold-font);
     }
 
@@ -972,7 +977,7 @@
     }
 
     .cardNoLabelWrapper p {
-        font-size: 0.85rem;
+        font-size: clamp(0.65rem, 0.050000000000000155rem + 2.999999999999999vw, 0.95rem) !important;
         font-weight: var(--bolder-font);
     }
 
@@ -999,13 +1004,13 @@
     }
 
     .cardNoTextWrapper p {
-        font-size: 0.85rem;
+        font-size: clamp(0.65rem, 0.050000000000000155rem + 2.999999999999999vw, 0.95rem) !important;
         font-weight: var(--bold-font);
     }
 
     .cardNoTextWrapperShrink p {
-        font-size: 13px;
         font-weight: 450;
+        font-size: clamp(0.8rem, 0.5000000000000002rem + 1.4999999999999991vw, 0.95rem) !important;
     }
 
     /* ____________________________________________________ */
@@ -1048,7 +1053,7 @@
     }
 
     .cardExpiryLabelWrapper p {
-        font-size: 0.85rem;
+        font-size: clamp(0.65rem, 0.050000000000000155rem + 2.999999999999999vw, 0.95rem) !important;
         font-weight: var(--bolder-font);
     }
 
@@ -1063,7 +1068,7 @@
     }
 
     .cardExpiryTextWrapper p {
-        font-size: 0.85rem;
+        font-size: clamp(0.65rem, 0.050000000000000155rem + 2.999999999999999vw, 0.95rem) !important;
         font-weight: var(--bold-font);
     }
 
@@ -1106,7 +1111,7 @@
     }
 
     .cardCvvLabelWrapper p {
-        font-size: 0.85rem;
+        font-size: clamp(0.65rem, 0.050000000000000155rem + 2.999999999999999vw, 0.95rem) !important;
         font-weight: var(--bolder-font);
     }
 
@@ -1121,7 +1126,7 @@
     }
 
     .cardCvvTextWrapper p {
-        font-size: 0.85rem;
+        font-size: clamp(0.65rem, 0.050000000000000155rem + 2.999999999999999vw, 0.95rem) !important;
         font-weight: var(--bold-font);
     }
 

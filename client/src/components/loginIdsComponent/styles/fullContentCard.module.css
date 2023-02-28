@@ -377,7 +377,7 @@
   color: var(--primary-font-color);
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis
+  text-overflow: ellipsis;
 }
 
 .categoryWrapper {
@@ -982,57 +982,68 @@
   .editBtnDiv {
     width: auto;
     height: 55%;
+
   }
 
   .editBtnDiv p {
-    font-size: 0.75rem;
+    font-size: clamp(0.65rem, 0.2500000000000001rem + 1.9999999999999998vw, 0.85rem) !important;
+    /* font-size: clamp(0.65rem, 0.15000000000000002rem + 2.5vw, 0.9rem) !important; */
+
   }
 
   .saveBtnDiv {
     width: auto;
     height: 55%;
-    padding-left: 3%;
-    padding-right: 3%;
+    padding-left: 4%;
+    padding-right: 4%;
     border-radius: 5px;
     margin-right: 10px;
     /* border: 1px solid red; */
   }
 
   .saveBtnDiv p {
-    font-size: 0.75rem;
+    font-size: clamp(0.65rem, 0.2500000000000001rem + 1.9999999999999998vw, 0.85rem) !important;
+    /* font-size: clamp(0.65rem, 0.15000000000000002rem + 2.5vw, 0.9rem) !important; */
+
   }
 
   .cancelBtnDiv {
     width: auto;
     height: 55%;
-    padding-left: 3%;
+    padding-left: 4%;
     padding-right: 4%;
-    border-radius: 5px;
     margin-right: 10px;
-    /* border: 1px solid red; */
 
   }
 
   .cancelBtnDiv p {
-    font-size: 0.75rem;
+    font-size: clamp(0.65rem, 0.2500000000000001rem + 1.9999999999999998vw, 0.85rem) !important;
+    /* font-size: clamp(0.65rem, 0.15000000000000002rem + 2.5vw, 0.9rem) !important; */
   }
 
   .deleteBtnDiv {
     width: auto;
     height: 55%;
-    padding-left: 3%;
-    padding-right: 3%;
-    border-radius: 5px;
+    padding-left: 4%;
+    padding-right: 4%;
     margin-right: 10px;
-
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 0.25rem;
   }
 
   .deleteBtnDiv p {
-    font-size: 0.75rem;
+    font-size: clamp(0.65rem, 0.2500000000000001rem + 1.9999999999999998vw, 0.85rem) !important;
+    /* font-size: clamp(0.65rem, 0.15000000000000002rem + 2.5vw, 0.9rem) !important; */
   }
 
   .crudIcons {
-    margin-right: 5px;
+    margin-right: 0.3rem;
+    font-size: 0.8rem;
+    font-size: 1.2rem;
+    /* font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important; */
+    font-size: clamp(0.8rem, 2.220446049250313e-16rem + 3.9999999999999996vw, 1.2rem) !important;
   }
 
 
@@ -1073,7 +1084,10 @@
     /* width: 80%; */
     aspect-ratio: 1/1;
     height: 90%;
-    border-radius: 20px;
+    /* border-radius: 20px; */
+    /* border-radius: 0.9rem; */
+    /* border-radius: 1.3rem; */
+    border-radius: clamp(0.9rem, 0.09999999999999998rem + 4.0vw, 1.3rem) !important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1105,7 +1119,9 @@
   }
 
   .titleLabelDiv p {
+    font-size: 0.7rem;
     font-size: 1rem;
+    font-size: clamp(0.7rem, 0.09999999999999987rem + 3.0000000000000004vw, 1.0rem) !important;
   }
 
   .titleInputDiv {
@@ -1119,10 +1135,15 @@
 
   .titleInputActive {
     font-size: 1.5rem;
+    font-size: 1rem;
+    font-size: clamp(1.1rem, 0.30000000000000027rem + 3.9999999999999996vw, 1.5rem) !important;
+
   }
 
   .titleInputNotActive {
+    font-size: 1.1rem;
     font-size: 1.5rem;
+    font-size: clamp(1.1rem, 0.30000000000000027rem + 3.9999999999999996vw, 1.5rem) !important;
   }
 
   .categoryWrapper {
@@ -1144,7 +1165,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 0.7rem;
+    border-radius: 0.5rem;
+    /* border-radius: 0.75rem; */
+    border-radius: clamp(0.5rem, 0.0rem + 2.5vw, 0.75rem) !important;
   }
 
   .categoryLabelDiv {
@@ -1158,9 +1181,12 @@
   }
 
   .categoryLabelDiv p {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    font-size: 1.5rem;
+    /* font-size: clamp(1.0rem, 0.3999999999999999rem + 3.0000000000000004vw, 1.3rem) !important; */
     margin: 0px;
     padding: 0px;
+    font-size: clamp(1.0rem, 0.0rem + 5.0vw, 1.5rem) !important;
   }
 
   .catergoryInputDiv {
@@ -1179,11 +1205,13 @@
     width: 85%;
     border-radius: 8px;
     display: flex;
-
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 0.85rem;
+    font-size: 1.35rem;
+    /* font-size: clamp(0.75rem, 0.25rem + 2.5vw, 1.0rem) !important; */
+    font-size: clamp(0.85rem, -0.15000000000000024rem + 5.000000000000001vw, 1.35rem) !important;
   }
 
   .popUpBtnIconDiv {
@@ -1216,12 +1244,11 @@
     padding-bottom: 8%;
     padding-left: 10%;
     border-radius: 5px;
-
   }
 
   .inputPopUpText {
     font-family: "Poppins", sans-serif;
-    font-size: 1rem;
+    font-size: 0.8rem;
     /* font-weight: var(--bolder-font); */
     margin: 5% 0px 0px 0px;
     display: flex;
@@ -1258,7 +1285,9 @@
     grid-template-areas:
       "appWebSiteIconDiv appWebsiteLabelDiv appWebSiteInputDiv";
     background-color: var(--box-bg-tertiary);
-    border-radius: 0.7rem;
+    /* border-radius: 0.5rem; */
+    /* border-radius: 0.75rem; */
+    border-radius: clamp(0.5rem, 0.0rem + 2.5vw, 0.75rem) !important;
   }
 
   .appWebSiteIconDiv {
@@ -1273,7 +1302,6 @@
 
   .websiteIcon {
     height: 50%;
-
   }
 
   .appWebsiteLabelDiv {
@@ -1287,8 +1315,12 @@
   }
 
   .appWebsiteLabelDiv p {
-    font-size: 1rem;
-
+    font-size: 0.9rem;
+    font-size: 1.2rem;
+    /* font-size: clamp(0.85rem, 0.34999999999999976rem + 2.5000000000000013vw, 1.1rem) !important; */
+    /* font-size: clamp(0.8rem, 0.40000000000000013rem + 1.9999999999999998vw, 1.0rem) !important; */
+    font-size: clamp(0.9rem, 0.30000000000000016rem + 2.999999999999999vw, 1.2rem) !important;
+    font-weight: var(--bolder-font);
   }
 
   .appWebSiteInputDiv {
@@ -1299,12 +1331,18 @@
   }
 
   .appWebSiteInputActive {
-    font-size: 1rem;
-
+    font-size: 0.8rem;
+    font-size: clamp(0.75rem, 0.1499999999999999rem + 3.0000000000000004vw, 1.05rem) !important;
   }
 
   .appWebSiteInputNotActive {
-    font-size: 1rem;
+    font-size: 0.75rem;
+    font-size: 1.05rem;
+    /* font-size: 1rem; */
+    /* font-size: clamp(0.75rem, 0.3500000000000001rem + 1.9999999999999998vw, 0.95rem) !important; */
+    /* font-size: clamp(0.75rem, 0.25rem + 2.5vw, 1.0rem) !important; */
+    font-size: clamp(0.75rem, 0.1499999999999999rem + 3.0000000000000004vw, 1.05rem) !important;
+    font-weight: var(--bolder-font);
   }
 
   .usernameWrapper {
@@ -1330,8 +1368,11 @@
     grid-template-areas:
       "usernameIconDiv usernameLabelDiv"
       "usernameIconDiv usernameInputDiv";
-    border-radius: 1.1rem;
 
+    /* border-radius: 0.7rem; */
+    /* border-radius: 1.1rem; */
+
+    border-radius: clamp(0.7rem, -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
   }
 
 
@@ -1361,8 +1402,8 @@
   }
 
   .usernameLabelDiv p {
-    font-size: 0.9rem;
-
+    font-weight: var(--bolder-font);
+    font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
   }
 
   .usernameInputDiv {
@@ -1375,14 +1416,12 @@
     align-items: center;
   }
 
-
   .userNameInputActive {
-    font-size: 0.9rem;
-
+    font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
   }
 
   .userNameInputNotActive {
-    font-size: 0.9rem;
+    font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
 
   }
 
@@ -1428,6 +1467,7 @@
       "passwordIconDiv passwordInputDiv";
     background-color: var(--box-bg-tertiary);
     border-radius: 1.1rem;
+    border-radius: clamp(0.7rem, -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
   }
 
   .passwordIconDiv {
@@ -1455,7 +1495,7 @@
   }
 
   .passwordLabelDiv p {
-    font-size: 0.9rem;
+    font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
   }
 
   .passwordInput {
@@ -1465,14 +1505,13 @@
     outline: none;
     background: transparent;
     font-family: "Poppins", sans-serif;
-    font-size: 0.8rem;
+    font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
     font-weight: var(--bold-font);
     color: var(--primary-font-color);
     display: flex;
     justify-content: flex-start;
     align-items: center;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    /* border: 1px solid black; */
   }
 
   .passInputEditMode {

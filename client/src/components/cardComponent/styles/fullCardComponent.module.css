@@ -867,44 +867,62 @@
     /*>  font size */
     .editBtnDiv p {
         font-size: 0.75rem;
+        font-size: clamp(0.65rem, 0.2500000000000001rem + 1.9999999999999998vw, 0.85rem) !important;
+
     }
 
     .saveBtnDiv p {
         font-size: 0.75rem;
+        font-size: clamp(0.65rem, 0.2500000000000001rem + 1.9999999999999998vw, 0.85rem) !important;
+
     }
+
 
     .cancelBtnDiv p {
         font-size: 0.75rem;
+        font-size: clamp(0.65rem, 0.2500000000000001rem + 1.9999999999999998vw, 0.85rem) !important;
+
     }
 
 
     .deleteBtnDiv p {
         font-size: 0.75rem;
+        font-size: clamp(0.65rem, 0.2500000000000001rem + 1.9999999999999998vw, 0.85rem) !important;
+    }
+
+    .crudIcons {
+        margin-right: 0.3rem;
+        font-size: clamp(0.8rem, 2.220446049250313e-16rem + 3.9999999999999996vw, 1.2rem) !important;
+
     }
 
     .titleLabelDiv p {
         font-size: 15px;
         font-size: 0.85rem;
+        font-size: clamp(0.7rem, 0.09999999999999987rem + 3.0000000000000004vw, 1.0rem) !important;
     }
 
 
     .titleInputActive {
         font-size: 1.5rem;
+        font-size: clamp(1.1rem, 0.30000000000000027rem + 3.9999999999999996vw, 1.5rem) !important;
 
     }
 
     .titleInputNotActive {
         font-size: 1.5rem;
+        font-size: clamp(1.1rem, 0.30000000000000027rem + 3.9999999999999996vw, 1.5rem) !important;
     }
 
 
     .categoryLabelDiv p {
         font-size: 1.2rem;
+        font-size: clamp(1.0rem, 0.0rem + 5.0vw, 1.5rem) !important;
     }
 
     .categoryInput {
         font-size: 1.1rem;
-
+        font-size: clamp(0.85rem, -0.15000000000000024rem + 5.000000000000001vw, 1.35rem) !important;
     }
 
 }

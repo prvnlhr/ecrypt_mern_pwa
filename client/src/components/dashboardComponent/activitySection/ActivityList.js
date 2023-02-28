@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "./styles/activityList.module.css"
-import ActivityComponentOuter from './ActivityComponentOuter'
+import ActivityComponentWrapper from './ActivityComponentWrapper'
 import { useSelector } from 'react-redux';
 import ActivityListSkeleton from "../../skelotons/ActivityListSkeleton"
 const ActivityList = () => {
@@ -189,7 +189,7 @@ const ActivityList = () => {
           </>
           :
           activitiesArray.map((activity, index) => (
-            <ActivityComponentOuter
+            <ActivityComponentWrapper
               key={index}
               activity={activity}
             />

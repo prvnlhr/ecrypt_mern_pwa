@@ -3,10 +3,10 @@ import styles from "./styles/activityWrapper.module.css"
 import EditFieldComponent from "./EditFieldComponent"
 import NewAddedDeletedField from './NewAddedDeletedField';
 
-const ActivityComponentOuter = ({ activity }) => {
+const ActivityComponentWrapper = ({ activity }) => {
 
     return (
-        <div className={styles.activityWrapperOuter}>
+        <div className={styles.activityComponentWrapper}>
 
             <div className={styles.dateTimeTaskTypeWrapper} >
 
@@ -46,33 +46,30 @@ const ActivityComponentOuter = ({ activity }) => {
                         </p>
                     </div>
                 </div>
-
             </div>
 
-            {
-                (activity.subType === 3) ?
-                    Object.entries(activity).map(([item, val]) => (
-                        < EditFieldComponent
-                            item={item}
-                            value={val}
-                        />
+            <div className={styles.fieldWrapper}>
+                {
+                    (activity.subType === 3) ?
+                        Object.entries(activity).map(([item, val]) => (
+                            < EditFieldComponent
+                                item={item}
+                                value={val}
+                            />
 
-                    ))
-                    : (activity.subType === 2 || activity.subType === 1) &&
-                    Object.entries(activity).map(([item, val]) => (
-                        < NewAddedDeletedField
-                            item={item}
-                            activity={activity}
-                        />
-                    ))
-            }
-
-
-
-
+                        ))
+                        : (activity.subType === 2 || activity.subType === 1) &&
+                        Object.entries(activity).map(([item, val]) => (
+                            < NewAddedDeletedField
+                                item={item}
+                                activity={activity}
+                            />
+                        ))
+                }
+            </div>
 
         </div >
     )
 }
 
-export default ActivityComponentOuter
+export default ActivityComponentWrapper

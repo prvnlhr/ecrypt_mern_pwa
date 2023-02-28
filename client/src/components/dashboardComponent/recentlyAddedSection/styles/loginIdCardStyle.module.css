@@ -26,7 +26,6 @@
 
 }
 
-
 .cardWrapperExpand {
     position: relative;
     margin-top: 20px;
@@ -85,9 +84,7 @@
         "usernameWrapper usernameWrapper usernameWrapper usernameWrapper"
         "passwordWrapper passwordWrapper passwordWrapper passwordWrapper";
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-
     /* border: 1px solid black; */
-
 }
 
 /* ____________________________________ */
@@ -153,7 +150,8 @@
 
 .titleLabelDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 0.8rem;
+    /* font-size: 0.7rem !important; */
+    /* font-size: 1rem !important; */
     font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
@@ -173,9 +171,6 @@
     font-size: 0.75rem;
     font-weight: var(--bold-font);
     color: var(--primary-font-color);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis
 }
 
 .titleTextDivShrink {
@@ -187,7 +182,6 @@
     /* border: 1px solid black; */
     padding-left: 5%;
     padding-right: 5%;
-
 }
 
 .titleTextDivShrink p {
@@ -195,9 +189,6 @@
     font-size: 0.8rem;
     font-weight: var(--bold-font);
     color: var(--primary-font-color);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis
 }
 
 
@@ -245,7 +236,6 @@
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
 
-
 }
 
 .categoryTextDiv {
@@ -257,7 +247,6 @@
     /* border: 1px solid black; */
     background-color: var(--category-box-bg);
     border-radius: 5px;
-
 }
 
 .categoryTextDiv p {
@@ -392,6 +381,8 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    padding-left: 0%;
+    padding-right: 5%;
 }
 
 .usernameText {
@@ -410,7 +401,6 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 80%;
 }
 
 /* ____________________________________ */
@@ -452,7 +442,7 @@
 
 .passwordLabelWrapper p {
     font-family: "Poppins", sans-serif;
-    font-size: 0.65rem;
+    /* font-size: 0.65rem !important; */
     font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
@@ -490,6 +480,25 @@
         min-height: 85px;
         scroll-behavior: smooth;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        /* border: 1px solid black; */
+        margin: 15px 15px 15px 15px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cardWrapperExpand {
+        position: relative;
+        margin-top: 20px;
+        width: 83%;
+        height: 90%;
+        min-height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        /* border: 1px solid rebeccapurple; */
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .cardContainerShrink {
@@ -504,21 +513,6 @@
             "logoWrapper titleWrapper titleWrapper"
             "logoWrapper usernameWrapperShrink usernameWrapperShrink";
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-
-    }
-
-
-    .cardWrapperExpand {
-        position: relative;
-        margin-top: 20px;
-        width: 90%;
-        height: 90%;
-        min-height: 90%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-
     }
 
     .cardContainerExpand {
@@ -550,7 +544,7 @@
         width: 100%;
         height: 100%;
         min-height: 100%;
-        /* border: 1px solid black; */
+        /* border: 1px solid white; */
         overflow: hidden;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
         display: flex;
@@ -562,11 +556,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        aspect-ratio: 1/1;
-        width: 100%;
-        /* height: 100%; */
-
-        /* background-color: var(--box-bg-tertiary); */
+        height: 88%;
+        width: 88%;
     }
 
     .logoDivShrink {
@@ -575,7 +566,6 @@
         align-items: center;
         height: 88%;
         width: 88%;
-
     }
 
     /* ____________________________________ */
@@ -597,13 +587,12 @@
         display: flex;
         justify-content: flex-start;
         align-items: flex-end;
-        /* border: 1px solid black; */
         padding-left: 5%;
 
     }
 
     .titleLabelDiv p {
-        font-size: 1rem;
+        font-size: clamp(0.65rem, 0.050000000000000155rem + 2.999999999999999vw, 0.95rem) !important;
         font-weight: var(--bolder-font);
     }
 
@@ -613,16 +602,22 @@
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
-        /* border: 1px solid black; */
         padding-left: 5%;
+        /* border: 1px solid white; */
     }
 
     .titleTextDiv p {
-        font-size: 0.9rem;
+        font-size: clamp(0.9rem, -1.1102230246251565e-16rem + 4.500000000000001vw, 1.35rem) !important;
+        /* font-size: 0.9rem; */
+        /* font-size: 1rem; */
+        /* font-size: 1.2rem; */
+        /* font-size: 1.3rem; */
         font-weight: var(--bold-font);
         white-space: nowrap;
         overflow: hidden;
-        text-overflow: ellipsis
+        text-overflow: ellipsis;
+        margin: 0px;
+        padding: 0px;
     }
 
     .titleTextDivShrink {
@@ -631,17 +626,15 @@
         display: flex;
         justify-content: flex-start;
         align-items: flex-end;
-        /* border: 1px solid black; */
         padding-left: 5%;
-
     }
 
     .titleTextDivShrink p {
-        font-size: 0.9rem;
+        font-size: clamp(0.8rem, 0.5000000000000002rem + 1.4999999999999991vw, 0.95rem) !important;
         font-weight: var(--bolder-font);
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis
+        /* white-space: nowrap; */
+        /* overflow: hidden; */
+        /* text-overflow: ellipsis */
     }
 
 
@@ -670,7 +663,7 @@
     }
 
     .categoryLabelDiv p {
-        font-size: 1rem;
+        font-size: clamp(0.85rem, 0.15000000000000002rem + 3.4999999999999996vw, 1.2rem) !important;
         font-weight: var(--bolder-font);
     }
 
@@ -696,11 +689,10 @@
         align-items: center;
         /* border: 1px solid black; */
         border-radius: 5px;
-
     }
 
     .categoryTextDiv p {
-        font-size: 1rem;
+        font-size: clamp(0.65rem, -0.04999999999999993rem + 3.4999999999999996vw, 1.0rem) !important;
         font-weight: var(--bold-font);
     }
 
@@ -710,7 +702,6 @@
         grid-area: appWebsiteLabelWrapper;
         width: 100%;
         height: 80%;
-        /* border: 1px solid black; */
         border-top-left-radius: 8px;
         border-bottom-left-radius: 8px;
     }
@@ -726,7 +717,7 @@
     }
 
     .appWebsiteLabelDiv p {
-        font-size: 1rem;
+        font-size: clamp(0.8rem, 0.19999999999999996rem + 3.0000000000000004vw, 1.1rem) !important;
         font-weight: var(--bolder-font);
     }
 
@@ -782,7 +773,6 @@
         grid-template-rows: 100%;
         grid-template-areas:
             "usernameTextWrapper";
-        /* background-color: forestgreen; */
     }
 
 
@@ -799,7 +789,6 @@
         grid-area: usernameLabelWrapper;
         width: 100%;
         height: 100%;
-        /* border: 1px solid black; */
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -807,30 +796,34 @@
     }
 
     .usernameLabelWrapper p {
-        font-size: 0.85rem;
+        font-size: clamp(0.65rem, 0.050000000000000155rem + 2.999999999999999vw, 0.95rem) !important;
         font-weight: var(--bolder-font);
     }
 
 
     .usernameTextWrapper {
         grid-area: usernameTextWrapper;
-        width: 100%;
+        width: 95%;
         height: 100%;
-        /* border: 1px solid black; */
         display: flex;
         align-items: center;
         justify-content: flex-start;
+        /* border: 1px solid red; */
     }
 
     .usernameText {
-        font-size: 0.85rem;
+        font-size: clamp(0.65rem, 0.050000000000000155rem + 2.999999999999999vw, 0.95rem) !important;
         font-weight: var(--bold-font);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis
     }
 
     .usernameTextShrink {
         font-size: 13px;
         font-weight: var(--bolder-font);
         margin-left: 5%;
+        font-size: clamp(0.8rem, 0.5000000000000002rem + 1.4999999999999991vw, 0.95rem) !important;
     }
 
     /* ____________________________________ */
@@ -839,7 +832,6 @@
         grid-area: passwordWrapper;
         width: 100%;
         height: 80%;
-        /* border: 1px solid red; */
         display: grid;
         grid-template-columns: 20% 80%;
         grid-template-rows: 50% 50%;
@@ -853,7 +845,6 @@
         grid-area: passwordIconWrapper;
         width: 100%;
         height: 100%;
-        /* border: 1px solid black; */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -863,28 +854,28 @@
         grid-area: passwordLabelWrapper;
         width: 100%;
         height: 100%;
-        /* border: 1px solid black; */
         display: flex;
         justify-content: flex-start;
         align-items: center;
     }
 
     .passwordLabelWrapper p {
-        font-size: 0.85rem;
+        font-size: clamp(0.65rem, 0.050000000000000155rem + 2.999999999999999vw, 0.95rem) !important;
         font-weight: var(--bolder-font);
     }
-
 
     .passwordTextWrapper {
         grid-area: passwordTextWrapper;
         width: 100%;
         height: 100%;
-        /* border: 1px solid black; */
     }
 
     .passwordTextWrapper p {
-        font-size: 0.85rem;
+        font-size: clamp(0.65rem, 0.050000000000000155rem + 2.999999999999999vw, 0.95rem) !important;
         font-weight: var(--bold-font);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis
     }
 
     .fieldIcons {
@@ -893,7 +884,8 @@
 
 }
 
-@media only screen and (min-device-width: 480px) and (max-device-width: 1020px) {
+
+/* @media only screen and (min-device-width: 480px) and (max-device-width: 1020px) {
 
     .cardWrapperShrink {
         position: relative;
@@ -929,7 +921,7 @@
         padding: unset;
     }
 
-}
+} */
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
     .cardWrapperShrink {

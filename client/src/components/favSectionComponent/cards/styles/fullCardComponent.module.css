@@ -425,7 +425,7 @@
 
 .categoryTextBox {
     height: 75%;
-    width: 80%;
+    width: 90%;
     border-radius: 8px;
     /* border: 1px solid black; */
     display: flex;
@@ -433,7 +433,6 @@
     align-items: center;
     border-radius: 8px;
     background-color: var(--category-box-bg);
-
 }
 
 .categoryTextBox p {
@@ -471,7 +470,6 @@
         /* border: 1px solid red; */
         transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         margin-bottom: 2px;
-
 
     }
 
@@ -653,6 +651,8 @@
     .titleLabelDiv p {
         font-size: 15px;
         font-weight: var(--bolder-font);
+        font-size: clamp(0.7rem, 0.09999999999999987rem + 3.0000000000000004vw, 1.0rem) !important;
+
     }
 
     .titleInputDiv {
@@ -673,7 +673,6 @@
         align-items: center;
         /* border: 1px solid rgb(182, 69, 88); */
         padding-left: 0%;
-
     }
 
     .categoryContainer {
@@ -684,7 +683,7 @@
         justify-content: center;
         align-items: center;
         border-radius: 10px;
-
+        border-radius: clamp(0.5rem, 0.0rem + 2.5vw, 0.75rem) !important;
     }
 
     .categoryLabelDiv {
@@ -697,6 +696,17 @@
         padding-left: 5%;
     }
 
+    .categoryTextBox {
+        height: 85%;
+        width: 80%;
+        border-radius: 8px;
+        /* border: 1px solid white; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        background-color: var(--category-box-bg);
+    }
 
     .subCardWrapper {
         grid-area: subcardWrapper;
@@ -711,22 +721,27 @@
         font-size: 15px;
         font-size: 0.85rem;
         font-weight: var(--bolder-font);
+        font-size: clamp(0.7rem, 0.09999999999999987rem + 3.0000000000000004vw, 1.0rem) !important;
+
     }
 
     .titleInputDiv p {
         font-size: 1.5rem;
         font-weight: var(--bolder-font);
+        font-size: clamp(1.1rem, 0.30000000000000027rem + 3.9999999999999996vw, 1.5rem) !important;
+
     }
 
     .categoryLabelDiv p {
         font-size: 1.2rem;
-        font-weight: 550;
+        font-weight: var(--bolder-font);
+        font-size: clamp(1.0rem, 0.0rem + 5.0vw, 1.5rem) !important;
     }
 
     .categoryInput {
         font-size: 1.1rem;
         font-weight: var(--bolder-font);
-
+        font-size: clamp(0.85rem, -0.15000000000000024rem + 5.000000000000001vw, 1.35rem) !important;
     }
 
 }

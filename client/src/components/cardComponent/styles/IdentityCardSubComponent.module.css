@@ -414,7 +414,7 @@
     .cardHolderIcon {
         /* font-size: 30px; */
         font-size: 2rem;
-
+        font-size: clamp(1.6rem, 4.440892098500626e-16rem + 7.999999999999999vw, 2.4rem) !important;
     }
 
     .cardHolderLabelTextDiv {
@@ -474,6 +474,8 @@
     .cardNumIcon {
         /* font-size: 25px; */
         font-size: 1.8rem;
+        font-size: clamp(1.3rem, 0.10000000000000031rem + 5.999999999999998vw, 1.9rem) !important;
+
 
     }
 
@@ -538,7 +540,10 @@
 
     .doBIcon {
         /* font-size: 22px; */
-        font-size: 1.55rem;
+        font-size: 1.1rem;
+        font-size: 1.6rem;
+        /* font-size: clamp(1.3rem, 0.10000000000000031rem + 5.999999999999998vw, 1.9rem) !important; */
+        font-size: clamp(1.1rem, 0.10000000000000009rem + 5.0vw, 1.6rem) !important;
     }
 
 
@@ -605,6 +610,7 @@
     .issueDateIcon {
         /* font-size: 22px; */
         font-size: 1.8rem;
+        font-size: clamp(1.3rem, 0.10000000000000031rem + 5.999999999999998vw, 1.9rem) !important;
 
     }
 
@@ -624,6 +630,8 @@
         font-size: 0.8rem;
         font-weight: var(--bolder-font);
         color: var(--secondary-font-color);
+        font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
+
     }
 
     .issueDateInputDiv {
@@ -641,41 +649,55 @@
     .cardHolderLabelTextDiv p {
         font-size: 0.9rem;
         font-weight: 450;
+        font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
     }
 
     .cardHolderInputActive {
         font-size: 0.9rem;
         font-weight: 450;
+        font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
+
     }
 
     .cardHolderInputNotActive {
         font-size: 0.9rem;
         font-weight: 450;
+        font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
+
     }
+
 
     .cardNumberLabelTextDiv p {
         font-size: 0.9rem;
         font-weight: 450;
+        font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
+
     }
 
     .dobLabelTextDiv p {
         font-size: 0.9rem;
         font-weight: 450;
+        font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
     }
 
     .issueLabelTextDiv p {
         font-size: 0.9rem;
         font-weight: 450;
+        font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
     }
 
     .inputActive {
         font-size: 0.9rem;
         font-weight: 450;
+        font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
+
     }
 
     .inputNotActive {
         font-size: 0.9rem;
         font-weight: 450;
+        font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
+
     }
 
 }
