@@ -1,6 +1,6 @@
 import React from 'react'
-import styles from "./styles/fieldComponent.module.css"
-const ChangeFieldComponent = ({ item, value }) => {
+import styles from "./styles/editField.module.css"
+const EditFieldComponent = ({ item, value }) => {
     // console.log(typeof (item), item)
     const key = (item[0].toUpperCase() + item.slice(1));
 
@@ -25,21 +25,31 @@ const ChangeFieldComponent = ({ item, value }) => {
                                                                 {key} -
                                                             </p>
                                                         </div>
-                                                        <div className={styles.oldValWrapper} >
+                                                        <div className={styles.oldValueWrapper} >
                                                             <p>
                                                                 {value.oldVal}
                                                             </p>
                                                         </div>
                                                     </div>
                                                     <div className={styles.lowerPartition} >
-                                                        <div className={styles.changeToLabelWrapper} >
+                                                        <div className={styles.arrowElementWrapper}></div>
+                                                        <div className={styles.changedToLableWrapper}>
                                                             <p>Changed to - </p>
                                                         </div>
-                                                        <div className={styles.newValWrapper} >
+                                                        <div className={styles.newValueWrapper}>
                                                             <p>
                                                                 {value.newVal}
                                                             </p>
                                                         </div>
+                                                        {/* <div className={styles.angleArrowDiv}></div>
+                                                        <div className={styles.changeToLabelWrapper} >
+                                                            <div className={styles.changeToLabelDiv}>
+                                                                <p className={styles.changeToLabelText}>Changed to - </p>
+                                                            </div>
+                                                        </div>
+                                                        <div className={styles.newValWrapper} >
+                                                           
+                                                        </div> */}
                                                     </div>
 
                                                 </div>
@@ -51,4 +61,4 @@ const ChangeFieldComponent = ({ item, value }) => {
 
 }
 
-export default ChangeFieldComponent
+export default EditFieldComponent

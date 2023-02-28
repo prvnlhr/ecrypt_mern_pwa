@@ -30,7 +30,13 @@ const SearchSection = ({ searchMode, setSearchMode, searchQuery,
 
     const [listTitle, setListTitle] = useState("");
 
+
+    const checkListCountDisplayCondition = () => {
+        return location.pathname !== '/' && searchQuery.length === 0 && searchState.length === 0;
+    }
+
     useEffect(() => {
+        console.log(location.pathname)
         switch (location.pathname) {
             case "/":
                 setListTitle("Dashboard");
@@ -110,14 +116,14 @@ const SearchSection = ({ searchMode, setSearchMode, searchQuery,
                     </p>
                 </div>
                 {
-                    (location.pathname !== "/" && searchQuery.length === 0 && searchState.length === 0) ?
-                        <div className={styles.listCountDiv}>
-                            <p>{listCount}</p>
-                        </div>
-                        :
-                        <div className={styles.listCountDiv}>
-                            <p>{searchState.length}</p>
-                        </div>
+                    (checkListCountDisplayCondition()) &&
+                    <div className={styles.listCountDiv}>
+                        <p>{listCount}</p>
+                    </div>
+                    //         :
+                    // <div className={styles.listCountDiv}>
+                    //     <p>{searchState.length}</p>
+                    // </div>
 
                 }
             </div>

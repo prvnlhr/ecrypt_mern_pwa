@@ -20,6 +20,23 @@ import SearchList from './searchSection/SearchList';
 import LoginIdsList from './loginIdsComponent/LoginIdsList';
 
 const App = () => {
+  // const appHeight = () => {
+  //   const doc = document.documentElement
+  //   doc.style.setProperty(` — app-height`, `${window.innerHeight}px`)
+  // }
+  // window.addEventListener(`resize`, appHeight)
+  // appHeight()
+
+  // const useVisualViewport = () => {
+  //   const [state, setState] = useState(getViewports)
+  //   useEffect(() => {
+  //     const handleResize = () => setState(getViewports)
+  //     window.visualViewport.addEventListener('resize', handleResize)
+  //     return () =>
+  //       window.visualViewport.removeEventListener('resize', handleResize)
+  //   }, [])
+  //   return state
+  // }
 
   const location = useLocation();
   const dispatch = useDispatch();
