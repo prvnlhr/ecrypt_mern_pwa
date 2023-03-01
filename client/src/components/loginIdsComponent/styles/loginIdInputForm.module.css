@@ -675,28 +675,28 @@
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 
     .cardWrapper {
-        position: absolute;
+        position: relative;
         display: flex;
         width: 100%;
-        height: 90%;
+        height: 100%;
         padding-left: 0;
         display: flex;
         justify-content: center;
         align-items: flex-end;
-        margin-top: 14%;
-        /* border: 1px solid black; */
-        margin-top: 13.75%;
-
+        margin-top: 0%;
+        margin-bottom: 0.2%;
+        transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
     .cardWrapperClose {
+        display: flex;
         width: 100%;
         height: 0%;
         display: flex;
         justify-content: flex-start;
         align-items: center;
         padding-left: 0%;
-        webkit-tap-highlight-color: transparent;
+        -webkit-tap-highlight-color: transparent;
         -webkit-touch-callout: none;
         -webkit-user-select: none;
         -khtml-user-select: none;
@@ -706,7 +706,7 @@
         overflow: hidden;
         padding: 0px;
         margin: 0px;
-        transition: none;
+        transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
 
@@ -753,7 +753,6 @@
 
     .backBtnDiv {
         height: 55%;
-
     }
 
     .crudBtnContainer {
@@ -814,6 +813,8 @@
         justify-content: center;
         align-items: center;
         border: 3px solid #a8ccf9b5;
+        border-radius: clamp(0.9rem, 0.09999999999999998rem + 4.0vw, 1.3rem) !important;
+
     }
 
     .logoIcon {
@@ -843,6 +844,8 @@
 
     .titleLabelDiv p {
         font-size: 1rem;
+        font-size: clamp(0.7rem, 0.09999999999999987rem + 3.0000000000000004vw, 1.0rem) !important;
+
     }
 
     .titleInputDiv {
@@ -856,6 +859,8 @@
 
     .titleInputDiv p {
         font-size: 1.5rem;
+        font-size: clamp(1.1rem, 0.30000000000000027rem + 3.9999999999999996vw, 1.5rem) !important;
+
     }
 
     .categoryWrapper {
@@ -878,6 +883,7 @@
         justify-content: center;
         align-items: center;
         border-radius: 10px;
+        border-radius: clamp(0.5rem, 0.0rem + 2.5vw, 0.75rem) !important;
 
     }
 
@@ -895,6 +901,8 @@
         font-size: 1.2rem;
         margin: 0px;
         padding: 0px;
+        font-size: clamp(1.0rem, 0.0rem + 5.0vw, 1.5rem) !important;
+
     }
 
     .catergoryInputDiv {
@@ -917,6 +925,8 @@
         justify-content: center;
         align-items: center;
         text-align: center;
+        font-size: clamp(0.85rem, -0.15000000000000024rem + 5.000000000000001vw, 1.35rem) !important;
+
     }
 
     .popUpBtnIconDiv {
@@ -990,6 +1000,8 @@
         grid-template-areas:
             "appWebSiteIconDiv appWebsiteLabelDiv appWebsiteInputDiv";
         border-radius: 10px;
+        border-radius: clamp(0.5rem, 0.0rem + 2.5vw, 0.75rem) !important;
+
 
     }
 
@@ -1019,6 +1031,8 @@
 
     .appWebsiteLabelDiv p {
         font-size: 1rem;
+        font-size: clamp(0.9rem, 0.30000000000000016rem + 2.999999999999999vw, 1.2rem) !important;
+
     }
 
     .appWebsiteInputDiv {
@@ -1038,6 +1052,7 @@
         outline: none;
         background: transparent;
         font-size: 1rem;
+        font-size: clamp(0.75rem, 0.1499999999999999rem + 3.0000000000000004vw, 1.05rem) !important;
 
     }
 
@@ -1065,6 +1080,7 @@
             "usernameIconDiv usernameLabelDiv"
             "usernameIconDiv usernameInputDiv";
         border-radius: 10px;
+        border-radius: clamp(0.7rem, -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
 
 
     }
@@ -1096,7 +1112,10 @@
 
     .usernameLabelDiv p {
         font-size: 0.9rem;
+        font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
+
     }
+
 
     .usernameInputDiv {
         grid-area: usernameInputDiv;
@@ -1112,6 +1131,7 @@
 
     .usernameInputDiv input {
         font-size: 0.9rem;
+        font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
 
     }
 
@@ -1141,8 +1161,7 @@
             "passwordIconDiv passwordInputDiv";
         background-color: var(--box-bg-tertiary);
         border-radius: 10px;
-
-
+        border-radius: clamp(0.7rem, -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
     }
 
     .passwordIconDiv {
@@ -1172,6 +1191,8 @@
 
     .passwordLabelDiv p {
         font-size: 0.9rem;
+        font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
+
     }
 
     .passwordInputDiv {
@@ -1186,6 +1207,8 @@
 
     .passwordInputDiv input {
         font-size: 0.9rem;
+        font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
+
     }
 
 

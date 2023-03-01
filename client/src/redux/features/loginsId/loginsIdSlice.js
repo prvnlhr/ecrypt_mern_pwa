@@ -138,6 +138,13 @@ const loginsIdSlice = createSlice({
                     action: 'fetch',
                 };
             }).
+            addCase(fecthLoginIdsData.rejected, (state, action) => {
+                return {
+                    ...state,
+                    isLoading: false,
+                    action: undefined,
+                };
+            }).
             addCase(addNewLoginIdData.fulfilled, (state, action) => {
                 return {
                     ...state,

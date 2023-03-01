@@ -31,7 +31,7 @@
     align-items: center;
     background-color: var(--box-bg-primary);
     padding-left: 0%;
-    webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -46,22 +46,6 @@
 .cardContainer {
     width: 70%;
     height: 90%;
-    /* border: 1px solid red;
-
-    display: grid;
-    grid-template-columns: 10% 90%;
-    grid-template-rows: 15% 20% 15% 10% 20% 20%;
-    grid-template-rows: 10% 20% 15% 15% 20% 20%;
-
-    grid-template-areas:
-        "cardHeader cardHeader"
-        "logoTitleWrapper logoTitleWrapper"
-        "categoryWrapper categoryWrapper"
-        "cardHolderWrapper cardHolderWrapper"
-        "cardNumberWrapper cardNumberWrapper"
-        "dateOfBirthWrapper expiryIssueWrapper";
-    box-sizing: border-box;
-    */
     display: grid;
     grid-template-columns: 25% minmax(0, 1fr);
     grid-template-rows: 10% 17% 14% 14% 22% 22%;
@@ -112,15 +96,7 @@
     border-radius: 5px;
     margin-right: 10px;
     /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
     cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 
 
@@ -132,109 +108,6 @@
     justify-content: flex-end;
     align-items: flex-start;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.editBtnDiv {
-    width: auto;
-    height: 22px;
-    height: 25px;
-    /* border: 1px solid black; */
-    background-color: #9DC1FA;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 5%;
-    padding-right: 5%;
-    border-radius: 5px;
-    margin-right: 10px;
-    /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-
-}
-
-.editBtnDiv p {
-    font-family: "Poppins", sans-serif;
-    font-size: 12px;
-    font-weight: 400;
-    color: #002A9A;
-}
-
-.saveBtnDiv {
-    width: auto;
-    height: 22px;
-    height: 25px;
-
-    /* border: 1px solid black; */
-    background-color: #58BF6F;
-    /* background-color: white; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 5%;
-    padding-right: 5%;
-    border-radius: 5px;
-    margin-right: 10px;
-    /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-}
-
-.saveBtnDiv p {
-    font-family: "Poppins", sans-serif;
-    font-size: 11px;
-    font-weight: 400;
-    color: white;
-}
-
-.cancelBtnDiv {
-    width: auto;
-    height: 22px;
-    height: 25px;
-
-    /* border: 1px solid black; */
-    background-color: #B4B3BA;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 5%;
-    padding-right: 5%;
-    border-radius: 5px;
-    margin-right: 10px;
-    /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-
-}
-
-.cancelBtnDiv p {
-    font-family: "Poppins", sans-serif;
-    font-size: 11px;
-    font-weight: 450;
-    color: white;
-
-}
-
-.deleteBtnDiv {
-    width: auto;
-    height: 25px;
-    /* border: 1px solid black; */
-    background-color: #D64339;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 5%;
-    padding-right: 5%;
-    border-radius: 5px;
-    margin-right: 10px;
-    /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-
-}
-
-.deleteBtnDiv p {
-    font-family: "Poppins", sans-serif;
-    font-size: 11px;
-    font-weight: 400;
-    color: white;
 }
 
 .favBtnDiv {
@@ -321,6 +194,25 @@
     height: 100%;
 }
 
+/* 
+> We are using input instead of div for textField
+> because div will expand when using white-space:nowrap
+> but using input(readOnly) gives desired result
+*/
+
+.textInputCommonStyle {
+    border: none;
+    outline: none;
+    background: transparent;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: "Poppins", sans-serif;
+    color: var(--primary-font-color);
+    font-weight: var(--bold-font);
+}
+
+
 .titleContainer {
     width: 100%;
     height: 100%;
@@ -360,14 +252,17 @@
     align-items: flex-start;
 }
 
-.titleInputDiv p {
-    font-family: "Poppins", sans-serif;
+.titleTextField {
+    width: 100%;
+    height: 100%;
+    text-align: start;
+    /* border: 1px solid skyblue; */
+}
+
+.titleTextFieldFont {
     font-size: 1.2rem;
     font-weight: var(--bold-font);
     color: var(--primary-font-color);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis
 }
 
 .categoryWrapper {
@@ -391,13 +286,12 @@
     align-items: center;
     background-color: var(--box-bg-tertiary);
     border-radius: 10px;
-
 }
 
 .categoryLabelDiv {
-    width: 100%;
+    width: 50%;
     height: 100%;
-    /* border: 1px solid black; */
+    /* border: 1px solid whitesmoke; */
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -409,34 +303,27 @@
     font-size: 1.2rem;
     font-weight: var(--bolder-font);
     color: var(--primary-font-color);
-
 }
 
-
-.categoryTextDiv {
-    position: relative;
-    width: 80%;
+.categoryInputDiv {
+    width: 50%;
     height: 100%;
+    text-align: start;
+    /* border: 1px solid skyblue; */
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: 1px solid black; */
 }
 
-.categoryTextBox {
-    height: 75%;
-    width: 90%;
-    border-radius: 8px;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px;
+.categoryTextField {
+    width: 75%;
+    height: 80%;
+    border-radius: 0.4rem;
     background-color: var(--category-box-bg);
+    text-align: center;
 }
 
-.categoryTextBox p {
-    font-family: "Poppins", sans-serif;
+.categoryTextFieldFont {
     font-size: 0.9rem;
     font-weight: var(--bold-font);
     color: var(--ui-scheme-color);
@@ -470,7 +357,6 @@
         /* border: 1px solid red; */
         transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         margin-bottom: 2px;
-
     }
 
     .cardWrapperClose {
@@ -496,7 +382,6 @@
         transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         /* border: 1px solid red; */
         opacity: 0;
-
     }
 
     .cardContainer {
@@ -530,9 +415,6 @@
     }
 
     .backBtnContainer {
-        width: 50%;
-        height: 100%;
-        /* border: 1px solid black; */
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -541,24 +423,17 @@
     }
 
     .backBtnDiv {
-        width: 50%;
-        height: 50%;
-        /* border: 1px solid black; */
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
+        height: 55%;
     }
 
-
-
     .curdBtnContainer {
-        width: 50%;
+        width: 70%;
         height: 100%;
-        /* border: 1px solid black; */
+        padding-right: 5%;
+        /* border: 1px solid red; */
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        padding-right: 8%;
     }
 
     .favBtnDiv {
@@ -606,22 +481,12 @@
         aspect-ratio: 1/1;
         height: 80%;
         /* border: 1px solid black; */
-        border-radius: 20px;
         display: flex;
         justify-content: center;
         align-items: center;
+        border-radius: clamp(0.9rem, -0.29999999999999993rem + 6.0vw, 1.5rem) !important;
     }
 
-    .logoDivActive {
-        /* width: 80%; */
-        aspect-ratio: 1/1;
-        height: 80%;
-        border: 3px solid #a8ccf9b5;
-        border-radius: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
 
     .logoIcon {
         width: 100%;
@@ -632,80 +497,17 @@
         width: 70%;
         height: 100%;
         /* border: 1px solid red; */
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        flex-direction: column;
         padding-left: 5%;
     }
 
-    .titleLabelDiv {
-        width: 80%;
-        height: 80%;
-        /* border: 1px solid black; */
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-end;
-    }
-
-    .titleLabelDiv p {
-        font-size: 15px;
-        font-weight: var(--bolder-font);
-        font-size: clamp(0.7rem, 0.09999999999999987rem + 3.0000000000000004vw, 1.0rem) !important;
-
-    }
-
-    .titleInputDiv {
-        width: 95%;
-        height: 80%;
-        /* border: 1px solid black; */
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-    }
-
-    .categoryWrapper {
-        grid-area: categoryWrapper;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        /* border: 1px solid rgb(182, 69, 88); */
-        padding-left: 0%;
-    }
 
     .categoryContainer {
         width: 90%;
         height: 60%;
-        /* border: 1px solid black; */
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: 10px;
         border-radius: clamp(0.5rem, 0.0rem + 2.5vw, 0.75rem) !important;
-    }
-
-    .categoryLabelDiv {
-        width: 40%;
-        height: 100%;
-        /* border: 1px solid black; */
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        padding-left: 5%;
-    }
-
-    .categoryTextBox {
-        height: 85%;
-        width: 80%;
-        border-radius: 8px;
-        /* border: 1px solid white; */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 8px;
-        background-color: var(--category-box-bg);
     }
 
     .subCardWrapper {
@@ -716,20 +518,12 @@
         /* border: 1px solid red; */
     }
 
-
     .titleLabelDiv p {
-        font-size: 15px;
-        font-size: 0.85rem;
-        font-weight: var(--bolder-font);
-        font-size: clamp(0.7rem, 0.09999999999999987rem + 3.0000000000000004vw, 1.0rem) !important;
-
+        font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
     }
 
-    .titleInputDiv p {
-        font-size: 1.5rem;
-        font-weight: var(--bolder-font);
-        font-size: clamp(1.1rem, 0.30000000000000027rem + 3.9999999999999996vw, 1.5rem) !important;
-
+    .titleTextFieldFont {
+        font-size: clamp(1.0rem, -0.3999999999999999rem + 6.999999999999999vw, 1.7rem) !important;
     }
 
     .categoryLabelDiv p {
@@ -738,8 +532,7 @@
         font-size: clamp(1.0rem, 0.0rem + 5.0vw, 1.5rem) !important;
     }
 
-    .categoryInput {
-        font-size: 1.1rem;
+    .categoryTextFieldFont {
         font-weight: var(--bolder-font);
         font-size: clamp(0.85rem, -0.15000000000000024rem + 5.000000000000001vw, 1.35rem) !important;
     }

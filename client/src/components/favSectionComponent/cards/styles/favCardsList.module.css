@@ -62,12 +62,14 @@
     /* firefox hide scrollbar  */
 
 }
+
 .contentContainerClose::-webkit-scrollbar {
     display: none;
     background-color: rgba(176, 32, 32, 0);
     height: 4px;
     width: 3px;
 }
+
 .contentContainer::-webkit-scrollbar {
     background-color: rgba(176, 32, 32, 0);
     height: 4px;
@@ -88,9 +90,7 @@
 
 
 
-@media screen and (max-width: 650px) {
-
-
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     .favCardsListWrapper {
         position: relative;
         width: 100%;
@@ -118,12 +118,12 @@
         margin-top: 5%;
         /* transition: all 10s cubic-bezier(0.25, 0.8, 0.25, 1); */
         transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-
     }
 
     .contentContainerClose {
-        height: 5%;
+        height: 0%;
         width: 100%;
+        margin-top: 5%;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;

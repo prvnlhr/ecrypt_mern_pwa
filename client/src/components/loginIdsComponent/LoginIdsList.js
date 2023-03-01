@@ -150,9 +150,6 @@ const LoginIdsList = ({ setLogoComponentShow,
       }
 
       <div className={(showContentCard || showInputForm) ? styles.contentContainerClose : styles.contentContainer} ref={node}>
-
-
-
         {
           isLoading === true && action === 'fetch' ?
             <>
@@ -177,6 +174,7 @@ const LoginIdsList = ({ setLogoComponentShow,
             ))
         }
       </div>
+
       <FullContentCard
         setLogoComponentShow={setLogoComponentShow}
         fullContentCardData={fullContentCardData}

@@ -581,7 +581,7 @@ label {
     padding-left: 5%;
 }
 
-.inputDiv input {
+.inputField {
     width: 80%;
     height: 100%;
     border-left: none;
@@ -1038,7 +1038,6 @@ label {
         border-radius: 10px;
     }
 
-
     .backBtnIcon {
         font-size: 2rem;
     }
@@ -1472,6 +1471,10 @@ label {
         justify-content: flex-start;
         align-items: center;
         box-sizing: border-box;
+        padding-left: 8%;
+    }
+
+    .emailLabelDiv {
         padding-left: 5%;
     }
 
@@ -1489,10 +1492,10 @@ label {
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        padding-left: 5%;
+        padding-left: 0%;
     }
 
-    .inputDiv input {
+    .inputField {
         width: 80%;
         height: 100%;
         border-left: none;
@@ -1505,14 +1508,25 @@ label {
         font-weight: var(--bolder-font);
         color: var(--primary-font-color);
         background: none;
+        padding-left: 8%;
     }
 
-    input::placeholder {
-        font-size: 11px;
-        font-weight: 450;
-        color: var(--box-bg-secondary-li);
-        text-align: center;
+    .emailInput {
+        width: 80%;
+        height: 100%;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        /* border-bottom: 1px solid rgba(0, 0, 0, 0.16); */
+        border-bottom: none;
+        background: none;
+        font-size: 0.75rem;
+        font-weight: var(--bolder-font);
+        color: var(--primary-font-color);
+        background: none;
+        padding-left: 5%;
     }
+
 
 
     .profileLastNameContainer {
@@ -1738,7 +1752,6 @@ label {
         font-size: 0.75rem;
         font-weight: var(--bold-font);
         letter-spacing: 0px;
-
     }
 
 
@@ -1751,14 +1764,6 @@ label {
         align-items: center;
         /* border: 1px solid black; */
         padding-right: 3%;
-    }
-
-    .warningIcon {
-        font-size: 1.1rem;
-    }
-
-    .dotIcon {
-        font-size: 1rem;
     }
 
     .deleteBtnContainer {
@@ -1775,6 +1780,83 @@ label {
 
     /* ________________________________________________________________- */
 
+    .backBtnIcon {
+        font-size: 2rem;
+    }
+
+    .headingDiv p {
+        font-size: 1rem;
+        font-size: 1.4rem;
+        margin: 0px;
+        font-size: clamp(1.0rem, 0.20000000000000018rem + 3.9999999999999996vw, 1.4rem) !important;
+    }
+
+    .formSectionHeadingDiv::after {
+        content: "";
+        position: absolute;
+        width: 40%;
+        height: 0.15rem;
+        bottom: 0px;
+        left: 0px;
+        border-radius: 10px;
+    }
+
+    .labelText {
+        font-size: clamp(0.6rem, -1.1102230246251565e-16rem + 3.0000000000000004vw, 0.9rem) !important;
+    }
+
+    .dateText {
+        font-size: clamp(0.55rem, -0.04999999999999982rem + 2.999999999999999vw, 0.85rem) !important;
+    }
+
+    .formSectionHeadingDiv p {
+        font-size: clamp(0.75rem, -0.3500000000000001rem + 5.500000000000001vw, 1.3rem) !important;
+    }
+
+    .btnText {
+        letter-spacing: 0px;
+        font-size: clamp(0.55rem, 0.050000000000000044rem + 2.5vw, 0.8rem) !important;
+    }
+
+    .labelDiv p {
+        font-size: clamp(0.6rem, -1.1102230246251565e-16rem + 3.0000000000000004vw, 0.9rem) !important;
+    }
+
+    .inputFieldText {
+        font-size: clamp(0.6rem, -1.1102230246251565e-16rem + 3.0000000000000004vw, 0.9rem) !important;
+    }
+
+    input::placeholder {
+        font-size: clamp(0.5rem, -0.10000000000000009rem + 3.0000000000000004vw, 0.8rem) !important;
+        color: var(--box-bg-secondary-li);
+        text-align: center;
+    }
+
+    .text1Container p {
+        letter-spacing: 0px;
+        font-size: clamp(0.8rem, -0.09999999999999987rem + 4.5vw, 1.25rem) !important;
+    }
+
+    .text2Container p {
+        width: 85%;
+        letter-spacing: 0px;
+        font-size: clamp(0.55rem, 0.050000000000000044rem + 2.5vw, 0.8rem) !important;
+    }
+
+    .text3Container p {
+        width: 85%;
+        letter-spacing: 0px;
+        font-size: clamp(0.55rem, 0.050000000000000044rem + 2.5vw, 0.8rem) !important;
+
+    }
+
+    .warningIcon {
+        font-size: clamp(1.1rem, 0.10000000000000009rem + 5.0vw, 1.6rem) !important;
+    }
+
+    .dotIcon {
+        font-size: clamp(1.1rem, 0.10000000000000009rem + 5.0vw, 1.6rem) !important;
+    }
 }
 
 
@@ -2044,7 +2126,7 @@ label {
         color: var(--secondary-font-color);
     }
 
-    .inputDiv input {
+    .inputField {
         width: 80%;
         height: 100%;
         border-left: none;

@@ -1,7 +1,5 @@
-@import "../../../variable.modules.css";
-
-.cardWrapper {
-    /* border: 1px solid blue; */
+.subCardWrapper {
+    position: relative;
     width: 100%;
     height: 100%;
     display: grid;
@@ -17,6 +15,25 @@
     justify-items: center;
 }
 
+/* 
+> We are using input instead of div for textField
+> because div will expand when using white-space:nowrap
+> but using input(readOnly) gives desired result
+*/
+
+.textInputCommonStyle {
+    border: none;
+    outline: none;
+    background: transparent;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: "Poppins", sans-serif;
+    color: var(--primary-font-color);
+    font-weight: var(--bold-font);
+}
+
+
 /* _____________________________________________ */
 
 .cardHolderWrapper {
@@ -26,16 +43,17 @@
     /* border: 1px solid orange; */
 }
 
+
 .cardHolderContainer {
     height: 70%;
     /* border: 1px solid black; */
     display: grid;
     align-items: center;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 20% 60% 20%;
     grid-template-rows: 50% 50%;
     grid-template-areas:
-        "cardHolderIconDiv cardHolderLabelTextDiv"
-        "cardHolderIconDiv cardHolderTextDiv";
+        "cardHolderIconDiv cardHolderLabelTextDiv cardVenderIconContainer  "
+        "cardHolderIconDiv cardHolderInputDiv cardVenderIconContainer";
     background-color: var(--box-bg-tertiary);
     border-radius: 10px;
 }
@@ -55,7 +73,6 @@
     color: var(--field-icon-color);
 }
 
-
 .cardHolderLabelTextDiv {
     grid-area: cardHolderLabelTextDiv;
     width: 100%;
@@ -73,14 +90,21 @@
     color: var(--secondary-font-color);
 }
 
-.cardHolderTextDiv {
-    grid-area: cardHolderTextDiv;
+.cardHolderInputDiv {
+    grid-area: cardHolderInputDiv;
     width: 100%;
     height: 100%;
     /* border: 1px solid black; */
+    /* border: 1px solid salmon; */
 }
 
-.cardHolderTextDiv p {
+.cardHolderTextField {
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid skyblue; */
+}
+
+.cardHolderTextFieldFont {
     font-family: "Poppins", sans-serif;
     font-size: 0.8rem;
     font-weight: var(--bold-font);
@@ -88,6 +112,31 @@
 }
 
 
+/* _____________________________________________________ */
+.cardVenderIconContainer {
+    grid-area: cardVenderIconContainer;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.cardVenderIconDiv {
+    aspect-ratio: 1/1;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.cardVenderLogo {
+    /* height: 70%; */
+    width: 80%;
+    /* border: 1px solid black; */
+}
 
 /* _____________________________________________ */
 .cardNumberWrapper {
@@ -102,11 +151,12 @@
     /* border: 1px solid black; */
     display: grid;
     align-items: center;
-    grid-template-columns: 20% 80%;
+
+    grid-template-columns: 20% 60% 20%;
     grid-template-rows: 50% 50%;
     grid-template-areas:
-        "cardNumberIconDiv cardNumberLabelTextDiv"
-        "cardNumberIconDiv cardNumberTextDiv";
+        "cardNumberIconDiv cardNumberLabelTextDiv cardVenderIconContainer  "
+        "cardNumberIconDiv cardNumberInputDiv cardVenderIconContainer";
     background-color: var(--box-bg-tertiary);
     border-radius: 10px;
 }
@@ -125,6 +175,7 @@
 .cardNumIcon {
     font-size: 1.5rem;
     color: var(--field-icon-color);
+
 }
 
 .cardNumberLabelTextDiv {
@@ -144,19 +195,27 @@
     color: var(--secondary-font-color);
 }
 
-.cardNumberTextDiv {
-    grid-area: cardNumberTextDiv;
+.cardNumberInputDiv {
+    grid-area: cardNumberInputDiv;
     width: 100%;
     height: 100%;
     /* border: 1px solid black; */
 }
 
-.cardNumberTextDiv p {
+.cardNumberTextField {
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid skyblue; */
+
+}
+
+.cardNumberTextFieldFont {
     font-family: "Poppins", sans-serif;
     font-size: 0.8rem;
-    font-weight: var(--bold-font);
+    font-weight: var(--bolder-font);
     color: var(--primary-font-color);
 }
+
 
 
 /* _____________________________________________ */
@@ -165,9 +224,9 @@
     grid-area: dobDateWrapper;
     width: 100%;
     height: 100%;
+    /* border: 1px solid blue; */
     display: flex;
     justify-content: flex-start;
-    /* border: 1px solid blue; */
 }
 
 .dobDateContainer {
@@ -179,14 +238,14 @@
     grid-template-columns: 30% 70%;
     grid-template-rows: 50% 50%;
     grid-template-areas:
-        "dobIconDiv dobLabelTextDiv"
-        "dobIconDiv dobDateTextDiv";
+        "dobDateIconDiv dobLabelTextDiv"
+        "dobDateIconDiv dobInputDiv";
     background-color: var(--box-bg-tertiary);
     border-radius: 10px;
 }
 
-.dobIconDiv {
-    grid-area: dobIconDiv;
+.dobDateIconDiv {
+    grid-area: dobDateIconDiv;
     width: 100%;
     height: 100%;
     /* border: 1px solid black; */
@@ -195,7 +254,7 @@
     align-items: center;
 }
 
-.doBIcon {
+.dobDateIcon {
     font-size: 1.5rem;
     color: var(--field-icon-color);
 }
@@ -217,8 +276,14 @@
     color: var(--secondary-font-color);
 }
 
-.dobDateTextDiv {
-    grid-area: dobDateTextDiv;
+.dobTextField {
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid skyblue; */
+}
+
+.dobInputDiv {
+    grid-area: dobInputDiv;
     width: 100%;
     height: 100%;
     /* border: 1px solid black; */
@@ -227,13 +292,13 @@
     align-items: center;
 }
 
-.dobDateTextDiv p {
+.dobTextFieldFont {
     font-family: "Poppins", sans-serif;
     font-size: 0.8rem;
-    font-weight: var(--bold-font);
+    font-weight: var(--bolder-font);
     color: var(--primary-font-color);
-}
 
+}
 
 /* _____________________________________________ */
 
@@ -241,9 +306,9 @@
     grid-area: expiryDateWrapper;
     width: 100%;
     height: 100%;
+    /* border: 1px solid red; */
     display: flex;
     justify-content: flex-end;
-    /* border: 1px solid red; */
 }
 
 .expiryDateContainer {
@@ -255,14 +320,14 @@
     grid-template-columns: 30% 70%;
     grid-template-rows: 50% 50%;
     grid-template-areas:
-        "expiryIconDiv expiryLabelTextDiv"
-        "expiryIconDiv expiryDateTextDiv";
+        "expiryDateIconDiv expiryDateLabelTextDiv"
+        "expiryDateIconDiv expiryDateInputDiv";
     background-color: var(--box-bg-tertiary);
     border-radius: 10px;
 }
 
-.expiryIconDiv {
-    grid-area: expiryIconDiv;
+.expiryDateIconDiv {
+    grid-area: expiryDateIconDiv;
     width: 100%;
     height: 100%;
     /* border: 1px solid black; */
@@ -271,13 +336,13 @@
     align-items: center;
 }
 
-.expiryIcon {
+.expiryDateIcon {
     font-size: 1.5rem;
     color: var(--field-icon-color);
 }
 
-.expiryLabelTextDiv {
-    grid-area: expiryLabelTextDiv;
+.expiryDateLabelTextDiv {
+    grid-area: expiryDateLabelTextDiv;
     width: 100%;
     height: 100%;
     /* border: 1px solid black; */
@@ -286,15 +351,15 @@
     align-items: center;
 }
 
-.expiryLabelTextDiv p {
+.expiryDateLabelTextDiv p {
     font-family: "Poppins", sans-serif;
     font-size: 0.8rem;
     font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
 
-.expiryDateTextDiv {
-    grid-area: expiryDateTextDiv;
+.expiryDateInputDiv {
+    grid-area: expiryDateInputDiv;
     width: 100%;
     height: 100%;
     /* border: 1px solid black; */
@@ -303,18 +368,25 @@
     align-items: center;
 }
 
-.expiryDateTextDiv p {
+.expiryDateTextField {
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid skyblue; */
+}
+
+.expiryDateTextFieldFont {
     font-family: "Poppins", sans-serif;
     font-size: 0.8rem;
-    font-weight: var(--bold-font);
+    font-weight: var(--bolder-font);
     color: var(--primary-font-color);
 }
 
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 
-
-    .cardWrapper {
-        /* border: 1px solid blue; */
+    .subCardWrapper {
+        position: relative;
+        /* border: 1px solid red; */
         width: 100%;
         height: 100%;
         display: grid;
@@ -333,279 +405,95 @@
     /* _____________________________________________ */
 
     .cardHolderWrapper {
-        grid-area: cardHolderWrapper;
         width: 90%;
         height: 100%;
-        /* border: 1px solid orange; */
     }
 
     .cardHolderContainer {
-        height: 70%;
-        /* border: 1px solid black; */
-        display: grid;
-        align-items: center;
-        grid-template-columns: 20% 80%;
-        grid-template-rows: 50% 50%;
-        grid-template-areas:
-            "cardHolderIconDiv cardHolderLabelTextDiv"
-            "cardHolderIconDiv cardHolderTextDiv";
-        background-color: var(--box-bg-tertiary);
-        border-radius: 10px;
-    }
-
-    .cardHolderIconDiv {
-        grid-area: cardHolderIconDiv;
-        width: 100%;
-        height: 100%;
-        /* border: 1px solid black; */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .cardHolderIcon {
-        font-size: 2rem;
-    }
-
-    .cardHolderLabelTextDiv {
-        grid-area: cardHolderLabelTextDiv;
-        width: 100%;
-        height: 100%;
-        /* border: 1px solid black; */
-        display: flex;
-        justify-items: center;
-        align-items: center;
+        border-radius: clamp(0.7rem, -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
     }
 
     .cardHolderLabelTextDiv p {
-        font-size: 0.9rem;
-        font-weight: 450;
+        font-size: clamp(0.75rem, 0.25rem + 2.5vw, 1.0rem) !important;
     }
 
-    .cardHolderTextDiv {
-        grid-area: cardHolderTextDiv;
-        width: 100%;
-        height: 100%;
-        /* border: 1px solid black; */
+    .cardHolderTextFieldFont {
+        font-size: clamp(0.75rem, 0.25rem + 2.5vw, 1.0rem) !important;
     }
 
-    .cardHolderTextDiv p {
-        font-size: 0.9rem;
-        font-weight: 450;
+    .cardHolderIcon {
+        font-size: clamp(1.6rem, 4.440892098500626e-16rem + 7.999999999999999vw, 2.4rem) !important;
     }
+
+    /* _____________________________________________________ */
+
 
     /* _____________________________________________ */
     .cardNumberWrapper {
-        grid-area: cardNumberWrapper;
         width: 90%;
         height: 100%;
-        /* border: 1px solid green; */
     }
 
     .cardNumerContainer {
-        height: 70%;
-        /* border: 1px solid black; */
-        display: grid;
-        align-items: center;
-        grid-template-columns: 20% 80%;
-        grid-template-rows: 50% 50%;
-        grid-template-areas:
-            "cardNumberIconDiv cardNumberLabelTextDiv"
-            "cardNumberIconDiv cardNumberTextDiv";
-        border-radius: 10px;
-    }
-
-
-    .cardNumberIconDiv {
-        grid-area: cardNumberIconDiv;
-        width: 100%;
-        height: 100%;
-        /* border: 1px solid black; */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .cardNumIcon {
-        /* font-size: 1.5rem; */
-        font-size: 1.8rem;
-
-    }
-
-    .cardNumberLabelTextDiv {
-        grid-area: cardNumberLabelTextDiv;
-        width: 100%;
-        height: 100%;
-        /* border: 1px solid black; */
-        display: flex;
-        justify-items: center;
-        align-items: center;
+        border-radius: clamp(0.7rem, -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
     }
 
     .cardNumberLabelTextDiv p {
-        font-size: 0.9rem;
-        font-weight: 450;
+        font-size: clamp(0.75rem, 0.25rem + 2.5vw, 1.0rem) !important;
     }
 
-    .cardNumberTextDiv {
-        grid-area: cardNumberTextDiv;
-        width: 100%;
-        height: 100%;
-        /* border: 1px solid black; */
+    .cardNumberTextFieldFont {
+        font-size: clamp(0.75rem, 0.25rem + 2.5vw, 1.0rem) !important;
     }
 
-    .cardNumberTextDiv p {
-        font-size: 0.9rem;
-        font-weight: 450;
+    .cardNumIcon {
+        font-size: clamp(1.3rem, 0.10000000000000031rem + 5.999999999999998vw, 1.9rem) !important;
     }
-
-
-
 
     /* _____________________________________________ */
 
     .dobDateWrapper {
-        grid-area: dobDateWrapper;
-        width: 100%;
-        height: 100%;
-        /* border: 1px solid blue; */
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
         padding-left: 10%;
     }
 
     .dobDateContainer {
-        height: 70%;
-        width: 90%;
-        /* border: 1px solid black; */
-        display: grid;
-        align-items: center;
-        grid-template-columns: 30% 70%;
-        grid-template-rows: 50% 50%;
-        grid-template-areas:
-            "dobIconDiv dobLabelTextDiv"
-            "dobIconDiv dobDateTextDiv";
-        border-radius: 10px;
+        border-radius: clamp(0.7rem, -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
     }
 
-    .dobIconDiv {
-        grid-area: dobIconDiv;
-        width: 100%;
-        height: 100%;
-        /* border: 1px solid black; */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .doBIcon {
-        font-size: 1.55rem;
-    }
-
-    .dobLabelTextDiv {
-        grid-area: dobLabelTextDiv;
-        width: 100%;
-        height: 100%;
-        /* border: 1px solid black; */
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    }
 
     .dobLabelTextDiv p {
-        font-size: 0.9rem;
-        font-weight: 450;
+        font-size: clamp(0.75rem, 0.25rem + 2.5vw, 1.0rem) !important;
     }
 
-    .dobDateTextDiv {
-        grid-area: dobDateTextDiv;
-        width: 100%;
-        height: 100%;
-        /* border: 1px solid black; */
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
+    .dobTextFieldFont {
+        font-size: clamp(0.75rem, 0.25rem + 2.5vw, 1.0rem) !important;
     }
 
-    .dobDateTextDiv p {
-        font-size: 0.9rem;
-        font-weight: 450;
+    .dobDateIcon {
+        font-size: clamp(1.3rem, 0.10000000000000031rem + 5.999999999999998vw, 1.9rem) !important;
     }
-
 
 
     /* _____________________________________________ */
 
     .expiryDateWrapper {
-        grid-area: expiryDateWrapper;
-        width: 100%;
-        height: 100%;
-        /* border: 1px solid red; */
-        display: flex;
         justify-content: flex-start;
         align-items: flex-start;
     }
 
     .expiryDateContainer {
-        height: 70%;
-        width: 90%;
-        /* border: 1px solid black; */
-        display: grid;
-        align-items: center;
-        grid-template-columns: 30% 70%;
-        grid-template-rows: 50% 50%;
-        grid-template-areas:
-            "expiryIconDiv expiryLabelTextDiv"
-            "expiryIconDiv expiryDateTextDiv";
-        border-radius: 10px;
+        border-radius: clamp(0.7rem, -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
     }
 
-    .expiryIconDiv {
-        grid-area: expiryIconDiv;
-        width: 100%;
-        height: 100%;
-        /* border: 1px solid black; */
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .expiryDateLabelTextDiv p {
+        font-size: clamp(0.75rem, 0.25rem + 2.5vw, 1.0rem) !important;
     }
 
-    .expiryIcon {
-        font-size: 1.8rem;
+    .cvvTextFieldFont {
+        font-size: clamp(0.75rem, 0.25rem + 2.5vw, 1.0rem) !important;
     }
 
-    .expiryLabelTextDiv {
-        grid-area: expiryLabelTextDiv;
-        width: 100%;
-        height: 100%;
-        /* border: 1px solid black; */
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
+    .expiryDateIcon {
+        font-size: clamp(1.3rem, 0.10000000000000031rem + 5.999999999999998vw, 1.9rem) !important;
     }
-
-    .expiryLabelTextDiv p {
-        font-size: 0.9rem;
-        font-weight: 450;
-    }
-
-    .expiryDateTextDiv {
-        grid-area: expiryDateTextDiv;
-        width: 100%;
-        height: 100%;
-        /* border: 1px solid black; */
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    }
-
-    .expiryDateTextDiv p {
-        font-size: 0.9rem;
-        font-weight: 450;
-    }
-
-
-
-
 }

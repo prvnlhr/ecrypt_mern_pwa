@@ -148,7 +148,6 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
     // __________________________________________________________________________________________________________
     return (
         <div className={
-            // styles.cardWrapper
             showContentCard ? styles.cardWrapper : styles.cardWrapperClose
         }>
             {logoComponentShow &&

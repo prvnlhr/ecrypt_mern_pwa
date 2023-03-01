@@ -10,7 +10,7 @@ const IdentityCardSubComponent = ({ favFullCardData, setFavFullCardData, }) => {
     })
   }
   return (
-    <div className={styles.cardWrapper} >
+    <div className={styles.subCardWrapper} >
       <div className={styles.cardHolderWrapper}>
         <div className={styles.cardHolderContainer}>
           <div className={styles.cardHolderIconDiv}>
@@ -22,9 +22,10 @@ const IdentityCardSubComponent = ({ favFullCardData, setFavFullCardData, }) => {
           <div className={styles.cardHolderLabelTextDiv}>
             <p>CARD HOLDER</p>
           </div>
-          <div className={styles.cardHolderTextDiv}>
-            <p> {favFullCardData.cardHolder} </p>
+          <div className={styles.cardHolderInputDiv}>
+            <input className={`${styles.textInputCommonStyle} ${styles.cardHolderTextField}  ${styles.cardHolderTextFieldFont}`} value={favFullCardData.cardHolder} readOnly={true} />
           </div>
+
         </div>
       </div>
       <div className={styles.cardNumberWrapper}>
@@ -35,35 +36,34 @@ const IdentityCardSubComponent = ({ favFullCardData, setFavFullCardData, }) => {
           <div className={styles.cardNumberLabelTextDiv}>
             <p>CARD NUMBER</p>
           </div>
-          <div className={styles.cardNumberTextDiv}>
-            <p> {favFullCardData.cardNumber} </p>
+          <div className={styles.cardNumberInputDiv}>
+            <input className={`${styles.textInputCommonStyle} ${styles.cardNumberTextField}  ${styles.cardNumberTextFieldFont}`} value={favFullCardData.cardNumber} readOnly={true} />
           </div>
         </div>
       </div>
       <div className={styles.dobDateWrapper}>
         <div className={styles.dobDateContainer}>
-          <div className={styles.dobIconDiv} >
-            <Icon className={styles.doBIcon} icon="uil:calender" />
+          <div className={styles.dobDateIconDiv} >
+            <Icon className={styles.dobDateIcon} icon="uil:calender" />
           </div>
           <div className={styles.dobLabelTextDiv} >
             <p>DOB</p>
           </div>
-          <div className={styles.dobDateTextDiv} >
-            <p> {favFullCardData.dob} </p>
+          <div className={styles.dobInputDiv} >
+            <input className={`${styles.textInputCommonStyle} ${styles.dobTextField}  ${styles.dobTextFieldFont}`} value={favFullCardData.dob} readOnly={true} />
           </div>
         </div>
       </div>
       <div className={styles.issueDateWrapper}>
         <div className={styles.issueDateContainer}>
-          <div className={styles.issueIconDiv} >
+          <div className={styles.issueDateIconDiv} >
             <Icon className={styles.issueDateIcon} icon="fluent:notepad-16-regular" />
           </div>
-          <div className={styles.issueLabelTextDiv} >
+          <div className={styles.issueDateLabelTextDiv} >
             <p>ISSUE DATE</p>
           </div>
-          <div className={styles.issueDateTextDiv} >
-            <p> {favFullCardData.issueDate} </p>
-
+          <div className={styles.issueDateInputDiv} >
+            <input className={`${styles.textInputCommonStyle} ${styles.issueDateTextField}  ${styles.issueDateTextFieldFont}`} value={favFullCardData.issueDate} readOnly={true} />
           </div>
 
         </div>

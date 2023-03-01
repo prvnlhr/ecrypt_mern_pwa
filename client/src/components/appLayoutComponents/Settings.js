@@ -297,7 +297,7 @@ const Settings = () => {
                         </div>
 
                         <div className={styles.profilePicEditBtnContainer} >
-                            {formFieldEditable('PROFILEPIC')  ?
+                            {formFieldEditable('PROFILEPIC') ?
                                 <>
                                     <div className={styles.iconDivSave} onClick={confirmEditProfilePic} >
                                         <Icon className={styles.profilePicCancelIcon} icon="charm:tick-double" />
@@ -365,8 +365,10 @@ const Settings = () => {
                                 <div className={styles.inputDiv}>
                                     <input
                                         name='firstName'
+                                        className={`${styles.inputField}  ${styles.inputFieldText}`}
                                         value={profileData.firstName}
-                                        onChange={handleProfileInputChange} disabled={!formFieldEditable('PROFILE')}
+                                        onChange={handleProfileInputChange}
+                                        disabled={!formFieldEditable('PROFILE')}
                                         onFocus={() => onFocus(1)} />
                                 </div>
                             </div>
@@ -379,6 +381,7 @@ const Settings = () => {
                                 <div className={styles.inputDiv}>
                                     <input
                                         value={profileData.lastName}
+                                        className={`${styles.inputField}  ${styles.inputFieldText}`}
                                         name='lastName'
                                         onChange={handleProfileInputChange}
                                         disabled={!formFieldEditable('PROFILE')}
@@ -389,7 +392,7 @@ const Settings = () => {
                         </div>
                         <div className={styles.profileEmailNameContainer} >
                             <div className={`${styles.profileEmailNameDiv} ${currFocusField === 3 && styles.focusFieldStyle}`} >
-                                <div className={styles.labelDiv}>
+                                <div className={`${styles.labelDiv} ${styles.emailLabelDiv}`}>
                                     <p>
                                         EMAIL ADDRESS
                                     </p>
@@ -397,6 +400,7 @@ const Settings = () => {
                                 <div className={styles.inputDiv}>
                                     <input
                                         disabled={true}
+                                        className={`${styles.emailInput} ${styles.inputFieldText}`}
                                         // onFocus={() => onFocus(3)}
                                         value={profileData.email} />
                                 </div>
@@ -443,12 +447,12 @@ const Settings = () => {
                         <div className={formFieldEditable('PASS') ? styles.passFieldWrapperOpen : styles.passFieldWrapperClose} >
                             <div className={`${styles.passOldInputContainer}  ${currFocusField === 4 && styles.focusFieldStyle}`} >
                                 <div className={styles.inputDiv}>
-                                    <input name='oldPassword' onChange={handlePassInputChange} placeholder='New Password' onFocus={() => onFocus(4)} value={passwordData.oldPassword} />
+                                    <input className={`${styles.inputField}  ${styles.inputFieldText}`} name='oldPassword' onChange={handlePassInputChange} placeholder='New Password' onFocus={() => onFocus(4)} value={passwordData.oldPassword} />
                                 </div>
                             </div>
                             <div className={`${styles.passNewInputContainer}  ${currFocusField === 5 && styles.focusFieldStyle}`} >
                                 <div className={styles.inputDiv}>
-                                    <input name='newPassword' onChange={handlePassInputChange} placeholder='Confirm Password' onFocus={() => onFocus(5)} value={passwordData.newPassword} />
+                                    <input className={`${styles.inputField}  ${styles.inputFieldText}`} name='newPassword' onChange={handlePassInputChange} placeholder='Confirm Password' onFocus={() => onFocus(5)} value={passwordData.newPassword} />
                                 </div>
                             </div>
                         </div>

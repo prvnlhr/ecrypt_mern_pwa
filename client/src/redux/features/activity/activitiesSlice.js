@@ -59,6 +59,13 @@ const activitiesSlice = createSlice({
                     action: 'fetch'
                 }
             })
+            .addCase(fectchActivitiesData.rejected, (state, action) => {
+                return {
+                    ...state,
+                    isLoading: false,
+                    action: undefined
+                }
+            })
 
     }
 

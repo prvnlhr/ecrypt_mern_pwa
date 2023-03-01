@@ -105,6 +105,8 @@
   background-color: rgba(176, 32, 32, 0);
   height: 4px;
   width: 3px;
+  display: none;
+
 }
 
 .contentContainer::-webkit-scrollbar-track {
@@ -138,11 +140,12 @@
 
 
 
-@media screen and (max-width: 650px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
 
   .loginsList {
     position: relative;
-    width: 100%;
+    width: 99.5%;
     height: 100%;
     /* border: 1px solid red; */
     display: flex;
@@ -150,28 +153,30 @@
     align-items: center;
     align-content: center;
     z-index: 45;
-    webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    padding-top: 0%;
   }
 
   .contentContainer {
     padding-left: 0;
     padding-right: 0;
-    /* border: 1px solid black; */
+    /* border: 1px solid white; */
     height: 90%;
     margin-top: 10%;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-
+    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+    padding-top: 0px;
   }
 
   .contentContainerClose {
     height: 0%;
     width: 100%;
+    margin-top: 10%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -186,9 +191,9 @@
     padding-right: 0;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* border: 1px solid skyblue; */
   }
-
 
 }
 

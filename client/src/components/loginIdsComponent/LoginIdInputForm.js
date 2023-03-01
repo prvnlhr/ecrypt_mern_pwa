@@ -10,6 +10,7 @@ import { addNewLoginIdData } from "../../redux/features/loginsId/loginsIdSlice"
 import { generateActivityData } from "../utils/ActivityDataChangeFuction"
 import { Oval } from "react-loader-spinner"
 import { motion } from "framer-motion"
+import PassGeneratorIcon from '../icons/PassGeneratorIcon';
 
 const spinnerWrapper = {
     height: `100%`,
@@ -339,17 +340,7 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                                     }}
                                     onClick={generatePassword}
                                 >
-                                    <svg
-                                        className={styles.passGeneratorIcon}
-                                        viewBox="0 0 24 24"
-                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect x="2" y="2" width="20" height="20" rx="5" stroke="#2B3F6C" stroke-width="1.5" />
-                                        <circle opacity="0.3" cx="7.25" cy="16.75" r="1.25" fill="#2B3F6C" />
-                                        <circle opacity="0.3" cx="7.25" cy="7.25" r="1.25" fill="#2B3F6C" />
-                                        <circle opacity="0.3" cx="16.75" cy="16.75" r="1.25" fill="#2B3F6C" />
-                                        <circle opacity="0.3" cx="12" cy="12" r="1.25" fill="#2B3F6C" />
-                                        <circle opacity="0.3" cx="16.75" cy="7.25" r="1.25" fill="#2B3F6C" />
-                                    </svg>
+                                    <PassGeneratorIcon styles={styles} />
                                 </motion.div>
                             </motion.div>
                         </div>

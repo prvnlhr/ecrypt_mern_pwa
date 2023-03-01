@@ -137,7 +137,6 @@ const cardsSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(fecthCardsData.fulfilled, (state, action) => {
-                // console.log(action.payload)
                 return {
                     ...state,
                     cardsData: action.payload,
@@ -151,6 +150,13 @@ const cardsSlice = createSlice({
                     cardsData: action.payload,
                     isLoading: true,
                     action: 'fetch',
+                };
+            })
+            .addCase(fecthCardsData.rejected, (state, action) => {
+                return {
+                    ...state,
+                    isLoading: false,
+                    action: undefined,
                 };
             })
             .addCase(addNewCardData.fulfilled, (state, action) => {

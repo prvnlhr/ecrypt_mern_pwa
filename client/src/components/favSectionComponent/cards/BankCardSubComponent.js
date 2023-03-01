@@ -24,7 +24,6 @@ const BankCardSubComponent = ({ favFullCardData, setFavFullCardData, }) => {
         })
     }
 
-
     return (
         <div className={styles.subCardWrapper} >
             <div className={styles.cardHolderWrapper}>
@@ -38,8 +37,8 @@ const BankCardSubComponent = ({ favFullCardData, setFavFullCardData, }) => {
                     <div className={styles.cardHolderLabelTextDiv}>
                         <p>CARD HOLDER</p>
                     </div>
-                    <div className={styles.cardHolderTextDiv}>
-                        <p>{favFullCardData.cardHolder}</p>
+                    <div className={styles.cardHolderInputDiv}>
+                        <input className={`${styles.textInputCommonStyle} ${styles.cardHolderTextField}  ${styles.cardHolderTextFieldFont}`} value={favFullCardData.cardHolder} readOnly={true} />
                     </div>
 
                 </div>
@@ -52,8 +51,8 @@ const BankCardSubComponent = ({ favFullCardData, setFavFullCardData, }) => {
                     <div className={styles.cardNumberLabelTextDiv}>
                         <p>CARD NUMBER</p>
                     </div>
-                    <div className={styles.cardNumberTextDiv}>
-                        <p>{favFullCardData.cardNumber}</p>
+                    <div className={styles.cardNumberInputDiv}>
+                        <input className={`${styles.textInputCommonStyle} ${styles.cardNumberTextField}  ${styles.cardNumberTextFieldFont}`} value={favFullCardData.cardNumber} readOnly={true} />
                     </div>
                     <div className={styles.cardVenderIconContainer}>
                         <div className={styles.cardVenderIconDiv} >
@@ -72,8 +71,8 @@ const BankCardSubComponent = ({ favFullCardData, setFavFullCardData, }) => {
                     <div className={styles.expiryLabelTextDiv} >
                         <p>EXPIRY</p>
                     </div>
-                    <div className={styles.expiryTextDiv} >
-                        <p>{favFullCardData.expiry}</p>
+                    <div className={styles.expiryInputDiv} >
+                        <input className={`${styles.textInputCommonStyle} ${styles.expiryTextField}  ${styles.expiryTextFieldFont}`} value={favFullCardData.expiry} readOnly={true} />
                     </div>
                 </div>
             </div>
@@ -87,10 +86,9 @@ const BankCardSubComponent = ({ favFullCardData, setFavFullCardData, }) => {
                     <div className={styles.cvvNumberLabelTextDiv} >
                         <p>CVV</p>
                     </div>
-                    <div className={styles.cvvNumberTextDiv} >
-                        <p>{favFullCardData.cvv}</p>
+                    <div className={styles.cvvNumberInputDiv} >
+                        <input className={`${styles.textInputCommonStyle} ${styles.cvvTextField}  ${styles.cvvTextFieldFont}`} value={favFullCardData.cvv} readOnly={true} />
                     </div>
-
                 </div>
             </div>
         </div>

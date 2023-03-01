@@ -68,8 +68,8 @@ const FullContentCard = ({ showFullFavCard, setShowFullFavCard, favFullCardData 
                             <div className={styles.titleLabelDiv}>
                                 <p className={styles.titleTitleText}>TITLE</p>
                             </div>
-                            <div className={styles.titleTextDiv}>
-                                <p>{favFullCardData.title}</p>
+                            <div className={styles.titleInputDiv}>
+                                <input className={`${styles.textInputCommonStyle} ${styles.titleTextField}  ${styles.titleTextFieldFont}`} value={favFullCardData.title} readOnly={true} />
                             </div>
                         </div>
 
@@ -83,10 +83,8 @@ const FullContentCard = ({ showFullFavCard, setShowFullFavCard, favFullCardData 
                         <div className={styles.categoryLabelDiv} >
                             <p>Category</p>
                         </div>
-                        <div className={styles.categoryTextDiv} >
-                            <div className={styles.categoryTextBox} >
-                                <p>{favFullCardData.category}</p>
-                            </div>
+                        <div className={styles.categoryInputDiv} >
+                            <input className={`${styles.textInputCommonStyle}  ${styles.categoryTextField}  ${styles.categoryTextFieldFont}`} value={favFullCardData.category} readOnly={true} />
                         </div>
                     </div>
                 </div>
@@ -101,8 +99,8 @@ const FullContentCard = ({ showFullFavCard, setShowFullFavCard, favFullCardData 
                         <div className={styles.appWebsiteLabelDiv} >
                             <p>App / Website</p>
                         </div>
-                        <div className={styles.appWebsiteTextDiv} >
-                            <p>{favFullCardData.app}</p>
+                        <div className={styles.appWebsiteInputDiv}>
+                            <input className={`${styles.textInputCommonStyle} ${styles.appWebsiteTextField}  ${styles.appWebsiteTextFieldFont}`} value={favFullCardData.app} readOnly={true} />
                         </div>
                     </div>
 
@@ -119,8 +117,8 @@ const FullContentCard = ({ showFullFavCard, setShowFullFavCard, favFullCardData 
                         <div className={styles.usernameLabelDiv} >
                             <p>USERNAME / EMAIL</p>
                         </div>
-                        <div className={styles.usernameTextDiv} >
-                            <p>{favFullCardData.username}</p>
+                        <div className={styles.usernameInputDiv}>
+                            <input className={` ${styles.textInputCommonStyle}  ${styles.usernameTextField}  ${styles.usernameTextFieldFont}`} value={favFullCardData.username} readOnly={true} />
                         </div>
                     </div>
                 </div>
@@ -136,8 +134,8 @@ const FullContentCard = ({ showFullFavCard, setShowFullFavCard, favFullCardData 
                         <div className={styles.passwordLabelDiv} >
                             <p>PASSWORD</p>
                         </div>
-                        <div className={styles.passwordTextDiv} >
-                            <p>{favFullCardData.password}</p>
+                        <div className={styles.passwordInputDiv} >
+                            <input className={`${styles.textInputCommonStyle} ${styles.passwordTextField}  ${styles.passwordTextFieldFont}`} value={favFullCardData.password} readOnly={true} />
                         </div>
                     </div></div>
             </div>

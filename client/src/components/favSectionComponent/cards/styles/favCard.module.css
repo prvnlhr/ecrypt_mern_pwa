@@ -166,6 +166,7 @@
 
 
   .cardComponent {
+    grid-template-columns: 25% minmax(0, 1fr) minmax(0, 0.2fr);
     width: 83% !important;
     height: auto;
     margin-left: auto;
@@ -175,6 +176,7 @@
   }
 
   .cardComponentBank {
+    grid-template-columns: 25% minmax(0, 1fr) minmax(0, 0.4fr) minmax(0, 0.3fr);
     width: 83% !important;
     height: auto;
     margin-left: auto;
@@ -184,6 +186,16 @@
   }
 
 
+  .logoWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: logoWrapper;
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 100%;
+  }
+
   .logoDiv {
     display: flex;
     justify-content: center;
@@ -191,6 +203,7 @@
     /* border: 1px solid rgba(128, 128, 128, 0.543); */
     width: 85%;
     height: 85%;
+    border-radius: 10px;
     border-radius: 13px;
   }
 
@@ -202,4 +215,21 @@
     justify-content: center;
     align-items: center;
   }
+
+  .titleText {
+    font-size: clamp(0.78rem, -0.05999999999999983rem + 4.199999999999999vw, 1.2rem) !important;
+    font-weight: var(--bolder-font);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .userNameText {
+    font-weight: var(--bolder-font);
+    font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
 }

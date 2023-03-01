@@ -150,6 +150,13 @@ const docsSlice = createSlice({
                     action: 'fetch'
                 };
             })
+            .addCase(fetchDocsData.rejected, (state, action) => {
+                return {
+                    ...state,
+                    isLoading: false,
+                    action: undefined
+                };
+            })
             .addCase(addNewDocData.fulfilled, (state, action) => {
                 return {
                     ...state,

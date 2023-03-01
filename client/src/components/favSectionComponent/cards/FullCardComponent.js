@@ -77,7 +77,7 @@ const FullCardComponent = ({
                                 <p className={styles.titleTitleText}>TITLE</p>
                             </div>
                             <div className={styles.titleInputDiv}>
-                                <p> {favFullCardData.title} </p>
+                                <input className={`${styles.textInputCommonStyle} ${styles.titleTextField}  ${styles.titleTextFieldFont}`} value={favFullCardData.title} readOnly={true} />
                             </div>
                         </div>
 
@@ -90,11 +90,10 @@ const FullCardComponent = ({
                         <div className={styles.categoryLabelDiv} >
                             <p>Category</p>
                         </div>
-                        <div className={styles.categoryTextDiv} >
-                            <div className={styles.categoryTextBox} >
-                                <p>{favFullCardData.category}</p>
-                            </div>
+                        <div className={styles.categoryInputDiv}>
+                            <input className={`${styles.textInputCommonStyle}  ${styles.categoryTextField}  ${styles.categoryTextFieldFont}`} value={favFullCardData.category} readOnly={true} />
                         </div>
+
                     </div>
                 </div>
 
