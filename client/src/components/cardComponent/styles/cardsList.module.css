@@ -39,6 +39,7 @@
 }
 
 .contentContainer {
+  position: relative;
   height: 100%;
   width: 100%;
   display: flex;
@@ -47,33 +48,30 @@
   align-content: flex-start;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   scroll-behavior: smooth;
-
   overflow-y: scroll;
   padding-top: 10px;
   padding-left: 20px;
   padding-bottom: 20px;
   box-sizing: border-box;
-
-
   scrollbar-width: none;
   /* firefox hide scrollbar  */
   -ms-overflow-style: none;
   /* firefox hide scrollbar  */
+  /* border: 1px solid skyblue; */
 }
 
 
 
 .contentContainerClose {
+  position: relative;
   height: 100%;
   width: 40%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-content: flex-start;
-
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   scroll-behavior: smooth;
-
   overflow-y: scroll;
   scroll-behavior: smooth;
   /* border: 1px solid green; */
@@ -82,12 +80,11 @@
   padding-bottom: 100px;
   box-sizing: border-box;
 
-
-
   scrollbar-width: none;
   /* firefox hide scrollbar  */
   -ms-overflow-style: none;
   /* firefox hide scrollbar  */
+
 
 }
 
@@ -95,6 +92,7 @@
   /* background-color: rgba(255, 255, 255, 0); */
   height: 4px;
   width: 3px;
+  display: none;
 }
 
 .contentContainer::-webkit-scrollbar-track {
@@ -159,8 +157,6 @@
   }
 
   .contentContainerClose {
-    scroll-behavior: smooth;
-
     height: 0%;
     width: 100%;
     margin-top: 10%;
@@ -180,8 +176,6 @@
     -ms-overflow-style: none;
     transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
     /* border: 1px solid skyblue; */
-
-
   }
 }
 
@@ -218,9 +212,9 @@
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     scroll-behavior: smooth;
     overflow-y: scroll;
-    padding-top: 10px;
-    padding-left: 20px;
-    padding-bottom: 20px;
+    /* padding-top: 10px; */
+    /* padding-left: 0px; */
+    /* padding-bottom: 20px; */
     box-sizing: border-box;
     scrollbar-width: none;
     /* firefox hide scrollbar  */
@@ -243,9 +237,10 @@
     overflow-y: scroll;
     scroll-behavior: smooth;
     /* border: 1px solid green; */
-    padding-top: 10px;
-    padding-left: 20px;
-    padding-bottom: 100px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     box-sizing: border-box;
 
     scrollbar-width: none;

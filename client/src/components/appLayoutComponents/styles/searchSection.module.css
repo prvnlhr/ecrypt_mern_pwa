@@ -52,7 +52,6 @@
     color: var(--ui-scheme-color);
     margin: 0px;
     margin-left: 10px;
-
 }
 
 .trueSearchContainer {
@@ -122,7 +121,7 @@
 .listTitleWrapper {
     width: 50%;
     height: 100%;
-    /* border: 1px solid black; */
+    /* border: 1px solid skyblue; */
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -140,6 +139,14 @@
     margin-left: 5%;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 
+}
+
+.searchResultText {
+    position: relative;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+    color: var(--primary-font-color);
 }
 
 .listTitleText {
@@ -183,13 +190,14 @@
     position: relative;
     font-family: "Poppins", sans-serif;
     font-size: 9px;
-    font-weight: 400;
-    color: var(--primary-font-color);
+    font-weight: var(--bolder-font);
+    color: var(--listCount-font-color);
     margin-top: 2px;
     padding: 0px;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
     .searchTitleSection {
         grid-area: searchTitleSection;
         width: 100%;
@@ -204,12 +212,12 @@
     .searchInputWrapper {
         width: 50%;
         height: 100%;
-        /* border: 1px solid red;s */
+        /* border: 1px solid red; */
         display: flex;
         justify-content: flex-end;
         align-items: center;
         box-sizing: border-box;
-        padding-right: 8%;
+        padding-right: 5%;
     }
 
     .falseSearchContainer {
@@ -220,7 +228,6 @@
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-
         border-radius: 0.4rem;
         border-radius: 0.6rem;
         border-radius: clamp(0.4rem, 1.1102230246251565e-16rem + 1.9999999999999998vw, 0.6rem) !important;
@@ -239,21 +246,17 @@
         font-size: 14px;
         font-weight: var(--bolder-font);
         margin: 0px;
-        font-size: 0.7rem;
-        font-size: 1rem;
         font-size: clamp(0.7rem, 0.09999999999999987rem + 3.0000000000000004vw, 1.0rem) !important;
     }
 
     .trueSearchContainer {
         width: 70%;
-        width: 100%;
+        width: 90%;
         height: 90%;
-        /* border: 1px solid black; */
-        border-radius: 10px;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-
+        border-radius: clamp(0.4rem, 1.1102230246251565e-16rem + 1.9999999999999998vw, 0.6rem) !important;
     }
 
     .searchInputDiv {
@@ -276,6 +279,7 @@
         padding-left: 20%;
         padding-right: 5%;
         box-sizing: border-box;
+        font-size: clamp(0.7rem, -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
     }
 
     .searchCancelIconDiv {
@@ -312,7 +316,10 @@
         box-sizing: border-box;
         padding-left: 10%;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
 
+    .searchResultText {
+        font-size: clamp(1.0rem, 0.0rem + 5.0vw, 1.5rem) !important;
     }
 
     .listTitleText {
@@ -321,9 +328,6 @@
         font-weight: var(--bolder-font);
         margin-left: unset;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-
-        font-size: 1.1rem;
-        font-size: 1.9rem;
         font-size: clamp(1.1rem, -0.49999999999999956rem + 7.999999999999999vw, 1.9rem) !important;
     }
 
@@ -343,17 +347,17 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: 5px;
+        border-radius: clamp(0.2rem, -0.2rem + 2.0vw, 0.4rem) !important;
         margin-left: 10px;
+        margin-left: 0.8rem;
     }
 
     .listCountDiv p {
         position: relative;
         font-size: 10px;
-        font-weight: 400;
+        font-weight: 500;
         margin-top: 2px;
         padding: 0px;
-        color: white;
     }
 }
 

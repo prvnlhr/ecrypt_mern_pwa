@@ -45,8 +45,6 @@ const Home = () => {
 
   const isLoading = false;
 
-
-
   return (
 
     <div className={location.pathname === "/user/settings" ? homeStyles.homeComponentForSettings : homeStyles.homeComponent} >

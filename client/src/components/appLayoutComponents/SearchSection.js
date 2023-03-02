@@ -80,10 +80,10 @@ const SearchSection = ({ searchMode, setSearchMode, searchQuery,
     useEffect(() => {
         if (searchQuery.length == 0) {
             dispatch(clearSearchData());
+
         } else if (searchQuery.length > 2) {
             searchItem(searchQuery);
             if (searchState.length > 0) {
-
                 setsearchResultCount(searchState.length);
             } else {
                 setsearchResultCount(0);
@@ -106,24 +106,30 @@ const SearchSection = ({ searchMode, setSearchMode, searchQuery,
     return (
         <div className={styles.searchTitleSection}>
             <div className={styles.listTitleWrapper}>
-                <div className={styles.listTitleTextDiv}>
-                    <p className={`${styles.listTitleText} ${searchQuery.length !== 0 && styles.listTitleTextSearch} `} >
-                        {searchQuery.length !== 0
-                            ?
-                            'Search Result' :
-                            listTitle
+
+                {searchQuery.length > 0 ?
+                    <>
+                        <div className={styles.listTitleTextDiv}>
+                            <p className={styles.searchResultText}>Search Result</p>
+                        </div>
+                        <div className={styles.listCountDiv}>
+                            <p >
+                                {searchState.length}
+                            </p>
+                        </div>
+                    </>
+                    :
+                    <>
+                        <div className={styles.listTitleTextDiv}>
+                            <p className={styles.listTitleText} >{listTitle}</p>
+                        </div>
+                        {
+                            location.pathname !== '/' &&
+                            <div className={styles.listCountDiv}>
+                                <p>{listCount}</p>
+                            </div>
                         }
-                    </p>
-                </div>
-                {
-                    (checkListCountDisplayCondition()) &&
-                    <div className={styles.listCountDiv}>
-                        <p>{listCount}</p>
-                    </div>
-                    //         :
-                    // <div className={styles.listCountDiv}>
-                    //     <p>{searchState.length}</p>
-                    // </div>
+                    </>
 
                 }
             </div>

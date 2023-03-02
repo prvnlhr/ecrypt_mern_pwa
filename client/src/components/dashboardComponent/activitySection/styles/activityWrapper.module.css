@@ -17,7 +17,7 @@
     margin-left: 5%;
     padding-top: 0%;
     padding-bottom: 5%;
-    border-bottom: 1px solid var(--box-bg-secondary);
+    border-bottom: 0.01rem solid #898E90;
     /* background-color: var(--box-bg-secondary); */
     scroll-snap-align: start;
 }

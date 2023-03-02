@@ -300,33 +300,35 @@ const CardsList = ({ setLogoComponentShow,
         }
 
       </div>
-      {showContentCard ?
-        <FullCardComponent
-          setLogoComponentShow={setLogoComponentShow}
-          showContentCard={showContentCard}
-          setShowContentCard={setShowContentCard}
-          handleFullContentBackBtnClicked={handleFullContentBackBtnClicked}
-          fullContentCardData={
-            fullContentCardCategory === "Bank" ? bankCardData : fullContentCardCategory === "Identity" ? identityCardData : fullContentCardCategory === "License" ? licenseCardData : undefined
-          }
+      {/* {showContentCard ? */}
+      <FullCardComponent
+        setLogoComponentShow={setLogoComponentShow}
+        showContentCard={showContentCard}
+        setShowContentCard={setShowContentCard}
+        handleFullContentBackBtnClicked={handleFullContentBackBtnClicked}
+        fullContentCardData={
+          fullContentCardCategory === "Bank" ? bankCardData : fullContentCardCategory === "Identity" ? identityCardData : fullContentCardCategory === "License" ? licenseCardData : undefined
+        }
 
-          setFullContentCardData={
-            fullContentCardCategory === "Bank" ? setBankCardData : fullContentCardCategory === "Identity" ? setIdentityCardData : fullContentCardCategory === "License" ? setLicenseCardData : undefined
-          }
-          setEditMode={setEditMode}
-          editMode={editMode}
-          confirmDeleteBtnClicked={confirmDeleteBtnClicked}
-          setDeleteMode={setDeleteMode}
-          deleteMode={deleteMode}
-        />
-        : null}
-      {showInputForm &&
-        <CardInputForm
-          formToggle={formToggle}
-          showInputForm={showInputForm}
-          setShowInputForm={setShowInputForm}
-        />
-      }
+        setFullContentCardData={
+          fullContentCardCategory === "Bank" ? setBankCardData : fullContentCardCategory === "Identity" ? setIdentityCardData : fullContentCardCategory === "License" ? setLicenseCardData : undefined
+        }
+        setEditMode={setEditMode}
+        editMode={editMode}
+        confirmDeleteBtnClicked={confirmDeleteBtnClicked}
+        setDeleteMode={setDeleteMode}
+        deleteMode={deleteMode}
+      />
+      {/* : null} */}
+
+
+      {/* {showInputForm && */}
+      <CardInputForm
+        formToggle={formToggle}
+        showInputForm={showInputForm}
+        setShowInputForm={setShowInputForm}
+      />
+      {/* }  */}
     </div>
   );
 };

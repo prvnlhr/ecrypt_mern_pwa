@@ -178,9 +178,9 @@
         transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         scroll-behavior: smooth;
         overflow-y: scroll;
-        padding-top: 10px;
-        padding-left: 20px;
-        padding-bottom: 20px;
+        /* padding-top: 10px; */
+        /* padding-left: 20px; */
+        /* padding-bottom: 20px; */
         box-sizing: border-box;
         scrollbar-width: none;
         /* firefox hide scrollbar  */
@@ -203,9 +203,10 @@
         overflow-y: scroll;
         scroll-behavior: smooth;
         /* border: 1px solid green; */
-        padding-top: 10px;
-        padding-left: 20px;
-        padding-bottom: 100px;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
         box-sizing: border-box;
 
         scrollbar-width: none;

@@ -10,8 +10,6 @@ import axios from "axios";
 import { changeProfilePicture } from "../../redux/features/user/userSlice"
 import { Oval } from 'react-loader-spinner'
 import { SpinnerCircular } from 'spinners-react';
-
-
 const spinnerStyle = {
     position: `absolute`,
     width: `112%`,
@@ -320,12 +318,12 @@ const Settings = () => {
                 <div className={styles.joinedUpdateDateWrapper} >
                     <div className={styles.joinedUpadateDateContainer} >
                         <div className={styles.joinedDateDiv} >
-                            <p className={styles.labelText}>Joined</p>
-                            <p className={styles.dateText}>12 Dec 2021</p>
+                            <p className={styles.joinedDateLabelText}>Joined</p>
+                            <p className={styles.joinedDateText}>12 Dec 2021</p>
                         </div>
                         <div className={styles.updatedDateDiv} >
-                            <p className={styles.labelText}>Last Updated</p>
-                            <p className={styles.dateText}>09 Feb 2022</p>
+                            <p className={styles.joinedDateLabelText}>Last Updated</p>
+                            <p className={styles.joinedDateText}>09 Feb 2022</p>
                         </div>
                     </div>
 
@@ -359,13 +357,13 @@ const Settings = () => {
                         </div>
                         <div className={styles.profileFirstNameContainer} >
                             <div className={`${styles.profileFirstNameDiv} ${currFocusField === 1 && styles.focusFieldStyle}`} >
-                                <div className={styles.labelDiv}>
+                                <div className={styles.nameLabelDiv}>
                                     <p>FIRST NAME</p>
                                 </div>
-                                <div className={styles.inputDiv}>
+                                <div className={styles.nameInputDiv}>
                                     <input
                                         name='firstName'
-                                        className={`${styles.inputField}  ${styles.inputFieldText}`}
+                                        className={`${styles.nameInput}  ${styles.nameInputText}`}
                                         value={profileData.firstName}
                                         onChange={handleProfileInputChange}
                                         disabled={!formFieldEditable('PROFILE')}
@@ -375,13 +373,13 @@ const Settings = () => {
                         </div>
                         <div className={styles.profileLastNameContainer} >
                             <div className={`${styles.profileLastNameDiv} ${currFocusField === 2 && styles.focusFieldStyle}`} >
-                                <div className={styles.labelDiv}>
+                                <div className={styles.nameLabelDiv}>
                                     <p>LAST NAME</p>
                                 </div>
-                                <div className={styles.inputDiv}>
+                                <div className={styles.nameInputDiv}>
                                     <input
                                         value={profileData.lastName}
-                                        className={`${styles.inputField}  ${styles.inputFieldText}`}
+                                        className={`${styles.nameInput}  ${styles.nameInputText}`}
                                         name='lastName'
                                         onChange={handleProfileInputChange}
                                         disabled={!formFieldEditable('PROFILE')}
@@ -392,15 +390,15 @@ const Settings = () => {
                         </div>
                         <div className={styles.profileEmailNameContainer} >
                             <div className={`${styles.profileEmailNameDiv} ${currFocusField === 3 && styles.focusFieldStyle}`} >
-                                <div className={`${styles.labelDiv} ${styles.emailLabelDiv}`}>
+                                <div className={`${styles.emailLabelDiv}`}>
                                     <p>
                                         EMAIL ADDRESS
                                     </p>
                                 </div>
-                                <div className={styles.inputDiv}>
+                                <div className={styles.emailInputDiv}>
                                     <input
                                         disabled={true}
-                                        className={`${styles.emailInput} ${styles.inputFieldText}`}
+                                        className={`${styles.emailInput} ${styles.emailInputText}`}
                                         // onFocus={() => onFocus(3)}
                                         value={profileData.email} />
                                 </div>

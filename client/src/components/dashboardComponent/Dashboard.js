@@ -10,7 +10,9 @@ const Dashboard = ({ setHeading,
   recAddDocFullScreen,
   setRecAddDocFullScreen,
   recAddDocFullScreenData,
-  setRecAddDocFullScreenData
+  setRecAddDocFullScreenData,
+  clickedSearchItem,
+  setClickedSearchItem
 }) => {
 
   const loginIdsArray = useSelector((state => state.loginIds.loginsIdData));
@@ -121,6 +123,8 @@ const Dashboard = ({ setHeading,
             setRecAddDocFullScreen={setRecAddDocFullScreen}
             recAddDocFullScreenData={recAddDocFullScreenData}
             setRecAddDocFullScreenData={setRecAddDocFullScreenData}
+            clickedSearchItem={clickedSearchItem}
+            setClickedSearchItem={setClickedSearchItem}
           />
         </div>
       </div>

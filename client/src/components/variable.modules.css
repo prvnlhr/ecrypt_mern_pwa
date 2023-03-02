@@ -10,6 +10,8 @@
   --tertiary-font-color: #837FA2;
   --tertiary-font-color-li: #A8A4C5;
 
+  --listCount-font-color: white;
+
 
   /*-> All ui div-bg divided into three types */
   --box-bg-primary: white;
@@ -77,6 +79,8 @@ background: linear-gradient(179.99deg, #AEC3CE 8.01%, rgba(177, 197, 208, 0.9728
   --secondary-font-color: #8B98A5;
   --tertiary-font-color: #837FA2;
   --tertiary-font-color-li: #A8A4C5;
+
+  --listCount-font-color: black;
 
 
 

@@ -1,15 +1,16 @@
+@import "../../variable.modules.css";
+
 .searchListWrapper {
   position: absolute;
   width: 100%;
   height: 98%;
   margin-top: 0.5%;
-  z-index: 999;
-  background-color: var(--app-main-bg);
-  border: 1px solid red;
+  z-index: 800;
+  background: var(--app-main-bg);
+  /* border: 1px solid red; */
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  /* background: linear-gradient(180deg, #DFEDF4 33.14%, #E8F0EC 51.89%, #F7F9F6 76.37%); */
 }
 
 .contentContainer {
@@ -65,14 +66,15 @@
     scroll-behavior: smooth;
     overflow-y: scroll;
     padding-top: 10px;
-    padding-left: unset;
+    padding-left: 0px;
+    padding-right: 0px;
     padding-bottom: 20px;
     box-sizing: border-box;
     scrollbar-width: none;
     /* firefox hide scrollbar  */
     -ms-overflow-style: none;
     /* firefox hide scrollbar  */
-
+    /* border: 1px solid black; */
   }
 
 }

@@ -225,7 +225,6 @@ const authSlice = createSlice({
                     success: true,
                     isLogged: true,
                     isLoading: false,
-
                 };
             })
             .addCase(getAuthToken.pending, (state, action) => {
@@ -236,7 +235,8 @@ const authSlice = createSlice({
                     isLogged: undefined,
                     error: false,
                     success: false,
-
+                    
+                    isLoading: true,
                 };
             })
             .addCase(getAuthToken.rejected, (state, action) => {

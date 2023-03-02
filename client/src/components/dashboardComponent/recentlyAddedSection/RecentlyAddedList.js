@@ -1,13 +1,43 @@
 import React from 'react'
 import styles from "./styles/recentlyAddedList.module.css"
 import { useSelector } from 'react-redux'
+import { useNavigate } from "react-router-dom"
 import LoginId from "./LoginId"
 import Card from './Card'
 import Doc from './Doc'
 
-const RecentlyAddedList = ({ recAddDocFullScreen, setRecAddDocFullScreen, recAddDocFullScreenData, setRecAddDocFullScreenData }) => {
-
+const RecentlyAddedList = ({
+    recAddDocFullScreen, setRecAddDocFullScreen, recAddDocFullScreenData, setRecAddDocFullScreenData,
+    clickedSearchItem,
+    setClickedSearchItem
+}) => {
     const recentlyAddedArray = useSelector((state => state.recentlyAdded.recentlyAddedData));
+    const navigate = useNavigate();
+
+    const redirectToList = async (item, listPath) => {
+        setClickedSearchItem(item);
+        navigate(listPath);
+    }
+
+    const handleItemClicked = (item) => {
+
+        let newObj = {};
+        if (item.hasOwnProperty('itemId')) {
+            newObj = Object.assign({ _id: item.itemId }, item);
+            item = newObj;
+        }
+
+        if (item.hasOwnProperty('imageName')) {
+            redirectToList(item, '/user/diplay_documents')
+        }
+        else if (item.hasOwnProperty('username')) {
+            redirectToList(item, '/user/display_loginIds')
+        }
+        else {
+            redirectToList(item, '/user/display_cards')
+        }
+    }
+
 
     const recentlyAddedData = [
         {
@@ -87,10 +117,22 @@ const RecentlyAddedList = ({ recAddDocFullScreen, setRecAddDocFullScreen, recAdd
                             recAddDocFullScreen={recAddDocFullScreen}
                             setRecAddDocFullScreen={setRecAddDocFullScreen}
                             recAddDocFullScreenData={recAddDocFullScreenData}
-                            setRecAddDocFullScreenData={setRecAddDocFullScreenData} /> :
+                            setRecAddDocFullScreenData={setRecAddDocFullScreenData}
+                            handleItemClicked={handleItemClicked}
+                        />
+                        :
                         item.hasOwnProperty('username') ?
-                            < LoginId key={item._id} item={item} /> :
-                            <Card key={item._id} item={item} />
+                            < LoginId key={item._id} item={item}
+                                clickedSearchItem={clickedSearchItem}
+                                setClickedSearchItem={setClickedSearchItem}
+                                handleItemClicked={handleItemClicked}
+                            />
+                            :
+                            <Card key={item._id} item={item}
+                                clickedSearchItem={clickedSearchItem}
+                                setClickedSearchItem={setClickedSearchItem}
+                                handleItemClicked={handleItemClicked}
+                            />
                 ))
             }
             {/* <LoginId />

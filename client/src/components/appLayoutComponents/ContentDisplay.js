@@ -96,6 +96,8 @@ const ContentDisplay = ({
               setRecAddDocFullScreen={setRecAddDocFullScreen}
               recAddDocFullScreenData={recAddDocFullScreenData}
               setRecAddDocFullScreenData={setRecAddDocFullScreenData}
+              clickedSearchItem={clickedSearchItem}
+              setClickedSearchItem={setClickedSearchItem}
             />}
         >
         </Route>

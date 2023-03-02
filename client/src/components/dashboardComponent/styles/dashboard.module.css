@@ -288,7 +288,7 @@
 .wrapperHeadingDiv p {
   position: relative;
   font-family: "Poppins", sans-serif;
-  font-size: 15px;
+  font-size: 1.1rem;
   font-weight: var(--bolder-font);
   color: var(--primary-font-color);
   margin: 0px;
@@ -301,7 +301,7 @@
   position: absolute;
   background-color: var(--ui-scheme-color);
   width: 40px;
-  height: 3px;
+  height: 0.18rem;
   bottom: -8px;
   left: 0px;
   border-radius: 20px;
@@ -377,10 +377,11 @@
     height: 70%;
     display: flex;
     justify-content: flex-start;
-    align-items: flex-end;
+    align-items: center;
     flex-wrap: wrap;
     margin-top: 0%;
     padding-left: 0%;
+    /* border: 1px solid red; */
   }
 
   .boxContainer {

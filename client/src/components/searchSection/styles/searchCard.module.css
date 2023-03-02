@@ -190,19 +190,14 @@
     height: auto;
     margin-left: auto;
     margin-right: auto;
-
+    padding: 0%;
   }
 
   .cardComponentBank {
-    /* width: 83% !important;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-
     width: 83% !important;
     height: auto;
     margin-left: auto;
-    margin-right: auto; */
+    margin-right: auto;
 
     position: relative;
     display: grid;
@@ -214,12 +209,12 @@
       "logoWrapper usernameWrapper bankCardLogoWrapper favBtnWrapper";
     margin: 0.80rem auto 0.80rem auto;
     border-radius: 18px;
+
   }
 
   .bankCardVenderLogoDiv {
     width: 60%;
     /* height: 80%; */
-    /* border: 1px solid red; */
     display: flex;
     justify-content: center;
     align-items: center;

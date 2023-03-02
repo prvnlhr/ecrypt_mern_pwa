@@ -1,6 +1,7 @@
 @import "../../variable.modules.css";
 
 .cardWrapper {
+    /* display: flex; */
     display: none;
     width: 60%;
     height: 100%;
@@ -9,14 +10,13 @@
     align-items: center;
     background-color: var(--box-bg-primary);
     padding-left: 5%;
-    webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    overflow: hidden;
 }
 
 .cardWrapperClose {
@@ -29,7 +29,7 @@
     align-items: center;
     background-color: var(--box-bg-primary);
     padding-left: 0%;
-    webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -39,6 +39,7 @@
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     scroll-behavior: smooth;
+
 }
 
 .cardContainer {
@@ -110,7 +111,6 @@
     border-radius: 5px;
     margin-right: 10px;
     /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
     cursor: pointer;
 }
 

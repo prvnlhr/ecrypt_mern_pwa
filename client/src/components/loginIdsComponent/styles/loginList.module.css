@@ -58,9 +58,8 @@
   /* firefox hide scrollbar  */
   -ms-overflow-style: none;
   /* firefox hide scrollbar  */
+  /* border: 1px solid skyblue; */
 }
-
-
 
 .contentContainerClose {
   position: relative;
@@ -142,7 +141,6 @@
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 
-
   .loginsList {
     position: relative;
     width: 99.5%;
@@ -171,6 +169,7 @@
     margin-top: 10%;
     transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
     padding-top: 0px;
+    /* border: 1px solid skyblue; */
   }
 
   .contentContainerClose {
@@ -199,6 +198,7 @@
 
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+
   .loginsList {
     position: relative;
     width: 99.8%;
@@ -209,13 +209,14 @@
     align-items: center;
     align-content: center;
     z-index: 45;
-    webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    padding: 0;
   }
 
   .contentContainer {
@@ -237,7 +238,7 @@
     /* firefox hide scrollbar  */
     -ms-overflow-style: none;
     /* firefox hide scrollbar  */
-    /* border: 1px solid black; */
+    /* border: 1px solid skyblue; */
   }
 
   .contentContainerClose {
@@ -253,15 +254,16 @@
     overflow-y: scroll;
     scroll-behavior: smooth;
     /* border: 1px solid green; */
-    padding-top: 10px;
-    padding-left: 20px;
-    padding-bottom: 100px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     box-sizing: border-box;
-
     scrollbar-width: none;
     /* firefox hide scrollbar  */
     -ms-overflow-style: none;
     /* firefox hide scrollbar  */
+    /* border: 1px solid skyblue; */
 
   }
 }

@@ -232,7 +232,7 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
                         }
                         <div className={styles.favBtnDiv} onClick={favBtnClicked} >
 
-                            {fullContentCardData.isFavourite === true ?
+                            {fullContentCardData && fullContentCardData.isFavourite === true ?
                                 < BookmarksIconFill />
                                 :
                                 <BookmarksIcon />
@@ -249,7 +249,7 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
                             <div className={
                                 `${styles.logoDiv} ${editMode && styles.logoDivActive}`
                             }>
-                                {fullContentCardData.logoIndex != undefined &&
+                                {fullContentCardData && fullContentCardData.logoIndex != undefined &&
                                     logosArray[fullContentCardData.logoIndex].logo
                                 }
                             </div>
@@ -264,7 +264,7 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
                             <div className={styles.titleInputDiv}>
                                 <input
                                     className={editMode ? styles.titleInputActive : styles.titleInputNotActive}
-                                    value={fullContentCardData.title}
+                                    value={fullContentCardData && fullContentCardData.title}
                                     name={"title"}
                                     onFocus={() => onFocus(1)}
                                     onChange={handleInputValueChange}
@@ -285,7 +285,7 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
                         <div className={styles.catergoryInputDiv} >
                             <input
                                 className={styles.categoryInput}
-                                value={fullContentCardData.category}
+                                value={fullContentCardData && fullContentCardData.category}
                                 readOnly={true}
                                 onFocus={() => onFocus(2)}
 
@@ -322,11 +322,20 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
                 </div>
 
                 <div className={styles.subCardWrapper}>
-
-
-                    {
+                    {fullContentCardData &&
                         fullContentCardData.category === "Bank" ?
-                            <BankCardSubComponent
+                        <BankCardSubComponent
+                            setEditMode={setEditMode}
+                            editMode={editMode}
+                            fullContentCardData={fullContentCardData}
+                            setFullContentCardData={setFullContentCardData}
+                            onFocus={onFocus}
+                            currFocusField={currFocusField}
+                        />
+
+
+                        : fullContentCardData && fullContentCardData.category === "Identity" ?
+                            <IdentityCardSubComponent
                                 setEditMode={setEditMode}
                                 editMode={editMode}
                                 fullContentCardData={fullContentCardData}
@@ -336,28 +345,17 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
                             />
 
 
-                            : fullContentCardData.category === "Identity" ?
-                                <IdentityCardSubComponent
+                            : fullContentCardData && fullContentCardData.category === "License" ?
+                                <LicenseCardSubComponent
                                     setEditMode={setEditMode}
                                     editMode={editMode}
                                     fullContentCardData={fullContentCardData}
                                     setFullContentCardData={setFullContentCardData}
                                     onFocus={onFocus}
                                     currFocusField={currFocusField}
-                                />
+                                /> :
 
-
-                                : fullContentCardData.category === "License" ?
-                                    <LicenseCardSubComponent
-                                        setEditMode={setEditMode}
-                                        editMode={editMode}
-                                        fullContentCardData={fullContentCardData}
-                                        setFullContentCardData={setFullContentCardData}
-                                        onFocus={onFocus}
-                                        currFocusField={currFocusField}
-                                    /> :
-
-                                    null
+                                null
                     }
 
                 </div>

@@ -197,8 +197,6 @@ label {
     background-color: #dae5eb;
 }
 
-
-
 .profilePicEditBtnContainer {
     width: 20%;
     height: 100%;
@@ -311,14 +309,14 @@ label {
     /* border: 1px solid black; */
 }
 
-.labelText {
+.joinedDateLabelText {
     font-family: "Poppins", sans-serif;
     font-size: 12px;
     font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
 
-.dateText {
+.joinedDateText {
     font-family: "Poppins", sans-serif;
     font-size: 12px;
     font-weight: var(--bolder-font);
@@ -366,7 +364,40 @@ label {
     grid-gap: 0.5%;
 }
 
+/* __________________________________________ */
 
+.focusFieldStyle {
+    border: 2px solid var(--ui-scheme-color);
+}
+
+.formSectionHeadingDiv {
+    position: relative;
+    width: 80%;
+    width: auto;
+    height: 100%;
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.formSectionHeadingDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.1rem;
+    font-weight: var(--bolder-font);
+    color: var(--primary-font-color);
+}
+
+.formSectionHeadingDiv::after {
+    content: "";
+    position: absolute;
+    background-color: var(--ui-scheme-color);
+    width: 40px;
+    height: 3px;
+    bottom: 0px;
+    left: 0px;
+    border-radius: 10px;
+}
 
 /* ________________________________________________________________- */
 
@@ -533,7 +564,7 @@ label {
     letter-spacing: 0.5px;
 }
 
-/* ______________________________________________________________ */
+/* NAME EMAIL SECTION______________________________________________________________ */
 
 .profileFirstNameContainer {
     grid-area: profileFirstNameContainer;
@@ -553,10 +584,10 @@ label {
     border-radius: 10px;
 }
 
-.labelDiv {
+.nameLabelDiv {
     width: 100%;
     height: 50%;
-    /* border: 1px solid black; */
+    /* border: 1px solid salmon; */
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -564,14 +595,14 @@ label {
     padding-left: 5%;
 }
 
-.labelDiv p {
+.nameLabelDiv p {
     font-family: "Poppins", sans-serif;
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: var(--bolder-font);
     color: var(--secondary-font-color);
 }
 
-.inputDiv {
+.nameInputDiv {
     width: 100%;
     height: 50%;
     /* border: 1px solid black; */
@@ -581,7 +612,7 @@ label {
     padding-left: 5%;
 }
 
-.inputField {
+.nameInput {
     width: 80%;
     height: 100%;
     border-left: none;
@@ -590,14 +621,62 @@ label {
     /* border-bottom: 1px solid rgba(0, 0, 0, 0.16); */
     border-bottom: none;
     background: none;
-    font-family: "Poppins", sans-serif;
-    font-size: 13px;
-    font-weight: var(--bolder-font);
-    color: var(--primary-font-color);
     outline: none;
 }
 
+.nameInputText {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.85rem;
+    font-weight: var(--bolder-font);
+    color: var(--primary-font-color);
+}
 
+.emailLabelDiv {
+    width: 100%;
+    height: 50%;
+    /* border: 1px solid salmon; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 3%;
+}
+
+.emailLabelDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.75rem;
+    font-weight: var(--bolder-font);
+    color: var(--secondary-font-color);
+}
+
+.emailInputDiv {
+    width: 100%;
+    height: 50%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 3%;
+
+}
+
+.emailInput {
+    width: 80%;
+    height: 100%;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.16); */
+    border-bottom: none;
+    background: none;
+}
+
+.emailInputText {
+    font-size: 0.85rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: var(--bolder-font);
+    color: var(--primary-font-color);
+}
 
 .profileLastNameContainer {
     grid-area: profileLastNameContainer;
@@ -651,7 +730,7 @@ label {
 
 
 
-/* ________________________________________________________________- */
+/* PASSWORD SECTION________________________________________________________________- */
 
 
 .profilePassWrapper {
@@ -742,7 +821,7 @@ label {
 }
 
 
-/* ________________________________________________________________- */
+/* DELETE SECTION________________________________________________________________- */
 
 .profileDeleteWrapper {
     grid-area: profileDeleteWrapper;
@@ -800,8 +879,6 @@ label {
     /* color: var(--red--color); */
     letter-spacing: 0px;
 }
-
-
 
 .text2Container {
     width: 100%;
@@ -871,38 +948,7 @@ label {
     align-items: flex-end;
 }
 
-.focusFieldStyle {
-    border: 2px solid var(--ui-scheme-color);
-}
 
-.formSectionHeadingDiv {
-    position: relative;
-    width: 80%;
-    width: auto;
-    height: 100%;
-    /* border: 1px solid blue; */
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.formSectionHeadingDiv p {
-    font-family: "Poppins", sans-serif;
-    font-size: 1.1rem;
-    font-weight: var(--bolder-font);
-    color: var(--primary-font-color);
-}
-
-.formSectionHeadingDiv::after {
-    content: "";
-    position: absolute;
-    background-color: var(--ui-scheme-color);
-    width: 40px;
-    height: 3px;
-    bottom: 0px;
-    left: 0px;
-    border-radius: 10px;
-}
 
 
 /*  > FOR DELETE MODAL */
@@ -932,6 +978,7 @@ label {
 /* -------------------------------------------------------------- */
 /* -------------------------------------------------------------- */
 /* -------------------------------------------------------------- */
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 
     /*  > FOR DELETE MODAL */
@@ -1048,7 +1095,8 @@ label {
         margin: 0px;
     }
 
-    /* _________________________________________________ */
+    /*__ PROFILE SECTION_________________________________________________ */
+
     .profilePicWrapper {
         grid-area: profilePicWrapper;
         position: relative;
@@ -1080,9 +1128,6 @@ label {
         align-items: center;
         /* border: 1px solid orange; */
     }
-
-
-
 
     .imgFileInput {
         outline: none;
@@ -1207,11 +1252,6 @@ label {
         padding-left: 2%;
     }
 
-    .labelText {
-        font-size: 0.8rem;
-        font-weight: var(--bolder-font);
-    }
-
     .updatedDateDiv {
         width: 100%;
         height: 40%;
@@ -1223,10 +1263,6 @@ label {
         padding-left: 2%;
     }
 
-    .dateText {
-        font-size: 0.7rem;
-        font-weight: var(--bolder-font);
-    }
 
     .profileFormSection {
         grid-area: profileFormSection;
@@ -1236,7 +1272,7 @@ label {
     }
 
 
-    /* ___________________________________ */
+    /* FORM SECTOION ___________________________________ */
 
     .profileFormSection {
         grid-area: profileFormSection;
@@ -1246,6 +1282,33 @@ label {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    .formSectionHeadingDiv {
+        position: relative;
+        width: 80%;
+        width: auto;
+        height: 90%;
+        /* border: 1px solid blue; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-right: 2%;
+    }
+
+    .formSectionHeadingDiv p {
+        font-size: 1.1rem;
+        font-weight: var(--bolder-font);
+    }
+
+    .formSectionHeadingDiv::after {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 3px;
+        bottom: 0px;
+        left: 0px;
+        border-radius: 10px;
     }
 
     .formWrapper {
@@ -1321,7 +1384,7 @@ label {
         margin: 0px;
     }
 
-    /* ________________________________________________________________- */
+    /* NAME EMAIL SECTION________________________________________________________________- */
 
     .profileNameWrapper {
         grid-area: profileNameWrapper;
@@ -1350,34 +1413,6 @@ label {
     }
 
     /* ______________________________________________________________ */
-
-    .formSectionHeadingDiv {
-        position: relative;
-        width: 80%;
-        width: auto;
-        height: 90%;
-        /* border: 1px solid blue; */
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        padding-right: 2%;
-    }
-
-    .formSectionHeadingDiv p {
-        font-size: 1.1rem;
-        font-weight: var(--bolder-font);
-    }
-
-    .formSectionHeadingDiv::after {
-        content: "";
-        position: absolute;
-        width: 40px;
-        height: 3px;
-        bottom: 0px;
-        left: 0px;
-        border-radius: 10px;
-    }
-
     .formBtnSave {
         width: auto;
         height: auto;
@@ -1437,12 +1472,7 @@ label {
         /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
     }
 
-    .btnText {
-        font-family: "Poppins", sans-serif;
-        font-size: 0.7rem;
-        font-weight: var(--bold-font);
-        letter-spacing: 0.5px;
-    }
+
 
     /* ______________________________________________________________ */
 
@@ -1460,71 +1490,6 @@ label {
         width: 90%;
         height: 80%;
         border-radius: 10px;
-
-    }
-
-    .labelDiv {
-        width: 100%;
-        height: 50%;
-        /* border: 1px solid black; */
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        box-sizing: border-box;
-        padding-left: 8%;
-    }
-
-    .emailLabelDiv {
-        padding-left: 5%;
-    }
-
-    .labelDiv p {
-        font-size: 0.75rem;
-        font-weight: var(--bolder-font);
-        color: var(--secondary-font-color);
-    }
-
-
-    .inputDiv {
-        width: 100%;
-        height: 50%;
-        /* border: 1px solid black; */
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        padding-left: 0%;
-    }
-
-    .inputField {
-        width: 80%;
-        height: 100%;
-        border-left: none;
-        border-right: none;
-        border-top: none;
-        /* border-bottom: 1px solid rgba(0, 0, 0, 0.16); */
-        border-bottom: none;
-        background: none;
-        font-size: 0.75rem;
-        font-weight: var(--bolder-font);
-        color: var(--primary-font-color);
-        background: none;
-        padding-left: 8%;
-    }
-
-    .emailInput {
-        width: 80%;
-        height: 100%;
-        border-left: none;
-        border-right: none;
-        border-top: none;
-        /* border-bottom: 1px solid rgba(0, 0, 0, 0.16); */
-        border-bottom: none;
-        background: none;
-        font-size: 0.75rem;
-        font-weight: var(--bolder-font);
-        color: var(--primary-font-color);
-        background: none;
-        padding-left: 5%;
     }
 
 
@@ -1537,7 +1502,6 @@ label {
         display: flex;
         justify-content: flex-start;
         align-items: center;
-
     }
 
     .profileLastNameDiv {
@@ -1566,6 +1530,22 @@ label {
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
+    }
+
+    .nameLabelDiv {
+        padding-left: 8%;
+    }
+
+    .nameInputDiv {
+        padding-left: 8%;
+    }
+
+    .emailLabelDiv {
+        padding-left: 5%;
+    }
+
+    .emailInputDiv {
+        padding-left: 5%;
     }
 
     .profileEditBtnContainer {
@@ -1801,11 +1781,11 @@ label {
         border-radius: 10px;
     }
 
-    .labelText {
+    .joinedDateLabelText {
         font-size: clamp(0.6rem, -1.1102230246251565e-16rem + 3.0000000000000004vw, 0.9rem) !important;
     }
 
-    .dateText {
+    .joinedDateText {
         font-size: clamp(0.55rem, -0.04999999999999982rem + 2.999999999999999vw, 0.85rem) !important;
     }
 
@@ -1818,13 +1798,22 @@ label {
         font-size: clamp(0.55rem, 0.050000000000000044rem + 2.5vw, 0.8rem) !important;
     }
 
-    .labelDiv p {
+    .nameLabelDiv p {
         font-size: clamp(0.6rem, -1.1102230246251565e-16rem + 3.0000000000000004vw, 0.9rem) !important;
     }
 
-    .inputFieldText {
+    .nameInputText {
         font-size: clamp(0.6rem, -1.1102230246251565e-16rem + 3.0000000000000004vw, 0.9rem) !important;
     }
+
+    .emailLabelDiv p {
+        font-size: clamp(0.6rem, -1.1102230246251565e-16rem + 3.0000000000000004vw, 0.9rem) !important;
+    }
+
+    .emailInputText {
+        font-size: clamp(0.6rem, -1.1102230246251565e-16rem + 3.0000000000000004vw, 0.9rem) !important;
+    }
+
 
     input::placeholder {
         font-size: clamp(0.5rem, -0.10000000000000009rem + 3.0000000000000004vw, 0.8rem) !important;
@@ -1861,6 +1850,7 @@ label {
 
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+
     .backBtnIcon {
         font-size: 2.5rem;
         color: var(--primary-font-color);
@@ -1914,16 +1904,16 @@ label {
         justify-content: center;
         align-items: center;
         width: 80%;
-        height: 12%;
-        /* border: 1px solid red; */
+        height: auto;
+        /* border: 1px solid orange; */
         padding: 0px;
     }
 
     .joinedUpadateDateContainer::after {
         content: "";
         position: absolute;
-        width: 2.5px;
-        height: 90%;
+        width: 0.15rem;
+        height: 100%;
         left: -4%;
         top: 0px;
         border-radius: 10px;
@@ -1932,7 +1922,7 @@ label {
     .joinedDateDiv {
         width: 100%;
         height: 50%;
-        /* border: 1px solid black; */
+        /* border: 1px solid skyblue; */
         padding-left: 5%;
     }
 
@@ -1941,20 +1931,16 @@ label {
         height: 50%;
         padding-left: 5%;
         /* border: 1px solid black; */
+        /* border: 1px solid skyblue; */
+        margin-top: 0.3rem;
     }
 
-    .labelText {
-        font-family: "Poppins", sans-serif;
+    .joinedDateLabelText {
         font-size: 1rem;
-        font-weight: var(--bolder-font);
-        color: var(--secondary-font-color);
     }
 
-    .dateText {
-        font-family: "Poppins", sans-serif;
+    .joinedDateText {
         font-size: 0.9rem;
-        font-weight: var(--bolder-font);
-        color: var(--primary-font-color);
     }
 
     /* _________________________________________________ */
@@ -2120,13 +2106,13 @@ label {
         font-weight: var(--bolder-font);
     }
 
-    .labelDiv p {
+    .nameLabelDiv p {
         font-size: 1.1rem;
         font-weight: var(--bolder-font);
         color: var(--secondary-font-color);
     }
 
-    .inputField {
+    .nameInput {
         width: 80%;
         height: 100%;
         border-left: none;

@@ -14,8 +14,6 @@ const SearchList = ({ setClickedSearchItem, clickedSearchItem, searchMode, setSe
   const searchState = useSelector((state) => state.search.searchResults)
 
   const redirectToList = async (item, listPath) => {
-    // console.log(searchBarRef)
-    // searchBarRef.blur();
     setSearchMode(false);
     setClickedSearchItem(item);
     setSearchQuery('');
