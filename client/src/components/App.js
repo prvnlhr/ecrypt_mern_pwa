@@ -70,10 +70,10 @@ const App = () => {
     return () => clearTimeout(timeout);
   }, [])
 
-  if ("virtualKeyboard" in navigator) {
-    console.log(navigator)
-    navigator.virtualKeyboard.overlaysContent = true;
-  }
+  // if ("virtualKeyboard" in navigator) {
+  //   console.log(navigator)
+  //   navigator.virtualKeyboard.overlaysContent = true;
+  // }
 
   return (
     <div data-theme={isDarkMode === true ? 'dark' : 'light'} className={appStyles.app}>
