@@ -9,6 +9,7 @@ const initialState = {
     isLogged: undefined,
     error: false,
     success: false,
+    action: undefined
 }
 
 export const registerUser = createAsyncThunk("auth/register", async (formData, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
@@ -193,7 +194,7 @@ const authSlice = createSlice({
                     success: true,
                     isLogged: true,
                     isLoading: false,
-
+                    action: 'login'
                 };
             })
             .addCase(loginUser.pending, (state, action) => {
@@ -204,7 +205,8 @@ const authSlice = createSlice({
                     error: false,
                     success: false,
                     isLogged: false,
-                    isLoading: true
+                    isLoading: true,
+                    action: 'login'
                 };
             })
             .addCase(loginUser.rejected, (state, action) => {
@@ -215,6 +217,8 @@ const authSlice = createSlice({
                     success: false,
                     isLogged: false,
                     isLoading: false,
+                    action: 'login'
+
                 };
             })
             .addCase(getAuthToken.fulfilled, (state, action) => {
@@ -225,6 +229,8 @@ const authSlice = createSlice({
                     success: true,
                     isLogged: true,
                     isLoading: false,
+                    action: 'getToken'
+
                 };
             })
             .addCase(getAuthToken.pending, (state, action) => {
@@ -236,6 +242,8 @@ const authSlice = createSlice({
                     error: false,
                     success: false,
                     isLoading: true,
+                    action: 'getToken'
+
                 };
             })
             .addCase(getAuthToken.rejected, (state, action) => {
@@ -248,7 +256,7 @@ const authSlice = createSlice({
                     authResponseMessage: action.payload,
                     success: false,
                     isLoading: false,
-
+                    action: 'getToken'
                 };
             })
             .addCase(logOutUser.fulfilled, (state, action) => {
@@ -260,6 +268,7 @@ const authSlice = createSlice({
                     success: true,
                     isLogged: false,
                     isLoading: false,
+                    action: 'logout'
                 };
             })
             .addCase(logOutUser.rejected, (state, action) => {
@@ -268,12 +277,16 @@ const authSlice = createSlice({
                     error: true,
                     success: false,
                     isLoading: false,
+                    action: 'logout'
+
                 };
             })
             .addCase(logOutUser.pending, (state, action) => {
                 return {
                     ...state,
                     isLoading: true,
+                    action: 'logout'
+
 
                 };
             })

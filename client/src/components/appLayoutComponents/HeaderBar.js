@@ -170,7 +170,7 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
             <div className={headerStyles.bottomSection} >
               <div className={headerStyles.logOutDiv} >
 
-                {auth?.isLoading === true ?
+                {auth?.isLoading && auth.action === 'logout' === true ?
                   <Oval
                     height={`100%`}
                     width={`100%`}

@@ -24,23 +24,7 @@ import Lottie from 'react-lottie';
 
 
 const App = () => {
-  // const appHeight = () => {
-  //   const doc = document.documentElement
-  //   doc.style.setProperty(` — app-height`, `${window.innerHeight}px`)
-  // }
-  // window.addEventListener(`resize`, appHeight)
-  // appHeight()
 
-  // const useVisualViewport = () => {
-  //   const [state, setState] = useState(getViewports)
-  //   useEffect(() => {
-  //     const handleResize = () => setState(getViewports)
-  //     window.visualViewport.addEventListener('resize', handleResize)
-  //     return () =>
-  //       window.visualViewport.removeEventListener('resize', handleResize)
-  //   }, [])
-  //   return state
-  // }
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -55,6 +39,8 @@ const App = () => {
   const auth = useSelector((state) => state.auth);
   const { token } = auth;
 
+  const [initialLoading, setInitialLoading] = useState(false);
+
   const isDarkMode = useSelector((state) => state.ui.darkMode);
 
   useEffect(() => {
@@ -67,75 +53,80 @@ const App = () => {
   }, [isDarkMode]);
 
   const getToken = async () => {
-    await dispatch(getAuthToken({}))
+    await dispatch(getAuthToken({}));
   };
 
   useEffect(() => {
-    if (token != undefined) {
+    if (token !== undefined) {
       dispatch(getUserDetails(token));
     }
   }, [token])
 
   useEffect(() => {
-    getToken();
+    setInitialLoading(true);
+    const timeout = setTimeout(() => {
+      getToken();
+      setInitialLoading(false);
+    }, 8000)
+    return () => clearTimeout(timeout);
   }, [])
 
   return (
     <div data-theme={isDarkMode === true ? 'dark' : 'light'} className={appStyles.app}>
+      {
+        // auth.isLoading &&
+        // auth.token === undefined && auth.action === 'getToken') 
+        initialLoading === true ?
+          <>
+            <div className={appStyles.logoPage} >
+              <div className={appStyles.lottieWrapper}>
+                <Lottie
+                  options={defaultOptions}
+                  height={`80%`}
+                  width={`80%`}
+                />
+              </div>
+            </div>
+          </> :
+          <Routes>
+            <Route exact
+              path='/user/login'
+              element={
+                <UnAuthenticatedRoutes >
+                  <SignInPage />
+                </UnAuthenticatedRoutes>
+              } />
 
+            <Route exact path='/user/forgotPassword' element={
+              <UnAuthenticatedRoutes>
+                <ForgotPassword />
+              </UnAuthenticatedRoutes>
+            } />
 
+            <Route exact path='/user/resetPassword/:reset_token' element={
+              <UnAuthenticatedRoutes>
+                <ResetPassword />
+              </UnAuthenticatedRoutes>
+            } />
 
+            <Route exact path='/user/register' element={
+              <UnAuthenticatedRoutes>
+                <SignUpPage />
+              </UnAuthenticatedRoutes>
+            } />
 
+            <Route path='/user/auth/activate/:activation_token' element={<ActivateAccount />} />
 
-      {auth.isLoading &&
-        <div className={appStyles.logoPage} >
-          <div className={appStyles.lottieWrapper}>
-            <Lottie
-              options={defaultOptions}
-              height={`80%`}
-              width={`80%`}
+            <Route
+              path='/*'
+              element={
+                <RequireAuth >
+                  <Home />
+                </RequireAuth>
+              }
             />
-          </div>
-        </div>
+          </Routes>
       }
-      <Routes>
-        <Route exact
-          path='/user/login'
-          element={
-            <UnAuthenticatedRoutes >
-              <SignInPage />
-            </UnAuthenticatedRoutes>
-          } />
-
-        <Route exact path='/user/forgotPassword' element={
-          <UnAuthenticatedRoutes>
-            <ForgotPassword />
-          </UnAuthenticatedRoutes>
-        } />
-
-        <Route exact path='/user/resetPassword/:reset_token' element={
-          <UnAuthenticatedRoutes>
-            <ResetPassword />
-          </UnAuthenticatedRoutes>
-        } />
-
-        <Route exact path='/user/register' element={
-          <UnAuthenticatedRoutes>
-            <SignUpPage />
-          </UnAuthenticatedRoutes>
-        } />
-
-        <Route path='/user/auth/activate/:activation_token' element={<ActivateAccount />} />
-
-        <Route
-          path='/*'
-          element={
-            <RequireAuth >
-              <Home />
-            </RequireAuth>
-          }
-        />
-      </Routes>
     </div >
   )
 }

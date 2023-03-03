@@ -14,7 +14,7 @@ const SignInPage = () => {
 
   const authState = useSelector((state => state.auth));
 
-  const { isLogged, isLoading } = authState;
+  const { isLogged, isLoading, action } = authState;
 
   const dispatch = useDispatch();
 
@@ -337,8 +337,7 @@ const SignInPage = () => {
               <div className={styles.submitBtnWrapper}>
                 <button className={styles.submitBtn}>
 
-
-                  {isLoading === true ?
+                  {(isLoading === true && action === 'login') ?
                     <Oval
                       height={`100%`}
                       width={`100%`}
