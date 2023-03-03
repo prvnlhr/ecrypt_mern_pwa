@@ -19,7 +19,6 @@ import RequireAuth from './authComponent/RequireAuth';
 import SearchList from './searchSection/SearchList';
 import LoginIdsList from './loginIdsComponent/LoginIdsList';
 import ecryptLottie from "./lottie/ecryptLottie.json"
-import ecryptLogoAnimation from "./lottie/ecryptLogoAnimation.svg"
 import Lottie from 'react-lottie';
 
 
