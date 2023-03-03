@@ -24,12 +24,12 @@ body::-webkit-scrollbar {
   height: 100dvh;
   /* height: 100vh; */
   /* width: 100vw; */
-  width: 100dvw;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(180deg, #DFEDF4 33.14%, #E8F0EC 51.89%, #F7F9F6 76.37%);
+  /* background: linear-gradient(180deg, #DFEDF4 33.14%, #E8F0EC 51.89%, #F7F9F6 76.37%); */
   background: var(--app-main-bg);
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -40,9 +40,7 @@ body::-webkit-scrollbar {
   user-select: none;
 }
 
-
-
-.logoPage {
+/* .logoPage {
   position: relative;
   width: 100%;
   height: 100%;
@@ -50,7 +48,7 @@ body::-webkit-scrollbar {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .lottieWrapper {
   /* border: 1px solid white; */
