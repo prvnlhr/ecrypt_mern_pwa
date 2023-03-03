@@ -8,7 +8,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    /* border: 1px solid orange; */
+    border: 1px solid orange;
 }
 
 
@@ -224,26 +224,19 @@
         width: 70%;
         height: 90%;
         /* border: 1px solid black; */
-        border-radius: 10px;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        border-radius: 0.4rem;
-        border-radius: 0.6rem;
         border-radius: clamp(0.4rem, 1.1102230246251565e-16rem + 1.9999999999999998vw, 0.6rem) !important;
     }
 
     .searchIcon {
-        font-size: 20px;
-        font-size: 1rem;
-        font-size: 1.2rem;
         font-size: clamp(1.0rem, 0.6000000000000001rem + 1.9999999999999998vw, 1.2rem) !important;
         margin: 0px;
     }
 
     .searchText {
         position: relative;
-        font-size: 14px;
         font-weight: var(--bolder-font);
         margin: 0px;
         font-size: clamp(0.7rem, 0.09999999999999987rem + 3.0000000000000004vw, 1.0rem) !important;
@@ -303,7 +296,6 @@
         justify-content: flex-start;
         align-items: center;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-
     }
 
     .listTitleTextDiv {
@@ -371,5 +363,6 @@
         align-items: center;
         box-sizing: border-box;
         padding-right: 5%;
+        min-height: 80%;
     }
 }

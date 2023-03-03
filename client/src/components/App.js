@@ -66,9 +66,14 @@ const App = () => {
     const timeout = setTimeout(() => {
       getToken();
       setInitialLoading(false);
-    }, 8000)
+    }, 5000)
     return () => clearTimeout(timeout);
   }, [])
+
+  if ("virtualKeyboard" in navigator) {
+    console.log(navigator)
+    navigator.virtualKeyboard.overlaysContent = true;
+  }
 
   return (
     <div data-theme={isDarkMode === true ? 'dark' : 'light'} className={appStyles.app}>
