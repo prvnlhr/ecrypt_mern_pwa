@@ -174,7 +174,7 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
                   <Oval
                     height={`100%`}
                     width={`100%`}
-                    color="white"
+                    color={isDarkMode ? 'white' : '#002A9A'}
                     wrapperStyle={spinnerWrapper}
                     wrapperClass={headerStyles.spinner}
                     visible={true}
