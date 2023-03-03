@@ -18,6 +18,10 @@ import { toggleUiTheme } from "../redux/features/ui/uiSlice"
 import RequireAuth from './authComponent/RequireAuth';
 import SearchList from './searchSection/SearchList';
 import LoginIdsList from './loginIdsComponent/LoginIdsList';
+import ecryptLottie from "./lottie/ecryptLottie.json"
+import ecryptLogoAnimation from "./lottie/ecryptLogoAnimation.svg"
+import Lottie from 'react-lottie';
+
 
 const App = () => {
   // const appHeight = () => {
@@ -37,6 +41,14 @@ const App = () => {
   //   }, [])
   //   return state
   // }
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: ecryptLottie,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
 
   const location = useLocation();
   const dispatch = useDispatch();
@@ -69,20 +81,23 @@ const App = () => {
   }, [])
 
   return (
-    <div data-theme={isDarkMode === true ? 'dark' : 'light'} className={appStyles.app} >
+    <div data-theme={isDarkMode === true ? 'dark' : 'light'} className={appStyles.app}>
+
+
+
 
 
       {auth.isLoading &&
-        <svg class="svgLoader" viewBox="0 0 100 100" width="8em" height="8em">
-          <path ng-attr-d="{{config.pathCmd}}" ng-attr-fill="{{config.color}}" stroke="none"
-            d="M10 50A40 40 0 0 0 90 50A40 42 0 0 1 10 50" fill="#51CACC" transform="rotate(179.719 50 51)">
-            <animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 51;360 50 51"
-              keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animateTransform>
-          </path>
-        </svg>
+        <div className={appStyles.logoPage} >
+          <div className={appStyles.lottieWrapper}>
+            <Lottie
+              options={defaultOptions}
+              height={`80%`}
+              width={`80%`}
+            />
+          </div>
+        </div>
       }
-
-
       <Routes>
         <Route exact
           path='/user/login'

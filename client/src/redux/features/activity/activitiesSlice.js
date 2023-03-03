@@ -33,14 +33,17 @@ const activitiesSlice = createSlice({
 
     name: 'activities',
     initialState: initialState,
-
-
     extraReducers: (builder) => {
         builder.
             addCase(addActivityData.fulfilled, (state, action) => {
                 return {
                     ...state,
                     activitiesData: action.payload
+                };
+            }).
+            addCase(addActivityData.rejected, (state, action) => {
+                return {
+                    ...state,
                 };
             })
             .addCase(fectchActivitiesData.fulfilled, (state, action) => {

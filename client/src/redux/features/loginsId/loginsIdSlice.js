@@ -234,6 +234,22 @@ const loginsIdSlice = createSlice({
                     loginsIdData: newLoginsArray,
                 };
             })
+            .addCase(toggleIsFav.pending, (state, action) => {
+                return {
+                    ...state,
+                    isLoading: true,
+                    action: 'toggleFav',
+                    success: undefined,
+                };
+            }).
+            addCase(toggleIsFav.rejected, (state, action) => {
+                return {
+                    ...state,
+                    isLoading: false,
+                    action: 'toggleFav',
+                    success: false,
+                };
+            })
 
     }
 

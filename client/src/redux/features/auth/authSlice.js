@@ -235,7 +235,6 @@ const authSlice = createSlice({
                     isLogged: undefined,
                     error: false,
                     success: false,
-                    
                     isLoading: true,
                 };
             })
@@ -288,6 +287,17 @@ const authSlice = createSlice({
                     isLogged: false,
                     isLoading: false,
 
+                };
+            })
+            .addCase(forgotAccountPass.rejected, (state, action) => {
+                return {
+                    ...state,
+                    authResponseMessage: action.payload,
+                    token: undefined,
+                    error: true,
+                    success: false,
+                    isLogged: false,
+                    isLoading: false,
                 };
             })
             .addCase(resetUserPass.fulfilled, (state, action) => {

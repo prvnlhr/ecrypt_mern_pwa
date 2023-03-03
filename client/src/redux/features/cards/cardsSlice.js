@@ -10,7 +10,6 @@ const initialState = {
     success: undefined,
 }
 
-
 export const fecthCardsData = createAsyncThunk("cards/fetch", async ({ user_id }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
 
     try {
@@ -256,6 +255,25 @@ const cardsSlice = createSlice({
                 return {
                     ...state,
                     cardsData: newCardsArray,
+                    isLoading: false,
+                    action: 'toggleFav',
+                    success: true,
+                };
+            }).
+            addCase(toggleIsFav.pending, (state, action) => {
+                return {
+                    ...state,
+                    isLoading: true,
+                    action: 'toggleFav',
+                    success: undefined,
+                };
+            }).
+            addCase(toggleIsFav.rejected, (state, action) => {
+                return {
+                    ...state,
+                    isLoading: false,
+                    action: 'toggleFav',
+                    success: false,
                 };
             })
     }

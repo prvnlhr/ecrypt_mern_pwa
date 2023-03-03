@@ -22,7 +22,9 @@ body::-webkit-scrollbar {
 .app {
   position: relative;
   height: 100dvh;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
+  width: 100dvw;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -37,6 +39,31 @@ body::-webkit-scrollbar {
   -ms-user-select: none;
   user-select: none;
 }
+
+
+
+.logoPage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #141416;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lottieWrapper {
+  /* border: 1px solid white; */
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1C1F2C;
+  width: clamp(4.0rem, -2.0rem + 30.0vw, 7.0rem) !important;
+  border-radius: clamp(1.2rem, -1.4000000000000001rem + 13.0vw, 2.5rem) !important;
+}
+
+
 
 .app::-webkit-scrollbar {
   display: none;
