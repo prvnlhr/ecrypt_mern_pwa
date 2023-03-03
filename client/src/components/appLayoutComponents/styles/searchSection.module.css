@@ -294,6 +294,7 @@
         /* border: 1px solid red; */
         display: flex;
         justify-content: flex-start;
+        /* justify-content: flex-end; */
         align-items: center;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
@@ -306,17 +307,19 @@
         justify-content: flex-start;
         align-items: center;
         box-sizing: border-box;
-        padding-left: 10%;
+        padding-left: 5%;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
     .searchResultText {
-        font-size: clamp(1.0rem, 0.0rem + 5.0vw, 1.5rem) !important;
+        /* font-size: clamp(1.0rem, 0.0rem + 5.0vw, 1.5rem) !important; */
+        /* font-size: 0.9rem; */
+        /* font-size: 1.5rem; */
+        font-size: clamp(0.9rem, -0.29999999999999993rem + 6.0vw, 1.5rem) !important;
     }
 
     .listTitleText {
         position: relative;
-        font-size: 23px;
         font-weight: var(--bolder-font);
         margin-left: unset;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);

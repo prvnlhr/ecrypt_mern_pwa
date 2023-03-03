@@ -438,7 +438,10 @@ input:focus {
   .formWrapper {
     position: relative;
     width: 85%;
-    aspect-ratio: 2/3;
+    height: 80%;
+    min-height: 80%;
+    /* aspect-ratio: 2/3; */
+    /* aspect-ratio: 2/3; */
     border-radius: 20px;
     display: grid;
     grid-template-columns: 50% 50%;

@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, current } from "@reduxjs/toolkit";
 import * as api from "../../api"
 import { addActivityData } from "../activity/activitiesSlice"
 import { addToFavCardsData, removeFromFavCardsData } from "../favorites/favoritesSlice";
@@ -125,13 +125,19 @@ const cardsSlice = createSlice({
 
     name: 'cards',
     initialState: initialState,
-    // reducers: {
-    //     addCard(state, action) {
-    //         console.log(action.payload, state)
-    //         state.cardsData.push(action.payload)
-    //     },
-
-    // },
+    reducers: {
+        rearrangeCardsList(state, action) {
+            let currList = [...current(state.cardsData)];
+            const clickedIndex = action.payload;
+            const frsItem = currList[0];
+            currList[0] = currList[clickedIndex];
+            currList[clickedIndex] = frsItem;
+            return {
+                ...state,
+                cardsData: currList,
+            }
+        },
+    },
 
     extraReducers: (builder) => {
         builder
@@ -280,7 +286,6 @@ const cardsSlice = createSlice({
 
 })
 
-
-export const { addNewCard, deleteCard, editCard } = cardsSlice.actions;
+export const { rearrangeCardsList } = cardsSlice.actions;
 
 export default cardsSlice.reducer;

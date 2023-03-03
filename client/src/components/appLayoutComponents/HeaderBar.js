@@ -5,6 +5,7 @@ import { Icon } from '@iconify/react';
 import LogoutIcon from "../icons/LogoutIcon"
 import SettingsIcon from "../icons/SettingsIcon"
 import { getUserDetails } from "../../redux/features/user/userSlice"
+import { rearrangeLoginIdsList } from "../../redux/features/loginsId/loginsIdSlice"
 
 import { toggleUiTheme } from "../../redux/features/ui/uiSlice"
 
@@ -30,7 +31,7 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
   const userState = useSelector((state) => state.user);
   const uiState = useSelector((state) => state.ui);
   const isDarkMode = useSelector((state) => state.ui.darkMode);
-
+  const loginIdsArray = useSelector((state => state.loginIds.loginsIdData));
 
   const { token, } = auth;
 
@@ -85,6 +86,7 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
   const date = moment().format('DD MMM YYYY');
 
   const spinShow = true;
+
 
 
 

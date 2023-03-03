@@ -1,40 +1,72 @@
 import React from 'react'
 import styles from "./styles/recentlyAddedList.module.css"
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from "react-router-dom"
 import LoginId from "./LoginId"
 import Card from './Card'
 import Doc from './Doc'
-
+import { rearrangeLoginIdsList } from "../../../redux/features/loginsId/loginsIdSlice"
+import { rearrangeDocsList } from "../../../redux/features/docs/docsSlice"
+import { rearrangeCardsList } from "../../../redux/features/cards/cardsSlice"
 const RecentlyAddedList = ({
     recAddDocFullScreen, setRecAddDocFullScreen, recAddDocFullScreenData, setRecAddDocFullScreenData,
     clickedSearchItem,
     setClickedSearchItem
 }) => {
     const recentlyAddedArray = useSelector((state => state.recentlyAdded.recentlyAddedData));
+    const loginIdsArray = useSelector((state => state.loginIds.loginsIdData));
+    const cardsArray = useSelector((state => state.cards.cardsData));
+    const docsArray = useSelector((state) => state.docs.docsData);
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
-    const redirectToList = async (item, listPath) => {
+    const redirectToList = async (item, listType, listPath) => {
+
+        let index;
+        switch (listType) {
+
+            case 'logins':
+                index = loginIdsArray.findIndex(currItem => currItem._id === item._id);
+                dispatch(rearrangeLoginIdsList(index));
+                break;
+
+            case 'cards':
+                index = cardsArray.findIndex(currItem => currItem._id === item._id);
+                dispatch(rearrangeCardsList(index));
+                break;
+            case 'docs':
+                index = docsArray.findIndex(currItem => currItem._id === item._id);
+                dispatch(rearrangeDocsList(index));
+                break;
+
+            default:
+                break;
+        }
         setClickedSearchItem(item);
         navigate(listPath);
     }
-
     const handleItemClicked = (item) => {
-
         let newObj = {};
+
         if (item.hasOwnProperty('itemId')) {
             newObj = Object.assign({ _id: item.itemId }, item);
             item = newObj;
         }
+        let listType;
+
 
         if (item.hasOwnProperty('imageName')) {
-            redirectToList(item, '/user/diplay_documents')
+            listType = 'docs';
+
+            redirectToList(item, listType, '/user/diplay_documents')
         }
         else if (item.hasOwnProperty('username')) {
-            redirectToList(item, '/user/display_loginIds')
+            listType = 'logins';
+            redirectToList(item, listType, '/user/display_loginIds')
         }
         else {
-            redirectToList(item, '/user/display_cards')
+            listType = 'cards';
+            redirectToList(item, listType, '/user/display_cards')
         }
     }
 
@@ -90,8 +122,6 @@ const RecentlyAddedList = ({
             "issueDate": "2012",
             "dob": "23/01",
             "isFavourite": false,
-
-
         },
 
         {

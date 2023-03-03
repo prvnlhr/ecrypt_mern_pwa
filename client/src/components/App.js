@@ -66,13 +66,14 @@ const App = () => {
     const timeout = setTimeout(() => {
       getToken();
       setInitialLoading(false);
-    }, 5000)
+      // }, 5000)
+    }, 500)
     return () => clearTimeout(timeout);
   }, [])
 
   // if ("virtualKeyboard" in navigator) {
   //   console.log(navigator)
-  //   navigator.virtualKeyboard.overlaysContent = true;
+  //   navigator.virtualKeyboard.overlaysContent = false;
   // }
 
   return (

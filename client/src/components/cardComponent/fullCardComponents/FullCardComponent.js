@@ -29,7 +29,7 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
     const userId = useSelector((state) => state.user._id);
     const cardState = useSelector((state => state.cards));
     const { isLoading, action } = cardState;
-
+    const isDarkMode = useSelector((state) => state.ui.darkMode);
     const [currFocusField, setCurrFocusField] = useState(undefined);
     const onFocus = (val) => {
         setCurrFocusField(val)
@@ -231,11 +231,28 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
                             </>
                         }
                         <div className={styles.favBtnDiv} onClick={favBtnClicked} >
-
-                            {fullContentCardData && fullContentCardData.isFavourite === true ?
-                                < BookmarksIconFill />
-                                :
-                                <BookmarksIcon />
+                            {
+                                (isLoading === true && action === 'toggleFav') ?
+                                    <Oval
+                                        height={`80%`}
+                                        width={`80%`}
+                                        color={isDarkMode ? 'white' : '#002A9A'}
+                                        wrapperStyle={spinnerWrapper}
+                                        wrapperClass={styles.spinner}
+                                        visible={true}
+                                        ariaLabel='oval-loading'
+                                        secondaryColor="#E6E6E6"
+                                        strokeWidth={5}
+                                        strokeWidthSecondary={5}
+                                        className={styles.spinner}
+                                    /> :
+                                    <>
+                                        {fullContentCardData && fullContentCardData.isFavourite === true ?
+                                            < BookmarksIconFill />
+                                            :
+                                            <BookmarksIcon />
+                                        }
+                                    </>
                             }
                         </div>
                     </div>

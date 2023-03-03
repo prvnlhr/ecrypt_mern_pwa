@@ -6,30 +6,63 @@ import SearchCard from './SearchCard'
 import SearchDoc from './SearchDoc'
 import SearchLoginId from './SearchLoginId'
 import { clearSearchData } from "../../redux/features/search/searchSlice"
+import { rearrangeLoginIdsList } from "../../redux/features/loginsId/loginsIdSlice"
+import { rearrangeDocsList } from "../../redux/features/docs/docsSlice"
+import { rearrangeCardsList } from "../../redux/features/cards/cardsSlice"
 
-const SearchList = ({ setClickedSearchItem, clickedSearchItem, searchMode, setSearchMode, searchQuery,
-  setSearchQuery, searchBarRef }) => {
+const SearchList = ({ setClickedSearchItem, clickedSearchItem, searchMode, setSearchMode, searchQuery, setSearchQuery, searchBarRef }) => {
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const searchState = useSelector((state) => state.search.searchResults)
+  const loginIdsArray = useSelector((state => state.loginIds.loginsIdData));
+  const cardsArray = useSelector((state => state.cards.cardsData));
+  const docsArray = useSelector((state) => state.docs.docsData);
 
-  const redirectToList = async (item, listPath) => {
+  const redirectToList = async (item, listType, listPath) => {
+
     setSearchMode(false);
-    setClickedSearchItem(item);
+    let index;
+    switch (listType) {
+
+      case 'logins':
+        index = loginIdsArray.findIndex(currItem => currItem._id === item._id);
+        dispatch(rearrangeLoginIdsList(index));
+        break;
+
+      case 'cards':
+        index = cardsArray.findIndex(currItem => currItem._id === item._id);
+        dispatch(rearrangeCardsList(index));
+        break;
+      case 'docs':
+        index = docsArray.findIndex(currItem => currItem._id === item._id);
+        dispatch(rearrangeDocsList(index));
+        break;
+
+      default:
+        break;
+    }
+
     setSearchQuery('');
     dispatch(clearSearchData());
+    setClickedSearchItem(item);
+
     navigate(listPath);
   }
 
   const handleSearchItemClicked = (item) => {
+    let listType;
     if (item.hasOwnProperty('imageName')) {
-      redirectToList(item, '/user/diplay_documents')
+      listType = 'docs';
+      redirectToList(item, listType, '/user/diplay_documents')
     }
     else if (item.hasOwnProperty('username')) {
-      redirectToList(item, '/user/display_loginIds')
+      listType = 'logins';
+      redirectToList(item, listType, '/user/display_loginIds')
     }
     else {
-      redirectToList(item, '/user/display_cards')
+      listType = 'cards';
+      redirectToList(item, listType, '/user/display_cards')
     }
   }
 
@@ -50,4 +83,4 @@ const SearchList = ({ setClickedSearchItem, clickedSearchItem, searchMode, setSe
   )
 }
 
-export default SearchList
+export default SearchList;

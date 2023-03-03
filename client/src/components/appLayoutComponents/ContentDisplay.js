@@ -71,7 +71,6 @@ const ContentDisplay = ({
 
   const searchState = useSelector((state) => state.search.searchResults)
 
-
   return (
 
     <div className={styles.contentDisplay}>

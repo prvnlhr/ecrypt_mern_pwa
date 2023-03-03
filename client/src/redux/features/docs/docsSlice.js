@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, current } from "@reduxjs/toolkit";
 import * as api from "../../api"
 import { addActivityData } from "../activity/activitiesSlice"
 import { addRecentlyAddedData, deleteRecentlyAddedData } from "../recentlyAdded/recentlyAddedSlice"
@@ -132,6 +132,19 @@ const docsSlice = createSlice({
     //     },
 
     // },
+    reducers: {
+        rearrangeDocsList(state, action) {
+            let currList = [...current(state.docsData)];
+            const clickedIndex = action.payload;
+            const frsItem = currList[0];
+            currList[0] = currList[clickedIndex];
+            currList[clickedIndex] = frsItem;
+            return {
+                ...state,
+                docsData: currList,
+            }
+        },
+    },
 
     extraReducers: (builder) => {
         builder
@@ -244,6 +257,9 @@ const docsSlice = createSlice({
                 return {
                     ...state,
                     docsData: newDocsArray,
+                    isLoading: false,
+                    action: undefined,
+                    success: true
                 };
             }).
             addCase(toggleIsFav.pending, (state, action) => {
@@ -267,6 +283,6 @@ const docsSlice = createSlice({
 
 })
 
-export const { } = docsSlice.actions;
+export const { rearrangeDocsList } = docsSlice.actions;
 
 export default docsSlice.reducer;

@@ -23,6 +23,7 @@ const DocFullScreen = ({ setDocFullScreen, setFullScreenDocData, docFullScreen, 
 
     const userId = useSelector((state) => state.user._id);
     const docsState = useSelector((state) => state.docs);
+    const isDarkMode = useSelector((state) => state.ui.darkMode);
 
     const { isLoading, action } = docsState;
 
@@ -179,10 +180,27 @@ const DocFullScreen = ({ setDocFullScreen, setFullScreenDocData, docFullScreen, 
                 <div className={styles.favBtnContainer} >
                     {!deleteMode &&
                         <div className={styles.favBtnDiv} onClick={handleFavBtnClicked}  >
-                            {
-                                fullScreenData.isFavourite === true ?
-                                    <BookmarksIconFill /> :
-                                    <BookmarksIcon />
+                            {(isLoading === true && action === 'toggleFav') ?
+                                <Oval
+                                    height={`80%`}
+                                    width={`80%`}
+                                    color={isDarkMode ? 'white' : '#002A9A'}
+                                    wrapperStyle={spinnerWrapper}
+                                    wrapperClass={styles.spinner}
+                                    visible={true}
+                                    ariaLabel='oval-loading'
+                                    secondaryColor="#E6E6E6"
+                                    strokeWidth={5}
+                                    strokeWidthSecondary={5}
+                                    className={styles.spinner}
+                                /> :
+                                <>
+                                    {
+                                        fullScreenData.isFavourite === true ?
+                                            <BookmarksIconFill /> :
+                                            <BookmarksIcon />
+                                    }
+                                </>
                             }
                         </div>
                     }

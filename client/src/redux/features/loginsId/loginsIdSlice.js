@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, current } from "@reduxjs/toolkit";
 import { addActivityData } from "../activity/activitiesSlice"
 import { addToFavLoginsData } from "../favorites/favoritesSlice";
 import { addRecentlyAddedData, deleteRecentlyAddedData } from "../recentlyAdded/recentlyAddedSlice"
@@ -121,6 +121,20 @@ const loginsIdSlice = createSlice({
 
     // },
 
+    reducers: {
+        rearrangeLoginIdsList(state, action) {
+            let currList = [...current(state.loginsIdData)];
+            const clickedIndex = action.payload;
+            const frsItem = currList[0];
+            currList[0] = currList[clickedIndex];
+            currList[clickedIndex] = frsItem;
+            return {
+                ...state,
+                loginsIdData: currList,
+            }
+        },
+    },
+
     extraReducers: (builder) => {
         builder.
             addCase(fecthLoginIdsData.fulfilled, (state, action) => {
@@ -232,6 +246,9 @@ const loginsIdSlice = createSlice({
                 return {
                     ...state,
                     loginsIdData: newLoginsArray,
+                    isLoading: false,
+                    action: undefined,
+                    success: true
                 };
             })
             .addCase(toggleIsFav.pending, (state, action) => {
@@ -256,6 +273,6 @@ const loginsIdSlice = createSlice({
 })
 
 
-export const { deleteLoginId, editLoginId } = loginsIdSlice.actions;
+export const { rearrangeLoginIdsList } = loginsIdSlice.actions;
 
 export default loginsIdSlice.reducer;
