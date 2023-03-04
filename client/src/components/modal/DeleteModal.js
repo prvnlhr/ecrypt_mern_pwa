@@ -49,7 +49,7 @@ const DeleteModal = ({ setDeleteMode, deleteMode, confirmDeleteBtnClicked, modal
                 >
                     <div className={` ${styles.modalContainer} ${!deleteMode && styles.modalContainerClose} `} >
                         <div className={styles.iconContainer} >
-                            <Icon icon="ph:warning" />
+                            <Icon icon="ph:warning" className={styles.warningIcon} />
                         </div>
                         <div className={styles.dialogContainer} >
                             <div className={styles.textTopDiv} >

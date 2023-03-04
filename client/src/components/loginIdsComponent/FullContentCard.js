@@ -34,7 +34,7 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
     }
 
     const isDarkMode = useSelector((state) => state.ui.darkMode);
-    
+
     const loginsIdState = useSelector((state => state.loginIds));
 
     const { isLoading, action } = loginsIdState;
@@ -174,6 +174,7 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
                         {editMode ?
                             <>
                                 <div className={styles.saveBtnDiv} onClick={saveBtnClicked}  >
+
                                     {
                                         isLoading && action === 'edit' ?
                                             <Oval
@@ -189,6 +190,7 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
                                                 strokeWidthSecondary={5}
                                                 className={styles.spinner}
                                             />
+
                                             :
                                             <>
                                                 <Icon className={styles.crudIcons} icon="charm:tick-double" color="white" />

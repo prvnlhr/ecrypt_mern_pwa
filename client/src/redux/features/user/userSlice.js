@@ -6,7 +6,7 @@ import { fetchDocsData } from "../docs/docsSlice"
 import { fectchActivitiesData } from "../activity/activitiesSlice"
 import { fetchRecentlyAddedData } from "../recentlyAdded/recentlyAddedSlice"
 import { fetchFavoritesData } from "../favorites/favoritesSlice"
-
+import moment from "moment";
 const initialState = {
     firstName: undefined,
     lastName: undefined,
@@ -23,7 +23,7 @@ const initialState = {
     error: false,
     success: false,
     pending: false,
-    // pending: true,
+    action: undefined
 }
 
 export const getUserDetails = createAsyncThunk("user/getUser", async (token, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
@@ -31,8 +31,6 @@ export const getUserDetails = createAsyncThunk("user/getUser", async (token, { g
         const res = await api.getUser(token);
         const userData = res.data.user;
         const profilePicData = res.data.user.profilePic
-        // console.log(profilePicData.picUrl)
-        // console.log(userData);
         const nameString = userData.name.split(/[" "]+/);
         const userRes = {
             firstName: nameString[0],
@@ -56,8 +54,13 @@ export const getUserDetails = createAsyncThunk("user/getUser", async (token, { g
 export const editUserProfile = createAsyncThunk("user/editProfile", async ({ token, profileData }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
 
+        const date = moment().format('DD');
+        const month = moment().format('MMM');
+        const year = moment().format('YYYY');
+
+        console.log(date, month, year);
+
         const res = await api.editProfile(token, profileData);
-        // console.log(res.data.newData)
         const userData = res.data.newData;
         const nameString = userData.name.split(/[" "]+/);
         const resData =
@@ -112,7 +115,6 @@ const userSlice = createSlice({
         builder
 
             .addCase(getUserDetails.fulfilled, (state, action) => {
-                // console.log(action.payload)
                 return {
                     ...state,
                     _id: action.payload._id,
@@ -127,49 +129,68 @@ const userSlice = createSlice({
                 };
             })
             .addCase(getUserDetails.rejected, (state, action) => {
-                // console.log(action.payload)
                 return {
                     ...state,
                 };
             })
             .addCase(editUserProfile.fulfilled, (state, action) => {
-                // console.log(action.payload)
                 return {
                     ...state,
                     firstName: action.payload.firstName,
                     lastName: action.payload.lastName,
                     responseMessage: action.payload.msg,
-                    success: true
+                    success: true,
+                    action: undefined,
+                    pending: false
+                };
+            })
+            .addCase(editUserProfile.pending, (state, action) => {
+                return {
+                    ...state,
+                    pending: true,
+                    action: 'editProfile',
                 };
             })
             .addCase(editUserProfile.rejected, (state, action) => {
-                // console.log(action.payload)
                 return {
                     ...state,
                     responseMessage: action.payload,
-                    success: false
+                    action: 'editProfile',
+                    success: false,
+                    pending: false
                 };
             })
             .addCase(changeUserPass.fulfilled, (state, action) => {
-                // console.log(action.payload)
                 return {
                     ...state,
                     responseMessage: action.payload,
                     success: true,
                     error: false,
+                    pending: false,
+                    action: undefined
+                };
+            })
+            .addCase(changeUserPass.pending, (state, action) => {
+                return {
+                    ...state,
+                    pending: true,
+                    action: 'changePass',
+                    success: undefined,
+                    error: undefined,
                 };
             })
             .addCase(changeUserPass.rejected, (state, action) => {
-                // console.log(action.payload)
                 return {
                     ...state,
                     responseMessage: action.payload,
                     success: false,
                     error: true,
+                    action: "changePass",
+                    pending: false
                 };
             })
             .addCase(changeProfilePicture.fulfilled, (state, action) => {
-                // console.log(action.payload)
+
                 return {
                     ...state,
                     profilePic: action.payload,
@@ -177,12 +198,27 @@ const userSlice = createSlice({
                     error: false,
                     success: true,
                     pending: false,
+                    action: undefined
                 };
+
             })
             .addCase(changeProfilePicture.pending, (state, action) => {
                 return {
                     ...state,
-                    pending: true
+                    pending: true,
+                    action: 'editProfilePic',
+                    success: undefined,
+                    error: undefined,
+                };
+            })
+            .addCase(changeProfilePicture.rejected, (state, action) => {
+                return {
+                    ...state,
+                    responseMessage: action.payload,
+                    action: 'editProfilePic',
+                    pending: false,
+                    success: false,
+                    error: true,
                 };
             })
     }

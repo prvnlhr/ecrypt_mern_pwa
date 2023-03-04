@@ -11,6 +11,30 @@
     box-sizing: border-box;
 }
 
+/*  > FOR DELETE MODAL */
+.modalWrapper {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20% !important;
+    height: unset !important;
+    aspect-ratio: 3/2;
+    background-color: var(--box-bg-primary);
+    /* background-color: black; */
+    border-radius: 10px;
+    top: 30% !important;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 99;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 99;
+    /* border: 1px solid salmon; */
+}
+
 .profilePicSection {
     grid-area: profilePicSection;
     width: 100%;
@@ -435,9 +459,9 @@ label {
     white-space: nowrap;
 }
 
-.warningIcon {
+.warningIconMsg {
     font-size: 13px;
-    color: #C5565D;
+    color: white;
     padding: 0px;
     margin: 0px;
 }
@@ -464,8 +488,6 @@ label {
     /* border: 1px solid black; */
     margin-right: 5px;
 }
-
-
 
 /* ----------------------------------------------------- */
 .profileNameWrapper {
@@ -541,13 +563,12 @@ label {
     width: auto;
     height: auto;
     background-color: var(--submit-btn-color);
-    border-radius: 6px;
     border: none;
     outline: none;
     padding-left: 2%;
     padding-right: 2%;
-    padding-top: 0.5%;
-    padding-bottom: 0.5%;
+    padding-top: 0.6%;
+    padding-bottom: 0.6%;
     margin: 0px;
     display: flex;
     justify-content: center;
@@ -555,6 +576,8 @@ label {
     text-align: center;
     /* border: 1px solid red; */
     /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
+    border-radius: 0.3rem;
+
 }
 
 .btnText {
@@ -781,11 +804,13 @@ label {
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+
 .passOldInputContainer {
     grid-area: passOldInputContainer;
     width: 45%;
     height: 100%;
     /* border: 1px solid black; */
+    /* border: 1px solid skyblue; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -795,11 +820,36 @@ label {
     margin-right: 2%;
 }
 
+.passInputDiv {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    /* border: 1px solid salmon; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.passInputField {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 80%;
+    height: 80%;
+}
+
+.passInputFieldText {
+    font-size: 0.85rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: var(--bolder-font);
+    color: var(--primary-font-color);
+}
+
 .passNewInputContainer {
     grid-area: passNewInputContainer;
     width: 45%;
     height: 100%;
-    /* border: 1px solid black; */
+    /* border: 1px solid skyblue; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -819,6 +869,7 @@ label {
     align-items: center;
     margin-top: 1%;
 }
+
 
 
 /* DELETE SECTION________________________________________________________________- */
@@ -927,7 +978,7 @@ label {
     padding-right: 3%;
 }
 
-.warningIcon {
+.warningIconDelete {
     font-size: 20px;
     color: #C5565D;
 }
@@ -950,28 +1001,6 @@ label {
 
 
 
-
-/*  > FOR DELETE MODAL */
-.modalWrapper {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80% !important;
-    height: unset !important;
-    aspect-ratio: 3/2;
-    background-color: white;
-    border-radius: 10px;
-    top: 30% !important;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    z-index: 99;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-    z-index: 99;
-}
 
 /* -------------------------------------------------------------- */
 /* -------------------------------------------------------------- */
@@ -1334,7 +1363,7 @@ label {
         grid: formMessageWrapper;
         width: 100%;
         height: 100%;
-        /* border: 1px solid black; */
+        /* border: 1px solid salmon; */
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -1343,6 +1372,7 @@ label {
     .messageDiv {
         width: 100%;
         width: auto;
+        height: 75% !important;
         max-width: 100%;
         height: auto;
         display: flex;
@@ -1353,19 +1383,31 @@ label {
         /* margin-top: 3%; */
         /* overflow-x: scroll; */
         overflow: hidden;
+        /* border: 1px solid skyblue; */
+        border-radius: clamp(0.2rem, -0.2rem + 2.0vw, 0.4rem) !important;
     }
 
     .messageDivError p {
         width: 50%;
-        font-size: 0.65rem;
+        /* font-size: 0.6rem; */
+        /* font-size: 0.8rem; */
+        font-size: clamp(0.6rem, 0.19999999999999984rem + 2.000000000000001vw, 0.8rem) !important;
         width: 90%;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        font-weight: var(--bold-font);
+        letter-spacing: 0px !important;
     }
 
     .messageDivSuccess p {
-        font-size: 0.65rem;
+        font-size: clamp(0.6rem, 0.19999999999999984rem + 2.000000000000001vw, 0.8rem) !important;
+        font-weight: var(--bold-font);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-weight: var(--bold-font);
+        letter-spacing: 0px !important;
     }
 
     .errorMessageIconDiv {
@@ -1378,10 +1420,10 @@ label {
         margin-right: 5px;
     }
 
-    .warningIcon {
-        font-size: 0.9rem;
+    .warningIconMsg {
         padding: 0px;
         margin: 0px;
+        font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
     }
 
     /* NAME EMAIL SECTION________________________________________________________________- */
@@ -1431,6 +1473,7 @@ label {
         align-items: center;
         text-align: center;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        height: 60%;
     }
 
     .formBtnCancel {
@@ -1452,6 +1495,7 @@ label {
         text-align: center;
         margin-right: 5%;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        height: 60%;
     }
 
     .formBtnEdit {
@@ -1470,8 +1514,23 @@ label {
         align-items: center;
         text-align: center;
         /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
+        height: 70%;
     }
 
+    .btnSpinnerDiv {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        height: 70% !important;
+        border-radius: 0.6rem;
+        padding-left: 4%;
+        padding-right: 4%;
+        margin: 0px;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        /* border: 1px solid salmon; */
+    }
 
 
     /* ______________________________________________________________ */
@@ -1550,6 +1609,7 @@ label {
 
     .profileEditBtnContainer {
         grid-area: profileEditBtnContainer;
+        position: relative;
         width: 100%;
         height: 100%;
         /* border: 1px solid black; */
@@ -1557,6 +1617,7 @@ label {
         justify-content: flex-start;
         align-items: center;
     }
+
 
     /* ________________________________________________________________- */
 
@@ -1643,6 +1704,14 @@ label {
         margin-top: 1%;
     }
 
+    .passInputField {
+        border: none;
+        background: transparent;
+        outline: none;
+        width: 80%;
+        height: 80%;
+        padding: 10%;
+    }
 
     /* ________________________________________________________________- */
 
@@ -1814,10 +1883,13 @@ label {
         font-size: clamp(0.6rem, -1.1102230246251565e-16rem + 3.0000000000000004vw, 0.9rem) !important;
     }
 
+    .passInputFieldText {
+        font-size: clamp(0.6rem, -1.1102230246251565e-16rem + 3.0000000000000004vw, 0.9rem) !important;
+    }
 
     input::placeholder {
         font-size: clamp(0.5rem, -0.10000000000000009rem + 3.0000000000000004vw, 0.8rem) !important;
-        color: var(--box-bg-secondary-li);
+        color: var(--secondary-font-color);
         text-align: center;
     }
 
@@ -1839,7 +1911,7 @@ label {
 
     }
 
-    .warningIcon {
+    .warningIconDelete {
         font-size: clamp(1.1rem, 0.10000000000000009rem + 5.0vw, 1.6rem) !important;
     }
 
@@ -2128,6 +2200,7 @@ label {
     }
 
     .formBtnSave {
+        position: relative;
         width: auto;
         height: auto;
         border-radius: 0.6rem;
@@ -2190,6 +2263,8 @@ label {
         font-size: 0.95rem;
         letter-spacing: 0.5px;
     }
+
+
 
     .text1Container {
         width: 100%;

@@ -14,44 +14,68 @@ const spinnerStyle = {
     position: `absolute`,
     width: `112%`,
     height: `112%`,
-    // border: `1px solid red`,
 }
 
+const spinnerStyleBtn = {
+    position: `relative`,
+    width: `100%`,
+    height: `100%`,
+}
+const spinnerWrapper = {
+    height: `100%`,
+    with: `100%`,
+}
 const Settings = () => {
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
+
+
+    //> USESTATES________________________________________________________
     const authState = useSelector((state => state.auth));
     const userState = useSelector((state => state.user));
     const isDarkMode = useSelector((state) => state.ui.darkMode);
 
-
+    // useEffect(() => {
+    //     console.log(useState.action, useState.pending);
+    // }, [useState.action])
 
     //> Profile Pic
     const [profilePicImg, setProfilePicImg] = useState(undefined);
     const [oldProfilePic, setOldProfilePic] = useState(undefined);
 
+    //> form Mesaage && error
     const [formMessage, setFormMessage] = useState({
         message: undefined,
         error: false
     });
-
     const { message, error } = formMessage;
 
+    //> field Focus
     const [currFocusField, setCurrFocusField] = useState(undefined);
     const [deleteMode, setDeleteMode] = useState(false);
 
+    //> Edit mode
     const [editMode, setEditMode] = useState({
         isEditMode: false,
         section: undefined
     });
 
+    //> profile data
     const [profileData, setProfileData] = useState({
         firstName: "",
         lastName: "",
         email: "",
     });
 
+    //> Password Data
+    const [passwordData, setPasswordData] = useState({
+        newPassword: '',
+        oldPassword: '',
+    });
+
+    //> _USE_EFFECTS________________________________________________________
     useEffect(() => {
         setProfileData({
             ...profileData,
@@ -62,22 +86,18 @@ const Settings = () => {
     }, [userState.firstName, userState.lastName, userState.email])
 
     useEffect(() => {
-        if (userState.responseMessage === 'Profile Picture Updated Successfully') {
-            setEditMode({
-                isEditMode: false,
-                section: undefined,
+        setProfilePicImg(userState?.profilePic.picUrl);
+
+        return () => {
+            setFormMessage({
+                error: false,
+                message: '',
             })
         }
-        setProfilePicImg(userState?.profilePic.picUrl);
     }, [userState.profilePic])
 
 
-
-    const [passwordData, setPasswordData] = useState({
-        newPassword: undefined,
-        oldPassword: undefined,
-    });
-
+    //**---------------CLICKED HANDLERS_________________________________________
 
     const handleProfileInputChange = (e) => {
         const { name, value } = e.target;
@@ -97,17 +117,16 @@ const Settings = () => {
         return (isEditMode && section === SECTION);
     }
 
+    // > _HANDLE SAVE BUTTON CLICKED________________________________________________________________________________________________________
     const handleSaveBtnClicked = async (SECTION) => {
 
-        if (SECTION === 'PASS') {
+        if (SECTION === 'PASS') {   //> PASSWORD SECTION__________________________________________________
             const res = validateChangePassForm({ password: passwordData.oldPassword, newPassword: passwordData.newPassword });
-            console.log(res);
             if (res.error) {
                 setFormMessage({
                     message: res.message,
                     error: res.error
                 })
-                console.log('error');
                 return;
             }
             else {
@@ -120,34 +139,62 @@ const Settings = () => {
                     oldPassword: passwordData.oldPassword,
                     newPassword: passwordData.newPassword,
                     token: authState.token
-                }));
-            }
-
-            if (userState.success) {
-                setEditMode({
-                    isEditMode: false,
-                    section: undefined,
+                })).then((res) => {
+                    if (res.type === 'user/changeProfilePass/fulfilled') {
+                        console.log(res);
+                        setFormMessage({
+                            ...formMessage,
+                            message: res?.payload,
+                            error: false
+                        })
+                        setEditMode({
+                            isEditMode: false,
+                            section: undefined,
+                        })
+                    } else if (res.type === 'user/changeProfilePass/rejected') {
+                        setFormMessage({
+                            ...formMessage,
+                            message: res?.payload,
+                            error: true
+                        })
+                    }
                 })
             }
 
-            console.log(passwordData);
-        } else if (SECTION === 'PROFILE') {
+            // > _________________________________________________________________________________________________________
+        } else if (SECTION === 'PROFILE') {   //> PROFILE SECTION_____________________________________________
+
             await dispatch(editUserProfile({
                 token: authState.token,
                 profileData: profileData,
-            }))
-            if (userState.success) {
-                setEditMode({
-                    isEditMode: false,
-                    section: undefined,
-                })
-            }
+            })).then((res) => {
+                if (res.type === 'user/editProfile/fulfilled') {
+
+                    setEditMode({
+                        isEditMode: false,
+                        section: undefined,
+                    })
+                    // console.log(res.payload.msg);
+                    setFormMessage({
+                        ...formMessage,
+                        message: res?.payload.msg,
+                        error: false
+                    })
+                    setCurrFocusField(undefined);
+                } else if (res.type === 'user/editProfile/rejected') {
+                    setFormMessage({
+                        ...formMessage,
+                        message: res?.payload.msg,
+                        error: true
+                    })
+                }
+            })
         }
     }
 
-
-    //> Handle Edit btn, change Pass btn clicked
+    // > __HANDLE EDIT BUTTON CLICLKED, HANDLE CHANGE PASS BTN CLCIKED________________________________________________________
     const handleEditChangeDeleteBtnClicked = (currSection) => {
+
         setEditMode({
             isEditMode: true,
             section: currSection
@@ -164,41 +211,40 @@ const Settings = () => {
         }
     }
 
-    //> handle pass input change________________
+    //> __HANDLE PASSWORD  INPUT CHANGE______________________________________________
     const handlePassInputChange = (e) => {
         const { name, value } = e.target;
         setPasswordData({ ...passwordData, [name]: value });
     };
 
-    //> handle cancel btn clicked_______________
+    //> __HANDLE CANCEL  BUTTON CLICKED________________________________________________
     const handleCancelBtnClicked = () => {
 
-        if (editMode.section == 'PASS') {
-
-            console.log(editMode.section);
-
+        if (editMode.section === 'PASS') {
             setPasswordData({
-                ...passwordData,
-                oldPassword: undefined,
+                newPassword: '',
+                oldPassword: '',
             })
         }
-
         setEditMode({
             isEditMode: false,
             section: undefined,
         })
 
-        //> image SECTION == PROFILEPIC, reverting back old Profile Pic
+        //> Image, SECTION == PROFILEPIC, reverting back old Profile Pic
         if (editMode.section === 'PROFILEPIC') {
             setProfilePicImg(oldProfilePic);
         }
-
         setCurrFocusField(undefined);
+        setFormMessage({
+            error: false,
+            message: ""
+        })
     }
 
 
 
-    //> Profile Pic _______________________________________________
+    //> ___PROFILE PIC SECTION_________________________________________________
     const [file, setFile] = useState();
 
     const previewFile = (file) => {
@@ -232,7 +278,26 @@ const Settings = () => {
         await dispatch(changeProfilePicture({
             data: data,
             token: authState?.token,
-        }));
+
+        })).then((res) => {
+            console.log(res);
+            if (res.type === 'user/changeProfilePic/fulfilled') {
+                setEditMode({
+                    isEditMode: false,
+                    section: undefined,
+                })
+                setFormMessage({
+                    error: false,
+                    message: userState?.responseMessage
+                })
+            } else if (res.type === 'user/changeProfilePic/rejected') {
+                setFormMessage({
+                    error: true,
+                    message: userState?.responseMessage
+                })
+            }
+
+        })
 
     }
 
@@ -248,7 +313,6 @@ const Settings = () => {
 
     //> _______________________________________________
 
-    const navigate = useNavigate();
     return (
         <div className={styles.SetttingsComponent}>
 
@@ -258,6 +322,7 @@ const Settings = () => {
                 confirmDeleteBtnClicked={confirmDeleteBtnClicked}
                 modalStyles={styles}
             />
+
             <div className={styles.profilePicSection} >
                 <div className={styles.headingWrapper} >
                     <div className={styles.headingContainer}  >
@@ -271,14 +336,12 @@ const Settings = () => {
                 </div>
                 <div className={styles.profilePicWrapper} >
                     <form className={styles.profilePicformTag}>
-                        <div className={`${styles.profilePicContainer}
-                         ${(formFieldEditable('PROFILEPIC')
-                                && userState?.pending === false
-                            )
-                            && styles.profilePicformTagEditMode} `
-                        }>
+                        <div
+                            className={
+                                `${styles.profilePicContainer}
+                         ${(formFieldEditable('PROFILEPIC') && userState?.pending === false) && styles.profilePicformTagEditMode} `}>
 
-                            {userState?.pending === true &&
+                            {userState?.pending === true && userState.action === 'editProfilePic' &&
                                 <SpinnerCircular style={spinnerStyle} thickness={50} speed={100} color="rgba(199, 186, 253, 1)" secondaryColor={isDarkMode === true ? "#2F343E" : "#D6D6D6"} />
                             }
                             <label htmlFor="file">
@@ -316,6 +379,7 @@ const Settings = () => {
 
 
                 <div className={styles.joinedUpdateDateWrapper} >
+
                     <div className={styles.joinedUpadateDateContainer} >
                         <div className={styles.joinedDateDiv} >
                             <p className={styles.joinedDateLabelText}>Joined</p>
@@ -328,12 +392,28 @@ const Settings = () => {
                     </div>
 
                 </div>
+
             </div>
 
             <div className={styles.profileFormSection} >
                 <div className={styles.formWrapper}>
                     <div className={styles.formMessageWrapper} >
-                        {(userState.responseMessage || message) &&
+                        {
+                            message &&
+                            <div className={`${styles.messageDiv} ${error ? styles.messageDivError : styles.messageDivSuccess}`} >
+                                {
+                                    error &&
+                                    <div className={styles.errorMessageIconDiv} >
+                                        <Icon className={styles.warningIconMsg} icon="ph:warning" />
+                                    </div>
+                                }
+                                <p>{formMessage.message}
+                                </p>
+                            </div>
+                        }
+
+
+                        {/* {(userState.responseMessage || message) &&
                             <div className={`${styles.messageDiv} ${(error || userState.error) ? styles.messageDivError : styles.messageDivSuccess}`} >
                                 {
                                     (error || userState.error) &&
@@ -346,7 +426,9 @@ const Settings = () => {
                                         : userState.responseMessage !== undefined && userState.responseMessage
                                 }</p>
                             </div>
-                        }
+                        } */}
+
+
                     </div>
 
                     <div className={styles.profileNameWrapper} >
@@ -386,7 +468,6 @@ const Settings = () => {
                                         onFocus={() => onFocus(2)} />
                                 </div>
                             </div>
-
                         </div>
                         <div className={styles.profileEmailNameContainer} >
                             <div className={`${styles.profileEmailNameDiv} ${currFocusField === 3 && styles.focusFieldStyle}`} >
@@ -399,14 +480,12 @@ const Settings = () => {
                                     <input
                                         disabled={true}
                                         className={`${styles.emailInput} ${styles.emailInputText}`}
-                                        // onFocus={() => onFocus(3)}
                                         value={profileData.email} />
                                 </div>
                             </div>
                         </div>
 
                         <div className={styles.profileEditBtnContainer} >
-
 
                             {
                                 formFieldEditable('PROFILE') ?
@@ -417,12 +496,16 @@ const Settings = () => {
                                             </p>
                                         </button>
                                         <button className={styles.formBtnSave} onClick={() => handleSaveBtnClicked('PROFILE')}>
-                                            <p className={styles.btnText} >
-                                                Save
-                                            </p>
+                                            {
+                                                (userState.action === 'editProfile' && userState.pending === true) ?
+                                                    <SpinnerCircular style={spinnerStyleBtn} thickness={200} speed={100} color="white" secondaryColor="#7AC87F" />
+                                                    :
+                                                    <p className={styles.btnText} >
+                                                        Save
+                                                    </p>
+                                            }
                                         </button>
                                     </>
-
                                     :
                                     <button className={styles.formBtnEdit} onClick={() => handleEditChangeDeleteBtnClicked("PROFILE")}>
                                         <p className={styles.btnText} >
@@ -439,21 +522,22 @@ const Settings = () => {
                             <div className={styles.formSectionHeadingDiv} >
                                 <p>Password</p>
                             </div>
-
-
                         </div>
+
                         <div className={formFieldEditable('PASS') ? styles.passFieldWrapperOpen : styles.passFieldWrapperClose} >
                             <div className={`${styles.passOldInputContainer}  ${currFocusField === 4 && styles.focusFieldStyle}`} >
-                                <div className={styles.inputDiv}>
-                                    <input className={`${styles.inputField}  ${styles.inputFieldText}`} name='oldPassword' onChange={handlePassInputChange} placeholder='New Password' onFocus={() => onFocus(4)} value={passwordData.oldPassword} />
+                                <div className={styles.passInputDiv}>
+                                    <input className={`${styles.passInputField}  ${styles.passInputFieldText}`} name='oldPassword' onChange={handlePassInputChange} placeholder='New Password' onFocus={() => onFocus(4)} value={passwordData.oldPassword} autoComplete={false} />
                                 </div>
                             </div>
+
                             <div className={`${styles.passNewInputContainer}  ${currFocusField === 5 && styles.focusFieldStyle}`} >
-                                <div className={styles.inputDiv}>
-                                    <input className={`${styles.inputField}  ${styles.inputFieldText}`} name='newPassword' onChange={handlePassInputChange} placeholder='Confirm Password' onFocus={() => onFocus(5)} value={passwordData.newPassword} />
+                                <div className={styles.passInputDiv}>
+                                    <input className={`${styles.passInputField}  ${styles.passInputFieldText}`} name='newPassword' onChange={handlePassInputChange} placeholder='Confirm Password' onFocus={() => onFocus(5)} value={passwordData.newPassword} autoComplete={false} />
                                 </div>
                             </div>
                         </div>
+
                         <div className={styles.passChangeBtnContainer} >
 
                             {
@@ -466,9 +550,15 @@ const Settings = () => {
                                             </p>
                                         </button>
                                         <button className={styles.formBtnSave} onClick={() => handleSaveBtnClicked('PASS')} >
-                                            <p className={styles.btnText}>
-                                                Confirm
-                                            </p>
+                                            {
+                                                (userState.action === 'changePass' && userState.pending === true) ?
+                                                    <SpinnerCircular style={spinnerStyleBtn} thickness={200} speed={100} color="white" secondaryColor="#7AC87F" />
+                                                    :
+                                                    <p className={styles.btnText} >
+                                                        Confirm
+                                                    </p>
+                                            }
+
                                         </button>
                                     </>
                                     :
@@ -491,7 +581,7 @@ const Settings = () => {
                             <div className={styles.text1Container} >
                                 <div className={styles.textIconDiv} >
                                     {/* <Icon className={styles.text1Icon} icon="icon-park-outline:caution" /> */}
-                                    <Icon className={styles.warningIcon} icon="ph:warning" />
+                                    <Icon className={styles.warningIconDelete} icon="ph:warning" />
 
                                 </div>
                                 <p>Delete account permanently</p>

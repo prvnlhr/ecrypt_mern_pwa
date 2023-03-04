@@ -200,30 +200,35 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
 
                             :
                             <>
-                                <div className={styles.deleteBtnDiv} onClick={deleteBtnClicked}  >
-                                    {
-                                        isLoading && action === 'delete' ?
-                                            <Oval
-                                                height={`90%`}
-                                                width={`90%`}
-                                                color="white"
-                                                wrapperStyle={spinnerWrapper}
-                                                wrapperClass={styles.spinner}
-                                                visible={true}
-                                                ariaLabel='oval-loading'
-                                                secondaryColor="#E6E6E6"
-                                                strokeWidth={5}
-                                                strokeWidthSecondary={5}
-                                                className={styles.spinner}
-                                            />
-                                            :
-                                            <>
-                                                <Icon className={styles.crudIcons} icon="gg:trash-empty" color="white" />
-                                                <p>Delete</p>
-                                            </>
-                                    }
+                                {
 
-                                </div>
+                                    !deleteMode &&
+                                    <div className={styles.deleteBtnDiv} onClick={deleteBtnClicked}  >
+                                        {
+                                            isLoading && action === 'delete' ?
+                                                <Oval
+                                                    height={`90%`}
+                                                    width={`90%`}
+                                                    color="white"
+                                                    wrapperStyle={spinnerWrapper}
+                                                    wrapperClass={styles.spinner}
+                                                    visible={true}
+                                                    ariaLabel='oval-loading'
+                                                    secondaryColor="#E6E6E6"
+                                                    strokeWidth={5}
+                                                    strokeWidthSecondary={5}
+                                                    className={styles.spinner}
+                                                />
+                                                :
+                                                <>
+                                                    <Icon className={styles.crudIcons} icon="gg:trash-empty" color="white" />
+                                                    <p>Delete</p>
+                                                </>
+                                        }
+
+                                    </div>
+                                }
+
                                 <div className={styles.editBtnDiv} onClick={editBtnClicked}  >
                                     <Icon className={styles.crudIcons} icon="ph:pencil-simple-line" color="#002A9A" />
                                     <p>Edit</p>

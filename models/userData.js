@@ -80,14 +80,14 @@ const userSchema = new mongoose.Schema(
             default: false,
             required: true,
           },
-          joinedDate: {
-            type: String,
-            required: true,
-          },
-          updateDate: {
-            type: String,
-            required: true,
-          },
+          // joinedDate: {
+          //   type: String,
+          //   required: true,
+          // },
+          // updateDate: {
+          //   type: String,
+          //   required: true,
+          // },
           time: { type: Date, default: Date.now }
 
         },

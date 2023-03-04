@@ -18,17 +18,18 @@
     margin-right: auto;
 }
 
+
 /*  > FOR DELETE MODAL */
 .modalWrapper {
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80% !important;
+    width: 20% !important;
     height: unset !important;
     aspect-ratio: 3/2;
     border-radius: 10px;
-    top: 30% !important;
+    top: 10% !important;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -345,6 +346,26 @@
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 
+    /*  > FOR DELETE MODAL */
+    .modalWrapper {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80% !important;
+        height: unset !important;
+        aspect-ratio: 3/2;
+        border-radius: 10px;
+        top: 20% !important;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 99;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        z-index: 99;
+    }
 
     .headerContainer {
         position: absolute;

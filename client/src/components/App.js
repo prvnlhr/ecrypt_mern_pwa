@@ -67,7 +67,7 @@ const App = () => {
       getToken();
       setInitialLoading(false);
       // }, 5000)
-    }, 500)
+    }, 5000)
     return () => clearTimeout(timeout);
   }, [])
 
