@@ -1,7 +1,9 @@
+@import "../../variable.modules.css";
+
 .acitveAccountPage {
   width: 100%;
   height: 100%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,10 +11,11 @@
 
 .activateAccountForm {
   position: relative;
-  width: 85%;
+  width: 20rem;
+  max-width: 20rem;
   aspect-ratio: 3/2.5;
-  border-radius: 30px;
-  background-color: white;
+  border-radius: 2rem;
+  background-color: var(--box-bg-primary);
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 30% auto 25% 20%;
@@ -21,7 +24,7 @@
     "formMessageWrapper formMessageWrapper "
     "formActivateBtnWrapper formActivateBtnWrapper"
     "formFooterWrapper formFooterWrapper";
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: var(--dashboard-activity-field-shadow);
   justify-content: center;
   align-items: center;
   -webkit-tap-highlight-color: transparent;
@@ -57,15 +60,15 @@
 
 .formLabelDiv p {
   font-family: "Poppins", sans-serif;
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: var(--boldest-font);
-  color: black;
+  color: var(--primary-font-color);
 }
 
 .formLabelDiv::after {
   position: absolute;
   content: '';
-  background-color: #002A9A;
+  background-color: var(--ui-scheme-color);
   width: 15%;
   height: 3px;
   border-radius: 20px;
@@ -153,14 +156,15 @@
   width: 55%;
   height: 55%;
   border: none;
-  background-color: #002A9A;
-  border-radius: 0.9rem;
+  background-color: var(--submit-btn-color);
+  border-radius: 0.5rem;
   font-family: "Poppins", sans-serif;
-  font-size: 12px;
+  font-size: 0.6rem;
   font-weight: 450;
   color: white;
   letter-spacing: 0.5px;
   /* outline: #AED2FF; */
+  cursor: pointer;
 }
 
 
@@ -176,15 +180,44 @@
 
 .formFooterWrapper p {
   font-family: "Poppins", sans-serif;
-  font-size: 13px;
-  font-weight: 450;
-  color: black;
+  font-size: 0.6rem;
+  font-weight: var(--bolder-font);
+  color: var(--primary-font-color);
 }
 
-span {
+.spanText {
   font-family: "Poppins", sans-serif;
-  font-size: 13px;
-  font-weight: 550;
-  color: #002A9A;
+  font-size: 0.6rem;
+  font-weight: var(--bolder-font);
+  color: var(--ui-scheme-color);
   margin-left: 2px;
+  text-decoration: none;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .activateAccountForm {
+    position: relative;
+    width: 83%;
+    aspect-ratio: 3/2.5;
+    border-radius: 2rem;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 30% auto 25% 20%;
+    grid-template-areas:
+      "formHeaderWrapper formHeaderWrapper"
+      "formMessageWrapper formMessageWrapper "
+      "formActivateBtnWrapper formActivateBtnWrapper"
+      "formFooterWrapper formFooterWrapper";
+    justify-content: center;
+    align-items: center;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* border: 1px solid springgreen; */
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
 }

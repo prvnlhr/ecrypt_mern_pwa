@@ -23,7 +23,8 @@ sgMail.setApiKey(SEND_GRID_API_KEY);
 
 const authController = {
   register: async (req, res) => {
-    const { email, password, confirmPassword, firstName, lastName } = req.body;
+    const { email, password, confirmPassword, firstName, lastName, joinedDate, updateDate } = req.body;
+    console.log(req.body);
     // console.log(email, password, confirmPassword, firstName, lastName)
     try {
 
@@ -37,6 +38,8 @@ const authController = {
         name: `${firstName} ${lastName}`,
         email,
         password: passwordHash,
+        joinedDate: joinedDate,
+        updateDate: updateDate,
       };
       //> creating jwt Token.
       const activation_token = createActivationToken(newUser);
@@ -57,9 +60,8 @@ const authController = {
         req.body.data.activation_token,
         ACTIVATION_TOKEN_SECRET
       );
-
-      const { name, email, password } = user;
-
+      const { name, email, password, joinedDate, updateDate } = user;
+      // console.log('acfoivnsk', joinedDate);
       const check = await UserDatabase.findOne({ email });
       if (check) {
         return res.status(400).json({ msg: "This email already exists." });
@@ -69,6 +71,8 @@ const authController = {
         name: name,
         email: email,
         password: password,
+        joinedDate: joinedDate,
+        updateDate: updateDate
       });
 
       res.json({ msg: "Account has been activated!" });
@@ -106,7 +110,6 @@ const authController = {
         path: "/user/auth/access_token",
         maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
       });
-
 
       const access_token = createAccessToken({ id: user._id });
       // console.log('login controller', access_token);
@@ -234,8 +237,8 @@ const authController = {
   },
 
   updateProfile: async (req, res) => {
-    const { firstName, lastName, email } = req.body.profileData;
-    // console.log(firstName, lastName, email)
+    const { firstName, lastName, email, lastUpdateDate } = req.body.profileData;
+    console.log(firstName, lastName, email, lastUpdateDate)
     try {
       const id = req.user.id;
       const user = await UserDatabase.findById(id);
@@ -248,15 +251,20 @@ const authController = {
           $set: {
             name: `${firstName} ${lastName}`,
             // email: email,
+            updateDate: lastUpdateDate
           },
         },
         { returnOriginal: false }
       );
+
       const newData = {
         _id: response._id,
         name: response.name,
         email: response.email,
+        updateDate: response.updateDate,
       };
+
+      console.log(newData)
       res.json({ msg: "Profile Successfully updated !", newData });
     } catch (error) {
       console.log("error at edit profile controller", error);

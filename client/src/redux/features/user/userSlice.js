@@ -30,6 +30,7 @@ export const getUserDetails = createAsyncThunk("user/getUser", async (token, { g
     try {
         const res = await api.getUser(token);
         const userData = res.data.user;
+        console.log(userData)
         const profilePicData = res.data.user.profilePic
         const nameString = userData.name.split(/[" "]+/);
         const userRes = {
@@ -40,7 +41,7 @@ export const getUserDetails = createAsyncThunk("user/getUser", async (token, { g
             picUrl: profilePicData?.picUrl,
             picCloudId: profilePicData?.cloudinary_id,
             joinedDate: undefined,
-            updateDate: undefined,
+            updateDate: userData.updateDate,
         }
         // console.log(userRes);
         return fulfillWithValue(userRes);
@@ -57,18 +58,24 @@ export const editUserProfile = createAsyncThunk("user/editProfile", async ({ tok
         const date = moment().format('DD');
         const month = moment().format('MMM');
         const year = moment().format('YYYY');
+        const dateString = date + " " + month + " " + year;
+        profileData.lastUpdateDate = dateString;
 
-        console.log(date, month, year);
+        console.log(profileData, dateString);
 
         const res = await api.editProfile(token, profileData);
         const userData = res.data.newData;
+        console.log(userData);
         const nameString = userData.name.split(/[" "]+/);
         const resData =
         {
             firstName: nameString[0],
             lastName: nameString[1],
-            msg: res.data.msg
+            msg: res.data.msg,
+            updateDate: res.data.newData?.updateDate
         }
+
+        console.log(resData)
         return fulfillWithValue(resData);
     } catch (error) {
         // console.log('error', error.response.data.msg)
@@ -125,7 +132,8 @@ const userSlice = createSlice({
                         ...state.profilePic,
                         picUrl: action.payload.picUrl,
                         picCloudId: action.payload.picCloudId,
-                    }
+                    },
+                    updateDate: action.payload.updateDate
                 };
             })
             .addCase(getUserDetails.rejected, (state, action) => {
@@ -134,10 +142,12 @@ const userSlice = createSlice({
                 };
             })
             .addCase(editUserProfile.fulfilled, (state, action) => {
+                console.log(action.payload)
                 return {
                     ...state,
                     firstName: action.payload.firstName,
                     lastName: action.payload.lastName,
+                    updateDate: action.payload.updateDate,
                     responseMessage: action.payload.msg,
                     success: true,
                     action: undefined,

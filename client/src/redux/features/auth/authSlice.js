@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import * as api from "../../api"
 import { getUserDetails } from "../user/userSlice"
+import moment from "moment";
 
 const initialState = {
     token: undefined,
@@ -36,6 +37,7 @@ export const activateUserAccount = createAsyncThunk("auth/activateAccount", asyn
         return rejectWithValue(error.response.data.msg);
     }
 });
+
 export const loginUser = createAsyncThunk("auth/login", async ({ formData, navigate }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     // console.log(formData, navigate);
     try {

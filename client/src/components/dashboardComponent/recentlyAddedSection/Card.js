@@ -14,8 +14,6 @@ const Card = ({ item, clickedSearchItem, handleItemClicked }) => {
                 < CardLogo cardNo={item.cardNumber} />
             )
         }
-
-        console.log(item)
     }, [item])
 
     return (

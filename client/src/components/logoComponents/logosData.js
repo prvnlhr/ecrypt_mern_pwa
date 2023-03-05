@@ -111,750 +111,802 @@ import Gitlab from "./logos/Gitlab";
 import Tesla from "./logos/Tesla";
 import AdobeXD from "./logos/AdobeXD";
 import Salesforce from "./logos/Salesforce";
+import Ecrypt from "./logos/Ecrypt";
+import Vi from "./logos/Vi"
+import Lenovo from "./logos/Lenovo"
+import Vodafone from "./logos/Vodafone"
+import Razer from "./logos/Razer"
+import Audible from "./logos/Audible"
+import Steam from "./logos/Steam"
+import EpicGames from "./logos/EpicGames"
+import DeivantArt from "./logos/DeivantArt"
+import Canva from "./logos/Canva"
+import Box from "./logos/Box"
+import Bing from "./logos/Bing"
+import Fiverr from "./logos/Fiverr"
+import Freelancer from "./logos/Freelancer"
+import Godaddy from "./logos/Godaddy"
+import Olx from "./logos/Olx"
+import Hbo from "./logos/Hbo"
+import HboMax from "./logos/HboMax"
+import Hulu from "./logos/Hulu"
+import Nike from "./logos/Nike"
+import Ikea from "./logos/Ikea"
+import Puma from "./logos/Puma"
+import Addidas from "./logos/Addidas"
+import Xbox from "./logos/Xbox"
+import Playstation from "./logos/Playstation"
+import Sony from "./logos/Sony"
+import MorganStanley from "./logos/MorganStanley"
+import Oneplus from "./logos/Oneplus"
+import Oracle from "./logos/Oracle"
+import Sketch from "./logos/Sketch"
+import Tor from "./logos/Tor"
+import Nvidia from "./logos/Nvidia"
+import Ubisoft from "./logos/Ubisoft"
+import Unsplash from "./logos/Unsplash"
+import Wordpress from "./logos/Wordpress"
+import Blogger from "./logos/Blogger"
+import Windows from "./logos/Windows"
+import Upwork from "./logos/Upwork"
+import Oyo from "./logos/Oyo"
+import Alienware from "./logos/Alienware"
+import Bitcoin from "./logos/Bitcoin";
 export const logosArray = [
-
+    {
+        logo: <div className={styles.logoDiv}  ><AWS /></div>,
+        logoIndex: 0,
+        label: "AWS"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><AadharCard /></div>,
+        logoIndex: 1,
+        label: "Aadhar card"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><Addidas /></div>,
+        logoIndex: 2,
+        label: "Addidas"
+    },
     {
         logo: <div className={styles.logoDiv}  ><Adobe /></div>,
-        logoIndex: 0,
+        logoIndex: 3,
         label: "Adobe"
     },
     {
         logo: <div div className={styles.logoDiv} > <AdobePhotoshop /></div>,
-        logoIndex: 1,
+        logoIndex: 4,
         label: "Adobe  Photoshop"
     },
     {
+        logo: <div className={styles.logoDiv}  ><AdobeXD /></div>,
+        logoIndex: 5,
+        label: "Adobe XD"
+    },
+    {
         logo: <div className={styles.logoDiv}  ><Airbnb /></div>,
-        logoIndex: 2,
+        logoIndex: 6,
         label: "Airbnb"
     },
     {
         logo: <div className={styles.logoDiv}  ><Airtel /></div>,
-        logoIndex: 3,
+        logoIndex: 7,
         label: "Airtel"
     },
     {
         logo: <div className={styles.logoDiv}  ><AliExpress /></div>,
-        logoIndex: 4,
+        logoIndex: 8,
         label: "AliExpress"
     },
     {
         logo: <div className={styles.logoDiv}  ><Amazon /></div>,
-        logoIndex: 5,
+        logoIndex: 9,
         label: "Amazon"
     },
     {
         logo: <div className={styles.logoDiv}  ><AmazonPay /></div>,
-        logoIndex: 6,
+        logoIndex: 10,
         label: "Amazon Pay"
     },
     {
         logo: <div className={styles.logoDiv}  ><Amex /></div>,
-        logoIndex: 7,
+        logoIndex: 11,
         label: "Amex"
     },
     {
         logo: <div className={styles.logoDiv}  ><Android /></div>,
-        logoIndex: 8,
+        logoIndex: 12,
         label: "Android"
     },
     {
-        logo: <div className={styles.logoDiv}  ><Apple /></div>,
-        logoIndex: 9,
-        label: "Apple"
-    },
-    {
         logo: <div className={styles.logoDiv}  ><AppleAppStore /></div>,
-        logoIndex: 10,
+        logoIndex: 13,
         label: "App store"
     },
     {
+        logo: <div className={styles.logoDiv}  ><Apple /></div>,
+        logoIndex: 14,
+        label: "Apple"
+    },
+    {
         logo: <div className={styles.logoDiv}  ><AppleMusic /></div>,
-
-        logoIndex: 11,
+        logoIndex: 15,
         label: "Apple Music"
     },
     {
         logo: <div className={styles.logoDiv}  ><Asus /></div>,
-
-        logoIndex: 12,
+        logoIndex: 16,
         label: "Asus"
     },
     {
-        logo: <div className={styles.logoDiv}  ><AWS /></div>,
-
-        logoIndex: 13,
-        label: "AWS"
+        logo: <div className={styles.logoDiv}  ><Audible /></div>,
+        logoIndex: 17,
+        label: "Audible"
     },
     {
         logo: <div className={styles.logoDiv}  ><AxisBank /></div>,
-
-        logoIndex: 14,
+        logoIndex: 18,
         label: "Axis Bank"
     },
     {
         logo: <div className={styles.logoDiv}  ><BankOfBaroda /></div>,
-
-        logoIndex: 15,
+        logoIndex: 19,
         label: "Bank Of Baroda"
     },
-
     {
         logo: <div className={styles.logoDiv}  ><Behance /></div>,
-
-        logoIndex: 16,
+        logoIndex: 20,
         label: "Behance"
     },
     {
+        logo: <div className={styles.logoDiv}  ><Bing /></div>,
+        logoIndex: 21,
+        label: "Bing"
+    },
+    {
         logo: <div className={styles.logoDiv}  ><Bitbucket /></div>,
-
-        logoIndex: 17,
+        logoIndex: 22,
         label: "Bitbucket"
     },
     {
+        logo: <div className={styles.logoDiv}  ><Bitcoin /></div>,
+        logoIndex: 23,
+        label: "Bitcoin"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><Blogger /></div>,
+        logoIndex: 24,
+        label: "Blogger"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><Box /></div>,
+        logoIndex: 25,
+        label: "Box"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><Canva /></div>,
+        logoIndex: 26,
+        label: "Canva"
+    },
+    {
         logo: <div className={styles.logoDiv}  ><Citibank /></div>,
-
-        logoIndex: 18,
+        logoIndex: 27,
         label: "Citibank"
     },
     {
+        logo: <div className={styles.logoDiv}  ><CodingNinjas /></div>,
+        logoIndex: 28,
+        label: "Coding Ninjas"
+    },
+    {
         logo: <div className={styles.logoDiv}  ><Coursera /></div>,
-
-        logoIndex: 19,
+        logoIndex: 29,
         label: "Coursera"
     },
     {
+        logo: <div className={styles.logoDiv}  ><DeivantArt /></div>,
+        logoIndex: 30,
+        label: "Deivant Art"
+    },
+    {
         logo: <div className={styles.logoDiv}  ><Dell /></div>,
-
-        logoIndex: 20,
+        logoIndex: 31,
         label: "Dell"
     },
     {
+        logo: <div className={styles.logoDiv}  ><Alienware /></div>,
+        logoIndex: 32,
+        label: "Dell Alienware"
+    },
+    {
         logo: <div className={styles.logoDiv}  ><DigitalOcean /></div>,
-
-        logoIndex: 21,
+        logoIndex: 33,
         label: "Digital Ocean"
     },
     {
         logo: <div className={styles.logoDiv}  ><Discord /></div>,
-
-        logoIndex: 22,
+        logoIndex: 34,
         label: "Discord"
     },
     {
+        logo: <div className={styles.logoDiv}  ><DisneyPlus /></div>,
+        logoIndex: 35,
+        label: "Disney Plus"
+    },
+    {
         logo: <div className={styles.logoDiv}  ><DominosPizza /></div>,
-
-        logoIndex: 23,
+        logoIndex: 36,
         label: "Dominos Pizza"
     },
     {
         logo: <div className={styles.logoDiv}  ><Dribble /></div>,
-
-        logoIndex: 24,
+        logoIndex: 37,
         label: "Dribble"
     },
     {
+        logo: <div className={styles.logoDiv}  ><DrivingLicense /></div>,
+        logoIndex: 38,
+        label: "Driving License"
+    },
+    {
         logo: <div className={styles.logoDiv}  ><Dropbox /></div>,
-
-        logoIndex: 25,
+        logoIndex: 39,
         label: "Dropbox"
     },
     {
+        logo: <div className={styles.logoDiv} ><EA /></div>,
+        logoIndex: 40,
+        label: "EA"
+    },
+    {
         logo: <div className={styles.logoDiv}  ><Ebay /></div>,
-
-        logoIndex: 26,
+        logoIndex: 41,
         label: "Ebay"
     },
     {
+        logo: <div className={styles.logoDiv}  ><Ecrypt /></div>,
+        logoIndex: 42,
+        label: "Ecrypt"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><EpicGames /></div>,
+        logoIndex: 43,
+        label: "Epic Games"
+    },
+    {
         logo: <div className={styles.logoDiv}  ><Evernote /></div>,
-
-        logoIndex: 27,
+        logoIndex: 44,
         label: "Evernote"
     },
     {
         logo: <div className={styles.logoDiv}  ><Facebook /></div>,
-
-        logoIndex: 28,
+        logoIndex: 45,
         label: "Facebook"
     },
     {
         logo: <div className={styles.logoDiv}  ><FedEx /></div>,
-
-        logoIndex: 29,
+        logoIndex: 46,
         label: "FedEx"
     },
     {
+        logo: <div className={styles.logoDiv}  ><Figma /></div>,
+        logoIndex: 47,
+        label: "Figma"
+    },
+    {
         logo: <div className={styles.logoDiv}  ><Firebase /></div>,
-
-        logoIndex: 30,
+        logoIndex: 48,
         label: "Firebase"
     },
     {
+        logo: <div className={styles.logoDiv}  ><Fiverr /></div>,
+        logoIndex: 49,
+        label: "Fiverr"
+    },
+    {
         logo: <div className={styles.logoDiv}  ><Flipkart /></div>,
-
-        logoIndex: 31,
+        logoIndex: 50,
         label: "Flipkart"
     },
     {
+        logo: <div className={styles.logoDiv}  ><Freelancer /></div>,
+        logoIndex: 51,
+        label: "Freelancer"
+    },
+    {
         logo: <div className={styles.logoDiv}  ><GDrive /></div>,
-
-        logoIndex: 32,
+        logoIndex: 52,
         label: "GDrive"
     },
     {
         logo: <div className={styles.logoDiv}  ><Git /></div>,
-
-        logoIndex: 33,
+        logoIndex: 53,
         label: "Git"
     },
     {
+        logo: <div className={styles.logoDiv}  ><Gitlab /></div>,
+        logoIndex: 54,
+        label: "GitLab"
+    },
+    {
         logo: <div className={styles.logoDiv}  ><Github /></div>,
-
-        logoIndex: 34,
+        logoIndex: 55,
         label: "Github"
     },
     {
         logo: <div className={styles.logoDiv}  ><Gmail /></div>,
-
-        logoIndex: 35,
+        logoIndex: 56,
         label: "Gmail"
     },
     {
+        logo: <div className={styles.logoDiv}  ><Godaddy /></div>,
+        logoIndex: 57,
+        label: "Go Daddy"
+    },
+    {
         logo: <div className={styles.logoDiv}  ><Google /></div>,
-
-        logoIndex: 36,
+        logoIndex: 58,
         label: "Google"
     },
     {
         logo: <div className={styles.logoDiv}  ><GoogleDuo /></div>,
-
-        logoIndex: 37,
+        logoIndex: 59,
         label: "Google Duo"
     },
     {
         logo: <div className={styles.logoDiv}  ><GoogleMaps /></div>,
-
-        logoIndex: 38,
+        logoIndex: 60,
         label: "Google Maps"
     },
     {
         logo: <div className={styles.logoDiv}  ><GooglePay /></div>,
-
-        logoIndex: 39,
+        logoIndex: 61,
         label: "Google Pay"
     },
     {
         logo: <div className={styles.logoDiv}  ><GooglePhotos /></div>,
-
-        logoIndex: 40,
+        logoIndex: 62,
         label: "Google Photos"
-
     },
     {
         logo: <div className={styles.logoDiv}  ><GooglePlay /></div>,
-
-        logoIndex: 41,
+        logoIndex: 63,
         label: "Google Play"
     },
     {
-        logo: <div className={styles.logoDiv} ><EA /></div>,
-
-        logoIndex: 42,
-        label: "EA"
+        logo: <div className={styles.logoDiv}  ><Hbo /></div>,
+        logoIndex: 64,
+        label: "HBO"
     },
     {
-        logo: <div className={styles.logoDiv}  ><Hackerrank /></div>,
-
-        logoIndex: 43,
-        label: "Hackerrank"
+        logo: <div className={styles.logoDiv}  ><HboMax /></div>,
+        logoIndex: 65,
+        label: "HBO Max"
     },
     {
         logo: <div className={styles.logoDiv}  ><HDFCBank /></div>,
-
-        logoIndex: 44,
+        logoIndex: 66,
         label: "HDFC Bank"
-    }, {
-        logo: <div className={styles.logoDiv}  ><Heroku /></div>,
-
-        logoIndex: 45,
-        label: "Heroku"
-    },
-    {
-        logo: <div className={styles.logoDiv}  ><DisneyPlus /></div>,
-        logoIndex: 46,
-        label: "Disney Plus"
     },
     {
         logo: <div className={styles.logoDiv}  ><Hp /></div>,
-
-        logoIndex: 47,
+        logoIndex: 67,
         label: "HP"
-
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><Hackerrank /></div>,
+        logoIndex: 68,
+        label: "Hackerrank"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><Heroku /></div>,
+        logoIndex: 69,
+        label: "Heroku"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><Hulu /></div>,
+        logoIndex: 70,
+        label: "Hulu"
     },
     {
         logo: <div className={styles.logoDiv}  ><ICICIBank /></div>,
-
-        logoIndex: 48,
+        logoIndex: 71,
         label: "ICICI Bank"
     },
     {
         logo: <div className={styles.logoDiv}  ><Imdb /></div>,
-
-        logoIndex: 49,
+        logoIndex: 72,
         label: "IMDB"
-
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><Ikea /></div>,
+        logoIndex: 73,
+        label: "Ikea"
     },
     {
         logo: <div className={styles.logoDiv}  ><Instagram /></div>,
-
-        logoIndex: 50,
+        logoIndex: 74,
         label: "Instagram"
     },
     {
-        logo: <div className={styles.logoDiv}  ><Jio /></div>,
-
-        logoIndex: 51,
-        label: "Jio"
-    },
-    {
         logo: <div className={styles.logoDiv}  ><JpMorgan /></div>,
-
-        logoIndex: 52,
+        logoIndex: 75,
         label: "JP Morgan"
     },
     {
+        logo: <div className={styles.logoDiv}  ><Jio /></div>,
+        logoIndex: 76,
+        label: "Jio"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><Lenovo /></div>,
+        logoIndex: 77,
+        label: "Lenovo"
+    },
+    {
         logo: <div className={styles.logoDiv}  ><LinkedIn /></div>,
-
-        logoIndex: 53,
+        logoIndex: 78,
         label: "LinkedIn"
     },
     {
         logo: <div className={styles.logoDiv}  ><LyftCabs /></div>,
-
-        logoIndex: 54,
+        logoIndex: 79,
         label: "Lyft Cabs"
     },
     {
         logo: <div className={styles.logoDiv}  ><McDonalds /></div>,
-
-        logoIndex: 55,
+        logoIndex: 80,
         label: "McDonalds"
     },
     {
         logo: <div className={styles.logoDiv}  ><Messenger /></div>,
-
-
-        logoIndex: 56,
+        logoIndex: 81,
         label: "Messenger"
     },
     {
         logo: <div className={styles.logoDiv}  ><Microsoft /></div>,
-
-        logoIndex: 57,
+        logoIndex: 82,
         label: "Microsoft"
     },
     {
-        logo: <div className={styles.logoDiv}  ><MongoDB /></div>,
-
-        logoIndex: 58,
-        label: "MongoDB"
-
-    },
-    {
-        logo: <div className={styles.logoDiv}  ><MSDrive /></div>,
-
-        logoIndex: 59,
-        label: "Microsoft One Drive"
-
-    },
-    {
         logo: <div className={styles.logoDiv}  ><MSoffice /></div>,
-
-        logoIndex: 60,
+        logoIndex: 83,
         label: "Microsoft Office"
     },
     {
+        logo: <div className={styles.logoDiv}  ><MSDrive /></div>,
+        logoIndex: 84,
+        label: "Microsoft One Drive"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><MongoDB /></div>,
+        logoIndex: 85,
+        label: "MongoDB"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><MorganStanley /></div>,
+        logoIndex: 86,
+        label: "Morgan Stanley"
+    },
+    {
         logo: <div className={styles.logoDiv}  ><Netflix /></div>,
-
-        logoIndex: 61,
+        logoIndex: 87,
         label: "Netflix"
     },
     {
+        logo: <div className={styles.logoDiv}  ><Nike /></div>,
+        logoIndex: 88,
+        label: "Nike"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><Nvidia /></div>,
+        logoIndex: 89,
+        label: "Nvidia"
+    },
+    {
         logo: <div className={styles.logoDiv}  ><OlaCabs /></div>,
-
-        logoIndex: 62,
+        logoIndex: 90,
         label: "Ola Cabs"
-
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><Olx /></div>,
+        logoIndex: 91,
+        label: "Olx"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><Oneplus /></div>,
+        logoIndex: 92,
+        label: "Oneplus"
     },
     {
         logo: <div className={styles.logoDiv}  ><Opera /></div>,
-
-        logoIndex: 63,
+        logoIndex: 93,
         label: "Opera"
-
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><Oracle /></div>,
+        logoIndex: 94,
+        label: "Oracle"
     },
     {
         logo: <div className={styles.logoDiv}  ><Outlook /></div>,
-
-        logoIndex: 64,
+        logoIndex: 95,
         label: "Outlook"
     },
     {
-        logo: <div className={styles.logoDiv}  ><Phonepe /></div>,
-
-        logoIndex: 65,
-        label: "Phonepe"
+        logo: <div className={styles.logoDiv}  ><Oyo /></div>,
+        logoIndex: 96,
+        label: "Oyo"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><PanCard /></div>,
+        logoIndex: 97,
+        label: "Pan card"
     },
     {
         logo: <div className={styles.logoDiv}  ><Paypal /></div>,
-
-        logoIndex: 66,
+        logoIndex: 98,
         label: "Paypal"
     },
     {
+        logo: <div className={styles.logoDiv}  ><Paytm /></div>,
+        logoIndex: 99,
+        label: "Paytm"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><Phonepe /></div>,
+        logoIndex: 100,
+        label: "Phonepe"
+    },
+    {
         logo: <div className={styles.logoDiv}  ><Pinterest /></div>,
-
-        logoIndex: 67,
+        logoIndex: 101,
         label: "Pinterest"
     },
     {
+        logo: <div className={styles.logoDiv}  ><Playstation /></div>,
+        logoIndex: 102,
+        label: "Play Station"
+    },
+    {
         logo: <div className={styles.logoDiv}  ><Primevideo /></div>,
-
-        logoIndex: 68,
+        logoIndex: 103,
         label: "Prime Video"
     },
     {
+        logo: <div className={styles.logoDiv}  ><Puma /></div>,
+        logoIndex: 104,
+        label: "Puma"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><Pycharm /></div>,
+        logoIndex: 105,
+        label: "Pycharm"
+    },
+    {
         logo: <div className={styles.logoDiv}  ><Quora /></div>,
-
-        logoIndex: 69,
+        logoIndex: 106,
         label: "Quora"
     },
     {
+        logo: <div className={styles.logoDiv}  ><Razer /></div>,
+        logoIndex: 107,
+        label: "Razer"
+    },
+    {
         logo: <div className={styles.logoDiv}  ><RazorPay /></div>,
-
-        logoIndex: 70,
+        logoIndex: 108,
         label: "Razor Pay"
     },
     {
         logo: <div className={styles.logoDiv}  ><Reddit /></div>,
-
-        logoIndex: 71,
+        logoIndex: 109,
         label: "Reddit"
     },
     {
-        logo: <div className={styles.logoDiv}  ><Sbi /></div>,
-
-        logoIndex: 72,
-        label: "State Bank of India"
+        logo: <div className={styles.logoDiv}  ><Salesforce /></div>,
+        logoIndex: 110,
+        label: "Salesforces"
     },
     {
         logo: <div className={styles.logoDiv}  ><Shazam /></div>,
-
-        logoIndex: 73,
+        logoIndex: 111,
         label: "Shazam"
     },
     {
         logo: <div className={styles.logoDiv}  ><Shopify /></div>,
-
-        logoIndex: 74,
+        logoIndex: 112,
         label: "Shopify"
     },
     {
+        logo: <div className={styles.logoDiv}  ><Sketch /></div>,
+        logoIndex: 113,
+        label: "Sketch"
+    },
+    {
         logo: <div className={styles.logoDiv}  ><Skype /></div>,
-
-        logoIndex: 75,
+        logoIndex: 114,
         label: "Skype"
     },
     {
         logo: <div className={styles.logoDiv}  ><Slack /></div>,
-
-        logoIndex: 76,
+        logoIndex: 115,
         label: "Slack"
     },
     {
         logo: <div className={styles.logoDiv}  ><Snapchat /></div>,
-
-        logoIndex: 77,
+        logoIndex: 116,
         label: "Snapchat"
     },
     {
+        logo: <div className={styles.logoDiv}  ><Sony /></div>,
+        logoIndex: 117,
+        label: "Sony"
+    },
+    {
         logo: <div className={styles.logoDiv}  ><SoundCloud /></div>,
-
-        logoIndex: 78,
+        logoIndex: 118,
         label: "Sound Cloud"
     },
     {
         logo: <div className={styles.logoDiv}  ><Spotify /></div>,
-
-        logoIndex: 79,
+        logoIndex: 119,
         label: "Spotify"
     },
     {
+        logo: <div className={styles.logoDiv}  ><StackOverflow /></div>,
+        logoIndex: 120,
+        label: "Stack Overflow"
+    },
+    {
         logo: <div className={styles.logoDiv}  ><StandardChartedBank /></div>,
-
-        logoIndex: 80,
+        logoIndex: 121,
         label: "Standard Charted Bank"
     },
     {
+        logo: <div className={styles.logoDiv}  ><Sbi /></div>,
+        logoIndex: 122,
+        label: "State Bank of India"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><Steam /></div>,
+        logoIndex: 123,
+        label: "Steam"
+    },
+    {
         logo: <div className={styles.logoDiv}  ><Swiggy /></div>,
-
-        logoIndex: 81,
+        logoIndex: 124,
         label: "Swiggy"
     },
     {
         logo: <div className={styles.logoDiv}  ><Telegram /></div>,
-
-        logoIndex: 82,
+        logoIndex: 125,
         label: "Telegram"
     },
     {
+        logo: <div className={styles.logoDiv}  ><Tesla /></div>,
+        logoIndex: 126,
+        label: "Tesla"
+    },
+    {
         logo: <div className={styles.logoDiv}  ><Tiktok /></div>,
-
-        logoIndex: 83,
+        logoIndex: 127,
         label: "Tiktok"
     },
     {
         logo: <div className={styles.logoDiv}  ><Tinder /></div>,
-
-        logoIndex: 84,
+        logoIndex: 128,
         label: "Tinder"
-
-
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><Tor /></div>,
+        logoIndex: 129,
+        label: "Tor"
     },
     {
         logo: <div className={styles.logoDiv}  ><Twitter /></div>,
-
-        logoIndex: 85,
+        logoIndex: 130,
         label: "Twitter"
-
-    },
-    {
-        logo: <div className={styles.logoDiv}  ><Uber /></div>,
-
-        logoIndex: 86,
-        label: "Uber"
-
     },
     {
         logo: <div className={styles.logoDiv}  ><UCOBank /></div>,
-
-        logoIndex: 87,
+        logoIndex: 131,
         label: "UCO Bank"
-
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><Uber /></div>,
+        logoIndex: 132,
+        label: "Uber"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><Ubisoft /></div>,
+        logoIndex: 133,
+        label: "Ubisoft"
     },
     {
         logo: <div className={styles.logoDiv}  ><Udemy /></div>,
-
-        logoIndex: 88,
+        logoIndex: 134,
         label: "Udemy"
-
     },
     {
         logo: <div className={styles.logoDiv}  ><UnionBank /></div>,
-
-        logoIndex: 89,
+        logoIndex: 135,
         label: "Union Bank"
-
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><Unsplash /></div>,
+        logoIndex: 136,
+        label: "Unsplash"
     },
     {
         logo: <div className={styles.logoDiv}  ><Ups /></div>,
-
-        logoIndex: 90,
+        logoIndex: 137,
         label: "Ups"
     },
     {
+        logo: <div className={styles.logoDiv}  ><Upwork /></div>,
+        logoIndex: 138,
+        label: "Upwork"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><Vi /></div>,
+        logoIndex: 139,
+        label: "Vi"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><Vodafone /></div>,
+        logoIndex: 140,
+        label: "Vodafone"
+    },
+    {
         logo: <div className={styles.logoDiv}  ><Vscode /></div>,
-
-        logoIndex: 91,
+        logoIndex: 141,
         label: "Vscode"
     },
     {
         logo: <div className={styles.logoDiv}  ><Whatsapp /></div>,
-        logoIndex: 92,
+        logoIndex: 142,
         label: "Whatsapp"
     },
     {
+        logo: <div className={styles.logoDiv}  ><Windows /></div>,
+        logoIndex: 143,
+        label: "Windows"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><Wordpress /></div>,
+        logoIndex: 144,
+        label: "Wordpress"
+    },
+    {
+        logo: <div className={styles.logoDiv}  ><Xbox /></div>,
+        logoIndex: 145,
+        label: "Xbox"
+    },
+    {
         logo: <div className={styles.logoDiv}  ><YesBank /></div>,
-        logoIndex: 93,
+        logoIndex: 146,
         label: "Yes Bank"
     },
     {
         logo: <div className={styles.logoDiv}  ><Youtube /></div>,
-        logoIndex: 94,
+        logoIndex: 147,
         label: "Youtube"
     },
     {
         logo: <div className={styles.logoDiv}  ><YoutubeMusic /></div>,
-        logoIndex: 95,
+        logoIndex: 148,
         label: "Youtube Music"
     },
     {
         logo: <div className={styles.logoDiv}  ><Zomato /></div>,
-
-        logoIndex: 96,
+        logoIndex: 149,
         label: "Zomato"
     },
     {
         logo: <div className={styles.logoDiv}  ><Zoom /></div>,
-        logoIndex: 97,
+        logoIndex: 150,
         label: "Zoom"
-
-    },
-    {
-        logo: <div className={styles.logoDiv}  ><AadharCard /></div>,
-        logoIndex: 98,
-        label: "Aadhar card"
-    },
-    {
-        logo: <div className={styles.logoDiv}  ><PanCard /></div>,
-        logoIndex: 99,
-        label: "Pan card"
-    },
-    {
-        logo: <div className={styles.logoDiv}  ><Figma /></div>,
-        logoIndex: 100,
-        label: "Figma"
-    },
-    {
-        logo: <div className={styles.logoDiv}  ><CodingNinjas /></div>,
-        logoIndex: 101,
-        label: "Coding Ninjas"
-    },
-    {
-        logo: <div className={styles.logoDiv}  ><Pycharm /></div>,
-        logoIndex: 102,
-        label: "Pycharm"
-    },
-    {
-        logo: <div className={styles.logoDiv}  ><DrivingLicense /></div>,
-        logoIndex: 103,
-        label: "Driving License"
-    },
-    {
-        logo: <div className={styles.logoDiv}  ><StackOverflow /></div>,
-        logoIndex: 104,
-        label: "Stack Overflow"
-    },
-    {
-        logo: <div className={styles.logoDiv}  ><Paytm /></div>,
-        logoIndex: 105,
-        label: "Paytm"
-    },
-    {
-        logo: <div className={styles.logoDiv}  ><Gitlab /></div>,
-        logoIndex: 106,
-        label: "GitLab"
-    },
-    {
-        logo: <div className={styles.logoDiv}  ><Tesla /></div>,
-        logoIndex: 107,
-        label: "Tesla"
-    },
-    {
-        logo: <div className={styles.logoDiv}  ><AdobeXD /></div>,
-        logoIndex: 108,
-        label: "Adobe XD"
-    },
-    {
-        logo: <div className={styles.logoDiv}  ><Salesforce /></div>,
-        logoIndex: 109,
-        label: "Salesforces"
-    },
-
-    // < div className = { styles.logoDiv } > <AdobePhotoshop /></ >,
-    // <div className={styles.logoDiv}  ><Airbnb /></div>,
-    // <div className={styles.logoDiv}  ><Airtel /></div>,
-    // <div className={styles.logoDiv}  ><AliExpress /></div>,
-    // <div className={styles.logoDiv}  ><Amazon /></div>,
-    // <div className={styles.logoDiv}  ><AmazonPay /></div>,
-    // <div className={styles.logoDiv}  ><Amex /></div>,
-    // <div className={styles.logoDiv}  ><Android /></div>,
-    // <div className={styles.logoDiv}  ><Apple /></div>,
-    // <div className={styles.logoDiv}  ><AppleAppStore /></div>,
-    // <div className={styles.logoDiv}  ><AppleMusic /></div>,
-    // <div className={styles.logoDiv}  ><Asus /></div>,
-    // <div className={styles.logoDiv}  ><AWS /></div>,
-    // <div className={styles.logoDiv}  ><AxisBank /></div>,
-    // <div className={styles.logoDiv}  ><BankOfBaroda /></div>,
-    // <div className={styles.logoDiv}  ><Behance /></div>,
-    // <div className={styles.logoDiv}  ><Bitbucket /></div>,
-    // <div className={styles.logoDiv}  ><Citibank /></div>,
-    // <div className={styles.logoDiv}  ><Coursera /></div>,
-    // <div className={styles.logoDiv}  ><Dell /></div>,
-    // <div className={styles.logoDiv}  ><DigitalOcean /></div>,
-    // <div className={styles.logoDiv}  ><Discord /></div>,
-    // <div className={styles.logoDiv}  ><DominosPizza /></div>,
-    // <div className={styles.logoDiv}  ><Dribble /></div>,
-    // <div className={styles.logoDiv}  ><Dropbox /></div>,
-    // <div className={styles.logoDiv}  ><Ebay /></div>,
-    // <div className={styles.logoDiv}  ><Evernote /></div>,
-    // <div className={styles.logoDiv}  ><Facebook /></div>,
-    // <div className={styles.logoDiv}  ><FedEx /></div>,
-    // <div className={styles.logoDiv}  ><Firebase /></div>,
-    // <div className={styles.logoDiv}  ><Flipkart /></div>,
-    // <div className={styles.logoDiv}  ><GDrive /></div>,
-    // <div className={styles.logoDiv}  ><Git /></div>,
-    // <div className={styles.logoDiv}  ><Github /></div>,
-    // <div className={styles.logoDiv}  ><Gmail /></div>,
-    // <div className={styles.logoDiv}  ><Google /></div>,
-    // <div className={styles.logoDiv}  ><GoogleDuo /></div>,
-    // <div className={styles.logoDiv}  ><GoogleMaps /></div>,
-    // <div className={styles.logoDiv}  ><GooglePay /></div>,
-    // <div className={styles.logoDiv}  ><GooglePhotos /></div>,
-    // <div className={styles.logoDiv}  ><GooglePlay /></div>,
-    // <div className={styles.logoDiv} ><GooglePay /></div>,
-    // <div className={styles.logoDiv}  ><Hackerrank /></div>,
-    // <div className={styles.logoDiv}  ><HDFCBank /></div>,
-    // <div className={styles.logoDiv}  ><Heroku /></div>,
-    // <div className={styles.logoDiv}  ><Hp /></div>,
-    // <div className={styles.logoDiv}  ><ICICIBank /></div>,
-    // <div className={styles.logoDiv}  ><Imdb /></div>,
-    // <div className={styles.logoDiv}  ><Instagram /></div>,
-    // <div className={styles.logoDiv}  ><Jio /></div>,
-    // <div className={styles.logoDiv}  ><JpMorgan /></div>,
-    // <div className={styles.logoDiv}  ><LinkedIn /></div>,
-    // <div className={styles.logoDiv}  ><LyftCabs /></div>,
-    // <div className={styles.logoDiv}  ><McDonalds /></div>,
-    // <div className={styles.logoDiv}  ><Messenger /></div>,
-    // <div className={styles.logoDiv}  ><Microsoft /></div>,
-    // <div className={styles.logoDiv}  ><MongoDB /></div>,
-    // <div className={styles.logoDiv}  ><MSDrive /></div>,
-    // <div className={styles.logoDiv}  ><MSoffice /></div>,
-    // <div className={styles.logoDiv}  ><Netflix /></div>,
-    // <div className={styles.logoDiv}  ><OlaCabs /></div>,
-    // <div className={styles.logoDiv}  ><Opera /></div>,
-    // <div className={styles.logoDiv}  ><Outlook /></div>,
-    // <div className={styles.logoDiv}  ><Phonepe /></div>,
-    // <div className={styles.logoDiv}  ><Paypal /></div>,
-    // <div className={styles.logoDiv}  ><Pinterest /></div>,
-    // <div className={styles.logoDiv}  ><Primevideo /></div>,
-    // <div className={styles.logoDiv}  ><Quora /></div>,
-    // <div className={styles.logoDiv}  ><RazorPay /></div>,
-    // <div className={styles.logoDiv}  ><Reddit /></div>,
-    // <div className={styles.logoDiv}  ><Sbi /></div>,
-    // <div className={styles.logoDiv}  ><Shazam /></div>,
-    // <div className={styles.logoDiv}  ><Shopify /></div>,
-    // <div className={styles.logoDiv}  ><Skype /></div>,
-    // <div className={styles.logoDiv}  ><Slack /></div>,
-    // <div className={styles.logoDiv}  ><Snapchat /></div>,
-    // <div className={styles.logoDiv}  ><SoundCloud /></div>,
-    // <div className={styles.logoDiv}  ><Spotify /></div>,
-    // <div className={styles.logoDiv}  ><StandardChartedBank /></div>,
-    // <div className={styles.logoDiv}  ><Swiggy /></div>,
-    // <div className={styles.logoDiv}  ><Telegram /></div>,
-    // <div className={styles.logoDiv}  ><Tiktok /></div>,
-    // <div className={styles.logoDiv}  ><Tinder /></div>,
-    // <div className={styles.logoDiv}  ><Twitter /></div>,
-    // <div className={styles.logoDiv}  ><Uber /></div>,
-    // <div className={styles.logoDiv}  ><UCOBank /></div>,
-    // <div className={styles.logoDiv}  ><Udemy /></div>,
-    // <div className={styles.logoDiv}  ><UnionBank /></div>,
-    // <div className={styles.logoDiv}  ><Ups /></div>,
-    // <div className={styles.logoDiv}  ><Vscode /></div>,
-    // <div className={styles.logoDiv}  ><Whatsapp /></div>,
-    // <div className={styles.logoDiv}  ><YesBank /></div>,
-    // <div className={styles.logoDiv}  ><Youtube /></div>,
-    // <div className={styles.logoDiv}  ><YoutubeMusic /></div>,
-    // <div className={styles.logoDiv}  ><Zomato /></div>,
-    // <div className={styles.logoDiv}  ><Zoom /></div>,
+    }
 ]
+

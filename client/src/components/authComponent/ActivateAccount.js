@@ -44,13 +44,13 @@ const ActivateAccount = () => {
           {error ?
             <p>Sign Up again ?
               <Link to="/user/register">
-                <span> Sign Up </span>
+                <span className={styles.spanText}> Sign Up </span>
               </Link>
             </p>
             : success &&
             <p>
               <Link to="/user/login">
-                <span>Login </span>
+                <span className={styles.spanText}>Login </span>
               </Link>
             </p>
           }

@@ -228,7 +228,8 @@ const userController = {
     }
   },
   updateProfile: async (req, res) => {
-    const { firstName, lastName, email } = req.body.profileData;
+    const { firstName, lastName, email, lastUpdateDate } = req.body.profileData;
+    console.log(lastUpdateDate);
     try {
       const id = req.user.id;
       const user = await UserDatabase.findById(id);
@@ -241,6 +242,7 @@ const userController = {
           $set: {
             name: `${firstName} ${lastName}`,
             email: email,
+
           },
         },
         { returnOriginal: false }

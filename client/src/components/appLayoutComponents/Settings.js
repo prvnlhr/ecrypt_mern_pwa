@@ -81,7 +81,8 @@ const Settings = () => {
             ...profileData,
             firstName: userState.firstName,
             lastName: userState.lastName,
-            email: userState.email
+            email: userState.email,
+            updateDate: userState.updateDate
         })
     }, [userState.firstName, userState.lastName, userState.email])
 
@@ -387,7 +388,7 @@ const Settings = () => {
                         </div>
                         <div className={styles.updatedDateDiv} >
                             <p className={styles.joinedDateLabelText}>Last Updated</p>
-                            <p className={styles.joinedDateText}>09 Feb 2022</p>
+                            <p className={styles.joinedDateText}>{profileData.updateDate}</p>
                         </div>
                     </div>
 

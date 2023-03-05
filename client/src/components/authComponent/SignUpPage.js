@@ -5,7 +5,7 @@ import { Icon } from '@iconify/react';
 import styles from "./styles/signUpPage.module.css"
 import { formValidation, validateSignUpForm } from "./helperFunctions/formValidation"
 import { registerUser, clearAuthResponseMessage } from "../../redux/features/auth/authSlice"
-
+import moment from "moment";
 import { Oval } from 'react-loader-spinner';
 const spinnerWrapper = {
   height: `80%`,
@@ -43,8 +43,10 @@ const SignUpPage = () => {
     confirmPassword: '',
   });
 
-
-
+  const date = moment().format('DD');
+  const month = moment().format('MMM');
+  const year = moment().format('YYYY');
+  const dateString = date + " " + month + " " + year;
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     setFormMessage({
@@ -65,6 +67,9 @@ const SignUpPage = () => {
         message: undefined,
         error: false
       })
+      formData.joinedDate = dateString;
+      formData.updateDate = dateString;
+      console.log(formData);
       dispatch(registerUser(formData));
     }
 
