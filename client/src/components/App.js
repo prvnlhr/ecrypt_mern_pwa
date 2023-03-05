@@ -36,7 +36,7 @@ const App = () => {
   const location = useLocation();
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth);
-  const { token } = auth;
+  const { token, isLogged } = auth;
 
   const [initialLoading, setInitialLoading] = useState(false);
 
@@ -81,7 +81,7 @@ const App = () => {
       {
         // auth.isLoading &&
         // auth.token === undefined && auth.action === 'getToken') 
-        initialLoading === true ?
+        (initialLoading === true || isLogged === undefined) ?
           <>
             <div className={appStyles.logoPage} >
               <div className={appStyles.lottieWrapper}>
