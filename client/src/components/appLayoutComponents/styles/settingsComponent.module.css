@@ -519,66 +519,64 @@ label {
 
 /* ______________________________________________________________ */
 
-.formBtnSave {
+.formBtnCommon {
     width: auto;
     height: auto;
-    background-color: #58BF6F;
     border-radius: 5px;
     border: none;
     outline: none;
-    padding-left: 2%;
-    padding-right: 2%;
-    padding-top: 0.5%;
-    padding-bottom: 0.5%;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 2%;
+    padding-bottom: 2%;
     margin: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-
-}
-
-.formBtnCancel {
-    width: auto;
-    height: auto;
-    background-color: #B4B3BA;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    padding-left: 2%;
-    padding-right: 2%;
-    padding-top: 0.5%;
-    padding-bottom: 0.5%;
-    margin: 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-right: 5%;
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.formBtnEdit {
-    width: auto;
-    height: auto;
-    background-color: var(--submit-btn-color);
-    border: none;
-    outline: none;
-    padding-left: 2%;
-    padding-right: 2%;
-    padding-top: 0.6%;
-    padding-bottom: 0.6%;
-    margin: 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    /* border: 1px solid red; */
-    /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
     border-radius: 0.3rem;
+}
+
+
+.formBtnEditProfile {
+    height: 70%;
+    background-color: var(--submit-btn-color);
+}
+
+.formBtnSaveProfile {
+    height: 70%;
+    background-color: #58BF6F;
 
 }
+
+.formBtnCancelProfile {
+    height: 70%;
+    background-color: #B4B3BA;
+
+}
+
+.formBtnEditPass {
+    height: 70%;
+    background-color: var(--submit-btn-color);
+}
+
+.formBtnSavePass {
+    height: 70%;
+    background-color: #58BF6F;
+
+}
+
+.formBtnCancelPass {
+    height: 70%;
+    background-color: #B4B3BA;
+}
+
+.formBtnDelete {
+    height: 70%;
+    background-color: var(--submit-btn-color);
+}
+
 
 .btnText {
     font-family: "Poppins", sans-serif;
@@ -1455,65 +1453,34 @@ label {
     }
 
     /* ______________________________________________________________ */
-    .formBtnSave {
-        width: auto;
-        height: auto;
-        border-radius: 5px;
-        border: none;
-        outline: none;
-        padding-left: 4%;
-        padding-right: 4%;
-        padding-top: 1%;
-        padding-bottom: 1%;
-        padding-top: 2%;
-        padding-bottom: 2%;
-        margin: 0px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-        height: 60%;
+
+    .formBtnEditProfile {
+        height: 70%;
     }
 
-    .formBtnCancel {
-        width: auto;
-        height: auto;
-        border-radius: 5px;
-        border: none;
-        outline: none;
-        padding-left: 4%;
-        padding-right: 4%;
-        padding-top: 1%;
-        padding-bottom: 1%;
-        padding-top: 2%;
-        padding-bottom: 2%;
-        margin: 0px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        margin-right: 5%;
-        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-        height: 60%;
+    .formBtnSaveProfile {
+        height: 70%;
+        margin-left: 0.5rem;
     }
 
-    .formBtnEdit {
-        width: auto;
-        height: auto;
-        border-radius: 5px;
-        border: none;
-        outline: none;
-        padding-left: 4%;
-        padding-right: 4%;
-        padding-top: 2%;
-        padding-bottom: 2%;
-        margin: 0px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
+    .formBtnCancelProfile {
+        height: 70%;
+    }
+
+    .formBtnEditPass {
+        height: 80%;
+    }
+
+    .formBtnSavePass {
+        height: 80%;
+        margin-left: 0.5rem;
+    }
+
+    .formBtnCancelPass {
+        height: 80%;
+    }
+
+    .formBtnDelete {
         height: 70%;
     }
 
@@ -2199,7 +2166,7 @@ label {
         background: none;
     }
 
-    .formBtnSave {
+    .formBtnSaveProfile {
         position: relative;
         width: auto;
         height: auto;
@@ -2220,7 +2187,7 @@ label {
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
-    .formBtnCancel {
+    .formBtnCancelProfile {
         width: auto;
         height: auto;
         border-radius: 0.6rem;

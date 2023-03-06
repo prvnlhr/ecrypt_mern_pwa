@@ -507,12 +507,12 @@ const Settings = () => {
                             {
                                 formFieldEditable('PROFILE') ?
                                     <>
-                                        <button className={styles.formBtnCancel} onClick={handleCancelBtnClicked}>
+                                        <button className={`${styles.formBtnCancelProfile} ${styles.formBtnCommon} `} onClick={handleCancelBtnClicked}>
                                             <p className={styles.btnText} >
                                                 Cancel
                                             </p>
                                         </button>
-                                        <button className={styles.formBtnSave} onClick={() => handleSaveBtnClicked('PROFILE')}>
+                                        <button className={`${styles.formBtnSaveProfile}   ${styles.formBtnCommon} `} onClick={() => handleSaveBtnClicked('PROFILE')}>
                                             {
                                                 (userState.action === 'editProfile' && userState.pending === true) ?
                                                     <SpinnerCircular style={spinnerStyleBtn} thickness={200} speed={100} color="white" secondaryColor="#7AC87F" />
@@ -524,7 +524,7 @@ const Settings = () => {
                                         </button>
                                     </>
                                     :
-                                    <button className={styles.formBtnEdit} onClick={() => handleEditChangeDeleteBtnClicked("PROFILE")}>
+                                    <button className={`${styles.formBtnEditProfile} ${styles.formBtnCommon} `} onClick={() => handleEditChangeDeleteBtnClicked("PROFILE")}>
                                         <p className={styles.btnText} >
                                             Edit  Profile
                                         </p>
@@ -536,7 +536,7 @@ const Settings = () => {
                     <div className={styles.profilePassWrapper}>
 
                         <div className={styles.passHeadingContainer} >
-                            <div className={styles.formSectionHeadingDiv} >
+                            <div className={styles.formSectionHeadingDiv}>
                                 <p>Password</p>
                             </div>
                         </div>
@@ -559,14 +559,13 @@ const Settings = () => {
 
                             {
                                 formFieldEditable('PASS') ?
-
                                     <>
-                                        <button className={styles.formBtnCancel} onClick={handleCancelBtnClicked} >
+                                        <button className={`${styles.formBtnCancelPass} ${styles.formBtnCommon} `} onClick={handleCancelBtnClicked} >
                                             <p className={styles.btnText}>
                                                 Cancel
                                             </p>
                                         </button>
-                                        <button className={styles.formBtnSave} onClick={() => handleSaveBtnClicked('PASS')} >
+                                        <button className={`${styles.formBtnSavePass} ${styles.formBtnCommon} `} onClick={() => handleSaveBtnClicked('PASS')} >
                                             {
                                                 (userState.action === 'changePass' && userState.pending === true) ?
                                                     <SpinnerCircular style={spinnerStyleBtn} thickness={200} speed={100} color="white" secondaryColor="#7AC87F" />
@@ -579,7 +578,7 @@ const Settings = () => {
                                         </button>
                                     </>
                                     :
-                                    <button className={styles.formBtnEdit} onClick={() => handleEditChangeDeleteBtnClicked("PASS")} >
+                                    <button className={`${styles.formBtnEditPass} ${styles.formBtnCommon} `} onClick={() => handleEditChangeDeleteBtnClicked("PASS")} >
                                         <p className={styles.btnText}>
                                             Change Password
                                         </p>
@@ -622,7 +621,7 @@ const Settings = () => {
 
                         </div>
                         <div className={styles.deleteBtnContainer} >
-                            <button className={styles.formBtnEdit} onClick={handleDeleteBtnClicked}>
+                            <button className={`${styles.formBtnDelete} ${styles.formBtnCommon}`} onClick={handleDeleteBtnClicked}>
                                 <p className={styles.btnText}>
                                     Delete Account
                                 </p>
