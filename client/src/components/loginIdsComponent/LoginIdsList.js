@@ -11,7 +11,8 @@ import DeleteModal from "../modal/DeleteModal"
 import { diff, generateActivityData } from "../utils/ActivityDataChangeFuction"
 import { editLoginIdData, deleteLoginData, toggleIsFav } from "../../redux/features/loginsId/loginsIdSlice"
 import ListSkeleton from "../skelotons/ListSkeleton"
-const LoginIdsList = ({ setLogoComponentShow,
+const LoginIdsList = ({
+  // setLogoComponentShow,
   setClickedSearchItem,
   clickedSearchItem,
 }) => {
@@ -80,6 +81,10 @@ const LoginIdsList = ({ setLogoComponentShow,
   const [deleteMode, setDeleteMode] = useState(false);
 
   const [currFocusField, setCurrFocusField] = useState(undefined);
+
+
+  const [logoComponentShow, setLogoComponentShow] = useState(false);
+
 
   const onFocus = (val) => {
     setCurrFocusField(val)
@@ -158,7 +163,7 @@ const LoginIdsList = ({ setLogoComponentShow,
         < AddBtn formToggle={formToggle} isScrolling={isScrolling} />
       }
 
-      <div className={(showContentCard || showInputForm) ? styles.contentContainerClose : styles.contentContainer} ref={node}>
+      <div className={` ${(showContentCard || showInputForm) ? styles.contentContainerClose : styles.contentContainer} `} ref={node}>
         {
           isLoading === true && action === 'fetch' ?
             <>
@@ -185,7 +190,6 @@ const LoginIdsList = ({ setLogoComponentShow,
       </div>
 
       <FullContentCard
-        setLogoComponentShow={setLogoComponentShow}
         fullContentCardData={fullContentCardData}
         setFullContentCardData={setFullContentCardData}
         showContentCard={showContentCard}
@@ -199,6 +203,8 @@ const LoginIdsList = ({ setLogoComponentShow,
         currFocusField={currFocusField}
         setCurrFocusField={setCurrFocusField}
         onFocus={onFocus}
+        logoComponentShow={logoComponentShow}
+        setLogoComponentShow={setLogoComponentShow}
       />
       {/* } */}
       <LoginIdInputForm

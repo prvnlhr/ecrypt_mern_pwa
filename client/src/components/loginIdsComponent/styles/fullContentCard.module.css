@@ -17,6 +17,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
 }
 
 .cardWrapperClose {
@@ -932,6 +933,10 @@
     padding: 0px;
     margin: 0px;
     transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  .blurBgWrapper {
+    opacity: 0.5;
   }
 
   .cardContainer {

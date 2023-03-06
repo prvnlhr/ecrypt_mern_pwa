@@ -26,7 +26,9 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
     deleteMode,
     currFocusField,
     setCurrFocusField,
-    onFocus
+    onFocus,
+    logoComponentShow,
+    setLogoComponentShow
 }) => {
 
     const dispatch = useDispatch();
@@ -53,7 +55,7 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
 
 
 
-    const [logoComponentShow, setLogoComponentShow] = useState(false);
+    // const [logoComponentShow, setLogoComponentShow] = useState(false);
 
 
     useEffect(() => {
@@ -150,8 +152,7 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
     }
     // __________________________________________________________________________________________________________
     return (
-        <div className={
-            showContentCard ? styles.cardWrapper : styles.cardWrapperClose
+        <div className={`${showContentCard ? styles.cardWrapper : styles.cardWrapperClose}`
         }>
             {logoComponentShow &&
                 <LogoComponentWrapper
