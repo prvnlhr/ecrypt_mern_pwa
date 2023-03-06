@@ -3,6 +3,7 @@ import * as api from "../../api"
 import { addActivityData } from "../activity/activitiesSlice"
 import { addRecentlyAddedData, deleteRecentlyAddedData } from "../recentlyAdded/recentlyAddedSlice"
 import { addToFavDocsData, removeFromFavDocsData } from "../favorites/favoritesSlice"
+import moment from "moment";
 const initialState = {
     docsData: [],
     isLoading: false,
@@ -39,13 +40,17 @@ export const addNewDocData = createAsyncThunk("docs/add", async ({ data, name, u
         }))
 
         const newAddedItem = res.data[res.data.length - 1];
-
+        const date = moment().format('DD');
+        const month = moment().format('MMM');
+        const year = moment().format('YY');
+        const dateString = date + " " + month + " " + year;
         const dataForRecentltyAdded = {
             imageName: newAddedItem?.imageName,
             imageUrl: newAddedItem?.imageUrl,
             cloudinary_id: newAddedItem?.cloudinary_id,
             isFavourite: newAddedItem?.isFavourite,
-            itemId: newAddedItem?._id
+            itemId: newAddedItem?._id,
+            createdAt: dateString
         }
         dispatch(addRecentlyAddedData({
             recentlyAddedData: dataForRecentltyAdded,

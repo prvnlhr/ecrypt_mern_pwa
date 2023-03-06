@@ -3,6 +3,7 @@ import * as api from "../../api"
 import { addActivityData } from "../activity/activitiesSlice"
 import { addToFavCardsData, removeFromFavCardsData } from "../favorites/favoritesSlice";
 import { addRecentlyAddedData, deleteRecentlyAddedData } from "../recentlyAdded/recentlyAddedSlice"
+import moment from "moment";
 const initialState = {
     cardsData: [],
     isLoading: false,
@@ -33,9 +34,12 @@ export const addNewCardData = createAsyncThunk("cards/add", async ({ data, user_
             activityData: activityData,
             userId: user_id
         }))
-
+        const date = moment().format('DD');
+        const month = moment().format('MMM');
+        const year = moment().format('YY');
+        const dateString = date + " " + month + " " + year;
         data.itemId = res.data._id;
-
+        data.createdAt = dateString
         dispatch(addRecentlyAddedData({
             recentlyAddedData: data,
             userId: user_id

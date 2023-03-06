@@ -1,11 +1,13 @@
 @import "../../../variable.modules.css";
 
+
 .loginInWrapper {
     position: relative;
     display: grid;
     grid-template-columns: 80px minmax(0, 1fr) minmax(0, 0.2fr);
-    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: minmax(0, 0.9fr) minmax(0, 1fr) minmax(0, 1fr);
     grid-template-areas:
+        "logoWrapper dateWrapper dateWrapper"
         "logoWrapper titleWrapper favBtnWrapper"
         "logoWrapper usernameWrapper favBtnWrapper";
     align-items: center;
@@ -13,7 +15,6 @@
     height: 75px;
     /* aspect-ratio: 3.73/1 !important; */
     border-radius: 0.9rem;
-    margin: 15px 15px 15px 15px;
     margin: 2% 2% 2% 2%;
     background-color: var(--box-bg-primary);
     box-shadow: var(--list-wrapper-box-shadow);
@@ -31,7 +32,7 @@
     margin-right: 0px;
     margin-top: 0.8rem;
     margin-bottom: 0.8rem;
-
+    overflow: hidden;
 
 }
 
@@ -68,14 +69,53 @@
 
 .titleWrapper {
     grid-area: titleWrapper;
-    /* border: 1px solid black; */
     width: 95%;
     height: 100%;
     display: flex;
     justify-content: flex-start;
-    align-items: flex-end;
+    align-items: flex-start;
     padding-left: 5%;
     overflow: hidden;
+}
+
+.dateWrapper {
+    position: relative;
+    grid-area: dateWrapper;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    /* border: 1px solid lightgreen; */
+    padding-right: 0.15rem;
+    /* padding-right: 0%; */
+    padding-left: 5%;
+    padding-top: 0.15rem;
+    overflow: hidden;
+}
+
+.dateDiv {
+    position: relative;
+    width: auto;
+    height: auto;
+    /* border: 1px solid skyblue; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-radius: 4px 14px 4px 4px;
+    /* background-color: #c7bafd8e; */
+    background-color: var( --recent-date-box-bg);
+    padding-left: 3%;
+    padding-right: 5%;
+}
+
+.dateDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.6rem;
+    font-weight: var(--bolder-font);
+    /* color: var(--ui-scheme-color); */
+    white-space: nowrap;
+    color: var(--listCount-font-color);
 }
 
 .titleText {
@@ -95,7 +135,7 @@
     height: 100%;
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     padding-left: 5%;
 
 }
@@ -132,21 +172,23 @@
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 
 
+
     .loginInWrapper {
         position: relative;
         display: grid;
         grid-template-columns: 80px minmax(0, 1fr) minmax(0, 0.2fr);
         grid-template-columns: 25% minmax(0, 1fr) minmax(0, 0.2fr);
-        grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-rows: minmax(0, 0.9fr) minmax(0, 1fr) minmax(0, 1fr);
         grid-template-areas:
+            "logoWrapper dateWrapper dateWrapper "
             "logoWrapper titleWrapper favBtnWrapper"
             "logoWrapper usernameWrapper favBtnWrapper";
         width: 83% !important;
-        height: clamp(4.0rem, 1.0rem + 15.0vw, 5.5rem) !important;
-        min-height: clamp(4.0rem, 1.0rem + 15.0vw, 5.5rem) !important;
         padding: 0;
         margin: 0.80rem auto 0.80rem auto;
         border-radius: clamp(0.8rem, -0.19999999999999996rem + 5.0vw, 1.3rem) !important;
+        height: clamp(4.0rem, 0.0rem + 20.0vw, 6.0rem) !important;
+        min-height: clamp(4.0rem, 0.0rem + 20.0vw, 6.0rem) !important;
     }
 
     .logoWrapper {
@@ -170,26 +212,30 @@
         /* border-radius: 0.6rem; */
         border-radius: 1rem;
         border-radius: clamp(0.65rem, -0.04999999999999993rem + 3.4999999999999996vw, 1.0rem) !important;
-
     }
 
 
     /* > clamping for all font sizes */
 
     .titleText {
-        font-size: clamp(0.78rem, -0.05999999999999983rem + 4.199999999999999vw, 1.2rem) !important;
         font-weight: var(--bolder-font);
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        font-size: clamp(0.78rem, 0.1399999999999999rem + 3.2000000000000006vw, 1.1rem) !important;
+
     }
 
     .userNameText {
-        font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
         font-weight: var(--bolder-font);
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        font-size: clamp(0.75rem, 0.25rem + 2.5vw, 1.0rem) !important;
+    }
+
+    .dateDiv p {
+        font-size: clamp(0.55rem, 0.050000000000000044rem + 2.5vw, 0.8rem) !important;
     }
 
 }

@@ -12,8 +12,8 @@ const Doc = ({
     return (
         <div className={styles.cardWrapper}
             onClick={() => handleItemClicked(item)}>
-            <div className={styles.cardContainer} >
 
+            <div className={styles.cardContainer} >
                 <div className={styles.logoWrapper} >
                     <div className={styles.logoDiv} >
                         <svg
@@ -30,6 +30,11 @@ const Doc = ({
                     </div>
                 </div>
 
+                <div className={styles.dateWrapper}>
+                    <div className={styles.dateDiv}>
+                        <p>{item.createdAt}</p>
+                    </div>
+                </div>
                 <div className={styles.titleWrapper} >
                     <p>{item.imageName}</p>
                 </div>

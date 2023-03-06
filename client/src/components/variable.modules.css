@@ -26,6 +26,7 @@
   --appLogo-bg-desktop: white;
   --appLogo-bg-mobile: white;
 
+  --recent-date-box-bg: #00299a75;
 
   --shimmer-color: linear-gradient(90deg, #bdcbe15d 44.18%, #E7EFFC 129.07%);
 
@@ -85,6 +86,7 @@ background: linear-gradient(179.99deg, #AEC3CE 8.01%, rgba(177, 197, 208, 0.9728
 
 
 
+
   /*-> All ui div-bg divided into three types */
 
   /* --box-bg-primary: #333A4D; */
@@ -101,6 +103,9 @@ background: linear-gradient(179.99deg, #AEC3CE 8.01%, rgba(177, 197, 208, 0.9728
 
   --appLogo-bg-desktop: #141416;
   --appLogo-bg-mobile: #23262F;
+
+  --recent-date-box-bg: #c7bafd8e;
+
 
   --shimmer-color: linear-gradient(90deg, #60657571 44.18%, #30343d 129.07%);
 

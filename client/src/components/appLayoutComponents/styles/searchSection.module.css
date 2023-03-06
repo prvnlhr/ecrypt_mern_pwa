@@ -125,7 +125,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
 }
 
 .listTitleTextDiv {
@@ -137,8 +137,7 @@
     align-items: center;
     box-sizing: border-box;
     margin-left: 5%;
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-
+    /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
 }
 
 .searchResultText {
@@ -147,6 +146,8 @@
     font-family: "Poppins", sans-serif;
     font-size: 1.5rem;
     color: var(--primary-font-color);
+    /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
+
 }
 
 .listTitleText {
@@ -157,6 +158,8 @@
     /* font-weight:var(--bold-font); */
     /* font-weight:var(--boldest-font); */
     color: var(--primary-font-color);
+    /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
+
 }
 
 .listTitleTextSearch {
@@ -167,23 +170,25 @@
     position: absolute;
     content: " ";
     background-color: var(--ui-scheme-color);
-    width: 45px;
-    height: 2.5px;
+    width: 40%;
+    height: 0.15rem;
     bottom: -8px;
     left: 0px;
-    border-radius: 20px;
+    border-radius: 3rem;
+    /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
+
 }
 
 .listCountDiv {
-    height: 22%;
+    height: 25%;
     aspect-ratio: 1/1;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--ui-scheme-color);
-    border-radius: 5px;
+    border-radius: 0.3rem;
     margin-left: 10px;
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
 }
 
 .listCountDiv p {
@@ -296,7 +301,7 @@
         justify-content: flex-start;
         /* justify-content: flex-end; */
         align-items: center;
-        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
     }
 
     .listTitleTextDiv {
@@ -308,7 +313,7 @@
         align-items: center;
         box-sizing: border-box;
         padding-left: 5%;
-        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
     }
 
     .searchResultText {
@@ -329,11 +334,9 @@
     .listTitleText::after {
         position: absolute;
         content: " ";
-        width: 45px;
-        height: 2.5px;
         bottom: -8px;
         left: 0px;
-        border-radius: 10px;
+        border-radius: 20px;
     }
 
     .listCountDiv {
@@ -343,15 +346,13 @@
         justify-content: center;
         align-items: center;
         border-radius: clamp(0.2rem, -0.2rem + 2.0vw, 0.4rem) !important;
-        margin-left: 10px;
         margin-left: 0.8rem;
     }
 
     .listCountDiv p {
         position: relative;
-        font-size: 10px;
-        font-weight: 500;
-        margin-top: 2px;
+        font-size: clamp(0.5rem, 0.10000000000000009rem + 1.9999999999999998vw, 0.7rem) !important;
+        font-weight: var(--bold-font);
         padding: 0px;
     }
 }

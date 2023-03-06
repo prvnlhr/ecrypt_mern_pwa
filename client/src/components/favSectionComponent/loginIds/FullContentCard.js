@@ -99,7 +99,7 @@ const FullContentCard = ({ showFullFavCard, setShowFullFavCard, favFullCardData 
                         >
                             <div className={styles.logoDiv}>
                                 <div className={styles.logoDiv}>
-                                    {favFullCardData.logoIndex != undefined &&
+                                    {favFullCardData.logoIndex !== undefined &&
                                         logosArray[favFullCardData.logoIndex].logo
                                     }
                                 </div>

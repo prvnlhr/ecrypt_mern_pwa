@@ -6,7 +6,6 @@
     margin-top: 20px;
     width: 280px;
     height: 75px;
-    /* aspect-ratio: 3.73/1 !important; */
     background-color: var(--box-bg-primary);
     border-radius: 15px;
     scroll-behavior: smooth;
@@ -32,20 +31,20 @@
     position: relative;
     width: 100%;
     height: 100%;
-    /* border: 1px solid red; */
     display: grid;
-    grid-template-columns: 80px minmax(0, 1fr);
-    grid-template-rows: 100%;
+    grid-template-columns: 80px minmax(0, 1fr) minmax(0, 0.2fr);
+    grid-template-rows: 25% 75%;
     grid-template-areas:
-        "logoWrapper titleWrapper";
+        "logoWrapper dateWrapper dateWrapper"
+        "logoWrapper titleWrapper titleWrapper";
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .logoWrapper {
-    grid: logoWrapper;
+    grid-area: logoWrapper;
     width: 100%;
     height: 100%;
-    /* border: 1px solid black; */
+    /* border: 1px solid lawngreen; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,10 +53,8 @@
 .logoDiv {
     width: 80%;
     height: 80%;
-    /* border: 1px solid red; */
     border-radius: 8px;
     background-color: var(--logo-div-bg);
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,14 +65,54 @@
     aspect-ratio: 1/1;
 }
 
-.titleWrapper {
-    grid: titleWrapper;
+.dateWrapper {
+    position: relative;
+    grid-area: dateWrapper;
     width: 100%;
     height: 100%;
-    /* border: 1px solid black; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    /* border: 1px solid lightgreen; */
+    padding-right: 0.15rem;
+    /* padding-right: 0%; */
+    padding-left: 5%;
+    padding-top: 0.15rem;
+    overflow: hidden;
+}
+
+.dateDiv {
+    position: relative;
+    width: auto;
+    height: auto;
+    /* border: 1px solid skyblue; */
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
+    border-radius: 4px 14px 4px 4px;
+    /* background-color: #c7bafd8e; */
+    /* background-color: #00299a75; */
+    background-color: var(--recent-date-box-bg);
+    padding-left: 3%;
+    padding-right: 5%;
+}
+
+.dateDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.7rem;
+    font-weight: var(--bolder-font);
+    white-space: nowrap;
+    color: var(--listCount-font-color);
+}
+
+.titleWrapper {
+    grid-area: titleWrapper;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid skyblue; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
     padding-left: 5%;
 }
 
@@ -96,39 +133,32 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: 18px;
         scroll-behavior: smooth;
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
         width: 83% !important;
-        height: clamp(4.0rem, 1.0rem + 15.0vw, 5.5rem) !important;
-        min-height: clamp(4.0rem, 1.0rem + 15.0vw, 5.5rem) !important;
         padding: 0;
         margin: 0.80rem auto 0.80rem auto;
         border-radius: clamp(0.8rem, -0.19999999999999996rem + 5.0vw, 1.3rem) !important;
+        height: clamp(4.0rem, 0.0rem + 20.0vw, 6.0rem) !important;
+        min-height: clamp(4.0rem, 0.0rem + 20.0vw, 6.0rem) !important;
+        /* border: 1px solid white; */
     }
 
     .cardContainer {
         position: relative;
         width: 100%;
         height: 100%;
-        /* border: 1px solid red; */
         display: grid;
         grid-template-columns: 25% minmax(0, 1fr);
-        grid-template-rows: 100%;
+        grid-template-rows: minmax(0, 0.5fr) minmax(0, 1fr);
         grid-template-areas:
+            "logoWrapper dateWrapper"
             "logoWrapper titleWrapper";
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        /* border: 1px solid gray; */
     }
 
-    .logoWrapper {
-        grid: logoWrapper;
-        width: 100%;
-        height: 100%;
-        /* border: 1px solid black; */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+
 
     .logoDiv {
         width: 85%;
@@ -139,11 +169,10 @@
         align-items: center;
         border-radius: clamp(0.65rem, -0.04999999999999993rem + 3.4999999999999996vw, 1.0rem) !important;
 
-
     }
 
     .titleWrapper p {
-        font-size: clamp(0.78rem, -0.05999999999999983rem + 4.199999999999999vw, 1.2rem) !important;
+        font-size: clamp(0.78rem, 0.1399999999999999rem + 3.2000000000000006vw, 1.1rem) !important;
     }
 }
 
@@ -166,9 +195,5 @@
         margin-right: auto;
         margin-top: 20px;
         margin: 0.80rem auto 0.80rem auto;
-        margin: 0.30rem auto 0.30rem auto;
-        margin: 0.80rem auto 0.80rem auto;
-
-
     }
 }

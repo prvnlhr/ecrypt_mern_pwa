@@ -283,7 +283,7 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
                             <div className={
                                 `${styles.logoDiv} ${editMode && styles.logoDivActive}`
                             }>
-                                {fullContentCardData?.logoIndex != undefined &&
+                                {fullContentCardData?.logoIndex !== undefined &&
                                     logosArray[fullContentCardData.logoIndex].logo
                                 }
                             </div>

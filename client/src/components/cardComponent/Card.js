@@ -53,7 +53,7 @@ const Card = ({ cardData, handleCardClicked, setFullCardData, clickedSearchItem 
     >
       <div className={styles.logoWrapper} >
         <div className={styles.logoDiv}>
-          {cardData.logoIndex && logosArray[cardData.logoIndex].logo}
+          {cardData.logoIndex !== undefined && logosArray[cardData.logoIndex].logo}
         </div>
       </div>
       <div className={styles.titleWrapper} >

@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice, current } from "@reduxjs/toolkit";
 import { addActivityData } from "../activity/activitiesSlice"
 import { addToFavLoginsData, removeFromFavLoginsData } from "../favorites/favoritesSlice";
 import { addRecentlyAddedData, deleteRecentlyAddedData } from "../recentlyAdded/recentlyAddedSlice"
+import moment from "moment";
 import * as api from "../../api"
 
 const initialState = {
@@ -31,10 +32,16 @@ export const addNewLoginIdData = createAsyncThunk("loginIds/add", async ({ data,
             activityData: activityData,
             userId: user_id
         }))
+        const date = moment().format('DD');
+        const month = moment().format('MMM');
+        const year = moment().format('YY');
+        const dateString = date + " " + month + " " + year;
 
         const { loginIdsArray } = res.data;
+
         const newAddedItem = loginIdsArray[loginIdsArray.length - 1];
         data.itemId = newAddedItem._id;
+        data.createdAt = dateString
         dispatch(addRecentlyAddedData({
             recentlyAddedData: data,
             userId: user_id
