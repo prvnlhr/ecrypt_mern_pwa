@@ -96,7 +96,7 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
             user_id: userId,
             activityData: activity_data
         })).then(res => {
-            console.log(res.type);
+            // console.log(res.type);
             if (res.type === 'loginIds/add/fulfilled') {
                 clearForm();
                 setShowInputForm(false);

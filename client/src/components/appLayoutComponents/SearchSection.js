@@ -31,12 +31,13 @@ const SearchSection = ({ searchMode, setSearchMode, searchQuery,
     const [listTitle, setListTitle] = useState("");
 
 
+
+
     const checkListCountDisplayCondition = () => {
         return location.pathname !== '/' && searchQuery.length === 0 && searchState.length === 0;
     }
 
     useEffect(() => {
-        console.log(location.pathname)
         switch (location.pathname) {
             case "/":
                 setListTitle("Dashboard");
@@ -69,7 +70,9 @@ const SearchSection = ({ searchMode, setSearchMode, searchQuery,
             default:
                 break;
         }
-    }, [location?.pathname])
+    }, [location?.pathname,
+        loginIdsArray, docsArray, cardsArray
+    ])
 
     const searchItem = (searckKey) => {
         dispatch(searchUserData({

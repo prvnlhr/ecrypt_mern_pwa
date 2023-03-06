@@ -218,7 +218,6 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
         let cardDataToEdit = {};
         switch (formCategory) {
-
             case "Bank":
                 Object.assign(cardDataToEdit, bankCardData);
                 break;
@@ -245,7 +244,7 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
             activityData: activity_data
         })).then(res => {
             if (res.type === 'cards/add/fulfilled') {
-                console.log('card added', res.type);
+                // console.log('card added', res.type);
                 setShowInputForm(false);
             }
         })
@@ -253,6 +252,54 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
     }
 
 
+    //> Clearing form on back btn clicked
+    const clearForm = () => {
+
+        switch (formCategory) {
+            case "Bank":
+                setBankCardData({
+                    title: "",
+                    category: "Bank",
+                    cardHolder: "",
+                    cardNumber: "",
+                    expiry: "",
+                    cvv: "",
+                    logoIndex: "",
+                    isFavourite: false
+                })
+
+                break;
+            case "Identity":
+                setIdentityCardData({
+                    title: "",
+                    category: "Identity",
+                    cardHolder: "",
+                    cardNumber: "",
+                    issueDate: "",
+                    dob: "",
+                    logoIndex: "",
+                    isFavourite: false
+                })
+                break;
+            case "License":
+                setLicenseCardData({
+                    title: "",
+                    category: ":License",
+                    cardHolder: "",
+                    licenseNumber: "",
+                    expiry: "",
+                    dob: "",
+                    logoIndex: "",
+                    isFavourite: false
+                })
+                break;
+
+            default:
+                break;
+        }
+
+        setCurrFocusField(undefined);
+    }
 
     return (
         <div className={showInputForm ? styles.cardWrapper : styles.cardWrapperClose}>
@@ -268,7 +315,12 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                 <div className={styles.cardHeader} >
                     <div className={styles.backBtnContainer} >
                         <div className={styles.backBtnDiv}
-                            onClick={() => formToggle()}>
+                            onClick={() => {
+                                formToggle();
+                                clearForm();
+                            }
+
+                            }>
                             <BackBtnIcon />
                         </div>
                     </div>
