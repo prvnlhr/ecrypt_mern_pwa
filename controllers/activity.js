@@ -9,7 +9,7 @@ const activityController = {
       const activityRes = await UserDatabase.findOne({ _id: req.query.user_id });
       res.status(200).send(activityRes.activitiesArray);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       res.status(404).json({ message: error.message });
     }
   },
@@ -32,7 +32,7 @@ const activityController = {
       res.status(200).send(response);
       // res.status(404).send(response);
     } catch (error) {
-      console.log("At Add activity ", error);
+      // console.log("At Add activity ", error);
       res.status(404).json({ message: error.message });
     }
   },
@@ -54,7 +54,7 @@ const activityController = {
       res.status(200).send(response);
       // res.status(404).send(response);
     } catch (error) {
-      console.log("At Add Recently", error);
+      // console.log("At Add Recently", error);
       res.status(404).json({ message: error.message });
     }
   },

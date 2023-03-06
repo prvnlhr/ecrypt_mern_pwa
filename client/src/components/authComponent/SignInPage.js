@@ -82,6 +82,16 @@ const SignInPage = () => {
       [name]: value,
     })
   }
+
+
+  //> handle demo account loginClicked
+  const handleDemoLogin = () => {
+    setFromData({
+      email: 'ecrypt.js@gmail.com',
+      password: 'Ecrypt@123'
+    })
+
+  }
   return (
     <div className={styles.signInPage} >
       <div className={styles.appBioSection} >
@@ -329,7 +339,10 @@ const SignInPage = () => {
                 </div>
               </div>
               <div className={styles.passForgetWrapper} >
-                <Link className={styles.linkText} to="/user/forgotPassword">
+                <div className={styles.demoLoginDiv} onClick={handleDemoLogin} >
+                  <p>Demo Account Login</p>
+                </div>
+                <Link className={styles.forgotPassLinkText} to="/user/forgotPassword">
                   <p>Forgot Password ?</p>
                 </Link>
               </div>
@@ -355,6 +368,7 @@ const SignInPage = () => {
                   }
 
                 </button>
+
               </div>
             </form>
 

@@ -30,7 +30,6 @@ export const getUserDetails = createAsyncThunk("user/getUser", async (token, { g
     try {
         const res = await api.getUser(token);
         const userData = res.data.user;
-        console.log(userData)
         const profilePicData = res.data.user.profilePic
         const nameString = userData.name.split(/[" "]+/);
         const userRes = {
@@ -61,7 +60,6 @@ export const editUserProfile = createAsyncThunk("user/editProfile", async ({ tok
         const dateString = date + " " + month + " " + year;
         profileData.lastUpdateDate = dateString;
 
-        console.log(profileData, dateString);
 
         const res = await api.editProfile(token, profileData);
         const userData = res.data.newData;
@@ -75,7 +73,6 @@ export const editUserProfile = createAsyncThunk("user/editProfile", async ({ tok
             updateDate: res.data.newData?.updateDate
         }
 
-        console.log(resData)
         return fulfillWithValue(resData);
     } catch (error) {
         // console.log('error', error.response.data.msg)
@@ -142,7 +139,6 @@ const userSlice = createSlice({
                 };
             })
             .addCase(editUserProfile.fulfilled, (state, action) => {
-                console.log(action.payload)
                 return {
                     ...state,
                     firstName: action.payload.firstName,

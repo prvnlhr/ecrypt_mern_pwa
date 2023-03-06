@@ -18,7 +18,7 @@ export const addActivityData = createAsyncThunk("activity/add", async ({ activit
         const data = res.data.activitiesArray;
         return fulfillWithValue(data.reverse());
     } catch (error) {
-        console.log(error)
+        // console.log(error)
         return rejectWithValue(error);
     }
 })

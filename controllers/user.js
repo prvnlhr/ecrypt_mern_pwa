@@ -91,7 +91,9 @@ const userController = {
       const response = sendMail(email, url, txt);
       res.status(200).json({ msg: "Check your email for activation link" });
     } catch (error) {
-      console.log("error in registration", error);
+      // console.log("error in registration", error);
+      return res.status(500).json({ msg: err.message });
+
     }
   },
   activateEmail: async (req, res) => {
@@ -141,7 +143,6 @@ const userController = {
         maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
       });
       // console.log("new rftoken at login cntrl", access_token);
-
       res.json({ msg: "Login success!" });
     } catch (err) {
       return res.status(500).json({ msg: err.message });
@@ -160,7 +161,7 @@ const userController = {
       const access_token = createAccessToken({ id: userId });
       res.status(200).json(access_token);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       return res.status(400).json({ msg: error });
     }
   },
@@ -177,8 +178,7 @@ const userController = {
       sendMail(email, url, "Reset your password. Click the below link");
       res.json({ msg: "Please check your email for reset link" });
     } catch (error) {
-      console.log(error);
-
+      // console.log(error);
       return res.status(404).send(error);
     }
   },
@@ -193,8 +193,7 @@ const userController = {
       );
       res.json({ msg: "Password successfully changed !" });
     } catch (error) {
-      console.log(error);
-
+      // console.log(error);
       return res.status(404).send(error);
     }
   },
@@ -222,14 +221,12 @@ const userController = {
       );
       res.json({ msg: "Password successfully changed !" });
     } catch (error) {
-      console.log(error);
-
+      // console.log(error);
       return res.status(404).send(error);
     }
   },
   updateProfile: async (req, res) => {
     const { firstName, lastName, email, lastUpdateDate } = req.body.profileData;
-    console.log(lastUpdateDate);
     try {
       const id = req.user.id;
       const user = await UserDatabase.findById(id);
@@ -291,8 +288,7 @@ const userController = {
       const user = await UserDatabase.findById(req.user.id).select("-password");
       res.status(200).send(user);
     } catch (error) {
-      console.log(error);
-
+      // console.log(error);
       res.status(404).json({ message: error.message });
     }
   },

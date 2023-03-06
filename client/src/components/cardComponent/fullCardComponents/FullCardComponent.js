@@ -22,18 +22,20 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
     fullContentCardData, setFullContentCardData, editMode, setEditMode,
     confirmDeleteBtnClicked,
     setDeleteMode,
-    deleteMode
-
+    deleteMode,
+    currFocusField,
+    onFocus,
+    setCurrFocusField
 }) => {
 
     const userId = useSelector((state) => state.user._id);
+    const isDarkMode = useSelector((state) => state.ui.darkMode);
     const cardState = useSelector((state => state.cards));
     const { isLoading, action } = cardState;
-    const isDarkMode = useSelector((state) => state.ui.darkMode);
-    const [currFocusField, setCurrFocusField] = useState(undefined);
-    const onFocus = (val) => {
-        setCurrFocusField(val)
-    }
+    // const [currFocusField, setCurrFocusField] = useState(undefined);
+    // const onFocus = (val) => {
+    //     setCurrFocusField(val)
+    // }
 
     const [popUpOpen, setPopUpOpen] = useState(false);
 
@@ -103,6 +105,7 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
         setEditMode(true);
     }
     const cancelBtnClicked = () => {
+        setCurrFocusField(undefined);
         setFullContentCardData(oldCardData);
         setEditMode(false);
     }

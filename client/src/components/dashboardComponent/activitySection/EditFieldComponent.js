@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from "./styles/editField.module.css"
+import { logosArray } from "../../logoComponents/logosData"
 const EditFieldComponent = ({ item, value }) => {
     // console.log(typeof (item), item)
     const key = (item[0].toUpperCase() + item.slice(1));
@@ -22,12 +23,12 @@ const EditFieldComponent = ({ item, value }) => {
                                                     <div className={styles.upperPartition} >
                                                         <div className={styles.fieldNameLabelWrapper} >
                                                             <p>
-                                                                {key} -
+                                                                {key === 'LogoIndex' ? 'Logo' : key} -
                                                             </p>
                                                         </div>
                                                         <div className={styles.oldValueWrapper} >
                                                             <p>
-                                                                {value.oldVal}
+                                                                {key === 'LogoIndex' ? logosArray[value.oldVal].label : value.oldVal}
                                                             </p>
                                                         </div>
                                                     </div>
@@ -38,7 +39,7 @@ const EditFieldComponent = ({ item, value }) => {
                                                         </div>
                                                         <div className={styles.newValueWrapper}>
                                                             <p>
-                                                                {value.newVal}
+                                                                {key === 'LogoIndex' ? logosArray[value.newVal].label : value.newVal}
                                                             </p>
                                                         </div>
                                                         {/* <div className={styles.angleArrowDiv}></div>

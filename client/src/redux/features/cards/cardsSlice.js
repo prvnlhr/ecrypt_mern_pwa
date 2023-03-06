@@ -28,7 +28,6 @@ export const addNewCardData = createAsyncThunk("cards/add", async ({ data, user_
     try {
 
         const state = getState();
-
         const res = await api.addNewCard(data, user_id, state.auth.token)
         dispatch(addActivityData({
             activityData: activityData,
@@ -51,10 +50,9 @@ export const addNewCardData = createAsyncThunk("cards/add", async ({ data, user_
 
 export const editCardData = createAsyncThunk("cards/edit", async ({ updatedData, card_id, activityData, userId }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
-        console.table('cardSlice', updatedData, card_id);
+        // console.table('cardSlice', updatedData, card_id);
         // console.log(updatedData, card_id)
         const state = getState();
-
         const res = await api.editCard(card_id, updatedData, state.auth.token);
         // console.log(activityData, userId)
         dispatch(addActivityData({
@@ -86,6 +84,12 @@ export const deleteCardData = createAsyncThunk("cards/delete", async ({ cardData
             user_id: user_id
         }))
 
+        if (activityData.isFavourite === true) {
+            dispatch(removeFromFavCardsData({
+                card_id: card_id,
+            }))
+        }
+
         const { data } = res;
         // console.log(data);
         return fulfillWithValue(cardData);
@@ -105,12 +109,10 @@ export const toggleIsFav = createAsyncThunk("cards/toggleFav", async ({ card_id,
         const currToggleCardInDb = res.data.filter((item) => item._id === card_id);
         // console.log(currToggleCardInDb[0].isFavourite)
         if (currToggleCardInDb[0].isFavourite === false) {
-            // console.log('false')
             dispatch(removeFromFavCardsData({
                 card_id
             }))
         } else {
-            // console.log('true')
             dispatch(addToFavCardsData({
                 card: currToggleCardInDb[0]
             }))
@@ -258,6 +260,7 @@ const cardsSlice = createSlice({
                         return l;
                     }
                 });
+
                 return {
                     ...state,
                     cardsData: newCardsArray,

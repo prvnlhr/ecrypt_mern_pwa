@@ -31,7 +31,7 @@
     background-color: var(--box-bg-primary);
 
     padding-left: 0%;
-    webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -77,7 +77,6 @@
 .backBtnContainer {
     width: 50%;
     height: 100%;
-    /* border: 1px solid blue; */
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -105,6 +104,7 @@
     width: 50%;
     height: 100%;
     /* border: 1px solid black; */
+    /* border: 1px solid skyblue; */
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
@@ -954,28 +954,25 @@
     }
 
     .categoryInputPopDiv {
-        top: 105%;
+        top: 110%;
+        right: 25%;
         position: absolute;
-        width: 170px;
+        width: auto;
         height: auto;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
         padding-top: 5%;
-        padding-bottom: 8%;
-        padding-left: 10%;
+        padding-bottom: 5%;
+        padding-left: 8%;
+        padding-right: 25%;
         border-radius: 5px;
     }
 
     .inputPopUpText {
-        font-family: "Poppins", sans-serif;
-        font-size: 1rem;
-        /* font-weight: var(--bolder-font); */
         margin: 5% 0px 0px 0px;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
+        font-size: clamp(0.7rem, -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
     }
 
     .inputPopUpText:hover {
@@ -1295,7 +1292,7 @@
         align-items: flex-start;
         background-color: var(--box-bg-primary);
         padding-left: 0%;
-        webkit-tap-highlight-color: transparent;
+        -webkit-tap-highlight-color: transparent;
         -webkit-touch-callout: none;
         -webkit-user-select: none;
         -khtml-user-select: none;

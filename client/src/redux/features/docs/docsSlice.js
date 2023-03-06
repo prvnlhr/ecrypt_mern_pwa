@@ -2,8 +2,7 @@ import { createAsyncThunk, createSlice, current } from "@reduxjs/toolkit";
 import * as api from "../../api"
 import { addActivityData } from "../activity/activitiesSlice"
 import { addRecentlyAddedData, deleteRecentlyAddedData } from "../recentlyAdded/recentlyAddedSlice"
-
-import { addToFavDocsData } from "../favorites/favoritesSlice"
+import { addToFavDocsData, removeFromFavDocsData } from "../favorites/favoritesSlice"
 const initialState = {
     docsData: [],
     isLoading: false,
@@ -95,7 +94,12 @@ export const deleteDocData = createAsyncThunk("docs/delete", async ({ docId, clo
             item_id: docId,
             user_id: userId
         }))
-
+        // console.log(activityData, docId)
+        if (activityData.isFavourite === true) {
+            dispatch(removeFromFavDocsData({
+                doc_id: docId,
+            }))
+        }
         return fulfillWithValue(res.data.data.reverse());
 
     } catch (error) {

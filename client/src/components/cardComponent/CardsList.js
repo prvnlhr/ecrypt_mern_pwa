@@ -77,7 +77,6 @@ const CardsList = ({ setLogoComponentShow,
   const [showInputForm, setShowInputForm] = useState(false);
   const [editMode, setEditMode] = useState(false);
 
-
   const formToggle = () => {
     setShowInputForm(!showInputForm);
   };
@@ -153,13 +152,22 @@ const CardsList = ({ setLogoComponentShow,
 
   const [fullContentCardCategory, setFullContentCardCatergory] = useState("BankCard");
 
+  const [currFocusField, setCurrFocusField] = useState(undefined);
+  const onFocus = (val) => {
+    setCurrFocusField(val)
+  }
+
   const handleFullContentBackBtnClicked = () => {
+    setCurrFocusField(undefined);
     setShowContentCard(false);
     setEditMode(false);
   }
 
   const handleCardClicked = (cardData) => {
 
+    if (showInputForm === true) {
+      setShowInputForm(false);
+    }
     switch (cardData.category) {
       case "Identity":
         setFullContentCardCatergory("Identity")
@@ -306,6 +314,9 @@ const CardsList = ({ setLogoComponentShow,
         showContentCard={showContentCard}
         setShowContentCard={setShowContentCard}
         handleFullContentBackBtnClicked={handleFullContentBackBtnClicked}
+        currFocusField={currFocusField}
+        setCurrFocusField={setCurrFocusField}
+        onFocus={onFocus}
         fullContentCardData={
           fullContentCardCategory === "Bank" ? bankCardData : fullContentCardCategory === "Identity" ? identityCardData : fullContentCardCategory === "License" ? licenseCardData : undefined
         }

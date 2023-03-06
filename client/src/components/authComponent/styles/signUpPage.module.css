@@ -453,7 +453,7 @@ input:focus {
       "formFooterWrapper formFooterWrapper";
     justify-content: center;
     align-items: center;
-    webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -486,6 +486,8 @@ input:focus {
 
   .formLabelDiv p {
     font-size: 1.5rem;
+    font-size: clamp(1.2rem, -0.40000000000000013rem + 8.0vw, 2.0rem) !important;
+
   }
 
   .formLabelDiv::after {
@@ -526,10 +528,14 @@ input:focus {
 
   .messageDivError p {
     font-size: 0.7rem;
+    font-size: clamp(0.55rem, -0.1499999999999999rem + 3.4999999999999996vw, 0.9rem) !important;
+
   }
 
   .messageDivSuccess p {
     font-size: 0.7rem;
+    font-size: clamp(0.55rem, -0.1499999999999999rem + 3.4999999999999996vw, 0.9rem) !important;
+
   }
 
   .errorMessageIconDiv {
@@ -544,6 +550,8 @@ input:focus {
 
   .warningIcon {
     font-size: 1rem;
+    font-size: clamp(0.7rem, -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
+
     padding: 0px;
     margin: 0px;
   }
@@ -567,7 +575,7 @@ input:focus {
     align-items: center;
     /* border: 1px solid green; */
     margin: auto;
-    webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -699,6 +707,8 @@ input:focus {
 
   .fieldIcon {
     font-size: 1.9rem;
+    font-size: clamp(2.1rem, 3.5000000000000004rem + -7.000000000000002vw, 1.4rem) !important;
+
   }
 
   .labelDiv {
@@ -713,6 +723,7 @@ input:focus {
 
   .labelDiv p {
     font-size: 0.82rem;
+    font-size: clamp(0.6rem, -1.1102230246251565e-16rem + 3.0000000000000004vw, 0.9rem) !important;
     margin-top: 5%;
   }
 
@@ -738,6 +749,8 @@ input:focus {
     background: none;
     outline: none;
     font-size: 0.8rem;
+    font-size: clamp(0.6rem, -1.1102230246251565e-16rem + 3.0000000000000004vw, 0.9rem) !important;
+
     letter-spacing: 0.3px;
 
   }
@@ -764,6 +777,8 @@ input:focus {
     border: none;
     border-radius: 15px;
     font-size: 0.8rem;
+    font-size: clamp(0.7rem, 0.09999999999999987rem + 3.0000000000000004vw, 1.0rem) !important;
+
     letter-spacing: 0.5px;
     /* outline: #AED2FF; */
   }
@@ -783,12 +798,16 @@ input:focus {
 
   .formFooterWrapper p {
     font-size: 0.8rem;
+    font-size: clamp(0.6rem, -1.1102230246251565e-16rem + 3.0000000000000004vw, 0.9rem) !important;
+
     white-space: nowrap;
 
   }
 
   .spanText {
     font-size: 0.8rem;
+    font-size: clamp(0.6rem, -1.1102230246251565e-16rem + 3.0000000000000004vw, 0.9rem) !important;
+
     margin-left: 1%;
   }
 

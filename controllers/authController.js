@@ -24,7 +24,7 @@ sgMail.setApiKey(SEND_GRID_API_KEY);
 const authController = {
   register: async (req, res) => {
     const { email, password, confirmPassword, firstName, lastName, joinedDate, updateDate } = req.body;
-    console.log(req.body);
+    // console.log(req.body);
     // console.log(email, password, confirmPassword, firstName, lastName)
     try {
 
@@ -83,7 +83,7 @@ const authController = {
       ) {
         return res.status(401).json({ msg: "Link Expired! Register again" });
       }
-      console.log("error at activateEmail", err.name);
+      // console.log("error at activateEmail", err.name);
       return res.status(500).json({ msg: err.message });
     }
   },
@@ -150,7 +150,7 @@ const authController = {
       // console.log(user)
       return res.status(200).json({ user });
     } catch (error) {
-      console.log("error at getUserinfo controller", error);
+      // console.log("error at getUserinfo controller", error);
       return res.status(404).send(error);
     }
   },
@@ -161,7 +161,7 @@ const authController = {
       res.clearCookie("refreshtoken", { path: "/user/auth/access_token" });
       return res.status(200).json({ msg: "Successfully Logged out" });
     } catch (error) {
-      console.log("error at logout controller", error);
+      // console.log("error at logout controller", error);
       return res.status(404).send(error);
     }
   },
@@ -189,7 +189,7 @@ const authController = {
       sendMail(email, url, "Reset your password. Click the below link");
       res.json({ msg: "Please check your email for reset link" });
     } catch (error) {
-      console.log("error at forgot password controller", error);
+      // console.log("error at forgot password controller", error);
       return res.status(404).send(error);
     }
   },
@@ -206,7 +206,7 @@ const authController = {
       );
       res.json({ msg: "Password successfully changed !" });
     } catch (error) {
-      console.log("error at reset password controller", error);
+      // console.log("error at reset password controller", error);
       return res.status(404).send(error);
     }
   },
@@ -231,7 +231,7 @@ const authController = {
       );
       res.json({ msg: "Password successfully changed !" });
     } catch (error) {
-      console.log("error at changePassword controller", error);
+      // console.log("error at changePassword controller", error);
       return res.status(404).send(error);
     }
   },
@@ -264,10 +264,10 @@ const authController = {
         updateDate: response.updateDate,
       };
 
-      console.log(newData)
+      // console.log(newData)
       res.json({ msg: "Profile Successfully updated !", newData });
     } catch (error) {
-      console.log("error at edit profile controller", error);
+      // console.log("error at edit profile controller", error);
       return res.status(404).send(error);
     }
   },
@@ -303,7 +303,7 @@ const authController = {
       // console.log(picData);
       res.json(picData);
     } catch (error) {
-      console.log("error at edit profile controller", error);
+      // console.log("error at edit profile controller", error);
       return res.status(404).send(error);
     }
   },
@@ -326,8 +326,7 @@ const authController = {
 
       res.json({ msg: "Account successfully deleted !" });
     } catch (error) {
-      console.log("error at edit delete account controller", error);
-
+      // console.log("error at edit delete account controller", error);
       return res.status(404).send(error);
     }
   },

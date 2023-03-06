@@ -87,8 +87,7 @@
 
 .backBtnDiv {
   width: auto;
-  height: 22px;
-  height: 25px;
+  height: 20px;
   /* border: 1px solid black; */
   display: flex;
   justify-content: center;
@@ -118,8 +117,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid black; */
+  /* border: 1px solid red; */
   cursor: pointer;
+}
+
+.spinner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid orange; */
 }
 
 .logoTitleWrapper {
@@ -237,7 +244,7 @@
   position: relative;
   width: 100%;
   height: 100%;
-  text-align: end;
+  text-align: start;
   /* border: 1px solid skyblue; */
 }
 
@@ -671,7 +678,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80%;
+    height: 65%;
     aspect-ratio: 1/1;
     /* border: 1px solid black; */
   }

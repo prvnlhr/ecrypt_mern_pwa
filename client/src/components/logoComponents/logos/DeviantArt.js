@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from "../styles/logosStyles.module.css"
 
-const DeivantArt = () => {
+const DeviantArt = () => {
     return (
         <svg
             // width="48" height="48"
@@ -22,4 +22,4 @@ const DeivantArt = () => {
     )
 }
 
-export default DeivantArt
+export default DeviantArt

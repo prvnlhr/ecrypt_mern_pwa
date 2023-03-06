@@ -25,7 +25,7 @@ const FavCard = ({ favItem, handleFavCardClick }) => {
         >
             <div className={styles.logoWrapper} >
                 <div className={styles.logoDiv}>
-                    {logosArray[favItem.logoIndex].logo}
+                    {favItem.logoIndex && logosArray[favItem.logoIndex].logo}
                 </div>
             </div>
             <div className={styles.titleWrapper} >

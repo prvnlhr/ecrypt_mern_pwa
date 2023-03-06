@@ -43,7 +43,7 @@ const Card = ({ cardData, handleCardClicked, setFullCardData, clickedSearchItem 
 
 
   return (
-   
+
     <div
       id={cardData._id}
       className={`${cardData.category === "Bank" ? styles.cardComponentBank : styles.cardComponent} ${clickedSearchItem?._id === cardData._id && styles.cardComponentFocus} `}
@@ -53,7 +53,7 @@ const Card = ({ cardData, handleCardClicked, setFullCardData, clickedSearchItem 
     >
       <div className={styles.logoWrapper} >
         <div className={styles.logoDiv}>
-          {logosArray[cardData.logoIndex].logo}
+          {cardData.logoIndex && logosArray[cardData.logoIndex].logo}
         </div>
       </div>
       <div className={styles.titleWrapper} >

@@ -79,6 +79,11 @@ const LoginIdsList = ({ setLogoComponentShow,
 
   const [deleteMode, setDeleteMode] = useState(false);
 
+  const [currFocusField, setCurrFocusField] = useState(undefined);
+
+  const onFocus = (val) => {
+    setCurrFocusField(val)
+  }
 
   const formToggle = () => {
     setShowInputForm(!showInputForm);
@@ -86,6 +91,7 @@ const LoginIdsList = ({ setLogoComponentShow,
 
 
   const handleFullContentBackBtnClicked = () => {
+    setCurrFocusField(undefined);
     setShowContentCard(false);
     setEditMode(false);
   }
@@ -128,10 +134,14 @@ const LoginIdsList = ({ setLogoComponentShow,
         isFavourite: loginIData.isFavourite,
       })
     }
+
+    if (showInputForm === true) {
+      setShowInputForm(false);
+    }
+
     setDeleteMode(false);
     setShowContentCard(true);
   }
-
 
   return (
     <div className={styles.loginsList}>
@@ -186,6 +196,9 @@ const LoginIdsList = ({ setLogoComponentShow,
         handleLoginIdClicked={handleLoginIdClicked}
         setDeleteMode={setDeleteMode}
         deleteMode={deleteMode}
+        currFocusField={currFocusField}
+        setCurrFocusField={setCurrFocusField}
+        onFocus={onFocus}
       />
       {/* } */}
       <LoginIdInputForm

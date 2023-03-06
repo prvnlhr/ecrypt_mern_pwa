@@ -69,6 +69,12 @@ const Settings = () => {
         email: "",
     });
 
+    const [oldProfileData, setOldProfileData] = useState({
+        firstName: "",
+        lastName: "",
+        email: "",
+    })
+
     //> Password Data
     const [passwordData, setPasswordData] = useState({
         newPassword: '',
@@ -203,6 +209,12 @@ const Settings = () => {
 
         if (currSection === 'PROFILE') {
             setCurrFocusField(1);
+            setOldProfileData({
+                ...oldProfileData,
+                firstName: userState.firstName,
+                lastName: userState.lastName,
+                email: userState.email,
+            })
 
         } else if (currSection === 'PASS') {
             setCurrFocusField(4);
@@ -235,6 +247,10 @@ const Settings = () => {
         //> Image, SECTION == PROFILEPIC, reverting back old Profile Pic
         if (editMode.section === 'PROFILEPIC') {
             setProfilePicImg(oldProfilePic);
+        }
+
+        if (editMode.section === 'PROFILE') {
+            setProfileData(oldProfileData);
         }
         setCurrFocusField(undefined);
         setFormMessage({

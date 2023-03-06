@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 const auth = async (req, res, next) => {
   try {
     const token = req.header("Authorization").split(" ")[1];
-    console.log('auth middle', token);
+    // console.log('auth middle', token);
     if (!token) {
       return res.status(401).json({ msg: "Access denied , token missing" });
     }
@@ -23,7 +23,7 @@ const auth = async (req, res, next) => {
       next();
     });
   } catch (error) {
-    console.log("error at auth middleware 2", error);
+    // console.log("error at auth middleware 2", error);
     return res.status(400).send(error);
   }
 };

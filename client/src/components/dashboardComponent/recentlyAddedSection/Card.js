@@ -25,7 +25,7 @@ const Card = ({ item, clickedSearchItem, handleItemClicked }) => {
         >
             <div className={styles.logoWrapper} >
                 <div className={styles.logoDiv}>
-                    {logosArray[item.logoIndex].logo}
+                    {item.logoIndex && logosArray[item.logoIndex].logo}
                 </div>
             </div>
             <div className={styles.titleWrapper} >

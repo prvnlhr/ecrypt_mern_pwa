@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import styles from "./styles/fullContentCard.module.css"
 import BackBtnIcon from "../../icons/BackBtnIcon"
 import { Icon } from '@iconify/react';
@@ -10,7 +10,12 @@ import { logosArray } from "../../logoComponents/logosData"
 import LogoComponentWrapper from "../../logoComponents/LogoComponentWrapper"
 import BookmarksIcon from "../../icons/BookmarksIcon"
 import BookmarksIconFill from "../../icons/BookmarksIconFill"
+import { Oval } from 'react-loader-spinner'
 
+const spinnerWrapper = {
+    height: `100%`,
+    with: `100%`,
+}
 const FullContentCard = ({ showFullFavCard, setShowFullFavCard, favFullCardData }) => {
 
     const dispatch = useDispatch();
@@ -18,10 +23,18 @@ const FullContentCard = ({ showFullFavCard, setShowFullFavCard, favFullCardData 
         dispatch(toggleIsFav({
             loginId_id: favFullCardData._id,
             isFav: !favFullCardData.isFavourite
-        }))
-        setShowFullFavCard(false);
+        })).then((res) => {
+            if (res.type === 'loginIds/toggleFav/fulfilled') {
+                setShowFullFavCard(false);
+            }
+        })
     }
 
+    const isDarkMode = useSelector((state) => state.ui.darkMode);
+
+    const loginsIdState = useSelector((state => state.loginIds));
+
+    const { isLoading, action } = loginsIdState;
 
     const handleFullContentBackBtnClicked = () => {
         setShowFullFavCard(!showFullFavCard);
@@ -43,7 +56,36 @@ const FullContentCard = ({ showFullFavCard, setShowFullFavCard, favFullCardData 
                     </div>
                     <div className={styles.curdBtnContainer} >
                         <div className={styles.favBtnDiv} onClick={favItemClicked}  >
-                            <BookmarksIconFill />
+                            {
+                                (isLoading === true && action === 'toggleFav') ?
+                                    <Oval
+                                        height={`75%`}
+                                        width={`75%`}
+                                        color={isDarkMode ? 'white' : '#002A9A'}
+                                        wrapperStyle={spinnerWrapper}
+                                        wrapperClass={styles.spinner}
+                                        visible={true}
+                                        ariaLabel='oval-loading'
+                                        secondaryColor="#E6E6E6"
+                                        strokeWidth={5}
+                                        strokeWidthSecondary={5}
+                                        className={styles.spinner}
+                                    /> :
+                                    // <BookmarksIconFill />
+                                    <Oval
+                                        height={`80%`}
+                                        width={`80%`}
+                                        color={isDarkMode ? 'white' : '#002A9A'}
+                                        wrapperStyle={spinnerWrapper}
+                                        wrapperClass={styles.spinner}
+                                        visible={true}
+                                        ariaLabel='oval-loading'
+                                        secondaryColor="#E6E6E6"
+                                        strokeWidth={5}
+                                        strokeWidthSecondary={5}
+                                        className={styles.spinner}
+                                    />
+                            }
                         </div>
 
                     </div>

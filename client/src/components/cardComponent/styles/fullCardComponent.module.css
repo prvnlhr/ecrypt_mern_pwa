@@ -824,30 +824,27 @@
     }
 
     .inputPopUpDiv {
-        top: 105%;
+        top: 110%;
+        right: 25%;
         position: absolute;
-        width: 150px;
-        height: 200px;
-        background-color: white;
-        border: unset;
+        width: auto;
+        height: auto;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
         padding-top: 5%;
         padding-bottom: 5%;
-        padding-left: 10%;
+        padding-left: 8%;
+        padding-right: 25%;
         border-radius: 5px;
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
     }
 
     .inputPopUpText {
-        font-size: 15px;
+        font-size: 0.8rem;
         margin: 5% 0px 0px 0px;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
+        font-size: clamp(0.7rem, -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
     }
 
     .inputPopUpText:hover {

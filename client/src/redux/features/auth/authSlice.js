@@ -33,7 +33,7 @@ export const activateUserAccount = createAsyncThunk("auth/activateAccount", asyn
         // console.log(res);
         return fulfillWithValue(res.data.msg);
     } catch (error) {
-        console.log(error.response.data.msg)
+        // console.log(error.response.data.msg)
         return rejectWithValue(error.response.data.msg);
     }
 });
@@ -48,7 +48,7 @@ export const loginUser = createAsyncThunk("auth/login", async ({ formData, navig
         navigate('/')
         return fulfillWithValue(response);
     } catch (error) {
-        console.log(error.response.data.msg)
+        // console.log(error.response.data.msg)
         return rejectWithValue(error.response.data.msg);
     }
 });

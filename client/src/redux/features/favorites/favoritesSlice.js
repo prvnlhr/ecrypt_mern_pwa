@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, current } from "@reduxjs/toolkit";
 import { addActivityData } from "../activity/activitiesSlice"
 import * as api from "../../api"
 
@@ -7,8 +7,6 @@ const initialState = {
     favoriteCards: [],
     favoriteDocs: [],
 }
-
-
 
 export const fetchFavoritesData = createAsyncThunk("favorites/fetch", async ({ user_id }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
@@ -52,10 +50,23 @@ const favoritesSlice = createSlice({
                 // favoriteDocs: []
             }
         },
+        removeFromFavDocsData(state, action) {
+            return {
+                ...state,
+                favoriteDocs: state.favoriteDocs.filter(item => item._id !== action.payload.doc_id)
+            }
+        },
         removeFromFavCardsData(state, action) {
             return {
                 ...state,
-                favoriteCards: state.favoriteCards.filter(item => item._id != action.payload.card_id)
+                favoriteCards: state.favoriteCards.filter(item => item._id !== action.payload.card_id)
+            }
+        },
+
+        removeFromFavLoginsData(state, action) {
+            return {
+                ...state,
+                favoriteLoginIds: state.favoriteLoginIds.filter(item => item._id !== action.payload.login_id)
             }
         },
     },
@@ -73,5 +84,5 @@ const favoritesSlice = createSlice({
     }
 })
 
-export const { addToFavLoginsData, addToFavCardsData, removeFromFavCardsData, addToFavDocsData } = favoritesSlice.actions;
+export const { addToFavLoginsData, addToFavCardsData, removeFromFavCardsData, addToFavDocsData, removeFromFavLoginsData, removeFromFavDocsData } = favoritesSlice.actions;
 export default favoritesSlice.reducer;

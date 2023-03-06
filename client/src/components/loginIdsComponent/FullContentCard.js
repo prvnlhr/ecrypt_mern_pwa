@@ -23,15 +23,15 @@ const spinnerWrapper = {
 }
 const FullContentCard = ({ fullContentCardData, setFullContentCardData, showContentCard, setShowContentCard, handleFullContentBackBtnClicked, editMode, setEditMode, handleLoginIdClicked,
     setDeleteMode,
-    deleteMode
+    deleteMode,
+    currFocusField,
+    setCurrFocusField,
+    onFocus
 }) => {
 
     const dispatch = useDispatch();
     const userId = useSelector((state) => state.user._id);
-    const [currFocusField, setCurrFocusField] = useState(undefined);
-    const onFocus = (val) => {
-        setCurrFocusField(val)
-    }
+
 
     const isDarkMode = useSelector((state) => state.ui.darkMode);
 

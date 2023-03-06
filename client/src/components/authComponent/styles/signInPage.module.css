@@ -460,6 +460,7 @@
 
 .passForgetWrapper {
   grid-area: passForgetWrapper;
+  position: relative;
   width: 100%;
   height: 100%;
   /* border: 1px solid black; */
@@ -469,7 +470,7 @@
 }
 
 
-.linkText {
+.forgotPassLinkText {
   text-decoration: none;
   font-family: "Poppins", sans-serif;
   font-size: 0.6rem;
@@ -552,12 +553,35 @@ input:focus {
 
 .submitBtnWrapper {
   grid-area: submitBtnWrapper;
+  position: relative;
   width: 100%;
   height: 100%;
   /* border: 1px solid black; */
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.demoLoginDiv {
+  position: absolute;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  /* border: 1px solid skyblue; */
+  cursor: pointer;
+}
+
+.demoLoginDiv p {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.65rem;
+  font-weight: var(--bold-font);
+  color: var(--ui-scheme-color);
+  text-decoration: underline white;
 }
 
 .submitBtn {
@@ -775,6 +799,8 @@ input:focus {
   .textDiv1 p {
     font-family: "Poppins", sans-serif;
     font-size: 1.2rem;
+    font-size: 1.6rem;
+    font-size: clamp(1.2rem, 0.3999999999999997rem + 4.000000000000002vw, 1.6rem) !important;
     font-weight: var(--boldest-font);
     color: var(--primary-font-color);
   }
@@ -791,7 +817,11 @@ input:focus {
 
   .textDiv2 p {
     font-family: "Poppins", sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+    font-size: 0.9rem;
+    font-size: clamp(0.7rem, 0.2999999999999998rem + 2.000000000000001vw, 0.9rem) !important;
+    font-size:clamp(0.6rem , 0.19999999999999984rem + 2.000000000000001vw, 0.8rem) !important;
+  
     font-weight: var(--bolder-font);
     color: #6A82A7;
 
@@ -809,7 +839,7 @@ input:focus {
 
   .textDiv3 p {
     font-family: "Poppins", sans-serif;
-    font-size: 0.8rem;
+    font-size:clamp(0.6rem , 0.19999999999999984rem + 2.000000000000001vw, 0.8rem) !important;
     color: #6A82A7;
     font-weight: var(--bolder-font);
   }
@@ -827,6 +857,11 @@ input:focus {
   .bioSpanText {
     font-family: "Poppins", sans-serif;
     font-size: 0.8rem;
+    font-size: 0.5rem;
+    /* font-size: 0.9rem; */
+    /* font-size: clamp(0.7rem, 0.2999999999999998rem + 2.000000000000001vw, 0.9rem) !important; */
+    font-size:clamp(0.6rem , 0.19999999999999984rem + 2.000000000000001vw, 0.8rem) !important;
+   
     font-weight: var(--bolder-font);
     color: var(--ui-scheme-color);
   }
@@ -834,6 +869,13 @@ input:focus {
   .textDiv4 p {
     font-family: "Poppins", sans-serif;
     font-size: 0.9rem;
+    font-size: 0.7rem;
+    font-size: 0.9rem;
+    font-size: 0.5rem;
+
+    /* font-size: clamp(0.7rem, 0.2999999999999998rem + 2.000000000000001vw, 0.9rem) !important; */
+    font-size:clamp(0.6rem , 0.19999999999999984rem + 2.000000000000001vw, 0.8rem) !important;
+
     font-weight: var(--bolder-font);
     color: #6A82A7;
 
@@ -881,7 +923,7 @@ input:focus {
 
     justify-content: center;
     align-items: center;
-    webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -915,7 +957,7 @@ input:focus {
   }
 
   .formLabelDiv p {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, -0.40000000000000013rem + 8.0vw, 2.0rem) !important;
   }
 
   .formLabelDiv::after {
@@ -951,18 +993,17 @@ input:focus {
     border-radius: 6px;
     padding: 1% 4% 1% 4%;
     /* margin-top: 3%; */
-
   }
 
 
 
   .messageDivError p {
-    font-size: 0.7rem;
+    font-size: clamp(0.55rem, -0.1499999999999999rem + 3.4999999999999996vw, 0.9rem) !important;
   }
 
 
   .messageDivSuccess p {
-    font-size: 0.7rem;
+    font-size: clamp(0.55rem, -0.1499999999999999rem + 3.4999999999999996vw, 0.9rem) !important;
   }
 
   /* .messageDiv p {} */
@@ -976,7 +1017,7 @@ input:focus {
   }
 
   .warningIcon {
-    font-size: 0.8rem;
+    font-size: clamp(0.7rem, -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
     padding: 0px;
     margin: 0px;
   }
@@ -1060,11 +1101,10 @@ input:focus {
   }
 
 
-  .linkText {
-    font-size: 0.8rem;
+  .forgotPassLinkText {
+    font-size: clamp(0.6rem, -0.20000000000000007rem + 4.0vw, 1.0rem) !important;
     margin-right: 2%;
     white-space: nowrap;
-
   }
 
 
@@ -1079,7 +1119,7 @@ input:focus {
   }
 
   .fieldIcon {
-    font-size: 1.9rem;
+    font-size: clamp(2.1rem, 3.5000000000000004rem + -7.000000000000002vw, 1.4rem) !important;
   }
 
   .labelDiv {
@@ -1093,7 +1133,7 @@ input:focus {
   }
 
   .labelDiv p {
-    font-size: 0.8rem;
+    font-size: clamp(0.6rem, -1.1102230246251565e-16rem + 3.0000000000000004vw, 0.9rem) !important;
     margin-top: 5%;
   }
 
@@ -1118,9 +1158,8 @@ input:focus {
     border-bottom: none;
     background: none;
     outline: none;
-    font-size: 0.8rem;
+    font-size: clamp(0.6rem, -1.1102230246251565e-16rem + 3.0000000000000004vw, 0.9rem) !important;
     letter-spacing: 0.3px;
-
   }
 
   input:focus {
@@ -1143,7 +1182,7 @@ input:focus {
     height: 40%;
     border: none;
     border-radius: 15px;
-    font-size: 0.8rem;
+    font-size: clamp(0.7rem, 0.09999999999999987rem + 3.0000000000000004vw, 1.0rem) !important;
     letter-spacing: 0.5px;
     /* outline: #AED2FF; */
   }
@@ -1162,13 +1201,17 @@ input:focus {
   }
 
   .formFooterWrapper p {
-    font-size: 0.8rem;
+    font-size: clamp(0.6rem, -1.1102230246251565e-16rem + 3.0000000000000004vw, 0.9rem) !important;
     white-space: nowrap;
   }
 
   .spanText {
-    font-size: 0.8rem;
+    font-size: clamp(0.6rem, -1.1102230246251565e-16rem + 3.0000000000000004vw, 0.9rem) !important;
     margin-left: 1%;
+  }
+
+  .demoLoginDiv p {
+    font-size: clamp(0.65rem, 0.15000000000000002rem + 2.5vw, 0.9rem) !important;
   }
 
 }

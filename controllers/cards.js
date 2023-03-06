@@ -129,7 +129,7 @@ const cardsController = {
       // console.log(resData)
       res.status(200).send(resData[resData.length - 1]);
     } catch (error) {
-      console.log(error)
+      // console.log(error)
       res.status(404).json({ message: error.message });
     }
   },
@@ -194,7 +194,7 @@ const cardsController = {
       }
       res.status(200).send(response);
     } catch (error) {
-      console.log(error)
+      // console.log(error)
       res.status(404).json({ message: error.message });
     }
   },
@@ -272,7 +272,7 @@ const cardsController = {
       // console.log(response)
       res.status(201).json(response);
     } catch (error) {
-      console.log(error)
+      // console.log(error)
       res.status(404).json({ message: error.message });
     }
   },

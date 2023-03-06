@@ -66,7 +66,7 @@ const App = () => {
     const timeout = setTimeout(() => {
       getToken();
       setInitialLoading(false);
-      // }, 5000)
+      // }, 0)
     }, 5000)
     return () => clearTimeout(timeout);
   }, [])

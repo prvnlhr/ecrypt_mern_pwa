@@ -89,9 +89,8 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
     }
 
     const saveBtnClicked = () => {
+        
         const activity_data = generateActivityData(1, 'Login', formData, '')
-        // console.log(activity_data)
-        // console.table(formData);
         dispatch(addNewLoginIdData({
             data: formData,
             user_id: userId,

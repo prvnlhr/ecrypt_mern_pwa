@@ -38,7 +38,7 @@ const recentlyAddedController = {
     deleteRecentlyAdded: async (req, res) => {
         const item_id = req.params.id;
         const userId = req.body.user_id;
-        console.log('delete recently Added controller', item_id, userId);
+        // console.log('delete recently Added controller', item_id, userId);
         try {
             const response = await UserDatabase.findOneAndUpdate(
                 { _id: userId },

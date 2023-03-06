@@ -43,7 +43,7 @@ const documentsController = {
 
       res.status(200).json(dBResponse.docsArray);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       res.status(404).json({ message: error.message });
     }
   },
@@ -71,7 +71,7 @@ const documentsController = {
         msg: "docDeleted",
       });
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       res.status(404).json({ message: error.message });
     }
   },

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import styles from "./styles/fullCardComponent.module.css"
 import BackBtnIcon from "../../icons/BackBtnIcon"
 import { Icon } from '@iconify/react';
@@ -13,7 +13,11 @@ import BookmarksIconFill from "../../icons/BookmarksIconFill"
 import { toggleIsFav } from '../../../redux/features/cards/cardsSlice';
 // import { editCardData, deleteCardData } from "../../../redux/features/cards/cardsSlice"
 // import { generateActivityData } from "../../utils/ActivityDataChangeFuction"
-
+import { Oval } from 'react-loader-spinner'
+const spinnerWrapper = {
+    height: `100%`,
+    with: `100%`,
+}
 const FullCardComponent = ({
     showFullFavCard,
     setShowFullFavCard,
@@ -23,14 +27,22 @@ const FullCardComponent = ({
 }) => {
 
     const dispatch = useDispatch();
+
+    const isDarkMode = useSelector((state) => state.ui.darkMode);
+    const cardState = useSelector((state => state.cards));
+    const { isLoading, action } = cardState;
     const favItemClicked = () => {
 
         dispatch(toggleIsFav({
             card_id: favFullCardData._id,
             isFav: !favFullCardData.isFavourite,
             category: favFullCardData.category
-        }))
-        setShowFullFavCard(false);
+        })).then((res) => {
+            // console.log(res)
+            if (res.type === 'cards/toggleFav/fulfilled') {
+                setShowFullFavCard(false);
+            }
+        })
     }
     const handleFullContentBackBtnClicked = () => {
         setShowFullFavCard(!showFullFavCard);
@@ -53,7 +65,24 @@ const FullCardComponent = ({
                     </div>
                     <div className={styles.curdBtnContainer} >
                         <div className={styles.favBtnDiv} onClick={favItemClicked}  >
-                            <BookmarksIconFill />
+                            {
+                                (isLoading === true && action === 'toggleFav') ?
+                                    <Oval
+                                        height={`80%`}
+                                        width={`80%`}
+                                        color={isDarkMode ? 'white' : '#002A9A'}
+                                        wrapperStyle={spinnerWrapper}
+                                        wrapperClass={styles.spinner}
+                                        visible={true}
+                                        ariaLabel='oval-loading'
+                                        secondaryColor="#E6E6E6"
+                                        strokeWidth={5}
+                                        strokeWidthSecondary={5}
+                                        className={styles.spinner}
+                                    />
+                                    :
+                                    <BookmarksIconFill />
+                            }
                         </div>
                     </div>
                 </div>

@@ -684,33 +684,32 @@
     }
 
     .inputPopUpDiv {
-        top: 105%;
+        top: 110%;
+        right: 25%;
         position: absolute;
-        width: 170px;
+        width: auto;
         height: auto;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
         padding-top: 5%;
-        padding-bottom: 8%;
-        padding-left: 10%;
+        padding-bottom: 5%;
+        padding-left: 8%;
+        padding-right: 25%;
         border-radius: 5px;
-
     }
 
     .inputPopUpText {
-        font-family: "Poppins", sans-serif;
-        font-size: 1rem;
-        /* font-weight: var(--bolder-font); */
-        margin: 5% 0px 0px 0px;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
+        font-size: 0.7rem;
+        /* font-size: 1.1rem; */
+        font-size: clamp(0.7rem, -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
+        margin: 15% 0px 0px 0px;
     }
 
     .inputPopUpText:hover {
         width: 80%;
+        background-color: unset;
     }
 
     .subCardWrapper {

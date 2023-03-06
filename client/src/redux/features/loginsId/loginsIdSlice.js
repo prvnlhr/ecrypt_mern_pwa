@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, current } from "@reduxjs/toolkit";
 import { addActivityData } from "../activity/activitiesSlice"
-import { addToFavLoginsData } from "../favorites/favoritesSlice";
+import { addToFavLoginsData, removeFromFavLoginsData } from "../favorites/favoritesSlice";
 import { addRecentlyAddedData, deleteRecentlyAddedData } from "../recentlyAdded/recentlyAddedSlice"
 import * as api from "../../api"
 
@@ -12,7 +12,6 @@ const initialState = {
 
 export const fecthLoginIdsData = createAsyncThunk("loginIds/fetch", async ({ user_id }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
-
         const res = await api.fetchUserLoginIds(user_id);
         const { data } = res;
         data.reverse();
@@ -82,9 +81,17 @@ export const deleteLoginData = createAsyncThunk("loginIds/delete", async ({ logi
             item_id: login_id,
             user_id: user_id
         }))
+        //> get isFav Value from  activityData. if isFav value was true, it means we should also  remove
+        //> from favList
 
+        console.log(activityData.isFavourite, activityData._id);
+
+        if (activityData.isFavourite === true) {
+            dispatch(removeFromFavLoginsData({
+                login_id: login_id,
+            }));
+        }
         const { data } = res;
-        // console.log('delete loginId', login_id)
         return fulfillWithValue(data.reverse());
         // return fulfillWithValue({});
 
@@ -98,7 +105,9 @@ export const toggleIsFav = createAsyncThunk("loginIds/toggleFav", async ({ login
     try {
         const state = getState();
         const res = await api.loginIdFavouriteToggle(loginId_id, isFav, state.auth.token)
+
         const favLoginsArray = res.data.filter((item) => item.isFavourite);
+
         dispatch(addToFavLoginsData(favLoginsArray.reverse()));
 
         return fulfillWithValue({ favValue: isFav, id: loginId_id });

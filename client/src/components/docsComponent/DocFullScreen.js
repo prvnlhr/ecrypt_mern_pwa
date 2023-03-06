@@ -69,7 +69,6 @@ const DocFullScreen = ({ setDocFullScreen, setFullScreenDocData, docFullScreen, 
         setEditMode(false);
     }
     const saveBtnClicked = () => {
-        // console.log(fullScreenData.imageName)
         const oldData = {
             title: oldTitle
         }
@@ -94,8 +93,10 @@ const DocFullScreen = ({ setDocFullScreen, setFullScreenDocData, docFullScreen, 
     const confirmDeleteBtnClicked = () => {
         setDeleteMode(false);
         const newData = {
-            title: fullScreenData.imageName
+            title: fullScreenData.imageName,
+            isFavourite: fullScreenData.isFavourite
         }
+
         const activity_data = generateActivityData(2, 'Doc', newData, '');
         dispatch(deleteDocData({
             docId: fullScreenData._id,
