@@ -45,27 +45,27 @@ const SearchSection = ({ searchMode, setSearchMode, searchQuery,
                 break;
             case "/user/display_loginIds":
                 setListTitle("Logins");
-                setListCount(loginIdsArray.length);
+                setListCount(loginIdsArray?.length);
                 break;
             case "/user/display_cards":
                 setListTitle("Cards");
-                setListCount(cardsArray.length);
+                setListCount(cardsArray?.length);
                 break;
             case "/user/diplay_documents":
                 setListTitle("Notes");
-                setListCount(docsArray.length);
+                setListCount(docsArray?.length);
                 break;
             case "/user/favorites/logins":
                 setListTitle("Favorites");
-                setListCount(favLoginsArray.length);
+                setListCount(favLoginsArray?.length);
                 break;
             case "/user/favorites/cards":
                 setListTitle("Favorites");
-                setListCount(favCardsArray.length);
+                setListCount(favCardsArray?.length);
                 break;
             case "/user/favorites/docs":
                 setListTitle("Favorites");
-                setListCount(favDocsArray.length);
+                setListCount(favDocsArray?.length);
                 break;
             default:
                 break;
