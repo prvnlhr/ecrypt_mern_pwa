@@ -10,7 +10,7 @@
     align-items: center;
     background-color: var(--box-bg-primary);
     padding-left: 5%;
-    webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -184,6 +184,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.logoSelectedBg {
+    background-color: var(--logo-div-bg);
 }
 
 .logoIcon {

@@ -89,7 +89,7 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
     }
 
     const saveBtnClicked = () => {
-        
+
         const activity_data = generateActivityData(1, 'Login', formData, '')
         dispatch(addNewLoginIdData({
             data: formData,
@@ -177,7 +177,7 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
                     <div className={`${styles.logoTitleContainer}  ${currFocusField === 0 && styles.focusFieldStyle} `} >
                         <div className={styles.logoContainer} onClick={handleLogoClicked} >
-                            <div className={styles.logoDiv}>
+                            <div className={`${styles.logoDiv} ${formData.logoIndex !== undefined && styles.logoSelectedBg}`}>
                                 {formData.logoIndex !== undefined &&
                                     logosArray[formData.logoIndex].logo
                                 }

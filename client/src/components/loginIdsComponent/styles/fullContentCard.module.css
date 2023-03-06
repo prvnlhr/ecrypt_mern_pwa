@@ -297,7 +297,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--box-bg-tertiary);
+  /* background-color: var(--box-bg-tertiary); */
+  background-color: var(--logo-div-bg);
 }
 
 .logoDivActive {

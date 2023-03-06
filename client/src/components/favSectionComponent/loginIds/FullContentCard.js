@@ -71,20 +71,7 @@ const FullContentCard = ({ showFullFavCard, setShowFullFavCard, favFullCardData 
                                         strokeWidthSecondary={5}
                                         className={styles.spinner}
                                     /> :
-                                    // <BookmarksIconFill />
-                                    <Oval
-                                        height={`80%`}
-                                        width={`80%`}
-                                        color={isDarkMode ? 'white' : '#002A9A'}
-                                        wrapperStyle={spinnerWrapper}
-                                        wrapperClass={styles.spinner}
-                                        visible={true}
-                                        ariaLabel='oval-loading'
-                                        secondaryColor="#E6E6E6"
-                                        strokeWidth={5}
-                                        strokeWidthSecondary={5}
-                                        className={styles.spinner}
-                                    />
+                                    <BookmarksIconFill />
                             }
                         </div>
 

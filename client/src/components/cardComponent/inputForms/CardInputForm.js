@@ -297,8 +297,20 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
             default:
                 break;
         }
-
+        setLogoIndx(undefined);
         setCurrFocusField(undefined);
+    }
+
+    const ifLogoSelected = () => {
+        if (formCategory === 'Bank') {
+            return bankCardData.logoIndex !== "";
+
+        } else if (formCategory === 'Identity') {
+            return identityCardData.logoIndex !== "";
+        }
+        else if (formCategory === 'License') {
+            return licenseCardData.logoIndex !== "";
+        }
     }
 
     return (
@@ -359,14 +371,13 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                     <div className={styles.logoTitleContainer} >
 
                         <div className={styles.logoContainer} onClick={formLogoClicked} >
-                            <div className={styles.logoDiv}>
+                            <div className={`${styles.logoDiv} ${logoIndx !== undefined && styles.logoSelectedBg}`}>
                                 {logoIndx !== undefined &&
                                     logosArray[logoIndx].logo
                                 }
                             </div>
 
                         </div>
-
 
                         <div className={`${styles.titleContainer} ${(currFocusField === 1) && styles.focusFieldStyle}`} >
                             <div className={styles.titleLabelDiv}>
