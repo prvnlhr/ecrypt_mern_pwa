@@ -60,16 +60,17 @@ const SignUpPage = () => {
         message: res.message,
         error: res.error
       })
-      console.log('error');
+      // console.log('error');
       return;
     } else {
       setFormMessage({
         message: undefined,
         error: false
       })
+
       formData.joinedDate = dateString;
       formData.updateDate = dateString;
-      console.log(formData);
+      // console.log(formData);
       dispatch(registerUser(formData));
     }
 

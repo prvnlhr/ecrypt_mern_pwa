@@ -690,7 +690,7 @@
 
     .inputPopUpDiv {
         top: 110%;
-        right: 25%;
+        right: 20%;
         position: absolute;
         width: auto;
         height: auto;
@@ -700,16 +700,14 @@
         align-items: flex-start;
         padding-top: 5%;
         padding-bottom: 5%;
-        padding-left: 8%;
-        padding-right: 25%;
+        padding-left: 10%;
+        padding-right: 30%;
         border-radius: 5px;
     }
 
     .inputPopUpText {
-        font-size: 0.7rem;
-        /* font-size: 1.1rem; */
-        font-size: clamp(0.7rem, -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
-        margin: 15% 0px 0px 0px;
+        margin: 20% 0px 0px 0px;
+        font-size: clamp(0.75rem, -0.1499999999999999rem + 4.5vw, 1.2rem) !important;
     }
 
     .inputPopUpText:hover {

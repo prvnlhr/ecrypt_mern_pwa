@@ -139,6 +139,7 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                             onClick={() => {
                                 formToggle();
                                 clearForm();
+                                setPopUpOpen(false);
                             }
                             }>
                             <BackBtnIcon />

@@ -32,6 +32,7 @@ export const getUserDetails = createAsyncThunk("user/getUser", async (token, { g
         const userData = res.data.user;
         const profilePicData = res.data.user.profilePic
         const nameString = userData.name.split(/[" "]+/);
+        console.log(userData);
         const userRes = {
             firstName: nameString[0],
             lastName: nameString[1],
@@ -39,7 +40,7 @@ export const getUserDetails = createAsyncThunk("user/getUser", async (token, { g
             _id: userData._id,
             picUrl: profilePicData?.picUrl,
             picCloudId: profilePicData?.cloudinary_id,
-            joinedDate: undefined,
+            joinedDate: userData.joinedDate,
             updateDate: userData.updateDate,
         }
         // console.log(userRes);
@@ -63,7 +64,7 @@ export const editUserProfile = createAsyncThunk("user/editProfile", async ({ tok
 
         const res = await api.editProfile(token, profileData);
         const userData = res.data.newData;
-        console.log(userData);
+        // console.log(userData);
         const nameString = userData.name.split(/[" "]+/);
         const resData =
         {
@@ -130,7 +131,8 @@ const userSlice = createSlice({
                         picUrl: action.payload.picUrl,
                         picCloudId: action.payload.picCloudId,
                     },
-                    updateDate: action.payload.updateDate
+                    updateDate: action.payload.updateDate,
+                    joinedDate: action.payload.joinedDate
                 };
             })
             .addCase(getUserDetails.rejected, (state, action) => {

@@ -330,6 +330,7 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                             onClick={() => {
                                 formToggle();
                                 clearForm();
+                                setPopUpOpen(false);
                             }
 
                             }>

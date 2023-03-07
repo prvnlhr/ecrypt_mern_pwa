@@ -10,7 +10,7 @@
     align-items: center;
     background-color: var(--box-bg-primary);
     padding-left: 5%;
-    webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -182,6 +182,7 @@
     align-items: center;
     /* background-color: var(--box-bg-tertiary); */
     background-color: var(--logo-div-bg);
+    border-radius: 20px;
 }
 
 .logoDivActive {
@@ -476,20 +477,23 @@
     }
 
     .logoContainer {
-        width: 30%;
+        /* width: auto; */
+        /* width: 30%; */
         height: 100%;
-        /* border: 1px solid black; */
+        aspect-ratio: 1/1;
+        /* border: 1px solid orange; */
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
+        /* border: 1px solid green; */
+        margin-right: 2%;
     }
 
 
     .logoDiv {
         /* width: 80%; */
         aspect-ratio: 1/1;
-        height: 80%;
-        /* border: 1px solid black; */
+        height: 90%;
         display: flex;
         justify-content: center;
         align-items: center;

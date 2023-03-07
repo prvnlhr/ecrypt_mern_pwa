@@ -1,0 +1,980 @@
+@import "../../variable.modules.css";
+
+.dashboardComponent {
+    position: relative;
+    width: 100%;
+    height: 95%;
+    /* border: 1px solid black; */
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 40% 60%;
+    grid-template-areas:
+        "overviewWrapper recentActivitesWrapper"
+        "recentlyAddedWrapper recentActivitesWrapper";
+    margin-top: 2%;
+}
+
+/* _________________________________________________________ */
+
+.overviewWrapper {
+    position: relative;
+    grid-area: overviewWrapper;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid orange; */
+}
+
+.overviewHeadingContainer {
+    position: relative;
+    width: 100%;
+    height: 20%;
+    /* border: 1px solid blue; */
+    /* background-color: grey; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.overviewContentContainer {
+    position: relative;
+    width: 100%;
+    height: 80%;
+    /* border: 1px solid blue; */
+    /* background-color: blue; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-left: 2%;
+    margin-top: 0%;
+
+}
+
+.boxContainer {
+    width: 25%;
+    height: 50%;
+    /* border: 1px solid black; */
+    border-radius: 1rem;
+    /* background-color: white; */
+    background-color: var(--box-bg-primary);
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--dashboard-countDiv-box-shadow);
+}
+
+.iconContainer {
+    position: relative;
+    /* width: 50%; */
+    height: 80%;
+    aspect-ratio: 1/1;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconDiv1 {
+    position: relative;
+    width: 90%;
+    /* height: 95%; */
+    aspect-ratio: 1/1;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #BAFFB4;
+}
+
+.iconDiv2 {
+    position: relative;
+    width: 90%;
+    /* height: 95%; */
+    aspect-ratio: 1/1;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #A4BDE6;
+}
+
+.iconDiv3 {
+    position: relative;
+    width: 90%;
+    /* height: 95%; */
+    aspect-ratio: 1/1;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #FCC5C0;
+}
+
+.countIcon {
+    /* font-size: 1.4rem; */
+    font-size: 2rem;
+    /* font-size: clamp(1.4rem, 1.091743119266055rem + 1.5412844036697249vw, 3.5rem) !important; */
+    color: black;
+}
+
+.count_and_Label_Container {
+    position: relative;
+    width: 40%;
+    height: 80%;
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+.countDiv {
+    position: relative;
+    width: 100%;
+    height: 70%;
+    /* border: 1px solid orange; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*  1.5   1.8 */
+.listCountText {
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    font-size: 2rem;
+    /* font-size: 4rem; */
+    /* font-size: 4rem; */
+    /* font-size: clamp(2.0rem, 1.8238532110091743rem + 0.8807339449541285vw, 3.2rem) !important; */
+    /* font-size: clamp(1.6rem, 1.2477064220183487rem + 1.7614678899082568vw, 4.0rem) !important; */
+    font-weight: var(--bolder-font);
+    color: var(--primary-font-color);
+    margin: 0px !important;
+    padding: 0px !important;
+    white-space: nowrap;
+}
+
+.labelDiv {
+    position: relative;
+    width: 100%;
+    height: 30%;
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+}
+
+.countLabelText {
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    /* font-size: 1.9rem; */
+    /* font-size: clamp(0.75rem, 0.5811926605504587rem + 0.8440366972477064vw, 1.9rem) !important; */
+    /* font-size: clamp(0.85rem, 0.7105504587155963rem + 0.6972477064220184vw, 1.8rem) !important; */
+    /* font-size: clamp(0.85rem, 0.7545871559633027rem + 0.47706422018348627vw, 1.5rem) !important; */
+    font-weight: var(--bolder-font);
+    color: var(--secondary-font-color);
+    margin: 0px;
+    white-space: nowrap;
+}
+
+/* _________________________________________________________ */
+
+.recentActivitesWrapper {
+    position: relative;
+    grid-area: recentActivitesWrapper;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.recentActivitesHeadingContianer {
+    position: relative;
+    width: 100%;
+    height: 10%;
+    /* border: 1px solid blue; */
+    /* background-color: grey; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+
+.recentActivitesContentContianer {
+    position: relative;
+    width: 100%;
+    height: 85%;
+    min-height: 85%;
+    /* border: 1px solid orangered; */
+    /* background-color: green; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+    margin-top: 2%;
+}
+
+
+.recentlyAddedWrapper {
+    position: relative;
+    grid-area: recentlyAddedWrapper;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid black; */
+
+}
+
+.recentlyAddedHeadingContainer {
+    position: relative;
+    width: 100%;
+    height: 10%;
+    /* border: 1px solid blue; */
+    /* background-color: orange; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.recentlyAddedContentContainer {
+    position: relative;
+    /* width: 100%;
+  height: 90%;
+  min-height: 90%; */
+    width: 100%;
+    height: 90%;
+    min-height: 90%;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.wrapperHeadingDiv {
+    position: relative;
+    width: 100%;
+    height: auto;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 5%;
+}
+
+/* .wrapperHeadingDiv::before {
+  content: "";
+  position: absolute;
+  background-color: #C7BAFD;
+  width: 13px;
+  height: 90%;
+  top: 0px;
+  left: 0px;
+  border-radius: 2px;
+  margin-left: 5%;
+} */
+
+.wrapperHeadingDiv p {
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.1rem;
+    font-weight: var(--bolder-font);
+    color: var(--primary-font-color);
+    margin: 0px;
+    /* margin-left: 6% !important; */
+    /* border: 1px solid white; */
+}
+
+.wrapperHeadingDiv p::after {
+    content: "";
+    position: absolute;
+    background-color: var(--ui-scheme-color);
+    width: 40px;
+    height: 0.18rem;
+    bottom: -8px;
+    left: 0px;
+    border-radius: 20px;
+}
+
+/* __________________________________________________________ */
+.dashboardComponent::-webkit-scrollbar {
+    background-color: rgba(255, 255, 255, 0);
+    height: 4px;
+    width: 5px;
+}
+
+.dashboardComponent::-webkit-scrollbar-track {
+    background-color: rgb(231, 228, 228);
+    background-color: rgba(231, 228, 228, 0.062);
+
+    width: 2px;
+}
+
+.dashboardComponent::-webkit-scrollbar-thumb {
+    background-color: var(--ui-scheme-color);
+    border-radius: 4px;
+}
+
+
+/* > Phone screen */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .dashboardComponent {
+        position: relative;
+        width: 100%;
+        height: 95%;
+        /* border: 1px solid black; */
+        display: grid;
+        grid-template-columns: 100%;
+        /* grid-template-rows: 45% 55% 100%; */
+        /* grid-template-rows: 40% 60% 100%; */
+        grid-template-rows: 35% 65% 100%;
+        grid-template-rows: 40% 60% 100%;
+        grid-template-rows: 40% 100% 100%;
+        grid-template-areas:
+            "overviewWrapper"
+            "recentActivitesWrapper"
+            "recentlyAddedWrapper";
+        overflow-y: scroll;
+        margin-top: 7%;
+        bottom: 0px;
+        /* scroll-snap-points-y: repeat(100vh); */
+    }
+
+    .overviewWrapper {
+        position: relative;
+        grid-area: overviewWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid green; */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .overviewHeadingContainer {
+        position: relative;
+        width: 100%;
+        height: 20%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        /* border: 1px solid red; */
+    }
+
+    .overviewContentContainer {
+        position: relative;
+        width: 100%;
+        height: 70%;
+        height: 80%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        margin-top: 0%;
+        padding-left: 0%;
+        /* border: 1px solid red; */
+    }
+
+    .boxContainer {
+        width: 30%;
+        height: 40%;
+        margin-left: 8%;
+        margin-right: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border-radius: clamp(0.5rem, -0.10000000000000009rem + 3.0000000000000004vw, 0.8rem) !important; */
+        border-radius: 0.8rem;
+        border-radius: 1.2rem;
+        border-radius: clamp(0.8rem, 0.19999999999999996rem + 3.0000000000000004vw, 1.1rem) !important;
+    }
+
+    .countIcon {
+        padding: 0px;
+        margin: 0px;
+        /* font-size: clamp(1.1rem, 0.30000000000000027rem + 3.9999999999999996vw, 1.5rem) !important; */
+        /* font-size: 1.35rem; */
+        /* font-size: 1.95rem; */
+        font-size: clamp(1.35rem, 0.15000000000000036rem + 5.999999999999998vw, 1.95rem) !important;
+    }
+
+    .listCountText {
+        position: relative;
+        font-size: 1.6rem !important;
+        margin: 0px;
+        padding: 0px;
+        font-weight: var(--bolder-font);
+        /* font-size: clamp(1.0rem, 0.0rem + 5.0vw, 1.5rem) !important; */
+        /* font-size: 1.3rem !important; */
+        /* font-size: 1.7rem !important; */
+        /* font-size: clamp(1.3rem, 0.5000000000000002rem + 3.9999999999999996vw, 1.7rem) !important; */
+        /* font-size: 1.9rem !important; */
+        /* font-size: 1.3rem !important; */
+        font-size: clamp(1.3rem, 0.10000000000000031rem + 5.999999999999998vw, 1.9rem) !important;
+    }
+
+    .countLabelText {
+        position: relative;
+        font-size: clamp(0.65rem, 0.15000000000000002rem + 2.5vw, 0.9rem) !important;
+        margin: 0px;
+        padding: 0px;
+    }
+
+
+    /* ___________________________________________________________*/
+    .recentActivitesWrapper {
+        position: relative;
+        grid-area: recentActivitesWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid lightgreen; */
+        scroll-snap-align: start;
+
+    }
+
+
+
+    .recentActivitesHeadingContianer {
+        position: relative;
+        width: 100%;
+        height: 20%;
+        /* border: 1px solid blue; */
+        /* background-color: grey; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .recentActivitesContentContianer {
+        position: relative;
+        width: 100%;
+        height: 80% !important;
+        min-height: 80%;
+        /* border: 1px solid blue; */
+        /* background-color: green; */
+        position: relative;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* ____________________________________________ */
+    .wrapperHeadingDiv {
+        position: relative;
+        width: 100%;
+        height: auto;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 5%;
+    }
+
+    .wrapperHeadingDiv p {
+        position: relative;
+        font-size: 1rem;
+        font-weight: var(--bolder-font);
+        margin: 0px;
+        /* font-size: 1rem; */
+        /* font-size: 1.4rem; */
+        font-size: clamp(1.0rem, 0.20000000000000018rem + 3.9999999999999996vw, 1.4rem) !important;
+    }
+
+    .wrapperHeadingDiv p::after {
+        width: 2rem;
+        height: 0.15rem;
+        bottom: -8px;
+        left: 0px;
+        border-radius: 20px;
+    }
+
+
+
+    /* __________________________________________________________ */
+    .dashboardComponent::-webkit-scrollbar {
+        background-color: rgba(176, 32, 32, 0);
+        height: 4px;
+        width: 3px;
+        display: none;
+    }
+
+    .dashboardComponent::-webkit-scrollbar-track {
+        background-color: rgb(231, 228, 228);
+        background-color: rgba(231, 228, 228, 0.062);
+        width: 2px;
+    }
+
+    .dashboardComponent::-webkit-scrollbar-thumb {
+        background-color: var(--ui-scheme-color);
+        border-radius: 10px;
+        display: none;
+
+
+    }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1020px) {
+
+    .dashboardComponent {
+        position: relative;
+        width: 100%;
+        height: 98%;
+        /* border: 1px solid greenyellow; */
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-columns: 45% 55%;
+        grid-template-rows: 40% 60%;
+        grid-template-areas:
+            "overviewWrapper overviewWrapper"
+            "recentlyAddedWrapper recentActivitesWrapper";
+        margin-top: 1%;
+    }
+
+    /* _________________________________________________________ */
+
+    .overviewWrapper {
+        position: relative;
+        grid-area: overviewWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid orange; */
+    }
+
+    .overviewHeadingContainer {
+        position: relative;
+        width: 100%;
+        height: 30%;
+        /* border: 1px solid blue; */
+        /* background-color: grey; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .overviewContentContainer {
+        position: relative;
+        width: 70%;
+        height: 70%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        padding-left: 2%;
+        margin-top: 0%;
+        /* border: 1px solid red; */
+    }
+
+    .boxContainer {
+        width: 32%;
+        height: 40%;
+        border-radius: 15px;
+        margin-left: 8%;
+        margin-right: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border: 1px solid red; */
+    }
+
+    .countIcon {
+        padding: 0px;
+        margin: 0px;
+        font-size: 1.3rem !important;
+    }
+
+    .listCountText {
+        position: relative;
+        font-size: 1.6rem !important;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .countLabelText {
+        position: relative;
+        font-size: 0.75rem !important;
+        margin: 0px;
+        padding: 0px;
+        font-weight: var(--bolder-font);
+    }
+
+    /* _________________________________________________________ */
+
+    .recentActivitesWrapper {
+        position: relative;
+        grid-area: recentActivitesWrapper;
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
+        /* border: 1px solid red; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .recentActivitesHeadingContianer {
+        position: relative;
+        width: 100%;
+        height: 10%;
+        /* border: 1px solid blue; */
+        /* background-color: grey; */
+        /* border: 1px solid yellow; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .recentActivitesContentContianer {
+        position: relative;
+        width: 100%;
+        height: 90%;
+        min-height: 90%;
+        /* border: 1px solid green; */
+        /* background-color: green; */
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0px;
+    }
+
+
+    .recentlyAddedWrapper {
+        position: relative;
+        grid-area: recentlyAddedWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid red; */
+    }
+
+    .recentlyAddedHeadingContainer {
+        position: relative;
+        width: 100%;
+        height: 10%;
+        /* border: 1px solid yellow; */
+        /* background-color: orange; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin: 0px;
+    }
+
+    .recentlyAddedContentContainer {
+        position: relative;
+        width: 100%;
+        height: 90%;
+        min-height: 90%;
+        /* border: 1px solid orange !important; */
+        /* border: 1px solid green; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        margin: 0;
+        padding: 0px;
+    }
+
+    .wrapperHeadingDiv {
+        position: relative;
+        width: 100%;
+        height: auto;
+        /* border: 1px solid red; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 5%;
+    }
+
+    /* .wrapperHeadingDiv::before {
+    content: "";
+    position: absolute;
+    background-color: #C7BAFD;
+    width: 13px;
+    height: 90%;
+    top: 0px;
+    left: 0px;
+    border-radius: 2px;
+    margin-left: 5%;
+  } */
+
+    .wrapperHeadingDiv p {
+        position: relative;
+        font-size: 23px;
+        font-weight: var(--bolder-font);
+        margin: 0px;
+        /* margin-left: 6% !important; */
+        /* border: 1px solid black; */
+    }
+
+    .wrapperHeadingDiv p::after {
+        content: "";
+        position: absolute;
+        background-color: var(--ui-scheme-color);
+        width: 40px;
+        height: 3px;
+        bottom: -8px;
+        left: 0px;
+        border-radius: 20px;
+    }
+
+    /* __________________________________________________________ */
+    .dashboardComponent::-webkit-scrollbar {
+        background-color: rgba(255, 255, 255, 0);
+        height: 4px;
+        width: 2px;
+    }
+
+    .dashboardComponent::-webkit-scrollbar-track {
+        background-color: rgb(231, 228, 228);
+        background-color: rgba(231, 228, 228, 0.062);
+        width: 2px;
+    }
+
+    .dashboardComponent::-webkit-scrollbar-thumb {
+        background-color: var(--ui-scheme-color);
+        border-radius: 4px;
+    }
+}
+
+/* > Ipad potrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+
+
+    .dashboardComponent {
+        position: relative;
+        width: 100%;
+        height: 98%;
+        /* border: 1px solid greenyellow; */
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-columns: 45% 55%;
+        grid-template-rows: 40% 60% 100%;
+        grid-template-areas:
+            "overviewWrapper overviewWrapper"
+            "recentlyAddedWrapper recentActivitesWrapper";
+        margin-top: 1%;
+    }
+
+    /* _________________________________________________________ */
+
+    .overviewWrapper {
+        position: relative;
+        grid-area: overviewWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid orange; */
+    }
+
+    .overviewHeadingContainer {
+        position: relative;
+        width: 100%;
+        height: 20%;
+        /* border: 1px solid blue; */
+        /* background-color: grey; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .overviewContentContainer {
+        position: relative;
+        width: 70%;
+        height: 70%;
+        /* border: 1px solid blue; */
+        /* background-color: blue; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        padding-left: 2%;
+        margin-top: 0%;
+    }
+
+    .boxContainer {
+        /* width: 32%; */
+        /* height: 40%; */
+        border-radius: 1.3rem;
+        /* margin-left: 8%; */
+        /* margin-right: 0px; */
+        /* display: flex; */
+        /* justify-content: center; */
+        /* align-items: center; */
+        /* border: 1px solid red; */
+    }
+
+    .countIcon {
+        padding: 0px;
+        margin: 0px;
+        font-size: 2.2rem !important;
+    }
+
+    .listCountText {
+        position: relative;
+        font-size: 2.5rem !important;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .countLabelText {
+        position: relative;
+        font-size: 1rem !important;
+        margin: 0px;
+        padding: 0px;
+        font-weight: var(--bolder-font);
+    }
+
+    /* _________________________________________________________ */
+
+    .recentActivitesWrapper {
+        position: relative;
+        grid-area: recentActivitesWrapper;
+        width: 100%;
+        height: 100%;
+        min-height: 100%;
+        /* border: 1px solid red; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .recentActivitesHeadingContianer {
+        position: relative;
+        width: 100%;
+        height: 10%;
+        /* border: 1px solid blue; */
+        /* background-color: grey; */
+        /* border: 1px solid yellow; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .recentActivitesContentContianer {
+        position: relative;
+        width: 100%;
+        height: 90%;
+        min-height: 90%;
+        /* border: 1px solid green; */
+        /* background-color: green; */
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0px;
+    }
+
+
+    .recentlyAddedWrapper {
+        position: relative;
+        grid-area: recentlyAddedWrapper;
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid red; */
+    }
+
+    .recentlyAddedHeadingContainer {
+        position: relative;
+        width: 100%;
+        height: 10%;
+        /* border: 1px solid yellow; */
+        /* background-color: orange; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin: 0px;
+    }
+
+    .recentlyAddedContentContainer {
+        position: relative;
+        width: 100%;
+        height: 90%;
+        min-height: 90%;
+        /* border: 1px solid orange !important; */
+        /* border: 1px solid green; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        margin: 0;
+        padding: 0px;
+    }
+
+    .wrapperHeadingDiv {
+        position: relative;
+        width: 100%;
+        height: auto;
+        /* border: 1px solid red; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 5%;
+    }
+
+    /* .wrapperHeadingDiv::before {
+    content: "";
+    position: absolute;
+    background-color: #C7BAFD;
+    width: 13px;
+    height: 90%;
+    top: 0px;
+    left: 0px;
+    border-radius: 2px;
+    margin-left: 5%;
+  } */
+
+    .wrapperHeadingDiv p {
+        position: relative;
+        font-size: 23px;
+        font-weight: var(--bolder-font);
+        margin: 0px;
+        /* margin-left: 6% !important; */
+        /* border: 1px solid black; */
+    }
+
+    .wrapperHeadingDiv p::after {
+        content: "";
+        position: absolute;
+        background-color: var(--ui-scheme-color);
+        width: 40px;
+        height: 3px;
+        bottom: -8px;
+        left: 0px;
+        border-radius: 20px;
+    }
+
+    /* __________________________________________________________ */
+    .dashboardComponent::-webkit-scrollbar {
+        background-color: rgba(255, 255, 255, 0);
+        height: 4px;
+        width: 2px;
+    }
+
+    .dashboardComponent::-webkit-scrollbar-track {
+        background-color: rgb(231, 228, 228);
+        background-color: rgba(231, 228, 228, 0.062);
+        width: 2px;
+    }
+
+    .dashboardComponent::-webkit-scrollbar-thumb {
+        background-color: var(--ui-scheme-color);
+        border-radius: 4px;
+    }
+
+
+}

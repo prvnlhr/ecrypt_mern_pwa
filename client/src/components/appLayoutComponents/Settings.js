@@ -90,11 +90,10 @@ const Settings = () => {
             email: userState.email,
             updateDate: userState.updateDate
         })
-    }, [userState.firstName, userState.lastName, userState.email])
+    }, [userState.firstName, userState.lastName, userState.email, userState.updateDate])
 
     useEffect(() => {
         setProfilePicImg(userState?.profilePic.picUrl);
-
         return () => {
             setFormMessage({
                 error: false,
@@ -214,6 +213,7 @@ const Settings = () => {
                 firstName: userState.firstName,
                 lastName: userState.lastName,
                 email: userState.email,
+                updateDate: userState.updateDate
             })
 
         } else if (currSection === 'PASS') {
@@ -400,7 +400,7 @@ const Settings = () => {
                     <div className={styles.joinedUpadateDateContainer} >
                         <div className={styles.joinedDateDiv} >
                             <p className={styles.joinedDateLabelText}>Joined</p>
-                            <p className={styles.joinedDateText}>12 Dec 2021</p>
+                            <p className={styles.joinedDateText}>{userState.joinedDate}</p>
                         </div>
                         <div className={styles.updatedDateDiv} >
                             <p className={styles.joinedDateLabelText}>Last Updated</p>

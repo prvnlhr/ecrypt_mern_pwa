@@ -121,6 +121,7 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
         setEditMode(false);
         setCurrFocusField(undefined);
         setPassVisible(false);
+        setPopUpOpen(false);
     }
     //> Save Btn clicked_________
     const saveBtnClicked = () => {
@@ -166,7 +167,11 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
                 <div className={styles.cardHeader}>
                     <div className={styles.backBtnContainer} >
                         <div className={styles.backBtnDiv}
-                            onClick={() => handleFullContentBackBtnClicked()}
+                            onClick={() => {
+                                handleFullContentBackBtnClicked();
+                                setPopUpOpen(false);
+                            }
+                            }
                         ><BackBtnIcon />
                         </div>
                     </div>

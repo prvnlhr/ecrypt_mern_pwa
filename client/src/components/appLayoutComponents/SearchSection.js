@@ -140,10 +140,14 @@ const SearchSection = ({ searchMode, setSearchMode, searchQuery,
 
                 {!searchMode ?
                     <div className={styles.falseSearchContainer} onClick={() => searchIconClicked()}  >
-                        <Icon icon="clarity:search-line"
-                            className={styles.searchIcon}
-                        />
-                        <p className={styles.searchText}>Search</p>
+                        <div className={styles.searchIconDiv} >
+                            <Icon icon="clarity:search-line"
+                                className={styles.searchIcon}
+                            />
+                        </div>
+                        <div className={styles.searchTextDiv} >
+                            <p className={styles.searchText}>Search</p>
+                        </div>
                     </div>
 
                     : (
