@@ -33,9 +33,10 @@
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     .activityList {
-        height: 90%;
+        height: 95%;
         /* padding: 5% 0% 10% 0%; */
         padding: 0% 0% 5% 0%;
+        /* border: 1px solid skyblue; */
     }
 }
 
