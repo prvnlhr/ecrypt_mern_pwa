@@ -698,4 +698,11 @@ input.form-control:focus {
 
     }
 
+    input::placeholder {
+        font-weight: var(--bold-font);
+        font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
+        color: var(--secondary-font-color);
+        text-align: start;
+        padding-left: 0.1rem;
+    }
 }

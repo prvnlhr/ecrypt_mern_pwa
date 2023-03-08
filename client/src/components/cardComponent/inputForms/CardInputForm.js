@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from "react-redux"
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import BackBtnIcon from "../../icons/BackBtnIcon"
 import { Icon } from '@iconify/react';
 import { logosArray, logosData } from "../../logoComponents/logosData";
@@ -14,6 +14,7 @@ import CardLogo, { getCardType } from "../CardLogo"
 import { generateActivityData } from "../../utils/ActivityDataChangeFuction"
 import { addNewCardData } from "../../../redux/features/cards/cardsSlice"
 import { Oval } from "react-loader-spinner"
+import DatePicker from "../../datePickerComponent/DatePicker"
 const spinnerWrapper = {
     height: `100%`,
     with: `100%`,
@@ -21,6 +22,11 @@ const spinnerWrapper = {
 const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
     const dispatch = useDispatch();
+
+    const ddSlotRef = useRef();
+    const mmSlotRef = useRef();
+    const yySlotRef = useRef();
+
 
     const userId = useSelector((state) => state.user._id);
     const cardsState = useSelector((state) => state.cards);
@@ -44,7 +50,6 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
     const [currCardVender, setCurrCardVender] = useState(undefined);
 
 
-
     //> Initial Form States________________________________________
     const [bankCardData, setBankCardData] = useState({
         title: "",
@@ -52,11 +57,12 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
         cardHolder: "",
         cardNumber: "",
         expiry: "",
+        expiryyy: "",
         cvv: "",
         logoIndex: "",
         isFavourite: false
-
     })
+
     const [identityCardData, setIdentityCardData] = useState({
         title: "",
         category: "Identity",
@@ -77,6 +83,10 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
         logoIndex: "",
         isFavourite: false
     })
+
+
+
+
     //> _______________________________________________________________
 
 
@@ -172,7 +182,19 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
         setPopUpOpen(!popUpOpen)
     }
 
+    const handleKeyDown = event => {
+        console.log('User pressed: ', event.key);
 
+        // console.log(message);
+
+        if (event.key === 'Backspace') {
+            // 👇️ your logic here
+            if (mmSlotRef.current.value.length === 0) {
+                ddSlotRef.current.focus();
+            }
+            console.log('Backspace key pressed ✅');
+        }
+    };
 
     //> Handle input form Data change_____________________________
     const handleFormDataChange = (e) => {
@@ -315,6 +337,7 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
     return (
         <div className={showInputForm ? styles.cardWrapper : styles.cardWrapperClose}>
+            <DatePicker />
             {logoComponentShow &&
                 <LogoComponentWrapper
                     setLogoComponentShow={setLogoComponentShow}

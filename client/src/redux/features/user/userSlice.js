@@ -32,7 +32,6 @@ export const getUserDetails = createAsyncThunk("user/getUser", async (token, { g
         const userData = res.data.user;
         const profilePicData = res.data.user.profilePic
         const nameString = userData.name.split(/[" "]+/);
-        console.log(userData);
         const userRes = {
             firstName: nameString[0],
             lastName: nameString[1],

@@ -67,7 +67,7 @@ const LicenseCardSubComponent = (
               className={styles.inputActive}
               onChange={handleFormDataChange}
               onFocus={() => onFocus(5)}
-
+              placeholder="DD / MM / YY"
             />
           </div>
         </div>
@@ -89,7 +89,7 @@ const LicenseCardSubComponent = (
               className={styles.inputActive}
               name="expiry"
               onFocus={() => onFocus(6)}
-
+              placeholder="MM / YY"
             />
           </div>
 

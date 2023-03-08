@@ -30,6 +30,8 @@ const CONNECTION_URL = process.env.MONGODB_URL;
 const PORT = process.env.PORT || 9000;
 
 //MONGODB CLOUD DATABASE CONNECTION________________________
+mongoose.set('strictQuery', false);
+
 mongoose
   .connect(CONNECTION_URL, {
     useNewUrlParser: true,

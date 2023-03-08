@@ -42,8 +42,6 @@ const IdentityCardSubComponent = (
               className={styles.inputActive}
               onChange={handleFormDataChange}
               onFocus={() => onFocus(4)}
-
-
             />
           </div>
         </div>
@@ -63,7 +61,7 @@ const IdentityCardSubComponent = (
               className={styles.inputActive}
               onChange={handleFormDataChange}
               onFocus={() => onFocus(5)}
-
+              placeholder="DD / MM / YY"
             />
           </div>
         </div>
@@ -82,6 +80,7 @@ const IdentityCardSubComponent = (
               className={styles.inputActive}
               onChange={handleFormDataChange}
               onFocus={() => onFocus(6)}
+              placeholder="MM / YY"
             />
           </div>
 
