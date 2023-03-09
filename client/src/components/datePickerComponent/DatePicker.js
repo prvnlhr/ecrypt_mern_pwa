@@ -1,147 +1,178 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from "./styles/datePicker.module.css"
+import DayList from "./DayList"
+import MonthList from "./MonthList"
+import YearList from "./YearList"
 import moment from 'moment'
-const DatePicker = () => {
-
-    const date = moment().format('DD');
-    const month = moment().format('MMM');
-    const year = moment().format('YYYY');
-
-    const [currSeletedDate, setCurrSeletedDate] = useState({
-        selectedDate: date,
-        selectedMonth: month,
-        selectedYear: year,
-    });
-    const [currSelectedList, setCurrSelectedList] = useState('date')
+import { Icon } from '@iconify/react';
+import { motion, AnimatePresence } from "framer-motion"
 
 
-    const daysArray = [
-        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31
-    ]
-    const monthsArray = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-        'July',
-        'August',
-        'September',
-        'October',
-        'November',
-        'December',
-    ]
+const DatePicker = ({ showDatePicker, setShowDatePicker, toggleDatePicker, handleFormDataChange, cardData }) => {
 
-    const yearList = () => {
-        let items = [];
-        for (let i = 1900; i <= 2050; i++) {
-            items.push(
-                <div key={i} className={`${styles.yearDiv}  ${currSeletedDate.selectedYear == i && styles.selectedDivStyle}`}>
-                    <p onClick={handleValueClicked}>{i}</p>
-                </div >
-            )
+    const momentDate = moment().format('DD');
+    const momentMonth = moment().format('MMMM');
+    const momentYear = moment().format('YYYY');
+
+
+    const currStartDayOfWeek = moment(`${momentYear + '-' + momentMonth}`);
+    const dow = currStartDayOfWeek.day();
+
+    const currMonthNumOfDays = moment(`${momentYear + '-' + momentMonth}`).daysInMonth();
+
+    const [currSelectedList, setCurrSelectedList] = useState('DAYS');
+
+    const [currSelectedDate, setCurrSelectedDate] = useState({
+        startOfMonth: dow,
+        numDays: currMonthNumOfDays,
+        date: momentDate,
+        month: momentMonth,
+        year: momentYear,
+    })
+
+    // useEffect(() => {
+    //     setCurrSelectedDate({
+    //         startOfMonth: dow,
+    //         numDays: currMonthNumOfDays,
+    //         date: momentDate,
+    //         month: momentMonth,
+    //         year: momentYear,
+    //     })
+    // }, [])
+
+    const handleChangeCurrList = (clickedList) => {
+        setCurrSelectedList(clickedList);
+    }
+
+    const handleClickedItem = (e, val) => {
+        console.log(e.target.innerText, val);
+        setCurrSelectedDate({
+            ...currSelectedDate,
+            [val]: e.target.innerText,
+        })
+    }
+
+    const monthMap = {
+        January: '01',
+        February: '02',
+        March: '03',
+        April: '04',
+        May: '05',
+        June: '06',
+        July: '07',
+        August: '08',
+        September: '09',
+        October: '10',
+        November: '11',
+        December: '12',
+    }
+    const handleSelectBtnClicked = (e) => {
+        const DD = currSelectedDate.date;
+        const MM = monthMap[currSelectedDate.month];
+        const YY = currSelectedDate.year.slice(-2);
+        console.log(DD, MM, YY)
+        let formattedDate = '';
+        switch (cardData.category) {
+            case 'Bank':
+                formattedDate = MM + '/' + YY;
+                cardData[showDatePicker.key] = formattedDate;
+                break;
+            case 'Identity':
+                // console.log(showDatePicker.key);
+                if (showDatePicker.key === 'dob') {
+                    formattedDate = DD + '/' + MM + '/' + YY;
+                } else {
+                    formattedDate = MM + '/' + YY;
+                }
+                cardData[showDatePicker.key] = formattedDate;
+                break;
+
+            case 'License':
+                if (showDatePicker.key === 'dob') {
+                    formattedDate = DD + '/' + MM + '/' + YY;
+                } else {
+                    formattedDate = MM + '/' + YY;
+                }
+                cardData[showDatePicker.key] = formattedDate;
+                break;
+
+            default:
+                break;
         }
-        return items;
+        // console.log(formattedDate);
+        // console.log(cardData);
+        toggleDatePicker(e);
+        // console.log(currSelectedDate.date + " " + currSelectedDate.month + " " + currSelectedDate.year);
     }
 
 
-
-    const handleValueClicked = (e) => {
-        if (currSelectedList === 'date') {
-            // console.log('Date:', e.target.innerText);
-            setCurrSeletedDate({
-                ...currSeletedDate,
-                selectedDate: e.target.innerText
-            })
-        }
-        if (currSelectedList === 'month') {
-            // console.log('Month:', e.target.innerText);
-            setCurrSeletedDate({
-                ...currSeletedDate,
-                selectedMonth: e.target.innerText.slice(0, 3)
-            })
-        }
-        if (currSelectedList === 'year') {
-            // console.log('Year:', e.target.innerText);
-            setCurrSeletedDate({
-                ...currSeletedDate,
-                selectedYear: e.target.innerText
-            })
-        }
-    }
-
-    const handleSelectBtnClicked = () => {
-        console.log(currSeletedDate.selectedDate + " " + currSeletedDate.selectedMonth + " " + currSeletedDate.selectedYear)
-    }
     return (
-        <div className={styles.datePickerWrapper}>
+        <AnimatePresence>
+            {
+                showDatePicker.visibility &&
+                <motion.div
+                    className={`${styles.datePickerWrapper}`}
+                    initial={{
+                        scaleX: 0,
+                        scaleY: 0,
+                        // y: -10
+                    }}
+                    animate={{
+                        scaleX: 1,
+                        scaleY: 1,
+                        y: 0,
+                        transition: {
+                            duration: 0.05,
+                            type: 'spring'
+                        },
 
-            <div className={styles.topDisplaySection} >
-                <div className={styles.displayDateContainer} onClick={() => { setCurrSelectedList('date') }} >
-                    <div className={`${styles.displayDateDiv} ${currSelectedList === 'date' && styles.displaySelectedDivStyle}`} >
-                        <p className={styles.dateText} >{currSeletedDate.selectedDate}</p>
+                    }}
+                    exit={{
+                        // y: -10,
+                        scaleX: 0,
+                        scaleY: 0,
+                        transition: {
+                            duration: 0.1,
+                            type: 'spring'
+
+                        },
+                    }}
+                >
+
+                    <div className={styles.displayDateSection} >
+                        <div className={styles.closeIconDiv} onClick={toggleDatePicker}>
+                            <Icon className={styles.closeIcon} icon="ph:x-bold" />
+                        </div>
+                        <div className={`${styles.displayDateDiv} ${currSelectedList === 'DAYS' && styles.displayDateSelectedDiv} `} onClick={() => handleChangeCurrList('DAYS')} >
+                            <p className={`${styles.displayDateFont} ${currSelectedList === 'DAYS' && styles.displayDateFontSelected} `}  >{currSelectedDate.date}</p>
+                        </div>
+                        <div className={`${styles.displayDateDiv} ${currSelectedList === 'MONTH' && styles.displayDateSelectedDiv}`} onClick={() => handleChangeCurrList('MONTH')} >
+                            <p className={`${styles.displayDateFont}  ${currSelectedList === 'MONTH' && styles.displayDateFontSelected} `}  >{currSelectedDate.month}</p>
+                        </div>
+                        <div className={`${styles.displayDateDiv} ${currSelectedList === 'YEAR' && styles.displayDateSelectedDiv}`} onClick={() => handleChangeCurrList('YEAR')} >
+                            <p className={`${styles.displayDateFont}  ${currSelectedList === 'YEAR' && styles.displayDateFontSelected} `} >{currSelectedDate.year}</p>
+                        </div>
                     </div>
-                </div>
 
-                <div className={styles.displayMonthContainer} onClick={() => { setCurrSelectedList('month') }} >
-                    <div className={`${styles.displayMonthDiv} ${currSelectedList === 'month' && styles.displaySelectedDivStyle}`} >
-                        <p className={styles.monthText} >{currSeletedDate.selectedMonth}</p>
+                    <div className={styles.calenderSection} >
+                        {currSelectedList === 'MONTH' ?
+                            <MonthList currSelectedDate={currSelectedDate} setCurrSelectedDate={setCurrSelectedDate} handleClickedItem={handleClickedItem} />
+                            : currSelectedList === 'YEAR' ? <YearList currSelectedDate={currSelectedDate} setCurrSelectedDate={setCurrSelectedDate} handleClickedItem={handleClickedItem} />
+                                : currSelectedList === 'DAYS' && <DayList currSelectedDate={currSelectedDate} setCurrSelectedDate={setCurrSelectedDate} handleClickedItem={handleClickedItem} />
+                        }
                     </div>
-                </div>
-                <div className={styles.displayYearContainer} onClick={() => { setCurrSelectedList('year') }} >
-                    <div className={styles.slashDiv}>
+                    <div className={styles.btnSection} >
+                        <div className={`${styles.cancelBtnDiv} ${styles.btnDiv} `} >
+                            <p>Cancel</p>
+                        </div>
+                        <div className={`${styles.confirmBtnDiv} ${styles.btnDiv} `} onClick={handleSelectBtnClicked} >
+                            <p>Select</p>
+                        </div>
                     </div>
-                    <div className={`${styles.displayYearDiv} ${currSelectedList === 'year' && styles.displaySelectedDivStyle}`} >
-                        <p className={styles.yearText} >{currSeletedDate.selectedYear}</p>
-                    </div>
-                </div>
+                </motion.div>
+            }
+        </AnimatePresence >
 
-
-
-
-            </div>
-            <div className={styles.dateWrapper} >
-                <div className={styles.listContainer} >
-
-
-
-
-
-
-                    {currSelectedList === 'month' ?
-
-                        monthsArray.map((item, index) => (
-                            <div className={`${styles.monthDiv} ${currSeletedDate.selectedMonth == item && styles.selectedDivStyle}`}>
-                                <p onClick={handleValueClicked}>
-                                    {item}
-                                </p>
-                            </div>
-                        ))
-                        :
-                        currSelectedList === 'date' ?
-                            daysArray.map((item, index) => (
-                                <div className={`${styles.dateDiv}
-                                 ${currSeletedDate.selectedDate == item && styles.selectedDivStyle}`}   >
-                                    <p onClick={handleValueClicked}  >{item}</p>
-                                </div>
-                            ))
-
-                            : currSelectedList === 'year' &&
-                            yearList()
-                    }
-                </div>
-
-            </div>
-            <div className={styles.footerWrapper} >
-                <div className={styles.cancelDiv} >
-                    <p>Cancel</p>
-                </div>
-                <div className={styles.selectDiv} onClick={handleSelectBtnClicked} >
-                    <p>Select</p>
-                </div>
-            </div>
-        </div >
     )
 }
 

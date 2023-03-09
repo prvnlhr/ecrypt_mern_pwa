@@ -28,6 +28,8 @@
 
   --recent-date-box-bg: #00299a75;
 
+  --date-picker-displaySelected-date-bg: #00299a2e;
+
   --shimmer-color: linear-gradient(90deg, #bdcbe15d 44.18%, #E7EFFC 129.07%);
 
 
@@ -105,6 +107,7 @@ background: linear-gradient(179.99deg, #AEC3CE 8.01%, rgba(177, 197, 208, 0.9728
   --appLogo-bg-mobile: #23262F;
 
   --recent-date-box-bg: #c7bafd8e;
+  --date-picker-displaySelected-date-bg: #c7bafd4d;
 
 
   --shimmer-color: linear-gradient(90deg, #60657571 44.18%, #30343d 129.07%);

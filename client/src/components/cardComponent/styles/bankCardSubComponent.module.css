@@ -678,39 +678,6 @@
 
 
 
-    .expiryInput::placeholder {
-        font-weight: var(--bold-font);
-        font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
-        color: var(--secondary-font-color);
-        text-align: start;
-        padding-left: 0.1rem;
-    }
-
-    ::-webkit-input-placeholder {
-        text-align: start;
-    }
-
-    :-moz-placeholder {
-        text-align: start;
-    }
-
-    .expiryInput {
-        width: 40%;
-        /* border: 1px solid lightcoral; */
-    }
-
-    .expiryInput2 {
-        width: 40%;
-        /* border: 1px solid lightcoral; */
-    }
-
-    input::placeholder {
-        font-weight: var(--bold-font);
-        font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
-        color: var(--secondary-font-color);
-        text-align: start;
-        padding-left: 0.1rem;
-    }
 
     /* _____________________________________________ */
 
@@ -798,15 +765,22 @@
 
     .inputActive {
         font-size: 0.9rem;
-        font-weight: 450;
+        font-weight: var(--bold-font);
         font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
     }
 
     .inputNotActive {
         font-size: 0.9rem;
-        font-weight: 450;
+        font-weight: var(--bold-font);
         font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
 
     }
 
+    .inputActive::placeholder {
+        font-weight: var(--bold-font);
+        /* font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important; */
+        /* color: var(--secondary-font-color); */
+        text-align: start;
+        font-size: clamp(0.6rem, -1.1102230246251565e-16rem + 3.0000000000000004vw, 0.9rem) !important;
+    }
 }

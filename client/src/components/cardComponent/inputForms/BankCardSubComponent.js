@@ -9,6 +9,9 @@ const BankCardSubComponent = ({
     handleCardNumberChanged,
     onFocus,
     currFocusField,
+    showDatePicker,
+    setShowDatePicker,
+    toggleDatePicker
 }) => {
 
 
@@ -75,7 +78,6 @@ const BankCardSubComponent = ({
                         <p>EXPIRY</p>
                     </div>
                     <div className={styles.expiryInputDiv} >
-
                         <input value={bankCardData.expiry}
                             className={`${styles.inputActive} `}
                             name="expiry"
@@ -84,7 +86,8 @@ const BankCardSubComponent = ({
                             }
                             onFocus={() => onFocus(5)}
                             placeholder="MM / YY"
-
+                            readOnly={true}
+                            onClick={(e) => toggleDatePicker(e)}
                         />
                     </div>
                 </div>

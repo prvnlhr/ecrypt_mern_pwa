@@ -1,0 +1,56 @@
+@import "../../variable.modules.css";
+
+p {
+    font-family: "Poppins", sans-serif;
+}
+
+.yearList {
+    width: 98%;
+    height: 90%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    /* border: 1px solid red; */
+    margin-top: 5%;
+}
+
+.yearDiv {
+    width: 33%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.yearInnerDiv {
+    width: auto;
+    height: auto;
+    padding: 0.5rem;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.yearDiv p {
+    color: var(--primary-font-color);
+
+    font-size: 0.9rem;
+    font-weight: var(--bolder-font);
+
+}
+
+.selectedDivStyle {
+    background-color: var(--ui-scheme-color);
+
+    border-radius: 0.5rem;
+}
+
+.selectedDivStyle p {
+    color: var(--listCount-font-color);
+
+    font-weight: var(--bold-font);
+}

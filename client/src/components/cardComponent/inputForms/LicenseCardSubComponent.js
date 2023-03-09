@@ -4,7 +4,9 @@ import { Icon } from '@iconify/react';
 
 const LicenseCardSubComponent = (
 
-  { licenseCardData, setLicenseCardData, handleFormDataChange, onFocus, currFocusField }
+  { licenseCardData, setLicenseCardData, handleFormDataChange, onFocus, currFocusField,
+    toggleDatePicker
+  }
 ) => {
   return (
     <div className={styles.cardWrapper} >
@@ -68,6 +70,8 @@ const LicenseCardSubComponent = (
               onChange={handleFormDataChange}
               onFocus={() => onFocus(5)}
               placeholder="DD / MM / YY"
+            readOnly={true}
+            onClick={(e) => toggleDatePicker(e)}
             />
           </div>
         </div>
@@ -90,6 +94,8 @@ const LicenseCardSubComponent = (
               name="expiry"
               onFocus={() => onFocus(6)}
               placeholder="MM / YY"
+            readOnly={true}
+            onClick={(e) => toggleDatePicker(e)}
             />
           </div>
 

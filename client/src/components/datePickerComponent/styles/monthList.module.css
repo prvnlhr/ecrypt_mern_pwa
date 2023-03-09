@@ -1,0 +1,53 @@
+@import "../../variable.modules.css";
+
+p {
+    font-family: "Poppins", sans-serif;
+}
+
+.monthList {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.monthDiv {
+    width: 30%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+
+.monthInnerDiv {
+    width: auto;
+    height: auto;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.monthDiv p {
+    font-size: 0.8rem;
+    color: var(--primary-font-color);
+    font-weight: var(--bolder-font);
+
+}
+
+.selectedDivStyle {
+    background-color: var(--ui-scheme-color);
+    border-radius: 0.3rem;
+}
+
+.selectedDivStyle p {
+    color: var( --listCount-font-color);
+    font-weight: var(--bold-font);
+}

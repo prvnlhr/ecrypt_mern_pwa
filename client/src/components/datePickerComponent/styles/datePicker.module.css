@@ -6,281 +6,148 @@ p {
 
 .datePickerWrapper {
     position: absolute;
-    width: 85%;
-    height: 70%;
-    background-color: white;
+    width: 80%;
+    height: 80%;
+    background-color: var(--box-bg-tertiary-drk);
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 30% 60% 10%;
+    grid-template-rows: 15% 65% 20%;
     grid-template-areas:
-        "topDisplaySection"
-        "dateWrapper"
-        "footerWrapper";
+        "displayDateSection"
+        "calenderSection"
+        "btnSection";
     left: 0;
     right: 0;
     margin-left: auto;
     margin-right: auto;
-    top: 10%;
-    padding: 0.5rem;
+    bottom: 0%;
+    z-index: 999;
+    border-radius: 0.4rem;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
+
+
 
 /* _____________________________________________________________ */
 
-.topDisplaySection {
+.displayDateSection {
     position: relative;
-    grid-area: topDisplaySection;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 40% 60%;
-    grid-template-rows: 60% 40%;
-    grid-template-areas:
-        "displayDateContainer displayDateContainer                      "
-        "displayMonthContainer displayYearContainer";
-}
-
-
-.displayDateContainer {
-    grid-area: displayDateContainer;
+    grid-area: displayDateSection;
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    /* border: 1px solid salmon; */
+    padding-left: 8%;
+}
+
+
+.closeIconDiv {
+    position: absolute;
+    aspect-ratio: 1/1;
+    height: 40%;
+    border-radius: 50%;
+    background-color: #93C2FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 2%;
+    top: 10%;
+}
+
+.closeIcon {
+    position: relative;
+    font-size: 0.85rem;
     /* border: 1px solid black; */
+    color: #002A9A
 }
 
 .displayDateDiv {
-    width: 40%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 0.8rem;
-    padding-right: 0.8rem;
-    border-radius: 0.3rem;
-    /* border: 1px solid black; */
-}
-
-.displayMonthContainer {
-    grid-area: displayMonthContainer;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* border: 1px solid red; */
-}
-
-.displayMonthDiv {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* padding-left: 0.8rem; */
-    /* padding-right: 0.0rem; */
-    border-radius: 0.3rem;
-    /* border: 1px solid black; */
-}
-
-
-
-.displayYearContainer {
-    grid-area: displayYearContainer;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    /* border: 1px solid black; */
-}
-
-.slashDiv {
-    position: relative;
-    width: 5%;
+    width: auto;
     height: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: 1px solid red; */
-    margin-left: 0.3rem;
-    margin-right: 0.3rem;
-}
-
-.slashDiv::before {
-    position: absolute;
-    content: "";
-    background-color: #7E8DA4;
-    width: 0.2rem;
-    border-radius: 20px;
-    height: 100%;
-    transform: rotate(20deg);
-}
-
-.displayYearDiv {
-    width: auto;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding-left: 0.8rem;
     padding-right: 0.8rem;
+}
+
+.displayDateFont {
+    color: var(--primary-font-color);
+    font-size: 0.9rem;
+    font-weight: var(--boldest-font);
+}
+
+
+.displayDateSelectedDiv {
+    background-color: var(--date-picker-displaySelected-date-bg);
     border-radius: 0.3rem;
-    /* border: 1px solid black; */
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    height: auto;
 }
 
-.displaySelectedDivStyle {
-    background-color: #00299a3a;
+.displayDateFontSelected {
+    color: var(--ui-scheme-color);
 }
 
 
 
-.dateText {
-    color: #002A9A;
-    font-size: 3.8rem;
-    font-weight: var(--bolder-font);
-    margin: 0;
-}
+/* ------------------------------------------- */
 
-.monthText {
-    color: black;
-    font-size: 2rem;
-    font-weight: var(--bolder-font);
-    margin: 0;
-
-
-}
-
-.yearText {
-    color: #002A9A;
-    font-size: 1.8rem;
-    font-weight: var(--bolder-font);
-    margin: 0;
-}
-
-/* _____________________________________________________________ */
-
-.dateWrapper {
-    grid-area: dateWrapper;
-    width: 100%;
-    height: 100%;
-    /* border: 1px solid salmon; */
-    /* background-color: #E7EFFC; */
-    display: flex;
-    justify-content: flex-start;
-    align-items: end;
-}
-
-.listContainer {
-    background-color: #E7EFFC;
+.calenderSection {
     position: relative;
-    height: 90%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    scroll-behavior: smooth;
-    overflow-y: scroll;
-    box-sizing: border-box;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    /* border: 1px solid salmon; */
-}
-
-.dateDiv {
-    width: 14.2%;
-    height: 20%;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.dateDiv p {
-    font-size: 0.8rem;
-}
-
-.monthDiv {
-    width: 33%;
-    height: 25%;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.monthDiv p {
-    /* font-family: "Poppins", sans-serif; */
-    font-size: 0.8rem;
-}
-
-.yearDiv {
-    width: 33%;
-    height: 25%;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.yearDiv p {
-    font-size: 0.8rem;
-}
-
-/* _____________________________________________________________ */
-
-.footerWrapper {
-    grid-area: footerWrapper;
+    grid-area: calenderSection;
     width: 100%;
     height: 100%;
-    /* border: 1px solid lightskyblue; */
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-
-.cancelDiv {
-    width: auto;
-    height: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #7e8da480;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    border-radius: 0.3rem;
+    border-top: 1px solid rgba(35, 35, 35, 0.153);
+    border-bottom: 1px solid rgba(35, 35, 35, 0.153);
 }
 
-.cancelDiv p {
-    color: black;
-    font-size: 0.8rem;
+/* ------------------------------------------- */
+
+.btnSection {
+    position: relative;
+    grid-area: btnSection;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* border: 1px solid salmon; */
+
 }
 
-.selectDiv {
-    width: auto;
-    height: 70%;
+.btnDiv {
+    width: 40%;
+    height: 45%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 10px;
-    background-color: #002A9A;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    border-radius: 0.3rem;
+    border-radius: 0.5rem;
 }
 
-.selectDiv p {
-    color: white;
+.cancelBtnDiv {
+    border: 1px solid rgba(35, 35, 35, 0.153);
+}
+
+.cancelBtnDiv p {
+    color: var(--secondary-font-color);
     font-size: 0.8rem;
+    font-weight: var(--bolder-font);
 }
 
-.selectedDivStyle {
-    background-color: #002A9A;
-    color: white !important;
+.confirmBtnDiv {
+    background-color: var(--ui-scheme-color);
 }
 
-/* ----------------------------------- */
+.confirmBtnDiv p {
+    color: var(--listCount-font-color);
+    font-size: 0.8rem;
+    font-weight: var(--bolder-font);
+
+}

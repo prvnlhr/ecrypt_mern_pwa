@@ -81,62 +81,62 @@ const App = () => {
 
   return (
 
-      <div data-theme={isDarkMode === true ? 'dark' : 'light'} className={appStyles.app}>
-        {
-          // auth.isLoading &&
-          // auth.token === undefined && auth.action === 'getToken') 
-          (initialLoading === true || isLogged === undefined) ?
-            <>
-              <div className={appStyles.logoPage} >
-                <div className={appStyles.lottieWrapper}>
-                  <Lottie
-                    options={defaultOptions}
-                    height={`80%`}
-                    width={`80%`}
-                  />
-                </div>
+    <div data-theme={isDarkMode === true ? 'dark' : 'light'} className={appStyles.app}>
+      {
+        // auth.isLoading &&
+        // auth.token === undefined && auth.action === 'getToken') 
+        (initialLoading === true || isLogged === undefined) ?
+          <>
+            <div className={appStyles.logoPage} >
+              <div className={appStyles.lottieWrapper}>
+                <Lottie
+                  options={defaultOptions}
+                  height={`80%`}
+                  width={`80%`}
+                />
               </div>
-            </> :
-            <Routes>
-              <Route exact
-                path='/user/login'
-                element={
-                  <UnAuthenticatedRoutes >
-                    <SignInPage />
-                  </UnAuthenticatedRoutes>
-                } />
-
-              <Route exact path='/user/forgotPassword' element={
-                <UnAuthenticatedRoutes>
-                  <ForgotPassword />
+            </div>
+          </> :
+          <Routes>
+            <Route exact
+              path='/user/login'
+              element={
+                <UnAuthenticatedRoutes >
+                  <SignInPage />
                 </UnAuthenticatedRoutes>
               } />
 
-              <Route exact path='/user/resetPassword/:reset_token' element={
-                <UnAuthenticatedRoutes>
-                  <ResetPassword />
-                </UnAuthenticatedRoutes>
-              } />
+            <Route exact path='/user/forgotPassword' element={
+              <UnAuthenticatedRoutes>
+                <ForgotPassword />
+              </UnAuthenticatedRoutes>
+            } />
 
-              <Route exact path='/user/register' element={
-                <UnAuthenticatedRoutes>
-                  <SignUpPage />
-                </UnAuthenticatedRoutes>
-              } />
+            <Route exact path='/user/resetPassword/:reset_token' element={
+              <UnAuthenticatedRoutes>
+                <ResetPassword />
+              </UnAuthenticatedRoutes>
+            } />
 
-              <Route path='/user/auth/activate/:activation_token' element={<ActivateAccount />} />
+            <Route exact path='/user/register' element={
+              <UnAuthenticatedRoutes>
+                <SignUpPage />
+              </UnAuthenticatedRoutes>
+            } />
 
-              <Route
-                path='/*'
-                element={
-                  <RequireAuth >
-                    <Home />
-                  </RequireAuth>
-                }
-              />
-            </Routes>
-        }
-      </div >
+            <Route path='/user/auth/activate/:activation_token' element={<ActivateAccount />} />
+
+            <Route
+              path='/*'
+              element={
+                <RequireAuth >
+                  <Home />
+                </RequireAuth>
+              }
+            />
+          </Routes>
+      }
+    </div >
   )
 }
 

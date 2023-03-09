@@ -35,6 +35,11 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
     const [currFocusField, setCurrFocusField] = useState(undefined);
 
+    const [showDatePicker, setShowDatePicker] = useState({
+        visibility: false,
+        key: '',
+    });
+
     const onFocus = (val) => {
         setCurrFocusField(val)
     }
@@ -57,7 +62,6 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
         cardHolder: "",
         cardNumber: "",
         expiry: "",
-        expiryyy: "",
         cvv: "",
         logoIndex: "",
         isFavourite: false
@@ -198,7 +202,6 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
     //> Handle input form Data change_____________________________
     const handleFormDataChange = (e) => {
-
         switch (formCategory) {
 
             case "Identity":
@@ -276,7 +279,6 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
     //> Clearing form on back btn clicked
     const clearForm = () => {
-
         switch (formCategory) {
             case "Bank":
                 setBankCardData({
@@ -334,10 +336,23 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
             return licenseCardData.logoIndex !== "";
         }
     }
-
+    const toggleDatePicker = (e) => {
+        console.log(e.target.name)
+        setShowDatePicker({
+            visibility: !showDatePicker.visibility,
+            key: e.target.name
+        });
+    }
     return (
         <div className={showInputForm ? styles.cardWrapper : styles.cardWrapperClose}>
-            <DatePicker />
+
+            <DatePicker showDatePicker={showDatePicker} setShowDatePicker={setShowDatePicker} toggleDatePicker={toggleDatePicker}
+                handleFormDataChange={handleFormDataChange}
+                cardData={formCategory === 'Bank' ? bankCardData : formCategory === 'Identity' ? identityCardData : formCategory === 'License' && licenseCardData}
+            />
+            {/* {showDatePicker.visibilty === true
+                &&
+            } */}
             {logoComponentShow &&
                 <LogoComponentWrapper
                     setLogoComponentShow={setLogoComponentShow}
@@ -472,9 +487,9 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                 <div className={styles.subCardWrapper}>
 
                     {
-                        formCategory === "Bank" ? <BankCardSubComponent currFocusField={currFocusField} onFocus={onFocus} bankCardData={bankCardData} setBankCardData={setBankCardData} handleFormDataChange={handleFormDataChange} currCardVender={currCardVender} />
-                            : formCategory === "Identity" ? <IdentityCardSubComponent currFocusField={currFocusField} onFocus={onFocus} identityCardData={identityCardData} setIdentityCardData={setIdentityCardData} handleFormDataChange={handleFormDataChange} />
-                                : formCategory === "License" ? <LicenseCardSubComponent currFocusField={currFocusField} onFocus={onFocus} licenseCardData={licenseCardData} setLicenseCardData={licenseCardData} handleFormDataChange={handleFormDataChange} /> : null
+                        formCategory === "Bank" ? <BankCardSubComponent currFocusField={currFocusField} onFocus={onFocus} bankCardData={bankCardData} setBankCardData={setBankCardData} handleFormDataChange={handleFormDataChange} currCardVender={currCardVender} showDatePicker={showDatePicker} setShowDatePicker={setShowDatePicker} toggleDatePicker={toggleDatePicker} />
+                            : formCategory === "Identity" ? <IdentityCardSubComponent currFocusField={currFocusField} onFocus={onFocus} identityCardData={identityCardData} setIdentityCardData={setIdentityCardData} handleFormDataChange={handleFormDataChange} showDatePicker={showDatePicker} setShowDatePicker={setShowDatePicker} toggleDatePicker={toggleDatePicker} />
+                                : formCategory === "License" ? <LicenseCardSubComponent currFocusField={currFocusField} onFocus={onFocus} licenseCardData={licenseCardData} setLicenseCardData={licenseCardData} handleFormDataChange={handleFormDataChange} toggleDatePicker={toggleDatePicker} /> : null
                     }
 
                 </div>

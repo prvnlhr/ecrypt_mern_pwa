@@ -1,0 +1,86 @@
+@import "../../variable.modules.css";
+
+.dayList {
+    width: 95%;
+    height: 95%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 80%;
+    grid-template-areas:
+        "weekDaysContainer"
+        "dayListContainer";
+    /* border: 1px solid black; */
+}
+
+.weekDaysContainer {
+    grid-area: weekDaysContainer;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+
+}
+
+.weekDayDiv {
+    width: 14.1%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+.weekDayDiv p {
+    font-size: 0.8rem;
+    font-weight: var(--bolder-font);
+    color: var(--ui-scheme-color);
+}
+
+.dayListContainer {
+    grid-area: dayListContainer;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    /* border: 1px solid black; */
+}
+
+.dateDiv {
+    width: 14.1%;
+    height: 16%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+.dateInnerDiv {
+    width: 90%;
+    height: 90%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #00299a0c; */
+}
+
+.dateDiv p {
+    font-size: 0.8rem;
+    font-weight: var(--bolder-font);
+    color: var(--primary-font-color);
+
+}
+
+.selectedDivStyle {
+    background-color: var(--ui-scheme-color);
+    border-radius: 0.3rem;
+}
+
+.selectedDivStyle p {
+    color: var(--listCount-font-color);
+    font-weight: var(--bold-font);
+}

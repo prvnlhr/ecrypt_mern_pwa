@@ -2,7 +2,10 @@ import React from 'react'
 import styles from "../styles/IdentityCardSubComponent.module.css"
 import { Icon } from '@iconify/react';
 const IdentityCardSubComponent = (
-  { identityCardData, setIdentityCardData, handleFormDataChange, onFocus, currFocusField }
+  { identityCardData, setIdentityCardData, handleFormDataChange, onFocus, currFocusField, showDatePicker,
+    setShowDatePicker,
+    toggleDatePicker
+  }
 ) => {
   return (
     <div className={styles.cardWrapper} >
@@ -62,6 +65,8 @@ const IdentityCardSubComponent = (
               onChange={handleFormDataChange}
               onFocus={() => onFocus(5)}
               placeholder="DD / MM / YY"
+              readOnly={true}
+              onClick={(e) => toggleDatePicker(e)}
             />
           </div>
         </div>
@@ -81,6 +86,8 @@ const IdentityCardSubComponent = (
               onChange={handleFormDataChange}
               onFocus={() => onFocus(6)}
               placeholder="MM / YY"
+              readOnly={true}
+              onClick={(e) => toggleDatePicker(e)}
             />
           </div>
 

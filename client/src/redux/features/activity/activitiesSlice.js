@@ -5,7 +5,7 @@ import * as api from "../../api"
 export const fectchActivitiesData = createAsyncThunk("activity/fetch", async ({ user_id }, { getState, dispatch, rejectWithValue, fulfillWithValue }) => {
     try {
         const res = await api.fetchUserActivities(user_id)
-        return fulfillWithValue(res.data.reverse());
+        return fulfillWithValue(res.data?.reverse());
     } catch (error) {
         return rejectWithValue(error);
     }
