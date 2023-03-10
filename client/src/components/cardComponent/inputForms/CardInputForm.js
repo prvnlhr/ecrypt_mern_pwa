@@ -261,8 +261,8 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
 
 
-        let activity_data = await generateActivityData(1, 'Card', bankCardData, '');
-
+        let activity_data = await generateActivityData(1, 'Card', cardDataToEdit, '');
+        console.log(activity_data);
         await dispatch(addNewCardData({
             data: cardDataToEdit,
             user_id: userId,
@@ -351,7 +351,7 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                 handleFormDataChange={handleFormDataChange}
                 cardData={formCategory === 'Bank' ? bankCardData : formCategory === 'Identity' ? identityCardData : formCategory === 'License' && licenseCardData}
             />
-    
+
             {logoComponentShow &&
                 <LogoComponentWrapper
                     setLogoComponentShow={setLogoComponentShow}

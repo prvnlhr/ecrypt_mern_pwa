@@ -402,6 +402,18 @@
     border-radius: clamp(0.8rem, 0.19999999999999996rem + 3.0000000000000004vw, 1.1rem) !important;
   }
 
+  .iconDiv1 {
+    width: 80%;
+  }
+
+  .iconDiv2 {
+    width: 80%;
+  }
+
+  .iconDiv3 {
+    width: 80%;
+  }
+
   .countIcon {
     padding: 0px;
     margin: 0px;

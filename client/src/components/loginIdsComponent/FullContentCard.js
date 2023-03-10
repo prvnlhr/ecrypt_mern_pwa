@@ -54,7 +54,6 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
     }
 
 
-
     // const [logoComponentShow, setLogoComponentShow] = useState(false);
 
 
@@ -128,7 +127,16 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
     }
     //> Save Btn clicked_________
     const saveBtnClicked = () => {
-        const activity_data = generateActivityData(3, 'Login', fullContentCardData, oldCardData);
+        let activity_data = generateActivityData(3, 'Login', fullContentCardData, oldCardData);
+
+        // > we are adding contentTitle for every edited activity field, because after editing
+        // > it might not have title as edited field, so to recognize every edited activity,
+        // > we are providing extra contentTitle key, which will be render as 'Title' at top
+        // > of edit activity.
+        //> Also new and deleted activity field will always have title so will are 
+        //> not adding contentTitle to them.
+        activity_data.contentTitle = fullContentCardData.title
+        // console.log(activity_data);
         dispatch(editLoginIdData({
             updatedData: fullContentCardData,
             login_id: fullContentCardData._id,

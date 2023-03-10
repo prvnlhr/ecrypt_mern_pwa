@@ -17,7 +17,7 @@
 .activityList::-webkit-scrollbar {
     background-color: rgba(176, 32, 32, 0);
     height: 4px;
-    width: 3px;
+    width: 0.15rem;
 }
 
 .activityList::-webkit-scrollbar-track {

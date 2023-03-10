@@ -25,7 +25,7 @@
 .recentAddedList::-webkit-scrollbar {
     background-color: rgba(255, 255, 255, 0);
     height: 4px;
-    width: 2.5px;
+    width: 0.15rem;
 }
 
 .recentAddedList::-webkit-scrollbar-track {

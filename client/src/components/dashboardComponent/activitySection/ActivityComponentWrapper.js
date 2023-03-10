@@ -2,8 +2,11 @@ import React from 'react'
 import styles from "./styles/activityWrapper.module.css"
 import EditFieldComponent from "./EditFieldComponent"
 import NewAddedDeletedField from './NewAddedDeletedField';
+import ActivityTitleField from './ActivityTitleField';
 
 const ActivityComponentWrapper = ({ activity }) => {
+
+    // console.log(activity);
 
     return (
         <div className={styles.activityComponentWrapper}>
@@ -38,9 +41,7 @@ const ActivityComponentWrapper = ({ activity }) => {
 
                 {/* ${activity.task === 'Deleted' ? styles.taskContainerBorderDeleted : activity.task === 'Added' ? styles.taskContainerBorderAdded : styles.taskContainerBorderEdit} */}
                 <div className={styles.taskWrapper}>
-                    <div className={`${styles.taskContainer}
-
-                      `} >
+                    <div className={`${styles.taskContainer}`} >
                         <p className={`${activity.task === 'Deleted' ? styles.taskContainerBorderDeleted : activity.task === 'Added' ? styles.taskContainerBorderAdded : styles.taskContainerBorderEdit}`}>
                             {activity.task}
                         </p>
@@ -49,6 +50,11 @@ const ActivityComponentWrapper = ({ activity }) => {
             </div>
 
             <div className={styles.fieldWrapper}>
+
+                {(activity.task === 'Edit' && activity.type !== 'Doc') &&
+                    <ActivityTitleField activity={activity} />
+                }
+
                 {
                     (activity.subType === 3) ?
                         Object.entries(activity).map(([item, val]) => (

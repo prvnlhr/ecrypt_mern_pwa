@@ -20,20 +20,21 @@ const NewAddedDeletedField = ({ item, activity }) => {
                                             : item == "isFavourite" ? null
                                                 : item == "_id" ? null
                                                     : item == "id_" ? null
-                                                        : item == "id_" ? null :
-                                                            activity[item].length === 0 ? null :
-                                                                < div className={styles.fieldWrapper} >
-                                                                    <div className={styles.fieldContainer} >
-                                                                        <div className={styles.fieldNameLabelWrapper} >
-                                                                            <p>{key} - </p>
-                                                                        </div>
-                                                                        <div className={styles.valWrapper} >
-                                                                            <p>
-                                                                                {activity[item]}
-                                                                            </p>
+                                                        : item == "contentTitle" ? null
+                                                            : item == "id_" ? null :
+                                                                activity[item].length === 0 ? null :
+                                                                    < div className={styles.fieldWrapper} >
+                                                                        <div className={styles.fieldContainer} >
+                                                                            <div className={styles.fieldNameLabelWrapper} >
+                                                                                <p>{key} - </p>
+                                                                            </div>
+                                                                            <div className={styles.valWrapper} >
+                                                                                <p>
+                                                                                    {activity[item]}
+                                                                                </p>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
-                                                                </div>
             }
         </>
 

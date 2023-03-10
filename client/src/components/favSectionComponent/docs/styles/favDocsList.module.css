@@ -29,13 +29,16 @@
 .contentContainer::-webkit-scrollbar {
     background-color: rgba(176, 32, 32, 0);
     height: 4px;
-    width: 3px;
+    width: 0.15rem;
+
 }
 
 .contentContainer::-webkit-scrollbar-track {
     background-color: rgb(231, 228, 228);
     background-color: rgba(231, 228, 228, 0.062);
     width: 2px;
+  width: 0.15rem;
+
 }
 
 .contentContainer::-webkit-scrollbar-thumb {

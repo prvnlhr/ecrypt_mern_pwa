@@ -131,9 +131,9 @@ const LoginIdsList = ({
     if (loginIData != undefined) {
       setFullContentCardData({
         _id: loginIData._id,
-        app: loginIData.app,
-        category: loginIData.category,
         title: loginIData.title,
+        category: loginIData.category,
+        app: loginIData.app,
         username: loginIData.username,
         password: loginIData.password,
         logoIndex: loginIData.logoIndex,

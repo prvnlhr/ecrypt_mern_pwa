@@ -14,35 +14,35 @@ const EditFieldComponent = ({ item, value }) => {
                             : item == "date" ? null
                                 : item == "time" ? null
                                     : item == "_id" ? null
-                                        : item == "month" ? null :
+                                        : item == "contentTitle" ? null
+                                            : item == "month" ? null :
+                                                <div className={styles.fieldWrapper} >
 
-                                            <div className={styles.fieldWrapper} >
+                                                    <div className={styles.fieldContainer}>
 
-                                                <div className={styles.fieldContainer}>
-
-                                                    <div className={styles.upperPartition} >
-                                                        <div className={styles.fieldNameLabelWrapper} >
-                                                            <p>
-                                                                {key === 'LogoIndex' ? 'Logo' : key} -
-                                                            </p>
+                                                        <div className={styles.upperPartition} >
+                                                            <div className={styles.fieldNameLabelWrapper} >
+                                                                <p>
+                                                                    {key === 'LogoIndex' ? 'Logo' : key} -
+                                                                </p>
+                                                            </div>
+                                                            <div className={styles.oldValueWrapper} >
+                                                                <p>
+                                                                    {key === 'LogoIndex' ? logosArray[value.oldVal].label : value.oldVal}
+                                                                </p>
+                                                            </div>
                                                         </div>
-                                                        <div className={styles.oldValueWrapper} >
-                                                            <p>
-                                                                {key === 'LogoIndex' ? logosArray[value.oldVal].label : value.oldVal}
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                    <div className={styles.lowerPartition} >
-                                                        <div className={styles.arrowElementWrapper}></div>
-                                                        <div className={styles.changedToLableWrapper}>
-                                                            <p>Changed to - </p>
-                                                        </div>
-                                                        <div className={styles.newValueWrapper}>
-                                                            <p>
-                                                                {key === 'LogoIndex' ? logosArray[value.newVal].label : value.newVal}
-                                                            </p>
-                                                        </div>
-                                                        {/* <div className={styles.angleArrowDiv}></div>
+                                                        <div className={styles.lowerPartition} >
+                                                            <div className={styles.arrowElementWrapper}></div>
+                                                            <div className={styles.changedToLableWrapper}>
+                                                                <p>Changed to - </p>
+                                                            </div>
+                                                            <div className={styles.newValueWrapper}>
+                                                                <p>
+                                                                    {key === 'LogoIndex' ? logosArray[value.newVal].label : value.newVal}
+                                                                </p>
+                                                            </div>
+                                                            {/* <div className={styles.angleArrowDiv}></div>
                                                         <div className={styles.changeToLabelWrapper} >
                                                             <div className={styles.changeToLabelDiv}>
                                                                 <p className={styles.changeToLabelText}>Changed to - </p>
@@ -51,10 +51,10 @@ const EditFieldComponent = ({ item, value }) => {
                                                         <div className={styles.newValWrapper} >
                                                            
                                                         </div> */}
-                                                    </div>
+                                                        </div>
 
+                                                    </div>
                                                 </div>
-                                            </div>
 
             }
         </>

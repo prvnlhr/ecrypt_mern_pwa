@@ -32,9 +32,9 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
 
     const [formData, setformData] = useState({
-        app: "",
-        category: "",
         title: "",
+        category: "",
+        app: "",
         username: "",
         password: "",
         logoIndex: undefined,
@@ -78,9 +78,9 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
     const clearForm = () => {
         setformData({
             id_: "",
-            app: "",
-            category: "",
             title: "",
+            category: "",
+            app: "",
             username: "",
             password: "",
             logoIndex: undefined,
@@ -90,7 +90,7 @@ const LoginIdInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
 
     const saveBtnClicked = () => {
 
-        const activity_data = generateActivityData(1, 'Login', formData, '')
+        let activity_data = generateActivityData(1, 'Login', formData, '')
         dispatch(addNewLoginIdData({
             data: formData,
             user_id: userId,

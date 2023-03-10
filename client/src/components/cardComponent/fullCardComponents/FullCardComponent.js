@@ -125,9 +125,10 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
 
     //> Handle save btn Clicked_______________
     const saveBtnClicked = () => {
-
         // console.log('oldCardData', oldCardData);
-        const activity_data = generateActivityData(3, 'Card', fullContentCardData, oldCardData)
+        let activity_data = generateActivityData(3, 'Card', fullContentCardData, oldCardData)
+        activity_data.contentTitle = fullContentCardData.title
+
         // console.log('newCardData', fullContentCardData);
         // console.log('activity_data', activity_data);
         dispatch(editCardData({
