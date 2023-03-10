@@ -110,7 +110,10 @@ const FullContentCard = ({ fullContentCardData, setFullContentCardData, showCont
 
     //> Edit Btn Cicked__________
     const editBtnClicked = () => {
-        setOldCardData(fullContentCardData);
+        const oldDataObj = {};
+        Object.assign(oldDataObj, fullContentCardData);
+        // console.log(oldDataObj);
+        setOldCardData(oldDataObj);
         setEditMode(true);
     }
 

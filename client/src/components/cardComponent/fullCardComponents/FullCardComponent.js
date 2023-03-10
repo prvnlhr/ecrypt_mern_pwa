@@ -109,7 +109,10 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
 
     //> Edit btn clicked______________________
     const editBtnClicked = () => {
-        setOldCardData(fullContentCardData);
+        const oldDataObj = {};
+        Object.assign(oldDataObj, fullContentCardData);
+        // console.log(oldDataObj);
+        setOldCardData(oldDataObj);
         setEditMode(true);
     }
 
@@ -122,7 +125,11 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
 
     //> Handle save btn Clicked_______________
     const saveBtnClicked = () => {
+
+        // console.log('oldCardData', oldCardData);
         const activity_data = generateActivityData(3, 'Card', fullContentCardData, oldCardData)
+        // console.log('newCardData', fullContentCardData);
+        // console.log('activity_data', activity_data);
         dispatch(editCardData({
             updatedData: fullContentCardData,
             card_id: fullContentCardData._id,
