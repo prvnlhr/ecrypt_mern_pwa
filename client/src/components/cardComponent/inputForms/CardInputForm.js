@@ -336,8 +336,9 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
             return licenseCardData.logoIndex !== "";
         }
     }
+
     const toggleDatePicker = (e) => {
-        console.log(e.target.name)
+        // console.log(e.target.name)
         setShowDatePicker({
             visibility: !showDatePicker.visibility,
             key: e.target.name
@@ -350,9 +351,7 @@ const CardInputForm = ({ formToggle, showInputForm, setShowInputForm }) => {
                 handleFormDataChange={handleFormDataChange}
                 cardData={formCategory === 'Bank' ? bankCardData : formCategory === 'Identity' ? identityCardData : formCategory === 'License' && licenseCardData}
             />
-            {/* {showDatePicker.visibilty === true
-                &&
-            } */}
+    
             {logoComponentShow &&
                 <LogoComponentWrapper
                     setLogoComponentShow={setLogoComponentShow}

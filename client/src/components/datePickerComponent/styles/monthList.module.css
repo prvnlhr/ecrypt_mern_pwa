@@ -33,12 +33,15 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .monthDiv p {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: var(--primary-font-color);
-    font-weight: var(--bolder-font);
+    font-weight: var(--boldest-font);
+    cursor: pointer;
+
 
 }
 
@@ -48,6 +51,20 @@ p {
 }
 
 .selectedDivStyle p {
-    color: var( --listCount-font-color);
-    font-weight: var(--bold-font);
+    color: var(--listCount-font-color);
+    font-weight: var(--bolder-font);
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .monthDiv p {
+        font-size: clamp(0.6rem, -0.09999999999999998rem + 3.4999999999999996vw, 0.95rem) !important;
+        font-weight: var(--boldest-font);
+    }
+
+    .selectedDivStyle p {
+        font-weight: var(--bolder-font);
+    }
+
+
+
 }

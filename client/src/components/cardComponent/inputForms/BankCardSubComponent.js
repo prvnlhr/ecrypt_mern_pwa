@@ -3,14 +3,10 @@ import styles from "../styles/bankCardSubComponent.module.css"
 import { Icon } from '@iconify/react';
 const BankCardSubComponent = ({
     bankCardData,
-    setBankCardData,
     handleFormDataChange,
     currCardVender,
-    handleCardNumberChanged,
     onFocus,
     currFocusField,
-    showDatePicker,
-    setShowDatePicker,
     toggleDatePicker
 }) => {
 

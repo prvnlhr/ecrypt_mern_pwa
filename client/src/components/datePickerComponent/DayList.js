@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import moment from 'moment';
 import styles from "./styles/dayList.module.css"
+import { motion } from "framer-motion"
+
 const DayList = ({ currSelectedDate, setCurrSelectedDate, handleClickedItem }) => {
 
     const { startOfMonth, numDays, date, month, year } = currSelectedDate;
@@ -15,7 +17,7 @@ const DayList = ({ currSelectedDate, setCurrSelectedDate, handleClickedItem }) =
     //  5 -> Fri  
     //  6 -> Sat
 
-    const weekDaysArray = ['M', 'T', 'W', 'T', 'F', 'S', 'S']
+    const weekDaysArray = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN']
 
 
     const getStartOfWeek = (selectedYear, selectedMonth) => {
@@ -35,11 +37,28 @@ const DayList = ({ currSelectedDate, setCurrSelectedDate, handleClickedItem }) =
                 </div>)
             } else {
                 monthArr.push(
-                    <div key={i} className={`${styles.dateDiv}  `} >
+                    <motion.div key={i}
+                        className={`${styles.dateDiv}  `}
+                        initial={{
+                            opacity: 0,
+                            // translateX: -10,
+                            translateY: -5,
+                        }}
+                        animate={{
+                            opacity: 1,
+                            // translateX: 0,
+                            translateY: 0,
+                        }}
+                        transition={{
+                            duration: 0.2,
+                            delay: 0.15
+                        }}
+
+                    >
                         <div className={`${styles.dateInnerDiv} ${currSelectedDate.date == dayNum && styles.selectedDivStyle}  `}>
                             <p onClick={(e) => { handleClickedItem(e, 'date') }}>{dayNum}</p>
                         </div>
-                    </div>);
+                    </motion.div>);
                 dayNum++;
             }
         }
@@ -52,7 +71,7 @@ const DayList = ({ currSelectedDate, setCurrSelectedDate, handleClickedItem }) =
 
         const currMonthNumOfDays = moment(`${year + '-' + month}`).daysInMonth();
 
-        console.log(startDayOfWeek, currMonthNumOfDays);
+        // console.log(startDayOfWeek, currMonthNumOfDays);
 
         const dataToRender = getDataArr(currMonthNumOfDays, startDayOfWeek);
         // console.log(dataToRender);
@@ -65,7 +84,7 @@ const DayList = ({ currSelectedDate, setCurrSelectedDate, handleClickedItem }) =
             <div className={styles.weekDaysContainer} >
                 {weekDaysArray.map((item, index) => (
                     <div className={`${styles.weekDayDiv}`} >
-                        <p>{item}</p>
+                        <p className={(item === 'SUN' || item === 'SAT') && styles.satSunFont}  >{item}</p>
                     </div>
                 ))}
             </div>

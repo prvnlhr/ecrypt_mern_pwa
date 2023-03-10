@@ -11,8 +11,9 @@ import DeleteModal from "../modal/DeleteModal"
 import { diff, generateActivityData } from "../utils/ActivityDataChangeFuction"
 import { editLoginIdData, deleteLoginData, toggleIsFav } from "../../redux/features/loginsId/loginsIdSlice"
 import ListSkeleton from "../skelotons/ListSkeleton"
+import { motion } from "framer-motion"
+
 const LoginIdsList = ({
-  // setLogoComponentShow,
   setClickedSearchItem,
   clickedSearchItem,
 }) => {
@@ -184,6 +185,7 @@ const LoginIdsList = ({
                 handleLoginIdClicked={handleLoginIdClicked}
                 fullContentCardData={fullContentCardData}
                 clickedSearchItem={clickedSearchItem}
+                index={index}
               />
             ))
         }
@@ -206,20 +208,21 @@ const LoginIdsList = ({
         logoComponentShow={logoComponentShow}
         setLogoComponentShow={setLogoComponentShow}
       />
-      {/* } */}
       <LoginIdInputForm
         showInputForm={showInputForm}
         setShowInputForm={setShowInputForm}
         formToggle={formToggle}
 
       />
-      {/* {showInputForm &&
-      } */}
+
     </div >
   );
 };
 
 export default LoginIdsList;
+
+
+
 {/* <div className={styles.contentContainer} ref={node}>
 
         {loginsFetching === true && loginIds.length < 1 ? (

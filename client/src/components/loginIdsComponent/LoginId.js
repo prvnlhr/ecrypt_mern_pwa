@@ -4,7 +4,10 @@ import { useSelector } from "react-redux";
 import { logosArray } from "../logoComponents/logosData"
 import BookmarksIcon from "../icons/BookmarksIcon"
 import BookmarksIconFill from "../icons/BookmarksIconFill"
-const LoginId = ({ loginId, handleLoginIdClicked, setFullContentCardData, clickedSearchItem }) => {
+import { motion } from "framer-motion"
+
+const LoginId = ({ loginId, handleLoginIdClicked, setFullContentCardData, clickedSearchItem, index
+}) => {
 
   const currCardDataInStore = useSelector((state) =>
     loginId._id ? state.loginIds.loginsIdData.find((l) => l._id === loginId._id) : null
@@ -17,6 +20,8 @@ const LoginId = ({ loginId, handleLoginIdClicked, setFullContentCardData, clicke
   return (
     <>
       <div className={`${styles.loginInWrapper} ${clickedSearchItem?._id === loginId._id && styles.loginInWrapperFocus}`}
+
+
         id={loginId._id}
         onClick={() => {
           handleLoginIdClicked(loginId);

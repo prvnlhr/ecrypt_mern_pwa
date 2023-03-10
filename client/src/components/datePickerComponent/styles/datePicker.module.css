@@ -6,8 +6,9 @@ p {
 
 .datePickerWrapper {
     position: absolute;
-    width: 80%;
-    height: 80%;
+    width: 25%;
+    aspect-ratio: 4/5;
+    height: unset;
     background-color: var(--box-bg-tertiary-drk);
     display: grid;
     grid-template-columns: 100%;
@@ -20,10 +21,12 @@ p {
     right: 0;
     margin-left: auto;
     margin-right: auto;
-    bottom: 0%;
+    top: 0%;
     z-index: 999;
     border-radius: 0.4rem;
     transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 
@@ -36,55 +39,88 @@ p {
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     align-items: center;
     /* border: 1px solid salmon; */
-    padding-left: 8%;
 }
 
+.monthToggleBtnContainer {
+    width: auto;
+    width: 30%;
+    height: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
 
-.closeIconDiv {
-    position: absolute;
+.monthToggleDiv {
+    height: 50%;
     aspect-ratio: 1/1;
-    height: 40%;
-    border-radius: 50%;
-    background-color: #93C2FF;
+    /* border: 1px solid green; */
     display: flex;
     justify-content: center;
     align-items: center;
-    right: 2%;
-    top: 10%;
 }
 
-.closeIcon {
-    position: relative;
-    font-size: 0.85rem;
+.monthToggleBtn {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+
+
+.displayDateContainer {
+    width: auto;
+    width: 30%;
+    height: 80%;
+    height: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
     /* border: 1px solid black; */
-    color: #002A9A
+    margin-top: auto;
 }
 
 .displayDateDiv {
     width: auto;
-    height: 80%;
+    height: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding-left: 0.8rem;
     padding-right: 0.8rem;
+    /* border: 1px solid red; */
+    cursor: pointer;
+
 }
 
-.displayDateFont {
+.displayDateMonthFont {
     color: var(--primary-font-color);
-    font-size: 0.9rem;
     font-weight: var(--boldest-font);
+    /* font-size: 0.75rem; */
+    /* font-size: 1.1rem; */
+    font-size: 0.85rem;
+
+}
+
+.displayDateYearFont {
+    color: var(--secondary-font-color);
+    font-weight: var(--boldest-font);
+    /* color: #CBD1DD; */
+    /* font-size: 0.7rem; */
+    /* font-size: 1rem; */
+    font-size: 0.8rem;
 }
 
 
 .displayDateSelectedDiv {
     background-color: var(--date-picker-displaySelected-date-bg);
     border-radius: 0.3rem;
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
+    /* padding-top: 0.2rem; */
+    /* padding-bottom: 0.2rem; */
     height: auto;
 }
 
@@ -119,26 +155,28 @@ p {
     justify-content: space-evenly;
     align-items: center;
     /* border: 1px solid salmon; */
-
 }
 
 .btnDiv {
-    width: 40%;
-    height: 45%;
+    width: 35%;
+    height: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 0.5rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+
 }
 
 .cancelBtnDiv {
-    border: 1px solid rgba(35, 35, 35, 0.153);
+    border: 1px solid var(--secondary-font-color);
 }
 
 .cancelBtnDiv p {
     color: var(--secondary-font-color);
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     font-weight: var(--bolder-font);
+
 }
 
 .confirmBtnDiv {
@@ -146,8 +184,46 @@ p {
 }
 
 .confirmBtnDiv p {
+    font-size: 0.7rem;
     color: var(--listCount-font-color);
-    font-size: 0.8rem;
     font-weight: var(--bolder-font);
+}
 
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
+    .datePickerWrapper {
+        position: absolute;
+        width: 75%;
+        height: 95%;
+    }
+
+    .displayDateMonthFont {
+        font-size: clamp(0.75rem, 0.04999999999999982rem + 3.500000000000001vw, 1.1rem) !important;
+
+    }
+
+    .displayDateYearFont {
+        font-size: clamp(0.7rem, 0.09999999999999987rem + 3.0000000000000004vw, 1.0rem) !important;
+    }
+
+    .confirmBtnDiv p {
+        /* font-size: clamp(0.6rem, -1.1102230246251565e-16rem + 3.0000000000000004vw, 0.9rem) !important; */
+        font-size: 0.7rem;
+        font-size: 1rem;
+        font-size: clamp(0.7rem, 0.09999999999999987rem + 3.0000000000000004vw, 1.0rem) !important;
+    }
+
+    .cancelBtnDiv p {
+        /* font-size: clamp(0.6rem, -1.1102230246251565e-16rem + 3.0000000000000004vw, 0.9rem) !important; */
+        font-size: 0.7rem;
+        font-size: 1rem;
+        font-size: clamp(0.7rem, 0.09999999999999987rem + 3.0000000000000004vw, 1.0rem) !important;
+    }
+
+    .btnDiv {
+        width: 35%;
+        height: 40%;
+        border-radius: 0.5rem;
+    }
 }

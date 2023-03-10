@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import styles from "../styles/IdentityCardSubComponent.module.css"
 import { Icon } from '@iconify/react';
-const IdentityCardSubComponent = ({ fullContentCardData, setFullContentCardData, editMode, setEditMode, onFocus, currFocusField }) => {
+const IdentityCardSubComponent = ({ fullContentCardData, setFullContentCardData, editMode, setEditMode, onFocus, currFocusField,
+  toggleDatePicker
+}) => {
 
   const handleInputValueChange = (e) => {
     setFullContentCardData({
@@ -12,7 +14,7 @@ const IdentityCardSubComponent = ({ fullContentCardData, setFullContentCardData,
   return (
     <div className={styles.cardWrapper} >
       <div className={styles.cardHolderWrapper}>
-        <div className={`${styles.cardHolderContainer} ${(currFocusField === 3 && editMode) && styles.focusFieldStyle}` }>
+        <div className={`${styles.cardHolderContainer} ${(currFocusField === 3 && editMode) && styles.focusFieldStyle}`}>
           <div className={styles.cardHolderIconDiv}>
             <Icon
               className={styles.cardHolderIcon}
@@ -35,7 +37,7 @@ const IdentityCardSubComponent = ({ fullContentCardData, setFullContentCardData,
         </div>
       </div>
       <div className={styles.cardNumberWrapper}>
-        <div className={`${styles.cardNumerContainer} ${(currFocusField === 4 && editMode) && styles.focusFieldStyle}` }>
+        <div className={`${styles.cardNumerContainer} ${(currFocusField === 4 && editMode) && styles.focusFieldStyle}`}>
           <div className={styles.cardNumberIconDiv}>
             <Icon className={styles.cardNumIcon} icon="vaadin:password" />
           </div>
@@ -55,7 +57,7 @@ const IdentityCardSubComponent = ({ fullContentCardData, setFullContentCardData,
         </div>
       </div>
       <div className={styles.dobDateWrapper}>
-        <div className={`${styles.dobDateContainer}  ${(currFocusField === 5 && editMode) && styles.focusFieldStyle}` }>
+        <div className={`${styles.dobDateContainer}  ${(currFocusField === 5 && editMode) && styles.focusFieldStyle}`}>
           <div className={styles.dobIconDiv} >
             <Icon className={styles.doBIcon} icon="uil:calender" />
 
@@ -67,17 +69,19 @@ const IdentityCardSubComponent = ({ fullContentCardData, setFullContentCardData,
             <input
               className={editMode ? styles.inputActive : styles.inputNotActive}
               value={fullContentCardData.dob}
-              readOnly={editMode ? false : true}
+              // readOnly={editMode ? false : true}
               onChange={handleInputValueChange}
               name={"dob"}
               onFocus={() => onFocus(5)}
 
+              readOnly={true}
+              onClick={(e) => editMode && toggleDatePicker(e)}
             />
           </div>
         </div>
       </div>
       <div className={styles.issueDateWrapper}>
-        <div className={`${styles.issueDateContainer} ${(currFocusField === 6 && editMode) && styles.focusFieldStyle}` }>
+        <div className={`${styles.issueDateContainer} ${(currFocusField === 6 && editMode) && styles.focusFieldStyle}`}>
           <div className={styles.issueIconDiv} >
             <Icon className={styles.issueDateIcon} icon="fluent:notepad-16-regular" />
           </div>
@@ -88,10 +92,13 @@ const IdentityCardSubComponent = ({ fullContentCardData, setFullContentCardData,
             <input
               className={editMode ? styles.inputActive : styles.inputNotActive}
               value={fullContentCardData.issueDate}
-              readOnly={editMode ? false : true}
+              // readOnly={editMode ? false : true}
               onChange={handleInputValueChange}
               name={"issueDate"}
               onFocus={() => onFocus(6)}
+              readOnly={true}
+              onClick={(e) => editMode && toggleDatePicker(e)}
+
             />
           </div>
 

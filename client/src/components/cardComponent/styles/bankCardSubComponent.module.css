@@ -254,7 +254,6 @@
 .expiryDateContainer {
     height: 70%;
     width: 90%;
-    /* border: 1px solid black; */
     display: grid;
     align-items: center;
     grid-template-columns: 30% 70%;

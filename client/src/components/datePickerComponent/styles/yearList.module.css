@@ -13,12 +13,29 @@ p {
     flex-wrap: wrap;
     overflow-y: scroll;
     /* border: 1px solid red; */
-    margin-top: 5%;
+    margin-top: 2.5%;
+}
+
+.yearList::-webkit-scrollbar {
+    background-color: rgba(176, 32, 32, 0);
+    height: 4px;
+    width: 0.15rem;
+}
+
+.yearList::-webkit-scrollbar-track {
+    /* background-color: rgb(231, 228, 228); */
+    background-color: rgba(231, 228, 228, 0.039);
+    width: 0.15rem;
+}
+
+.yearList::-webkit-scrollbar-thumb {
+    background-color: var(--ui-scheme-color);
+    border-radius: 10px;
 }
 
 .yearDiv {
     width: 33%;
-    height: 25%;
+    height: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,15 +49,16 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+
 }
 
 
 .yearDiv p {
     color: var(--primary-font-color);
-
-    font-size: 0.9rem;
-    font-weight: var(--bolder-font);
-
+    font-size: 0.7rem;
+    font-weight: var(--boldest-font);
+    cursor: pointer;
 }
 
 .selectedDivStyle {
@@ -51,6 +69,17 @@ p {
 
 .selectedDivStyle p {
     color: var(--listCount-font-color);
+    font-weight: var(--bolder-font);
+}
 
-    font-weight: var(--bold-font);
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
+    .yearDiv p {
+        font-size: clamp(0.6rem, -0.09999999999999998rem + 3.4999999999999996vw, 0.95rem) !important;
+        font-weight: var(--boldest-font);
+    }
+
+    .selectedDivStyle p {
+        font-weight: var(--bolder-font);
+    }
 }

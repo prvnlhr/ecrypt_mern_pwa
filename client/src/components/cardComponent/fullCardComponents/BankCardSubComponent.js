@@ -9,7 +9,14 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment'
 import { border } from '@mui/system';
 
-const BankCardSubComponent = ({ fullContentCardData, setFullContentCardData, editMode, setEditMode, onFocus, currFocusField }) => {
+const BankCardSubComponent = ({
+    fullContentCardData,
+    setFullContentCardData,
+    editMode,
+    onFocus,
+    currFocusField,
+    toggleDatePicker
+}) => {
 
     const [venderLogo, setVenderLogo] = useState();
 
@@ -95,12 +102,14 @@ const BankCardSubComponent = ({ fullContentCardData, setFullContentCardData, edi
                         <div className={styles.expiryInputDiv} >
                             <input
                                 className={editMode ? styles.inputActive : styles.inputNotActive}
-                                readOnly={editMode ? false : true}
+                                // readOnly={editMode ? false : true}
                                 onChange={handleInputValueChange}
                                 name={"expiry"}
                                 onFocus={() => onFocus(5)}
                                 value={fullContentCardData.expiry}
                                 placeholder="MM/YY"
+                                readOnly={true}
+                                onClick={(e) => editMode && toggleDatePicker(e)}
                             />
                         </div>
                     </div>

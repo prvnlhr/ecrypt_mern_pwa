@@ -2,7 +2,7 @@ import React from 'react'
 import styles from "../styles/licenseCardSubComponent.module.css"
 import { Icon } from '@iconify/react';
 
-const LicenseCardSubComponent = ({ fullContentCardData, setFullContentCardData, editMode, setEditMode, onFocus, currFocusField }) => {
+const LicenseCardSubComponent = ({ fullContentCardData, setFullContentCardData, editMode, setEditMode, onFocus, currFocusField, toggleDatePicker }) => {
 
   const handleInputValueChange = (e) => {
     setFullContentCardData({
@@ -73,12 +73,13 @@ const LicenseCardSubComponent = ({ fullContentCardData, setFullContentCardData, 
           <div className={styles.dobDateInputDiv} >
             <input
               className={editMode ? styles.inputActive : styles.inputNotActive}
-              readOnly={editMode ? false : true}
+              // readOnly={editMode ? false : true}
               onChange={handleInputValueChange}
               name={"dob"}
               value={fullContentCardData.dob}
               onFocus={() => onFocus(5)}
-
+              readOnly={true}
+              onClick={(e) => editMode && toggleDatePicker(e)}
             />
           </div>
         </div>
@@ -96,11 +97,13 @@ const LicenseCardSubComponent = ({ fullContentCardData, setFullContentCardData, 
           <div className={styles.expiryDateInputDiv} >
             <input
               className={editMode ? styles.inputActive : styles.inputNotActive}
-              readOnly={editMode ? false : true}
+              // readOnly={editMode ? false : true}
               onChange={handleInputValueChange}
               name={"expiry"}
               value={fullContentCardData.expiry}
               onFocus={() => onFocus(6)}
+              readOnly={true}
+              onClick={(e) => editMode && toggleDatePicker(e)}
             />
           </div>
 

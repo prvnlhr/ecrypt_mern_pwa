@@ -70,8 +70,8 @@ const LicenseCardSubComponent = (
               onChange={handleFormDataChange}
               onFocus={() => onFocus(5)}
               placeholder="DD / MM / YY"
-            readOnly={true}
-            onClick={(e) => toggleDatePicker(e)}
+              readOnly={true}
+              onClick={(e) => toggleDatePicker(e)}
             />
           </div>
         </div>
@@ -94,8 +94,8 @@ const LicenseCardSubComponent = (
               name="expiry"
               onFocus={() => onFocus(6)}
               placeholder="MM / YY"
-            readOnly={true}
-            onClick={(e) => toggleDatePicker(e)}
+              readOnly={true}
+              onClick={(e) => toggleDatePicker(e)}
             />
           </div>
 

@@ -13,6 +13,7 @@ import { editCardData, deleteCardData, toggleIsFav } from "../../../redux/featur
 import { generateActivityData } from "../../utils/ActivityDataChangeFuction"
 import BookmarksIcon from "../../icons/BookmarksIcon"
 import BookmarksIconFill from "../../icons/BookmarksIconFill"
+import DatePicker from '../../datePickerComponent/DatePicker';
 import { Oval } from 'react-loader-spinner'
 const spinnerWrapper = {
     height: `100%`,
@@ -25,7 +26,7 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
     deleteMode,
     currFocusField,
     onFocus,
-    setCurrFocusField
+    setCurrFocusField,
 }) => {
 
     const userId = useSelector((state) => state.user._id);
@@ -37,6 +38,8 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
     //     setCurrFocusField(val)
     // }
 
+    const dispatch = useDispatch();
+
     const [popUpOpen, setPopUpOpen] = useState(false);
 
     const [oldCardData, setOldCardData] = useState('');
@@ -45,8 +48,11 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
 
     const [logoComponentShow, setLogoComponentShow] = useState(false);
 
-    const dispatch = useDispatch();
 
+    const [showDatePicker, setShowDatePicker] = useState({
+        visibility: false,
+        key: '',
+    });
 
     const handleOpClick = (op) => {
 
@@ -100,16 +106,19 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
         }
     }, [logoIndx])
 
+
+    //> Edit btn clicked______________________
     const editBtnClicked = () => {
         setOldCardData(fullContentCardData);
         setEditMode(true);
     }
+
+    //> Cancel btn clicked____________________
     const cancelBtnClicked = () => {
         setCurrFocusField(undefined);
         setFullContentCardData(oldCardData);
         setEditMode(false);
     }
-
 
     //> Handle save btn Clicked_______________
     const saveBtnClicked = () => {
@@ -128,17 +137,20 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
 
     }
 
+    //> Delete btn clicked____________________
     const deleteBtnClicked = () => {
         setDeleteMode(true);
     }
 
+    //> Handle input value ____________________
     const handleInputValueChange = (e) => {
         setFullContentCardData({
             ...fullContentCardData,
             [e.target.name]: e.target.value,
         })
     }
-    //> Handle fav btn Clicked
+
+    //> Fav btn Clicked_________________
     const favBtnClicked = () => {
         dispatch(toggleIsFav({
             card_id: fullContentCardData._id,
@@ -147,8 +159,24 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
         }))
     }
 
+    //> toggleDatePicker________________
+    const toggleDatePicker = (e) => {
+        // console.log(e.target.name)
+        setShowDatePicker({
+            visibility: !showDatePicker.visibility,
+            key: e.target.name
+        });
+    }
+
     return (
         <div className={showContentCard ? styles.cardWrapper : styles.cardWrapperClose}>
+
+            <DatePicker
+                showDatePicker={showDatePicker}
+                toggleDatePicker={toggleDatePicker}
+                cardData={fullContentCardData}
+            />
+
             {logoComponentShow &&
                 <LogoComponentWrapper
                     setLogoComponentShow={setLogoComponentShow}
@@ -356,6 +384,7 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
                             setFullContentCardData={setFullContentCardData}
                             onFocus={onFocus}
                             currFocusField={currFocusField}
+                            toggleDatePicker={toggleDatePicker}
                         />
 
 
@@ -367,6 +396,7 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
                                 setFullContentCardData={setFullContentCardData}
                                 onFocus={onFocus}
                                 currFocusField={currFocusField}
+                                toggleDatePicker={toggleDatePicker}
                             />
 
 
@@ -378,6 +408,7 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
                                     setFullContentCardData={setFullContentCardData}
                                     onFocus={onFocus}
                                     currFocusField={currFocusField}
+                                    toggleDatePicker={toggleDatePicker}
                                 /> :
 
                                 null
