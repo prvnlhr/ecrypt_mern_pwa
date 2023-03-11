@@ -107,6 +107,8 @@
 .backBtnIcon {
     font-size: 30px;
     color: var(--primary-font-color);
+    cursor: pointer;
+
 }
 
 .headingDiv p {
@@ -243,6 +245,7 @@ label {
     align-items: center;
     background-color: #9DC1FA;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .iconDivCancel {
@@ -254,6 +257,8 @@ label {
     align-items: center;
     background-color: #B4B3BA;
     border-radius: 50%;
+    cursor: pointer;
+
 }
 
 .iconDivSave {
@@ -266,16 +271,20 @@ label {
     background-color: #58BF6F;
     border-radius: 50%;
     margin-bottom: 50%;
+    cursor: pointer;
 }
 
 .profilePicSaveIcon {
     font-size: 13px;
     color: white;
+
 }
 
 .profilePicCancelIcon {
     font-size: 13px;
     color: white;
+
+
 }
 
 .profilePicEditIcon {
@@ -522,19 +531,20 @@ label {
 .formBtnCommon {
     width: auto;
     height: auto;
-    border-radius: 5px;
     border: none;
     outline: none;
-    padding-left: 4%;
-    padding-right: 4%;
-    padding-top: 2%;
-    padding-bottom: 2%;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
     margin: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-radius: 0.3rem;
+    cursor: pointer;
     border-radius: 0.3rem;
 }
 
@@ -547,6 +557,7 @@ label {
 .formBtnSaveProfile {
     height: 70%;
     background-color: #58BF6F;
+    margin-left: 0.7rem;
 
 }
 
@@ -564,6 +575,7 @@ label {
 .formBtnSavePass {
     height: 70%;
     background-color: #58BF6F;
+    margin-left: 0.7rem;
 
 }
 

@@ -10,6 +10,11 @@ const ActivityList = () => {
   const activityState = useSelector((state => state.activities));
   const { isLoading, action } = activityState;
 
+
+
+  const userId = useSelector((state) => state.user._id);
+
+
   const oldData = {
     category: "bankCard",
     title: "State Bank of India",
@@ -181,7 +186,7 @@ const ActivityList = () => {
     <div className={styles.activityList} >
 
       {
-        isLoading === true && action === 'fetch' ?
+        (isLoading === true && action === 'fetch') || userId === undefined ?
           <>
             <ActivityListSkeleton />
             <ActivityListSkeleton />

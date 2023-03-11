@@ -166,7 +166,7 @@ const LoginIdsList = ({
 
       <div className={` ${(showContentCard || showInputForm) ? styles.contentContainerClose : styles.contentContainer} `} ref={node}>
         {
-          isLoading === true && action === 'fetch' ?
+          (isLoading === true && action === 'fetch') || (userId === undefined) ?
             <>
               <ListSkeleton />
               <ListSkeleton />

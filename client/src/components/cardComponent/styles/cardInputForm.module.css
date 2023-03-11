@@ -108,6 +108,8 @@
     align-items: flex-start;
     padding-left: 0%;
     padding-top: 0%;
+    cursor: pointer;
+
 }
 
 .crudBtnContainer {
@@ -135,6 +137,8 @@
     margin-right: 20px;
     /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    cursor: pointer;
+
 }
 
 .spinner {
@@ -202,6 +206,8 @@
     justify-content: center;
     align-items: center;
     /* background-color: var(--logo-div-bg); */
+    cursor: pointer;
+
 }
 
 .logoSelectedBg {
@@ -330,7 +336,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -351,6 +357,8 @@
 .popUpIcon {
     font-size: 1.1rem;
     color: var(--primary-font-color);
+    cursor: pointer;
+
 }
 
 .categoryInput:focus {
@@ -556,7 +564,6 @@
         /* width: 80%; */
         aspect-ratio: 1/1;
         height: 90%;
-        border-radius: 20px;
         display: flex;
         justify-content: center;
         align-items: center;

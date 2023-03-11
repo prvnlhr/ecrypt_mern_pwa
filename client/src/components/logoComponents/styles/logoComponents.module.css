@@ -64,13 +64,16 @@ transform: translateX(-50%); */
     align-items: center;
     right: 0px;
     margin-right: 1rem;
+
 }
 
 .closeIcon {
     position: relative;
     font-size: 13px;
     /* border: 1px solid black; */
-    color: #002A9A
+    color: #002A9A;
+    cursor: pointer;
+
 }
 
 .saveIcon {
@@ -78,6 +81,7 @@ transform: translateX(-50%); */
     font-size: 13px;
     /* border: 1px solid black; */
     color: white;
+    cursor: pointer;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {

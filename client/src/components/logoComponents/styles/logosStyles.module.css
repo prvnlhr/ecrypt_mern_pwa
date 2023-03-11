@@ -9,6 +9,8 @@
     border-radius: 15px;
     padding-top: 10%;
     /* border: 1px solid red; */
+    cursor: pointer;
+
 }
 
 .logoWrapperActive {
@@ -26,6 +28,8 @@
     padding-top: 10%;
     /* padding-top: 5%; */
     /* border: 1px solid red; */
+    cursor: pointer;
+
 }
 
 .logoContainer {
@@ -37,7 +41,7 @@
     justify-content: center;
     align-items: center;
     background-color: var(--logo-div-bg);
-    webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;

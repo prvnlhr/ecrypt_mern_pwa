@@ -9,7 +9,7 @@
 
 .forgotPassWrapper {
   position: relative;
-  width: 85%;
+  width: 25%;
   aspect-ratio: 3/2.8;
   border-radius: 30px;
   background-color: var(--box-bg-primary);
@@ -61,7 +61,7 @@
 
 .formLabelDiv p {
   font-family: "Poppins", sans-serif;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: var(--bolder-font);
   color: var(--primary-font-color);
 }
@@ -257,6 +257,7 @@
   /* outline: #AED2FF; */
   padding-left: 5%;
   padding-right: 5%;
+  cursor: pointer;
 }
 
 .formFooterWrapper {

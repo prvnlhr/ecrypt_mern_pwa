@@ -542,6 +542,26 @@
 
 }
 
+.passwordVisibilityIconDiv {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  /* border: 1px solid red; */
+}
+
+.passVisibilityIcon {
+  aspect-ratio: 1/1;
+  height: 60%;
+  cursor: pointer;
+}
+
+::-ms-reveal {
+  display: none;
+}
+
 .focusFieldStyle {
   border: 2px solid var(--ui-scheme-color);
 }
@@ -820,8 +840,8 @@ input:focus {
     font-size: 0.7rem;
     font-size: 0.9rem;
     font-size: clamp(0.7rem, 0.2999999999999998rem + 2.000000000000001vw, 0.9rem) !important;
-    font-size:clamp(0.6rem , 0.19999999999999984rem + 2.000000000000001vw, 0.8rem) !important;
-  
+    font-size: clamp(0.6rem, 0.19999999999999984rem + 2.000000000000001vw, 0.8rem) !important;
+
     font-weight: var(--bolder-font);
     color: #6A82A7;
 
@@ -839,7 +859,7 @@ input:focus {
 
   .textDiv3 p {
     font-family: "Poppins", sans-serif;
-    font-size:clamp(0.6rem , 0.19999999999999984rem + 2.000000000000001vw, 0.8rem) !important;
+    font-size: clamp(0.6rem, 0.19999999999999984rem + 2.000000000000001vw, 0.8rem) !important;
     color: #6A82A7;
     font-weight: var(--bolder-font);
   }
@@ -860,8 +880,8 @@ input:focus {
     font-size: 0.5rem;
     /* font-size: 0.9rem; */
     /* font-size: clamp(0.7rem, 0.2999999999999998rem + 2.000000000000001vw, 0.9rem) !important; */
-    font-size:clamp(0.6rem , 0.19999999999999984rem + 2.000000000000001vw, 0.8rem) !important;
-   
+    font-size: clamp(0.6rem, 0.19999999999999984rem + 2.000000000000001vw, 0.8rem) !important;
+
     font-weight: var(--bolder-font);
     color: var(--ui-scheme-color);
   }
@@ -874,7 +894,7 @@ input:focus {
     font-size: 0.5rem;
 
     /* font-size: clamp(0.7rem, 0.2999999999999998rem + 2.000000000000001vw, 0.9rem) !important; */
-    font-size:clamp(0.6rem , 0.19999999999999984rem + 2.000000000000001vw, 0.8rem) !important;
+    font-size: clamp(0.6rem, 0.19999999999999984rem + 2.000000000000001vw, 0.8rem) !important;
 
     font-weight: var(--bolder-font);
     color: #6A82A7;

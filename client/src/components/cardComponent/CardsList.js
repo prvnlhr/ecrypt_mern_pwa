@@ -284,7 +284,7 @@ const CardsList = ({ setLogoComponentShow,
       <div ref={node} className={(showContentCard || showInputForm) ? styles.contentContainerClose : styles.contentContainer} >
         {
 
-          isLoading === true && action === 'fetch' ?
+          (isLoading === true && action === 'fetch') || userId === undefined ?
             <>
               <ListSkeleton />
               <ListSkeleton />

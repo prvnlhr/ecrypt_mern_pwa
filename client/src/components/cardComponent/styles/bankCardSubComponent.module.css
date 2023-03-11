@@ -48,11 +48,11 @@
     /* border: 1px solid black; */
     display: grid;
     align-items: center;
-    grid-template-columns: 20% 60% 20%;
+    grid-template-columns: 20% 80%;
     grid-template-rows: 50% 50%;
     grid-template-areas:
-        "cardHolderIconDiv cardHolderLabelTextDiv cardVenderIconContainer  "
-        "cardHolderIconDiv cardHolderInputDiv cardVenderIconContainer";
+        "cardHolderIconDiv cardHolderLabelTextDiv"
+        "cardHolderIconDiv cardHolderInputDiv";
     background-color: var(--box-bg-tertiary);
     border-radius: 10px;
 }
@@ -148,30 +148,6 @@
 } */
 
 /* _____________________________________________________ */
-.cardVenderIconContainer {
-    grid-area: cardVenderIconContainer;
-    width: 100%;
-    height: 100%;
-    /* border: 1px solid green; */
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.cardVenderIconDiv {
-    aspect-ratio: 1/1;
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* border: 1px solid red; */
-}
-
-.cardVenderLogo {
-    /* height: 70%; */
-    width: 80%;
-    /* border: 1px solid black; */
-}
 
 /* _____________________________________________ */
 .cardNumberWrapper {
@@ -234,6 +210,31 @@
     grid-area: cardNumberInputDiv;
     width: 100%;
     height: 100%;
+    /* border: 1px solid black; */
+}
+
+.cardVenderIconContainer {
+    grid-area: cardVenderIconContainer;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid green; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.cardVenderIconDiv {
+    aspect-ratio: 1/1;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+.cardVenderLogo {
+    /* height: 70%; */
+    width: 80%;
     /* border: 1px solid black; */
 }
 
@@ -455,7 +456,7 @@
 
     .cardHolderContainer {
         height: 70%;
-        /* border: 1px solid black; */
+        /* border: 1px solid white; */
         display: grid;
         align-items: center;
         grid-template-columns: 20% 80%;
@@ -464,20 +465,10 @@
             "cardHolderIconDiv cardHolderLabelTextDiv"
             "cardHolderIconDiv cardHolderInputDiv";
         border-radius: 10px;
+        border-radius: clamp(0.7rem, -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
     }
 
-    .cardHolderContainer {
-        height: 70%;
-        /* border: 1px solid black; */
-        display: grid;
-        align-items: center;
-        grid-template-columns: 20% 60% 20%;
-        grid-template-rows: 50% 50%;
-        grid-template-areas:
-            "cardHolderIconDiv cardHolderLabelTextDiv cardVenderIconContainer  "
-            "cardHolderIconDiv cardHolderInputDiv cardVenderIconContainer";
-        border-radius: 10px;
-    }
+
 
     .cardHolderIconDiv {
         grid-area: cardHolderIconDiv;
@@ -544,7 +535,7 @@
         grid-template-areas:
             "cardNumberIconDiv cardNumberLabelTextDiv cardVenderIconContainer  "
             "cardNumberIconDiv cardNumberInputDiv cardVenderIconContainer";
-        border-radius: 10px;
+        border-radius: clamp(0.7rem, -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
     }
 
 
@@ -600,8 +591,20 @@
         align-items: center;
     }
 
+    .cardVenderIconDiv {
+        aspect-ratio: 1/1;
+        width: 55%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border: 1px solid red; */
+    }
 
-
+    .cardVenderLogo {
+        /* height: 70%; */
+        width: 100%;
+        /* border: 1px solid green; */
+    }
 
     /* _____________________________________________ */
 
@@ -627,7 +630,8 @@
         grid-template-areas:
             "expiryIconDiv expiryLabelTextDiv"
             "expiryIconDiv expiryInputDiv";
-        border-radius: 10px;
+        border-radius: clamp(0.7rem, -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
+
     }
 
     .expiryIconDiv {
@@ -701,7 +705,8 @@
         grid-template-areas:
             "cvvNumberIconDiv cvvNumberLabelTextDiv"
             "cvvNumberIconDiv cvvNumberInputDiv";
-        border-radius: 10px;
+        border-radius: clamp(0.7rem, -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
+
     }
 
     .cvvNumberIconDiv {

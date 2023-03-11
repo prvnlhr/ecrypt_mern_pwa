@@ -109,6 +109,7 @@ const FullCardComponent = ({ showContentCard, setShowContentCard, handleFullCont
 
     //> Edit btn clicked______________________
     const editBtnClicked = () => {
+        setCurrFocusField(1)
         const oldDataObj = {};
         Object.assign(oldDataObj, fullContentCardData);
         // console.log(oldDataObj);

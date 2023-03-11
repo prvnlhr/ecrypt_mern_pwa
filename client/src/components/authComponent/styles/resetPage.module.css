@@ -332,6 +332,8 @@ input:focus {
   color: white;
   letter-spacing: 0.5px;
   /* outline: #AED2FF; */
+  cursor: pointer;
+
 }
 
 

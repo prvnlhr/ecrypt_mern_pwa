@@ -481,6 +481,7 @@
     font-size: 20px;
     color: var(--primary-font-color);
     display: none;
+    cursor: pointer;
 }
 
 .categoryInput:focus {
@@ -769,8 +770,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: 10px;
-
+        border-radius: clamp(0.5rem, 0.0rem + 2.5vw, 0.75rem) !important;
     }
 
     .categoryLabelDiv {

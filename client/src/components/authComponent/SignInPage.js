@@ -6,6 +6,8 @@ import styles from "./styles/signInPage.module.css"
 import { validateSignInForm } from "./helperFunctions/formValidation"
 import { loginUser, clearAuthResponseMessage } from "../../redux/features/auth/authSlice"
 import { Oval } from 'react-loader-spinner';
+import EyeIconClose from '../icons/EyeIconClose';
+import EyeIconOpen from '../icons/EyeIconOpen';
 const spinnerWrapper = {
   height: `80%`,
   with: `100%`,
@@ -31,7 +33,10 @@ const SignInPage = () => {
   const onFocus = (val) => {
     setCurrFocusField(val)
   }
-
+  const [passVisible, setPassVisible] = useState(false);
+  const togglePassVisibility = () => {
+    setPassVisible(!passVisible);
+  }
 
   const [formData, setFromData] = useState({
     email: '',
@@ -332,9 +337,22 @@ const SignInPage = () => {
                     <p>PASSWORD</p>
                   </div>
                   <div className={styles.inputDiv} >
-                    <input value={formData.password} name="password" onFocus={() => onFocus(2)}
+                    <input
+
+                      type={(passVisible === true) ? "text" : "password"}
+                      value={formData.password} name="password" onFocus={() => onFocus(2)}
                       onChange={handleDataFormChange}
                     />
+                    <div className={` ${styles.passwordVisibilityIconDiv}`} >
+                      {(passVisible === true) ?
+                        <EyeIconClose styles={styles} togglePassVisibility={togglePassVisibility} />
+
+                        :
+                        <EyeIconOpen styles={styles} togglePassVisibility={togglePassVisibility} />
+
+                      }
+
+                    </div>
                   </div>
                 </div>
               </div>

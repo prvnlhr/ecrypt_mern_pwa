@@ -457,7 +457,8 @@
             "cardNumberIconDiv cardNumberLabelTextDiv"
             "cardNumberIconDiv cardNumberInputDiv";
         background-color: var(--box-bg-tertiary);
-        border-radius: 10px;
+        border-radius: clamp(0.7rem, -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
+
     }
 
 
@@ -525,7 +526,8 @@
             "dobIconDiv dobLabelTextDiv"
             "dobIconDiv dobDateInputDiv";
         background-color: var(--box-bg-tertiary);
-        border-radius: 10px;
+        border-radius: clamp(0.7rem, -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
+
     }
 
     .dobIconDiv {
@@ -594,7 +596,8 @@
             "issueIconDiv issueLabelTextDiv"
             "issueIconDiv issueDateInputDiv";
         background-color: var(--box-bg-tertiary);
-        border-radius: 10px;
+        border-radius: clamp(0.7rem, -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
+
     }
 
     .issueIconDiv {

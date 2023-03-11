@@ -168,6 +168,8 @@
   width: 40%;
   height: 40%;
   /* border: 1px solid black; */
+  cursor: pointer;
+
 }
 
 
@@ -263,6 +265,7 @@
   margin-right: 50%;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  cursor: pointer;
 
 }
 
@@ -278,6 +281,8 @@
   margin-right: 0%;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  cursor: pointer;
+
 }
 
 

@@ -411,7 +411,8 @@ input.form-control:focus {
             "cardHolderIconDiv cardHolderLabelTextDiv"
             "cardHolderIconDiv cardHolderInputDiv";
         background-color: var(--box-bg-tertiary);
-        border-radius: 10px;
+        border-radius: clamp(0.7rem, -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
+
     }
 
     .cardHolderIconDiv {
@@ -470,7 +471,8 @@ input.form-control:focus {
             "cardNumberIconDiv cardNumberLabelTextDiv"
             "cardNumberIconDiv cardNumberInputDiv";
         background-color: var(--box-bg-tertiary);
-        border-radius: 10px;
+        border-radius: clamp(0.7rem, -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
+
     }
 
 
@@ -534,7 +536,8 @@ input.form-control:focus {
             "dobIconDiv dobLabelTextDiv"
             "dobIconDiv dobDateInputDiv";
         background-color: var(--box-bg-tertiary);
-        border-radius: 10px;
+        border-radius: clamp(0.7rem, -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
+
     }
 
     .dobIconDiv {
@@ -599,7 +602,8 @@ input.form-control:focus {
             "expiryIconDiv expiryLabelTextDiv"
             "expiryIconDiv expiryDateInputDiv";
         background-color: var(--box-bg-tertiary);
-        border-radius: 10px;
+        border-radius: clamp(0.7rem, -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
+
     }
 
     .expiryIconDiv {
@@ -705,6 +709,5 @@ input.form-control:focus {
         text-align: start;
         padding-left: 0.1rem;
         font-size: clamp(0.6rem, -1.1102230246251565e-16rem + 3.0000000000000004vw, 0.9rem) !important;
-
     }
 }

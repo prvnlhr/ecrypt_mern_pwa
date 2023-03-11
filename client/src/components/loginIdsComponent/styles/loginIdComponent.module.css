@@ -98,6 +98,9 @@
   font-size: 12px;
   font-weight: var(--bolder-font);
   color: var(--secondary-font-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .favBtnWrapper {
