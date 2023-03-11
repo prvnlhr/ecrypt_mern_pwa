@@ -1,4 +1,4 @@
-# eCrypt
+# eCrypt PWA MERN
 **Full Stack MERN web app which stores Important card details(Bank, Identity,License), Apps and website Login and password and Documents{images) all in one place.**
 <br>
 <br>
