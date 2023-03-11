@@ -1,15 +1,13 @@
 <!-- # ![ecrypt-splash-icon](https://user-images.githubusercontent.com/70936225/224486033-0ee8f21c-b098-4270-a401-bc9fb69e3783.png) -->
-<h3><img align="center" height="30" src="https://user-images.githubusercontent.com/70936225/224486033-0ee8f21c-b098-4270-a401-bc9fb69e3783.png">  eCrypt PWA MERN</h3>
-eCrypt PWA MERN
-**Full Stack MERN web app which stores Important card details(Bank, Identity,License), Apps and website Login and password and Documents{images) all in one place.**
+<h3><img align="center" height="30" src="https://user-images.githubusercontent.com/70936225/224486033-0ee8f21c-b098-4270-a401-bc9fb69e3783.png">  eCrypt - PWA MERN APP</h3>
+
+## Full Stack MERN web app which stores Important card details(Bank, Identity,License), Apps and website Login and password and Documents{images) all in one place.
 <br>
 <br>
-*Fully Responsive across Desktop, Smartphones and Tablets screen.*
 <br>
-*PWA- Progressive Web App - Can be installed and gives native app-like exprience.*
 
 
-Some highlight features of eCrypt-pwa 
+## Some highlight features of eCrypt-pwa 
 1. Supports full CRUD operations- can ADD, DELETE, EDIT Card.
 2. Dashboard page which shows recent activities from across the app like details of edit, newly added or deleted card.
 3. Dashboard page also shows recently added card or doc.
