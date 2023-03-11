@@ -184,6 +184,8 @@
     align-items: center;
     border-radius: 9px;
     box-shadow: var(--dashboard-activity-type-shadow);
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
 }
 
 .typeContainer p {
@@ -219,6 +221,9 @@
     box-shadow: var(--dashboard-activity-task-shadow);
     /* border: 2px solid #D64339; */
     box-sizing: border-box;
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+
 }
 
 .taskContainerBorderAdded {

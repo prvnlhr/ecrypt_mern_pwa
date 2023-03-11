@@ -121,7 +121,6 @@
 .messageDivSuccess p {
   font-family: "Poppins", sans-serif;
   font-size: 0.7rem;
-
   font-weight: var(--bold-font);
   color: white;
 }
@@ -280,4 +279,63 @@
 
 Link {
   text-decoration: none;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .forgotPassWrapper {
+    position: relative;
+    width: 83%;
+    aspect-ratio: 3/2.8;
+    border-radius: 30px;
+
+  }
+
+
+
+  .formLabelDiv p {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.95rem;
+    font-weight: var(--bolder-font);
+    color: var(--primary-font-color);
+  }
+
+  .messageDivError p {
+    font-size: clamp(0.55rem, -0.1499999999999999rem + 3.4999999999999996vw, 0.9rem) !important;
+
+  }
+
+  .warningIcon {
+    font-size: clamp(0.7rem, -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
+
+  }
+
+  .messageDivSuccess p {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.7rem;
+    font-weight: var(--bold-font);
+    color: white;
+  }
+
+
+  .fieldIcon {
+    font-size: clamp(2.1rem, 3.5000000000000004rem + -7.000000000000002vw, 1.4rem) !important;
+  }
+
+  .labelDiv p {
+    font-size: clamp(0.6rem, -1.1102230246251565e-16rem + 3.0000000000000004vw, 0.9rem) !important;
+  }
+
+  .inputDiv input {
+    font-size: clamp(0.6rem, -1.1102230246251565e-16rem + 3.0000000000000004vw, 0.9rem) !important;
+  }
+
+
+  .sendLinkBtn {
+    font-size: clamp(0.7rem, 0.09999999999999987rem + 3.0000000000000004vw, 1.0rem) !important;
+  }
+
+  .formFooterWrapper p {
+    font-size: clamp(0.6rem, -1.1102230246251565e-16rem + 3.0000000000000004vw, 0.9rem) !important;
+  }
+
 }
