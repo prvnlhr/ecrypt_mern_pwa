@@ -21,6 +21,6 @@
 8. Fully responsive across all device, with cross browser support.
 9. PWA installable, to give native app like expirence.
 10. New features on the way. Do give it a try !!
-![MacBook Pro 14_ - 2](https://user-images.githubusercontent.com/70936225/224497658-6a78c1be-75ca-4cb9-87b6-455f88788210.png)
+<img src="https://user-images.githubusercontent.com/70936225/224497658-6a78c1be-75ca-4cb9-87b6-455f88788210.png" width="100%" />
 
 
