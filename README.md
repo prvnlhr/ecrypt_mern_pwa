@@ -1,6 +1,6 @@
 
 <h1 align="center">
-  <img height="50" src="./public/assets/ecrypt-icon.svg" alt="eCrypt Icon">
+  <img height="60" src="https://github.com/prvnlhr/ecrypt_mern_pwa/blob/main/client/public/assets/ecrypt-icon.svg" alt="eCrypt Icon">
   <br>
   eCrypt - PWA MERN App
 </h1>
