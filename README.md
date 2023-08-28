@@ -11,7 +11,7 @@
 
 ## Overview
 
-eCrypt is a versatile Full Stack MERN web app that serves as a unified repository for storing essential card details (Bank, Identity, License), login credentials for apps and websites, and important documents (images).
+eCrypt is MERN PWA web app. It is a password manager cum vault app which can store login details, identity info, bank cards, and image-format documents.
 
 ## Key Features
 
