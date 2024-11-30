@@ -85,6 +85,7 @@ const Card = ({ cardData, handleCardClicked, setFullCardData, clickedSearchItem 
           }
         </div>
 
+
       </div>
     </div>
   );

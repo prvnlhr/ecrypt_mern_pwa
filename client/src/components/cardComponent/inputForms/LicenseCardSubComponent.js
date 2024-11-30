@@ -33,7 +33,7 @@ const LicenseCardSubComponent = (
         </div>
       </div>
       <div className={styles.cardNumberWrapper}>
-        <div className={`${styles.cardNumerContainer} ${(currFocusField === 4) && styles.focusFieldStyle} `}>
+        <div className={`${styles.cardNumberContainer} ${(currFocusField === 4) && styles.focusFieldStyle} `}>
           <div className={styles.cardNumberIconDiv}>
             <Icon
               className={styles.cardNumIcon}

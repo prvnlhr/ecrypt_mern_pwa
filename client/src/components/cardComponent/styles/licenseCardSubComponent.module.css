@@ -134,7 +134,7 @@ input.form-control:focus {
     /* border: 1px solid green; */
 }
 
-.cardNumerContainer {
+.cardNumberContainer {
     height: 70%;
     /* border: 1px solid black; */
     display: grid;
@@ -460,7 +460,7 @@ input.form-control:focus {
         /* border: 1px solid green; */
     }
 
-    .cardNumerContainer {
+    .cardNumberContainer {
         height: 70%;
         /* border: 1px solid black; */
         display: grid;

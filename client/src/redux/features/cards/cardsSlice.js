@@ -15,6 +15,7 @@ export const fecthCardsData = createAsyncThunk("cards/fetch", async ({ user_id }
 
     try {
         const res = await api.fetchUserCards(user_id);
+        
         const { licenseCardsArray, bankCardsArray, identityCardsArray } = res.data;
         const CardsData = bankCardsArray.concat(identityCardsArray, licenseCardsArray);
         let SortedData = CardsData.sort(

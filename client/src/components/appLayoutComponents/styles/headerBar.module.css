@@ -14,7 +14,6 @@
   align-items: center;
 }
 
-
 .dateWrapper {
   position: relative;
   grid-area: dateWrapper;
@@ -70,7 +69,6 @@
   font-weight: var(--bolder-font);
   color: var(--primary-font-color);
 }
-
 
 .avatarNameWrapper {
   grid-area: avatarNameWrapper;
@@ -169,9 +167,7 @@
   height: 40%;
   /* border: 1px solid black; */
   cursor: pointer;
-
 }
-
 
 .popUpMenuContainer {
   position: absolute;
@@ -197,7 +193,6 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-
 }
 
 .topSection {
@@ -211,7 +206,6 @@
   justify-content: space-evenly;
   align-items: center;
   background-color: var(--box-bg-primary);
-
 }
 
 /* ___________________________________ */
@@ -223,7 +217,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .toggleContainer {
@@ -234,7 +227,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #F3F5F9;
+  background-color: #f3f5f9;
   background-color: var(--box-bg-secondary);
   border-radius: 10px;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -264,9 +257,9 @@
   margin-left: 0%;
   margin-right: 50%;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   cursor: pointer;
-
 }
 
 .toggleBtnDivRight {
@@ -280,11 +273,10 @@
   margin-left: 50%;
   margin-right: 0%;
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   cursor: pointer;
-
 }
-
 
 .toggleIconDiv {
   width: 35%;
@@ -305,7 +297,6 @@
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-
 .toggleTextDiv {
   width: 65%;
   height: 100%;
@@ -316,7 +307,6 @@
   padding-left: 5%;
   box-sizing: border-box;
 }
-
 
 .toggleBtnText {
   font-family: "Poppins", sans-serif;
@@ -398,7 +388,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 15px;
   font-weight: var(--bolder-font);
-  color: #D64339;
+  color: #d64339;
 }
 
 /* _____________________________________________________________ */
@@ -411,7 +401,6 @@
   box-sizing: border-box;
   /* border: 1px solid red; */
 }
-
 
 .logoDiv {
   display: flex;
@@ -491,7 +480,6 @@
     align-items: flex-end;
     padding-left: 20%;
     box-sizing: border-box;
-
   }
 
   .dateDiv {
@@ -503,7 +491,6 @@
     align-items: flex-start;
     padding-left: 20%;
     box-sizing: border-box;
-
   }
 
   .dayText {
@@ -513,7 +500,7 @@
     padding: 0px;
     font-size: 0.6rem;
     font-size: 1rem;
-    font-size: clamp(0.6rem, -0.20000000000000007rem + 4.0vw, 1.0rem) !important;
+    font-size: clamp(0.6rem, -0.20000000000000007rem + 4vw, 1rem) !important;
   }
 
   .dateText {
@@ -523,9 +510,8 @@
     padding: 0px;
     font-size: 0.5rem;
     font-size: 0.9rem;
-    font-size: clamp(0.5rem, -0.30000000000000004rem + 4.0vw, 0.9rem) !important;
+    font-size: clamp(0.5rem, -0.30000000000000004rem + 4vw, 0.9rem) !important;
   }
-
 
   .avatarNameWrapper {
     grid-area: avatarNameWrapper;
@@ -535,7 +521,6 @@
     display: flex;
     justify-content: flex-end;
     box-sizing: border-box;
-
   }
 
   .nameContainer {
@@ -556,7 +541,11 @@
     padding: 0px;
     font-size: 0.7rem;
     font-size: 1rem;
-    font-size: clamp(0.7rem, 0.09999999999999987rem + 3.0000000000000004vw, 1.0rem) !important;
+    font-size: clamp(
+      0.7rem,
+      0.09999999999999987rem + 3.0000000000000004vw,
+      1rem
+    ) !important;
   }
 
   .grettingText {
@@ -566,7 +555,11 @@
     padding: 0px;
     font-size: 0.7rem;
     font-size: 1rem;
-    font-size: clamp(0.7rem, 0.09999999999999987rem + 3.0000000000000004vw, 1.0rem) !important;
+    font-size: clamp(
+      0.7rem,
+      0.09999999999999987rem + 3.0000000000000004vw,
+      1rem
+    ) !important;
   }
 
   .avatarContainer {
@@ -591,7 +584,11 @@
     border-radius: 20px;
     border-radius: 1rem;
     border-radius: 1.4rem;
-    border-radius: clamp(1.0rem, 0.20000000000000018rem + 3.9999999999999996vw, 1.4rem) !important;
+    border-radius: clamp(
+      1rem,
+      0.20000000000000018rem + 3.9999999999999996vw,
+      1.4rem
+    ) !important;
   }
 
   .avatarImgDiv {
@@ -608,8 +605,11 @@
     overflow: hidden;
     border-radius: 0.8rem;
     border-radius: 1.1rem;
-    border-radius: clamp(0.8rem, 0.19999999999999996rem + 3.0000000000000004vw, 1.1rem) !important;
-
+    border-radius: clamp(
+      0.8rem,
+      0.19999999999999996rem + 3.0000000000000004vw,
+      1.1rem
+    ) !important;
   }
 
   .avatarImgDiv img {
@@ -641,7 +641,7 @@
     position: absolute;
     right: 50%;
     top: 90% !important;
-    width: clamp(8.0rem, 0.0rem + 40.0vw, 12.0rem) !important;
+    width: clamp(8rem, 0rem + 40vw, 12rem) !important;
     height: unset;
     aspect-ratio: 1/1;
     display: grid;
@@ -686,15 +686,27 @@
   }
 
   .toggleContainer {
-    border-radius: clamp(0.5rem, 0.10000000000000009rem + 1.9999999999999998vw, 0.7rem) !important;
+    border-radius: clamp(
+      0.5rem,
+      0.10000000000000009rem + 1.9999999999999998vw,
+      0.7rem
+    ) !important;
   }
 
   .toggleBtnDivLeft {
-    border-radius: clamp(0.4rem, 1.1102230246251565e-16rem + 1.9999999999999998vw, 0.6rem) !important;
+    border-radius: clamp(
+      0.4rem,
+      1.1102230246251565e-16rem + 1.9999999999999998vw,
+      0.6rem
+    ) !important;
   }
 
   .toggleBtnDivRight {
-    border-radius: clamp(0.4rem, 1.1102230246251565e-16rem + 1.9999999999999998vw, 0.6rem) !important;
+    border-radius: clamp(
+      0.4rem,
+      1.1102230246251565e-16rem + 1.9999999999999998vw,
+      0.6rem
+    ) !important;
   }
 
   .toggleIconDiv {
@@ -707,14 +719,21 @@
 
   .toggleIconLight {
     font-size: 1rem;
-    font-size: clamp(0.7rem, 0.09999999999999987rem + 3.0000000000000004vw, 1.0rem) !important;
+    font-size: clamp(
+      0.7rem,
+      0.09999999999999987rem + 3.0000000000000004vw,
+      1rem
+    ) !important;
   }
 
   .toggleIconDark {
     font-size: 1rem;
     font-size: 0.7rem;
-    font-size: clamp(0.7rem, 0.09999999999999987rem + 3.0000000000000004vw, 1.0rem) !important;
-
+    font-size: clamp(
+      0.7rem,
+      0.09999999999999987rem + 3.0000000000000004vw,
+      1rem
+    ) !important;
   }
 
   .toggleTextDiv {
@@ -730,7 +749,11 @@
 
   .toggleTextDiv p {
     /* font-size: clamp(0.5rem, 0.10000000000000009rem + 1.9999999999999998vw, 0.7rem) !important; */
-    font-size: clamp(0.55rem, 0.050000000000000044rem + 2.5vw, 0.8rem) !important;
+    font-size: clamp(
+      0.55rem,
+      0.050000000000000044rem + 2.5vw,
+      0.8rem
+    ) !important;
     font-weight: var(--bolder-font);
   }
 
@@ -749,7 +772,11 @@
   }
 
   .settingsText {
-    font-size: clamp(0.8rem, 0.19999999999999996rem + 3.0000000000000004vw, 1.1rem) !important;
+    font-size: clamp(
+      0.8rem,
+      0.19999999999999996rem + 3.0000000000000004vw,
+      1.1rem
+    ) !important;
     font-weight: var(--bolder-font);
   }
 
@@ -771,7 +798,6 @@
     justify-content: flex-start;
     align-items: center;
     padding-left: 2%;
-
   }
 
   .logoutIcon {
@@ -779,13 +805,15 @@
   }
 
   .logoutText {
-    font-size: clamp(0.8rem, 0.19999999999999996rem + 3.0000000000000004vw, 1.1rem) !important;
+    font-size: clamp(
+      0.8rem,
+      0.19999999999999996rem + 3.0000000000000004vw,
+      1.1rem
+    ) !important;
     font-weight: var(--bolder-font);
   }
 
-
   /* _______________________________ */
-
 }
 
 /* @media only screen and (min-device-width: 481px) and (max-device-width: 1020px) {
@@ -886,7 +914,6 @@
 } */
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
-
   .avatarContainer {
     height: unset;
     width: 20%;
@@ -944,7 +971,6 @@
     align-items: flex-end;
     padding-left: 10%;
     box-sizing: border-box;
-
   }
 
   .dateDiv {
@@ -956,7 +982,6 @@
     align-items: flex-start;
     padding-left: 10%;
     box-sizing: border-box;
-
   }
 
   .grettingText {
@@ -973,7 +998,6 @@
     padding: 0px;
   }
 
-
   .dayText {
     font-size: 1.2rem;
     font-weight: var(--bolder-font);
@@ -987,5 +1011,4 @@
     margin: 0px;
     padding: 0px;
   }
-
 }

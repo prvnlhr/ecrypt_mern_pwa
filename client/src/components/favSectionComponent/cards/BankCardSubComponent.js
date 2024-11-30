@@ -44,7 +44,7 @@ const BankCardSubComponent = ({ favFullCardData, setFavFullCardData, }) => {
                 </div>
             </div>
             <div className={styles.cardNumberWrapper}>
-                <div className={styles.cardNumerContainer}>
+                <div className={styles.cardNumberContainer}>
                     <div className={styles.cardNumberIconDiv}>
                         <Icon className={styles.cardNumIcon} icon="vaadin:password" />
                     </div>

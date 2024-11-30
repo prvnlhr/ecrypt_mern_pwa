@@ -10,6 +10,7 @@ import axios from "axios";
 import { changeProfilePicture } from "../../redux/features/user/userSlice"
 import { Oval } from 'react-loader-spinner'
 import { SpinnerCircular } from 'spinners-react';
+
 const spinnerStyle = {
     position: `absolute`,
     width: `112%`,

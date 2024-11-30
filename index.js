@@ -8,15 +8,7 @@ const cookiesParser = require("cookie-parser");
 const path = require("path");
 const app = express();
 
-// app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 
-// var corsOptions = {
-//   credentials: true,
-//   origin: "https://ecrypt.herokuapp.com",
-//   methods: ["POST", "GET", "DELETE" ,"PUT","OPTIONS"],
-//   maxAge: 3600,
-// };
-// app.use(cors(corsOptions));
 
 app.use(cookiesParser());
 // app.use(bodyParser.json({ limit: "30mb", extended: true }));
@@ -30,6 +22,7 @@ const CONNECTION_URL = process.env.MONGODB_URL;
 const PORT = process.env.PORT || 9000;
 
 //MONGODB CLOUD DATABASE CONNECTION________________________
+
 mongoose.set('strictQuery', false);
 
 mongoose
@@ -66,6 +59,7 @@ app.use(
 
 app.use("/", require("./routes/index"));
 
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
   app.get("*", (req, res) => {
@@ -81,3 +75,7 @@ app.listen(PORT, (err) => {
     console.log(`server running on:${PORT}`);
   }
 });
+
+
+
+// 

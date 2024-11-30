@@ -54,9 +54,13 @@ body::-webkit-scrollbar {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #1C1F2C;
-  width: clamp(4.0rem, -2.0rem + 30.0vw, 7.0rem) !important;
-  border-radius: clamp(1.2rem, -1.4000000000000001rem + 13.0vw, 2.5rem) !important;
+  background-color: #1c1f2c;
+  width: clamp(4rem, -2rem + 30vw, 7rem) !important;
+  border-radius: clamp(
+    1.2rem,
+    -1.4000000000000001rem + 13vw,
+    2.5rem
+  ) !important;
 }
 
 .app::-webkit-scrollbar {

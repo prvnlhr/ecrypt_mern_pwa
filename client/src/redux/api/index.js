@@ -1,8 +1,10 @@
 import axios from "axios";
 import { setAuthToken, forceLogout, logOutUser } from "../features/auth/authSlice"
-let url = process.env.REACT_APP_BASE_URL;
-// console.log(process.env.REACT_APP_BASE_URL);
 
+let url = process.env.REACT_APP_BASE_URL;
+
+// console.log(process.env);
+// console.log(process.env.REACT_APP_BASE_URL);
 
 // //for production server
 const API = axios.create({

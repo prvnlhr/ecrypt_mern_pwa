@@ -103,6 +103,7 @@ const authController = {
         return res.status(400).json({ msg: "Password is incorrect." });
       }
       const refresh_token = createRefreshToken({ id: user._id });
+
       res.cookie("refreshtoken", refresh_token, {
         httpOnly: true,
         secure: true,

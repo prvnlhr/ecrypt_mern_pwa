@@ -146,7 +146,7 @@
     /* border: 1px solid green; */
 }
 
-.cardNumerContainer {
+.cardNumberContainer {
     height: 70%;
     /* border: 1px solid black; */
     display: grid;
@@ -434,7 +434,7 @@
         height: 100%;
     }
 
-    .cardNumerContainer {
+    .cardNumberContainer {
         border-radius: clamp(0.7rem, -0.10000000000000031rem + 4.000000000000002vw, 1.1rem) !important;
     }
 

@@ -133,7 +133,6 @@
     background: var(--shimmer-color);
     border-radius: 3px;
     background-repeat: no-repeat;
-
 }
 
 @keyframes loading {

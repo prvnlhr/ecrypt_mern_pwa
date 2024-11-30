@@ -34,6 +34,8 @@ export const addNewDocData = createAsyncThunk("docs/add", async ({ data, name, u
         const state = getState();
 
         const res = await api.addNewDoc(data, state.auth.token)
+
+
         dispatch(addActivityData({
             activityData: activityData,
             userId: userId

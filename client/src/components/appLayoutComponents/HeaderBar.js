@@ -1,29 +1,27 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { useSelector, useDispatch } from 'react-redux'
-import { Icon } from '@iconify/react';
-import LogoutIcon from "../icons/LogoutIcon"
-import SettingsIcon from "../icons/SettingsIcon"
-import { getUserDetails } from "../../redux/features/user/userSlice"
-import { rearrangeLoginIdsList } from "../../redux/features/loginsId/loginsIdSlice"
+import { useSelector, useDispatch } from "react-redux";
+import { Icon } from "@iconify/react";
+import LogoutIcon from "../icons/LogoutIcon";
+import SettingsIcon from "../icons/SettingsIcon";
+import { getUserDetails } from "../../redux/features/user/userSlice";
+import { rearrangeLoginIdsList } from "../../redux/features/loginsId/loginsIdSlice";
 
-import { toggleUiTheme } from "../../redux/features/ui/uiSlice"
-
+import { toggleUiTheme } from "../../redux/features/ui/uiSlice";
 
 import moment from "moment";
 import headerStyles from "./styles/headerBar.module.css";
-import logoStyles from "./styles/appLogoStyles.module.css"
-import { logOutUser } from "../../redux/features/auth/authSlice"
+import logoStyles from "./styles/appLogoStyles.module.css";
+import { logOutUser } from "../../redux/features/auth/authSlice";
 import AppLogo from "./AppLogo";
 import AppLogoHeaderBar from "./AppLogoHeaderBar";
-import { Oval } from 'react-loader-spinner';
+import { Oval } from "react-loader-spinner";
 const spinnerWrapper = {
   height: `80%`,
   width: `100%`,
-}
+};
 
 const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
-
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -31,18 +29,17 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
   const userState = useSelector((state) => state.user);
   const uiState = useSelector((state) => state.ui);
   const isDarkMode = useSelector((state) => state.ui.darkMode);
-  const loginIdsArray = useSelector((state => state.loginIds.loginsIdData));
+  const loginIdsArray = useSelector((state) => state.loginIds.loginsIdData);
 
-  const { token, } = auth;
+  const { token } = auth;
 
   const [searchQuery, setQuery] = useState("");
   const [searchMode, setSearchMode] = useState(false);
 
-
   const btnClicked = () => {
     // console.log(token);
     dispatch(getUserDetails(token));
-  }
+  };
 
   useEffect(() => {
     let handler = (e) => {
@@ -62,8 +59,7 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
     setTheme(!lightTheme);
     localStorage.setItem("theme", !isDarkMode);
     dispatch(toggleUiTheme(!isDarkMode));
-
-  }
+  };
 
   const togglePopup = () => {
     if (open === true) {
@@ -75,34 +71,24 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
 
   const settingsLinkedClicked = (e) => {
     setOpen(false);
-  }
-
+  };
 
   const logOutBtnClicked = () => {
-    dispatch(logOutUser({}))
-  }
+    dispatch(logOutUser({}));
+  };
 
   const day = moment().format("dddd");
-  const date = moment().format('DD MMM YYYY');
+  const date = moment().format("DD MMM YYYY");
 
   const spinShow = true;
-
-
-
-
-
 
   //________________________________________________________________________________________________
 
   return (
-
     <div className={headerStyles.headerBar}>
-      <div className={headerStyles.logoWrapper} >
+      <div className={headerStyles.logoWrapper}>
         <div className={headerStyles.logoDiv}>
-          <AppLogo
-            unique_id={'79kk09as1q'}
-          />
-
+          <AppLogo unique_id={"79kk09as1q"} />
         </div>
       </div>
       <div className={headerStyles.dateWrapper}>
@@ -126,42 +112,73 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
           </div>
         </div>
       </div>
-      <div className={headerStyles.popUpWrapper} ref={node} >
+      <div className={headerStyles.popUpWrapper} ref={node}>
         <svg
           onClick={() => setOpen((open) => !open)}
           className={headerStyles.popUpIcon}
-          width="103" height="103" viewBox="0 0 103 103" fill="none" xmlns="http://www.w3.org/2000/svg">
+          width="103"
+          height="103"
+          viewBox="0 0 103 103"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <circle cx="18.24" cy="18.24" r="18.24" fill="#7E8DA4" />
           <circle cx="84.7205" cy="18.24" r="18.24" fill="#7E8DA4" />
-          <circle cx="18.24" cy="84.72" r="18.24" fill="#7E8DA4" fill-opacity="0.42" />
+          <circle
+            cx="18.24"
+            cy="84.72"
+            r="18.24"
+            fill="#7E8DA4"
+            fillOpacity="0.42"
+          />
           <circle cx="84.7205" cy="84.72" r="18.24" fill="#7E8DA4" />
         </svg>
         {open && (
           <div className={`${headerStyles.popUpMenuContainer}`}>
-            <div className={headerStyles.topSection} >
+            <div className={headerStyles.topSection}>
               <div className={headerStyles.themeToggleWrapper}>
-                <div className={headerStyles.toggleContainer} onClick={toggleTheme}>
+                <div
+                  className={headerStyles.toggleContainer}
+                  onClick={toggleTheme}
+                >
                   <div className={headerStyles.toggleDiv}>
-                    <div className={!isDarkMode ? headerStyles.toggleBtnDivLeft : headerStyles.toggleBtnDivRight}  >
-                      <div className={headerStyles.toggleIconDiv} >
-                        {!isDarkMode ?
-                          <Icon className={headerStyles.toggleIconLight} icon="mingcute:sun-line" color="#f3b821" /> :
-                          <Icon className={headerStyles.toggleIconDark} icon="akar-icons:moon" color="white" />
-                        }
+                    <div
+                      className={
+                        !isDarkMode
+                          ? headerStyles.toggleBtnDivLeft
+                          : headerStyles.toggleBtnDivRight
+                      }
+                    >
+                      <div className={headerStyles.toggleIconDiv}>
+                        {!isDarkMode ? (
+                          <Icon
+                            className={headerStyles.toggleIconLight}
+                            icon="mingcute:sun-line"
+                            color="#f3b821"
+                          />
+                        ) : (
+                          <Icon
+                            className={headerStyles.toggleIconDark}
+                            icon="akar-icons:moon"
+                            color="white"
+                          />
+                        )}
                       </div>
-                      <div className={headerStyles.toggleTextDiv} >
-                        <p className={headerStyles.toggleBtnText} >
+                      <div className={headerStyles.toggleTextDiv}>
+                        <p className={headerStyles.toggleBtnText}>
                           {!isDarkMode ? "Light" : "Dark"}
                         </p>
                       </div>
                     </div>
                   </div>
-
                 </div>
               </div>
-              <Link to="/user/settings" onClick={settingsLinkedClicked} className={headerStyles.settingsLinkContainer}
+              <Link
+                to="/user/settings"
+                onClick={settingsLinkedClicked}
+                className={headerStyles.settingsLinkContainer}
               >
-                <div className={headerStyles.iconDiv} >
+                <div className={headerStyles.iconDiv}>
                   <SettingsIcon />
                 </div>
 
@@ -169,39 +186,40 @@ const HeaderBar = ({ fieldLength, setFieldLength, open, setOpen, node }) => {
               </Link>
             </div>
 
-            <div className={headerStyles.bottomSection} >
-              <div className={headerStyles.logOutDiv} >
-
-                {auth?.isLoading && auth.action === 'logout' === true ?
+            <div className={headerStyles.bottomSection}>
+              <div className={headerStyles.logOutDiv}>
+                {auth?.isLoading && (auth.action === "logout") === true ? (
                   <Oval
                     height={`100%`}
                     width={`100%`}
-                    color={isDarkMode ? 'white' : '#002A9A'}
+                    color={isDarkMode ? "white" : "#002A9A"}
                     wrapperStyle={spinnerWrapper}
                     wrapperClass={headerStyles.spinner}
                     visible={true}
-                    ariaLabel='oval-loading'
+                    ariaLabel="oval-loading"
                     secondaryColor="transparent"
                     strokeWidth={5}
                     strokeWidthSecondary={5}
-                  /> :
-
+                  />
+                ) : (
                   <>
-                    <div className={headerStyles.logOutIconDiv} >
-                      < LogoutIcon />
+                    <div className={headerStyles.logOutIconDiv}>
+                      <LogoutIcon />
                     </div>
-                    <p className={headerStyles.logoutText} onClick={logOutBtnClicked} >
+                    <p
+                      className={headerStyles.logoutText}
+                      onClick={logOutBtnClicked}
+                    >
                       Log Out
                     </p>
                   </>
-                }
+                )}
               </div>
             </div>
           </div>
         )}
       </div>
-
-    </div >
+    </div>
   );
 };
 export default HeaderBar;

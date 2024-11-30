@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from "react-redux";
 
 import Card from "./Card";
 
@@ -10,15 +10,14 @@ import FullCardComponent from "./fullCardComponents/FullCardComponent";
 import AddBtn from "../buttons/AddBtn";
 import CardInputForm from "./inputForms/CardInputForm";
 import DeleteModal from "../modal/DeleteModal";
-import { generateActivityData } from "../utils/ActivityDataChangeFuction"
-import { deleteCardData } from "../../redux/features/cards/cardsSlice"
-import ListSkeleton from "../skelotons/ListSkeleton"
-const CardsList = ({ setLogoComponentShow,
+import { generateActivityData } from "../utils/ActivityDataChangeFuction";
+import { deleteCardData } from "../../redux/features/cards/cardsSlice";
+import ListSkeleton from "../skelotons/ListSkeleton";
+const CardsList = ({
+  setLogoComponentShow,
   setClickedSearchItem,
   clickedSearchItem,
-
 }) => {
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -27,20 +26,21 @@ const CardsList = ({ setLogoComponentShow,
       // console.log(element, clickedSearchItem._id);
       //> block : Defines vertical alignment
       //> inline: Defines horizontal alignment
-      element?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+      element?.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "start",
+      });
     }
-  }, [clickedSearchItem])
+  }, [clickedSearchItem]);
 
-  const cardState = useSelector((state => state.cards));
+  const cardState = useSelector((state) => state.cards);
   const { isLoading, action, success } = cardState;
   const [deleteMode, setDeleteMode] = useState(false);
 
   const userId = useSelector((state) => state.user._id);
 
-  const cardsArray = useSelector((state => state.cards.cardsData));
-
-
-
+  const cardsArray = useSelector((state) => state.cards.cardsData);
 
   const [bankCardData, setBankCardData] = useState({
     title: "",
@@ -50,8 +50,8 @@ const CardsList = ({ setLogoComponentShow,
     expiry: "",
     cvv: "",
     logoIndex: "",
-    isFavourite: ""
-  })
+    isFavourite: "",
+  });
 
   const [identityCardData, setIdentityCardData] = useState({
     title: "",
@@ -61,8 +61,8 @@ const CardsList = ({ setLogoComponentShow,
     issueDate: "",
     dob: "",
     logoIndex: "",
-    isFavourite: ""
-  })
+    isFavourite: "",
+  });
   const [licenseCardData, setLicenseCardData] = useState({
     title: "",
     category: ":License",
@@ -71,8 +71,8 @@ const CardsList = ({ setLogoComponentShow,
     expiry: "",
     dob: "",
     logoIndex: "",
-    isFavourite: ""
-  })
+    isFavourite: "",
+  });
 
   const [showInputForm, setShowInputForm] = useState(false);
   const [editMode, setEditMode] = useState(false);
@@ -99,9 +99,8 @@ const CardsList = ({ setLogoComponentShow,
       expiry: "",
       dob: "23/01/1996",
       logoIndex: 98,
-
-    }
-    , {
+    },
+    {
       category: "License",
       title: "Driving License",
       cardHolder: "Praveen Lohar",
@@ -109,7 +108,8 @@ const CardsList = ({ setLogoComponentShow,
       expiry: "18/05/2024",
       dov: "23/01/1996",
       logoIndex: 0,
-    }, {
+    },
+    {
       category: "Bank",
       title: "Punjab National Bank card",
       cardHolder: "Elean Salvatore",
@@ -118,15 +118,13 @@ const CardsList = ({ setLogoComponentShow,
       cvv: 454,
       logoIndex: 72,
     },
-
-  ]
+  ];
 
   // ____________________________________________
   // SCROLLING BUTTON HIDE__
   const node = useRef();
   var timeOut = null;
   const [isScrolling, setIsScrolling] = useState(false);
-
 
   useEffect(() => {
     if (node.current != null) {
@@ -150,27 +148,27 @@ const CardsList = ({ setLogoComponentShow,
 
   const [showContentCard, setShowContentCard] = useState(false);
 
-  const [fullContentCardCategory, setFullContentCardCatergory] = useState("BankCard");
+  const [fullContentCardCategory, setFullContentCardCatergory] =
+    useState("BankCard");
 
   const [currFocusField, setCurrFocusField] = useState(undefined);
   const onFocus = (val) => {
-    setCurrFocusField(val)
-  }
+    setCurrFocusField(val);
+  };
 
   const handleFullContentBackBtnClicked = () => {
     setCurrFocusField(undefined);
     setShowContentCard(false);
     setEditMode(false);
-  }
+  };
 
   const handleCardClicked = (cardData) => {
-
     if (showInputForm === true) {
       setShowInputForm(false);
     }
     switch (cardData.category) {
       case "Identity":
-        setFullContentCardCatergory("Identity")
+        setFullContentCardCatergory("Identity");
         setIdentityCardData({
           ...identityCardData,
           _id: cardData._id,
@@ -181,12 +179,12 @@ const CardsList = ({ setLogoComponentShow,
           issueDate: cardData.issueDate,
           dob: cardData.dob,
           logoIndex: cardData.logoIndex,
-          isFavourite: cardData.isFavourite
-        })
+          isFavourite: cardData.isFavourite,
+        });
         break;
 
       case "License":
-        setFullContentCardCatergory("License")
+        setFullContentCardCatergory("License");
         setLicenseCardData({
           ...licenseCardData,
           _id: cardData._id,
@@ -197,12 +195,12 @@ const CardsList = ({ setLogoComponentShow,
           expiry: cardData.expiry,
           dob: cardData.dob,
           logoIndex: cardData.logoIndex,
-          isFavourite: cardData.isFavourite
-        })
+          isFavourite: cardData.isFavourite,
+        });
         break;
 
       case "Bank":
-        setFullContentCardCatergory("Bank")
+        setFullContentCardCatergory("Bank");
         setBankCardData({
           ...bankCardData,
           _id: cardData._id,
@@ -213,63 +211,67 @@ const CardsList = ({ setLogoComponentShow,
           expiry: cardData.expiry,
           cvv: cardData.cvv,
           logoIndex: cardData.logoIndex,
-          isFavourite: cardData.isFavourite
-        })
+          isFavourite: cardData.isFavourite,
+        });
         break;
 
       default:
         break;
     }
     setShowContentCard(true);
-
-  }
-
-
+  };
 
   //> Confirm card delete________________
   const confirmDeleteBtnClicked = async () => {
-
     setDeleteMode(false);
 
     let cardDataToDelete = {};
 
     switch (fullContentCardCategory) {
-
-      case 'Bank': {
-        Object.assign(cardDataToDelete, bankCardData);
-      }
+      case "Bank":
+        {
+          Object.assign(cardDataToDelete, bankCardData);
+        }
         break;
 
-      case 'Identity': {
-        Object.assign(cardDataToDelete, identityCardData);
-      }
+      case "Identity":
+        {
+          Object.assign(cardDataToDelete, identityCardData);
+        }
         break;
 
-      case 'License': {
-        Object.assign(cardDataToDelete, licenseCardData);
-      }
+      case "License":
+        {
+          Object.assign(cardDataToDelete, licenseCardData);
+        }
         break;
 
       default:
         break;
     }
 
-    const activity_data = await generateActivityData(2, 'Card', cardDataToDelete, '')
-    await dispatch(deleteCardData({
-      card_id: cardDataToDelete._id,
-      user_id: userId,
-      cardData: cardDataToDelete,
-      activityData: activity_data
-    })).then(res => {
-      if (res.type === 'cards/delete/fulfilled') {
+    const activity_data = await generateActivityData(
+      2,
+      "Card",
+      cardDataToDelete,
+      ""
+    );
+    await dispatch(
+      deleteCardData({
+        card_id: cardDataToDelete._id,
+        user_id: userId,
+        cardData: cardDataToDelete,
+        activityData: activity_data,
+      })
+    ).then((res) => {
+      if (res.type === "cards/delete/fulfilled") {
         setShowContentCard(false);
       }
-    })
-  }
+    });
+  };
 
   return (
-    <div className={`${styles.cardList} `} >
-
+    <div className={`${styles.cardList} `}>
       <DeleteModal
         setDeleteMode={setDeleteMode}
         deleteMode={deleteMode}
@@ -277,36 +279,41 @@ const CardsList = ({ setLogoComponentShow,
         modalStyles={styles}
       />
 
-      {
-        (!showInputForm && !showContentCard) &&
-        < AddBtn formToggle={formToggle} isScrolling={isScrolling} />
-      }
-      <div ref={node} className={(showContentCard || showInputForm) ? styles.contentContainerClose : styles.contentContainer} >
-        {
-
-          (isLoading === true && action === 'fetch') || userId === undefined ?
-            <>
-              <ListSkeleton />
-              <ListSkeleton />
-              <ListSkeleton />
-            </> :
-
-            cardsArray.map((card, index) => (
-              <Card
-                key={index}
-                index={index}
-                cardData={card}
-                clickedSearchItem={clickedSearchItem}
-                handleCardClicked={handleCardClicked}
-                setFullCardData={card.category === 'Bank' ?
-                  setBankCardData : card.category === 'Identity' ?
-                    setIdentityCardData : card.category === 'License' &&
-                    setLicenseCardData
-                }
-              />
-            ))
+      {!showInputForm && !showContentCard && (
+        <AddBtn formToggle={formToggle} isScrolling={isScrolling} />
+      )}
+      <div
+        ref={node}
+        className={
+          showContentCard || showInputForm
+            ? styles.contentContainerClose
+            : styles.contentContainer
         }
-
+      >
+        {(isLoading === true && action === "fetch") || userId === undefined ? (
+          <>
+            <ListSkeleton />
+            <ListSkeleton />
+            <ListSkeleton />
+          </>
+        ) : (
+          cardsArray.map((card, index) => (
+            <Card
+              key={index}
+              index={index}
+              cardData={card}
+              clickedSearchItem={clickedSearchItem}
+              handleCardClicked={handleCardClicked}
+              setFullCardData={
+                card.category === "Bank"
+                  ? setBankCardData
+                  : card.category === "Identity"
+                  ? setIdentityCardData
+                  : card.category === "License" && setLicenseCardData
+              }
+            />
+          ))
+        )}
       </div>
       {/* {showContentCard ? */}
       <FullCardComponent
@@ -318,11 +325,22 @@ const CardsList = ({ setLogoComponentShow,
         setCurrFocusField={setCurrFocusField}
         onFocus={onFocus}
         fullContentCardData={
-          fullContentCardCategory === "Bank" ? bankCardData : fullContentCardCategory === "Identity" ? identityCardData : fullContentCardCategory === "License" ? licenseCardData : undefined
+          fullContentCardCategory === "Bank"
+            ? bankCardData
+            : fullContentCardCategory === "Identity"
+            ? identityCardData
+            : fullContentCardCategory === "License"
+            ? licenseCardData
+            : undefined
         }
-
         setFullContentCardData={
-          fullContentCardCategory === "Bank" ? setBankCardData : fullContentCardCategory === "Identity" ? setIdentityCardData : fullContentCardCategory === "License" ? setLicenseCardData : undefined
+          fullContentCardCategory === "Bank"
+            ? setBankCardData
+            : fullContentCardCategory === "Identity"
+            ? setIdentityCardData
+            : fullContentCardCategory === "License"
+            ? setLicenseCardData
+            : undefined
         }
         setEditMode={setEditMode}
         editMode={editMode}
@@ -331,7 +349,6 @@ const CardsList = ({ setLogoComponentShow,
         deleteMode={deleteMode}
       />
       {/* : null} */}
-
 
       {/* {showInputForm && */}
       <CardInputForm
