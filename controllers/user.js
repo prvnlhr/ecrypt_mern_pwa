@@ -65,26 +65,6 @@ const userController = {
 
       const activation_token = createActivationToken(newUser);
 
-      // const emailData = {
-      //   from: SENDER_EMAIL_ADDRESS,
-      //   to: email,
-      //   subject: "Account activation link",
-      //   html: `<h1>Please Click the link to activate account</h1>
-      //       <p>${CLIENT_URL}/user/auth/activation/${activation_token}<p>
-      //       <hr/>
-      //       <p>This email contains sensitive information</p>
-      //       <p>${CLIENT_URL}</p>
-      //       `,
-      // };
-      // sgMail
-      //   .send(emailData)
-      //   .then((sent) => {
-      //     return res.json({ message: `Email has been sent to ${email}` });
-      //   })
-      //   .catch((err) => {
-      //     return res.status(400).json({ error: err });
-      //   });
-      // console.log("check 3");
       const txt = "Account Activation Link";
       const url = `${CLIENT_URL}/user/activate/${activation_token}`;
 
@@ -93,7 +73,6 @@ const userController = {
     } catch (error) {
       // console.log("error in registration", error);
       return res.status(500).json({ msg: err.message });
-
     }
   },
   activateEmail: async (req, res) => {
@@ -239,7 +218,6 @@ const userController = {
           $set: {
             name: `${firstName} ${lastName}`,
             email: email,
-
           },
         },
         { returnOriginal: false }

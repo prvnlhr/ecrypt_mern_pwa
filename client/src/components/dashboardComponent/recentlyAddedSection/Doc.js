@@ -6,7 +6,10 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const Doc = ({ item, handleItemClicked }) => {
   return (
-    <div className={styles.cardWrapper} onClick={() => handleItemClicked(item)}>
+    <div
+      className={styles.cardWrapper}
+      onClick={() => handleItemClicked(item)}
+    >
       <div className={styles.cardContainer}>
         <div className={styles.logoWrapper}>
           <div className={styles.logoDiv}>

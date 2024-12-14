@@ -38,11 +38,16 @@ const App = () => {
   const isDarkMode = useSelector((state) => state.ui.darkMode);
 
   useEffect(() => {
-    const theme = JSON.parse(localStorage.getItem("theme") || false);
-    if (theme !== null) {
-      dispatch(toggleUiTheme(theme));
-    } else {
-      dispatch(toggleUiTheme(false));
+    try {
+      const localStorageThemeValue = localStorage.getItem("theme");
+      const theme = JSON.parse(localStorageThemeValue);
+      if (theme !== null) {
+        dispatch(toggleUiTheme(theme));
+      } else {
+        dispatch(toggleUiTheme(false));
+      }
+    } catch (error) {
+      console.log(error);
     }
   }, [isDarkMode]);
 

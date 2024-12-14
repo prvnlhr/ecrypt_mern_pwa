@@ -1,11 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import * as api from "../../api"
-import { fecthCardsData } from "../cards/cardsSlice"
-import { fecthLoginIdsData } from "../loginsId/loginsIdSlice"
-import { fetchDocsData } from "../docs/docsSlice"
-import { fectchActivitiesData } from "../activity/activitiesSlice"
-import { fetchRecentlyAddedData } from "../recentlyAdded/recentlyAddedSlice"
-import { fetchFavoritesData } from "../favorites/favoritesSlice"
+
 import moment from "moment";
 const initialState = {
     firstName: undefined,

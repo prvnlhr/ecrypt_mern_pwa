@@ -8,10 +8,7 @@ import { addNewDocData } from "../../redux/features/docs/docsSlice";
 import { generateActivityData } from "../utils/ActivityDataChangeFuction";
 import axios from "axios";
 
-const DocInputForm = ({
-  setShowDocInputForm,
-  formToggle,
-}) => {
+const DocInputForm = ({ setShowDocInputForm, formToggle }) => {
   const userId = useSelector((state) => state.user.user.userId);
 
   const dispatch = useDispatch();

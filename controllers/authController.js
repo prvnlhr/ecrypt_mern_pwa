@@ -6,7 +6,6 @@ const bcrypt = require("bcrypt");
 var cookieParser = require("cookie-parser");
 const sendMail = require("../utils/sendMail");
 
-
 const {
   ACTIVATION_TOKEN_SECRET,
   ACCESS_TOKEN_SECRET,
@@ -23,11 +22,18 @@ sgMail.setApiKey(SEND_GRID_API_KEY);
 
 const authController = {
   register: async (req, res) => {
-    const { email, password, confirmPassword, firstName, lastName, joinedDate, updateDate } = req.body;
+    const {
+      email,
+      password,
+      confirmPassword,
+      firstName,
+      lastName,
+      joinedDate,
+      updateDate,
+    } = req.body;
     // console.log(req.body);
     // console.log(email, password, confirmPassword, firstName, lastName)
     try {
-
       const check = await UserDatabase.findOne({ email });
       if (check) {
         return res.status(400).json({ msg: "This email already exists." });
@@ -72,7 +78,7 @@ const authController = {
         email: email,
         password: password,
         joinedDate: joinedDate,
-        updateDate: updateDate
+        updateDate: updateDate,
       });
 
       res.json({ msg: "Account has been activated!" });
@@ -107,7 +113,7 @@ const authController = {
       res.cookie("refreshtoken", refresh_token, {
         httpOnly: true,
         secure: true,
-        sameSite: 'None',
+        sameSite: "None",
         path: "/user/auth/access_token",
         maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
       });
@@ -168,7 +174,6 @@ const authController = {
   },
 
   forgotPassword: async (req, res) => {
-
     try {
       const { email } = req.body;
       // console.log(email);
@@ -239,7 +244,7 @@ const authController = {
 
   updateProfile: async (req, res) => {
     const { firstName, lastName, email, lastUpdateDate } = req.body.profileData;
-    console.log(firstName, lastName, email, lastUpdateDate)
+    console.log(firstName, lastName, email, lastUpdateDate);
     try {
       const id = req.user.id;
       const user = await UserDatabase.findById(id);
@@ -252,7 +257,7 @@ const authController = {
           $set: {
             name: `${firstName} ${lastName}`,
             // email: email,
-            updateDate: lastUpdateDate
+            updateDate: lastUpdateDate,
           },
         },
         { returnOriginal: false }
@@ -275,12 +280,11 @@ const authController = {
 
   updateProfilePic: async (req, res) => {
     const id = req.user.id;
-    // console.log('at profile pic change controller', id)
-
-    // console.log('cldnr res', avatarData)
+    console.log("at profile pic change controller", id);
 
     try {
       const filePath = req.file.path;
+
 
       const cloudinaryResponse = await cloudinary.v2.uploader.upload(filePath, {
         folder: "eCrypt",
@@ -295,8 +299,8 @@ const authController = {
         { _id: id },
         {
           $set: {
-            'profilePic.picUrl': picData.profilePicUrl,
-            'profilePic.cloudinary_id': picData.cloudinary_id
+            "profilePic.picUrl": picData.profilePicUrl,
+            "profilePic.cloudinary_id": picData.cloudinary_id,
           },
         },
         { returnOriginal: false }
@@ -332,7 +336,6 @@ const authController = {
     }
   },
 
-
   getUser: async (req, res) => {
     try {
       const user = await UserDatabase.findById(req.user.id).select("-password");
@@ -358,12 +361,10 @@ function createAccessToken(payload) {
   // return jwt.sign(payload, ACCESS_TOKEN_SECRET, { expiresIn: "30s" });
 }
 
-
 function createRefreshToken(payload) {
   return jwt.sign(payload, REFRESH_TOKEN_SECRET, { expiresIn: "2d" });
   // return jwt.sign(payload, REFRESH_TOKEN_SECRET, { expiresIn: "60s" });
 }
-
 
 function validateEmail(email) {
   const re =

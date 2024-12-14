@@ -1,35 +1,347 @@
 .documentFullScreenWrapper {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-radius: 10px;
-    /* border: 1px solid rgba(255, 255, 255, 0.18); */
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 10px;
+  /* border: 1px solid rgba(255, 255, 255, 0.18); */
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
-
 
 /*  > FOR DELETE MODAL */
 .modalWrapper {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20% !important;
+  height: unset !important;
+  aspect-ratio: 3/2;
+  border-radius: 10px;
+  top: 10% !important;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 99;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 99;
+}
+
+.spinner {
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.documentFullScreenWrapperClose {
+  position: absolute;
+  width: 0%;
+  height: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 10px;
+  /* border: 1px solid rgba(255, 255, 255, 0.18); */
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+}
+
+.imageContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headerContainer {
+  position: absolute;
+  top: 0px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: var(--box-bg-primary);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  /* border: 1px solid red; */
+}
+
+.headerContainerClose {
+  position: absolute;
+  top: -50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: var(--box-bg-primary);
+
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.backBtnContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  /* border: 1px solid blue; */
+  padding-left: 2%;
+}
+
+.backBtnDiv {
+  width: auto;
+  height: 50%;
+  /* border: 1px solid black; */
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.deleteBtnContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 45%;
+  height: 100%;
+  /* border: 1px solid green; */
+}
+
+.deleteBtnDiv {
+  width: auto;
+  height: 25px;
+  /* border: 1px solid black; */
+  background-color: #d64339;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 5%;
+  padding-right: 5%;
+  border-radius: 5px;
+  margin-right: 10px;
+  /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
+  cursor: pointer;
+}
+
+.deleteBtnDiv p {
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  color: white;
+}
+
+.crudIcons {
+  margin-right: 5px;
+}
+
+.favBtnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5%;
+  height: 100%;
+  /* border: 1px solid black; */
+}
+
+.favBtnDiv {
+  height: 55%;
+  aspect-ratio: 1/1;
+  display: flex;
+  /* border: 1px solid black; */
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.footerContainer {
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: var(--box-bg-primary);
+
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.footerContainerClose {
+  position: absolute;
+  bottom: -50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: var(--box-bg-primary);
+
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.titleInputDiv {
+  width: 70%;
+  height: 100%;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+}
+
+.titleInputDiv input {
+  width: 90%;
+  /* width: 100%; */
+  height: 70%;
+  border-bottom: 1px solid #7e8da4;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  background: transparent;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: var(--bolder-font);
+  color: var(--primary-font-color);
+  /* padding-left: 5%; */
+  padding-left: 2%;
+}
+
+.titleInputDiv p {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: var(--bolder-font);
+  color: var(--primary-font-color);
+  margin-left: 10%;
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.titleCrudBtnContainer {
+  width: 30%;
+  height: 100%;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 5%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.titleEditBtnDiv {
+  height: 60%;
+  aspect-ratio: 1/1;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10%;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #9dc1fa;
+  cursor: pointer;
+}
+
+.titleSaveBtnDiv {
+  height: 60%;
+  aspect-ratio: 1/1;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10%;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #58bf6f;
+  cursor: pointer;
+}
+
+.titleCancelBtnDiv {
+  height: 60%;
+  aspect-ratio: 1/1;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10%;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #cfd2d9;
+  cursor: pointer;
+}
+
+.titleCrudIcon {
+  font-size: 20px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  /*  > FOR DELETE MODAL */
+  .modalWrapper {
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20% !important;
+    width: 80% !important;
     height: unset !important;
     aspect-ratio: 3/2;
     border-radius: 10px;
-    top: 10% !important;
+    top: 20% !important;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -38,68 +350,9 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
     z-index: 99;
-}
+  }
 
-.spinner {
-    width: 100%;
-    height: 100%;
-    /* border: 1px solid red; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-
-.documentFullScreenWrapperClose {
-    position: absolute;
-    width: 0%;
-    height: 0%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-radius: 10px;
-    /* border: 1px solid rgba(255, 255, 255, 0.18); */
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    opacity: 0;
-}
-
-
-.imageContainer {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-}
-
-.imageContainer img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-.headerContainer {
+  .headerContainer {
     position: absolute;
     top: 0px;
     display: flex;
@@ -107,64 +360,41 @@
     align-items: center;
     width: 100%;
     height: 50px;
-    background-color: var(--box-bg-primary);
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     /* border: 1px solid red; */
-}
+  }
 
-.headerContainerClose {
-    position: absolute;
-    top: -50px;
+  .backBtnContainer {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    width: 100%;
-    height: 50px;
-    background-color: var(--box-bg-primary);
-
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-
-}
-
-.backBtnContainer {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 50%;
+    width: 45%;
     height: 100%;
     /* border: 1px solid blue; */
-    padding-left: 2%;
-}
+    padding-left: 5%;
+  }
 
-.backBtnDiv {
+  .backBtnDiv {
     width: auto;
     height: 50%;
     /* border: 1px solid black; */
     cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  }
 
-}
-
-.deleteBtnContainer {
+  .deleteBtnContainer {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 45%;
+    width: 35%;
     height: 100%;
     /* border: 1px solid green; */
-}
+  }
 
-.deleteBtnDiv {
+  .deleteBtnDiv {
     width: auto;
     height: 25px;
     /* border: 1px solid black; */
-    background-color: #D64339;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -174,30 +404,27 @@
     margin-right: 10px;
     /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
     cursor: pointer;
+  }
 
-}
-
-.deleteBtnDiv p {
-    font-family: "Poppins", sans-serif;
+  .deleteBtnDiv p {
     font-size: 11px;
     font-weight: 400;
-    color: white;
-}
+  }
 
-.crudIcons {
+  .crudIcons {
     margin-right: 5px;
-}
+  }
 
-.favBtnContainer {
+  .favBtnContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 5%;
+    width: 20%;
     height: 100%;
     /* border: 1px solid black; */
-}
+  }
 
-.favBtnDiv {
+  .favBtnDiv {
     height: 55%;
     aspect-ratio: 1/1;
     display: flex;
@@ -205,38 +432,9 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+  }
 
-}
-
-.footerContainer {
-    position: absolute;
-    bottom: 0px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-    background-color: var(--box-bg-primary);
-
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-
-}
-
-.footerContainerClose {
-    position: absolute;
-    bottom: -50px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-    background-color: var(--box-bg-primary);
-
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-
-}
-
-.titleInputDiv {
+  .titleInputDiv {
     width: 70%;
     height: 100%;
     /* border: 1px solid red; */
@@ -244,256 +442,35 @@
     justify-content: flex-start;
     align-items: center;
     overflow: hidden;
-}
+    padding-left: 2%;
+  }
 
-.titleInputDiv input {
+  .titleInputDiv input {
     width: 90%;
-    /* width: 100%; */
+    width: 100%;
     height: 70%;
-    border-bottom: 1px solid #7E8DA4;
+    border-bottom: 1px solid #7e8da4;
     border-top: none;
     border-left: none;
     border-right: none;
     outline: none;
     background: transparent;
-    font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: var(--bolder-font);
-    color: var(--primary-font-color);
     /* padding-left: 5%; */
     padding-left: 2%;
-    border: 1px solid red;
-}
+    /* border: 1px solid blue; */
+  }
 
-.titleInputDiv p {
+  .titleInputDiv p {
     position: relative;
-    font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-weight: var(--bolder-font);
-    color: var(--primary-font-color);
-    margin-left: 10%;
-    width: 80%;
+    margin-left: 2%;
+    width: 100%;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis
-}
-
-.titleCrudBtnContainer {
-    width: 30%;
-    height: 100%;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding-right: 5%;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-.titleEditBtnDiv {
-    height: 60%;
-    aspect-ratio: 1/1;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 10%;
-    cursor: pointer;
-    border-radius: 50%;
-    background-color: #9DC1FA;
-    cursor: pointer;
-}
-
-.titleSaveBtnDiv {
-    height: 60%;
-    aspect-ratio: 1/1;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 10%;
-    cursor: pointer;
-    border-radius: 50%;
-    background-color: #58BF6F;
-    cursor: pointer;
-
-}
-
-.titleCancelBtnDiv {
-    height: 60%;
-    aspect-ratio: 1/1;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 10%;
-    cursor: pointer;
-    border-radius: 50%;
-    background-color: #CFD2D9;
-    cursor: pointer;
-}
-
-
-
-.titleCrudIcon {
-    font-size: 20px;
-}
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-
-    /*  > FOR DELETE MODAL */
-    .modalWrapper {
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 80% !important;
-        height: unset !important;
-        aspect-ratio: 3/2;
-        border-radius: 10px;
-        top: 20% !important;
-        left: 0;
-        right: 0;
-        margin-left: auto;
-        margin-right: auto;
-        z-index: 99;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-        z-index: 99;
-    }
-
-    .headerContainer {
-        position: absolute;
-        top: 0px;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        width: 100%;
-        height: 50px;
-        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-        /* border: 1px solid red; */
-    }
-
-
-
-    .backBtnContainer {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        width: 45%;
-        height: 100%;
-        /* border: 1px solid blue; */
-        padding-left: 5%;
-    }
-
-    .backBtnDiv {
-        width: auto;
-        height: 50%;
-        /* border: 1px solid black; */
-        cursor: pointer;
-
-    }
-
-    .deleteBtnContainer {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        width: 35%;
-        height: 100%;
-        /* border: 1px solid green; */
-    }
-
-    .deleteBtnDiv {
-        width: auto;
-        height: 25px;
-        /* border: 1px solid black; */
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-left: 5%;
-        padding-right: 5%;
-        border-radius: 5px;
-        margin-right: 10px;
-        /* transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); */
-        cursor: pointer;
-    }
-
-    .deleteBtnDiv p {
-        font-size: 11px;
-        font-weight: 400;
-    }
-
-    .crudIcons {
-        margin-right: 5px;
-    }
-
-    .favBtnContainer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 20%;
-        height: 100%;
-        /* border: 1px solid black; */
-    }
-
-    .favBtnDiv {
-        height: 55%;
-        aspect-ratio: 1/1;
-        display: flex;
-        /* border: 1px solid black; */
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-
-    }
-
-
-    .titleInputDiv {
-        width: 70%;
-        height: 100%;
-        /* border: 1px solid red; */
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        overflow: hidden;
-        padding-left: 2%;
-    }
-
-    .titleInputDiv input {
-        width: 90%;
-        width: 100%;
-        height: 70%;
-        border-bottom: 1px solid #7E8DA4;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        outline: none;
-        background: transparent;
-        font-size: 14px;
-        font-weight: var(--bolder-font);
-        /* padding-left: 5%; */
-        padding-left: 2%;
-        /* border: 1px solid blue; */
-    }
-
-
-
-    .titleInputDiv p {
-        position: relative;
-        font-size: 14px;
-        font-weight: var(--bolder-font);
-        margin-left: 2%;
-        width: 100%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        /* border: 1px solid blue; */
-
-    }
+    text-overflow: ellipsis;
+    /* border: 1px solid blue; */
+  }
 }

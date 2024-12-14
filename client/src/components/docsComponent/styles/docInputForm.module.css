@@ -1,434 +1,430 @@
 @import "../../variable.modules.css";
 
 .formWrapper {
-    position: absolute;
-    aspect-ratio: 1/1.1;
-    width: 30%;
-    /* height: 60%; */
-    background-color: var(--box-bg-tertiary-drk);
-    z-index: 99;
-    border-radius: 20px;
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 10% 90%;
-    grid-template-areas:
-        " headerWrapper"
-        " formContainer";
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    top: 0px;
+  position: absolute;
+  aspect-ratio: 1/1.1;
+  width: 30%;
+  /* height: 60%; */
+  background-color: var(--box-bg-tertiary-drk);
+  z-index: 99;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 10% 90%;
+  grid-template-areas:
+    " headerWrapper"
+    " formContainer";
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 0px;
 }
 
 .headerWrapper {
-    grid-area: headerWrapper;
-    width: 100%;
-    height: 100%;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding-right: 2%;
+  grid-area: headerWrapper;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 2%;
 }
 
 .formContainer {
-    grid-area: formContainer;
-    width: 100%;
-    height: 100%;
-    /* border: 1px solid black; */
+  grid-area: formContainer;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid black; */
 }
 
 .closeIconDiv {
-    position: relative;
-    aspect-ratio: 1/1;
-    height: 60%;
-    border-radius: 50%;
-    background-color: #93C2FF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    right: 0px;
+  position: relative;
+  aspect-ratio: 1/1;
+  height: 60%;
+  border-radius: 50%;
+  background-color: #93c2ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 0px;
 }
 
 .closeIcon {
-    position: relative;
-    font-size: 13px;
-    /* border: 1px solid black; */
-    color: #002A9A;
+  position: relative;
+  font-size: 13px;
+  /* border: 1px solid red; */
+  color: #002a9a;
 }
 
 .formTag {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-rows: minmax(0, 1fr) 50px 80px;
-    grid-template-columns: 100%;
-    grid-template-areas:
-        "uploadImgWrapper"
-        "titleWrapper"
-        "buttonWrapper";
-    box-sizing: border-box;
-    border-radius: 8px;
-    padding: 0 15px 0 15px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) 50px 80px;
+  grid-template-columns: 100%;
+  grid-template-areas:
+    "uploadImgWrapper"
+    "titleWrapper"
+    "buttonWrapper";
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 0 15px 0 15px;
 }
 
-
 .uploadImgWrapper {
-    position: relative;
-    grid-area: uploadImgWrapper;
-    width: 100%;
-    height: 90%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    /* border: 1px solid red; */
-    border-radius: 25px;
-
+  position: relative;
+  grid-area: uploadImgWrapper;
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+  border-radius: 25px;
 }
 
 .titleWrapper {
-    position: relative;
-    grid-area: titleWrapper;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-rows: 50% 50%;
-    grid-template-columns: 20% 80%;
-    grid-template-areas:
-        "titleIconWrapper labelWrapper"
-        "titleIconWrapper inputWrapper";
-    /* border: 1px solid black; */
-    background-color: var(--box-bg-tertiary);
-    border-radius: 15px;
+  position: relative;
+  grid-area: titleWrapper;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 20% 80%;
+  grid-template-areas:
+    "titleIconWrapper labelWrapper"
+    "titleIconWrapper inputWrapper";
+  /* border: 1px solid black; */
+  background-color: var(--box-bg-tertiary);
+  border-radius: 15px;
 }
 
 .focusFieldStyle {
-    border: 2px solid var(--ui-scheme-color);
+  border: 2px solid var(--ui-scheme-color);
 }
 
 .titleIconWrapper {
-    grid-area: titleIconWrapper;
-    width: 100%;
-    height: 100%;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 25px;
+  grid-area: titleIconWrapper;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
 }
 
 .labelWrapper {
-    grid-area: labelWrapper;
-    width: 100%;
-    height: 100%;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
+  grid-area: labelWrapper;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
 }
 
 .labelWrapper p {
-    font-family: "Poppins", sans-serif;
-    font-size: 12px;
-    font-weight: var(--bolder-font);
-    color: var(--secondary-font-color);
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: var(--bolder-font);
+  color: var(--secondary-font-color);
 }
 
 .inputWrapper {
-    grid-area: inputWrapper;
-    width: 100%;
-    height: 100%;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+  grid-area: inputWrapper;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-
 .inputField {
-    display: flex;
-    text-align: start;
-    width: 90%;
-    height: 90%;
-    border: none;
-    font-family: "Poppins", sans-serif;
-    font-size: 13px;
-    font-weight: 550;
-    letter-spacing: 0.4px;
-    margin: 0px 0px 0px 0px;
-    padding: 0 0 0 10px;
-    box-sizing: border-box;
-    caret-color: var(--ui-scheme-color);
-    outline: none;
-    background: transparent;
-    color: var(--primary-font-color);
+  display: flex;
+  text-align: start;
+  width: 90%;
+  height: 90%;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 550;
+  letter-spacing: 0.4px;
+  margin: 0px 0px 0px 0px;
+  padding: 0 0 0 10px;
+  box-sizing: border-box;
+  caret-color: var(--ui-scheme-color);
+  outline: none;
+  background: transparent;
+  color: var(--primary-font-color);
 }
 
 .inputField:focus {
-    /* border: 2px solid #002A9A; */
+  /* border: 2px solid #002A9A; */
 }
 
 .buttonWrapper {
-    grid-area: buttonWrapper;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    /* border: 1px solid black; */
+  grid-area: buttonWrapper;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid black; */
 }
 
 .buttonWrapper button {
-    width: 200px;
-    height: 50px;
-    background-color: var(--submit-btn-color);
-    border: none;
-    border-radius: 30px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    /* border: 1px solid black; */
-    padding-left: 20px;
+  width: 200px;
+  height: 50px;
+  background-color: var(--submit-btn-color);
+  border: none;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  /* border: 1px solid black; */
+  padding-left: 20px;
 }
 
 .btnTextDiv {
-    width: 80%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* border: 1px solid black; */
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid black; */
 }
 
 .spinner {
-    width: 100%;
-    height: 100%;
-    /* border: 1px solid red; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btnIconDiv {
-    height: 100%;
-    aspect-ratio: 1/1;
-    /* border: 1px solid white; */
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #4067F0;
+  height: 100%;
+  aspect-ratio: 1/1;
+  /* border: 1px solid white; */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4067f0;
 }
 
 .btnIcon {
-    font-size: 18px;
-    margin: unset;
+  font-size: 18px;
+  margin: unset;
 }
 
 button p {
-    font-family: "Poppins", sans-serif;
-    font-size: 13px;
-    color: white;
-    font-weight: 400;
-    margin: 0px 0px 0px 0px;
-    letter-spacing: 0.3px;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  color: white;
+  font-weight: 400;
+  margin: 0px 0px 0px 0px;
+  letter-spacing: 0.3px;
 }
 
 /*___for file input_____ */
 label {
-    position: relative;
-    width: 100%;
-    height: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    /* border: 1px solid #002A9A; */
-    box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  position: relative;
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  /* border: 1px solid #002A9A; */
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .uploadContainer {
-    position: relative;
-    width: 85%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    /* border: 1px solid black; */
-    background-color: var(--box-bg-tertiary);
-    border-radius: 35px;
+  position: relative;
+  width: 85%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* border: 1px solid black; */
+  background-color: var(--box-bg-tertiary);
+  border-radius: 35px;
 }
 
 .uploadIcon {
-    height: 30%;
-    aspect-ratio: 1/1;
-    /* border: 1px solid black; */
-    margin-bottom: 20px;
-    color: var(--upload-icon-color);
+  height: 30%;
+  aspect-ratio: 1/1;
+  /* border: 1px solid black; */
+  margin-bottom: 20px;
+  color: var(--upload-icon-color);
 }
 
 .fileLabelText1 {
-    margin: 0px 0px 5px 0px;
-    font-family: "Poppins", sans-serif;
-    color: var(--primary-font-color);
-    font-weight: 550;
-    font-size: 15px;
-    letter-spacing: 0.2px;
+  margin: 0px 0px 5px 0px;
+  font-family: "Poppins", sans-serif;
+  color: var(--primary-font-color);
+  font-weight: 550;
+  font-size: 15px;
+  letter-spacing: 0.2px;
 }
 
 .fileLabelText2 {
-    margin: 0px 0px 0px 0px;
-    font-family: "Poppins", sans-serif;
-    color: var(--secondary-font-color);
-    font-weight: 450;
-    font-size: 11px;
-    /* letter-spacing: 0.2px; */
+  margin: 0px 0px 0px 0px;
+  font-family: "Poppins", sans-serif;
+  color: var(--secondary-font-color);
+  font-weight: 450;
+  font-size: 11px;
+  /* letter-spacing: 0.2px; */
 }
 
 .spanText {
-    margin: 0px 0px 0px 5px;
-    font-family: "Poppins", sans-serif;
-    color: var(--ui-scheme-color);
-    font-weight: 550;
-    font-size: 11px;
-    /* letter-spacing: 0.2px; */
+  margin: 0px 0px 0px 5px;
+  font-family: "Poppins", sans-serif;
+  color: var(--ui-scheme-color);
+  font-weight: 550;
+  font-size: 11px;
+  /* letter-spacing: 0.2px; */
 }
 
 .imgPreviewContainer {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    /* border: 1px solid 002A9A; */
-    /* background-size: cover; */
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  /* border: 1px solid 002A9A; */
+  /* background-size: cover; */
 }
 
 .imgPreviewContainer img {
-    position: relative;
-    object-fit: contain;
-    width: 95%;
-    height: 95%;
+  position: relative;
+  object-fit: contain;
+  width: 95%;
+  height: 95%;
 }
 
 .folderIcon {
-    /* border: 1px solid 002A9A; */
-    /* font-size: 100px; */
-    width: 65px;
-    height: 65px;
-    color: #002A9A;
-    margin: 0px 0px 0px 0px;
+  /* border: 1px solid 002A9A; */
+  /* font-size: 100px; */
+  width: 65px;
+  height: 65px;
+  color: #002a9a;
+  margin: 0px 0px 0px 0px;
 }
 
 .imgFileInput {
-    border: none;
-    outline: none;
-    background: none;
-    width: 100%;
-    height: 10%;
-    /* width:90%; */
-    /* border: 1px solid black; */
-    display: none;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    border: 1px solid black;
-    /* height: 30px !important; */
-    margin: 0px 0px 0px 0px;
-    font-family: "Poppins", sans-serif;
-    color: black;
-    font-weight: 650;
-    letter-spacing: 0.2px;
-    cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  width: 100%;
+  height: 10%;
+  /* width:90%; */
+  /* border: 1px solid black; */
+  display: none;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  border: 1px solid black;
+  /* height: 30px !important; */
+  margin: 0px 0px 0px 0px;
+  font-family: "Poppins", sans-serif;
+  color: black;
+  font-weight: 650;
+  letter-spacing: 0.2px;
+  cursor: pointer;
 }
 
 .imgFileInput::-webkit-file-upload-button {
-    visibility: hidden;
-    width: 0px;
-    background: #071a52;
-    font-family: "Poppins", sans-serif;
-    color: black;
-    font-size: 13px;
-    border-radius: 5px;
-    background-color: #dae5eb;
+  visibility: hidden;
+  width: 0px;
+  background: #071a52;
+  font-family: "Poppins", sans-serif;
+  color: black;
+  font-size: 13px;
+  border-radius: 5px;
+  background-color: #dae5eb;
 }
 
 .cancelBtnDiv {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 25px;
-    height: 25px;
-    border: 2px solid rgba(151, 151, 151, 0.267);
-    /* border: 1px solid rgb(187, 187, 187); */
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 25px;
+  height: 25px;
+  border: 2px solid rgba(151, 151, 151, 0.267);
+  /* border: 1px solid rgb(187, 187, 187); */
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); */
-    font-size: 15px;
-    font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); */
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
 
-    font-weight: 650;
-    letter-spacing: 0.2px !important;
-    color: slategray;
-    border-radius: 50%;
-    cursor: pointer;
-    /* box-shadow: 20px 20px 30px 0 rgba(0, 0, 0, 0.1);
+  font-weight: 650;
+  letter-spacing: 0.2px !important;
+  color: slategray;
+  border-radius: 50%;
+  cursor: pointer;
+  /* box-shadow: 20px 20px 30px 0 rgba(0, 0, 0, 0.1);
       box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.05),
         -6px -6px 6px rgba(255, 255, 255, 0.6),
         inset 2px 2px 5px rgba(0, 0, 0, 0.03),
         inset -2px -2px 5px rgba(255, 255, 255, 0.4); */
-    box-sizing: border-box;
-    z-index: 45;
+  box-sizing: border-box;
+  z-index: 45;
 }
 
 @media screen and (max-width: 550px) {
-
-    .formWrapper {
-        position: absolute;
-        aspect-ratio: 1/1.1;
-        width: 85%;
-        z-index: 99;
-        border-radius: 10px;
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: 10% 90%;
-        grid-template-areas:
-            " headerWrapper"
-            " formContainer";
-        margin-left: auto;
-        margin-right: auto;
-        left: 0;
-        right: 0;
-        top: 50px;
-    }
+  .formWrapper {
+    position: absolute;
+    aspect-ratio: 1/1.1;
+    width: 85%;
+    z-index: 99;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 90%;
+    grid-template-areas:
+      " headerWrapper"
+      " formContainer";
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 50px;
+  }
 }

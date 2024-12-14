@@ -1,24 +1,25 @@
 import axios from "axios";
-import { setAuthToken, forceLogout, logOutUser } from "../features/auth/authSlice"
+import {
+  setAuthToken,
+  forceLogout,
+  logOutUser,
+} from "../features/auth/authSlice";
 
-let url = process.env.REACT_APP_BASE_URL;
-
-// console.log(process.env);
-// console.log(process.env.REACT_APP_BASE_URL);
+let url = process.env.REACT_API_BASE_URL;
 
 // //for production server
-const API = axios.create({
-  baseURL: url,
-});
+// const API = axios.create({
+//   baseURL: url,
+// });
 
 // const API = axios.create({
 //   baseURL: "https://ecrypt-api.onrender.com"
 // });
 
 // for development server
-// const API = axios.create({
-//   baseURL: "http://localhost:9000"
-// });
+const API = axios.create({
+  baseURL: "http://localhost:9000",
+});
 
 // ->______________________________________________________________________________
 const reqHandler = (request) => {
@@ -31,42 +32,43 @@ const resHandler = (response) => {
   return response;
 };
 
-
 const axiosInterceptor = async (store) => {
-
   const errorHandler = async (error) => {
     const originalRequest = error.config;
-    if (error.response.status === 401 && error.config.url !== "/user/auth/access_token" && error.config.url !== "/user/auth/activation" && error.config.url !== "/user/auth/resetPassword" && !originalRequest._retry) {
+    if (
+      error.response.status === 401 &&
+      error.config.url !== "/user/auth/access_token" &&
+      error.config.url !== "/user/auth/activation" &&
+      error.config.url !== "/user/auth/resetPassword" &&
+      !originalRequest._retry
+    ) {
       originalRequest._retry = true;
 
       try {
-
         const res = await axios.post(`${url}/user/auth/access_token`, null, {
           withCredentials: true,
         });
 
         if (res.status === 200) {
           store.dispatch(setAuthToken(res.data));
-          originalRequest.headers['Authorization'] = "Bearer " + res.data;
+          originalRequest.headers["Authorization"] = "Bearer " + res.data;
           return axios(originalRequest);
         }
-
-      }
-      catch (err) {
+      } catch (err) {
         if (err.response.status === 401) {
           let resMsg;
           if (err.response.data.msg) {
-            resMsg = err.response.data.msg
+            resMsg = err.response.data.msg;
           }
-          const ress = await axios.get(`${url}/user/auth/logout`, { withCredentials: true });
+          const ress = await axios.get(`${url}/user/auth/logout`, {
+            withCredentials: true,
+          });
           store.dispatch(forceLogout({ msg: resMsg }));
           // console.log('Token-Expired :force logging out')
         }
         return Promise.reject(err);
       }
-
-    }
-    else {
+    } else {
       return Promise.reject(error);
     }
   };
@@ -80,8 +82,7 @@ const axiosInterceptor = async (store) => {
     (response) => resHandler(response),
     (error) => errorHandler(error)
   );
-}
-
+};
 
 // ->_______________________________________________________________________________
 
@@ -94,29 +95,30 @@ export const fetchUserLoginIds = (user_id) =>
   });
 
 export const addNewLoginId = (newLoginData, user_id, token) =>
-  API.post("/user/loginIds/addLoginId", { newLoginData, user_id }, {
-    headers: {
-      "Authorization": `Bearer ${token}`
-    },
-
-  });
-
+  API.post(
+    "/user/loginIds/addLoginId",
+    { newLoginData, user_id },
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
 
 export const editLoginId = (loginId_id, loginIdData, token) =>
   API.patch(`/user/loginIds/editLoginId/${loginId_id}`, loginIdData, {
     headers: {
-      "Authorization": `Bearer ${token}`
+      Authorization: `Bearer ${token}`,
     },
   });
 
 export const deleteLoginId = (loginCardId, user_id, token) =>
   API.delete(`/user/loginIds/deleteLoginId/${loginCardId}`, {
     headers: {
-      "Authorization": `Bearer ${token}`
+      Authorization: `Bearer ${token}`,
     },
     data: { user_id: user_id },
   });
-
 
 // > CARDS API_______________________________________
 export const fetchUserCards = (user_id) =>
@@ -127,17 +129,21 @@ export const fetchUserCards = (user_id) =>
   });
 //> add card____
 export const addNewCard = (newCardData, user_id, token) =>
-  API.post("/user/cards/addCard", { newCardData, user_id }, {
-    headers: {
-      "Authorization": `Bearer ${token}`
-    },
-  });
+  API.post(
+    "/user/cards/addCard",
+    { newCardData, user_id },
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
 
 //>edit card___
 export const editCard = (card_id, cardData, token) =>
   API.patch(`/user/cards/editCard/${card_id}`, cardData, {
     headers: {
-      "Authorization": `Bearer ${token}`
+      Authorization: `Bearer ${token}`,
     },
   });
 
@@ -145,7 +151,7 @@ export const editCard = (card_id, cardData, token) =>
 export const deleteCard = (card_id, user_id, cardData, token) =>
   API.delete(`/user/cards/deleteCard/${card_id}`, {
     headers: {
-      "Authorization": `Bearer ${token}`
+      Authorization: `Bearer ${token}`,
     },
     data: {
       user_id: user_id,
@@ -162,20 +168,20 @@ export const fetchDocs = (user_id) =>
   });
 
 //> add new doc___
-export const addNewDoc = (data, token) => API.post("/user/docs/addDoc", data, {
-  headers: {
-    "Authorization": `Bearer ${token}`
-  },
-});
+export const addNewDoc = (data, token) =>
+  API.post("/user/docs/addDoc", data, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
 
 // export const addNewDoc = (data) => API.post("/user/docs/addDoc", data);
-
 
 //> edit doc___
 export const editDoc = (doc_Id, docData, token) =>
   API.patch(`/user/docs/editDoc/${doc_Id}`, docData, {
     headers: {
-      "Authorization": `Bearer ${token}`
+      Authorization: `Bearer ${token}`,
     },
   });
 
@@ -183,7 +189,7 @@ export const editDoc = (doc_Id, docData, token) =>
 export const deleteDoc = (doc_id, user_id, cloud_id, token) =>
   API.delete(`/user/docs/deleteDoc/${doc_id}`, {
     headers: {
-      "Authorization": `Bearer ${token}`
+      Authorization: `Bearer ${token}`,
     },
     data: {
       userId: user_id,
@@ -197,7 +203,6 @@ export const deleteDoc = (doc_id, user_id, cloud_id, token) =>
 //       cloudId: cloud_id,
 //     },
 //   });
-
 
 //> ACTIVITY API___________________________________________________________________________________________
 export const fetchUserActivities = (user_id) =>
@@ -232,35 +237,44 @@ export const addRecentlyData = (user_id, activityData) =>
 export const deleteRecentlyAdded = (item_id, user_id, token) =>
   API.delete(`/user/recentlyAdded/deleteRecentlyAdded/${item_id}`, {
     headers: {
-      "Authorization": `Bearer ${token}`
+      Authorization: `Bearer ${token}`,
     },
     data: { user_id: user_id },
   });
 
 //>FAVOURITE TOGGLE URL_____________________________________________________________________
 export const loginIdFavouriteToggle = (loginCard_Id, isFav, token) =>
-  API.patch(`/user/loginIds/toggleFavourite/${loginCard_Id}`, { data: isFav }, {
-    headers: {
-      "Authorization": `Bearer ${token}`
-    },
-  });
-
+  API.patch(
+    `/user/loginIds/toggleFavourite/${loginCard_Id}`,
+    { data: isFav },
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
 
 export const cardFavouriteToggle = (card_id, isFav, category, token) =>
-  API.patch(`/user/cards/toggleFavourite/${card_id}`, { isFav, category }, {
-    headers: {
-      "Authorization": `Bearer ${token}`
-    },
-  });
-
-
+  API.patch(
+    `/user/cards/toggleFavourite/${card_id}`,
+    { isFav, category },
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
 
 export const docsFavouriteToggle = (doc_id, isFav, token) =>
-  API.patch(`/user/docs/toggleFavourite/${doc_id}`, { data: isFav }, {
-    headers: {
-      "Authorization": `Bearer ${token}`
-    },
-  });
+  API.patch(
+    `/user/docs/toggleFavourite/${doc_id}`,
+    { data: isFav },
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
 
 export const fetchFavorites = (user_id) =>
   API.get("/user/loginIds/getFavorites", {
@@ -269,7 +283,6 @@ export const fetchFavorites = (user_id) =>
     },
   });
 
-
 // __________________________________________________________
 // __________________________________________________________
 // ** Auth api
@@ -277,7 +290,6 @@ export const fetchFavorites = (user_id) =>
 //> Register new user
 export const registerNewUser = (formData) =>
   API.post("/user/auth/register", formData);
-
 
 //> Login user
 export const login = (formData) =>
@@ -289,8 +301,7 @@ export const login = (formData) =>
 export const logout = () =>
   API.get("/user/auth/logout", { withCredentials: true });
 
-
-//> Account activate 
+//> Account activate
 export const accountActivation = (activation_token) =>
   API.post("/user/auth/activation", {
     data: {
@@ -308,7 +319,7 @@ export const getToken = () =>
 export const getUser = (token) =>
   API.get("/user/auth/info", {
     headers: {
-      "Authorization": `Bearer ${token}`
+      Authorization: `Bearer ${token}`,
     },
   });
 
@@ -326,7 +337,6 @@ export const resetPass = (token, password) =>
     }
   );
 
-
 // > edit password____
 export const editProfile = (token, profileData) =>
   API.post(
@@ -337,11 +347,12 @@ export const editProfile = (token, profileData) =>
     }
   );
 // > edit profile Pic__
-export const editProfilePic = (data, token) => API.post("/user/auth/updateProfilePic", data, {
-  headers: {
-    "Authorization": `Bearer ${token}`
-  },
-});
+export const editProfilePic = (data, token) =>
+  API.post("/user/auth/updateProfilePic", data, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
 
 // > change password____
 export const changePass = (oldPassword, newPassword, token) =>
@@ -353,7 +364,6 @@ export const changePass = (oldPassword, newPassword, token) =>
     }
   );
 // originalRequest.headers["Authorization"] = "Bearer " + res.data;
-
 
 // const frcLogout = async (store) => {
 //   try {
