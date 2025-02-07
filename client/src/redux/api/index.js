@@ -5,16 +5,16 @@ import {
   logOutUser,
 } from "../features/auth/authSlice";
 
-let url = process.env.REACT_API_BASE_URL;
-// console.log("xxx", url);
-// //for production server
-// const API = axios.create({
-//   baseURL: url,
-// });
+let url = process.env.REACT_APP_API_BASE_URL;
 
+// //for production server
 const API = axios.create({
-  baseURL: "https://ecrypt-api.onrender.com",
+  baseURL: url,
 });
+
+// const API = axios.create({
+//   baseURL: "https://ecrypt-api.onrender.com",
+// });
 
 // for development server
 // const API = axios.create({

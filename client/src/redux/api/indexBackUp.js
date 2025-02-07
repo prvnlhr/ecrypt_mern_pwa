@@ -4,8 +4,8 @@ import {
   forceLogout,
   logOutUser,
 } from "../features/auth/authSlice";
-let url = process.env.REACT_API_BASE_URL;
-console.log(process.env.REACT_API_BASE_URL);
+let url = process.env.REACT_APP_API_BASE_URL;
+console.log(process.env.REACT_APP_API_BASE_URL);
 
 // //for production server
 // const API = axios.create({
