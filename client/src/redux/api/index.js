@@ -6,15 +6,15 @@ import {
 } from "../features/auth/authSlice";
 
 let url = process.env.REACT_API_BASE_URL;
-
+// console.log("xxx", url);
 // //for production server
-const API = axios.create({
-  baseURL: url,
-});
-
 // const API = axios.create({
-//   baseURL: "https://ecrypt-api.onrender.com"
+//   baseURL: url,
 // });
+
+const API = axios.create({
+  baseURL: "https://ecrypt-api.onrender.com",
+});
 
 // for development server
 // const API = axios.create({
@@ -60,7 +60,7 @@ const axiosInterceptor = async (store) => {
           if (err.response.data.msg) {
             resMsg = err.response.data.msg;
           }
-          const ress = await axios.get(`${url}/user/auth/logout`, {
+          const res = await axios.get(`${url}/user/auth/logout`, {
             withCredentials: true,
           });
           store.dispatch(forceLogout({ msg: resMsg }));
