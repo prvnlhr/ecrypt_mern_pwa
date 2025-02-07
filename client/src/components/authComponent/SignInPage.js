@@ -152,9 +152,9 @@ const SignInPage = () => {
                     width="111.146"
                     height="112.071"
                     filterUnits="userSpaceOnUse"
-                    color-interpolation-filters="sRGB"
+                    colorInterpolationFilters="sRGB"
                   >
-                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
                     <feColorMatrix
                       in="SourceAlpha"
                       type="matrix"
@@ -309,9 +309,9 @@ const SignInPage = () => {
                     width="180.432"
                     height="165.146"
                     filterUnits="userSpaceOnUse"
-                    color-interpolation-filters="sRGB"
+                    colorInterpolationFilters="sRGB"
                   >
-                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
                     <feColorMatrix
                       in="SourceAlpha"
                       type="matrix"
@@ -425,9 +425,9 @@ const SignInPage = () => {
                     width="184.724"
                     height="50.5807"
                     filterUnits="userSpaceOnUse"
-                    color-interpolation-filters="sRGB"
+                    colorInterpolationFilters="sRGB"
                   >
-                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
                     <feColorMatrix
                       in="SourceAlpha"
                       type="matrix"
