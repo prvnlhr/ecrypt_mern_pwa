@@ -1,4 +1,3 @@
-<!-- # ![ecrypt-splash-icon](https://user-images.githubusercontent.com/70936225/224486033-0ee8f21c-b098-4270-a401-bc9fb69e3783.png) -->![Uploading ecrypt icon.svg…]()
 
 <h1 align="center">
   <img height="50" src="./public/assets/ecrypt-icon.svg" alt="eCrypt Icon">
